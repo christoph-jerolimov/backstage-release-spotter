@@ -225,10 +225,15 @@ const tableRows = [...lastRelease.keys()].sort(byCodepoint).map((name) => {
   ];
 });
 
+const activeCount = [...lastRelease.keys()].filter((name) => mainPackages.has(name)).length;
+const removedCount = lastRelease.size - activeCount;
+
 const md: string[] = [];
 md.push("# Backstage packages", "");
 md.push(
-  "All packages that ever appeared in a release manifest. *Last included in* is only set for packages that are no longer part of the `main` branch.",
+  `**${lastRelease.size} packages** overall — **${activeCount} active** on the \`main\` branch, **${removedCount} removed**.`,
+  "",
+  "All packages that ever appeared in a release manifest. *Last included in* is only set for removed packages.",
   "",
 );
 md.push(`| ${TABLE_HEADER.map(mdCell).join(" | ")} |`);

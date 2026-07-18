@@ -1,6 +1,8 @@
 # Backstage packages
 
-All packages that ever appeared in a release manifest. *Last included in* is only set for packages that are no longer part of the `main` branch.
+**323 packages** overall — **211 active** on the `main` branch, **112 removed**.
+
+All packages that ever appeared in a release manifest. *Last included in* is only set for removed packages.
 
 | Package | Backstage role | Description | Last included in |
 | --- | --- | --- | --- |
