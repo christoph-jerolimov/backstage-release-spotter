@@ -2,7 +2,9 @@
 
 ## Compared to 1.18.2 (previous patch release)
 
-0 added, 0 removed, 92 upgraded (⚠️ need extra attention: 1 0.0.x patch), 139 unchanged.
+0 added, 0 removed, 92 upgraded, 139 unchanged.
+
+⚠️ Need extra attention: 1 0.0.x patch.
 
 ### Version bumps
 
@@ -103,7 +105,9 @@
 
 ## Compared to 1.17.5 (previous minor release)
 
-10 added, 0 removed, 217 upgraded (⚠️ need extra attention: 21 0.x minor, 6 0.0.x patch), 4 unchanged.
+10 added, 0 removed, 217 upgraded, 4 unchanged.
+
+⚠️ Need extra attention: 21 0.x minor, 6 0.0.x patch.
 
 ### 🆕 Added packages
 

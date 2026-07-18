@@ -2,7 +2,9 @@
 
 ## Compared to 1.51.2 (previous minor release)
 
-1 added, 0 removed, 185 upgraded (⚠️ need extra attention: 3 0.x minor, 3 0.0.x patch), 24 unchanged.
+1 added, 0 removed, 185 upgraded, 24 unchanged.
+
+⚠️ Need extra attention: 3 0.x minor, 3 0.0.x patch.
 
 ### 🆕 Added packages
 

@@ -2,7 +2,9 @@
 
 ## Compared to 1.14.2 (previous minor release)
 
-5 added, 0 removed, 199 upgraded (⚠️ need extra attention: 1 major, 7 0.x minor, 2 0.0.x patch), 14 unchanged.
+5 added, 0 removed, 199 upgraded, 14 unchanged.
+
+⚠️ Need extra attention: 1 major, 7 0.x minor, 2 0.0.x patch.
 
 ### ⚠️ Major version bumps
 

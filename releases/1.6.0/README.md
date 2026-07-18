@@ -2,7 +2,9 @@
 
 ## Compared to 1.5.1 (previous minor release)
 
-4 added, 0 removed, 153 upgraded (⚠️ need extra attention: 7 0.x minor, 2 0.0.x patch), 6 unchanged.
+4 added, 0 removed, 153 upgraded, 6 unchanged.
+
+⚠️ Need extra attention: 7 0.x minor, 2 0.0.x patch.
 
 ### 🆕 Added packages
 

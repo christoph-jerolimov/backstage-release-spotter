@@ -12,7 +12,9 @@
 
 ## Compared to 1.30.4 (previous minor release)
 
-4 added, 1 removed, 158 upgraded (⚠️ need extra attention: 3 major, 58 0.x minor, 3 0.0.x patch), 16 unchanged.
+4 added, 1 removed, 158 upgraded, 16 unchanged.
+
+⚠️ Need extra attention: 3 major, 58 0.x minor, 3 0.0.x patch.
 
 ### ⚠️ Major version bumps
 

@@ -2,7 +2,9 @@
 
 ## Compared to 1.28.0 (previous patch release)
 
-0 added, 0 removed, 102 upgraded (⚠️ need extra attention: 3 0.0.x patch), 70 unchanged.
+0 added, 0 removed, 102 upgraded, 70 unchanged.
+
+⚠️ Need extra attention: 3 0.0.x patch.
 
 ### Version bumps
 
@@ -113,7 +115,9 @@
 
 ## Compared to 1.27.7 (previous minor release)
 
-2 added, 0 removed, 159 upgraded (⚠️ need extra attention: 17 0.x minor, 8 0.0.x patch), 11 unchanged.
+2 added, 0 removed, 159 upgraded, 11 unchanged.
+
+⚠️ Need extra attention: 17 0.x minor, 8 0.0.x patch.
 
 ### 🆕 Added packages
 

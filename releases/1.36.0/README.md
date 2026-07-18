@@ -2,7 +2,9 @@
 
 ## Compared to 1.35.1 (previous minor release)
 
-1 added, 0 removed, 155 upgraded (⚠️ need extra attention: 26 0.x minor, 3 0.0.x patch), 23 unchanged.
+1 added, 0 removed, 155 upgraded, 23 unchanged.
+
+⚠️ Need extra attention: 26 0.x minor, 3 0.0.x patch.
 
 ### 🆕 Added packages
 

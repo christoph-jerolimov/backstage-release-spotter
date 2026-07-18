@@ -13,7 +13,9 @@
 
 ## Compared to 1.48.6 (previous minor release)
 
-14 added, 1 removed, 176 upgraded (⚠️ need extra attention: 3 major, 18 0.x minor, 3 0.0.x patch), 17 unchanged.
+14 added, 1 removed, 176 upgraded, 17 unchanged.
+
+⚠️ Need extra attention: 3 major, 18 0.x minor, 3 0.0.x patch.
 
 ### ⚠️ Major version bumps
 

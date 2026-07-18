@@ -2,7 +2,9 @@
 
 ## Compared to 1.36.1 (previous minor release)
 
-0 added, 0 removed, 155 upgraded (⚠️ need extra attention: 2 major, 20 0.x minor, 3 0.0.x patch), 24 unchanged.
+0 added, 0 removed, 155 upgraded, 24 unchanged.
+
+⚠️ Need extra attention: 2 major, 20 0.x minor, 3 0.0.x patch.
 
 ### ⚠️ Major version bumps
 

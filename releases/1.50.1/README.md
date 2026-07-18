@@ -22,7 +22,9 @@
 
 ## Compared to 1.49.5 (previous minor release)
 
-0 added, 0 removed, 198 upgraded (⚠️ need extra attention: 10 0.x minor, 4 0.0.x patch), 9 unchanged.
+0 added, 0 removed, 198 upgraded, 9 unchanged.
+
+⚠️ Need extra attention: 10 0.x minor, 4 0.0.x patch.
 
 ### Version bumps
 

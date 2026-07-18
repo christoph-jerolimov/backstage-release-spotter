@@ -12,7 +12,9 @@
 
 ## Compared to 1.42.5 (previous minor release)
 
-2 added, 0 removed, 161 upgraded (⚠️ need extra attention: 8 0.x minor, 2 0.0.x patch), 26 unchanged.
+2 added, 0 removed, 161 upgraded, 26 unchanged.
+
+⚠️ Need extra attention: 8 0.x minor, 2 0.0.x patch.
 
 ### 🆕 Added packages
 

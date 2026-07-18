@@ -2,7 +2,9 @@
 
 ## Compared to 1.4.0 (previous minor release)
 
-4 added, 0 removed, 139 upgraded (⚠️ need extra attention: 8 0.x minor, 1 0.0.x patch), 16 unchanged.
+4 added, 0 removed, 139 upgraded, 16 unchanged.
+
+⚠️ Need extra attention: 8 0.x minor, 1 0.0.x patch.
 
 ### 🆕 Added packages
 

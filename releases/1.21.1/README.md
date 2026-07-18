@@ -14,7 +14,9 @@
 
 ## Compared to 1.20.4 (previous minor release)
 
-10 added, 2 removed, 220 upgraded (⚠️ need extra attention: 12 0.x minor, 4 0.0.x patch), 19 unchanged.
+10 added, 2 removed, 220 upgraded, 19 unchanged.
+
+⚠️ Need extra attention: 12 0.x minor, 4 0.0.x patch.
 
 ### 🆕 Added packages
 

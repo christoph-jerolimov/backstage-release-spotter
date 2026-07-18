@@ -94,11 +94,13 @@ function renderSection(baseline: Baseline, current: string, diff: Diff): string 
   const summary = [
     `${diff.added.length} added`,
     `${diff.removed.length} removed`,
-    `${bumps.length} upgraded` +
-      (attentionParts.length > 0 ? ` (⚠️ need extra attention: ${attentionParts.join(", ")})` : ""),
+    `${bumps.length} upgraded`,
     `${diff.unchanged} unchanged`,
   ];
   lines.push(summary.join(", ") + ".", "");
+  if (attentionParts.length > 0) {
+    lines.push(`⚠️ Need extra attention: ${attentionParts.join(", ")}.`, "");
+  }
 
   if (diff.majorBumps.length > 0) {
     lines.push("### ⚠️ Major version bumps", "");

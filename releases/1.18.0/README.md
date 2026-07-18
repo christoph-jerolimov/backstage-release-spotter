@@ -2,7 +2,9 @@
 
 ## Compared to 1.17.5 (previous minor release)
 
-10 added, 0 removed, 217 upgraded (⚠️ need extra attention: 21 0.x minor, 6 0.0.x patch), 4 unchanged.
+10 added, 0 removed, 217 upgraded, 4 unchanged.
+
+⚠️ Need extra attention: 21 0.x minor, 6 0.0.x patch.
 
 ### 🆕 Added packages
 

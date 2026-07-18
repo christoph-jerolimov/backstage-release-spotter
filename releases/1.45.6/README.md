@@ -13,7 +13,9 @@
 
 ## Compared to 1.44.3 (previous minor release)
 
-0 added, 0 removed, 178 upgraded (⚠️ need extra attention: 8 0.x minor, 4 0.0.x patch), 12 unchanged.
+0 added, 0 removed, 178 upgraded, 12 unchanged.
+
+⚠️ Need extra attention: 8 0.x minor, 4 0.0.x patch.
 
 ### Version bumps
 

@@ -12,7 +12,9 @@
 
 ## Compared to 1.24.2 (previous minor release)
 
-0 added, 0 removed, 225 upgraded (⚠️ need extra attention: 2 0.x minor, 5 0.0.x patch), 42 unchanged.
+0 added, 0 removed, 225 upgraded, 42 unchanged.
+
+⚠️ Need extra attention: 2 0.x minor, 5 0.0.x patch.
 
 ### Version bumps
 

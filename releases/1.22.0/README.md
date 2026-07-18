@@ -2,7 +2,9 @@
 
 ## Compared to 1.21.1 (previous minor release)
 
-2 added, 0 removed, 226 upgraded (⚠️ need extra attention: 3 0.x minor, 5 0.0.x patch), 23 unchanged.
+2 added, 0 removed, 226 upgraded, 23 unchanged.
+
+⚠️ Need extra attention: 3 0.x minor, 5 0.0.x patch.
 
 ### 🆕 Added packages
 

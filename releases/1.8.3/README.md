@@ -12,7 +12,9 @@
 
 ## Compared to 1.7.2 (previous minor release)
 
-13 added, 0 removed, 158 upgraded (⚠️ need extra attention: 12 0.x minor, 2 0.0.x patch), 5 unchanged.
+13 added, 0 removed, 158 upgraded, 5 unchanged.
+
+⚠️ Need extra attention: 12 0.x minor, 2 0.0.x patch.
 
 ### 🆕 Added packages
 
