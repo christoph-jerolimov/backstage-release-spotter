@@ -12,7 +12,7 @@
 
 ## Compared to 1.39.1 (previous minor release)
 
-1 major bumps, 2 added, 0 removed, 160 upgraded, 25 unchanged.
+1 major bumps, 2 added, 0 removed, 160 upgraded (17 ⚠️ need extra attention), 25 unchanged.
 
 ### ⚠️ Major version bumps
 

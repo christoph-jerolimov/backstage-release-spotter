@@ -2,7 +2,7 @@
 
 ## Compared to 1.3.1 (previous minor release)
 
-6 major bumps, 7 added, 0 removed, 143 upgraded, 5 unchanged.
+6 major bumps, 7 added, 0 removed, 143 upgraded (23 ⚠️ need extra attention), 5 unchanged.
 
 ### ⚠️ Major version bumps
 

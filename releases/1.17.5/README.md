@@ -16,7 +16,7 @@
 
 ## Compared to 1.16.0 (previous minor release)
 
-0 major bumps, 3 added, 0 removed, 189 upgraded, 29 unchanged.
+0 major bumps, 3 added, 0 removed, 189 upgraded (12 ⚠️ need extra attention), 29 unchanged.
 
 ### 🆕 Added packages
 

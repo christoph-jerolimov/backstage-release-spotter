@@ -2,7 +2,7 @@
 
 ## Compared to 1.23.4 (previous minor release)
 
-1 major bumps, 4 added, 0 removed, 251 upgraded, 12 unchanged.
+1 major bumps, 4 added, 0 removed, 251 upgraded (40 ⚠️ need extra attention), 12 unchanged.
 
 ### ⚠️ Major version bumps
 

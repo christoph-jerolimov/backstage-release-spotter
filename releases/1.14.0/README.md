@@ -2,7 +2,7 @@
 
 ## Compared to 1.13.2 (previous minor release)
 
-1 major bumps, 4 added, 0 removed, 178 upgraded, 31 unchanged.
+1 major bumps, 4 added, 0 removed, 178 upgraded (17 ⚠️ need extra attention), 31 unchanged.
 
 ### ⚠️ Major version bumps
 

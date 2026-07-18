@@ -14,7 +14,7 @@
 
 ## Compared to 1.35.1 (previous minor release)
 
-0 major bumps, 1 added, 0 removed, 155 upgraded, 23 unchanged.
+0 major bumps, 1 added, 0 removed, 155 upgraded (29 ⚠️ need extra attention), 23 unchanged.
 
 ### 🆕 Added packages
 

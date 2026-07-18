@@ -14,7 +14,7 @@
 
 ## Compared to 1.0.3 (previous minor release)
 
-0 major bumps, 5 added, 0 removed, 124 upgraded, 8 unchanged.
+0 major bumps, 5 added, 0 removed, 124 upgraded (15 ⚠️ need extra attention), 8 unchanged.
 
 ### 🆕 Added packages
 

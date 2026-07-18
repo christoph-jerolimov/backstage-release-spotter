@@ -16,7 +16,7 @@
 
 ## Compared to 1.31.4 (previous minor release)
 
-0 major bumps, 0 added, 1 removed, 146 upgraded, 31 unchanged.
+0 major bumps, 0 added, 1 removed, 146 upgraded (15 ⚠️ need extra attention), 31 unchanged.
 
 ### ❌ Removed packages
 

@@ -2,7 +2,7 @@
 
 ## Compared to 1.17.2 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 153 upgraded, 68 unchanged.
+0 major bumps, 0 added, 0 removed, 153 upgraded (1 ⚠️ need extra attention), 68 unchanged.
 
 ### Version bumps
 
@@ -164,7 +164,7 @@
 
 ## Compared to 1.16.0 (previous minor release)
 
-0 major bumps, 3 added, 0 removed, 189 upgraded, 29 unchanged.
+0 major bumps, 3 added, 0 removed, 189 upgraded (12 ⚠️ need extra attention), 29 unchanged.
 
 ### 🆕 Added packages
 

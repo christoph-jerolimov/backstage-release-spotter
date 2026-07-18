@@ -2,7 +2,7 @@
 
 ## Compared to 1.10.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 72 upgraded, 112 unchanged.
+0 major bumps, 0 added, 0 removed, 72 upgraded (1 ⚠️ need extra attention), 112 unchanged.
 
 ### Version bumps
 
@@ -83,7 +83,7 @@
 
 ## Compared to 1.9.1 (previous minor release)
 
-0 major bumps, 2 added, 0 removed, 169 upgraded, 13 unchanged.
+0 major bumps, 2 added, 0 removed, 169 upgraded (7 ⚠️ need extra attention), 13 unchanged.
 
 ### 🆕 Added packages
 

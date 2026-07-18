@@ -20,7 +20,7 @@
 
 ## Compared to 1.28.4 (previous minor release)
 
-0 major bumps, 2 added, 0 removed, 153 upgraded, 19 unchanged.
+0 major bumps, 2 added, 0 removed, 153 upgraded (14 ⚠️ need extra attention), 19 unchanged.
 
 ### 🆕 Added packages
 

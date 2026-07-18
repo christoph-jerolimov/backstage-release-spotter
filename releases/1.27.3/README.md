@@ -12,7 +12,7 @@
 
 ## Compared to 1.26.5 (previous minor release)
 
-0 major bumps, 3 added, 103 removed, 145 upgraded, 22 unchanged.
+0 major bumps, 3 added, 103 removed, 145 upgraded (8 ⚠️ need extra attention), 22 unchanged.
 
 ### 🆕 Added packages
 

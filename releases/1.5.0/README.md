@@ -2,7 +2,7 @@
 
 ## Compared to 1.4.0 (previous minor release)
 
-0 major bumps, 4 added, 0 removed, 139 upgraded, 16 unchanged.
+0 major bumps, 4 added, 0 removed, 139 upgraded (9 ⚠️ need extra attention), 16 unchanged.
 
 ### 🆕 Added packages
 

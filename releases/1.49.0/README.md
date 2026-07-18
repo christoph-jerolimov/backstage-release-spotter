@@ -2,7 +2,7 @@
 
 ## Compared to 1.48.6 (previous minor release)
 
-3 major bumps, 14 added, 1 removed, 176 upgraded, 17 unchanged.
+3 major bumps, 14 added, 1 removed, 176 upgraded (24 ⚠️ need extra attention), 17 unchanged.
 
 ### ⚠️ Major version bumps
 

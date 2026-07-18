@@ -12,7 +12,7 @@
 
 ## Compared to 1.6.0 (previous minor release)
 
-1 major bumps, 0 added, 0 removed, 155 upgraded, 8 unchanged.
+1 major bumps, 0 added, 0 removed, 155 upgraded (11 ⚠️ need extra attention), 8 unchanged.
 
 ### ⚠️ Major version bumps
 

@@ -49,11 +49,11 @@ const cell = (value: string): string => value.replaceAll("|", "\\|");
 const pkg = (name: string): string => `\`${cell(name)}\``;
 
 /**
- * Major/Minor/Patch level of a bump; ⚠️ marks potentially breaking bumps
- * (major, 0.x minor, and 0.0.x patch changes per semver-0 conventions).
+ * Major/Minor/Patch level of a bump; breaking marks bumps that need extra
+ * attention (major, 0.x minor, and 0.0.x patch changes per semver-0 conventions).
  */
-function releaseType(from: string, to: string): string {
-  if (!semver.valid(from) || !semver.valid(to)) return "";
+function bumpLevel(from: string, to: string): { level: string; breaking: boolean } | undefined {
+  if (!semver.valid(from) || !semver.valid(to)) return undefined;
   const diff = semver.diff(from, to);
   const level =
     diff === "major" || diff === "premajor"
@@ -65,17 +65,28 @@ function releaseType(from: string, to: string): string {
     level === "Major" ||
     (level === "Minor" && semver.major(to) === 0) ||
     (level === "Patch" && semver.major(to) === 0 && semver.minor(to) === 0);
-  return breaking ? `${level} ⚠️` : level;
+  return { level, breaking };
+}
+
+function releaseType(from: string, to: string): string {
+  const bump = bumpLevel(from, to);
+  if (bump === undefined) return "";
+  return bump.breaking ? `${bump.level} ⚠️` : bump.level;
 }
 
 function renderSection(baseline: Baseline, current: string, diff: Diff): string {
   const lines: string[] = [];
   lines.push(`## Compared to ${baseline.version} (${baseline.label})`, "");
+  const bumps = [
+    ...diff.majorBumps.map((bump) => ({ ...bump, major: true })),
+    ...diff.otherBumps.map((bump) => ({ ...bump, major: false })),
+  ].sort((a, b) => byCodepoint(a.name, b.name));
+  const needAttention = bumps.filter(({ from, to }) => bumpLevel(from, to)?.breaking).length;
   const summary = [
     `${diff.majorBumps.length} major bumps`,
     `${diff.added.length} added`,
     `${diff.removed.length} removed`,
-    `${diff.majorBumps.length + diff.otherBumps.length} upgraded`,
+    `${bumps.length} upgraded` + (needAttention > 0 ? ` (${needAttention} ⚠️ need extra attention)` : ""),
     `${diff.unchanged} unchanged`,
   ];
   lines.push(summary.join(", ") + ".", "");
@@ -104,10 +115,6 @@ function renderSection(baseline: Baseline, current: string, diff: Diff): string 
     }
     lines.push("");
   }
-  const bumps = [
-    ...diff.majorBumps.map((bump) => ({ ...bump, major: true })),
-    ...diff.otherBumps.map((bump) => ({ ...bump, major: false })),
-  ].sort((a, b) => byCodepoint(a.name, b.name));
   if (bumps.length > 0) {
     lines.push("### Version bumps", "");
     lines.push(`| Package | ${cell(baseline.version)} | ${cell(current)} | Type |`, "| --- | --- | --- | --- |");
