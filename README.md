@@ -52,15 +52,3 @@ The same workflow also reads each package's `package.json` and generates tables 
 | Active packages | [package-descriptions.md](package-descriptions.md) | [package-descriptions.csv](package-descriptions.csv) |
 | Deprecated packages | [package-descriptions-deprecated.md](package-descriptions-deprecated.md) | [package-descriptions-deprecated.csv](package-descriptions-deprecated.csv) |
 | All packages | [package-descriptions-all.md](package-descriptions-all.md) | [package-descriptions-all.csv](package-descriptions-all.csv) |
-
-## Scripts
-
-TypeScript scripts in [`scripts/`](scripts), run with `tsx` (Node 22):
-
-```sh
-npm ci
-git clone --depth 1 https://github.com/backstage/versions.git .upstream/versions
-npm run generate   # copy → readmes → resolutions → tables
-```
-
-The clone location can be overridden with the `UPSTREAM_DIR` environment variable. All output is deterministic: re-running without a new upstream release produces zero changes.
