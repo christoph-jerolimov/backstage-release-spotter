@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 187 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.41.0 | 1.41.1 | Type |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@
 | --- | --- |
 | `@backstage/ui` | 0.6.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.40.2 | 1.41.1 | Type |
 | --- | --- | --- | --- |

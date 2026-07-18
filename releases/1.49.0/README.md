@@ -39,7 +39,7 @@
 | --- | --- |
 | `@backstage/plugin-scaffolder-backend-module-bitbucket` | 0.3.19 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.48.6 | 1.49.0 | Type |
 | --- | --- | --- | --- |

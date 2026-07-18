@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 2 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.33.2 | 1.33.3 | Type |
 | --- | --- | --- | --- |
@@ -65,7 +65,7 @@
 
 ⚠️ Need extra attention: 2 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.33.0 | 1.33.3 | Type |
 | --- | --- | --- | --- |
@@ -125,7 +125,7 @@
 
 ⚠️ Need extra attention: 19 0.x minor, 5 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.32.6 | 1.33.3 | Type |
 | --- | --- | --- | --- |

@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 19 upgraded, 159 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.31.3 | 1.31.4 | Type |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.31.0 | 1.31.4 | Type |
 | --- | --- | --- | --- |
@@ -114,7 +114,7 @@
 | --- | --- |
 | `@backstage/backend-tasks` | 0.6.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.30.4 | 1.31.4 | Type |
 | --- | --- | --- | --- |

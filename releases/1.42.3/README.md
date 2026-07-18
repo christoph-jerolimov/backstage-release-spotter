@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 186 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.42.2 | 1.42.3 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 6 upgraded, 181 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.42.0 | 1.42.3 | Type |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 | --- | --- |
 | `@backstage/canon` | 0.6.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.41.2 | 1.42.3 | Type |
 | --- | --- | --- | --- |

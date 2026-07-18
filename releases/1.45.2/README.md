@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 189 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.45.1 | 1.45.2 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 2 upgraded, 188 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.45.0 | 1.45.2 | Type |
 | --- | --- | --- | --- |
@@ -27,7 +27,7 @@
 
 ⚠️ Need extra attention: 8 0.x minor, 4 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.44.3 | 1.45.2 | Type |
 | --- | --- | --- | --- |

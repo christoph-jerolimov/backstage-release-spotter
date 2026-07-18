@@ -78,7 +78,7 @@ function renderSection(baseline: Baseline, current: string, diff: Diff): string 
     lines.push("");
   }
   if (bumps.length > 0) {
-    lines.push("### Version bumps", "");
+    lines.push("### ⬆️ Version bumps", "");
     lines.push(`| Package | ${cell(baseline.version)} | ${cell(current)} | Type |`, "| --- | --- | --- | --- |");
     for (const { name, from, to, major } of bumps) {
       const version = (value: string): string => (major ? `**${cell(value)}**` : cell(value));

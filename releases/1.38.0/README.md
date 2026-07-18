@@ -15,7 +15,7 @@
 | `@backstage/plugin-gateway-backend` | 1.0.0 |
 | `@backstage/plugin-notifications-backend-module-slack` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.37.1 | 1.38.0 | Type |
 | --- | --- | --- | --- |

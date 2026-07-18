@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 19 upgraded, 158 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.32.5 | 1.32.6 | Type |
 | --- | --- | --- | --- |
@@ -32,7 +32,7 @@
 
 0 added, 0 removed, 59 upgraded, 118 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.32.0 | 1.32.6 | Type |
 | --- | --- | --- | --- |
@@ -108,7 +108,7 @@
 | --- | --- |
 | `@backstage/backend-common` | 0.25.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.31.4 | 1.32.6 | Type |
 | --- | --- | --- | --- |

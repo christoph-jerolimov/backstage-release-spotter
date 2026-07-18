@@ -13,7 +13,7 @@
 | `@backstage/plugin-app-react` | 0.1.0 |
 | `@backstage/plugin-devtools-react` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.46.7 | 1.47.0 | Type |
 | --- | --- | --- | --- |

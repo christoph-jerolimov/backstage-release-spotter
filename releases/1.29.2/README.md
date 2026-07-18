@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 9 upgraded, 165 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.29.1 | 1.29.2 | Type |
 | --- | --- | --- | --- |
@@ -22,7 +22,7 @@
 
 0 added, 0 removed, 10 upgraded, 164 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.29.0 | 1.29.2 | Type |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@
 | `@backstage/plugin-catalog-backend-module-logs` | 0.0.1 |
 | `@backstage/plugin-scaffolder-backend-module-gcp` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.28.4 | 1.29.2 | Type |
 | --- | --- | --- | --- |

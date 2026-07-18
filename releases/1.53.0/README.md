@@ -12,7 +12,7 @@
 | --- | --- |
 | `@backstage/plugin-app-module-user-settings` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.52.1 | 1.53.0 | Type |
 | --- | --- | --- | --- |

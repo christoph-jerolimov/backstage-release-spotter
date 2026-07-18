@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 250 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.22.1 | 1.22.2 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 2 upgraded, 249 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.22.0 | 1.22.2 | Type |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@
 | `@backstage/backend-dynamic-feature-service` | 0.1.0 |
 | `@backstage/plugin-app-visualizer` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.21.1 | 1.22.2 | Type |
 | --- | --- | --- | --- |

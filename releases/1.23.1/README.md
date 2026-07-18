@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 4 upgraded, 259 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.23.0 | 1.23.1 | Type |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@
 | --- | --- |
 | `@backstage/plugin-catalog-backend-module-bitbucket` | 0.2.24 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.22.3 | 1.23.1 | Type |
 | --- | --- | --- | --- |

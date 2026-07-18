@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.50.3 | 1.50.4 | Type |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.50.0 | 1.50.4 | Type |
 | --- | --- | --- | --- |
@@ -48,7 +48,7 @@
 
 ⚠️ Need extra attention: 10 0.x minor, 4 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.49.5 | 1.50.4 | Type |
 | --- | --- | --- | --- |

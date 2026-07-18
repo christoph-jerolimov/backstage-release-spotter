@@ -62,7 +62,8 @@ function manifest(release: string): Map<string, string> {
   return map;
 }
 
-const HEADER = ["Release", "Compared to", "Added", "Removed", "Upgraded", "Unchanged", "Major ⚠️", "0.x Minor ⚠️", "0.0.x Patch ⚠️"];
+const MD_HEADER = ["Release", "Compared to", "Added 🆕", "Removed ❌", "Upgraded ⬆️", "Unchanged", "Major ⚠️", "0.x Minor ⚠️", "0.0.x Patch ⚠️"];
+const CSV_HEADER = ["Release", "Compared to", "Added", "Removed", "Upgraded", "Unchanged", "Major", "0.x Minor", "0.0.x Patch"];
 
 function rowValues(release: string, previous: string | undefined): string[] {
   const label = release === NEXT ? readManifest(NEXT).releaseVersion : release;
@@ -101,15 +102,15 @@ for (const variant of variants) {
       (withNext ? " The `next` release is compared against the latest stable release." : ""),
     "",
   );
-  md.push(`| ${HEADER.map(mdCell).join(" | ")} |`);
-  md.push(`| ${HEADER.map(() => "---").join(" | ")} |`);
+  md.push(`| ${MD_HEADER.map(mdCell).join(" | ")} |`);
+  md.push(`| ${MD_HEADER.map(() => "---").join(" | ")} |`);
   for (const row of rows) {
     md.push(`| ${row.map(mdCell).join(" | ")} |`);
   }
   md.push("");
   writeFileIfChanged(path.join(repoRoot, `${variant.name}.md`), md.join("\n"));
 
-  const csv = [HEADER, ...rows].map((row) => row.map(csvCell).join(",")).join("\n") + "\n";
+  const csv = [CSV_HEADER, ...rows].map((row) => row.map(csvCell).join(",")).join("\n") + "\n";
   writeFileIfChanged(path.join(repoRoot, `${variant.name}.csv`), csv);
 
   console.log(`Generated ${variant.name}.md/.csv (${rows.length} rows)`);

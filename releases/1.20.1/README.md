@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 240 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.20.0 | 1.20.1 | Type |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@
 | `@backstage/plugin-search-backend-module-stack-overflow-collator` | 0.1.0 |
 | `@backstage/plugin-vault-node` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.19.6 | 1.20.1 | Type |
 | --- | --- | --- | --- |

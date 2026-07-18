@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 131 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.0.2 | 1.0.3 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 4 upgraded, 128 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.0.0 | 1.0.3 | Type |
 | --- | --- | --- | --- |

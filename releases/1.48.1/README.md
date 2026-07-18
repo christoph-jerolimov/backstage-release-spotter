@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 193 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.48.0 | 1.48.1 | Type |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@
 | `@backstage/filter-predicates` | 0.1.0 |
 | `@backstage/module-federation-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.47.4 | 1.48.1 | Type |
 | --- | --- | --- | --- |

@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 171 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.28.3 | 1.28.4 | Type |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 
 ⚠️ Need extra attention: 3 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.28.0 | 1.28.4 | Type |
 | --- | --- | --- | --- |
@@ -147,7 +147,7 @@
 | `@backstage/plugin-auth-backend-module-onelogin-provider` | 0.1.2 |
 | `@backstage/plugin-user-settings-common` | 0.0.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.27.7 | 1.28.4 | Type |
 | --- | --- | --- | --- |

@@ -21,7 +21,7 @@
 | `@backstage/plugin-catalog-unprocessed-entities-common` | 0.0.1 |
 | `@backstage/plugin-scaffolder-node-test-utils` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.23.4 | 1.24.0 | Type |
 | --- | --- | --- | --- |

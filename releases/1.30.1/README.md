@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 172 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.30.0 | 1.30.1 | Type |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@
 | --- | --- |
 | `@backstage/plugin-techdocs-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.29.2 | 1.30.1 | Type |
 | --- | --- | --- | --- |

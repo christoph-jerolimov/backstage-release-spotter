@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 189 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.46.3 | 1.46.4 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 5 upgraded, 185 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.46.0 | 1.46.4 | Type |
 | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | --- | --- | --- |
 | `@backstage/plugin-techdocs-addons-test-utils` | **1.1.2** | **2.0.0** |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.45.6 | 1.46.4 | Type |
 | --- | --- | --- | --- |

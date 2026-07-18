@@ -12,7 +12,7 @@
 | --- | --- |
 | `@backstage/canon` | 0.6.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.41.2 | 1.42.0 | Type |
 | --- | --- | --- | --- |

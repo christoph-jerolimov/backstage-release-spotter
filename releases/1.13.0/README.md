@@ -25,7 +25,7 @@
 | `@backstage/plugin-search-backend-module-explore` | 0.1.0 |
 | `@backstage/plugin-search-backend-module-techdocs` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.12.1 | 1.13.0 | Type |
 | --- | --- | --- | --- |

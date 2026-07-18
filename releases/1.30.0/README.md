@@ -12,7 +12,7 @@
 | --- | --- |
 | `@backstage/plugin-techdocs-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.29.2 | 1.30.0 | Type |
 | --- | --- | --- | --- |

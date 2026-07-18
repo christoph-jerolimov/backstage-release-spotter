@@ -24,7 +24,7 @@
 | `@backstage/search-common` | 0.3.4 |
 | `@backstage/techdocs-common` | 0.11.15 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.2.2 | 1.3.0 | Type |
 | --- | --- | --- | --- |

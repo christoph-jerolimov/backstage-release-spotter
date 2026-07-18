@@ -12,7 +12,7 @@
 | --- | --- |
 | `@backstage/connections` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.51.2 | 1.52.0 | Type |
 | --- | --- | --- | --- |

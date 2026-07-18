@@ -18,7 +18,7 @@
 | --- | --- |
 | `@backstage/ui` | 0.6.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.40.2 | 1.41.0 | Type |
 | --- | --- | --- | --- |

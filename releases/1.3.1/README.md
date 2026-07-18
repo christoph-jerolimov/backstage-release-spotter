@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 147 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.3.0 | 1.3.1 | Type |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@
 | `@backstage/search-common` | 0.3.4 |
 | `@backstage/techdocs-common` | 0.11.15 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.2.2 | 1.3.1 | Type |
 | --- | --- | --- | --- |

@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | `@backstage/plugin-dynatrace` | **6.0.0** | **7.0.0** |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.15.0 | 1.16.0 | Type |
 | --- | --- | --- | --- |

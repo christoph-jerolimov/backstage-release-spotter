@@ -13,7 +13,7 @@
 | `@backstage/backend-dynamic-feature-service` | 0.1.0 |
 | `@backstage/plugin-app-visualizer` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.21.1 | 1.22.0 | Type |
 | --- | --- | --- | --- |

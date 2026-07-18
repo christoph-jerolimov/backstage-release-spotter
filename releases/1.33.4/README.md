@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 176 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.33.3 | 1.33.4 | Type |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 
 ⚠️ Need extra attention: 2 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.33.0 | 1.33.4 | Type |
 | --- | --- | --- | --- |
@@ -76,7 +76,7 @@
 
 ⚠️ Need extra attention: 19 0.x minor, 5 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.32.6 | 1.33.4 | Type |
 | --- | --- | --- | --- |

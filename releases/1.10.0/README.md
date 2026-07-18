@@ -13,7 +13,7 @@
 | `@backstage/plugin-scaffolder-backend-module-sentry` | 0.1.0 |
 | `@backstage/plugin-scaffolder-react` | 1.0.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.9.1 | 1.10.0 | Type |
 | --- | --- | --- | --- |

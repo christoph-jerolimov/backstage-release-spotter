@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 4 upgraded, 174 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.35.0 | 1.35.1 | Type |
 | --- | --- | --- | --- |
@@ -25,7 +25,7 @@
 | --- | --- |
 | `@backstage/plugin-proxy-node` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.34.2 | 1.35.1 | Type |
 | --- | --- | --- | --- |

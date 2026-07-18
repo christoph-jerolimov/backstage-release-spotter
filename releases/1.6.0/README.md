@@ -15,7 +15,7 @@
 | `@backstage/plugin-playlist-common` | 0.1.0 |
 | `@backstage/plugin-user-settings-backend` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.5.1 | 1.6.0 | Type |
 | --- | --- | --- | --- |

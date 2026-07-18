@@ -29,7 +29,7 @@
 | --- | --- |
 | `@backstage/backend-tasks` | 0.6.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.30.4 | 1.31.0 | Type |
 | --- | --- | --- | --- |

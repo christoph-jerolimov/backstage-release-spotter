@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 5 upgraded, 216 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.17.4 | 1.17.5 | Type |
 | --- | --- | --- | --- |
@@ -20,7 +20,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.17.0 | 1.17.5 | Type |
 | --- | --- | --- | --- |
@@ -192,7 +192,7 @@
 | `@backstage/plugin-app-node` | 0.1.2 |
 | `@backstage/plugin-catalog-backend-module-gcp` | 0.1.2 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.16.0 | 1.17.5 | Type |
 | --- | --- | --- | --- |

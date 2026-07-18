@@ -20,7 +20,7 @@
 | `@backstage/plugin-octopus-deploy` | 0.1.0 |
 | `@backstage/plugin-stackstorm` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.11.1 | 1.12.0 | Type |
 | --- | --- | --- | --- |

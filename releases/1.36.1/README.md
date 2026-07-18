@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 176 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.36.0 | 1.36.1 | Type |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@
 | --- | --- |
 | `@backstage/canon` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.35.1 | 1.36.1 | Type |
 | --- | --- | --- | --- |

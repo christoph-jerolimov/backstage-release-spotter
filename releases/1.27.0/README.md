@@ -122,7 +122,7 @@
 | `@backstage/plugin-vault-node` | 0.1.11 |
 | `@backstage/plugin-xcmetrics` | 0.2.53 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.26.5 | 1.27.0 | Type |
 | --- | --- | --- | --- |

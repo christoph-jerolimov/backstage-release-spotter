@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 5 upgraded, 204 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.51.0 | 1.51.1 | Type |
 | --- | --- | --- | --- |
@@ -35,7 +35,7 @@
 | `@backstage/plugin-catalog-backend-module-ai-model` | 0.1.0 |
 | `@backstage/plugin-catalog-backend-module-msgraph-incremental` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.50.4 | 1.51.1 | Type |
 | --- | --- | --- | --- |

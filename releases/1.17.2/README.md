@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.17.1 | 1.17.2 | Type |
 | --- | --- | --- | --- |
@@ -170,7 +170,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.17.0 | 1.17.2 | Type |
 | --- | --- | --- | --- |
@@ -342,7 +342,7 @@
 | `@backstage/plugin-app-node` | 0.1.1 |
 | `@backstage/plugin-catalog-backend-module-gcp` | 0.1.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.16.0 | 1.17.2 | Type |
 | --- | --- | --- | --- |

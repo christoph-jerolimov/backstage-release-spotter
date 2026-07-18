@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 134 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.1.0 | 1.1.1 | Type |
 | --- | --- | --- | --- |
@@ -28,7 +28,7 @@
 | `@backstage/plugin-stack-overflow-backend` | 0.1.0 |
 | `@backstage/plugin-techdocs-react` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.0.3 | 1.1.1 | Type |
 | --- | --- | --- | --- |

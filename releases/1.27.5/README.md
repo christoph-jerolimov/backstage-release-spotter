@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 169 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.27.4 | 1.27.5 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 9 upgraded, 161 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.27.0 | 1.27.5 | Type |
 | --- | --- | --- | --- |
@@ -150,7 +150,7 @@
 | `@backstage/plugin-vault-node` | 0.1.11 |
 | `@backstage/plugin-xcmetrics` | 0.2.53 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.26.5 | 1.27.5 | Type |
 | --- | --- | --- | --- |

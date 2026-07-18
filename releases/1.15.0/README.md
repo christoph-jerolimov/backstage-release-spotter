@@ -22,7 +22,7 @@
 | `@backstage/plugin-nomad` | 0.1.0 |
 | `@backstage/plugin-nomad-backend` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.14.2 | 1.15.0 | Type |
 | --- | --- | --- | --- |

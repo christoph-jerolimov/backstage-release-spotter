@@ -15,7 +15,7 @@
 | `@backstage/plugin-github-issues` | 0.1.0 |
 | `@backstage/plugin-sonarqube-backend` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.4.0 | 1.5.0 | Type |
 | --- | --- | --- | --- |

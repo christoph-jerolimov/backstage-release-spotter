@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 9 upgraded, 189 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.11.0 | 1.11.1 | Type |
 | --- | --- | --- | --- |
@@ -49,7 +49,7 @@
 | `@backstage/plugin-microsoft-calendar` | 0.1.0 |
 | `@backstage/plugin-scaffolder-node` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.10.1 | 1.11.1 | Type |
 | --- | --- | --- | --- |

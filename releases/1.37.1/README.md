@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 176 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.37.0 | 1.37.1 | Type |
 | --- | --- | --- | --- |
@@ -25,7 +25,7 @@
 | `@backstage/plugin-search-backend` | **1.8.2** | **2.0.0** |
 | `@backstage/plugin-techdocs-backend` | **1.11.6** | **2.0.0** |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.36.1 | 1.37.1 | Type |
 | --- | --- | --- | --- |

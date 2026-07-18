@@ -31,7 +31,7 @@
 | `@backstage/plugin-microsoft-calendar` | 0.1.0 |
 | `@backstage/plugin-scaffolder-node` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.10.1 | 1.11.0 | Type |
 | --- | --- | --- | --- |

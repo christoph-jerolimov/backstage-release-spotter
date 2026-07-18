@@ -12,7 +12,7 @@
 | --- | --- |
 | `@backstage/backend-common` | 0.25.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.31.4 | 1.32.0 | Type |
 | --- | --- | --- | --- |

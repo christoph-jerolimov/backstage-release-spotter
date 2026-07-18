@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 204 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.49.4 | 1.49.5 | Type |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 
 0 added, 0 removed, 16 upgraded, 191 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.49.0 | 1.49.5 | Type |
 | --- | --- | --- | --- |
@@ -76,7 +76,7 @@
 | --- | --- |
 | `@backstage/plugin-scaffolder-backend-module-bitbucket` | 0.3.19 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.48.6 | 1.49.5 | Type |
 | --- | --- | --- | --- |

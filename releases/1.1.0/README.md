@@ -16,7 +16,7 @@
 | `@backstage/plugin-stack-overflow-backend` | 0.1.0 |
 | `@backstage/plugin-techdocs-react` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.0.3 | 1.1.0 | Type |
 | --- | --- | --- | --- |

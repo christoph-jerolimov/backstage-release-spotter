@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 75 upgraded, 107 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.9.0 | 1.9.1 | Type |
 | --- | --- | --- | --- |
@@ -101,7 +101,7 @@
 | `@backstage/plugin-sonarqube-react` | 0.1.0 |
 | `@backstage/repo-tools` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.8.3 | 1.9.1 | Type |
 | --- | --- | --- | --- |

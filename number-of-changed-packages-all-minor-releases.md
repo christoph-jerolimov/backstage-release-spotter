@@ -2,7 +2,7 @@
 
 **54 releases**, newest to oldest — each row compares a release with the direct previous minor release. Each minor release is represented by the latest patch of its minor line.
 
-| Release | Compared to | Added | Removed | Upgraded | Unchanged | Major ⚠️ | 0.x Minor ⚠️ | 0.0.x Patch ⚠️ |
+| Release | Compared to | Added 🆕 | Removed ❌ | Upgraded ⬆️ | Unchanged | Major ⚠️ | 0.x Minor ⚠️ | 0.0.x Patch ⚠️ |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1.53.0 | 1.52.1 | 1 | 0 | 185 | 25 | 0 | 8 | 3 |
 | 1.52.1 | 1.51.2 | 1 | 0 | 185 | 24 | 0 | 3 | 3 |

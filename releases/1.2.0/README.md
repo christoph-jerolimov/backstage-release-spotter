@@ -24,7 +24,7 @@
 | `@backstage/plugin-techdocs-addons-test-utils` | 1.0.0 |
 | `@backstage/plugin-techdocs-module-addons-contrib` | 1.0.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.1.1 | 1.2.0 | Type |
 | --- | --- | --- | --- |

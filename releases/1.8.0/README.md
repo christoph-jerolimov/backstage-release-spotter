@@ -24,7 +24,7 @@
 | `@backstage/plugin-events-node` | 0.1.0 |
 | `@backstage/plugin-org-react` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.7.2 | 1.8.0 | Type |
 | --- | --- | --- | --- |

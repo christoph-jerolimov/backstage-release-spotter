@@ -28,7 +28,7 @@
 | `@backstage/plugin-catalog-graphql` | 0.4.1 |
 | `@backstage/plugin-graphql-backend` | 0.2.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.20.4 | 1.21.0 | Type |
 | --- | --- | --- | --- |

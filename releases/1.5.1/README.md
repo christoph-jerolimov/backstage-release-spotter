@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 158 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.5.0 | 1.5.1 | Type |
 | --- | --- | --- | --- |
@@ -25,7 +25,7 @@
 | `@backstage/plugin-github-issues` | 0.1.0 |
 | `@backstage/plugin-sonarqube-backend` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.4.0 | 1.5.1 | Type |
 | --- | --- | --- | --- |

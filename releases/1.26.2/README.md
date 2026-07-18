@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 3 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.26.1 | 1.26.2 | Type |
 | --- | --- | --- | --- |
@@ -114,7 +114,7 @@
 
 ⚠️ Need extra attention: 3 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.26.0 | 1.26.2 | Type |
 | --- | --- | --- | --- |
@@ -232,7 +232,7 @@
 | `@backstage/plugin-auth-backend-module-bitbucket-provider` | 0.1.0 |
 | `@backstage/plugin-auth-backend-module-cloudflare-access-provider` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.25.2 | 1.26.2 | Type |
 | --- | --- | --- | --- |

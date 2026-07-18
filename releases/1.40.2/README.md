@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 186 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.40.1 | 1.40.2 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 4 upgraded, 183 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.40.0 | 1.40.2 | Type |
 | --- | --- | --- | --- |
@@ -42,7 +42,7 @@
 | `@backstage/plugin-events-backend-module-kafka` | 0.1.0 |
 | `@backstage/plugin-mcp-actions-backend` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.39.1 | 1.40.2 | Type |
 | --- | --- | --- | --- |

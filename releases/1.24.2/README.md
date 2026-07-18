@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 1 0.x minor, 5 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.24.1 | 1.24.2 | Type |
 | --- | --- | --- | --- |
@@ -241,7 +241,7 @@
 
 ⚠️ Need extra attention: 1 0.x minor, 5 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.24.0 | 1.24.2 | Type |
 | --- | --- | --- | --- |
@@ -491,7 +491,7 @@
 | `@backstage/plugin-catalog-unprocessed-entities-common` | 0.0.1 |
 | `@backstage/plugin-scaffolder-node-test-utils` | 0.1.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.23.4 | 1.24.2 | Type |
 | --- | --- | --- | --- |

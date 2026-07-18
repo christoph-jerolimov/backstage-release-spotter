@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 212 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.14.0 | 1.14.1 | Type |
 | --- | --- | --- | --- |
@@ -31,7 +31,7 @@
 | `@backstage/plugin-devtools-backend` | 0.1.0 |
 | `@backstage/plugin-devtools-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.13.2 | 1.14.1 | Type |
 | --- | --- | --- | --- |

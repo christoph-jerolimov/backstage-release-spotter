@@ -29,7 +29,7 @@
 | `@backstage/plugin-catalog-node` | 1.0.0 |
 | `@backstage/plugin-cost-insights-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.3.1 | 1.4.0 | Type |
 | --- | --- | --- | --- |

@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 12 0.x minor, 6 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.33.6 | 1.34.0 | Type |
 | --- | --- | --- | --- |

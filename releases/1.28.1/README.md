@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 3 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.28.0 | 1.28.1 | Type |
 | --- | --- | --- | --- |
@@ -126,7 +126,7 @@
 | `@backstage/plugin-auth-backend-module-onelogin-provider` | 0.1.1 |
 | `@backstage/plugin-user-settings-common` | 0.0.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.27.7 | 1.28.1 | Type |
 | --- | --- | --- | --- |

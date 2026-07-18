@@ -12,7 +12,7 @@
 | --- | --- |
 | `@backstage/plugin-proxy-node` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.34.2 | 1.35.0 | Type |
 | --- | --- | --- | --- |

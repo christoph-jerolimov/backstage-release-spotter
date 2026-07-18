@@ -13,7 +13,7 @@
 | `@backstage/plugin-auth-backend-module-onelogin-provider` | 0.1.0 |
 | `@backstage/plugin-user-settings-common` | 0.0.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.27.7 | 1.28.0 | Type |
 | --- | --- | --- | --- |

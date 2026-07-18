@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 6 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.23.2 | 1.23.3 | Type |
 | --- | --- | --- | --- |
@@ -134,7 +134,7 @@
 
 ⚠️ Need extra attention: 6 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.23.0 | 1.23.3 | Type |
 | --- | --- | --- | --- |
@@ -292,7 +292,7 @@
 | --- | --- |
 | `@backstage/plugin-catalog-backend-module-bitbucket` | 0.2.24 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.22.3 | 1.23.3 | Type |
 | --- | --- | --- | --- |

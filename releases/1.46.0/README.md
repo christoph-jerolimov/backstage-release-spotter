@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | `@backstage/plugin-techdocs-addons-test-utils` | **1.1.2** | **2.0.0** |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.45.6 | 1.46.0 | Type |
 | --- | --- | --- | --- |

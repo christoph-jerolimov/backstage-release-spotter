@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 200 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.12.0 | 1.12.1 | Type |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@
 | `@backstage/plugin-octopus-deploy` | 0.1.0 |
 | `@backstage/plugin-stackstorm` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.11.1 | 1.12.1 | Type |
 | --- | --- | --- | --- |

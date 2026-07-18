@@ -13,7 +13,7 @@
 | `@backstage/plugin-catalog-backend-module-logs` | 0.0.1 |
 | `@backstage/plugin-scaffolder-backend-module-gcp` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.28.4 | 1.29.0 | Type |
 | --- | --- | --- | --- |

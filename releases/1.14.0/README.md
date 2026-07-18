@@ -21,7 +21,7 @@
 | `@backstage/plugin-devtools-backend` | 0.1.0 |
 | `@backstage/plugin-devtools-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.13.2 | 1.14.0 | Type |
 | --- | --- | --- | --- |

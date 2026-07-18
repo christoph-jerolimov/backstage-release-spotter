@@ -17,7 +17,7 @@
 | `@backstage/plugin-sonarqube-react` | 0.1.0 |
 | `@backstage/repo-tools` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.8.3 | 1.9.0 | Type |
 | --- | --- | --- | --- |

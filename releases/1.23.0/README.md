@@ -36,7 +36,7 @@
 | --- | --- |
 | `@backstage/plugin-catalog-backend-module-bitbucket` | 0.2.24 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.22.3 | 1.23.0 | Type |
 | --- | --- | --- | --- |

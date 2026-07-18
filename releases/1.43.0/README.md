@@ -13,7 +13,7 @@
 | `@backstage/plugin-auth` | 0.1.0 |
 | `@backstage/plugin-auth-backend-module-openshift-provider` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.42.5 | 1.43.0 | Type |
 | --- | --- | --- | --- |

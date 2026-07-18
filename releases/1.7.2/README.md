@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 162 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.7.1 | 1.7.2 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 2 upgraded, 161 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.7.0 | 1.7.2 | Type |
 | --- | --- | --- | --- |
@@ -33,7 +33,7 @@
 | --- | --- | --- |
 | `@backstage/plugin-dynatrace` | **0.2.0** | **1.0.0** |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.6.0 | 1.7.2 | Type |
 | --- | --- | --- | --- |

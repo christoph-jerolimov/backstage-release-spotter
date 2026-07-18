@@ -19,7 +19,7 @@
 | `@backstage/plugin-events-backend-module-kafka` | 0.1.0 |
 | `@backstage/plugin-mcp-actions-backend` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.39.1 | 1.40.0 | Type |
 | --- | --- | --- | --- |

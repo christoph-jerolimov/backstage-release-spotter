@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 246 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.21.0 | 1.21.1 | Type |
 | --- | --- | --- | --- |
@@ -40,7 +40,7 @@
 | `@backstage/plugin-catalog-graphql` | 0.4.1 |
 | `@backstage/plugin-graphql-backend` | 0.2.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.20.4 | 1.21.1 | Type |
 | --- | --- | --- | --- |

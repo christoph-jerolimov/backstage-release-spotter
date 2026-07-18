@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 186 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.43.1 | 1.43.2 | Type |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@
 
 0 added, 0 removed, 4 upgraded, 185 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.43.0 | 1.43.2 | Type |
 | --- | --- | --- | --- |
@@ -38,7 +38,7 @@
 | `@backstage/plugin-auth` | 0.1.0 |
 | `@backstage/plugin-auth-backend-module-openshift-provider` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.42.5 | 1.43.2 | Type |
 | --- | --- | --- | --- |

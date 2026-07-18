@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.10.0 | 1.10.1 | Type |
 | --- | --- | --- | --- |
@@ -96,7 +96,7 @@
 | `@backstage/plugin-scaffolder-backend-module-sentry` | 0.1.1 |
 | `@backstage/plugin-scaffolder-react` | 1.0.1 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.9.1 | 1.10.1 | Type |
 | --- | --- | --- | --- |

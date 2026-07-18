@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 184 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.39.0 | 1.39.1 | Type |
 | --- | --- | --- | --- |
@@ -29,7 +29,7 @@
 | `@backstage/plugin-catalog-backend-module-gitea` | 0.1.0 |
 | `@backstage/plugin-events-backend-module-google-pubsub` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.38.1 | 1.39.1 | Type |
 | --- | --- | --- | --- |

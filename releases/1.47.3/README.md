@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 1 upgraded, 191 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.47.2 | 1.47.3 | Type |
 | --- | --- | --- | --- |
@@ -14,7 +14,7 @@
 
 0 added, 0 removed, 49 upgraded, 143 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.47.0 | 1.47.3 | Type |
 | --- | --- | --- | --- |
@@ -81,7 +81,7 @@
 | `@backstage/plugin-app-react` | 0.1.0 |
 | `@backstage/plugin-devtools-react` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.46.7 | 1.47.3 | Type |
 | --- | --- | --- | --- |

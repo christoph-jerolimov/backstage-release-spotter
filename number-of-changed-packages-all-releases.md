@@ -2,7 +2,7 @@
 
 **202 releases**, newest to oldest — each row compares a release with the direct previous release.
 
-| Release | Compared to | Added | Removed | Upgraded | Unchanged | Major ⚠️ | 0.x Minor ⚠️ | 0.0.x Patch ⚠️ |
+| Release | Compared to | Added 🆕 | Removed ❌ | Upgraded ⬆️ | Unchanged | Major ⚠️ | 0.x Minor ⚠️ | 0.0.x Patch ⚠️ |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1.53.0 | 1.52.1 | 1 | 0 | 185 | 25 | 0 | 8 | 3 |
 | 1.52.1 | 1.52.0 | 0 | 0 | 3 | 207 | 0 | 0 | 0 |

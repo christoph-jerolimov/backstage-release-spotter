@@ -6,7 +6,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.30.2 | 1.30.3 | Type |
 | --- | --- | --- | --- |
@@ -27,7 +27,7 @@
 
 ⚠️ Need extra attention: 1 0.0.x patch.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.30.0 | 1.30.3 | Type |
 | --- | --- | --- | --- |
@@ -57,7 +57,7 @@
 | --- | --- |
 | `@backstage/plugin-techdocs-common` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.29.2 | 1.30.3 | Type |
 | --- | --- | --- | --- |

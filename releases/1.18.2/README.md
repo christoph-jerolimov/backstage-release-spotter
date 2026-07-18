@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 5 upgraded, 226 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.18.1 | 1.18.2 | Type |
 | --- | --- | --- | --- |
@@ -18,7 +18,7 @@
 
 0 added, 0 removed, 6 upgraded, 225 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.18.0 | 1.18.2 | Type |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@
 | `@backstage/plugin-opencost` | 0.2.0 |
 | `@backstage/plugin-permission-backend-module-allow-all-policy` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.17.5 | 1.18.2 | Type |
 | --- | --- | --- | --- |

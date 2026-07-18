@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 10 upgraded, 228 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.19.1 | 1.19.2 | Type |
 | --- | --- | --- | --- |
@@ -23,7 +23,7 @@
 
 0 added, 0 removed, 11 upgraded, 227 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.19.0 | 1.19.2 | Type |
 | --- | --- | --- | --- |
@@ -57,7 +57,7 @@
 | `@backstage/plugin-kubernetes-node` | 0.1.0 |
 | `@backstage/plugin-kubernetes-react` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.18.5 | 1.19.2 | Type |
 | --- | --- | --- | --- |

@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 187 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.44.0 | 1.44.1 | Type |
 | --- | --- | --- | --- |
@@ -30,7 +30,7 @@
 | --- | --- |
 | `@backstage/plugin-mui-to-bui` | 0.2.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.43.4 | 1.44.1 | Type |
 | --- | --- | --- | --- |

@@ -4,7 +4,7 @@
 
 0 added, 0 removed, 3 upgraded, 207 unchanged.
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.52.0 | 1.52.1 | Type |
 | --- | --- | --- | --- |
@@ -24,7 +24,7 @@
 | --- | --- |
 | `@backstage/connections` | 0.1.0 |
 
-### Version bumps
+### ⬆️ Version bumps
 
 | Package | 1.51.2 | 1.52.1 | Type |
 | --- | --- | --- | --- |
