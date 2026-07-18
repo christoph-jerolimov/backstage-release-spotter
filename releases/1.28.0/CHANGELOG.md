@@ -10,6 +10,7 @@ Changes between 1.27.7 and 1.28.0 — 159 changed and 2 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 8 packages
 - [Other minor version bumps](#other-minor-version-bumps): 4 packages
 - [Other patch version bumps](#other-patch-version-bumps): 117 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 9 packages
 
 ## Table of contents
 
@@ -171,6 +172,7 @@ Changes between 1.27.7 and 1.28.0 — 159 changed and 2 added packages.
   - [`@backstage/repo-tools` (0.9.0 → 0.9.1)](#backstagerepo-tools-090--091)
   - [`@backstage/theme` (0.5.5 → 0.5.6)](#backstagetheme-055--056)
   - [`@techdocs/cli` (1.8.11 → 1.8.12)](#techdocscli-1811--1812)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2016,4 +2018,14 @@ Changes between 1.27.7 and 1.28.0 — 159 changed and 2 added packages.
 
 - 2110d76: Removed `dockerode` dependency.
 
-_Excluded dependency updates for packages: `@backstage/app-defaults`, `@backstage/backend-openapi-utils`, `@backstage/codemods`, `@backstage/config-loader`, `@backstage/dev-utils`, `@backstage/frontend-app-api`, `@backstage/frontend-plugin-api`, `@backstage/frontend-test-utils`, `@backstage/test-utils`._
+## Excluded dependency updates
+
+- `@backstage/app-defaults` (1.5.5 → 1.5.6)
+- `@backstage/backend-openapi-utils` (0.1.11 → 0.1.12)
+- `@backstage/codemods` (0.1.48 → 0.1.49)
+- `@backstage/config-loader` (1.8.0 → 1.8.1)
+- `@backstage/dev-utils` (1.0.32 → 1.0.33)
+- `@backstage/frontend-app-api` (0.7.0 → 0.7.1)
+- `@backstage/frontend-plugin-api` (0.6.5 → 0.6.6)
+- `@backstage/frontend-test-utils` (0.1.7 → 0.1.8)
+- `@backstage/test-utils` (1.5.5 → 1.5.6)

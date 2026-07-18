@@ -10,6 +10,7 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 - [0.x minor version bumps](#0x-minor-version-bumps): 9 packages
 - [Other minor version bumps](#other-minor-version-bumps): 12 packages
 - [Patch version bumps](#patch-version-bumps): 68 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 66 packages
 
 ## Table of contents
 
@@ -134,6 +135,7 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
   - [`@backstage/repo-tools` (0.1.1 → 0.1.2)](#backstagerepo-tools-011--012)
   - [`@backstage/theme` (0.2.16 → 0.2.17)](#backstagetheme-0216--0217)
   - [`@techdocs/cli` (1.3.1 → 1.3.2)](#techdocscli-131--132)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1511,4 +1513,71 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 - 6e0b6a0d50: Fixed publish command missing awsBucketRootPath option.
   Fixed publish command having the gcsBucketRootPath option misconfigured, previously returning a boolean vs a string.
 
-_Excluded dependency updates for packages: `@backstage/backend-tasks`, `@backstage/catalog-client`, `@backstage/dev-utils`, `@backstage/integration-react`, `@backstage/plugin-adr-common`, `@backstage/plugin-airbrake-backend`, `@backstage/plugin-auth-node`, `@backstage/plugin-badges`, `@backstage/plugin-badges-backend`, `@backstage/plugin-bazaar`, `@backstage/plugin-catalog-backend-module-bitbucket-cloud`, `@backstage/plugin-catalog-backend-module-bitbucket-server`, `@backstage/plugin-catalog-backend-module-gerrit`, `@backstage/plugin-catalog-backend-module-ldap`, `@backstage/plugin-catalog-backend-module-openapi`, `@backstage/plugin-catalog-common`, `@backstage/plugin-catalog-graphql`, `@backstage/plugin-catalog-import`, `@backstage/plugin-catalog-node`, `@backstage/plugin-cicd-statistics-module-gitlab`, `@backstage/plugin-cloudbuild`, `@backstage/plugin-code-climate`, `@backstage/plugin-config-schema`, `@backstage/plugin-events-backend-module-aws-sqs`, `@backstage/plugin-events-backend-module-azure`, `@backstage/plugin-events-backend-module-bitbucket-cloud`, `@backstage/plugin-events-backend-module-gerrit`, `@backstage/plugin-events-backend-module-github`, `@backstage/plugin-events-backend-module-gitlab`, `@backstage/plugin-events-backend-test-utils`, `@backstage/plugin-explore-backend`, `@backstage/plugin-explore-react`, `@backstage/plugin-firehydrant`, `@backstage/plugin-fossa`, `@backstage/plugin-gcalendar`, `@backstage/plugin-gcp-projects`, `@backstage/plugin-github-actions`, `@backstage/plugin-github-deployments`, `@backstage/plugin-github-pull-requests-board`, `@backstage/plugin-gitops-profiles`, `@backstage/plugin-gocd`, `@backstage/plugin-graphiql`, `@backstage/plugin-graphql-backend`, `@backstage/plugin-jenkins`, `@backstage/plugin-jenkins-backend`, `@backstage/plugin-jenkins-common`, `@backstage/plugin-kafka`, `@backstage/plugin-newrelic`, `@backstage/plugin-newrelic-dashboard`, `@backstage/plugin-periskop`, `@backstage/plugin-permission-backend`, `@backstage/plugin-permission-node`, `@backstage/plugin-permission-react`, `@backstage/plugin-rollbar`, `@backstage/plugin-rollbar-backend`, `@backstage/plugin-scaffolder-common`, `@backstage/plugin-search-backend-module-pg`, `@backstage/plugin-search-backend-node`, `@backstage/plugin-sonarqube-backend`, `@backstage/plugin-sonarqube-react`, `@backstage/plugin-stack-overflow`, `@backstage/plugin-stack-overflow-backend`, `@backstage/plugin-techdocs-react`, `@backstage/plugin-todo`, `@backstage/plugin-todo-backend`, `@backstage/test-utils`._
+## Excluded dependency updates
+
+- `@backstage/backend-tasks` (0.4.2 → 0.4.3)
+- `@backstage/catalog-client` (1.3.0 → 1.3.1)
+- `@backstage/dev-utils` (1.0.11 → 1.0.12)
+- `@backstage/integration-react` (1.1.9 → 1.1.10)
+- `@backstage/plugin-adr-common` (0.2.5 → 0.2.6)
+- `@backstage/plugin-airbrake-backend` (0.2.14 → 0.2.15)
+- `@backstage/plugin-auth-node` (0.2.10 → 0.2.11)
+- `@backstage/plugin-badges` (0.2.38 → 0.2.39)
+- `@backstage/plugin-badges-backend` (0.1.35 → 0.1.36)
+- `@backstage/plugin-bazaar` (0.2.3 → 0.2.4)
+- `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.8 → 0.1.9)
+- `@backstage/plugin-catalog-backend-module-bitbucket-server` (0.1.6 → 0.1.7)
+- `@backstage/plugin-catalog-backend-module-gerrit` (0.1.9 → 0.1.10)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.5.8 → 0.5.9)
+- `@backstage/plugin-catalog-backend-module-openapi` (0.1.7 → 0.1.8)
+- `@backstage/plugin-catalog-common` (1.0.10 → 1.0.11)
+- `@backstage/plugin-catalog-graphql` (0.3.17 → 0.3.18)
+- `@backstage/plugin-catalog-import` (0.9.4 → 0.9.5)
+- `@backstage/plugin-catalog-node` (1.3.2 → 1.3.3)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.10 → 0.1.11)
+- `@backstage/plugin-cloudbuild` (0.3.14 → 0.3.15)
+- `@backstage/plugin-code-climate` (0.1.14 → 0.1.15)
+- `@backstage/plugin-config-schema` (0.1.37 → 0.1.38)
+- `@backstage/plugin-events-backend-module-aws-sqs` (0.1.3 → 0.1.4)
+- `@backstage/plugin-events-backend-module-azure` (0.1.3 → 0.1.4)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.1.3 → 0.1.4)
+- `@backstage/plugin-events-backend-module-gerrit` (0.1.3 → 0.1.4)
+- `@backstage/plugin-events-backend-module-github` (0.1.3 → 0.1.4)
+- `@backstage/plugin-events-backend-module-gitlab` (0.1.3 → 0.1.4)
+- `@backstage/plugin-events-backend-test-utils` (0.1.3 → 0.1.4)
+- `@backstage/plugin-explore-backend` (0.0.3 → 0.0.4)
+- `@backstage/plugin-explore-react` (0.0.25 → 0.0.26)
+- `@backstage/plugin-firehydrant` (0.1.31 → 0.1.32)
+- `@backstage/plugin-fossa` (0.2.46 → 0.2.47)
+- `@backstage/plugin-gcalendar` (0.3.10 → 0.3.11)
+- `@backstage/plugin-gcp-projects` (0.3.33 → 0.3.34)
+- `@backstage/plugin-github-actions` (0.5.14 → 0.5.15)
+- `@backstage/plugin-github-deployments` (0.1.45 → 0.1.46)
+- `@backstage/plugin-github-pull-requests-board` (0.1.8 → 0.1.9)
+- `@backstage/plugin-gitops-profiles` (0.3.32 → 0.3.33)
+- `@backstage/plugin-gocd` (0.1.20 → 0.1.21)
+- `@backstage/plugin-graphiql` (0.2.46 → 0.2.47)
+- `@backstage/plugin-graphql-backend` (0.1.31 → 0.1.32)
+- `@backstage/plugin-jenkins` (0.7.13 → 0.7.14)
+- `@backstage/plugin-jenkins-backend` (0.1.31 → 0.1.32)
+- `@backstage/plugin-jenkins-common` (0.1.12 → 0.1.13)
+- `@backstage/plugin-kafka` (0.3.14 → 0.3.15)
+- `@backstage/plugin-newrelic` (0.3.32 → 0.3.33)
+- `@backstage/plugin-newrelic-dashboard` (0.2.7 → 0.2.8)
+- `@backstage/plugin-periskop` (0.1.12 → 0.1.13)
+- `@backstage/plugin-permission-backend` (0.5.16 → 0.5.17)
+- `@backstage/plugin-permission-node` (0.7.4 → 0.7.5)
+- `@backstage/plugin-permission-react` (0.4.9 → 0.4.10)
+- `@backstage/plugin-rollbar` (0.4.14 → 0.4.15)
+- `@backstage/plugin-rollbar-backend` (0.1.38 → 0.1.39)
+- `@backstage/plugin-scaffolder-common` (1.2.4 → 1.2.5)
+- `@backstage/plugin-search-backend-module-pg` (0.5.2 → 0.5.3)
+- `@backstage/plugin-search-backend-node` (1.1.2 → 1.1.3)
+- `@backstage/plugin-sonarqube-backend` (0.1.6 → 0.1.7)
+- `@backstage/plugin-sonarqube-react` (0.1.1 → 0.1.2)
+- `@backstage/plugin-stack-overflow` (0.1.10 → 0.1.11)
+- `@backstage/plugin-stack-overflow-backend` (0.1.10 → 0.1.11)
+- `@backstage/plugin-techdocs-react` (1.1.2 → 1.1.3)
+- `@backstage/plugin-todo` (0.2.16 → 0.2.17)
+- `@backstage/plugin-todo-backend` (0.1.38 → 0.1.39)
+- `@backstage/test-utils` (1.2.4 → 1.2.5)

@@ -170,11 +170,11 @@ export function buildChangelog(
   // stay a dedicated first group so they never drown in a large document).
   const NEWLY_ADDED = 0, BREAKING = 1, MAJOR = 2, ZERO_MINOR = 3, ZERO_PATCH = 4, MINOR = 5, PATCH = 6;
   const groups: { name: string; label: string; content: string[] }[][] = Array.from({ length: 7 }, () => []);
-  const excluded: string[] = [];
+  const excluded: { name: string; label: string }[] = [];
   for (const { name, from, to, label } of candidates) {
     const sections = sectionsInRange(name, from, to, mode);
     if (sections.kind === "filtered") {
-      excluded.push(name);
+      excluded.push({ name, label });
       continue;
     }
     const entry = { name, label, content: sections.lines };
@@ -196,6 +196,7 @@ export function buildChangelog(
     }
   }
   for (const group of groups) group.sort((a, b) => byCodepoint(a.name, b.name));
+  excluded.sort((a, b) => byCodepoint(a.name, b.name));
 
   const titles = [
     "Newly added packages",
@@ -216,11 +217,16 @@ export function buildChangelog(
     "",
   );
 
+  const EXCLUDED_TITLE = "Excluded dependency updates";
+  const count = (length: number): string => `${length} ${length === 1 ? "package" : "packages"}`;
   const nonEmpty = groups.map((entries, index) => ({ entries, title: titles[index]! })).filter(({ entries }) => entries.length > 0);
-  if (nonEmpty.length > 0) {
+  if (nonEmpty.length > 0 || excluded.length > 0) {
     lines.push("## Summary", "");
     for (const { entries, title } of nonEmpty) {
-      lines.push(`- [${title}](#${slug(title)}): ${entries.length} ${entries.length === 1 ? "package" : "packages"}`);
+      lines.push(`- [${title}](#${slug(title)}): ${count(entries.length)}`);
+    }
+    if (excluded.length > 0) {
+      lines.push(`- [${EXCLUDED_TITLE}](#${slug(EXCLUDED_TITLE)}): ${count(excluded.length)}`);
     }
     lines.push("", "## Table of contents", "");
     for (const { entries, title } of nonEmpty) {
@@ -229,6 +235,9 @@ export function buildChangelog(
         const heading = packageHeading(entry);
         lines.push(`  - [${heading}](#${slug(heading)})`);
       }
+    }
+    if (excluded.length > 0) {
+      lines.push(`- [${EXCLUDED_TITLE}](#${slug(EXCLUDED_TITLE)})`);
     }
     lines.push("");
   }
@@ -242,10 +251,11 @@ export function buildChangelog(
   }
 
   if (excluded.length > 0) {
-    lines.push(
-      `_Excluded dependency updates for packages: ${excluded.map((name) => `\`${name}\``).join(", ")}._`,
-      "",
-    );
+    lines.push(`## ${EXCLUDED_TITLE}`, "");
+    for (const { name, label } of excluded) {
+      lines.push(`- \`${name}\` (${label})`);
+    }
+    lines.push("");
   }
   return trimBlankEdges(lines).join("\n") + "\n";
 }

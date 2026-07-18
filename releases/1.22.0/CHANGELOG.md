@@ -10,6 +10,7 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 5 packages
 - [Other minor version bumps](#other-minor-version-bumps): 1 package
 - [Other patch version bumps](#other-patch-version-bumps): 167 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 50 packages
 
 ## Table of contents
 
@@ -197,6 +198,7 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-vault` (0.1.23 → 0.1.24)](#backstageplugin-vault-0123--0124)
   - [`@backstage/plugin-xcmetrics` (0.2.46 → 0.2.47)](#backstageplugin-xcmetrics-0246--0247)
   - [`@backstage/repo-tools` (0.5.1 → 0.5.2)](#backstagerepo-tools-051--052)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1733,4 +1735,55 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 - 883782e: Updated the OpenAPI template to export the `TypedResponse` interface so that client code can leverage it
 - 7acbb5a: Removed `mock-fs` dev dependency.
 
-_Excluded dependency updates for packages: `@backstage/app-defaults`, `@backstage/backend-tasks`, `@backstage/backend-test-utils`, `@backstage/core-app-api`, `@backstage/dev-utils`, `@backstage/integration-react`, `@backstage/plugin-adr-common`, `@backstage/plugin-app-node`, `@backstage/plugin-auth-node`, `@backstage/plugin-catalog-backend-module-bitbucket-cloud`, `@backstage/plugin-catalog-backend-module-bitbucket-server`, `@backstage/plugin-catalog-backend-module-gcp`, `@backstage/plugin-catalog-backend-module-github`, `@backstage/plugin-catalog-backend-module-github-org`, `@backstage/plugin-catalog-backend-module-gitlab`, `@backstage/plugin-catalog-backend-module-incremental-ingestion`, `@backstage/plugin-catalog-backend-module-ldap`, `@backstage/plugin-catalog-backend-module-msgraph`, `@backstage/plugin-catalog-backend-module-puppetdb`, `@backstage/plugin-catalog-backend-module-unprocessed`, `@backstage/plugin-catalog-common`, `@backstage/plugin-catalog-import`, `@backstage/plugin-cicd-statistics`, `@backstage/plugin-cicd-statistics-module-gitlab`, `@backstage/plugin-devtools-common`, `@backstage/plugin-events-backend-test-utils`, `@backstage/plugin-events-node`, `@backstage/plugin-jenkins-common`, `@backstage/plugin-kubernetes-backend`, `@backstage/plugin-kubernetes-node`, `@backstage/plugin-lighthouse-backend`, `@backstage/plugin-playlist-common`, `@backstage/plugin-proxy-backend`, `@backstage/plugin-rollbar-backend`, `@backstage/plugin-scaffolder-backend-module-gerrit`, `@backstage/plugin-scaffolder-backend-module-rails`, `@backstage/plugin-scaffolder-backend-module-sentry`, `@backstage/plugin-scaffolder-node`, `@backstage/plugin-search-backend-module-elasticsearch`, `@backstage/plugin-search-backend-module-pg`, `@backstage/plugin-search-backend-node`, `@backstage/plugin-search-common`, `@backstage/plugin-search-react`, `@backstage/plugin-sonarqube-react`, `@backstage/plugin-tech-insights-backend`, `@backstage/plugin-techdocs-node`, `@backstage/plugin-vault-backend`, `@backstage/plugin-vault-node`, `@backstage/test-utils`, `@techdocs/cli`._
+## Excluded dependency updates
+
+- `@backstage/app-defaults` (1.4.6 → 1.4.7)
+- `@backstage/backend-tasks` (0.5.13 → 0.5.14)
+- `@backstage/backend-test-utils` (0.2.9 → 0.2.10)
+- `@backstage/core-app-api` (1.11.2 → 1.11.3)
+- `@backstage/dev-utils` (1.0.25 → 1.0.26)
+- `@backstage/integration-react` (1.1.22 → 1.1.23)
+- `@backstage/plugin-adr-common` (0.2.18 → 0.2.19)
+- `@backstage/plugin-app-node` (0.1.8 → 0.1.9)
+- `@backstage/plugin-auth-node` (0.4.2 → 0.4.3)
+- `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.23 → 0.1.24)
+- `@backstage/plugin-catalog-backend-module-bitbucket-server` (0.1.21 → 0.1.22)
+- `@backstage/plugin-catalog-backend-module-gcp` (0.1.8 → 0.1.9)
+- `@backstage/plugin-catalog-backend-module-github` (0.4.6 → 0.4.7)
+- `@backstage/plugin-catalog-backend-module-github-org` (0.1.2 → 0.1.3)
+- `@backstage/plugin-catalog-backend-module-gitlab` (0.3.5 → 0.3.6)
+- `@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.4.12 → 0.4.13)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.5.23 → 0.5.24)
+- `@backstage/plugin-catalog-backend-module-msgraph` (0.5.15 → 0.5.16)
+- `@backstage/plugin-catalog-backend-module-puppetdb` (0.1.13 → 0.1.14)
+- `@backstage/plugin-catalog-backend-module-unprocessed` (0.3.5 → 0.3.6)
+- `@backstage/plugin-catalog-common` (1.0.19 → 1.0.20)
+- `@backstage/plugin-catalog-import` (0.10.4 → 0.10.5)
+- `@backstage/plugin-cicd-statistics` (0.1.30 → 0.1.31)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.24 → 0.1.25)
+- `@backstage/plugin-devtools-common` (0.1.7 → 0.1.8)
+- `@backstage/plugin-events-backend-test-utils` (0.1.18 → 0.1.19)
+- `@backstage/plugin-events-node` (0.2.17 → 0.2.18)
+- `@backstage/plugin-jenkins-common` (0.1.22 → 0.1.23)
+- `@backstage/plugin-kubernetes-backend` (0.14.0 → 0.14.1)
+- `@backstage/plugin-kubernetes-node` (0.1.2 → 0.1.3)
+- `@backstage/plugin-lighthouse-backend` (0.4.0 → 0.4.1)
+- `@backstage/plugin-playlist-common` (0.1.13 → 0.1.14)
+- `@backstage/plugin-proxy-backend` (0.4.6 → 0.4.7)
+- `@backstage/plugin-rollbar-backend` (0.1.53 → 0.1.54)
+- `@backstage/plugin-scaffolder-backend-module-gerrit` (0.1.0 → 0.1.1)
+- `@backstage/plugin-scaffolder-backend-module-rails` (0.4.25 → 0.4.26)
+- `@backstage/plugin-scaffolder-backend-module-sentry` (0.1.16 → 0.1.17)
+- `@backstage/plugin-scaffolder-node` (0.2.9 → 0.2.10)
+- `@backstage/plugin-search-backend-module-elasticsearch` (1.3.11 → 1.3.12)
+- `@backstage/plugin-search-backend-module-pg` (0.5.17 → 0.5.18)
+- `@backstage/plugin-search-backend-node` (1.2.12 → 1.2.13)
+- `@backstage/plugin-search-common` (1.2.9 → 1.2.10)
+- `@backstage/plugin-search-react` (1.7.4 → 1.7.5)
+- `@backstage/plugin-sonarqube-react` (0.1.11 → 0.1.12)
+- `@backstage/plugin-tech-insights-backend` (0.5.22 → 0.5.23)
+- `@backstage/plugin-techdocs-node` (1.11.0 → 1.11.1)
+- `@backstage/plugin-vault-backend` (0.4.1 → 0.4.2)
+- `@backstage/plugin-vault-node` (0.1.1 → 0.1.2)
+- `@backstage/test-utils` (1.4.6 → 1.4.7)
+- `@techdocs/cli` (1.8.0 → 1.8.1)

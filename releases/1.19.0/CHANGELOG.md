@@ -10,6 +10,7 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
 - [Other minor version bumps](#other-minor-version-bumps): 9 packages
 - [Other patch version bumps](#other-patch-version-bumps): 125 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 70 packages
 
 ## Table of contents
 
@@ -177,6 +178,7 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   - [`@backstage/test-utils` (1.4.3 → 1.4.4)](#backstagetest-utils-143--144)
   - [`@backstage/theme` (0.4.2 → 0.4.3)](#backstagetheme-042--043)
   - [`@backstage/version-bridge` (1.0.5 → 1.0.6)](#backstageversion-bridge-105--106)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1883,4 +1885,75 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 
 - 9a1fce352e: Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
 
-_Excluded dependency updates for packages: `@backstage/backend-defaults`, `@backstage/backend-plugin-api`, `@backstage/catalog-client`, `@backstage/cli-node`, `@backstage/config`, `@backstage/integration-aws-node`, `@backstage/plugin-adr-backend`, `@backstage/plugin-adr-common`, `@backstage/plugin-airbrake-backend`, `@backstage/plugin-app-backend`, `@backstage/plugin-app-node`, `@backstage/plugin-auth-backend-module-gitlab-provider`, `@backstage/plugin-auth-backend-module-google-provider`, `@backstage/plugin-auth-backend-module-oauth2-provider`, `@backstage/plugin-azure-devops-backend`, `@backstage/plugin-azure-sites-backend`, `@backstage/plugin-bazaar-backend`, `@backstage/plugin-bitbucket-cloud-common`, `@backstage/plugin-catalog-backend-module-bitbucket`, `@backstage/plugin-catalog-backend-module-gcp`, `@backstage/plugin-catalog-backend-module-openapi`, `@backstage/plugin-catalog-backend-module-scaffolder-entity-model`, `@backstage/plugin-catalog-backend-module-unprocessed`, `@backstage/plugin-catalog-common`, `@backstage/plugin-cicd-statistics-module-gitlab`, `@backstage/plugin-devtools-backend`, `@backstage/plugin-devtools-common`, `@backstage/plugin-entity-feedback-backend`, `@backstage/plugin-events-backend`, `@backstage/plugin-events-backend-module-aws-sqs`, `@backstage/plugin-events-backend-module-azure`, `@backstage/plugin-events-backend-module-bitbucket-cloud`, `@backstage/plugin-events-backend-module-gerrit`, `@backstage/plugin-events-backend-module-github`, `@backstage/plugin-events-backend-module-gitlab`, `@backstage/plugin-events-backend-test-utils`, `@backstage/plugin-events-node`, `@backstage/plugin-explore-backend`, `@backstage/plugin-jenkins-common`, `@backstage/plugin-kafka-backend`, `@backstage/plugin-lighthouse-backend`, `@backstage/plugin-lighthouse-common`, `@backstage/plugin-linguist-backend`, `@backstage/plugin-periskop-backend`, `@backstage/plugin-permission-backend`, `@backstage/plugin-permission-backend-module-allow-all-policy`, `@backstage/plugin-permission-common`, `@backstage/plugin-permission-node`, `@backstage/plugin-playlist-common`, `@backstage/plugin-proxy-backend`, `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown`, `@backstage/plugin-scaffolder-backend-module-cookiecutter`, `@backstage/plugin-scaffolder-backend-module-gitlab`, `@backstage/plugin-scaffolder-backend-module-sentry`, `@backstage/plugin-scaffolder-backend-module-yeoman`, `@backstage/plugin-scaffolder-common`, `@backstage/plugin-scaffolder-node`, `@backstage/plugin-search-backend-module-catalog`, `@backstage/plugin-search-backend-module-explore`, `@backstage/plugin-search-backend-module-pg`, `@backstage/plugin-search-backend-module-techdocs`, `@backstage/plugin-search-backend-node`, `@backstage/plugin-search-common`, `@backstage/plugin-sonarqube-react`, `@backstage/plugin-stack-overflow-backend`, `@backstage/plugin-tech-insights-backend-module-jsonfc`, `@backstage/plugin-tech-insights-node`, `@backstage/plugin-todo-backend`, `@backstage/plugin-user-settings-backend`, `@backstage/plugin-vault-backend`._
+## Excluded dependency updates
+
+- `@backstage/backend-defaults` (0.2.5 → 0.2.6)
+- `@backstage/backend-plugin-api` (0.6.5 → 0.6.6)
+- `@backstage/catalog-client` (1.4.4 → 1.4.5)
+- `@backstage/cli-node` (0.1.4 → 0.1.5)
+- `@backstage/config` (1.1.0 → 1.1.1)
+- `@backstage/integration-aws-node` (0.1.6 → 0.1.7)
+- `@backstage/plugin-adr-backend` (0.4.2 → 0.4.3)
+- `@backstage/plugin-adr-common` (0.2.15 → 0.2.16)
+- `@backstage/plugin-airbrake-backend` (0.3.2 → 0.3.3)
+- `@backstage/plugin-app-backend` (0.3.53 → 0.3.54)
+- `@backstage/plugin-app-node` (0.1.5 → 0.1.6)
+- `@backstage/plugin-auth-backend-module-gitlab-provider` (0.1.2 → 0.1.3)
+- `@backstage/plugin-auth-backend-module-google-provider` (0.1.2 → 0.1.3)
+- `@backstage/plugin-auth-backend-module-oauth2-provider` (0.1.2 → 0.1.3)
+- `@backstage/plugin-azure-devops-backend` (0.4.2 → 0.4.3)
+- `@backstage/plugin-azure-sites-backend` (0.1.15 → 0.1.16)
+- `@backstage/plugin-bazaar-backend` (0.3.2 → 0.3.3)
+- `@backstage/plugin-bitbucket-cloud-common` (0.2.12 → 0.2.13)
+- `@backstage/plugin-catalog-backend-module-bitbucket` (0.2.20 → 0.2.21)
+- `@backstage/plugin-catalog-backend-module-gcp` (0.1.5 → 0.1.6)
+- `@backstage/plugin-catalog-backend-module-openapi` (0.1.22 → 0.1.23)
+- `@backstage/plugin-catalog-backend-module-scaffolder-entity-model` (0.1.2 → 0.1.3)
+- `@backstage/plugin-catalog-backend-module-unprocessed` (0.3.2 → 0.3.3)
+- `@backstage/plugin-catalog-common` (1.0.16 → 1.0.17)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.20 → 0.1.21)
+- `@backstage/plugin-devtools-backend` (0.2.2 → 0.2.3)
+- `@backstage/plugin-devtools-common` (0.1.4 → 0.1.5)
+- `@backstage/plugin-entity-feedback-backend` (0.2.2 → 0.2.3)
+- `@backstage/plugin-events-backend` (0.2.14 → 0.2.15)
+- `@backstage/plugin-events-backend-module-aws-sqs` (0.2.8 → 0.2.9)
+- `@backstage/plugin-events-backend-module-azure` (0.1.15 → 0.1.16)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.1.15 → 0.1.16)
+- `@backstage/plugin-events-backend-module-gerrit` (0.1.15 → 0.1.16)
+- `@backstage/plugin-events-backend-module-github` (0.1.15 → 0.1.16)
+- `@backstage/plugin-events-backend-module-gitlab` (0.1.15 → 0.1.16)
+- `@backstage/plugin-events-backend-test-utils` (0.1.15 → 0.1.16)
+- `@backstage/plugin-events-node` (0.2.14 → 0.2.15)
+- `@backstage/plugin-explore-backend` (0.0.15 → 0.0.16)
+- `@backstage/plugin-jenkins-common` (0.1.19 → 0.1.20)
+- `@backstage/plugin-kafka-backend` (0.3.2 → 0.3.3)
+- `@backstage/plugin-lighthouse-backend` (0.3.2 → 0.3.3)
+- `@backstage/plugin-lighthouse-common` (0.1.3 → 0.1.4)
+- `@backstage/plugin-linguist-backend` (0.5.2 → 0.5.3)
+- `@backstage/plugin-periskop-backend` (0.2.2 → 0.2.3)
+- `@backstage/plugin-permission-backend` (0.5.28 → 0.5.29)
+- `@backstage/plugin-permission-backend-module-allow-all-policy` (0.1.2 → 0.1.3)
+- `@backstage/plugin-permission-common` (0.7.8 → 0.7.9)
+- `@backstage/plugin-permission-node` (0.7.16 → 0.7.17)
+- `@backstage/plugin-playlist-common` (0.1.10 → 0.1.11)
+- `@backstage/plugin-proxy-backend` (0.4.2 → 0.4.3)
+- `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.2.6 → 0.2.7)
+- `@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.29 → 0.2.30)
+- `@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.8 → 0.2.9)
+- `@backstage/plugin-scaffolder-backend-module-sentry` (0.1.13 → 0.1.14)
+- `@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.26 → 0.2.27)
+- `@backstage/plugin-scaffolder-common` (1.4.1 → 1.4.2)
+- `@backstage/plugin-scaffolder-node` (0.2.5 → 0.2.6)
+- `@backstage/plugin-search-backend-module-catalog` (0.1.9 → 0.1.10)
+- `@backstage/plugin-search-backend-module-explore` (0.1.9 → 0.1.10)
+- `@backstage/plugin-search-backend-module-pg` (0.5.14 → 0.5.15)
+- `@backstage/plugin-search-backend-module-techdocs` (0.1.9 → 0.1.10)
+- `@backstage/plugin-search-backend-node` (1.2.9 → 1.2.10)
+- `@backstage/plugin-search-common` (1.2.6 → 1.2.7)
+- `@backstage/plugin-sonarqube-react` (0.1.8 → 0.1.9)
+- `@backstage/plugin-stack-overflow-backend` (0.2.9 → 0.2.10)
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.37 → 0.1.38)
+- `@backstage/plugin-tech-insights-node` (0.4.11 → 0.4.12)
+- `@backstage/plugin-todo-backend` (0.3.3 → 0.3.4)
+- `@backstage/plugin-user-settings-backend` (0.2.3 → 0.2.4)
+- `@backstage/plugin-vault-backend` (0.3.10 → 0.3.11)

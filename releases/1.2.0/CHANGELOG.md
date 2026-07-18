@@ -11,6 +11,7 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
 - [Other patch version bumps](#other-patch-version-bumps): 50 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 67 packages
 
 ## Table of contents
 
@@ -93,6 +94,7 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
   - [`@backstage/plugin-techdocs-node` (1.1.0 → 1.1.1)](#backstageplugin-techdocs-node-110--111)
   - [`@backstage/plugin-user-settings` (0.4.3 → 0.4.4)](#backstageplugin-user-settings-043--044)
   - [`@techdocs/cli` (1.1.0 → 1.1.1)](#techdocscli-110--111)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1312,4 +1314,72 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 - 52fddad92d: The TechDocs CLI's embedded app now imports all API refs from the `@backstage/plugin-techdocs-react` package.
 - c14e78a367: Update `techdocs-cli serve`'s `proxyEndpoint` to match the base URL of the embedded techdocs app.
 
-_Excluded dependency updates for packages: `@backstage/app-defaults`, `@backstage/backend-test-utils`, `@backstage/catalog-client`, `@backstage/catalog-model`, `@backstage/plugin-airbrake`, `@backstage/plugin-airbrake-backend`, `@backstage/plugin-allure`, `@backstage/plugin-analytics-module-ga`, `@backstage/plugin-apache-airflow`, `@backstage/plugin-badges`, `@backstage/plugin-badges-backend`, `@backstage/plugin-bazaar-backend`, `@backstage/plugin-bitrise`, `@backstage/plugin-catalog-backend-module-azure`, `@backstage/plugin-catalog-backend-module-bitbucket`, `@backstage/plugin-catalog-backend-module-gitlab`, `@backstage/plugin-catalog-backend-module-ldap`, `@backstage/plugin-catalog-common`, `@backstage/plugin-catalog-graphql`, `@backstage/plugin-catalog-import`, `@backstage/plugin-cicd-statistics`, `@backstage/plugin-cicd-statistics-module-gitlab`, `@backstage/plugin-circleci`, `@backstage/plugin-cloudbuild`, `@backstage/plugin-code-climate`, `@backstage/plugin-code-coverage`, `@backstage/plugin-code-coverage-backend`, `@backstage/plugin-config-schema`, `@backstage/plugin-cost-insights`, `@backstage/plugin-explore`, `@backstage/plugin-explore-react`, `@backstage/plugin-firehydrant`, `@backstage/plugin-fossa`, `@backstage/plugin-gcp-projects`, `@backstage/plugin-git-release-manager`, `@backstage/plugin-github-actions`, `@backstage/plugin-github-deployments`, `@backstage/plugin-gitops-profiles`, `@backstage/plugin-gocd`, `@backstage/plugin-graphql-backend`, `@backstage/plugin-ilert`, `@backstage/plugin-jenkins`, `@backstage/plugin-jenkins-common`, `@backstage/plugin-kafka`, `@backstage/plugin-kafka-backend`, `@backstage/plugin-lighthouse`, `@backstage/plugin-newrelic`, `@backstage/plugin-pagerduty`, `@backstage/plugin-periskop`, `@backstage/plugin-periskop-backend`, `@backstage/plugin-permission-backend`, `@backstage/plugin-permission-common`, `@backstage/plugin-permission-node`, `@backstage/plugin-permission-react`, `@backstage/plugin-proxy-backend`, `@backstage/plugin-rollbar`, `@backstage/plugin-scaffolder-backend-module-yeoman`, `@backstage/plugin-sentry`, `@backstage/plugin-shortcuts`, `@backstage/plugin-splunk-on-call`, `@backstage/plugin-stack-overflow`, `@backstage/plugin-stack-overflow-backend`, `@backstage/plugin-todo`, `@backstage/plugin-todo-backend`, `@backstage/plugin-xcmetrics`, `@backstage/search-common`, `@backstage/techdocs-common`._
+## Excluded dependency updates
+
+- `@backstage/app-defaults` (1.0.1 → 1.0.2)
+- `@backstage/backend-test-utils` (0.1.23 → 0.1.24)
+- `@backstage/catalog-client` (1.0.1 → 1.0.2)
+- `@backstage/catalog-model` (1.0.1 → 1.0.2)
+- `@backstage/plugin-airbrake` (0.3.4 → 0.3.5)
+- `@backstage/plugin-airbrake-backend` (0.2.4 → 0.2.5)
+- `@backstage/plugin-allure` (0.1.20 → 0.1.21)
+- `@backstage/plugin-analytics-module-ga` (0.1.15 → 0.1.16)
+- `@backstage/plugin-apache-airflow` (0.1.12 → 0.1.13)
+- `@backstage/plugin-badges` (0.2.28 → 0.2.29)
+- `@backstage/plugin-badges-backend` (0.1.25 → 0.1.26)
+- `@backstage/plugin-bazaar-backend` (0.1.15 → 0.1.16)
+- `@backstage/plugin-bitrise` (0.1.31 → 0.1.32)
+- `@backstage/plugin-catalog-backend-module-azure` (0.1.2 → 0.1.3)
+- `@backstage/plugin-catalog-backend-module-bitbucket` (0.1.2 → 0.1.3)
+- `@backstage/plugin-catalog-backend-module-gitlab` (0.1.2 → 0.1.3)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.4.2 → 0.4.3)
+- `@backstage/plugin-catalog-common` (1.0.1 → 1.0.2)
+- `@backstage/plugin-catalog-graphql` (0.3.8 → 0.3.9)
+- `@backstage/plugin-catalog-import` (0.8.7 → 0.8.8)
+- `@backstage/plugin-cicd-statistics` (0.1.6 → 0.1.7)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.0 → 0.1.1)
+- `@backstage/plugin-circleci` (0.3.4 → 0.3.5)
+- `@backstage/plugin-cloudbuild` (0.3.4 → 0.3.5)
+- `@backstage/plugin-code-climate` (0.1.4 → 0.1.5)
+- `@backstage/plugin-code-coverage` (0.1.31 → 0.1.32)
+- `@backstage/plugin-code-coverage-backend` (0.1.29 → 0.1.30)
+- `@backstage/plugin-config-schema` (0.1.27 → 0.1.28)
+- `@backstage/plugin-cost-insights` (0.11.26 → 0.11.27)
+- `@backstage/plugin-explore` (0.3.35 → 0.3.36)
+- `@backstage/plugin-explore-react` (0.0.16 → 0.0.17)
+- `@backstage/plugin-firehydrant` (0.1.21 → 0.1.22)
+- `@backstage/plugin-fossa` (0.2.36 → 0.2.37)
+- `@backstage/plugin-gcp-projects` (0.3.23 → 0.3.24)
+- `@backstage/plugin-git-release-manager` (0.3.17 → 0.3.18)
+- `@backstage/plugin-github-actions` (0.5.4 → 0.5.5)
+- `@backstage/plugin-github-deployments` (0.1.35 → 0.1.36)
+- `@backstage/plugin-gitops-profiles` (0.3.22 → 0.3.23)
+- `@backstage/plugin-gocd` (0.1.10 → 0.1.11)
+- `@backstage/plugin-graphql-backend` (0.1.21 → 0.1.22)
+- `@backstage/plugin-ilert` (0.1.30 → 0.1.31)
+- `@backstage/plugin-jenkins` (0.7.3 → 0.7.4)
+- `@backstage/plugin-jenkins-common` (0.1.3 → 0.1.4)
+- `@backstage/plugin-kafka` (0.3.4 → 0.3.5)
+- `@backstage/plugin-kafka-backend` (0.2.24 → 0.2.25)
+- `@backstage/plugin-lighthouse` (0.3.4 → 0.3.5)
+- `@backstage/plugin-newrelic` (0.3.22 → 0.3.23)
+- `@backstage/plugin-pagerduty` (0.3.31 → 0.3.32)
+- `@backstage/plugin-periskop` (0.1.2 → 0.1.3)
+- `@backstage/plugin-periskop-backend` (0.1.2 → 0.1.3)
+- `@backstage/plugin-permission-backend` (0.5.6 → 0.5.7)
+- `@backstage/plugin-permission-common` (0.6.0 → 0.6.1)
+- `@backstage/plugin-permission-node` (0.6.0 → 0.6.1)
+- `@backstage/plugin-permission-react` (0.4.0 → 0.4.1)
+- `@backstage/plugin-proxy-backend` (0.2.25 → 0.2.26)
+- `@backstage/plugin-rollbar` (0.4.4 → 0.4.5)
+- `@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.4 → 0.2.5)
+- `@backstage/plugin-sentry` (0.3.42 → 0.3.43)
+- `@backstage/plugin-shortcuts` (0.2.5 → 0.2.6)
+- `@backstage/plugin-splunk-on-call` (0.3.28 → 0.3.29)
+- `@backstage/plugin-stack-overflow` (0.1.0 → 0.1.1)
+- `@backstage/plugin-stack-overflow-backend` (0.1.0 → 0.1.1)
+- `@backstage/plugin-todo` (0.2.6 → 0.2.7)
+- `@backstage/plugin-todo-backend` (0.1.28 → 0.1.29)
+- `@backstage/plugin-xcmetrics` (0.2.24 → 0.2.25)
+- `@backstage/search-common` (0.3.3 → 0.3.4)
+- `@backstage/techdocs-common` (0.11.14 → 0.11.15)

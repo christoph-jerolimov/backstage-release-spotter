@@ -11,6 +11,7 @@ Changes between 1.22.3 and 1.23.0 — 233 changed and 13 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
 - [Other minor version bumps](#other-minor-version-bumps): 16 packages
 - [Other patch version bumps](#other-patch-version-bumps): 162 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 29 packages
 
 ## Table of contents
 
@@ -238,6 +239,7 @@ Changes between 1.22.3 and 1.23.0 — 233 changed and 13 added packages.
   - [`@backstage/plugin-xcmetrics` (0.2.47 → 0.2.48)](#backstageplugin-xcmetrics-0247--0248)
   - [`@backstage/theme` (0.5.0 → 0.5.1)](#backstagetheme-050--051)
   - [`@techdocs/cli` (1.8.1 → 1.8.2)](#techdocscli-181--182)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -3077,4 +3079,34 @@ Changes between 1.22.3 and 1.23.0 — 233 changed and 13 added packages.
 - 6ba64c4: Updated dependency `commander` to `^12.0.0`.
 - d8d243c: fix: mkdocs parameter casing
 
-_Excluded dependency updates for packages: `@backstage/integration-react`, `@backstage/plugin-adr-common`, `@backstage/plugin-airbrake-backend`, `@backstage/plugin-auth-backend-module-gcp-iap-provider`, `@backstage/plugin-auth-backend-module-google-provider`, `@backstage/plugin-catalog-backend-module-bitbucket-cloud`, `@backstage/plugin-catalog-backend-module-bitbucket-server`, `@backstage/plugin-catalog-backend-module-gcp`, `@backstage/plugin-catalog-backend-module-ldap`, `@backstage/plugin-catalog-common`, `@backstage/plugin-cicd-statistics`, `@backstage/plugin-cicd-statistics-module-gitlab`, `@backstage/plugin-events-backend-test-utils`, `@backstage/plugin-events-node`, `@backstage/plugin-explore-react`, `@backstage/plugin-gocd`, `@backstage/plugin-jenkins-common`, `@backstage/plugin-kafka-backend`, `@backstage/plugin-periskop-backend`, `@backstage/plugin-permission-backend`, `@backstage/plugin-permission-node`, `@backstage/plugin-proxy-backend`, `@backstage/plugin-search-backend-module-elasticsearch`, `@backstage/plugin-search-backend-module-pg`, `@backstage/plugin-search-backend-node`, `@backstage/plugin-sonarqube-react`, `@backstage/plugin-stack-overflow-backend`, `@backstage/plugin-todo`, `@backstage/plugin-user-settings-backend`._
+## Excluded dependency updates
+
+- `@backstage/integration-react` (1.1.23 → 1.1.24)
+- `@backstage/plugin-adr-common` (0.2.19 → 0.2.20)
+- `@backstage/plugin-airbrake-backend` (0.3.6 → 0.3.7)
+- `@backstage/plugin-auth-backend-module-gcp-iap-provider` (0.2.3 → 0.2.4)
+- `@backstage/plugin-auth-backend-module-google-provider` (0.1.6 → 0.1.7)
+- `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.24 → 0.1.25)
+- `@backstage/plugin-catalog-backend-module-bitbucket-server` (0.1.22 → 0.1.23)
+- `@backstage/plugin-catalog-backend-module-gcp` (0.1.9 → 0.1.10)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.5.24 → 0.5.25)
+- `@backstage/plugin-catalog-common` (1.0.20 → 1.0.21)
+- `@backstage/plugin-cicd-statistics` (0.1.31 → 0.1.32)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.25 → 0.1.26)
+- `@backstage/plugin-events-backend-test-utils` (0.1.19 → 0.1.20)
+- `@backstage/plugin-events-node` (0.2.18 → 0.2.19)
+- `@backstage/plugin-explore-react` (0.0.35 → 0.0.36)
+- `@backstage/plugin-gocd` (0.1.35 → 0.1.36)
+- `@backstage/plugin-jenkins-common` (0.1.23 → 0.1.24)
+- `@backstage/plugin-kafka-backend` (0.3.7 → 0.3.8)
+- `@backstage/plugin-periskop-backend` (0.2.7 → 0.2.8)
+- `@backstage/plugin-permission-backend` (0.5.32 → 0.5.33)
+- `@backstage/plugin-permission-node` (0.7.20 → 0.7.21)
+- `@backstage/plugin-proxy-backend` (0.4.7 → 0.4.8)
+- `@backstage/plugin-search-backend-module-elasticsearch` (1.3.12 → 1.3.13)
+- `@backstage/plugin-search-backend-module-pg` (0.5.18 → 0.5.19)
+- `@backstage/plugin-search-backend-node` (1.2.13 → 1.2.14)
+- `@backstage/plugin-sonarqube-react` (0.1.12 → 0.1.13)
+- `@backstage/plugin-stack-overflow-backend` (0.2.13 → 0.2.14)
+- `@backstage/plugin-todo` (0.2.33 → 0.2.34)
+- `@backstage/plugin-user-settings-backend` (0.2.8 → 0.2.9)

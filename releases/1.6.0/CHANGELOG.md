@@ -10,6 +10,7 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
 - [Other patch version bumps](#other-patch-version-bumps): 124 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 9 packages
 
 ## Table of contents
 
@@ -167,6 +168,7 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
   - [`@backstage/plugin-vault-backend` (0.2.1 → 0.2.2)](#backstageplugin-vault-backend-021--022)
   - [`@backstage/plugin-xcmetrics` (0.2.28 → 0.2.29)](#backstageplugin-xcmetrics-0228--0229)
   - [`@techdocs/cli` (1.2.0 → 1.2.1)](#techdocscli-120--121)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2875,4 +2877,14 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 
 - 7d47def9c4: Removed dependency on `@types/jest`.
 
-_Excluded dependency updates for packages: `@backstage/codemods`, `@backstage/plugin-adr-common`, `@backstage/plugin-catalog-backend-module-aws`, `@backstage/plugin-catalog-backend-module-openapi`, `@backstage/plugin-catalog-common`, `@backstage/plugin-jenkins-common`, `@backstage/plugin-search-backend`, `@backstage/plugin-search-common`, `@backstage/plugin-tech-insights-backend-module-jsonfc`._
+## Excluded dependency updates
+
+- `@backstage/codemods` (0.1.38 → 0.1.39)
+- `@backstage/plugin-adr-common` (0.2.0 → 0.2.1)
+- `@backstage/plugin-catalog-backend-module-aws` (0.1.8 → 0.1.9)
+- `@backstage/plugin-catalog-backend-module-openapi` (0.1.1 → 0.1.2)
+- `@backstage/plugin-catalog-common` (1.0.5 → 1.0.6)
+- `@backstage/plugin-jenkins-common` (0.1.7 → 0.1.8)
+- `@backstage/plugin-search-backend` (1.0.1 → 1.0.2)
+- `@backstage/plugin-search-common` (1.0.0 → 1.0.1)
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.19 → 0.1.20)
