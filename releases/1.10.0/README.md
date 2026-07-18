@@ -2,7 +2,9 @@
 
 ## Compared to 1.9.1 (previous minor release)
 
-0 major bumps, 2 added, 0 removed, 169 upgraded, 13 unchanged.
+2 added, 0 removed, 169 upgraded, 13 unchanged.
+
+⚠️ Need extra attention: 5 0.x minor, 2 0.0.x patch.
 
 ### 🆕 Added packages
 

@@ -2,7 +2,7 @@
 
 ## Compared to 1.44.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 3 upgraded, 187 unchanged.
+0 added, 0 removed, 3 upgraded, 187 unchanged.
 
 ### Version bumps
 
@@ -14,7 +14,9 @@
 
 ## Compared to 1.43.4 (previous minor release)
 
-1 major bumps, 1 added, 0 removed, 175 upgraded, 14 unchanged.
+1 added, 0 removed, 175 upgraded, 14 unchanged.
+
+⚠️ Need extra attention: 1 major, 7 0.x minor, 4 0.0.x patch.
 
 ### ⚠️ Major version bumps
 

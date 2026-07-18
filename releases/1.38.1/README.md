@@ -2,7 +2,7 @@
 
 ## Compared to 1.38.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 4 upgraded, 179 unchanged.
+0 added, 0 removed, 4 upgraded, 179 unchanged.
 
 ### Version bumps
 
@@ -15,7 +15,9 @@
 
 ## Compared to 1.37.1 (previous minor release)
 
-0 major bumps, 4 added, 0 removed, 154 upgraded, 25 unchanged.
+4 added, 0 removed, 154 upgraded, 25 unchanged.
+
+⚠️ Need extra attention: 10 0.x minor, 3 0.0.x patch.
 
 ### 🆕 Added packages
 

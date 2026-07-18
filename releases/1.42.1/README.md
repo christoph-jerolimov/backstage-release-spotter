@@ -2,7 +2,7 @@
 
 ## Compared to 1.42.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 2 upgraded, 185 unchanged.
+0 added, 0 removed, 2 upgraded, 185 unchanged.
 
 ### Version bumps
 
@@ -13,7 +13,9 @@
 
 ## Compared to 1.41.2 (previous minor release)
 
-0 major bumps, 0 added, 1 removed, 158 upgraded, 29 unchanged.
+0 added, 1 removed, 158 upgraded, 29 unchanged.
+
+⚠️ Need extra attention: 12 0.x minor, 2 0.0.x patch.
 
 ### ❌ Removed packages
 

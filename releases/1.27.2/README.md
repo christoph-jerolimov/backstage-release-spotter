@@ -2,7 +2,7 @@
 
 ## Compared to 1.27.1 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 7 upgraded, 163 unchanged.
+0 added, 0 removed, 7 upgraded, 163 unchanged.
 
 ### Version bumps
 
@@ -18,7 +18,9 @@
 
 ## Compared to 1.26.5 (previous minor release)
 
-0 major bumps, 3 added, 103 removed, 145 upgraded, 22 unchanged.
+3 added, 103 removed, 145 upgraded, 22 unchanged.
+
+⚠️ Need extra attention: 5 0.x minor, 3 0.0.x patch.
 
 ### 🆕 Added packages
 

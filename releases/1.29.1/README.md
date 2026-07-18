@@ -2,7 +2,7 @@
 
 ## Compared to 1.29.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 1 upgraded, 173 unchanged.
+0 added, 0 removed, 1 upgraded, 173 unchanged.
 
 ### Version bumps
 
@@ -12,7 +12,9 @@
 
 ## Compared to 1.28.4 (previous minor release)
 
-0 major bumps, 2 added, 0 removed, 153 upgraded, 19 unchanged.
+2 added, 0 removed, 153 upgraded, 19 unchanged.
+
+⚠️ Need extra attention: 7 0.x minor, 7 0.0.x patch.
 
 ### 🆕 Added packages
 

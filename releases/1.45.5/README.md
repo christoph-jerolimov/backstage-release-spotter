@@ -2,7 +2,7 @@
 
 ## Compared to 1.45.3 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 3 upgraded, 187 unchanged.
+0 added, 0 removed, 3 upgraded, 187 unchanged.
 
 ### Version bumps
 
@@ -14,7 +14,9 @@
 
 ## Compared to 1.44.3 (previous minor release)
 
-0 major bumps, 0 added, 0 removed, 178 upgraded, 12 unchanged.
+0 added, 0 removed, 178 upgraded, 12 unchanged.
+
+⚠️ Need extra attention: 8 0.x minor, 4 0.0.x patch.
 
 ### Version bumps
 

@@ -2,7 +2,7 @@
 
 ## Compared to 1.40.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 3 upgraded, 184 unchanged.
+0 added, 0 removed, 3 upgraded, 184 unchanged.
 
 ### Version bumps
 
@@ -14,7 +14,9 @@
 
 ## Compared to 1.39.1 (previous minor release)
 
-1 major bumps, 2 added, 0 removed, 160 upgraded, 25 unchanged.
+2 added, 0 removed, 160 upgraded, 25 unchanged.
+
+⚠️ Need extra attention: 1 major, 12 0.x minor, 4 0.0.x patch.
 
 ### ⚠️ Major version bumps
 

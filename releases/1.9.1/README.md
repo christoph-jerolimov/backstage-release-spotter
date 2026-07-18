@@ -2,7 +2,7 @@
 
 ## Compared to 1.9.0 (previous patch release)
 
-0 major bumps, 0 added, 0 removed, 75 upgraded, 107 unchanged.
+0 added, 0 removed, 75 upgraded, 107 unchanged.
 
 ### Version bumps
 
@@ -86,7 +86,9 @@
 
 ## Compared to 1.8.3 (previous minor release)
 
-0 major bumps, 6 added, 0 removed, 171 upgraded, 5 unchanged.
+6 added, 0 removed, 171 upgraded, 5 unchanged.
+
+⚠️ Need extra attention: 11 0.x minor, 2 0.0.x patch.
 
 ### 🆕 Added packages
 
