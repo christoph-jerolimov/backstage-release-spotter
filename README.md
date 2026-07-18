@@ -2,7 +2,7 @@
 
 Automatically maintained mirror and analysis of the official Backstage package changelogs and metadata from [backstage/backstage](https://github.com/backstage/backstage) and of the release manifests from [backstage/versions](https://github.com/backstage/versions).
 
-Two GitHub workflows ([update-versions](.github/workflows/update-versions.yml) and [update-metadata](.github/workflows/update-metadata.yml)) run daily (and on demand via *Run workflow*), clone the upstream repositories, regenerate everything below, and commit changes to `main`.
+Two GitHub workflows ([update-metadata](.github/workflows/update-metadata.yml) and [update-versions](.github/workflows/update-versions.yml)) run daily (and on demand via *Run workflow*), clone the upstream repositories, regenerate everything below, and commit changes to `main`.
 
 ## Package versions
 
