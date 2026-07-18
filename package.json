@@ -8,7 +8,8 @@
     "readmes": "tsx scripts/generate-readmes.ts",
     "resolutions": "tsx scripts/generate-resolutions.ts",
     "tables": "tsx scripts/generate-tables.ts",
-    "generate": "npm run copy && npm run readmes && npm run resolutions && npm run tables",
+    "changes": "tsx scripts/generate-changes.ts",
+    "generate": "npm run copy && npm run readmes && npm run resolutions && npm run tables && npm run changes",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

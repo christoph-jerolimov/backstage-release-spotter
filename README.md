@@ -15,6 +15,15 @@ A [GitHub workflow](.github/workflows/update-versions.yml) runs daily (and on de
 
 Columns are ordered `next` (if a next release exists), then newest to oldest release. Rows list every package that appears in any of the shown releases. Note: the *all releases* files are large and GitHub may not render the Markdown version — use the last-10 files for browsing.
 
+## Release changes
+
+One row per release (newest to oldest, incl. `next` if it exists), comparing each release with the direct previous one: counts of added, removed, upgraded, and unchanged packages, plus the bumps that need extra attention (major, `0.x` minor, `0.0.x` patch).
+
+| Table | Markdown | CSV |
+| --- | --- | --- |
+| Changes per release | [release-changes.md](release-changes.md) | [release-changes.csv](release-changes.csv) |
+| Changes per minor release (latest patch per minor) | [minor-release-changes.md](minor-release-changes.md) | [minor-release-changes.csv](minor-release-changes.csv) |
+
 ## Per-release folders
 
 Each `releases/<version>/` folder contains:
