@@ -11,7 +11,7 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
 - [Other patch version bumps](#other-patch-version-bumps): 132 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 72 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 72 packages
 
 ## Table of contents
 
@@ -205,7 +205,7 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
   - [`@backstage/plugin-xcmetrics` (0.2.48 → 0.2.49)](#backstageplugin-xcmetrics-0248--0249)
   - [`@backstage/theme` (0.5.1 → 0.5.2)](#backstagetheme-051--052)
   - [`@techdocs/cli` (1.8.5 → 1.8.6)](#techdocscli-185--186)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2913,77 +2913,77 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 
 - 1bd4596: Removed the `ts-node` dev dependency.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/app-defaults`
-- `@backstage/catalog-model`
-- `@backstage/cli-node`
-- `@backstage/core-app-api`
-- `@backstage/core-compat-api`
-- `@backstage/core-plugin-api`
-- `@backstage/dev-utils`
-- `@backstage/frontend-plugin-api`
-- `@backstage/frontend-test-utils`
-- `@backstage/integration-aws-node`
-- `@backstage/plugin-allure`
-- `@backstage/plugin-analytics-module-ga`
-- `@backstage/plugin-analytics-module-ga4`
-- `@backstage/plugin-analytics-module-newrelic-browser`
-- `@backstage/plugin-app-node`
-- `@backstage/plugin-app-visualizer`
-- `@backstage/plugin-auth-backend-module-github-provider`
-- `@backstage/plugin-auth-backend-module-gitlab-provider`
-- `@backstage/plugin-auth-backend-module-oauth2-provider`
-- `@backstage/plugin-auth-backend-module-okta-provider`
-- `@backstage/plugin-azure-sites-common`
-- `@backstage/plugin-bazaar-backend`
-- `@backstage/plugin-bitbucket-cloud-common`
-- `@backstage/plugin-catalog-backend-module-gcp`
-- `@backstage/plugin-catalog-backend-module-openapi`
-- `@backstage/plugin-catalog-backend-module-scaffolder-entity-model`
-- `@backstage/plugin-catalog-common`
-- `@backstage/plugin-cicd-statistics`
-- `@backstage/plugin-config-schema`
-- `@backstage/plugin-devtools-common`
-- `@backstage/plugin-entity-validation`
-- `@backstage/plugin-explore-backend`
-- `@backstage/plugin-explore-react`
-- `@backstage/plugin-firehydrant`
-- `@backstage/plugin-gcp-projects`
-- `@backstage/plugin-git-release-manager`
-- `@backstage/plugin-github-deployments`
-- `@backstage/plugin-github-issues`
-- `@backstage/plugin-gitops-profiles`
-- `@backstage/plugin-gocd`
-- `@backstage/plugin-graphiql`
-- `@backstage/plugin-graphql-voyager`
-- `@backstage/plugin-ilert`
-- `@backstage/plugin-jenkins-common`
-- `@backstage/plugin-kafka-backend`
-- `@backstage/plugin-kubernetes-cluster`
-- `@backstage/plugin-lighthouse-common`
-- `@backstage/plugin-microsoft-calendar`
-- `@backstage/plugin-newrelic`
-- `@backstage/plugin-newrelic-dashboard`
-- `@backstage/plugin-nomad`
-- `@backstage/plugin-opencost`
-- `@backstage/plugin-org-react`
-- `@backstage/plugin-pagerduty`
-- `@backstage/plugin-periskop`
-- `@backstage/plugin-permission-backend-module-allow-all-policy`
-- `@backstage/plugin-permission-react`
-- `@backstage/plugin-playlist-common`
-- `@backstage/plugin-puppetdb`
-- `@backstage/plugin-rollbar-backend`
-- `@backstage/plugin-scaffolder-common`
-- `@backstage/plugin-search-backend-module-stack-overflow-collator`
-- `@backstage/plugin-search-react`
-- `@backstage/plugin-signals-react`
-- `@backstage/plugin-sonarqube-backend`
-- `@backstage/plugin-sonarqube-react`
-- `@backstage/plugin-stack-overflow-backend`
-- `@backstage/plugin-techdocs-module-addons-contrib`
-- `@backstage/plugin-todo`
-- `@backstage/plugin-user-settings-backend`
-- `@backstage/plugin-vault-node`
-- `@backstage/test-utils`
+- `@backstage/app-defaults` (1.5.0 → 1.5.1)
+- `@backstage/catalog-model` (1.4.4 → 1.4.5)
+- `@backstage/cli-node` (0.2.3 → 0.2.4)
+- `@backstage/core-app-api` (1.12.0 → 1.12.1)
+- `@backstage/core-compat-api` (0.2.0 → 0.2.1)
+- `@backstage/core-plugin-api` (1.9.0 → 1.9.1)
+- `@backstage/dev-utils` (1.0.27 → 1.0.28)
+- `@backstage/frontend-plugin-api` (0.6.0 → 0.6.1)
+- `@backstage/frontend-test-utils` (0.1.2 → 0.1.3)
+- `@backstage/integration-aws-node` (0.1.9 → 0.1.10)
+- `@backstage/plugin-allure` (0.1.46 → 0.1.47)
+- `@backstage/plugin-analytics-module-ga` (0.2.0 → 0.2.1)
+- `@backstage/plugin-analytics-module-ga4` (0.2.0 → 0.2.1)
+- `@backstage/plugin-analytics-module-newrelic-browser` (0.1.0 → 0.1.1)
+- `@backstage/plugin-app-node` (0.1.13 → 0.1.14)
+- `@backstage/plugin-app-visualizer` (0.1.1 → 0.1.2)
+- `@backstage/plugin-auth-backend-module-github-provider` (0.1.10 → 0.1.11)
+- `@backstage/plugin-auth-backend-module-gitlab-provider` (0.1.10 → 0.1.11)
+- `@backstage/plugin-auth-backend-module-oauth2-provider` (0.1.10 → 0.1.11)
+- `@backstage/plugin-auth-backend-module-okta-provider` (0.0.6 → 0.0.7)
+- `@backstage/plugin-azure-sites-common` (0.1.2 → 0.1.3)
+- `@backstage/plugin-bazaar-backend` (0.3.11 → 0.3.12)
+- `@backstage/plugin-bitbucket-cloud-common` (0.2.16 → 0.2.17)
+- `@backstage/plugin-catalog-backend-module-gcp` (0.1.13 → 0.1.14)
+- `@backstage/plugin-catalog-backend-module-openapi` (0.1.30 → 0.1.31)
+- `@backstage/plugin-catalog-backend-module-scaffolder-entity-model` (0.1.10 → 0.1.11)
+- `@backstage/plugin-catalog-common` (1.0.21 → 1.0.22)
+- `@backstage/plugin-cicd-statistics` (0.1.32 → 0.1.33)
+- `@backstage/plugin-config-schema` (0.1.50 → 0.1.51)
+- `@backstage/plugin-devtools-common` (0.1.8 → 0.1.9)
+- `@backstage/plugin-entity-validation` (0.1.15 → 0.1.16)
+- `@backstage/plugin-explore-backend` (0.0.23 → 0.0.24)
+- `@backstage/plugin-explore-react` (0.0.36 → 0.0.37)
+- `@backstage/plugin-firehydrant` (0.2.14 → 0.2.15)
+- `@backstage/plugin-gcp-projects` (0.3.46 → 0.3.47)
+- `@backstage/plugin-git-release-manager` (0.3.42 → 0.3.43)
+- `@backstage/plugin-github-deployments` (0.1.61 → 0.1.62)
+- `@backstage/plugin-github-issues` (0.2.19 → 0.2.20)
+- `@backstage/plugin-gitops-profiles` (0.3.45 → 0.3.46)
+- `@backstage/plugin-gocd` (0.1.36 → 0.1.37)
+- `@backstage/plugin-graphiql` (0.3.3 → 0.3.4)
+- `@backstage/plugin-graphql-voyager` (0.1.12 → 0.1.13)
+- `@backstage/plugin-ilert` (0.2.19 → 0.2.20)
+- `@backstage/plugin-jenkins-common` (0.1.24 → 0.1.25)
+- `@backstage/plugin-kafka-backend` (0.3.11 → 0.3.12)
+- `@backstage/plugin-kubernetes-cluster` (0.0.6 → 0.0.7)
+- `@backstage/plugin-lighthouse-common` (0.1.4 → 0.1.5)
+- `@backstage/plugin-microsoft-calendar` (0.1.12 → 0.1.13)
+- `@backstage/plugin-newrelic` (0.3.45 → 0.3.46)
+- `@backstage/plugin-newrelic-dashboard` (0.3.5 → 0.3.6)
+- `@backstage/plugin-nomad` (0.1.11 → 0.1.12)
+- `@backstage/plugin-opencost` (0.2.5 → 0.2.6)
+- `@backstage/plugin-org-react` (0.1.19 → 0.1.20)
+- `@backstage/plugin-pagerduty` (0.7.2 → 0.7.3)
+- `@backstage/plugin-periskop` (0.1.28 → 0.1.29)
+- `@backstage/plugin-permission-backend-module-allow-all-policy` (0.1.10 → 0.1.11)
+- `@backstage/plugin-permission-react` (0.4.20 → 0.4.21)
+- `@backstage/plugin-playlist-common` (0.1.14 → 0.1.15)
+- `@backstage/plugin-puppetdb` (0.1.13 → 0.1.14)
+- `@backstage/plugin-rollbar-backend` (0.1.58 → 0.1.59)
+- `@backstage/plugin-scaffolder-common` (1.5.0 → 1.5.1)
+- `@backstage/plugin-search-backend-module-stack-overflow-collator` (0.1.6 → 0.1.7)
+- `@backstage/plugin-search-react` (1.7.6 → 1.7.7)
+- `@backstage/plugin-signals-react` (0.0.1 → 0.0.2)
+- `@backstage/plugin-sonarqube-backend` (0.2.15 → 0.2.16)
+- `@backstage/plugin-sonarqube-react` (0.1.13 → 0.1.14)
+- `@backstage/plugin-stack-overflow-backend` (0.2.17 → 0.2.18)
+- `@backstage/plugin-techdocs-module-addons-contrib` (1.1.5 → 1.1.6)
+- `@backstage/plugin-todo` (0.2.34 → 0.2.35)
+- `@backstage/plugin-user-settings-backend` (0.2.12 → 0.2.13)
+- `@backstage/plugin-vault-node` (0.1.6 → 0.1.7)
+- `@backstage/test-utils` (1.5.0 → 1.5.1)

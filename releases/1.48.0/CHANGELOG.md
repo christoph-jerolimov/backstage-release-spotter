@@ -11,7 +11,7 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
 - [Other minor version bumps](#other-minor-version-bumps): 10 packages
 - [Other patch version bumps](#other-patch-version-bumps): 124 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 29 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 29 packages
 
 ## Table of contents
 
@@ -181,7 +181,7 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
   - [`@backstage/theme` (0.7.1 → 0.7.2)](#backstagetheme-071--072)
   - [`@backstage/version-bridge` (1.0.11 → 1.0.12)](#backstageversion-bridge-1011--1012)
   - [`@techdocs/cli` (1.10.4 → 1.10.5)](#techdocscli-1104--1105)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2403,34 +2403,34 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 - 27798df: Migrate the Techdocs CLI embedded app to the New Frontend System (NFS)
 - 508d127: Updated dependency `find-process` to `^2.0.0`.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/plugin-auth-backend-module-guest-provider`
-- `@backstage/plugin-auth-backend-module-openshift-provider`
-- `@backstage/plugin-auth-backend-module-vmware-cloud-provider`
-- `@backstage/plugin-catalog-backend-module-logs`
-- `@backstage/plugin-catalog-backend-module-unprocessed`
-- `@backstage/plugin-catalog-common`
-- `@backstage/plugin-catalog-unprocessed-entities-common`
-- `@backstage/plugin-devtools-common`
-- `@backstage/plugin-events-backend-module-aws-sqs`
-- `@backstage/plugin-events-backend-module-azure`
-- `@backstage/plugin-events-backend-module-bitbucket-cloud`
-- `@backstage/plugin-events-backend-module-bitbucket-server`
-- `@backstage/plugin-events-backend-module-gerrit`
-- `@backstage/plugin-events-backend-module-github`
-- `@backstage/plugin-events-backend-module-gitlab`
-- `@backstage/plugin-events-backend-module-kafka`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-events-node`
-- `@backstage/plugin-gateway-backend`
-- `@backstage/plugin-notifications-backend-module-slack`
-- `@backstage/plugin-notifications-node`
-- `@backstage/plugin-permission-backend-module-allow-all-policy`
-- `@backstage/plugin-proxy-node`
-- `@backstage/plugin-scaffolder-backend-module-azure`
-- `@backstage/plugin-scaffolder-backend-module-bitbucket-server`
-- `@backstage/plugin-scaffolder-backend-module-gcp`
-- `@backstage/plugin-scaffolder-backend-module-notifications`
-- `@backstage/plugin-scaffolder-common`
-- `@backstage/plugin-signals-node`
+- `@backstage/plugin-auth-backend-module-guest-provider` (0.2.15 → 0.2.16)
+- `@backstage/plugin-auth-backend-module-openshift-provider` (0.1.3 → 0.1.4)
+- `@backstage/plugin-auth-backend-module-vmware-cloud-provider` (0.5.10 → 0.5.11)
+- `@backstage/plugin-catalog-backend-module-logs` (0.1.18 → 0.1.19)
+- `@backstage/plugin-catalog-backend-module-unprocessed` (0.6.7 → 0.6.8)
+- `@backstage/plugin-catalog-common` (1.1.7 → 1.1.8)
+- `@backstage/plugin-catalog-unprocessed-entities-common` (0.0.12 → 0.0.13)
+- `@backstage/plugin-devtools-common` (0.1.21 → 0.1.22)
+- `@backstage/plugin-events-backend-module-aws-sqs` (0.4.18 → 0.4.19)
+- `@backstage/plugin-events-backend-module-azure` (0.2.27 → 0.2.28)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.2.27 → 0.2.28)
+- `@backstage/plugin-events-backend-module-bitbucket-server` (0.1.8 → 0.1.9)
+- `@backstage/plugin-events-backend-module-gerrit` (0.2.27 → 0.2.28)
+- `@backstage/plugin-events-backend-module-github` (0.4.8 → 0.4.9)
+- `@backstage/plugin-events-backend-module-gitlab` (0.3.8 → 0.3.9)
+- `@backstage/plugin-events-backend-module-kafka` (0.3.0 → 0.3.1)
+- `@backstage/plugin-events-backend-test-utils` (0.1.51 → 0.1.52)
+- `@backstage/plugin-events-node` (0.4.18 → 0.4.19)
+- `@backstage/plugin-gateway-backend` (1.1.1 → 1.1.2)
+- `@backstage/plugin-notifications-backend-module-slack` (0.3.0 → 0.3.1)
+- `@backstage/plugin-notifications-node` (0.2.22 → 0.2.23)
+- `@backstage/plugin-permission-backend-module-allow-all-policy` (0.2.15 → 0.2.16)
+- `@backstage/plugin-proxy-node` (0.1.11 → 0.1.12)
+- `@backstage/plugin-scaffolder-backend-module-azure` (0.2.17 → 0.2.18)
+- `@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.17 → 0.2.18)
+- `@backstage/plugin-scaffolder-backend-module-gcp` (0.2.17 → 0.2.18)
+- `@backstage/plugin-scaffolder-backend-module-notifications` (0.1.18 → 0.1.19)
+- `@backstage/plugin-scaffolder-common` (1.7.5 → 1.7.6)
+- `@backstage/plugin-signals-node` (0.1.27 → 0.1.28)

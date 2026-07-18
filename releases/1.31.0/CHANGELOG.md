@@ -9,7 +9,7 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
 - [Minor version bumps](#minor-version-bumps): 15 packages
 - [Other patch version bumps](#other-patch-version-bumps): 68 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 10 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 10 packages
 
 ## Table of contents
 
@@ -170,7 +170,7 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
   - [`@backstage/repo-tools` (0.9.6 → 0.9.7)](#backstagerepo-tools-096--097)
   - [`@backstage/theme` (0.5.6 → 0.5.7)](#backstagetheme-056--057)
   - [`@backstage/version-bridge` (1.0.8 → 1.0.9)](#backstageversion-bridge-108--109)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2505,15 +2505,15 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 
 - 836127c: Updated dependency `@testing-library/react` to `^16.0.0`.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/plugin-app-visualizer`
-- `@backstage/plugin-bitbucket-cloud-common`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-kubernetes-common`
-- `@backstage/plugin-notifications-node`
-- `@backstage/plugin-scaffolder-common`
-- `@backstage/plugin-scaffolder-node`
-- `@backstage/plugin-scaffolder-node-test-utils`
-- `@backstage/plugin-search-backend-node`
-- `@techdocs/cli`
+- `@backstage/plugin-app-visualizer` (0.1.9 → 0.1.10)
+- `@backstage/plugin-bitbucket-cloud-common` (0.2.22 → 0.2.23)
+- `@backstage/plugin-events-backend-test-utils` (0.1.34 → 0.1.35)
+- `@backstage/plugin-kubernetes-common` (0.8.2 → 0.8.3)
+- `@backstage/plugin-notifications-node` (0.2.5 → 0.2.6)
+- `@backstage/plugin-scaffolder-common` (1.5.5 → 1.5.6)
+- `@backstage/plugin-scaffolder-node` (0.4.10 → 0.4.11)
+- `@backstage/plugin-scaffolder-node-test-utils` (0.1.11 → 0.1.12)
+- `@backstage/plugin-search-backend-node` (1.3.1 → 1.3.2)
+- `@techdocs/cli` (1.8.18 → 1.8.19)

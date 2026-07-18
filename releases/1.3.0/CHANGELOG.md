@@ -10,7 +10,7 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
 - [Other minor version bumps](#other-minor-version-bumps): 5 packages
 - [Other patch version bumps](#other-patch-version-bumps): 99 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 19 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 19 packages
 
 ## Table of contents
 
@@ -140,7 +140,7 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
   - [`@backstage/plugin-xcmetrics` (0.2.25 → 0.2.26)](#backstageplugin-xcmetrics-0225--0226)
   - [`@backstage/test-utils` (1.1.0 → 1.1.1)](#backstagetest-utils-110--111)
   - [`@techdocs/cli` (1.1.1 → 1.1.2)](#techdocscli-111--112)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1804,24 +1804,24 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 - f96e98f4cd: Updated dependency `cypress` to `^10.0.0`.
 - bff65e6958: Updated sidebar-related logic to use `<SidebarPinStateProvider>` + `useSidebarPinState()` and/or `<SidebarOpenStateProvider>` + `useSidebarOpenState()` from `@backstage/core-components`.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/app-defaults`
-- `@backstage/dev-utils`
-- `@backstage/plugin-adr-common`
-- `@backstage/plugin-badges-backend`
-- `@backstage/plugin-bazaar`
-- `@backstage/plugin-bazaar-backend`
-- `@backstage/plugin-catalog-graph`
-- `@backstage/plugin-cicd-statistics`
-- `@backstage/plugin-cicd-statistics-module-gitlab`
-- `@backstage/plugin-jenkins-common`
-- `@backstage/plugin-kafka-backend`
-- `@backstage/plugin-newrelic-dashboard`
-- `@backstage/plugin-permission-react`
-- `@backstage/plugin-proxy-backend`
-- `@backstage/plugin-scaffolder-backend-module-rails`
-- `@backstage/plugin-scaffolder-backend-module-yeoman`
-- `@backstage/plugin-scaffolder-common`
-- `@backstage/plugin-stack-overflow-backend`
-- `@backstage/plugin-tech-insights-backend-module-jsonfc`
+- `@backstage/app-defaults` (1.0.2 → 1.0.3)
+- `@backstage/dev-utils` (1.0.2 → 1.0.3)
+- `@backstage/plugin-adr-common` (0.1.0 → 0.1.1)
+- `@backstage/plugin-badges-backend` (0.1.26 → 0.1.27)
+- `@backstage/plugin-bazaar` (0.1.20 → 0.1.21)
+- `@backstage/plugin-bazaar-backend` (0.1.16 → 0.1.17)
+- `@backstage/plugin-catalog-graph` (0.2.17 → 0.2.18)
+- `@backstage/plugin-cicd-statistics` (0.1.7 → 0.1.8)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.1 → 0.1.2)
+- `@backstage/plugin-jenkins-common` (0.1.4 → 0.1.5)
+- `@backstage/plugin-kafka-backend` (0.2.25 → 0.2.26)
+- `@backstage/plugin-newrelic-dashboard` (0.1.13 → 0.1.14)
+- `@backstage/plugin-permission-react` (0.4.1 → 0.4.2)
+- `@backstage/plugin-proxy-backend` (0.2.26 → 0.2.27)
+- `@backstage/plugin-scaffolder-backend-module-rails` (0.4.0 → 0.4.1)
+- `@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.5 → 0.2.6)
+- `@backstage/plugin-scaffolder-common` (1.1.0 → 1.1.1)
+- `@backstage/plugin-stack-overflow-backend` (0.1.1 → 0.1.2)
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.16 → 0.1.17)

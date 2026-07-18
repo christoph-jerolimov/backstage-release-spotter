@@ -10,7 +10,7 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
 - [Other minor version bumps](#other-minor-version-bumps): 13 packages
 - [Other patch version bumps](#other-patch-version-bumps): 121 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 21 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 21 packages
 
 ## Table of contents
 
@@ -176,7 +176,7 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
   - [`@backstage/types` (1.0.1 → 1.0.2)](#backstagetypes-101--102)
   - [`@backstage/version-bridge` (1.0.2 → 1.0.3)](#backstageversion-bridge-102--103)
   - [`@techdocs/cli` (1.2.3 → 1.2.4)](#techdocscli-123--124)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2162,26 +2162,26 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 
 - 8015ff1258: Tweaked wording to use inclusive terminology
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/catalog-model`
-- `@backstage/codemods`
-- `@backstage/config`
-- `@backstage/plugin-adr-common`
-- `@backstage/plugin-badges-backend`
-- `@backstage/plugin-catalog-backend-module-ldap`
-- `@backstage/plugin-catalog-common`
-- `@backstage/plugin-cicd-statistics`
-- `@backstage/plugin-cicd-statistics-module-gitlab`
-- `@backstage/plugin-events-backend-module-azure`
-- `@backstage/plugin-events-backend-module-bitbucket-cloud`
-- `@backstage/plugin-events-backend-module-gerrit`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-jenkins-common`
-- `@backstage/plugin-newrelic-dashboard`
-- `@backstage/plugin-playlist-common`
-- `@backstage/plugin-scaffolder-common`
-- `@backstage/plugin-tech-insights-backend`
-- `@backstage/plugin-tech-insights-backend-module-jsonfc`
-- `@backstage/plugin-tech-insights-common`
-- `@backstage/plugin-tech-insights-node`
+- `@backstage/catalog-model` (1.1.3 → 1.1.4)
+- `@backstage/codemods` (0.1.41 → 0.1.42)
+- `@backstage/config` (1.0.4 → 1.0.5)
+- `@backstage/plugin-adr-common` (0.2.3 → 0.2.4)
+- `@backstage/plugin-badges-backend` (0.1.32 → 0.1.33)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.5.5 → 0.5.6)
+- `@backstage/plugin-catalog-common` (1.0.8 → 1.0.9)
+- `@backstage/plugin-cicd-statistics` (0.1.13 → 0.1.14)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.7 → 0.1.8)
+- `@backstage/plugin-events-backend-module-azure` (0.1.0 → 0.1.1)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.1.0 → 0.1.1)
+- `@backstage/plugin-events-backend-module-gerrit` (0.1.0 → 0.1.1)
+- `@backstage/plugin-events-backend-test-utils` (0.1.0 → 0.1.1)
+- `@backstage/plugin-jenkins-common` (0.1.10 → 0.1.11)
+- `@backstage/plugin-newrelic-dashboard` (0.2.4 → 0.2.5)
+- `@backstage/plugin-playlist-common` (0.1.2 → 0.1.3)
+- `@backstage/plugin-scaffolder-common` (1.2.2 → 1.2.3)
+- `@backstage/plugin-tech-insights-backend` (0.5.4 → 0.5.5)
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.22 → 0.1.23)
+- `@backstage/plugin-tech-insights-common` (0.2.8 → 0.2.9)
+- `@backstage/plugin-tech-insights-node` (0.3.6 → 0.3.7)

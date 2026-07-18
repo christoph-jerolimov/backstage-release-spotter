@@ -9,7 +9,7 @@ Changes between 1.31.4 and 1.32.0 — 141 changed and 0 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
 - [Other minor version bumps](#other-minor-version-bumps): 12 packages
 - [Other patch version bumps](#other-patch-version-bumps): 95 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 18 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 18 packages
 
 ## Table of contents
 
@@ -141,7 +141,7 @@ Changes between 1.31.4 and 1.32.0 — 141 changed and 0 added packages.
   - [`@backstage/plugin-user-settings` (0.8.13 → 0.8.14)](#backstageplugin-user-settings-0813--0814)
   - [`@backstage/plugin-user-settings-backend` (0.2.24 → 0.2.25)](#backstageplugin-user-settings-backend-0224--0225)
   - [`@backstage/version-bridge` (1.0.9 → 1.0.10)](#backstageversion-bridge-109--1010)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Breaking changes
 
@@ -1547,23 +1547,23 @@ Changes between 1.31.4 and 1.32.0 — 141 changed and 0 added packages.
 
 - e969dc7: Move `@types/react` to a peer dependency.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/backend-plugin-api`
-- `@backstage/frontend-defaults`
-- `@backstage/plugin-app-node`
-- `@backstage/plugin-auth-backend-module-auth0-provider`
-- `@backstage/plugin-auth-backend-module-azure-easyauth-provider`
-- `@backstage/plugin-auth-backend-module-bitbucket-server-provider`
-- `@backstage/plugin-auth-backend-module-oauth2-proxy-provider`
-- `@backstage/plugin-auth-backend-module-pinniped-provider`
-- `@backstage/plugin-bitbucket-cloud-common`
-- `@backstage/plugin-catalog-backend-module-backstage-openapi`
-- `@backstage/plugin-catalog-backend-module-gcp`
-- `@backstage/plugin-catalog-backend-module-github-org`
-- `@backstage/plugin-catalog-backend-module-ldap`
-- `@backstage/plugin-catalog-backend-module-logs`
-- `@backstage/plugin-catalog-backend-module-scaffolder-entity-model`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-permission-backend-module-allow-all-policy`
-- `@techdocs/cli`
+- `@backstage/backend-plugin-api` (1.0.0 → 1.0.1)
+- `@backstage/frontend-defaults` (0.1.0 → 0.1.1)
+- `@backstage/plugin-app-node` (0.1.25 → 0.1.26)
+- `@backstage/plugin-auth-backend-module-auth0-provider` (0.1.0 → 0.1.1)
+- `@backstage/plugin-auth-backend-module-azure-easyauth-provider` (0.2.0 → 0.2.1)
+- `@backstage/plugin-auth-backend-module-bitbucket-server-provider` (0.1.0 → 0.1.1)
+- `@backstage/plugin-auth-backend-module-oauth2-proxy-provider` (0.2.0 → 0.2.1)
+- `@backstage/plugin-auth-backend-module-pinniped-provider` (0.2.0 → 0.2.1)
+- `@backstage/plugin-bitbucket-cloud-common` (0.2.23 → 0.2.24)
+- `@backstage/plugin-catalog-backend-module-backstage-openapi` (0.4.0 → 0.4.1)
+- `@backstage/plugin-catalog-backend-module-gcp` (0.3.0 → 0.3.1)
+- `@backstage/plugin-catalog-backend-module-github-org` (0.3.1 → 0.3.2)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.9.0 → 0.9.1)
+- `@backstage/plugin-catalog-backend-module-logs` (0.1.1 → 0.1.2)
+- `@backstage/plugin-catalog-backend-module-scaffolder-entity-model` (0.2.0 → 0.2.1)
+- `@backstage/plugin-events-backend-test-utils` (0.1.35 → 0.1.36)
+- `@backstage/plugin-permission-backend-module-allow-all-policy` (0.2.0 → 0.2.1)
+- `@techdocs/cli` (1.8.19 → 1.8.20)

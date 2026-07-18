@@ -10,7 +10,7 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 4 packages
 - [Other minor version bumps](#other-minor-version-bumps): 15 packages
 - [Other patch version bumps](#other-patch-version-bumps): 142 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 34 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 34 packages
 
 ## Table of contents
 
@@ -213,7 +213,7 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
   - [`@backstage/theme` (0.4.1 → 0.4.2)](#backstagetheme-041--042)
   - [`@backstage/types` (1.1.0 → 1.1.1)](#backstagetypes-110--111)
   - [`@backstage/version-bridge` (1.0.4 → 1.0.5)](#backstageversion-bridge-104--105)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -3036,39 +3036,39 @@ Skipped due to publishing issues.
 
 - 406b786a2a2c: Mark package as being free of side effects, allowing more optimized Webpack builds.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/backend-defaults`
-- `@backstage/backend-openapi-utils`
-- `@backstage/cli-node`
-- `@backstage/integration-aws-node`
-- `@backstage/plugin-app-node`
-- `@backstage/plugin-azure-sites-backend`
-- `@backstage/plugin-catalog-backend-module-bitbucket`
-- `@backstage/plugin-catalog-backend-module-ldap`
-- `@backstage/plugin-catalog-backend-module-openapi`
-- `@backstage/plugin-catalog-graphql`
-- `@backstage/plugin-catalog-node`
-- `@backstage/plugin-events-backend-module-azure`
-- `@backstage/plugin-events-backend-module-bitbucket-cloud`
-- `@backstage/plugin-events-backend-module-gerrit`
-- `@backstage/plugin-events-backend-module-github`
-- `@backstage/plugin-events-backend-module-gitlab`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-events-node`
-- `@backstage/plugin-explore-backend`
-- `@backstage/plugin-graphql-backend`
-- `@backstage/plugin-jenkins-backend`
-- `@backstage/plugin-nomad-backend`
-- `@backstage/plugin-playlist-backend`
-- `@backstage/plugin-rollbar-backend`
-- `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown`
-- `@backstage/plugin-scaffolder-backend-module-cookiecutter`
-- `@backstage/plugin-scaffolder-backend-module-gitlab`
-- `@backstage/plugin-scaffolder-backend-module-rails`
-- `@backstage/plugin-scaffolder-backend-module-sentry`
-- `@backstage/plugin-scaffolder-node`
-- `@backstage/plugin-search-backend-node`
-- `@backstage/plugin-sonarqube-backend`
-- `@backstage/plugin-stack-overflow-backend`
-- `@backstage/plugin-tech-insights-node`
+- `@backstage/backend-defaults` (0.2.2 → 0.2.3)
+- `@backstage/backend-openapi-utils` (0.0.3 → 0.0.4)
+- `@backstage/cli-node` (0.1.3 → 0.1.4)
+- `@backstage/integration-aws-node` (0.1.5 → 0.1.6)
+- `@backstage/plugin-app-node` (0.1.2 → 0.1.3)
+- `@backstage/plugin-azure-sites-backend` (0.1.12 → 0.1.13)
+- `@backstage/plugin-catalog-backend-module-bitbucket` (0.2.17 → 0.2.18)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.5.17 → 0.5.18)
+- `@backstage/plugin-catalog-backend-module-openapi` (0.1.18 → 0.1.19)
+- `@backstage/plugin-catalog-graphql` (0.3.22 → 0.3.23)
+- `@backstage/plugin-catalog-node` (1.4.3 → 1.4.4)
+- `@backstage/plugin-events-backend-module-azure` (0.1.12 → 0.1.13)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.1.12 → 0.1.13)
+- `@backstage/plugin-events-backend-module-gerrit` (0.1.12 → 0.1.13)
+- `@backstage/plugin-events-backend-module-github` (0.1.12 → 0.1.13)
+- `@backstage/plugin-events-backend-module-gitlab` (0.1.12 → 0.1.13)
+- `@backstage/plugin-events-backend-test-utils` (0.1.12 → 0.1.13)
+- `@backstage/plugin-events-node` (0.2.11 → 0.2.12)
+- `@backstage/plugin-explore-backend` (0.0.12 → 0.0.13)
+- `@backstage/plugin-graphql-backend` (0.1.40 → 0.1.41)
+- `@backstage/plugin-jenkins-backend` (0.2.5 → 0.2.6)
+- `@backstage/plugin-nomad-backend` (0.1.4 → 0.1.5)
+- `@backstage/plugin-playlist-backend` (0.3.6 → 0.3.7)
+- `@backstage/plugin-rollbar-backend` (0.1.47 → 0.1.48)
+- `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.2.3 → 0.2.4)
+- `@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.26 → 0.2.27)
+- `@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.5 → 0.2.6)
+- `@backstage/plugin-scaffolder-backend-module-rails` (0.4.19 → 0.4.20)
+- `@backstage/plugin-scaffolder-backend-module-sentry` (0.1.10 → 0.1.11)
+- `@backstage/plugin-scaffolder-node` (0.2.2 → 0.2.3)
+- `@backstage/plugin-search-backend-node` (1.2.6 → 1.2.7)
+- `@backstage/plugin-sonarqube-backend` (0.2.4 → 0.2.5)
+- `@backstage/plugin-stack-overflow-backend` (0.2.6 → 0.2.7)
+- `@backstage/plugin-tech-insights-node` (0.4.8 → 0.4.9)

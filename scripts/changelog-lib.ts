@@ -170,11 +170,11 @@ export function buildChangelog(
   // stay a dedicated first group so they never drown in a large document).
   const NEWLY_ADDED = 0, BREAKING = 1, MAJOR = 2, ZERO_MINOR = 3, ZERO_PATCH = 4, MINOR = 5, PATCH = 6;
   const groups: { name: string; label: string; content: string[] }[][] = Array.from({ length: 7 }, () => []);
-  const excluded: string[] = [];
+  const excluded: { name: string; label: string }[] = [];
   for (const { name, from, to, label } of candidates) {
     const sections = sectionsInRange(name, from, to, mode);
     if (sections.kind === "filtered") {
-      excluded.push(name);
+      excluded.push({ name, label });
       continue;
     }
     const entry = { name, label, content: sections.lines };
@@ -196,7 +196,7 @@ export function buildChangelog(
     }
   }
   for (const group of groups) group.sort((a, b) => byCodepoint(a.name, b.name));
-  excluded.sort(byCodepoint);
+  excluded.sort((a, b) => byCodepoint(a.name, b.name));
 
   const titles = [
     "Newly added packages",
@@ -217,7 +217,7 @@ export function buildChangelog(
     "",
   );
 
-  const EXCLUDED_TITLE = "Excluded dependency updates for packages";
+  const EXCLUDED_TITLE = "Excluded dependency updates";
   const count = (length: number): string => `${length} ${length === 1 ? "package" : "packages"}`;
   const nonEmpty = groups.map((entries, index) => ({ entries, title: titles[index]! })).filter(({ entries }) => entries.length > 0);
   if (nonEmpty.length > 0 || excluded.length > 0) {
@@ -252,8 +252,8 @@ export function buildChangelog(
 
   if (excluded.length > 0) {
     lines.push(`## ${EXCLUDED_TITLE}`, "");
-    for (const name of excluded) {
-      lines.push(`- \`${name}\``);
+    for (const { name, label } of excluded) {
+      lines.push(`- \`${name}\` (${label})`);
     }
     lines.push("");
   }

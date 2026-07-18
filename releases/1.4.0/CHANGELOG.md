@@ -11,7 +11,7 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
 - [Other patch version bumps](#other-patch-version-bumps): 102 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 9 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 9 packages
 
 ## Table of contents
 
@@ -163,7 +163,7 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
   - [`@backstage/test-utils` (1.1.1 → 1.1.2)](#backstagetest-utils-111--112)
   - [`@backstage/theme` (0.2.15 → 0.2.16)](#backstagetheme-0215--0216)
   - [`@techdocs/cli` (1.1.2 → 1.1.3)](#techdocscli-112--113)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -2246,14 +2246,14 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - a5d73da942: Fix the flag parsing for `legacyCopyReadmeMdToIndexMd` in `techdocs-cli generate` command, and decouple it's logic from the `techdocs-ref` flag.
 - 14ce0d9347: Fixed a bug that prevented docker images from being pulled by default when generating TechDocs.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/dev-utils`
-- `@backstage/plugin-adr-common`
-- `@backstage/plugin-catalog-common`
-- `@backstage/plugin-catalog-graph`
-- `@backstage/plugin-jenkins-common`
-- `@backstage/plugin-permission-react`
-- `@backstage/plugin-scaffolder-backend-module-rails`
-- `@backstage/plugin-scaffolder-backend-module-yeoman`
-- `@backstage/plugin-scaffolder-common`
+- `@backstage/dev-utils` (1.0.3 → 1.0.4)
+- `@backstage/plugin-adr-common` (0.1.1 → 0.1.2)
+- `@backstage/plugin-catalog-common` (1.0.3 → 1.0.4)
+- `@backstage/plugin-catalog-graph` (0.2.18 → 0.2.19)
+- `@backstage/plugin-jenkins-common` (0.1.5 → 0.1.6)
+- `@backstage/plugin-permission-react` (0.4.2 → 0.4.3)
+- `@backstage/plugin-scaffolder-backend-module-rails` (0.4.1 → 0.4.2)
+- `@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.6 → 0.2.7)
+- `@backstage/plugin-scaffolder-common` (1.1.1 → 1.1.2)

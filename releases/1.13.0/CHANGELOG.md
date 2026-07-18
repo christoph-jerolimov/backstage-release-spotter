@@ -11,7 +11,7 @@ Changes between 1.12.1 and 1.13.0 — 186 changed and 8 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
 - [Other minor version bumps](#other-minor-version-bumps): 15 packages
 - [Other patch version bumps](#other-patch-version-bumps): 110 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 43 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 43 packages
 
 ## Table of contents
 
@@ -173,7 +173,7 @@ Changes between 1.12.1 and 1.13.0 — 186 changed and 8 added packages.
   - [`@backstage/theme` (0.2.18 → 0.2.19)](#backstagetheme-0218--0219)
   - [`@backstage/version-bridge` (1.0.3 → 1.0.4)](#backstageversion-bridge-103--104)
   - [`@techdocs/cli` (1.4.0 → 1.4.1)](#techdocscli-140--141)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1878,48 +1878,48 @@ Changes between 1.12.1 and 1.13.0 — 186 changed and 8 added packages.
 
 - b348420a804: Adding global-agent to enable the ability to publish through a proxy
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/backend-defaults`
-- `@backstage/backend-plugin-api`
-- `@backstage/backend-test-utils`
-- `@backstage/plugin-airbrake-backend`
-- `@backstage/plugin-app-backend`
-- `@backstage/plugin-auth-node`
-- `@backstage/plugin-azure-devops-backend`
-- `@backstage/plugin-azure-sites-backend`
-- `@backstage/plugin-badges-backend`
-- `@backstage/plugin-bitbucket-cloud-common`
-- `@backstage/plugin-catalog-backend-module-aws`
-- `@backstage/plugin-catalog-backend-module-bitbucket`
-- `@backstage/plugin-catalog-backend-module-bitbucket-cloud`
-- `@backstage/plugin-catalog-backend-module-bitbucket-server`
-- `@backstage/plugin-catalog-backend-module-gerrit`
-- `@backstage/plugin-catalog-backend-module-incremental-ingestion`
-- `@backstage/plugin-catalog-backend-module-puppetdb`
-- `@backstage/plugin-catalog-common`
-- `@backstage/plugin-catalog-node`
-- `@backstage/plugin-events-backend-module-aws-sqs`
-- `@backstage/plugin-events-backend-module-azure`
-- `@backstage/plugin-events-backend-module-bitbucket-cloud`
-- `@backstage/plugin-events-backend-module-gerrit`
-- `@backstage/plugin-events-backend-module-github`
-- `@backstage/plugin-events-backend-module-gitlab`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-events-node`
-- `@backstage/plugin-jenkins-backend`
-- `@backstage/plugin-jenkins-common`
-- `@backstage/plugin-kafka-backend`
-- `@backstage/plugin-linguist-backend`
-- `@backstage/plugin-periskop-backend`
-- `@backstage/plugin-playlist-common`
-- `@backstage/plugin-proxy-backend`
-- `@backstage/plugin-scaffolder-backend-module-cookiecutter`
-- `@backstage/plugin-scaffolder-backend-module-rails`
-- `@backstage/plugin-scaffolder-backend-module-sentry`
-- `@backstage/plugin-scaffolder-backend-module-yeoman`
-- `@backstage/plugin-search-common`
-- `@backstage/plugin-tech-insights-backend`
-- `@backstage/plugin-tech-insights-node`
-- `@backstage/plugin-todo-backend`
-- `@backstage/plugin-user-settings-backend`
+- `@backstage/backend-defaults` (0.1.8 → 0.1.9)
+- `@backstage/backend-plugin-api` (0.5.0 → 0.5.1)
+- `@backstage/backend-test-utils` (0.1.35 → 0.1.36)
+- `@backstage/plugin-airbrake-backend` (0.2.16 → 0.2.17)
+- `@backstage/plugin-app-backend` (0.3.43 → 0.3.44)
+- `@backstage/plugin-auth-node` (0.2.12 → 0.2.13)
+- `@backstage/plugin-azure-devops-backend` (0.3.22 → 0.3.23)
+- `@backstage/plugin-azure-sites-backend` (0.1.5 → 0.1.6)
+- `@backstage/plugin-badges-backend` (0.1.37 → 0.1.38)
+- `@backstage/plugin-bitbucket-cloud-common` (0.2.4 → 0.2.5)
+- `@backstage/plugin-catalog-backend-module-aws` (0.1.17 → 0.1.18)
+- `@backstage/plugin-catalog-backend-module-bitbucket` (0.2.10 → 0.2.11)
+- `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.10 → 0.1.11)
+- `@backstage/plugin-catalog-backend-module-bitbucket-server` (0.1.8 → 0.1.9)
+- `@backstage/plugin-catalog-backend-module-gerrit` (0.1.11 → 0.1.12)
+- `@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.3.0 → 0.3.1)
+- `@backstage/plugin-catalog-backend-module-puppetdb` (0.1.0 → 0.1.1)
+- `@backstage/plugin-catalog-common` (1.0.12 → 1.0.13)
+- `@backstage/plugin-catalog-node` (1.3.4 → 1.3.5)
+- `@backstage/plugin-events-backend-module-aws-sqs` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-backend-module-azure` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-backend-module-gerrit` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-backend-module-github` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-backend-module-gitlab` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-backend-test-utils` (0.1.5 → 0.1.6)
+- `@backstage/plugin-events-node` (0.2.4 → 0.2.5)
+- `@backstage/plugin-jenkins-backend` (0.1.33 → 0.1.34)
+- `@backstage/plugin-jenkins-common` (0.1.14 → 0.1.15)
+- `@backstage/plugin-kafka-backend` (0.2.36 → 0.2.37)
+- `@backstage/plugin-linguist-backend` (0.2.0 → 0.2.1)
+- `@backstage/plugin-periskop-backend` (0.1.14 → 0.1.15)
+- `@backstage/plugin-playlist-common` (0.1.5 → 0.1.6)
+- `@backstage/plugin-proxy-backend` (0.2.37 → 0.2.38)
+- `@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.18 → 0.2.19)
+- `@backstage/plugin-scaffolder-backend-module-rails` (0.4.11 → 0.4.12)
+- `@backstage/plugin-scaffolder-backend-module-sentry` (0.1.3 → 0.1.4)
+- `@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.16 → 0.2.17)
+- `@backstage/plugin-search-common` (1.2.2 → 1.2.3)
+- `@backstage/plugin-tech-insights-backend` (0.5.9 → 0.5.10)
+- `@backstage/plugin-tech-insights-node` (0.4.1 → 0.4.2)
+- `@backstage/plugin-todo-backend` (0.1.40 → 0.1.41)
+- `@backstage/plugin-user-settings-backend` (0.1.7 → 0.1.8)

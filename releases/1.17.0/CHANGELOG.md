@@ -10,7 +10,7 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
 - [Other minor version bumps](#other-minor-version-bumps): 6 packages
 - [Other patch version bumps](#other-patch-version-bumps): 115 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 52 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 52 packages
 
 ## Table of contents
 
@@ -160,7 +160,7 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
   - [`@backstage/plugin-xcmetrics` (0.2.40 → 0.2.41)](#backstageplugin-xcmetrics-0240--0241)
   - [`@backstage/repo-tools` (0.3.2 → 0.3.3)](#backstagerepo-tools-032--033)
   - [`@techdocs/cli` (1.4.4 → 1.4.5)](#techdocscli-144--145)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1593,57 +1593,57 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - 971bdd6a4732: Bumped internal `nodemon` dependency.
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/app-defaults`
-- `@backstage/plugin-adr-backend`
-- `@backstage/plugin-adr-common`
-- `@backstage/plugin-api-docs`
-- `@backstage/plugin-azure-devops`
-- `@backstage/plugin-azure-sites`
-- `@backstage/plugin-azure-sites-backend`
-- `@backstage/plugin-badges`
-- `@backstage/plugin-catalog-backend-module-bitbucket`
-- `@backstage/plugin-catalog-backend-module-ldap`
-- `@backstage/plugin-catalog-backend-module-openapi`
-- `@backstage/plugin-catalog-import`
-- `@backstage/plugin-catalog-unprocessed-entities`
-- `@backstage/plugin-cicd-statistics`
-- `@backstage/plugin-circleci`
-- `@backstage/plugin-cloudbuild`
-- `@backstage/plugin-cost-insights`
-- `@backstage/plugin-fossa`
-- `@backstage/plugin-gcp-projects`
-- `@backstage/plugin-github-actions`
-- `@backstage/plugin-github-pull-requests-board`
-- `@backstage/plugin-gitops-profiles`
-- `@backstage/plugin-gocd`
-- `@backstage/plugin-graphiql`
-- `@backstage/plugin-graphql-backend`
-- `@backstage/plugin-jenkins`
-- `@backstage/plugin-lighthouse`
-- `@backstage/plugin-linguist`
-- `@backstage/plugin-permission-node`
-- `@backstage/plugin-puppetdb`
-- `@backstage/plugin-rollbar`
-- `@backstage/plugin-rollbar-backend`
-- `@backstage/plugin-scaffolder-backend-module-gitlab`
-- `@backstage/plugin-search`
-- `@backstage/plugin-search-react`
-- `@backstage/plugin-sentry`
-- `@backstage/plugin-stack-overflow-backend`
-- `@backstage/plugin-stackstorm`
-- `@backstage/plugin-tech-insights-backend`
-- `@backstage/plugin-tech-insights-backend-module-jsonfc`
-- `@backstage/plugin-tech-insights-node`
-- `@backstage/plugin-tech-radar`
-- `@backstage/plugin-techdocs`
-- `@backstage/plugin-techdocs-addons-test-utils`
-- `@backstage/plugin-techdocs-module-addons-contrib`
-- `@backstage/plugin-techdocs-node`
-- `@backstage/plugin-techdocs-react`
-- `@backstage/plugin-todo`
-- `@backstage/plugin-user-settings`
-- `@backstage/plugin-vault`
-- `@backstage/plugin-vault-backend`
-- `@backstage/test-utils`
+- `@backstage/app-defaults` (1.4.1 → 1.4.2)
+- `@backstage/plugin-adr-backend` (0.3.5 → 0.3.6)
+- `@backstage/plugin-adr-common` (0.2.11 → 0.2.12)
+- `@backstage/plugin-api-docs` (0.9.6 → 0.9.7)
+- `@backstage/plugin-azure-devops` (0.3.2 → 0.3.3)
+- `@backstage/plugin-azure-sites` (0.1.9 → 0.1.10)
+- `@backstage/plugin-azure-sites-backend` (0.1.9 → 0.1.10)
+- `@backstage/plugin-badges` (0.2.44 → 0.2.45)
+- `@backstage/plugin-catalog-backend-module-bitbucket` (0.2.14 → 0.2.15)
+- `@backstage/plugin-catalog-backend-module-ldap` (0.5.14 → 0.5.15)
+- `@backstage/plugin-catalog-backend-module-openapi` (0.1.13 → 0.1.14)
+- `@backstage/plugin-catalog-import` (0.9.10 → 0.9.11)
+- `@backstage/plugin-catalog-unprocessed-entities` (0.1.1 → 0.1.2)
+- `@backstage/plugin-cicd-statistics` (0.1.22 → 0.1.23)
+- `@backstage/plugin-circleci` (0.3.20 → 0.3.21)
+- `@backstage/plugin-cloudbuild` (0.3.20 → 0.3.21)
+- `@backstage/plugin-cost-insights` (0.12.9 → 0.12.10)
+- `@backstage/plugin-fossa` (0.2.52 → 0.2.53)
+- `@backstage/plugin-gcp-projects` (0.3.39 → 0.3.40)
+- `@backstage/plugin-github-actions` (0.6.1 → 0.6.2)
+- `@backstage/plugin-github-pull-requests-board` (0.1.14 → 0.1.15)
+- `@backstage/plugin-gitops-profiles` (0.3.38 → 0.3.39)
+- `@backstage/plugin-gocd` (0.1.26 → 0.1.27)
+- `@backstage/plugin-graphiql` (0.2.52 → 0.2.53)
+- `@backstage/plugin-graphql-backend` (0.1.37 → 0.1.38)
+- `@backstage/plugin-jenkins` (0.8.2 → 0.8.3)
+- `@backstage/plugin-lighthouse` (0.4.5 → 0.4.6)
+- `@backstage/plugin-linguist` (0.1.5 → 0.1.6)
+- `@backstage/plugin-permission-node` (0.7.10 → 0.7.11)
+- `@backstage/plugin-puppetdb` (0.1.3 → 0.1.4)
+- `@backstage/plugin-rollbar` (0.4.20 → 0.4.21)
+- `@backstage/plugin-rollbar-backend` (0.1.44 → 0.1.45)
+- `@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.2 → 0.2.3)
+- `@backstage/plugin-search` (1.3.3 → 1.3.4)
+- `@backstage/plugin-search-react` (1.6.3 → 1.6.4)
+- `@backstage/plugin-sentry` (0.5.5 → 0.5.6)
+- `@backstage/plugin-stack-overflow-backend` (0.2.3 → 0.2.4)
+- `@backstage/plugin-stackstorm` (0.1.4 → 0.1.5)
+- `@backstage/plugin-tech-insights-backend` (0.5.13 → 0.5.14)
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.31 → 0.1.32)
+- `@backstage/plugin-tech-insights-node` (0.4.5 → 0.4.6)
+- `@backstage/plugin-tech-radar` (0.6.6 → 0.6.7)
+- `@backstage/plugin-techdocs` (1.6.5 → 1.6.6)
+- `@backstage/plugin-techdocs-addons-test-utils` (1.0.16 → 1.0.17)
+- `@backstage/plugin-techdocs-module-addons-contrib` (1.0.15 → 1.0.16)
+- `@backstage/plugin-techdocs-node` (1.7.3 → 1.7.4)
+- `@backstage/plugin-techdocs-react` (1.1.8 → 1.1.9)
+- `@backstage/plugin-todo` (0.2.22 → 0.2.23)
+- `@backstage/plugin-user-settings` (0.7.5 → 0.7.6)
+- `@backstage/plugin-vault` (0.1.14 → 0.1.15)
+- `@backstage/plugin-vault-backend` (0.3.3 → 0.3.4)
+- `@backstage/test-utils` (1.4.1 → 1.4.2)

@@ -10,7 +10,7 @@ Changes between 1.9.1 and 1.10.0 — 169 changed and 2 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
 - [Other minor version bumps](#other-minor-version-bumps): 9 packages
 - [Other patch version bumps](#other-patch-version-bumps): 69 packages
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages): 85 packages
+- [Excluded dependency updates](#excluded-dependency-updates): 85 packages
 
 ## Table of contents
 
@@ -106,7 +106,7 @@ Changes between 1.9.1 and 1.10.0 — 169 changed and 2 added packages.
   - [`@backstage/plugin-user-settings` (0.6.1 → 0.6.2)](#backstageplugin-user-settings-061--062)
   - [`@backstage/plugin-xcmetrics` (0.2.33 → 0.2.34)](#backstageplugin-xcmetrics-0233--0234)
   - [`@backstage/repo-tools` (0.1.0 → 0.1.1)](#backstagerepo-tools-010--011)
-- [Excluded dependency updates for packages](#excluded-dependency-updates-for-packages)
+- [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
 
@@ -1332,90 +1332,90 @@ Changes between 1.9.1 and 1.10.0 — 169 changed and 2 added packages.
 - 75275b0b0b: Updated dependency `@microsoft/tsdoc-config` to `0.16.2`.
 - 76fc6f7ec8: Updates Api-extractor and api-documenter version
 
-## Excluded dependency updates for packages
+## Excluded dependency updates
 
-- `@backstage/config-loader`
-- `@backstage/dev-utils`
-- `@backstage/integration`
-- `@backstage/integration-react`
-- `@backstage/plugin-adr-common`
-- `@backstage/plugin-airbrake`
-- `@backstage/plugin-airbrake-backend`
-- `@backstage/plugin-allure`
-- `@backstage/plugin-analytics-module-ga`
-- `@backstage/plugin-apache-airflow`
-- `@backstage/plugin-auth-backend`
-- `@backstage/plugin-auth-node`
-- `@backstage/plugin-azure-devops-backend`
-- `@backstage/plugin-azure-sites-backend`
-- `@backstage/plugin-badges`
-- `@backstage/plugin-badges-backend`
-- `@backstage/plugin-bazaar-backend`
-- `@backstage/plugin-bitrise`
-- `@backstage/plugin-catalog-backend-module-bitbucket`
-- `@backstage/plugin-catalog-common`
-- `@backstage/plugin-catalog-graphql`
-- `@backstage/plugin-catalog-import`
-- `@backstage/plugin-cicd-statistics-module-gitlab`
-- `@backstage/plugin-circleci`
-- `@backstage/plugin-code-climate`
-- `@backstage/plugin-code-coverage`
-- `@backstage/plugin-codescene`
-- `@backstage/plugin-config-schema`
-- `@backstage/plugin-dynatrace`
-- `@backstage/plugin-events-backend-module-azure`
-- `@backstage/plugin-events-backend-module-bitbucket-cloud`
-- `@backstage/plugin-events-backend-module-gerrit`
-- `@backstage/plugin-events-backend-module-github`
-- `@backstage/plugin-events-backend-module-gitlab`
-- `@backstage/plugin-events-backend-test-utils`
-- `@backstage/plugin-events-node`
-- `@backstage/plugin-explore-react`
-- `@backstage/plugin-gcalendar`
-- `@backstage/plugin-github-deployments`
-- `@backstage/plugin-github-issues`
-- `@backstage/plugin-github-pull-requests-board`
-- `@backstage/plugin-gitops-profiles`
-- `@backstage/plugin-gocd`
-- `@backstage/plugin-graphiql`
-- `@backstage/plugin-graphql-backend`
-- `@backstage/plugin-jenkins-backend`
-- `@backstage/plugin-jenkins-common`
-- `@backstage/plugin-kafka`
-- `@backstage/plugin-kafka-backend`
-- `@backstage/plugin-kubernetes-common`
-- `@backstage/plugin-newrelic`
-- `@backstage/plugin-newrelic-dashboard`
-- `@backstage/plugin-org`
-- `@backstage/plugin-org-react`
-- `@backstage/plugin-pagerduty`
-- `@backstage/plugin-periskop`
-- `@backstage/plugin-periskop-backend`
-- `@backstage/plugin-permission-backend`
-- `@backstage/plugin-permission-common`
-- `@backstage/plugin-permission-node`
-- `@backstage/plugin-playlist-backend`
-- `@backstage/plugin-playlist-common`
-- `@backstage/plugin-proxy-backend`
-- `@backstage/plugin-rollbar`
-- `@backstage/plugin-rollbar-backend`
-- `@backstage/plugin-search-backend-module-pg`
-- `@backstage/plugin-search-common`
-- `@backstage/plugin-sentry`
-- `@backstage/plugin-shortcuts`
-- `@backstage/plugin-sonarqube-backend`
-- `@backstage/plugin-sonarqube-react`
-- `@backstage/plugin-splunk-on-call`
-- `@backstage/plugin-tech-insights`
-- `@backstage/plugin-tech-insights-backend-module-jsonfc`
-- `@backstage/plugin-tech-insights-node`
-- `@backstage/plugin-techdocs-addons-test-utils`
-- `@backstage/plugin-techdocs-backend`
-- `@backstage/plugin-techdocs-module-addons-contrib`
-- `@backstage/plugin-techdocs-node`
-- `@backstage/plugin-todo`
-- `@backstage/plugin-todo-backend`
-- `@backstage/plugin-user-settings-backend`
-- `@backstage/plugin-vault`
-- `@backstage/plugin-vault-backend`
-- `@backstage/test-utils`
+- `@backstage/config-loader` (1.1.7 → 1.1.8)
+- `@backstage/dev-utils` (1.0.10 → 1.0.11)
+- `@backstage/integration` (1.4.1 → 1.4.2)
+- `@backstage/integration-react` (1.1.8 → 1.1.9)
+- `@backstage/plugin-adr-common` (0.2.4 → 0.2.5)
+- `@backstage/plugin-airbrake` (0.3.13 → 0.3.14)
+- `@backstage/plugin-airbrake-backend` (0.2.12 → 0.2.13)
+- `@backstage/plugin-allure` (0.1.29 → 0.1.30)
+- `@backstage/plugin-analytics-module-ga` (0.1.24 → 0.1.25)
+- `@backstage/plugin-apache-airflow` (0.2.6 → 0.2.7)
+- `@backstage/plugin-auth-backend` (0.17.2 → 0.17.3)
+- `@backstage/plugin-auth-node` (0.2.8 → 0.2.9)
+- `@backstage/plugin-azure-devops-backend` (0.3.18 → 0.3.19)
+- `@backstage/plugin-azure-sites-backend` (0.1.1 → 0.1.2)
+- `@backstage/plugin-badges` (0.2.37 → 0.2.38)
+- `@backstage/plugin-badges-backend` (0.1.33 → 0.1.34)
+- `@backstage/plugin-bazaar-backend` (0.2.2 → 0.2.3)
+- `@backstage/plugin-bitrise` (0.1.40 → 0.1.41)
+- `@backstage/plugin-catalog-backend-module-bitbucket` (0.2.6 → 0.2.7)
+- `@backstage/plugin-catalog-common` (1.0.9 → 1.0.10)
+- `@backstage/plugin-catalog-graphql` (0.3.16 → 0.3.17)
+- `@backstage/plugin-catalog-import` (0.9.3 → 0.9.4)
+- `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.9 → 0.1.10)
+- `@backstage/plugin-circleci` (0.3.13 → 0.3.14)
+- `@backstage/plugin-code-climate` (0.1.13 → 0.1.14)
+- `@backstage/plugin-code-coverage` (0.2.6 → 0.2.7)
+- `@backstage/plugin-codescene` (0.1.8 → 0.1.9)
+- `@backstage/plugin-config-schema` (0.1.36 → 0.1.37)
+- `@backstage/plugin-dynatrace` (1.0.3 → 1.0.4)
+- `@backstage/plugin-events-backend-module-azure` (0.1.1 → 0.1.2)
+- `@backstage/plugin-events-backend-module-bitbucket-cloud` (0.1.1 → 0.1.2)
+- `@backstage/plugin-events-backend-module-gerrit` (0.1.1 → 0.1.2)
+- `@backstage/plugin-events-backend-module-github` (0.1.1 → 0.1.2)
+- `@backstage/plugin-events-backend-module-gitlab` (0.1.1 → 0.1.2)
+- `@backstage/plugin-events-backend-test-utils` (0.1.1 → 0.1.2)
+- `@backstage/plugin-events-node` (0.2.0 → 0.2.1)
+- `@backstage/plugin-explore-react` (0.0.24 → 0.0.25)
+- `@backstage/plugin-gcalendar` (0.3.9 → 0.3.10)
+- `@backstage/plugin-github-deployments` (0.1.44 → 0.1.45)
+- `@backstage/plugin-github-issues` (0.2.2 → 0.2.3)
+- `@backstage/plugin-github-pull-requests-board` (0.1.7 → 0.1.8)
+- `@backstage/plugin-gitops-profiles` (0.3.31 → 0.3.32)
+- `@backstage/plugin-gocd` (0.1.19 → 0.1.20)
+- `@backstage/plugin-graphiql` (0.2.45 → 0.2.46)
+- `@backstage/plugin-graphql-backend` (0.1.29 → 0.1.30)
+- `@backstage/plugin-jenkins-backend` (0.1.29 → 0.1.30)
+- `@backstage/plugin-jenkins-common` (0.1.11 → 0.1.12)
+- `@backstage/plugin-kafka` (0.3.13 → 0.3.14)
+- `@backstage/plugin-kafka-backend` (0.2.32 → 0.2.33)
+- `@backstage/plugin-kubernetes-common` (0.5.0 → 0.5.1)
+- `@backstage/plugin-newrelic` (0.3.31 → 0.3.32)
+- `@backstage/plugin-newrelic-dashboard` (0.2.6 → 0.2.7)
+- `@backstage/plugin-org` (0.6.3 → 0.6.4)
+- `@backstage/plugin-org-react` (0.1.2 → 0.1.3)
+- `@backstage/plugin-pagerduty` (0.5.6 → 0.5.7)
+- `@backstage/plugin-periskop` (0.1.11 → 0.1.12)
+- `@backstage/plugin-periskop-backend` (0.1.10 → 0.1.11)
+- `@backstage/plugin-permission-backend` (0.5.14 → 0.5.15)
+- `@backstage/plugin-permission-common` (0.7.2 → 0.7.3)
+- `@backstage/plugin-permission-node` (0.7.2 → 0.7.3)
+- `@backstage/plugin-playlist-backend` (0.2.2 → 0.2.3)
+- `@backstage/plugin-playlist-common` (0.1.3 → 0.1.4)
+- `@backstage/plugin-proxy-backend` (0.2.33 → 0.2.34)
+- `@backstage/plugin-rollbar` (0.4.13 → 0.4.14)
+- `@backstage/plugin-rollbar-backend` (0.1.36 → 0.1.37)
+- `@backstage/plugin-search-backend-module-pg` (0.5.0 → 0.5.1)
+- `@backstage/plugin-search-common` (1.2.0 → 1.2.1)
+- `@backstage/plugin-sentry` (0.4.6 → 0.4.7)
+- `@backstage/plugin-shortcuts` (0.3.5 → 0.3.6)
+- `@backstage/plugin-sonarqube-backend` (0.1.4 → 0.1.5)
+- `@backstage/plugin-sonarqube-react` (0.1.0 → 0.1.1)
+- `@backstage/plugin-splunk-on-call` (0.4.2 → 0.4.3)
+- `@backstage/plugin-tech-insights` (0.3.5 → 0.3.6)
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.23 → 0.1.24)
+- `@backstage/plugin-tech-insights-node` (0.3.7 → 0.3.8)
+- `@backstage/plugin-techdocs-addons-test-utils` (1.0.8 → 1.0.9)
+- `@backstage/plugin-techdocs-backend` (1.5.0 → 1.5.1)
+- `@backstage/plugin-techdocs-module-addons-contrib` (1.0.8 → 1.0.9)
+- `@backstage/plugin-techdocs-node` (1.4.3 → 1.4.4)
+- `@backstage/plugin-todo` (0.2.15 → 0.2.16)
+- `@backstage/plugin-todo-backend` (0.1.36 → 0.1.37)
+- `@backstage/plugin-user-settings-backend` (0.1.3 → 0.1.4)
+- `@backstage/plugin-vault` (0.1.7 → 0.1.8)
+- `@backstage/plugin-vault-backend` (0.2.5 → 0.2.6)
+- `@backstage/test-utils` (1.2.3 → 1.2.4)
