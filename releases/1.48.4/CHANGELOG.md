@@ -1,6 +1,6 @@
 # Backstage Release 1.48.4 changelog
 
-Changes between 1.48.3 and 1.48.4 — 3 changed and 0 added packages.
+Changes between 1.48.3 and 1.48.4 — 0 added, 0 removed, 3 upgraded, 191 unchanged packages.
 
 ## Summary
 

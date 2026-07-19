@@ -1,17 +1,20 @@
 # Backstage Release 1.42.0 changelog
 
-Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
+Changes between 1.41.2 and 1.42.0 — 0 added, 1 removed, 158 upgraded, 29 unchanged packages.
 
 ## Summary
 
+- [Removed packages](#removed-packages): 1 package
 - [Breaking changes](#breaking-changes): 11 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 4 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 31 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
-- [Patch version bumps](#patch-version-bumps): 36 packages
+- [Other patch version bumps](#other-patch-version-bumps): 5 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 99 packages
 
 ## Table of contents
 
+- [Removed packages](#removed-packages)
 - [Breaking changes](#breaking-changes)
   - [`@backstage/cli` (0.33.1 → 0.34.0)](#backstagecli-0331--0340)
   - [`@backstage/core-compat-api` (0.4.4 → 0.5.0)](#backstagecore-compat-api-044--050)
@@ -29,16 +32,7 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
   - [`@backstage/backend-openapi-utils` (0.5.5 → 0.6.0)](#backstagebackend-openapi-utils-055--060)
   - [`@backstage/plugin-notifications-common` (0.0.10 → 0.1.0)](#backstageplugin-notifications-common-0010--010)
   - [`@backstage/plugin-scaffolder-node` (0.10.0 → 0.11.0)](#backstageplugin-scaffolder-node-0100--0110)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-test-utils` (1.7.0 → 1.8.0)](#backstagebackend-test-utils-170--180)
-  - [`@backstage/catalog-client` (1.10.2 → 1.11.0)](#backstagecatalog-client-1102--1110)
-  - [`@backstage/plugin-catalog-node` (1.17.2 → 1.18.0)](#backstageplugin-catalog-node-1172--1180)
-  - [`@backstage/plugin-scaffolder` (1.33.0 → 1.34.0)](#backstageplugin-scaffolder-1330--1340)
-  - [`@backstage/plugin-scaffolder-backend` (2.1.1 → 2.2.0)](#backstageplugin-scaffolder-backend-211--220)
-  - [`@backstage/plugin-scaffolder-common` (1.6.0 → 1.7.0)](#backstageplugin-scaffolder-common-160--170)
-  - [`@backstage/plugin-scaffolder-react` (1.18.0 → 1.19.0)](#backstageplugin-scaffolder-react-1180--1190)
-  - [`@backstage/plugin-techdocs` (1.13.2 → 1.14.0)](#backstageplugin-techdocs-1132--1140)
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli-node` (0.2.13 → 0.2.14)](#backstagecli-node-0213--0214)
   - [`@backstage/core-components` (0.17.4 → 0.17.5)](#backstagecore-components-0174--0175)
   - [`@backstage/create-app` (0.7.1 → 0.7.2)](#backstagecreate-app-071--072)
@@ -46,8 +40,6 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
   - [`@backstage/plugin-api-docs` (0.12.9 → 0.12.10)](#backstageplugin-api-docs-0129--01210)
   - [`@backstage/plugin-app-visualizer` (0.1.21 → 0.1.22)](#backstageplugin-app-visualizer-0121--0122)
   - [`@backstage/plugin-auth-backend-module-okta-provider` (0.2.5 → 0.2.6)](#backstageplugin-auth-backend-module-okta-provider-025--026)
-  - [`@backstage/plugin-catalog` (1.31.1 → 1.31.2)](#backstageplugin-catalog-1311--1312)
-  - [`@backstage/plugin-catalog-backend` (3.0.0 → 3.0.1)](#backstageplugin-catalog-backend-300--301)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.3.7 → 0.3.8)](#backstageplugin-catalog-backend-module-azure-037--038)
   - [`@backstage/plugin-catalog-backend-module-gcp` (0.3.10 → 0.3.11)](#backstageplugin-catalog-backend-module-gcp-0310--0311)
   - [`@backstage/plugin-catalog-backend-module-github` (0.10.1 → 0.10.2)](#backstageplugin-catalog-backend-module-github-0101--0102)
@@ -67,15 +59,31 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.8.1 → 0.8.2)](#backstageplugin-scaffolder-backend-module-github-081--082)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.9.3 → 0.9.4)](#backstageplugin-scaffolder-backend-module-gitlab-093--094)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.3.1 → 0.3.2)](#backstageplugin-scaffolder-node-test-utils-031--032)
-  - [`@backstage/plugin-search` (1.4.28 → 1.4.29)](#backstageplugin-search-1428--1429)
   - [`@backstage/plugin-search-backend-module-catalog` (0.3.6 → 0.3.7)](#backstageplugin-search-backend-module-catalog-036--037)
   - [`@backstage/plugin-search-backend-module-explore` (0.3.4 → 0.3.5)](#backstageplugin-search-backend-module-explore-034--035)
-  - [`@backstage/plugin-search-react` (1.9.2 → 1.9.3)](#backstageplugin-search-react-192--193)
-  - [`@backstage/plugin-techdocs-backend` (2.0.4 → 2.0.5)](#backstageplugin-techdocs-backend-204--205)
   - [`@backstage/plugin-user-settings` (0.8.24 → 0.8.25)](#backstageplugin-user-settings-0824--0825)
   - [`@backstage/repo-tools` (0.15.0 → 0.15.1)](#backstagerepo-tools-0150--0151)
   - [`@backstage/theme` (0.6.7 → 0.6.8)](#backstagetheme-067--068)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-test-utils` (1.7.0 → 1.8.0)](#backstagebackend-test-utils-170--180)
+  - [`@backstage/catalog-client` (1.10.2 → 1.11.0)](#backstagecatalog-client-1102--1110)
+  - [`@backstage/plugin-catalog-node` (1.17.2 → 1.18.0)](#backstageplugin-catalog-node-1172--1180)
+  - [`@backstage/plugin-scaffolder` (1.33.0 → 1.34.0)](#backstageplugin-scaffolder-1330--1340)
+  - [`@backstage/plugin-scaffolder-backend` (2.1.1 → 2.2.0)](#backstageplugin-scaffolder-backend-211--220)
+  - [`@backstage/plugin-scaffolder-common` (1.6.0 → 1.7.0)](#backstageplugin-scaffolder-common-160--170)
+  - [`@backstage/plugin-scaffolder-react` (1.18.0 → 1.19.0)](#backstageplugin-scaffolder-react-1180--1190)
+  - [`@backstage/plugin-techdocs` (1.13.2 → 1.14.0)](#backstageplugin-techdocs-1132--1140)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-catalog` (1.31.1 → 1.31.2)](#backstageplugin-catalog-1311--1312)
+  - [`@backstage/plugin-catalog-backend` (3.0.0 → 3.0.1)](#backstageplugin-catalog-backend-300--301)
+  - [`@backstage/plugin-search` (1.4.28 → 1.4.29)](#backstageplugin-search-1428--1429)
+  - [`@backstage/plugin-search-react` (1.9.2 → 1.9.3)](#backstageplugin-search-react-192--193)
+  - [`@backstage/plugin-techdocs-backend` (2.0.4 → 2.0.5)](#backstageplugin-techdocs-backend-204--205)
 - [Excluded dependency updates](#excluded-dependency-updates)
+
+## Removed packages
+
+- `@backstage/canon` ([0.6.0](../../changelogs/@backstage/canon.md#060))
 
 ## Breaking changes
 
@@ -685,121 +693,7 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
 
 - [`812485c`](https://github.com/backstage/backstage/commit/812485c): Add step info to scaffolder action context to access the step id and name.
 
-## Other minor version bumps
-
-### `@backstage/backend-test-utils` (1.7.0 → [1.8.0](../../changelogs/@backstage/backend-test-utils.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`dffaf70`](https://github.com/backstage/backstage/commit/dffaf70): Switched out `mockServices.scheduler` to use a mocked implementation instead of the default scheduler implementation. This implementation runs any scheduled tasks immediately on startup, as long as they don't have an initial delay or a manual trigger. After the initial run, the tasks are never run again unless manually triggered.
-
-##### Patch Changes
-
-- [`279e1f7`](https://github.com/backstage/backstage/commit/279e1f7): Updated the type definition of `mockErrorHandler` to ensure that it is used correctly.
-
-  ```ts
-  // This is wrong and will now result in a type error
-  app.use(mockErrorHandler);
-
-  // This is the correct usage
-  app.use(mockErrorHandler());
-  ```
-
-- [`3a7dad9`](https://github.com/backstage/backstage/commit/3a7dad9): Updated `better-sqlite3` to v12
-
-### `@backstage/catalog-client` (1.10.2 → [1.11.0](../../changelogs/@backstage/catalog-client.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`6b608e7`](https://github.com/backstage/backstage/commit/6b608e7): Added the analyze-location endpoint to the CatalogClient
-
-### `@backstage/plugin-catalog-node` (1.17.2 → [1.18.0](../../changelogs/@backstage/plugin-catalog-node.md#1180))
-
-#### 1.18.0
-
-##### Minor Changes
-
-- [`3f4da39`](https://github.com/backstage/backstage/commit/3f4da39): Added the analyze-location endpoint to the CatalogService
-
-### `@backstage/plugin-scaffolder` (1.33.0 → [1.34.0](../../changelogs/@backstage/plugin-scaffolder.md#1340))
-
-#### 1.34.0
-
-##### Minor Changes
-
-- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
-- [`b1c0696`](https://github.com/backstage/backstage/commit/b1c0696): Add resizable panels width for the editor and preview panels in the template editor and template form playground layouts. Users can now resize these panels by dragging the divider between the two areas.
-
-##### Patch Changes
-
-- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
-- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
-- [`b0dc9b8`](https://github.com/backstage/backstage/commit/b0dc9b8): differentiate between entirely and partially composite schemas in schema rendering
-- [`c4b7c50`](https://github.com/backstage/backstage/commit/c4b7c50): Export `FormField` type from `/alpha` in `-react` package, and internal refactor.
-
-### `@backstage/plugin-scaffolder-backend` (2.1.1 → [2.2.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#220))
-
-#### 2.2.0
-
-##### Minor Changes
-
-- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
-- [`2032660`](https://github.com/backstage/backstage/commit/2032660): Fixed fs:readdir action example
-- [`11dc90f`](https://github.com/backstage/backstage/commit/11dc90f): Implement max length for scaffolder auditor audit logging with default of 256
-- [`812485c`](https://github.com/backstage/backstage/commit/812485c): Add step info to scaffolder action context to access the step id and name.
-
-##### Patch Changes
-
-- [`caee2eb`](https://github.com/backstage/backstage/commit/caee2eb): Fixed WinstonLogger throwing when redactions were null or undefined
-- [`4ae87f5`](https://github.com/backstage/backstage/commit/4ae87f5): add `getResources` method to `permissionIntegrationRouter` for frontend task permission checks
-- [`b817c1d`](https://github.com/backstage/backstage/commit/b817c1d): Stop logging of `SPLAT` twice in logs
-
-### `@backstage/plugin-scaffolder-common` (1.6.0 → [1.7.0](../../changelogs/@backstage/plugin-scaffolder-common.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
-
-### `@backstage/plugin-scaffolder-react` (1.18.0 → [1.19.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1190))
-
-#### 1.19.0
-
-##### Minor Changes
-
-- [`4f99e10`](https://github.com/backstage/backstage/commit/4f99e10): **DEPRECATION**: The following types have been deprecated from this package and moved into `@backstage/plugin-scaffolder-common` and should be imported from there instead.
-
-  `Action`, `ListActionsResponse`, `LogEvent`, `ScaffolderApi`, `ScaffolderDryRunOptions`, `ScaffolderDryRunResponse`, `ScaffolderGetIntegrationsListOptions`, `ScaffolderGetIntegrationsListResponse`,
-  `ScaffolderOutputLink`, `ScaffolderOutputText`, `ScaffolderScaffoldOptions`, `ScaffolderScaffoldResponse`, `ScaffolderStreamLogsOptions`, `ScaffolderTask`, `ScaffolderTaskOutput`, `ScaffolderTaskStatus`,
-  `ScaffolderUsageExample`, `TemplateFilter`, `TemplateGlobalFunction`, `TemplateGlobalValue`, `TemplateParameterSchema`.
-
-- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
-
-##### Patch Changes
-
-- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
-- [`c4b7c50`](https://github.com/backstage/backstage/commit/c4b7c50): Export `FormField` type from `/alpha` in `-react` package, and internal refactor.
-
-### `@backstage/plugin-techdocs` (1.13.2 → [1.14.0](../../changelogs/@backstage/plugin-techdocs.md#1140))
-
-#### 1.14.0
-
-##### Minor Changes
-
-- [`cb0541f`](https://github.com/backstage/backstage/commit/cb0541f): Adds `additionalAllowedURIProtocols` to sanitizer config
-
-##### Patch Changes
-
-- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
-- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
-- [`f231c2b`](https://github.com/backstage/backstage/commit/f231c2b): Fixes CSS to adjust based on whether or not the global Backstage sidebar is on the page.
-
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli-node` (0.2.13 → [0.2.14](../../changelogs/@backstage/cli-node.md#0214))
 
@@ -877,40 +771,6 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
 ##### Patch Changes
 
 - [`94476d2`](https://github.com/backstage/backstage/commit/94476d2): Updated dependency `@davidzemon/passport-okta-oauth` to `^0.0.7`.
-
-### `@backstage/plugin-catalog` (1.31.1 → [1.31.2](../../changelogs/@backstage/plugin-catalog.md#1312))
-
-#### 1.31.2
-
-##### Patch Changes
-
-- [`c0ea01b`](https://github.com/backstage/backstage/commit/c0ea01b): Fix card scrolling behaviour
-- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
-- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
-- [`f4622e8`](https://github.com/backstage/backstage/commit/f4622e8): Adding a more sensible default order to the default filters
-- [`77eebdc`](https://github.com/backstage/backstage/commit/77eebdc): Support multiple headers in new frontend system, and don't render a header until the entity has finished loading
-- [`b158801`](https://github.com/backstage/backstage/commit/b158801): Fixed bug in EntityLayout that caused wiping existing query parameters when opening the InspectEntityDialog.
-
-### `@backstage/plugin-catalog-backend` (3.0.0 → [3.0.1](../../changelogs/@backstage/plugin-catalog-backend.md#301))
-
-#### 3.0.1
-
-##### Patch Changes
-
-- [`1752be6`](https://github.com/backstage/backstage/commit/1752be6): Attempt to circumvent event listener memory leak in compression middleware
-- [`9658703`](https://github.com/backstage/backstage/commit/9658703): Sort built-in relation fields for more stable entity hash in the processing engine
-- [`9dd213c`](https://github.com/backstage/backstage/commit/9dd213c): Make the processing hash calculation not care about the order of the processors.
-
-  This change does not affect the behavior of the catalog, but it will make the processing
-  hash calculation more robust against changes in the order of processors. This should lead to
-  more stable processing hashes, which in turn should lead to fewer unnecessary reprocessing
-  of entities.
-
-  After deploying this fix, you may see a period of increased processing and stitching, but
-  this should stabilize over time as the processing hashes become more consistent.
-
-- [`fa6fa60`](https://github.com/backstage/backstage/commit/fa6fa60): Fixed getLocationByEntity to use `original_value` instead of `value` when querying search table
-- [`3a7dad9`](https://github.com/backstage/backstage/commit/3a7dad9): Updated `better-sqlite3` to v12
 
 ### `@backstage/plugin-catalog-backend-module-azure` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-catalog-backend-module-azure.md#038))
 
@@ -1083,15 +943,6 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
 
 - [`812485c`](https://github.com/backstage/backstage/commit/812485c): Add step info to scaffolder action context to access the step id and name.
 
-### `@backstage/plugin-search` (1.4.28 → [1.4.29](../../changelogs/@backstage/plugin-search.md#1429))
-
-#### 1.4.29
-
-##### Patch Changes
-
-- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
-- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.3.6 → [0.3.7](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#037))
 
 #### 0.3.7
@@ -1107,22 +958,6 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
 ##### Patch Changes
 
 - [`3b8fac1`](https://github.com/backstage/backstage/commit/3b8fac1): Updated dependency `@backstage-community/plugin-explore-common` to `^0.5.0`.
-
-### `@backstage/plugin-search-react` (1.9.2 → [1.9.3](../../changelogs/@backstage/plugin-search-react.md#193))
-
-#### 1.9.3
-
-##### Patch Changes
-
-- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
-
-### `@backstage/plugin-techdocs-backend` (2.0.4 → [2.0.5](../../changelogs/@backstage/plugin-techdocs-backend.md#205))
-
-#### 2.0.5
-
-##### Patch Changes
-
-- [`484e500`](https://github.com/backstage/backstage/commit/484e500): Updated CachedEntityLoader to use BackstageCredentials instead of raw tokens for cache key generation. It now uses principal-based identification (user entity ref for users, subject for services) instead of token-based keys, providing more consistent caching behavior.
 
 ### `@backstage/plugin-user-settings` (0.8.24 → [0.8.25](../../changelogs/@backstage/plugin-user-settings.md#0825))
 
@@ -1148,6 +983,181 @@ Changes between 1.41.2 and 1.42.0 — 158 changed and 0 added packages.
 ##### Patch Changes
 
 - [`b731527`](https://github.com/backstage/backstage/commit/b731527): We are introducing two new data attributes on the `body` to support Backstage UI (BUI) new theming system.
+
+## Other minor version bumps
+
+### `@backstage/backend-test-utils` (1.7.0 → [1.8.0](../../changelogs/@backstage/backend-test-utils.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`dffaf70`](https://github.com/backstage/backstage/commit/dffaf70): Switched out `mockServices.scheduler` to use a mocked implementation instead of the default scheduler implementation. This implementation runs any scheduled tasks immediately on startup, as long as they don't have an initial delay or a manual trigger. After the initial run, the tasks are never run again unless manually triggered.
+
+##### Patch Changes
+
+- [`279e1f7`](https://github.com/backstage/backstage/commit/279e1f7): Updated the type definition of `mockErrorHandler` to ensure that it is used correctly.
+
+  ```ts
+  // This is wrong and will now result in a type error
+  app.use(mockErrorHandler);
+
+  // This is the correct usage
+  app.use(mockErrorHandler());
+  ```
+
+- [`3a7dad9`](https://github.com/backstage/backstage/commit/3a7dad9): Updated `better-sqlite3` to v12
+
+### `@backstage/catalog-client` (1.10.2 → [1.11.0](../../changelogs/@backstage/catalog-client.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`6b608e7`](https://github.com/backstage/backstage/commit/6b608e7): Added the analyze-location endpoint to the CatalogClient
+
+### `@backstage/plugin-catalog-node` (1.17.2 → [1.18.0](../../changelogs/@backstage/plugin-catalog-node.md#1180))
+
+#### 1.18.0
+
+##### Minor Changes
+
+- [`3f4da39`](https://github.com/backstage/backstage/commit/3f4da39): Added the analyze-location endpoint to the CatalogService
+
+### `@backstage/plugin-scaffolder` (1.33.0 → [1.34.0](../../changelogs/@backstage/plugin-scaffolder.md#1340))
+
+#### 1.34.0
+
+##### Minor Changes
+
+- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
+- [`b1c0696`](https://github.com/backstage/backstage/commit/b1c0696): Add resizable panels width for the editor and preview panels in the template editor and template form playground layouts. Users can now resize these panels by dragging the divider between the two areas.
+
+##### Patch Changes
+
+- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
+- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
+- [`b0dc9b8`](https://github.com/backstage/backstage/commit/b0dc9b8): differentiate between entirely and partially composite schemas in schema rendering
+- [`c4b7c50`](https://github.com/backstage/backstage/commit/c4b7c50): Export `FormField` type from `/alpha` in `-react` package, and internal refactor.
+
+### `@backstage/plugin-scaffolder-backend` (2.1.1 → [2.2.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#220))
+
+#### 2.2.0
+
+##### Minor Changes
+
+- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
+- [`2032660`](https://github.com/backstage/backstage/commit/2032660): Fixed fs:readdir action example
+- [`11dc90f`](https://github.com/backstage/backstage/commit/11dc90f): Implement max length for scaffolder auditor audit logging with default of 256
+- [`812485c`](https://github.com/backstage/backstage/commit/812485c): Add step info to scaffolder action context to access the step id and name.
+
+##### Patch Changes
+
+- [`caee2eb`](https://github.com/backstage/backstage/commit/caee2eb): Fixed WinstonLogger throwing when redactions were null or undefined
+- [`4ae87f5`](https://github.com/backstage/backstage/commit/4ae87f5): add `getResources` method to `permissionIntegrationRouter` for frontend task permission checks
+- [`b817c1d`](https://github.com/backstage/backstage/commit/b817c1d): Stop logging of `SPLAT` twice in logs
+
+### `@backstage/plugin-scaffolder-common` (1.6.0 → [1.7.0](../../changelogs/@backstage/plugin-scaffolder-common.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
+
+### `@backstage/plugin-scaffolder-react` (1.18.0 → [1.19.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1190))
+
+#### 1.19.0
+
+##### Minor Changes
+
+- [`4f99e10`](https://github.com/backstage/backstage/commit/4f99e10): **DEPRECATION**: The following types have been deprecated from this package and moved into `@backstage/plugin-scaffolder-common` and should be imported from there instead.
+
+  `Action`, `ListActionsResponse`, `LogEvent`, `ScaffolderApi`, `ScaffolderDryRunOptions`, `ScaffolderDryRunResponse`, `ScaffolderGetIntegrationsListOptions`, `ScaffolderGetIntegrationsListResponse`,
+  `ScaffolderOutputLink`, `ScaffolderOutputText`, `ScaffolderScaffoldOptions`, `ScaffolderScaffoldResponse`, `ScaffolderStreamLogsOptions`, `ScaffolderTask`, `ScaffolderTaskOutput`, `ScaffolderTaskStatus`,
+  `ScaffolderUsageExample`, `TemplateFilter`, `TemplateGlobalFunction`, `TemplateGlobalValue`, `TemplateParameterSchema`.
+
+- [`c08cbc4`](https://github.com/backstage/backstage/commit/c08cbc4): Move Scaffolder API to OpenAPI
+
+##### Patch Changes
+
+- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
+- [`c4b7c50`](https://github.com/backstage/backstage/commit/c4b7c50): Export `FormField` type from `/alpha` in `-react` package, and internal refactor.
+
+### `@backstage/plugin-techdocs` (1.13.2 → [1.14.0](../../changelogs/@backstage/plugin-techdocs.md#1140))
+
+#### 1.14.0
+
+##### Minor Changes
+
+- [`cb0541f`](https://github.com/backstage/backstage/commit/cb0541f): Adds `additionalAllowedURIProtocols` to sanitizer config
+
+##### Patch Changes
+
+- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
+- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
+- [`f231c2b`](https://github.com/backstage/backstage/commit/f231c2b): Fixes CSS to adjust based on whether or not the global Backstage sidebar is on the page.
+
+## Other patch version bumps
+
+### `@backstage/plugin-catalog` (1.31.1 → [1.31.2](../../changelogs/@backstage/plugin-catalog.md#1312))
+
+#### 1.31.2
+
+##### Patch Changes
+
+- [`c0ea01b`](https://github.com/backstage/backstage/commit/c0ea01b): Fix card scrolling behaviour
+- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
+- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
+- [`f4622e8`](https://github.com/backstage/backstage/commit/f4622e8): Adding a more sensible default order to the default filters
+- [`77eebdc`](https://github.com/backstage/backstage/commit/77eebdc): Support multiple headers in new frontend system, and don't render a header until the entity has finished loading
+- [`b158801`](https://github.com/backstage/backstage/commit/b158801): Fixed bug in EntityLayout that caused wiping existing query parameters when opening the InspectEntityDialog.
+
+### `@backstage/plugin-catalog-backend` (3.0.0 → [3.0.1](../../changelogs/@backstage/plugin-catalog-backend.md#301))
+
+#### 3.0.1
+
+##### Patch Changes
+
+- [`1752be6`](https://github.com/backstage/backstage/commit/1752be6): Attempt to circumvent event listener memory leak in compression middleware
+- [`9658703`](https://github.com/backstage/backstage/commit/9658703): Sort built-in relation fields for more stable entity hash in the processing engine
+- [`9dd213c`](https://github.com/backstage/backstage/commit/9dd213c): Make the processing hash calculation not care about the order of the processors.
+
+  This change does not affect the behavior of the catalog, but it will make the processing
+  hash calculation more robust against changes in the order of processors. This should lead to
+  more stable processing hashes, which in turn should lead to fewer unnecessary reprocessing
+  of entities.
+
+  After deploying this fix, you may see a period of increased processing and stitching, but
+  this should stabilize over time as the processing hashes become more consistent.
+
+- [`fa6fa60`](https://github.com/backstage/backstage/commit/fa6fa60): Fixed getLocationByEntity to use `original_value` instead of `value` when querying search table
+- [`3a7dad9`](https://github.com/backstage/backstage/commit/3a7dad9): Updated `better-sqlite3` to v12
+
+### `@backstage/plugin-search` (1.4.28 → [1.4.29](../../changelogs/@backstage/plugin-search.md#1429))
+
+#### 1.4.29
+
+##### Patch Changes
+
+- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
+- [`f2f133c`](https://github.com/backstage/backstage/commit/f2f133c): Internal update to use the new variant of `ApiBlueprint`.
+
+### `@backstage/plugin-search-react` (1.9.2 → [1.9.3](../../changelogs/@backstage/plugin-search-react.md#193))
+
+#### 1.9.3
+
+##### Patch Changes
+
+- [`e4ddf22`](https://github.com/backstage/backstage/commit/e4ddf22): Internal update to align with new blueprint parameter naming in the new frontend system.
+
+### `@backstage/plugin-techdocs-backend` (2.0.4 → [2.0.5](../../changelogs/@backstage/plugin-techdocs-backend.md#205))
+
+#### 2.0.5
+
+##### Patch Changes
+
+- [`484e500`](https://github.com/backstage/backstage/commit/484e500): Updated CachedEntityLoader to use BackstageCredentials instead of raw tokens for cache key generation. It now uses principal-based identification (user entity ref for users, subject for services) instead of token-based keys, providing more consistent caching behavior.
 
 ## Excluded dependency updates
 

@@ -1,14 +1,15 @@
 # Backstage Release 1.52.0 changelog
 
-Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
+Changes between 1.51.2 and 1.52.0 — 1 added, 0 removed, 185 upgraded, 24 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 1 package
 - [Breaking changes](#breaking-changes): 3 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 40 packages
 - [Other minor version bumps](#other-minor-version-bumps): 3 packages
-- [Patch version bumps](#patch-version-bumps): 55 packages
+- [Other patch version bumps](#other-patch-version-bumps): 15 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 123 packages
 
 ## Table of contents
@@ -21,17 +22,9 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
   - [`@backstage/ui` (0.15.0 → 0.16.0)](#backstageui-0150--0160)
 - [0.x minor version bumps](#0x-minor-version-bumps)
   - [`@backstage/plugin-auth-backend-module-oauth2-proxy-provider` (0.2.20 → 0.3.0)](#backstageplugin-auth-backend-module-oauth2-proxy-provider-0220--030)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/catalog-client` (1.15.2 → 1.16.0)](#backstagecatalog-client-1152--1160)
-  - [`@backstage/plugin-catalog-react` (3.0.0 → 3.1.0)](#backstageplugin-catalog-react-300--310)
-  - [`@backstage/plugin-scaffolder` (1.37.0 → 1.38.0)](#backstageplugin-scaffolder-1370--1380)
-- [Patch version bumps](#patch-version-bumps)
-  - [`@backstage/app-defaults` (1.7.8 → 1.7.9)](#backstageapp-defaults-178--179)
-  - [`@backstage/backend-app-api` (1.7.0 → 1.7.1)](#backstagebackend-app-api-170--171)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.17.2 → 0.17.3)](#backstagebackend-defaults-0172--0173)
   - [`@backstage/backend-dynamic-feature-service` (0.8.2 → 0.8.3)](#backstagebackend-dynamic-feature-service-082--083)
-  - [`@backstage/backend-plugin-api` (1.9.1 → 1.9.2)](#backstagebackend-plugin-api-191--192)
-  - [`@backstage/backend-test-utils` (1.11.3 → 1.11.4)](#backstagebackend-test-utils-1113--1114)
   - [`@backstage/cli` (0.36.2 → 0.36.3)](#backstagecli-0362--0363)
   - [`@backstage/cli-module-actions` (0.1.1 → 0.1.2)](#backstagecli-module-actions-011--012)
   - [`@backstage/cli-module-auth` (0.1.2 → 0.1.3)](#backstagecli-module-auth-012--013)
@@ -46,15 +39,12 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
   - [`@backstage/cli-module-test-jest` (0.1.2 → 0.1.3)](#backstagecli-module-test-jest-012--013)
   - [`@backstage/cli-module-translations` (0.1.2 → 0.1.3)](#backstagecli-module-translations-012--013)
   - [`@backstage/cli-node` (0.3.2 → 0.3.3)](#backstagecli-node-032--033)
-  - [`@backstage/config-loader` (1.10.11 → 1.10.12)](#backstageconfig-loader-11011--11012)
   - [`@backstage/core-components` (0.18.10 → 0.18.11)](#backstagecore-components-01810--01811)
   - [`@backstage/create-app` (0.8.3 → 0.8.4)](#backstagecreate-app-083--084)
   - [`@backstage/eslint-plugin` (0.3.0 → 0.3.1)](#backstageeslint-plugin-030--031)
   - [`@backstage/frontend-plugin-api` (0.17.1 → 0.17.2)](#backstagefrontend-plugin-api-0171--0172)
   - [`@backstage/frontend-test-utils` (0.6.0 → 0.6.1)](#backstagefrontend-test-utils-060--061)
-  - [`@backstage/integration` (2.0.2 → 2.0.3)](#backstageintegration-202--203)
   - [`@backstage/plugin-app-backend` (0.5.14 → 0.5.15)](#backstageplugin-app-backend-0514--0515)
-  - [`@backstage/plugin-catalog` (2.0.5 → 2.0.6)](#backstageplugin-catalog-205--206)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.3.17 → 0.3.18)](#backstageplugin-catalog-backend-module-azure-0317--0318)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-server` (0.5.11 → 0.5.12)](#backstageplugin-catalog-backend-module-bitbucket-server-0511--0512)
   - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.12 → 0.7.13)](#backstageplugin-catalog-backend-module-incremental-ingestion-0712--0713)
@@ -69,16 +59,28 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
   - [`@backstage/plugin-mcp-actions-backend` (0.1.13 → 0.1.14)](#backstageplugin-mcp-actions-backend-0113--0114)
   - [`@backstage/plugin-notifications-backend` (0.6.5 → 0.6.6)](#backstageplugin-notifications-backend-065--066)
   - [`@backstage/plugin-org` (0.7.4 → 0.7.5)](#backstageplugin-org-074--075)
-  - [`@backstage/plugin-scaffolder-backend` (4.0.0 → 4.0.1)](#backstageplugin-scaffolder-backend-400--401)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.9.9 → 0.9.10)](#backstageplugin-scaffolder-backend-module-github-099--0910)
-  - [`@backstage/plugin-scaffolder-common` (2.2.0 → 2.2.1)](#backstageplugin-scaffolder-common-220--221)
   - [`@backstage/plugin-scaffolder-node` (0.13.3 → 0.13.4)](#backstageplugin-scaffolder-node-0133--0134)
+  - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.3.20 → 0.3.21)](#backstageplugin-search-backend-module-stack-overflow-collator-0320--0321)
+  - [`@backstage/plugin-signals-backend` (0.3.15 → 0.3.16)](#backstageplugin-signals-backend-0315--0316)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/catalog-client` (1.15.2 → 1.16.0)](#backstagecatalog-client-1152--1160)
+  - [`@backstage/plugin-catalog-react` (3.0.0 → 3.1.0)](#backstageplugin-catalog-react-300--310)
+  - [`@backstage/plugin-scaffolder` (1.37.0 → 1.38.0)](#backstageplugin-scaffolder-1370--1380)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.7.8 → 1.7.9)](#backstageapp-defaults-178--179)
+  - [`@backstage/backend-app-api` (1.7.0 → 1.7.1)](#backstagebackend-app-api-170--171)
+  - [`@backstage/backend-plugin-api` (1.9.1 → 1.9.2)](#backstagebackend-plugin-api-191--192)
+  - [`@backstage/backend-test-utils` (1.11.3 → 1.11.4)](#backstagebackend-test-utils-1113--1114)
+  - [`@backstage/config-loader` (1.10.11 → 1.10.12)](#backstageconfig-loader-11011--11012)
+  - [`@backstage/integration` (2.0.2 → 2.0.3)](#backstageintegration-202--203)
+  - [`@backstage/plugin-catalog` (2.0.5 → 2.0.6)](#backstageplugin-catalog-205--206)
+  - [`@backstage/plugin-scaffolder-backend` (4.0.0 → 4.0.1)](#backstageplugin-scaffolder-backend-400--401)
+  - [`@backstage/plugin-scaffolder-common` (2.2.0 → 2.2.1)](#backstageplugin-scaffolder-common-220--221)
   - [`@backstage/plugin-scaffolder-react` (2.0.0 → 2.0.1)](#backstageplugin-scaffolder-react-200--201)
   - [`@backstage/plugin-search` (1.7.4 → 1.7.5)](#backstageplugin-search-174--175)
   - [`@backstage/plugin-search-backend` (2.1.2 → 2.1.3)](#backstageplugin-search-backend-212--213)
-  - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.3.20 → 0.3.21)](#backstageplugin-search-backend-module-stack-overflow-collator-0320--0321)
   - [`@backstage/plugin-search-react` (1.11.4 → 1.11.5)](#backstageplugin-search-react-1114--1115)
-  - [`@backstage/plugin-signals-backend` (0.3.15 → 0.3.16)](#backstageplugin-signals-backend-0315--0316)
   - [`@backstage/plugin-techdocs` (1.17.6 → 1.17.7)](#backstageplugin-techdocs-1176--1177)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.36 → 1.1.37)](#backstageplugin-techdocs-module-addons-contrib-1136--1137)
 - [Excluded dependency updates](#excluded-dependency-updates)
@@ -318,71 +320,7 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 
 - [`9822a2a`](https://github.com/backstage/backstage/commit/9822a2a): Added forwardedPreferredUsernameMatchingUserEntityName sign-in resolver
 
-## Other minor version bumps
-
-### `@backstage/catalog-client` (1.15.2 → [1.16.0](../../changelogs/@backstage/catalog-client.md#1160))
-
-#### 1.16.0
-
-##### Minor Changes
-
-- [`8f20cc2`](https://github.com/backstage/backstage/commit/8f20cc2): `CatalogApi.queryEntities` now accepts a `totalItems` option (`'include'` or `'exclude'`, default `'include'`) on initial requests. Pass `'exclude'` to skip the `totalItems` count when the caller doesn't need it.
-
-##### Patch Changes
-
-- [`378784e`](https://github.com/backstage/backstage/commit/378784e): Moved dependencies that are re-exported in the public API from `devDependencies` to `dependencies`. These were incorrectly demoted in #33936 because the source code only uses type imports, but the types still appear in the published API surface and need to be resolvable by consumers at build time.
-
-### `@backstage/plugin-catalog-react` (3.0.0 → [3.1.0](../../changelogs/@backstage/plugin-catalog-react.md#310))
-
-#### 3.1.0
-
-##### Minor Changes
-
-- [`b6d6551`](https://github.com/backstage/backstage/commit/b6d6551): Added optional `getOptionLabel` and `renderOption` props to `EntityAutocompletePicker`, allowing consumers to customize how option labels and option rendering are displayed in the autocomplete dropdown.
-- [`5dd532d`](https://github.com/backstage/backstage/commit/5dd532d): Added a `refresh` function to the `useEntityList` hook.
-- [`4212b78`](https://github.com/backstage/backstage/commit/4212b78): Allow full text searching of Location target URLs in catalog tables
-
-##### Patch Changes
-
-- [`d8757b1`](https://github.com/backstage/backstage/commit/d8757b1): The entity list provider now fetches the entity list and the total count as two separate parallel requests when using cursor or offset pagination. The list query skips the expensive count computation (using `totalItems: 'exclude'`), so the table populates immediately. The count arrives asynchronously and updates the title. A new `totalItemsLoading` field is exposed on `EntityListContextProps` so consumers can distinguish a stale count from a fresh one.
-
-  The catalog table now keeps stale rows visible during filter changes and page navigation instead of replacing the entire table body with a spinner. The full-table spinner is only shown on the very first load when no data exists yet. The entity count in the title is dimmed while the count is refreshing, and a small spinner appears next to the title while rows are loading.
-
-- [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
-- [`7c20545`](https://github.com/backstage/backstage/commit/7c20545): Fixed redundant API calls during entity list initialization. Filter components that register their initial state in quick succession (e.g. `EntityKindPicker`, `UserListPicker`, `EntityTagPicker`) no longer trigger multiple identical fetches. Frontend-only filter changes such as toggling the user list are now applied synchronously without a network round-trip.
-
-### `@backstage/plugin-scaffolder` (1.37.0 → [1.38.0](../../changelogs/@backstage/plugin-scaffolder.md#1380))
-
-#### 1.38.0
-
-##### Minor Changes
-
-- [`3e5acb5`](https://github.com/backstage/backstage/commit/3e5acb5): Extended the `RepoOwnerPicker` implementation with a custom variant for GitLab.
-
-##### Patch Changes
-
-- [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
-- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
-
-## Patch version bumps
-
-### `@backstage/app-defaults` (1.7.8 → [1.7.9](../../changelogs/@backstage/app-defaults.md#179))
-
-#### 1.7.9
-
-##### Patch Changes
-
-- [`74ed625`](https://github.com/backstage/backstage/commit/74ed625): Provide toastApi for old frontend system
-
-  Fixes 'No implementation available for apiRef{core.toast}' on old frontend system.
-
-### `@backstage/backend-app-api` (1.7.0 → [1.7.1](../../changelogs/@backstage/backend-app-api.md#171))
-
-#### 1.7.1
-
-##### Patch Changes
-
-- [`2e895ea`](https://github.com/backstage/backstage/commit/2e895ea): Internal refactor.
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.17.2 → [0.17.3](../../changelogs/@backstage/backend-defaults.md#0173))
 
@@ -405,25 +343,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 ##### Patch Changes
 
 - [`7005478`](https://github.com/backstage/backstage/commit/7005478): Fixed dynamic backend plugin loading to fall back to the main package export when an alpha `package.json` is present but does not provide a plugin entrypoint. Previously, plugins whose alpha export only exposed supplementary APIs (such as permissions) could fail to load even though the main export was valid. The loader now tries the alpha entry first and uses the main export when the alpha module does not export a `BackendFeature`, `BackendFeatureFactory`, or `dynamicPluginInstaller`.
-
-### `@backstage/backend-plugin-api` (1.9.1 → [1.9.2](../../changelogs/@backstage/backend-plugin-api.md#192))
-
-#### 1.9.2
-
-##### Patch Changes
-
-- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
-- [`0211390`](https://github.com/backstage/backstage/commit/0211390): Added optional `secrets` schema support to `ActionsRegistryActionOptions` and `ActionsRegistryActionContext`. Actions can now declare a Zod secrets schema separate from the input schema, enabling surfaces to collect sensitive credentials independently from tool arguments. Added optional `secrets` field to `ActionsServiceAction` metadata and `ActionsService.invoke()` parameters.
-
-### `@backstage/backend-test-utils` (1.11.3 → [1.11.4](../../changelogs/@backstage/backend-test-utils.md#1114))
-
-#### 1.11.4
-
-##### Patch Changes
-
-- [`2e895ea`](https://github.com/backstage/backstage/commit/2e895ea): Internal refactor.
-- [`2d181c0`](https://github.com/backstage/backstage/commit/2d181c0): Increased MySQL connection and pool timeouts to reduce flaky `connect ETIMEDOUT` failures in CI. The test MySQL container now also uses `mysql_native_password` for cheaper connection handshakes and disables binary logging.
-- [`06a2035`](https://github.com/backstage/backstage/commit/06a2035): Updated `MockActionsRegistry` to support the new secrets schema. The mock now validates secrets against the declared schema, rejects missing secrets for actions that require them, and forwards secrets to the action handler.
 
 ### `@backstage/cli` (0.36.2 → [0.36.3](../../changelogs/@backstage/cli.md#0363))
 
@@ -553,14 +472,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 
 - [`b521571`](https://github.com/backstage/backstage/commit/b521571): Added `runCli` for creating executable CLI packages from a fixed collection of directly imported CLI modules, with validation for conflicting command paths. The single-module `runCliModule` helper is now deprecated.
 
-### `@backstage/config-loader` (1.10.11 → [1.10.12](../../changelogs/@backstage/config-loader.md#11012))
-
-#### 1.10.12
-
-##### Patch Changes
-
-- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
-
 ### `@backstage/core-components` (0.18.10 → [0.18.11](../../changelogs/@backstage/core-components.md#01811))
 
 #### 0.18.11
@@ -610,16 +521,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 
 - [`62dd4fc`](https://github.com/backstage/backstage/commit/62dd4fc): Added a `mountPath` option to `renderInTestApp` that controls the route path pattern the test element is rendered at. When set, the element is wrapped in a `<Route>` with the given path, enabling `useParams()` to extract route parameters from the URL. Use together with `initialRouteEntries` to set a concrete URL that matches the pattern. This is useful for testing page components that depend on URL parameters, such as entity pages that use `useRouteRefParams`.
 
-### `@backstage/integration` (2.0.2 → [2.0.3](../../changelogs/@backstage/integration.md#203))
-
-#### 2.0.3
-
-##### Patch Changes
-
-- [`a07e6a3`](https://github.com/backstage/backstage/commit/a07e6a3): Added the correctly-spelled `AzureBlobStorageIntegration` class export and deprecated the previous typoed `AzureBlobStorageIntergation` export. Existing usage of `AzureBlobStorageIntergation` continues to work; switch to `AzureBlobStorageIntegration` to avoid future removal.
-- [`b75158b`](https://github.com/backstage/backstage/commit/b75158b): Adapted Azure-related tests for the Azure SDK upgrade to ESM-style exports. The `AzureBlobStorageUrlReader` now accepts an optional `createContainerClient` dependency for testability without needing to mock the `@azure/storage-blob` module.
-- [`241d359`](https://github.com/backstage/backstage/commit/241d359): Changed visibility of Bitbucket username as it is not a secret.
-
 ### `@backstage/plugin-app-backend` (0.5.14 → [0.5.15](../../changelogs/@backstage/plugin-app-backend.md#0515))
 
 #### 0.5.15
@@ -627,21 +528,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 ##### Patch Changes
 
 - [`ca450be`](https://github.com/backstage/backstage/commit/ca450be): Added a new `app.disablePublicEntryPoint` config option that allows you to opt out of the automatic public sign-in entry point. When set to `true`, the app backend will skip serving the public entry point to unauthenticated users, even if the app was bundled with an `index-public-experimental` entry point.
-
-### `@backstage/plugin-catalog` (2.0.5 → [2.0.6](../../changelogs/@backstage/plugin-catalog.md#206))
-
-#### 2.0.6
-
-##### Patch Changes
-
-- [`7172386`](https://github.com/backstage/backstage/commit/7172386): Updated the new frontend system Catalog index page to use the current Backstage UI page header and content container.
-- [`d8757b1`](https://github.com/backstage/backstage/commit/d8757b1): The entity list provider now fetches the entity list and the total count as two separate parallel requests when using cursor or offset pagination. The list query skips the expensive count computation (using `totalItems: 'exclude'`), so the table populates immediately. The count arrives asynchronously and updates the title. A new `totalItemsLoading` field is exposed on `EntityListContextProps` so consumers can distinguish a stale count from a fresh one.
-
-  The catalog table now keeps stale rows visible during filter changes and page navigation instead of replacing the entire table body with a spinner. The full-table spinner is only shown on the very first load when no data exists yet. The entity count in the title is dimmed while the count is refreshing, and a small spinner appears next to the title while rows are loading.
-
-- [`82cf16f`](https://github.com/backstage/backstage/commit/82cf16f): Added `CatalogExportButton`, which adds CSV and JSON export support to the `CatalogIndexPage`.
-- [`d7c1dcf`](https://github.com/backstage/backstage/commit/d7c1dcf): Fixed a missing React key warning for context menu items on the entity page.
-- [`a07e6a3`](https://github.com/backstage/backstage/commit/a07e6a3): Added the correctly-spelled `RelatedEntitiesCard.domainEntityColumns` static property and deprecated the previous typoed `RelatedEntitiesCard.domainEntityColums` property. Existing references to the old property continue to work; switch to `domainEntityColumns` to avoid future removal.
 
 ### `@backstage/plugin-catalog-backend-module-azure` (0.3.17 → [0.3.18](../../changelogs/@backstage/plugin-catalog-backend-module-azure.md#0318))
 
@@ -758,14 +644,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 
 - [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
 
-### `@backstage/plugin-scaffolder-backend` (4.0.0 → [4.0.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#401))
-
-#### 4.0.1
-
-##### Patch Changes
-
-- [`063fc34`](https://github.com/backstage/backstage/commit/063fc34): Restored user-supplied task secrets in scaffolder dry-run executions. The previous security fix that stripped secrets from dry-run also removed task secrets passed in the dry-run request body, which broke integration test setups that rely on user-supplied secrets. Environment secrets (server-configured) remain stripped during dry-run; only task secrets supplied by the caller are now forwarded to actions.
-
 ### `@backstage/plugin-scaffolder-backend-module-github` (0.9.9 → [0.9.10](../../changelogs/@backstage/plugin-scaffolder-backend-module-github.md#0910))
 
 #### 0.9.10
@@ -774,14 +652,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 
 - [`464ebc2`](https://github.com/backstage/backstage/commit/464ebc2): Added a fallback for `publish:github` and `github:repo:push` actions that retries via the GitHub GraphQL API when the git push fails with a connection-level error (`ECONNRESET` or `ECONNREFUSED`, checked on both `error.code` and `error.cause.code`). The git smart HTTP protocol sends binary pack data in a POST request which can be blocked by network proxies that perform deep packet inspection. The GraphQL fallback uses standard JSON requests which are not affected.
 
-### `@backstage/plugin-scaffolder-common` (2.2.0 → [2.2.1](../../changelogs/@backstage/plugin-scaffolder-common.md#221))
-
-#### 2.2.1
-
-##### Patch Changes
-
-- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
-
 ### `@backstage/plugin-scaffolder-node` (0.13.3 → [0.13.4](../../changelogs/@backstage/plugin-scaffolder-node.md#0134))
 
 #### 0.13.4
@@ -789,6 +659,156 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 ##### Patch Changes
 
 - [`3d0ba59`](https://github.com/backstage/backstage/commit/3d0ba59): Added retry with exponential back off to `Git.push()`. Scaffolder template actions that create a repository and immediately push to it (e.g., `publish:github`) can encounter transient failures when the repository is not yet fully provisioned. The push is now retried up to 5 times with increasing delays before failing. Authentication and permission errors (401, 403) fail immediately without retrying.
+
+### `@backstage/plugin-search-backend-module-stack-overflow-collator` (0.3.20 → [0.3.21](../../changelogs/@backstage/plugin-search-backend-module-stack-overflow-collator.md#0321))
+
+#### 0.3.21
+
+##### Patch Changes
+
+- [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
+
+### `@backstage/plugin-signals-backend` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-signals-backend.md#0316))
+
+#### 0.3.16
+
+##### Patch Changes
+
+- [`998664c`](https://github.com/backstage/backstage/commit/998664c): chore(deps): Bump `ws` from 8.20.0 to 8.20.1
+
+## Other minor version bumps
+
+### `@backstage/catalog-client` (1.15.2 → [1.16.0](../../changelogs/@backstage/catalog-client.md#1160))
+
+#### 1.16.0
+
+##### Minor Changes
+
+- [`8f20cc2`](https://github.com/backstage/backstage/commit/8f20cc2): `CatalogApi.queryEntities` now accepts a `totalItems` option (`'include'` or `'exclude'`, default `'include'`) on initial requests. Pass `'exclude'` to skip the `totalItems` count when the caller doesn't need it.
+
+##### Patch Changes
+
+- [`378784e`](https://github.com/backstage/backstage/commit/378784e): Moved dependencies that are re-exported in the public API from `devDependencies` to `dependencies`. These were incorrectly demoted in #33936 because the source code only uses type imports, but the types still appear in the published API surface and need to be resolvable by consumers at build time.
+
+### `@backstage/plugin-catalog-react` (3.0.0 → [3.1.0](../../changelogs/@backstage/plugin-catalog-react.md#310))
+
+#### 3.1.0
+
+##### Minor Changes
+
+- [`b6d6551`](https://github.com/backstage/backstage/commit/b6d6551): Added optional `getOptionLabel` and `renderOption` props to `EntityAutocompletePicker`, allowing consumers to customize how option labels and option rendering are displayed in the autocomplete dropdown.
+- [`5dd532d`](https://github.com/backstage/backstage/commit/5dd532d): Added a `refresh` function to the `useEntityList` hook.
+- [`4212b78`](https://github.com/backstage/backstage/commit/4212b78): Allow full text searching of Location target URLs in catalog tables
+
+##### Patch Changes
+
+- [`d8757b1`](https://github.com/backstage/backstage/commit/d8757b1): The entity list provider now fetches the entity list and the total count as two separate parallel requests when using cursor or offset pagination. The list query skips the expensive count computation (using `totalItems: 'exclude'`), so the table populates immediately. The count arrives asynchronously and updates the title. A new `totalItemsLoading` field is exposed on `EntityListContextProps` so consumers can distinguish a stale count from a fresh one.
+
+  The catalog table now keeps stale rows visible during filter changes and page navigation instead of replacing the entire table body with a spinner. The full-table spinner is only shown on the very first load when no data exists yet. The entity count in the title is dimmed while the count is refreshing, and a small spinner appears next to the title while rows are loading.
+
+- [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
+- [`7c20545`](https://github.com/backstage/backstage/commit/7c20545): Fixed redundant API calls during entity list initialization. Filter components that register their initial state in quick succession (e.g. `EntityKindPicker`, `UserListPicker`, `EntityTagPicker`) no longer trigger multiple identical fetches. Frontend-only filter changes such as toggling the user list are now applied synchronously without a network round-trip.
+
+### `@backstage/plugin-scaffolder` (1.37.0 → [1.38.0](../../changelogs/@backstage/plugin-scaffolder.md#1380))
+
+#### 1.38.0
+
+##### Minor Changes
+
+- [`3e5acb5`](https://github.com/backstage/backstage/commit/3e5acb5): Extended the `RepoOwnerPicker` implementation with a custom variant for GitLab.
+
+##### Patch Changes
+
+- [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
+- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.7.8 → [1.7.9](../../changelogs/@backstage/app-defaults.md#179))
+
+#### 1.7.9
+
+##### Patch Changes
+
+- [`74ed625`](https://github.com/backstage/backstage/commit/74ed625): Provide toastApi for old frontend system
+
+  Fixes 'No implementation available for apiRef{core.toast}' on old frontend system.
+
+### `@backstage/backend-app-api` (1.7.0 → [1.7.1](../../changelogs/@backstage/backend-app-api.md#171))
+
+#### 1.7.1
+
+##### Patch Changes
+
+- [`2e895ea`](https://github.com/backstage/backstage/commit/2e895ea): Internal refactor.
+
+### `@backstage/backend-plugin-api` (1.9.1 → [1.9.2](../../changelogs/@backstage/backend-plugin-api.md#192))
+
+#### 1.9.2
+
+##### Patch Changes
+
+- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
+- [`0211390`](https://github.com/backstage/backstage/commit/0211390): Added optional `secrets` schema support to `ActionsRegistryActionOptions` and `ActionsRegistryActionContext`. Actions can now declare a Zod secrets schema separate from the input schema, enabling surfaces to collect sensitive credentials independently from tool arguments. Added optional `secrets` field to `ActionsServiceAction` metadata and `ActionsService.invoke()` parameters.
+
+### `@backstage/backend-test-utils` (1.11.3 → [1.11.4](../../changelogs/@backstage/backend-test-utils.md#1114))
+
+#### 1.11.4
+
+##### Patch Changes
+
+- [`2e895ea`](https://github.com/backstage/backstage/commit/2e895ea): Internal refactor.
+- [`2d181c0`](https://github.com/backstage/backstage/commit/2d181c0): Increased MySQL connection and pool timeouts to reduce flaky `connect ETIMEDOUT` failures in CI. The test MySQL container now also uses `mysql_native_password` for cheaper connection handshakes and disables binary logging.
+- [`06a2035`](https://github.com/backstage/backstage/commit/06a2035): Updated `MockActionsRegistry` to support the new secrets schema. The mock now validates secrets against the declared schema, rejects missing secrets for actions that require them, and forwards secrets to the action handler.
+
+### `@backstage/config-loader` (1.10.11 → [1.10.12](../../changelogs/@backstage/config-loader.md#11012))
+
+#### 1.10.12
+
+##### Patch Changes
+
+- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
+
+### `@backstage/integration` (2.0.2 → [2.0.3](../../changelogs/@backstage/integration.md#203))
+
+#### 2.0.3
+
+##### Patch Changes
+
+- [`a07e6a3`](https://github.com/backstage/backstage/commit/a07e6a3): Added the correctly-spelled `AzureBlobStorageIntegration` class export and deprecated the previous typoed `AzureBlobStorageIntergation` export. Existing usage of `AzureBlobStorageIntergation` continues to work; switch to `AzureBlobStorageIntegration` to avoid future removal.
+- [`b75158b`](https://github.com/backstage/backstage/commit/b75158b): Adapted Azure-related tests for the Azure SDK upgrade to ESM-style exports. The `AzureBlobStorageUrlReader` now accepts an optional `createContainerClient` dependency for testability without needing to mock the `@azure/storage-blob` module.
+- [`241d359`](https://github.com/backstage/backstage/commit/241d359): Changed visibility of Bitbucket username as it is not a secret.
+
+### `@backstage/plugin-catalog` (2.0.5 → [2.0.6](../../changelogs/@backstage/plugin-catalog.md#206))
+
+#### 2.0.6
+
+##### Patch Changes
+
+- [`7172386`](https://github.com/backstage/backstage/commit/7172386): Updated the new frontend system Catalog index page to use the current Backstage UI page header and content container.
+- [`d8757b1`](https://github.com/backstage/backstage/commit/d8757b1): The entity list provider now fetches the entity list and the total count as two separate parallel requests when using cursor or offset pagination. The list query skips the expensive count computation (using `totalItems: 'exclude'`), so the table populates immediately. The count arrives asynchronously and updates the title. A new `totalItemsLoading` field is exposed on `EntityListContextProps` so consumers can distinguish a stale count from a fresh one.
+
+  The catalog table now keeps stale rows visible during filter changes and page navigation instead of replacing the entire table body with a spinner. The full-table spinner is only shown on the very first load when no data exists yet. The entity count in the title is dimmed while the count is refreshing, and a small spinner appears next to the title while rows are loading.
+
+- [`82cf16f`](https://github.com/backstage/backstage/commit/82cf16f): Added `CatalogExportButton`, which adds CSV and JSON export support to the `CatalogIndexPage`.
+- [`d7c1dcf`](https://github.com/backstage/backstage/commit/d7c1dcf): Fixed a missing React key warning for context menu items on the entity page.
+- [`a07e6a3`](https://github.com/backstage/backstage/commit/a07e6a3): Added the correctly-spelled `RelatedEntitiesCard.domainEntityColumns` static property and deprecated the previous typoed `RelatedEntitiesCard.domainEntityColums` property. Existing references to the old property continue to work; switch to `domainEntityColumns` to avoid future removal.
+
+### `@backstage/plugin-scaffolder-backend` (4.0.0 → [4.0.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#401))
+
+#### 4.0.1
+
+##### Patch Changes
+
+- [`063fc34`](https://github.com/backstage/backstage/commit/063fc34): Restored user-supplied task secrets in scaffolder dry-run executions. The previous security fix that stripped secrets from dry-run also removed task secrets passed in the dry-run request body, which broke integration test setups that rely on user-supplied secrets. Environment secrets (server-configured) remain stripped during dry-run; only task secrets supplied by the caller are now forwarded to actions.
+
+### `@backstage/plugin-scaffolder-common` (2.2.0 → [2.2.1](../../changelogs/@backstage/plugin-scaffolder-common.md#221))
+
+#### 2.2.1
+
+##### Patch Changes
+
+- [`02c4e8a`](https://github.com/backstage/backstage/commit/02c4e8a): Removed unused `json-schema` runtime dependency. The package was only used for TypeScript types from `@types/json-schema`; affected imports have been converted to `import type` to allow safe removal.
 
 ### `@backstage/plugin-scaffolder-react` (2.0.0 → [2.0.1](../../changelogs/@backstage/plugin-scaffolder-react.md#201))
 
@@ -815,14 +835,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 
 - [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
 
-### `@backstage/plugin-search-backend-module-stack-overflow-collator` (0.3.20 → [0.3.21](../../changelogs/@backstage/plugin-search-backend-module-stack-overflow-collator.md#0321))
-
-#### 0.3.21
-
-##### Patch Changes
-
-- [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
-
 ### `@backstage/plugin-search-react` (1.11.4 → [1.11.5](../../changelogs/@backstage/plugin-search-react.md#1115))
 
 #### 1.11.5
@@ -830,14 +842,6 @@ Changes between 1.51.2 and 1.52.0 — 185 changed and 1 added packages.
 ##### Patch Changes
 
 - [`e0889a3`](https://github.com/backstage/backstage/commit/e0889a3): chore(deps): bump `qs` from 6.15.1 to 6.15.2
-
-### `@backstage/plugin-signals-backend` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-signals-backend.md#0316))
-
-#### 0.3.16
-
-##### Patch Changes
-
-- [`998664c`](https://github.com/backstage/backstage/commit/998664c): chore(deps): Bump `ws` from 8.20.0 to 8.20.1
 
 ### `@backstage/plugin-techdocs` (1.17.6 → [1.17.7](../../changelogs/@backstage/plugin-techdocs.md#1177))
 

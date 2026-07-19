@@ -1,17 +1,17 @@
 # Backstage Release 1.19.1 changelog
 
-Changes between 1.19.0 and 1.19.1 — 1 changed and 0 added packages.
+Changes between 1.19.0 and 1.19.1 — 0 added, 0 removed, 1 upgraded, 237 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-auth-backend-module-microsoft-provider` (0.1.0 → 0.1.1)](#backstageplugin-auth-backend-module-microsoft-provider-010--011)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-auth-backend-module-microsoft-provider` (0.1.0 → [0.1.1](../../changelogs/@backstage/plugin-auth-backend-module-microsoft-provider.md#011))
 

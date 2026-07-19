@@ -1,18 +1,18 @@
 # Backstage Release 1.42.4 changelog
 
-Changes between 1.42.3 and 1.42.4 — 2 changed and 0 added packages.
+Changes between 1.42.3 and 1.42.4 — 0 added, 0 removed, 2 upgraded, 185 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 2 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.34.0 → 0.34.1)](#backstagecli-0340--0341)
   - [`@backstage/plugin-search-backend-module-explore` (0.3.5 → 0.3.6)](#backstageplugin-search-backend-module-explore-035--036)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.34.0 → [0.34.1](../../changelogs/@backstage/cli.md#0341))
 

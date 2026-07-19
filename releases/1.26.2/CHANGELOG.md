@@ -1,11 +1,12 @@
 # Backstage Release 1.26.2 changelog
 
-Changes between 1.26.1 and 1.26.2 — 97 changed and 0 added packages.
+Changes between 1.26.1 and 1.26.2 — 0 added, 0 removed, 97 upgraded, 173 unchanged packages.
 
 ## Summary
 
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
-- [Other patch version bumps](#other-patch-version-bumps): 94 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 93 packages
+- [Other patch version bumps](#other-patch-version-bumps): 1 package
 
 ## Table of contents
 
@@ -13,7 +14,7 @@ Changes between 1.26.1 and 1.26.2 — 97 changed and 0 added packages.
   - [`@backstage/plugin-explore-backend` (0.0.27 → 0.0.28)](#backstageplugin-explore-backend-0027--0028)
   - [`@backstage/plugin-explore-common` (0.0.2 → 0.0.3)](#backstageplugin-explore-common-002--003)
   - [`@backstage/plugin-explore-react` (0.0.38 → 0.0.39)](#backstageplugin-explore-react-0038--0039)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.26.3 → 0.26.4)](#backstagecli-0263--0264)
   - [`@backstage/plugin-adr` (0.6.17 → 0.6.18)](#backstageplugin-adr-0617--0618)
   - [`@backstage/plugin-adr-backend` (0.4.14 → 0.4.15)](#backstageplugin-adr-backend-0414--0415)
@@ -47,7 +48,6 @@ Changes between 1.26.1 and 1.26.2 — 97 changed and 0 added packages.
   - [`@backstage/plugin-codescene` (0.1.26 → 0.1.27)](#backstageplugin-codescene-0126--0127)
   - [`@backstage/plugin-cost-insights` (0.12.23 → 0.12.24)](#backstageplugin-cost-insights-01223--01224)
   - [`@backstage/plugin-cost-insights-common` (0.1.2 → 0.1.3)](#backstageplugin-cost-insights-common-012--013)
-  - [`@backstage/plugin-dynatrace` (10.0.3 → 10.0.4)](#backstageplugin-dynatrace-1003--1004)
   - [`@backstage/plugin-entity-feedback` (0.2.17 → 0.2.18)](#backstageplugin-entity-feedback-0217--0218)
   - [`@backstage/plugin-entity-feedback-backend` (0.2.14 → 0.2.15)](#backstageplugin-entity-feedback-backend-0214--0215)
   - [`@backstage/plugin-entity-feedback-common` (0.1.3 → 0.1.4)](#backstageplugin-entity-feedback-common-013--014)
@@ -108,6 +108,8 @@ Changes between 1.26.1 and 1.26.2 — 97 changed and 0 added packages.
   - [`@backstage/plugin-vault-backend` (0.4.10 → 0.4.11)](#backstageplugin-vault-backend-0410--0411)
   - [`@backstage/plugin-vault-node` (0.1.10 → 0.1.11)](#backstageplugin-vault-node-0110--0111)
   - [`@backstage/plugin-xcmetrics` (0.2.52 → 0.2.53)](#backstageplugin-xcmetrics-0252--0253)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-dynatrace` (10.0.3 → 10.0.4)](#backstageplugin-dynatrace-1003--1004)
 
 ## 0.0.x patch version bumps
 
@@ -135,7 +137,7 @@ Changes between 1.26.1 and 1.26.2 — 97 changed and 0 added packages.
 
 - [`c2112f2`](https://github.com/backstage/backstage/commit/c2112f2): These packages have been migrated to the [backstage/community-plugins](https://github.com/backstage/community-plugins) repository.
 
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.26.3 → [0.26.4](../../changelogs/@backstage/cli.md#0264))
 
@@ -392,14 +394,6 @@ _No changelog entries found._
 ### `@backstage/plugin-cost-insights-common` (0.1.2 → [0.1.3](../../changelogs/@backstage/plugin-cost-insights-common.md#013))
 
 #### 0.1.3
-
-##### Patch Changes
-
-- [`c2112f2`](https://github.com/backstage/backstage/commit/c2112f2): These packages have been migrated to the [backstage/community-plugins](https://github.com/backstage/community-plugins) repository.
-
-### `@backstage/plugin-dynatrace` (10.0.3 → [10.0.4](../../changelogs/@backstage/plugin-dynatrace.md#1004))
-
-#### 10.0.4
 
 ##### Patch Changes
 
@@ -876,6 +870,16 @@ _No changelog entries found._
 ### `@backstage/plugin-xcmetrics` (0.2.52 → [0.2.53](../../changelogs/@backstage/plugin-xcmetrics.md#0253))
 
 #### 0.2.53
+
+##### Patch Changes
+
+- [`c2112f2`](https://github.com/backstage/backstage/commit/c2112f2): These packages have been migrated to the [backstage/community-plugins](https://github.com/backstage/community-plugins) repository.
+
+## Other patch version bumps
+
+### `@backstage/plugin-dynatrace` (10.0.3 → [10.0.4](../../changelogs/@backstage/plugin-dynatrace.md#1004))
+
+#### 10.0.4
 
 ##### Patch Changes
 

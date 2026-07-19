@@ -1,6 +1,6 @@
 # Backstage Release 1.8.0 changelog
 
-Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
+Changes between 1.7.2 and 1.8.0 — 13 added, 0 removed, 158 upgraded, 5 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 - [Breaking changes](#breaking-changes): 7 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 6 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 49 packages
 - [Other minor version bumps](#other-minor-version-bumps): 6 packages
-- [Other patch version bumps](#other-patch-version-bumps): 60 packages
+- [Other patch version bumps](#other-patch-version-bumps): 11 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 78 packages
 
 ## Table of contents
@@ -45,17 +46,9 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
   - [`@backstage/plugin-sonarqube` (0.4.2 → 0.5.0)](#backstageplugin-sonarqube-042--050)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/release-manifests` (0.0.6 → 0.0.7)](#backstagerelease-manifests-006--007)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/core-app-api` (1.1.1 → 1.2.0)](#backstagecore-app-api-111--120)
-  - [`@backstage/core-plugin-api` (1.0.7 → 1.1.0)](#backstagecore-plugin-api-107--110)
-  - [`@backstage/integration` (1.3.2 → 1.4.0)](#backstageintegration-132--140)
-  - [`@backstage/plugin-scaffolder` (1.7.0 → 1.8.0)](#backstageplugin-scaffolder-170--180)
-  - [`@backstage/plugin-scaffolder-backend` (1.7.0 → 1.8.0)](#backstageplugin-scaffolder-backend-170--180)
-  - [`@backstage/plugin-techdocs` (1.3.3 → 1.4.0)](#backstageplugin-techdocs-133--140)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-tasks` (0.3.6 → 0.3.7)](#backstagebackend-tasks-036--037)
   - [`@backstage/backend-test-utils` (0.1.29 → 0.1.30)](#backstagebackend-test-utils-0129--0130)
-  - [`@backstage/catalog-model` (1.1.2 → 1.1.3)](#backstagecatalog-model-112--113)
   - [`@backstage/codemods` (0.1.40 → 0.1.41)](#backstagecodemods-0140--0141)
   - [`@backstage/create-app` (0.4.33 → 0.4.34)](#backstagecreate-app-0433--0434)
   - [`@backstage/plugin-apache-airflow` (0.2.3 → 0.2.4)](#backstageplugin-apache-airflow-023--024)
@@ -65,8 +58,6 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
   - [`@backstage/plugin-azure-devops-backend` (0.3.16 → 0.3.17)](#backstageplugin-azure-devops-backend-0316--0317)
   - [`@backstage/plugin-bitbucket-cloud-common` (0.2.0 → 0.2.1)](#backstageplugin-bitbucket-cloud-common-020--021)
   - [`@backstage/plugin-bitrise` (0.1.37 → 0.1.38)](#backstageplugin-bitrise-0137--0138)
-  - [`@backstage/plugin-catalog` (1.6.0 → 1.6.1)](#backstageplugin-catalog-160--161)
-  - [`@backstage/plugin-catalog-backend` (1.5.0 → 1.5.1)](#backstageplugin-catalog-backend-150--151)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.1.10 → 0.1.11)](#backstageplugin-catalog-backend-module-aws-0110--0111)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.8 → 0.1.9)](#backstageplugin-catalog-backend-module-azure-018--019)
   - [`@backstage/plugin-catalog-backend-module-bitbucket` (0.2.4 → 0.2.5)](#backstageplugin-catalog-backend-module-bitbucket-024--025)
@@ -78,12 +69,10 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
   - [`@backstage/plugin-catalog-backend-module-openapi` (0.1.3 → 0.1.4)](#backstageplugin-catalog-backend-module-openapi-013--014)
   - [`@backstage/plugin-catalog-graph` (0.2.22 → 0.2.23)](#backstageplugin-catalog-graph-0222--0223)
   - [`@backstage/plugin-catalog-import` (0.9.0 → 0.9.1)](#backstageplugin-catalog-import-090--091)
-  - [`@backstage/plugin-catalog-react` (1.2.0 → 1.2.1)](#backstageplugin-catalog-react-120--121)
   - [`@backstage/plugin-circleci` (0.3.10 → 0.3.11)](#backstageplugin-circleci-0310--0311)
   - [`@backstage/plugin-cloudbuild` (0.3.10 → 0.3.11)](#backstageplugin-cloudbuild-0310--0311)
   - [`@backstage/plugin-code-coverage` (0.2.3 → 0.2.4)](#backstageplugin-code-coverage-023--024)
   - [`@backstage/plugin-code-coverage-backend` (0.2.3 → 0.2.4)](#backstageplugin-code-coverage-backend-023--024)
-  - [`@backstage/plugin-dynatrace` (1.0.0 → 1.0.1)](#backstageplugin-dynatrace-100--101)
   - [`@backstage/plugin-explore` (0.3.41 → 0.3.42)](#backstageplugin-explore-0341--0342)
   - [`@backstage/plugin-gcalendar` (0.3.6 → 0.3.7)](#backstageplugin-gcalendar-036--037)
   - [`@backstage/plugin-git-release-manager` (0.3.23 → 0.3.24)](#backstageplugin-git-release-manager-0323--0324)
@@ -105,12 +94,25 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
   - [`@backstage/plugin-tech-insights-backend` (0.5.3 → 0.5.4)](#backstageplugin-tech-insights-backend-053--054)
   - [`@backstage/plugin-tech-insights-node` (0.3.5 → 0.3.6)](#backstageplugin-tech-insights-node-035--036)
   - [`@backstage/plugin-tech-radar` (0.5.17 → 0.5.18)](#backstageplugin-tech-radar-0517--0518)
+  - [`@backstage/plugin-vault-backend` (0.2.3 → 0.2.4)](#backstageplugin-vault-backend-023--024)
+  - [`@backstage/plugin-xcmetrics` (0.2.30 → 0.2.31)](#backstageplugin-xcmetrics-0230--0231)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/core-app-api` (1.1.1 → 1.2.0)](#backstagecore-app-api-111--120)
+  - [`@backstage/core-plugin-api` (1.0.7 → 1.1.0)](#backstagecore-plugin-api-107--110)
+  - [`@backstage/integration` (1.3.2 → 1.4.0)](#backstageintegration-132--140)
+  - [`@backstage/plugin-scaffolder` (1.7.0 → 1.8.0)](#backstageplugin-scaffolder-170--180)
+  - [`@backstage/plugin-scaffolder-backend` (1.7.0 → 1.8.0)](#backstageplugin-scaffolder-backend-170--180)
+  - [`@backstage/plugin-techdocs` (1.3.3 → 1.4.0)](#backstageplugin-techdocs-133--140)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-model` (1.1.2 → 1.1.3)](#backstagecatalog-model-112--113)
+  - [`@backstage/plugin-catalog` (1.6.0 → 1.6.1)](#backstageplugin-catalog-160--161)
+  - [`@backstage/plugin-catalog-backend` (1.5.0 → 1.5.1)](#backstageplugin-catalog-backend-150--151)
+  - [`@backstage/plugin-catalog-react` (1.2.0 → 1.2.1)](#backstageplugin-catalog-react-120--121)
+  - [`@backstage/plugin-dynatrace` (1.0.0 → 1.0.1)](#backstageplugin-dynatrace-100--101)
   - [`@backstage/plugin-techdocs-backend` (1.4.0 → 1.4.1)](#backstageplugin-techdocs-backend-140--141)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.5 → 1.0.6)](#backstageplugin-techdocs-module-addons-contrib-105--106)
   - [`@backstage/plugin-techdocs-node` (1.4.1 → 1.4.2)](#backstageplugin-techdocs-node-141--142)
   - [`@backstage/plugin-techdocs-react` (1.0.5 → 1.0.6)](#backstageplugin-techdocs-react-105--106)
-  - [`@backstage/plugin-vault-backend` (0.2.3 → 0.2.4)](#backstageplugin-vault-backend-023--024)
-  - [`@backstage/plugin-xcmetrics` (0.2.30 → 0.2.31)](#backstageplugin-xcmetrics-0230--0231)
   - [`@backstage/types` (1.0.0 → 1.0.1)](#backstagetypes-100--101)
   - [`@backstage/version-bridge` (1.0.1 → 1.0.2)](#backstageversion-bridge-101--102)
 - [Excluded dependency updates](#excluded-dependency-updates)
@@ -553,169 +555,7 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 
 - [`a4496131fa`](https://github.com/backstage/backstage/commit/a4496131fa): Added a fallback that fetches manifests from `https://raw.githubusercontent.com` if `https://versions.backstage.io` is unavailable.
 
-## Other minor version bumps
-
-### `@backstage/core-app-api` (1.1.1 → [1.2.0](../../changelogs/@backstage/core-app-api.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`9b737e5f2e`](https://github.com/backstage/backstage/commit/9b737e5f2e): Updated the React Router wiring to make use of the new `basename` property of the router components in React Router v6 stable. To implement this, a new optional `basename` property has been added to the `Router` app component, which can be forwarded to the concrete router implementation in order to support this new behavior. This is done by default in any app that does not have a `Router` component override.
-- [`127fcad26d`](https://github.com/backstage/backstage/commit/127fcad26d): Deprecated the `homepage` config as the component that used it - `HomepageTimer` - has been removed and replaced by the `HeaderWorldClock` in the home plugin
-
-### `@backstage/core-plugin-api` (1.0.7 → [1.1.0](../../changelogs/@backstage/core-plugin-api.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`a228f113d0`](https://github.com/backstage/backstage/commit/a228f113d0): The app `Router` component now accepts an optional `basename` property.
-
-### `@backstage/integration` (1.3.2 → [1.4.0](../../changelogs/@backstage/integration.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`d05e1841ce`](https://github.com/backstage/backstage/commit/d05e1841ce): This patch brings Gitea as a valid integration: target, via the ScmIntegration interface. It adds gitea to the relevant static properties (get integration by name, get integration by type) for plugins to be able to reference the same Gitea server.
-- [`c1784a4980`](https://github.com/backstage/backstage/commit/c1784a4980): Replaces in-code uses of `GitHub` with `Github` and deprecates old versions.
-
-  Deprecates:
-
-  - `getGitHubFileFetchUrl` replaced by `getGithubFileFetchUrl`
-  - `GitHubIntegrationConfig` replaced by `GithubIntegrationConfig`
-  - `GitHubIntegration` replaced by `GithubIntegration`
-  - `readGitHubIntegrationConfig` replaced by `readGithubIntegrationConfig`
-  - `readGitHubIntegrationConfigs` replaced by `readGithubIntegrationConfigs`
-  - `replaceGitHubUrlType` replaced by `replaceGithubUrlType`
-
-##### Patch Changes
-
-- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
-- [`a6d779d58a`](https://github.com/backstage/backstage/commit/a6d779d58a): Remove explicit default visibility at `config.d.ts` files.
-
-  ```ts
-  /**
-   * @visibility backend
-   */
-  ```
-
-### `@backstage/plugin-scaffolder` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-scaffolder.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`edae17309e`](https://github.com/backstage/backstage/commit/edae17309e): Added props to override default Scaffolder page title, subtitle and pageTitleOverride.
-  Routes like `rootRouteRef`, `selectedTemplateRouteRef`, `nextRouteRef`, `nextSelectedTemplateRouteRef` were made public and can be used in your app (e.g. in custom TemplateCard component).
-
-##### Patch Changes
-
-- [`580285787d`](https://github.com/backstage/backstage/commit/580285787d): The `create` and `click` analytics events are now also captured on the "next" version of the component creation page.
-- [`4830a3569f`](https://github.com/backstage/backstage/commit/4830a3569f): Basic analytics instrumentation is now in place:
-
-  - As users make their way through template steps, a `click` event is fired, including the step number.
-  - After a user clicks "Create" a `create` event is fired, including the name of the software that was just created. The template used at creation is set on the `entityRef` context key.
-
-- [`94b7ca9c6d`](https://github.com/backstage/backstage/commit/94b7ca9c6d): Updated to use `@rjsf` packages of version `^5.0.0-beta.12`
-- [`87840c8c6c`](https://github.com/backstage/backstage/commit/87840c8c6c): Fixed tiny grammar error in EntityNamePicker. The first letter of the description is now capitalized.
-- [`3b3fc3cc3c`](https://github.com/backstage/backstage/commit/3b3fc3cc3c): Fix `formData` not being present in the `next` version
-- [`b2bb48a6f4`](https://github.com/backstage/backstage/commit/b2bb48a6f4): Fix the return type for the `createNextScaffodlerFieldExtension` type as before it wasn't a component type for the extension
-- [`f905853ad6`](https://github.com/backstage/backstage/commit/f905853ad6): Prefer using `Link` from `@backstage/core-components` rather than material-UI.
-
-### `@backstage/plugin-scaffolder-backend` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`ea14eb62a2`](https://github.com/backstage/backstage/commit/ea14eb62a2): Added a set of default Prometheus metrics around scaffolding. See below for a list of metrics and an explanation of their labels:
-
-  - `scaffolder_task_count`: Tracks successful task runs.
-
-    Labels:
-
-    - `template`: The entity ref of the scaffolded template
-    - `user`: The entity ref of the user that invoked the template run
-    - `result`: A string describing whether the task ran successfully, failed, or was skipped
-
-  - `scaffolder_task_duration`: a histogram which tracks the duration of a task run
-
-    Labels:
-
-    - `template`: The entity ref of the scaffolded template
-    - `result`: A boolean describing whether the task ran successfully
-
-  - `scaffolder_step_count`: a count that tracks each step run
-
-    Labels:
-
-    - `template`: The entity ref of the scaffolded template
-    - `step`: The name of the step that was run
-    - `result`: A string describing whether the task ran successfully, failed, or was skipped
-
-  - `scaffolder_step_duration`: a histogram which tracks the duration of each step run
-
-    Labels:
-
-    - `template`: The entity ref of the scaffolded template
-    - `step`: The name of the step that was run
-    - `result`: A string describing whether the task ran successfully, failed, or was skipped
-
-  You can find a guide for running Prometheus metrics here: https://github.com/backstage/backstage/blob/384b7bac2e/contrib/docs/tutorials/prometheus-metrics.md
-
-- [`5921b5ce49`](https://github.com/backstage/backstage/commit/5921b5ce49): - The GitLab Project ID for the `publish:gitlab:merge-request` action is now passed through the query parameter `project` in the `repoUrl`. It still allows people to not use the `projectid` and use the `repoUrl` with the `owner` and `repo` query parameters instead. This makes it easier to publish to repositories instead of writing the full path to the project.
-- [`5025d2e8b6`](https://github.com/backstage/backstage/commit/5025d2e8b6): Adds the ability to pass (an optional) array of strings that will be applied to the newly scaffolded repository as topic labels.
-
-##### Patch Changes
-
-- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
-- [`969a8444ea`](https://github.com/backstage/backstage/commit/969a8444ea): Updated dependency `esbuild` to `^0.15.0`.
-- [`9ff4ff3745`](https://github.com/backstage/backstage/commit/9ff4ff3745): Implement "Branch protection rules" support for "publish:github" action
-
-### `@backstage/plugin-techdocs` (1.3.3 → [1.4.0](../../changelogs/@backstage/plugin-techdocs.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`5691baea69`](https://github.com/backstage/backstage/commit/5691baea69): Add ability to configure filters when using EntityListDocsGrid
-
-  The following example will render two sections of cards grid:
-
-  - One section for documentations tagged as `recommended`
-  - One section for documentations tagged as `runbook`
-
-  ```js
-  <EntityListDocsGrid groups={{[
-    {
-      title: "Recommended Documentation",
-      filterPredicate: entity =>
-        entity?.metadata?.tags?.includes('recommended') ?? false,
-    },
-    {
-      title: "RunBooks Documentation",
-      filterPredicate: entity =>
-        entity?.metadata?.tags?.includes('runbook') ?? false,
-    }
-  ]}} />
-  ```
-
-- [`63705e73d9`](https://github.com/backstage/backstage/commit/63705e73d9): Hide document description if not provided
-- [`847fc588a6`](https://github.com/backstage/backstage/commit/847fc588a6): Updated TechDocs header to include label for source code icon and updated label to reflect Kind name
-
-##### Patch Changes
-
-- [`9e4d8e6198`](https://github.com/backstage/backstage/commit/9e4d8e6198): Fix logic bug that broke techdocs-cli-embedded-app
-- [`e92aa15f01`](https://github.com/backstage/backstage/commit/e92aa15f01): Bumped `canvas` dependency to the latest version, which has better Node.js v18 support.
-- [`cbe11d1e23`](https://github.com/backstage/backstage/commit/cbe11d1e23): Tweak README
-- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
-- [`c1784a4980`](https://github.com/backstage/backstage/commit/c1784a4980): Replaces in-code uses of `GitHub` with `Github` and deprecates old versions.
-- [`3a1a999b7b`](https://github.com/backstage/backstage/commit/3a1a999b7b): Include query parameters when navigating to relative links in documents
-- [`bd2aab4726`](https://github.com/backstage/backstage/commit/bd2aab4726): An analytics event matching the semantics of the `click` action is now captured when users click links within a TechDocs document.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-tasks` (0.3.6 → [0.3.7](../../changelogs/@backstage/backend-tasks.md#037))
 
@@ -732,14 +572,6 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 ##### Patch Changes
 
 - [`e13cd3feaf`](https://github.com/backstage/backstage/commit/e13cd3feaf): Updated dependency `msw` to `^0.48.0`.
-
-### `@backstage/catalog-model` (1.1.2 → [1.1.3](../../changelogs/@backstage/catalog-model.md#113))
-
-#### 1.1.3
-
-##### Patch Changes
-
-- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
 
 ### `@backstage/codemods` (0.1.40 → [0.1.41](../../changelogs/@backstage/codemods.md#0141))
 
@@ -916,26 +748,6 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 ##### Patch Changes
 
 - [`43afded227`](https://github.com/backstage/backstage/commit/43afded227): Updated recharts to v2.0.0 and fixed typing issues
-
-### `@backstage/plugin-catalog` (1.6.0 → [1.6.1](../../changelogs/@backstage/plugin-catalog.md#161))
-
-#### 1.6.1
-
-##### Patch Changes
-
-- [`f905853ad6`](https://github.com/backstage/backstage/commit/f905853ad6): Prefer using `Link` from `@backstage/core-components` rather than material-UI.
-
-### `@backstage/plugin-catalog-backend` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-catalog-backend.md#151))
-
-#### 1.5.1
-
-##### Patch Changes
-
-- [`c1a4addda3`](https://github.com/backstage/backstage/commit/c1a4addda3): Improve processing error logging.
-
-  Adds `location` and `owner` to the logging meta if they are available.
-
-- [`a7607b5413`](https://github.com/backstage/backstage/commit/a7607b5413): Replace usage of deprecataed `UrlReader.read` with `UrlReader.readUrl`.
 
 ### `@backstage/plugin-catalog-backend-module-aws` (0.1.10 → [0.1.11](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0111))
 
@@ -1119,15 +931,6 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 - [`1e7b640518`](https://github.com/backstage/backstage/commit/1e7b640518): Get rid of `this-is-undefined-in-esm` warning
 - [`c1784a4980`](https://github.com/backstage/backstage/commit/c1784a4980): Replaces in-code uses of `GitHub` with `Github` and deprecates old versions.
 
-### `@backstage/plugin-catalog-react` (1.2.0 → [1.2.1](../../changelogs/@backstage/plugin-catalog-react.md#121))
-
-#### 1.2.1
-
-##### Patch Changes
-
-- [`a889314692`](https://github.com/backstage/backstage/commit/a889314692): Both `EntityProvider` and `AsyncEntityProvider` contexts now wrap all children with an `AnalyticsContext` containing the corresponding `entityRef`; this opens up the possibility for all events underneath these contexts to be associated with and aggregated by the corresponding entity.
-- [`e47f466f80`](https://github.com/backstage/backstage/commit/e47f466f80): Removed forced capitalization for Entity types in the catalog sidebar.
-
 ### `@backstage/plugin-circleci` (0.3.10 → [0.3.11](../../changelogs/@backstage/plugin-circleci.md#0311))
 
 #### 0.3.11
@@ -1161,15 +964,6 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 ##### Patch Changes
 
 - [`fcab2579a0`](https://github.com/backstage/backstage/commit/fcab2579a0): Adds installation instructions
-
-### `@backstage/plugin-dynatrace` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-dynatrace.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`cbe11d1e23`](https://github.com/backstage/backstage/commit/cbe11d1e23): Tweak README
-- [`f905853ad6`](https://github.com/backstage/backstage/commit/f905853ad6): Prefer using `Link` from `@backstage/core-components` rather than material-UI.
 
 ### `@backstage/plugin-explore` (0.3.41 → [0.3.42](../../changelogs/@backstage/plugin-explore.md#0342))
 
@@ -1366,6 +1160,234 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 
 - [`1f888af5f6`](https://github.com/backstage/backstage/commit/1f888af5f6): Fixed bug in Tech Radar where, on hover, the tech list quadrant would rerender and scroll top
 
+### `@backstage/plugin-vault-backend` (0.2.3 → [0.2.4](../../changelogs/@backstage/plugin-vault-backend.md#024))
+
+#### 0.2.4
+
+##### Patch Changes
+
+- [`687237da4c`](https://github.com/backstage/backstage/commit/687237da4c): Added `errorHandler()` middleware to `router` to prevent crashes caused by fatal errors in plugin backend
+
+### `@backstage/plugin-xcmetrics` (0.2.30 → [0.2.31](../../changelogs/@backstage/plugin-xcmetrics.md#0231))
+
+#### 0.2.31
+
+##### Patch Changes
+
+- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
+- [`43afded227`](https://github.com/backstage/backstage/commit/43afded227): Updated recharts to v2.0.0 and fixed typing issues
+- [`dcf9e728de`](https://github.com/backstage/backstage/commit/dcf9e728de): Removed an unused and hidden build details route.
+
+## Other minor version bumps
+
+### `@backstage/core-app-api` (1.1.1 → [1.2.0](../../changelogs/@backstage/core-app-api.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`9b737e5f2e`](https://github.com/backstage/backstage/commit/9b737e5f2e): Updated the React Router wiring to make use of the new `basename` property of the router components in React Router v6 stable. To implement this, a new optional `basename` property has been added to the `Router` app component, which can be forwarded to the concrete router implementation in order to support this new behavior. This is done by default in any app that does not have a `Router` component override.
+- [`127fcad26d`](https://github.com/backstage/backstage/commit/127fcad26d): Deprecated the `homepage` config as the component that used it - `HomepageTimer` - has been removed and replaced by the `HeaderWorldClock` in the home plugin
+
+### `@backstage/core-plugin-api` (1.0.7 → [1.1.0](../../changelogs/@backstage/core-plugin-api.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`a228f113d0`](https://github.com/backstage/backstage/commit/a228f113d0): The app `Router` component now accepts an optional `basename` property.
+
+### `@backstage/integration` (1.3.2 → [1.4.0](../../changelogs/@backstage/integration.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`d05e1841ce`](https://github.com/backstage/backstage/commit/d05e1841ce): This patch brings Gitea as a valid integration: target, via the ScmIntegration interface. It adds gitea to the relevant static properties (get integration by name, get integration by type) for plugins to be able to reference the same Gitea server.
+- [`c1784a4980`](https://github.com/backstage/backstage/commit/c1784a4980): Replaces in-code uses of `GitHub` with `Github` and deprecates old versions.
+
+  Deprecates:
+
+  - `getGitHubFileFetchUrl` replaced by `getGithubFileFetchUrl`
+  - `GitHubIntegrationConfig` replaced by `GithubIntegrationConfig`
+  - `GitHubIntegration` replaced by `GithubIntegration`
+  - `readGitHubIntegrationConfig` replaced by `readGithubIntegrationConfig`
+  - `readGitHubIntegrationConfigs` replaced by `readGithubIntegrationConfigs`
+  - `replaceGitHubUrlType` replaced by `replaceGithubUrlType`
+
+##### Patch Changes
+
+- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
+- [`a6d779d58a`](https://github.com/backstage/backstage/commit/a6d779d58a): Remove explicit default visibility at `config.d.ts` files.
+
+  ```ts
+  /**
+   * @visibility backend
+   */
+  ```
+
+### `@backstage/plugin-scaffolder` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-scaffolder.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`edae17309e`](https://github.com/backstage/backstage/commit/edae17309e): Added props to override default Scaffolder page title, subtitle and pageTitleOverride.
+  Routes like `rootRouteRef`, `selectedTemplateRouteRef`, `nextRouteRef`, `nextSelectedTemplateRouteRef` were made public and can be used in your app (e.g. in custom TemplateCard component).
+
+##### Patch Changes
+
+- [`580285787d`](https://github.com/backstage/backstage/commit/580285787d): The `create` and `click` analytics events are now also captured on the "next" version of the component creation page.
+- [`4830a3569f`](https://github.com/backstage/backstage/commit/4830a3569f): Basic analytics instrumentation is now in place:
+
+  - As users make their way through template steps, a `click` event is fired, including the step number.
+  - After a user clicks "Create" a `create` event is fired, including the name of the software that was just created. The template used at creation is set on the `entityRef` context key.
+
+- [`94b7ca9c6d`](https://github.com/backstage/backstage/commit/94b7ca9c6d): Updated to use `@rjsf` packages of version `^5.0.0-beta.12`
+- [`87840c8c6c`](https://github.com/backstage/backstage/commit/87840c8c6c): Fixed tiny grammar error in EntityNamePicker. The first letter of the description is now capitalized.
+- [`3b3fc3cc3c`](https://github.com/backstage/backstage/commit/3b3fc3cc3c): Fix `formData` not being present in the `next` version
+- [`b2bb48a6f4`](https://github.com/backstage/backstage/commit/b2bb48a6f4): Fix the return type for the `createNextScaffodlerFieldExtension` type as before it wasn't a component type for the extension
+- [`f905853ad6`](https://github.com/backstage/backstage/commit/f905853ad6): Prefer using `Link` from `@backstage/core-components` rather than material-UI.
+
+### `@backstage/plugin-scaffolder-backend` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`ea14eb62a2`](https://github.com/backstage/backstage/commit/ea14eb62a2): Added a set of default Prometheus metrics around scaffolding. See below for a list of metrics and an explanation of their labels:
+
+  - `scaffolder_task_count`: Tracks successful task runs.
+
+    Labels:
+
+    - `template`: The entity ref of the scaffolded template
+    - `user`: The entity ref of the user that invoked the template run
+    - `result`: A string describing whether the task ran successfully, failed, or was skipped
+
+  - `scaffolder_task_duration`: a histogram which tracks the duration of a task run
+
+    Labels:
+
+    - `template`: The entity ref of the scaffolded template
+    - `result`: A boolean describing whether the task ran successfully
+
+  - `scaffolder_step_count`: a count that tracks each step run
+
+    Labels:
+
+    - `template`: The entity ref of the scaffolded template
+    - `step`: The name of the step that was run
+    - `result`: A string describing whether the task ran successfully, failed, or was skipped
+
+  - `scaffolder_step_duration`: a histogram which tracks the duration of each step run
+
+    Labels:
+
+    - `template`: The entity ref of the scaffolded template
+    - `step`: The name of the step that was run
+    - `result`: A string describing whether the task ran successfully, failed, or was skipped
+
+  You can find a guide for running Prometheus metrics here: https://github.com/backstage/backstage/blob/384b7bac2e/contrib/docs/tutorials/prometheus-metrics.md
+
+- [`5921b5ce49`](https://github.com/backstage/backstage/commit/5921b5ce49): - The GitLab Project ID for the `publish:gitlab:merge-request` action is now passed through the query parameter `project` in the `repoUrl`. It still allows people to not use the `projectid` and use the `repoUrl` with the `owner` and `repo` query parameters instead. This makes it easier to publish to repositories instead of writing the full path to the project.
+- [`5025d2e8b6`](https://github.com/backstage/backstage/commit/5025d2e8b6): Adds the ability to pass (an optional) array of strings that will be applied to the newly scaffolded repository as topic labels.
+
+##### Patch Changes
+
+- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
+- [`969a8444ea`](https://github.com/backstage/backstage/commit/969a8444ea): Updated dependency `esbuild` to `^0.15.0`.
+- [`9ff4ff3745`](https://github.com/backstage/backstage/commit/9ff4ff3745): Implement "Branch protection rules" support for "publish:github" action
+
+### `@backstage/plugin-techdocs` (1.3.3 → [1.4.0](../../changelogs/@backstage/plugin-techdocs.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`5691baea69`](https://github.com/backstage/backstage/commit/5691baea69): Add ability to configure filters when using EntityListDocsGrid
+
+  The following example will render two sections of cards grid:
+
+  - One section for documentations tagged as `recommended`
+  - One section for documentations tagged as `runbook`
+
+  ```js
+  <EntityListDocsGrid groups={{[
+    {
+      title: "Recommended Documentation",
+      filterPredicate: entity =>
+        entity?.metadata?.tags?.includes('recommended') ?? false,
+    },
+    {
+      title: "RunBooks Documentation",
+      filterPredicate: entity =>
+        entity?.metadata?.tags?.includes('runbook') ?? false,
+    }
+  ]}} />
+  ```
+
+- [`63705e73d9`](https://github.com/backstage/backstage/commit/63705e73d9): Hide document description if not provided
+- [`847fc588a6`](https://github.com/backstage/backstage/commit/847fc588a6): Updated TechDocs header to include label for source code icon and updated label to reflect Kind name
+
+##### Patch Changes
+
+- [`9e4d8e6198`](https://github.com/backstage/backstage/commit/9e4d8e6198): Fix logic bug that broke techdocs-cli-embedded-app
+- [`e92aa15f01`](https://github.com/backstage/backstage/commit/e92aa15f01): Bumped `canvas` dependency to the latest version, which has better Node.js v18 support.
+- [`cbe11d1e23`](https://github.com/backstage/backstage/commit/cbe11d1e23): Tweak README
+- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
+- [`c1784a4980`](https://github.com/backstage/backstage/commit/c1784a4980): Replaces in-code uses of `GitHub` with `Github` and deprecates old versions.
+- [`3a1a999b7b`](https://github.com/backstage/backstage/commit/3a1a999b7b): Include query parameters when navigating to relative links in documents
+- [`bd2aab4726`](https://github.com/backstage/backstage/commit/bd2aab4726): An analytics event matching the semantics of the `click` action is now captured when users click links within a TechDocs document.
+
+## Other patch version bumps
+
+### `@backstage/catalog-model` (1.1.2 → [1.1.3](../../changelogs/@backstage/catalog-model.md#113))
+
+#### 1.1.3
+
+##### Patch Changes
+
+- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
+
+### `@backstage/plugin-catalog` (1.6.0 → [1.6.1](../../changelogs/@backstage/plugin-catalog.md#161))
+
+#### 1.6.1
+
+##### Patch Changes
+
+- [`f905853ad6`](https://github.com/backstage/backstage/commit/f905853ad6): Prefer using `Link` from `@backstage/core-components` rather than material-UI.
+
+### `@backstage/plugin-catalog-backend` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-catalog-backend.md#151))
+
+#### 1.5.1
+
+##### Patch Changes
+
+- [`c1a4addda3`](https://github.com/backstage/backstage/commit/c1a4addda3): Improve processing error logging.
+
+  Adds `location` and `owner` to the logging meta if they are available.
+
+- [`a7607b5413`](https://github.com/backstage/backstage/commit/a7607b5413): Replace usage of deprecataed `UrlReader.read` with `UrlReader.readUrl`.
+
+### `@backstage/plugin-catalog-react` (1.2.0 → [1.2.1](../../changelogs/@backstage/plugin-catalog-react.md#121))
+
+#### 1.2.1
+
+##### Patch Changes
+
+- [`a889314692`](https://github.com/backstage/backstage/commit/a889314692): Both `EntityProvider` and `AsyncEntityProvider` contexts now wrap all children with an `AnalyticsContext` containing the corresponding `entityRef`; this opens up the possibility for all events underneath these contexts to be associated with and aggregated by the corresponding entity.
+- [`e47f466f80`](https://github.com/backstage/backstage/commit/e47f466f80): Removed forced capitalization for Entity types in the catalog sidebar.
+
+### `@backstage/plugin-dynatrace` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-dynatrace.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`cbe11d1e23`](https://github.com/backstage/backstage/commit/cbe11d1e23): Tweak README
+- [`f905853ad6`](https://github.com/backstage/backstage/commit/f905853ad6): Prefer using `Link` from `@backstage/core-components` rather than material-UI.
+
 ### `@backstage/plugin-techdocs-backend` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-techdocs-backend.md#141))
 
 #### 1.4.1
@@ -1404,24 +1426,6 @@ Changes between 1.7.2 and 1.8.0 — 158 changed and 13 added packages.
 ##### Patch Changes
 
 - [`7d1352d459`](https://github.com/backstage/backstage/commit/7d1352d459): Analytics events captured within the `<TechDocsReaderPageProvider>` now include the conventional `entityRef` context value, associating those events with their corresponding entity.
-
-### `@backstage/plugin-vault-backend` (0.2.3 → [0.2.4](../../changelogs/@backstage/plugin-vault-backend.md#024))
-
-#### 0.2.4
-
-##### Patch Changes
-
-- [`687237da4c`](https://github.com/backstage/backstage/commit/687237da4c): Added `errorHandler()` middleware to `router` to prevent crashes caused by fatal errors in plugin backend
-
-### `@backstage/plugin-xcmetrics` (0.2.30 → [0.2.31](../../changelogs/@backstage/plugin-xcmetrics.md#0231))
-
-#### 0.2.31
-
-##### Patch Changes
-
-- [`7573b65232`](https://github.com/backstage/backstage/commit/7573b65232): Internal refactor of imports to avoid circular dependencies
-- [`43afded227`](https://github.com/backstage/backstage/commit/43afded227): Updated recharts to v2.0.0 and fixed typing issues
-- [`dcf9e728de`](https://github.com/backstage/backstage/commit/dcf9e728de): Removed an unused and hidden build details route.
 
 ### `@backstage/types` (1.0.0 → [1.0.1](../../changelogs/@backstage/types.md#101))
 

@@ -1,14 +1,15 @@
 # Backstage Release 1.5.0 changelog
 
-Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
+Changes between 1.4.0 and 1.5.0 — 4 added, 0 removed, 139 upgraded, 16 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 4 packages
 - [Breaking changes](#breaking-changes): 5 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 4 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 34 packages
 - [Other minor version bumps](#other-minor-version-bumps): 6 packages
-- [Patch version bumps](#patch-version-bumps): 41 packages
+- [Other patch version bumps](#other-patch-version-bumps): 7 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 83 packages
 
 ## Table of contents
@@ -29,14 +30,7 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
   - [`@backstage/backend-common` (0.14.1 → 0.15.0)](#backstagebackend-common-0141--0150)
   - [`@backstage/core-components` (0.10.0 → 0.11.0)](#backstagecore-components-0100--0110)
   - [`@backstage/plugin-shortcuts` (0.2.8 → 0.3.0)](#backstageplugin-shortcuts-028--030)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/integration` (1.2.2 → 1.3.0)](#backstageintegration-122--130)
-  - [`@backstage/plugin-catalog` (1.4.0 → 1.5.0)](#backstageplugin-catalog-140--150)
-  - [`@backstage/plugin-scaffolder` (1.4.0 → 1.5.0)](#backstageplugin-scaffolder-140--150)
-  - [`@backstage/plugin-scaffolder-backend` (1.4.0 → 1.5.0)](#backstageplugin-scaffolder-backend-140--150)
-  - [`@backstage/plugin-techdocs-node` (1.2.0 → 1.3.0)](#backstageplugin-techdocs-node-120--130)
-  - [`@techdocs/cli` (1.1.3 → 1.2.0)](#techdocscli-113--120)
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-plugin-api` (0.1.0 → 0.1.1)](#backstagebackend-plugin-api-010--011)
   - [`@backstage/backend-tasks` (0.3.3 → 0.3.4)](#backstagebackend-tasks-033--034)
   - [`@backstage/backend-test-utils` (0.1.26 → 0.1.27)](#backstagebackend-test-utils-0126--0127)
@@ -44,16 +38,12 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
   - [`@backstage/create-app` (0.4.29 → 0.4.30)](#backstagecreate-app-0429--0430)
   - [`@backstage/plugin-api-docs` (0.8.7 → 0.8.8)](#backstageplugin-api-docs-087--088)
   - [`@backstage/plugin-auth-backend` (0.15.0 → 0.15.1)](#backstageplugin-auth-backend-0150--0151)
-  - [`@backstage/plugin-catalog-backend` (1.3.0 → 1.3.1)](#backstageplugin-catalog-backend-130--131)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.1.7 → 0.1.8)](#backstageplugin-catalog-backend-module-aws-017--018)
   - [`@backstage/plugin-catalog-backend-module-github` (0.1.5 → 0.1.6)](#backstageplugin-catalog-backend-module-github-015--016)
   - [`@backstage/plugin-catalog-backend-module-gitlab` (0.1.5 → 0.1.6)](#backstageplugin-catalog-backend-module-gitlab-015--016)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.4.0 → 0.4.1)](#backstageplugin-catalog-backend-module-msgraph-040--041)
   - [`@backstage/plugin-catalog-backend-module-openapi` (0.1.0 → 0.1.1)](#backstageplugin-catalog-backend-module-openapi-010--011)
-  - [`@backstage/plugin-catalog-common` (1.0.4 → 1.0.5)](#backstageplugin-catalog-common-104--105)
   - [`@backstage/plugin-catalog-graphql` (0.3.11 → 0.3.12)](#backstageplugin-catalog-graphql-0311--0312)
-  - [`@backstage/plugin-catalog-node` (1.0.0 → 1.0.1)](#backstageplugin-catalog-node-100--101)
-  - [`@backstage/plugin-catalog-react` (1.1.2 → 1.1.3)](#backstageplugin-catalog-react-112--113)
   - [`@backstage/plugin-cicd-statistics` (0.1.9 → 0.1.10)](#backstageplugin-cicd-statistics-019--0110)
   - [`@backstage/plugin-code-climate` (0.1.7 → 0.1.8)](#backstageplugin-code-climate-017--018)
   - [`@backstage/plugin-cost-insights` (0.11.29 → 0.11.30)](#backstageplugin-cost-insights-01129--01130)
@@ -74,10 +64,22 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
   - [`@backstage/plugin-tech-insights-common` (0.2.5 → 0.2.6)](#backstageplugin-tech-insights-common-025--026)
   - [`@backstage/plugin-tech-insights-node` (0.3.2 → 0.3.3)](#backstageplugin-tech-insights-node-032--033)
   - [`@backstage/plugin-tech-radar` (0.5.14 → 0.5.15)](#backstageplugin-tech-radar-0514--0515)
+  - [`@backstage/plugin-xcmetrics` (0.2.27 → 0.2.28)](#backstageplugin-xcmetrics-0227--0228)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/integration` (1.2.2 → 1.3.0)](#backstageintegration-122--130)
+  - [`@backstage/plugin-catalog` (1.4.0 → 1.5.0)](#backstageplugin-catalog-140--150)
+  - [`@backstage/plugin-scaffolder` (1.4.0 → 1.5.0)](#backstageplugin-scaffolder-140--150)
+  - [`@backstage/plugin-scaffolder-backend` (1.4.0 → 1.5.0)](#backstageplugin-scaffolder-backend-140--150)
+  - [`@backstage/plugin-techdocs-node` (1.2.0 → 1.3.0)](#backstageplugin-techdocs-node-120--130)
+  - [`@techdocs/cli` (1.1.3 → 1.2.0)](#techdocscli-113--120)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-catalog-backend` (1.3.0 → 1.3.1)](#backstageplugin-catalog-backend-130--131)
+  - [`@backstage/plugin-catalog-common` (1.0.4 → 1.0.5)](#backstageplugin-catalog-common-104--105)
+  - [`@backstage/plugin-catalog-node` (1.0.0 → 1.0.1)](#backstageplugin-catalog-node-100--101)
+  - [`@backstage/plugin-catalog-react` (1.1.2 → 1.1.3)](#backstageplugin-catalog-react-112--113)
   - [`@backstage/plugin-techdocs` (1.3.0 → 1.3.1)](#backstageplugin-techdocs-130--131)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.2 → 1.0.3)](#backstageplugin-techdocs-module-addons-contrib-102--103)
   - [`@backstage/plugin-techdocs-react` (1.0.2 → 1.0.3)](#backstageplugin-techdocs-react-102--103)
-  - [`@backstage/plugin-xcmetrics` (0.2.27 → 0.2.28)](#backstageplugin-xcmetrics-0227--0228)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -301,101 +303,7 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
   const shortcuts = useObservable(shortcutApi.shortcut$(), shortcutApi.get());
   ```
 
-## Other minor version bumps
-
-### `@backstage/integration` (1.2.2 → [1.3.0](../../changelogs/@backstage/integration.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`593dea6710`](https://github.com/backstage/backstage/commit/593dea6710): Add support for Basic Auth for Bitbucket Server.
-- [`ad35364e97`](https://github.com/backstage/backstage/commit/ad35364e97): feat(techdocs): add edit button support for bitbucketServer
-
-##### Patch Changes
-
-- [`163243a4d1`](https://github.com/backstage/backstage/commit/163243a4d1): Handle incorrect return type from Octokit paginate plugin to resolve reading URLs from GitHub
-- [`c4b460a47d`](https://github.com/backstage/backstage/commit/c4b460a47d): Avoid double encoding of the file path in `getBitbucketDownloadUrl`
-- [`29f782eb37`](https://github.com/backstage/backstage/commit/29f782eb37): Updated dependency `@types/luxon` to `^3.0.0`.
-- [`1f27d83933`](https://github.com/backstage/backstage/commit/1f27d83933): Fixed bug in getGitLabFileFetchUrl where a target whose path did not contain the
-  `/-/` scope would result in a fetch URL that did not support
-  private-token-based authentication.
-
-### `@backstage/plugin-catalog` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-catalog.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`80da5162c7`](https://github.com/backstage/backstage/commit/80da5162c7): Plugin catalog has been modified to use an experimental feature where you can customize the title of the create button.
-
-  You can modify it by doing:
-
-  ```typescript jsx
-  import { catalogPlugin } from '@backstage/plugin-catalog';
-
-  catalogPlugin.__experimentalReconfigure({
-    createButtonTitle: 'New',
-  });
-  ```
-
-- [`fe94398418`](https://github.com/backstage/backstage/commit/fe94398418): Allow changing the subtitle of the `CatalogTable` component
-
-### `@backstage/plugin-scaffolder` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-scaffolder.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`c4b452e16a`](https://github.com/backstage/backstage/commit/c4b452e16a): Starting the implementation of the Wizard page for the `next` scaffolder plugin
-
-### `@backstage/plugin-scaffolder-backend` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`c4b452e16a`](https://github.com/backstage/backstage/commit/c4b452e16a): Starting the implementation of the Wizard page for the `next` scaffolder plugin
-- [`593dea6710`](https://github.com/backstage/backstage/commit/593dea6710): Add support for Basic Auth for Bitbucket Server.
-- [`3b7930b3e5`](https://github.com/backstage/backstage/commit/3b7930b3e5): Add support for Bearer Authorization header / token-based auth at Git commands.
-- [`3f1316f1c5`](https://github.com/backstage/backstage/commit/3f1316f1c5): User Bearer Authorization header at Git commands with token-based auth at Bitbucket Server.
-- [`eeff5046ae`](https://github.com/backstage/backstage/commit/eeff5046ae): Updated `publish:gitlab:merge-request` action to allow commit updates and deletes
-- [`692d5d3405`](https://github.com/backstage/backstage/commit/692d5d3405): Added `reviewers` and `teamReviewers` parameters to `publish:github:pull-request` action to add reviewers on the pull request created by the action
-
-##### Patch Changes
-
-- [`fc8a5f797b`](https://github.com/backstage/backstage/commit/fc8a5f797b): Add a `publish:gerrit:review` scaffolder action
-- [`c971afbf21`](https://github.com/backstage/backstage/commit/c971afbf21): The `publish:file` action has been deprecated in favor of testing templates using the template editor instead. Note that this action is not and was never been installed by default.
-- [`b10b6c4aa4`](https://github.com/backstage/backstage/commit/b10b6c4aa4): Fix issue on Windows where templated files where not properly skipped as intended.
-- [`56e1b4b89c`](https://github.com/backstage/backstage/commit/56e1b4b89c): Fixed typos in alpha types.
-- [`dad0f65494`](https://github.com/backstage/backstage/commit/dad0f65494): Fail gracefully if an invalid `Authorization` header is passed to `POST /v2/tasks`
-- [`014b3b7776`](https://github.com/backstage/backstage/commit/014b3b7776): Add missing `res.end()` in scaffolder backend `EventStream` usage
-
-### `@backstage/plugin-techdocs-node` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-techdocs-node.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`ad35364e97`](https://github.com/backstage/backstage/commit/ad35364e97): feat(techdocs): add edit button support for bitbucketServer
-
-##### Patch Changes
-
-- [`c8196bd37d`](https://github.com/backstage/backstage/commit/c8196bd37d): Fix AWS S3 404 NotFound error
-
-  When reading an object from the S3 bucket through a stream, the aws-sdk getObject() API may throw a 404 NotFound Error with no error message or, in fact, any sort of HTTP-layer error responses. These fail the @backstage/error's assertError() checks, so they must be wrapped. The test for this case was also updated to match the wrapped error message.
-
-- [`f833344611`](https://github.com/backstage/backstage/commit/f833344611): Bump default `TechDocs` image to `v1.1.0`, see the release [here](https://github.com/backstage/techdocs-container/releases/tag/v1.1.0).
-
-### `@techdocs/cli` (1.1.3 → [1.2.0](../../changelogs/@techdocs/cli.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`855952db53`](https://github.com/backstage/backstage/commit/855952db53): Added CLI option `--docker-option` to allow passing additional options to the `docker run` command executed my `serve` and `serve:mkdocs`.
-
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-plugin-api` (0.1.0 → [0.1.1](../../changelogs/@backstage/backend-plugin-api.md#011))
 
@@ -484,19 +392,6 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
 - [`c676a9e07b`](https://github.com/backstage/backstage/commit/c676a9e07b): Fixed a bug in auth plugin on the backend where it ignores the skip migration database options when using the database provider.
 - [`2d7d6028e1`](https://github.com/backstage/backstage/commit/2d7d6028e1): Updated dependency `@google-cloud/firestore` to `^6.0.0`.
 
-### `@backstage/plugin-catalog-backend` (1.3.0 → [1.3.1](../../changelogs/@backstage/plugin-catalog-backend.md#131))
-
-#### 1.3.1
-
-##### Patch Changes
-
-- [`56e1b4b89c`](https://github.com/backstage/backstage/commit/56e1b4b89c): Fixed typos in alpha types.
-- [`e3d3018531`](https://github.com/backstage/backstage/commit/e3d3018531): Fix issue for conditional decisions based on properties stored as arrays, like tags.
-
-  Before this change, having a permission policy returning conditional decisions based on metadata like tags, such like `createCatalogConditionalDecision(permission, catalogConditions.hasMetadata('tags', 'java'),)`, was producing wrong results. The issue occurred when authorizing entities already loaded from the database, for example when authorizing `catalogEntityDeletePermission`.
-
-- [`059ae348b4`](https://github.com/backstage/backstage/commit/059ae348b4): Use the non-deprecated form of table.unique in knex
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.1.7 → [0.1.8](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#018))
 
 #### 0.1.8
@@ -575,14 +470,6 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
       $openapi: ./spec/openapi.yaml # by using $openapi Backstage will now resolve all $ref instances
   ```
 
-### `@backstage/plugin-catalog-common` (1.0.4 → [1.0.5](../../changelogs/@backstage/plugin-catalog-common.md#105))
-
-#### 1.0.5
-
-##### Patch Changes
-
-- [`92103db537`](https://github.com/backstage/backstage/commit/92103db537): Export aggregated list of all catalog permissions
-
 ### `@backstage/plugin-catalog-graphql` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-catalog-graphql.md#0312))
 
 #### 0.3.12
@@ -590,23 +477,6 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
 ##### Patch Changes
 
 - [`fa3eeee92d`](https://github.com/backstage/backstage/commit/fa3eeee92d): Updated dependency `@graphql-tools/schema` to `^9.0.0`.
-
-### `@backstage/plugin-catalog-node` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-catalog-node.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`0599732ec0`](https://github.com/backstage/backstage/commit/0599732ec0): Refactored experimental backend system with new type names.
-- [`56e1b4b89c`](https://github.com/backstage/backstage/commit/56e1b4b89c): Fixed typos in alpha types.
-
-### `@backstage/plugin-catalog-react` (1.1.2 → [1.1.3](../../changelogs/@backstage/plugin-catalog-react.md#113))
-
-#### 1.1.3
-
-##### Patch Changes
-
-- [`44e691a7f9`](https://github.com/backstage/backstage/commit/44e691a7f9): Modify description column to not use auto width.
 
 ### `@backstage/plugin-cicd-statistics` (0.1.9 → [0.1.10](../../changelogs/@backstage/plugin-cicd-statistics.md#0110))
 
@@ -774,6 +644,148 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
 
 - [`a641f79dcb`](https://github.com/backstage/backstage/commit/a641f79dcb): Move CSS overflow property to quadrant block element (i.e. to a div element) in RadarLegend component.
 
+### `@backstage/plugin-xcmetrics` (0.2.27 → [0.2.28](../../changelogs/@backstage/plugin-xcmetrics.md#0228))
+
+#### 0.2.28
+
+##### Patch Changes
+
+- [`29f782eb37`](https://github.com/backstage/backstage/commit/29f782eb37): Updated dependency `@types/luxon` to `^3.0.0`.
+
+## Other minor version bumps
+
+### `@backstage/integration` (1.2.2 → [1.3.0](../../changelogs/@backstage/integration.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`593dea6710`](https://github.com/backstage/backstage/commit/593dea6710): Add support for Basic Auth for Bitbucket Server.
+- [`ad35364e97`](https://github.com/backstage/backstage/commit/ad35364e97): feat(techdocs): add edit button support for bitbucketServer
+
+##### Patch Changes
+
+- [`163243a4d1`](https://github.com/backstage/backstage/commit/163243a4d1): Handle incorrect return type from Octokit paginate plugin to resolve reading URLs from GitHub
+- [`c4b460a47d`](https://github.com/backstage/backstage/commit/c4b460a47d): Avoid double encoding of the file path in `getBitbucketDownloadUrl`
+- [`29f782eb37`](https://github.com/backstage/backstage/commit/29f782eb37): Updated dependency `@types/luxon` to `^3.0.0`.
+- [`1f27d83933`](https://github.com/backstage/backstage/commit/1f27d83933): Fixed bug in getGitLabFileFetchUrl where a target whose path did not contain the
+  `/-/` scope would result in a fetch URL that did not support
+  private-token-based authentication.
+
+### `@backstage/plugin-catalog` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-catalog.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`80da5162c7`](https://github.com/backstage/backstage/commit/80da5162c7): Plugin catalog has been modified to use an experimental feature where you can customize the title of the create button.
+
+  You can modify it by doing:
+
+  ```typescript jsx
+  import { catalogPlugin } from '@backstage/plugin-catalog';
+
+  catalogPlugin.__experimentalReconfigure({
+    createButtonTitle: 'New',
+  });
+  ```
+
+- [`fe94398418`](https://github.com/backstage/backstage/commit/fe94398418): Allow changing the subtitle of the `CatalogTable` component
+
+### `@backstage/plugin-scaffolder` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-scaffolder.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`c4b452e16a`](https://github.com/backstage/backstage/commit/c4b452e16a): Starting the implementation of the Wizard page for the `next` scaffolder plugin
+
+### `@backstage/plugin-scaffolder-backend` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`c4b452e16a`](https://github.com/backstage/backstage/commit/c4b452e16a): Starting the implementation of the Wizard page for the `next` scaffolder plugin
+- [`593dea6710`](https://github.com/backstage/backstage/commit/593dea6710): Add support for Basic Auth for Bitbucket Server.
+- [`3b7930b3e5`](https://github.com/backstage/backstage/commit/3b7930b3e5): Add support for Bearer Authorization header / token-based auth at Git commands.
+- [`3f1316f1c5`](https://github.com/backstage/backstage/commit/3f1316f1c5): User Bearer Authorization header at Git commands with token-based auth at Bitbucket Server.
+- [`eeff5046ae`](https://github.com/backstage/backstage/commit/eeff5046ae): Updated `publish:gitlab:merge-request` action to allow commit updates and deletes
+- [`692d5d3405`](https://github.com/backstage/backstage/commit/692d5d3405): Added `reviewers` and `teamReviewers` parameters to `publish:github:pull-request` action to add reviewers on the pull request created by the action
+
+##### Patch Changes
+
+- [`fc8a5f797b`](https://github.com/backstage/backstage/commit/fc8a5f797b): Add a `publish:gerrit:review` scaffolder action
+- [`c971afbf21`](https://github.com/backstage/backstage/commit/c971afbf21): The `publish:file` action has been deprecated in favor of testing templates using the template editor instead. Note that this action is not and was never been installed by default.
+- [`b10b6c4aa4`](https://github.com/backstage/backstage/commit/b10b6c4aa4): Fix issue on Windows where templated files where not properly skipped as intended.
+- [`56e1b4b89c`](https://github.com/backstage/backstage/commit/56e1b4b89c): Fixed typos in alpha types.
+- [`dad0f65494`](https://github.com/backstage/backstage/commit/dad0f65494): Fail gracefully if an invalid `Authorization` header is passed to `POST /v2/tasks`
+- [`014b3b7776`](https://github.com/backstage/backstage/commit/014b3b7776): Add missing `res.end()` in scaffolder backend `EventStream` usage
+
+### `@backstage/plugin-techdocs-node` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-techdocs-node.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`ad35364e97`](https://github.com/backstage/backstage/commit/ad35364e97): feat(techdocs): add edit button support for bitbucketServer
+
+##### Patch Changes
+
+- [`c8196bd37d`](https://github.com/backstage/backstage/commit/c8196bd37d): Fix AWS S3 404 NotFound error
+
+  When reading an object from the S3 bucket through a stream, the aws-sdk getObject() API may throw a 404 NotFound Error with no error message or, in fact, any sort of HTTP-layer error responses. These fail the @backstage/error's assertError() checks, so they must be wrapped. The test for this case was also updated to match the wrapped error message.
+
+- [`f833344611`](https://github.com/backstage/backstage/commit/f833344611): Bump default `TechDocs` image to `v1.1.0`, see the release [here](https://github.com/backstage/techdocs-container/releases/tag/v1.1.0).
+
+### `@techdocs/cli` (1.1.3 → [1.2.0](../../changelogs/@techdocs/cli.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`855952db53`](https://github.com/backstage/backstage/commit/855952db53): Added CLI option `--docker-option` to allow passing additional options to the `docker run` command executed my `serve` and `serve:mkdocs`.
+
+## Other patch version bumps
+
+### `@backstage/plugin-catalog-backend` (1.3.0 → [1.3.1](../../changelogs/@backstage/plugin-catalog-backend.md#131))
+
+#### 1.3.1
+
+##### Patch Changes
+
+- [`56e1b4b89c`](https://github.com/backstage/backstage/commit/56e1b4b89c): Fixed typos in alpha types.
+- [`e3d3018531`](https://github.com/backstage/backstage/commit/e3d3018531): Fix issue for conditional decisions based on properties stored as arrays, like tags.
+
+  Before this change, having a permission policy returning conditional decisions based on metadata like tags, such like `createCatalogConditionalDecision(permission, catalogConditions.hasMetadata('tags', 'java'),)`, was producing wrong results. The issue occurred when authorizing entities already loaded from the database, for example when authorizing `catalogEntityDeletePermission`.
+
+- [`059ae348b4`](https://github.com/backstage/backstage/commit/059ae348b4): Use the non-deprecated form of table.unique in knex
+
+### `@backstage/plugin-catalog-common` (1.0.4 → [1.0.5](../../changelogs/@backstage/plugin-catalog-common.md#105))
+
+#### 1.0.5
+
+##### Patch Changes
+
+- [`92103db537`](https://github.com/backstage/backstage/commit/92103db537): Export aggregated list of all catalog permissions
+
+### `@backstage/plugin-catalog-node` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-catalog-node.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`0599732ec0`](https://github.com/backstage/backstage/commit/0599732ec0): Refactored experimental backend system with new type names.
+- [`56e1b4b89c`](https://github.com/backstage/backstage/commit/56e1b4b89c): Fixed typos in alpha types.
+
+### `@backstage/plugin-catalog-react` (1.1.2 → [1.1.3](../../changelogs/@backstage/plugin-catalog-react.md#113))
+
+#### 1.1.3
+
+##### Patch Changes
+
+- [`44e691a7f9`](https://github.com/backstage/backstage/commit/44e691a7f9): Modify description column to not use auto width.
+
 ### `@backstage/plugin-techdocs` (1.3.0 → [1.3.1](../../changelogs/@backstage/plugin-techdocs.md#131))
 
 #### 1.3.1
@@ -801,14 +813,6 @@ Changes between 1.4.0 and 1.5.0 — 139 changed and 4 added packages.
 
 - [`29d6cf0147`](https://github.com/backstage/backstage/commit/29d6cf0147): Add `toLowerEntityRefMaybe()` helper function for handling `techdocs.legacyUseCaseSensitiveTripletPaths` flag.
   Pass modified `entityRef` to `TechDocsReaderPageContext` to handle the `techdocs.legacyUseCaseSensitiveTripletPaths` flag.
-
-### `@backstage/plugin-xcmetrics` (0.2.27 → [0.2.28](../../changelogs/@backstage/plugin-xcmetrics.md#0228))
-
-#### 0.2.28
-
-##### Patch Changes
-
-- [`29f782eb37`](https://github.com/backstage/backstage/commit/29f782eb37): Updated dependency `@types/luxon` to `^3.0.0`.
 
 ## Excluded dependency updates
 

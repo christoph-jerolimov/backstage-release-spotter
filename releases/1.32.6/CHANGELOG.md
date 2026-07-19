@@ -1,17 +1,17 @@
 # Backstage Release 1.32.6 changelog
 
-Changes between 1.32.5 and 1.32.6 — 19 changed and 0 added packages.
+Changes between 1.32.5 and 1.32.6 — 0 added, 0 removed, 19 upgraded, 158 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 9 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 8 packages
+- [Other patch version bumps](#other-patch-version-bumps): 1 package
 - [Excluded dependency updates](#excluded-dependency-updates): 10 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-dynamic-feature-service` (0.4.3 → 0.4.4)](#backstagebackend-dynamic-feature-service-043--044)
-  - [`@backstage/plugin-scaffolder-backend` (1.26.2 → 1.26.3)](#backstageplugin-scaffolder-backend-1262--1263)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.1 → 0.2.2)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-021--022)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.1 → 0.2.2)](#backstageplugin-scaffolder-backend-module-bitbucket-server-021--022)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.6.0 → 0.6.1)](#backstageplugin-scaffolder-backend-module-gitlab-060--061)
@@ -19,15 +19,13 @@ Changes between 1.32.5 and 1.32.6 — 19 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.1 → 0.5.2)](#backstageplugin-scaffolder-backend-module-rails-051--052)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.2 → 0.4.3)](#backstageplugin-scaffolder-backend-module-yeoman-042--043)
   - [`@backstage/plugin-scaffolder-node` (0.5.0 → 0.5.1)](#backstageplugin-scaffolder-node-050--051)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-scaffolder-backend` (1.26.2 → 1.26.3)](#backstageplugin-scaffolder-backend-1262--1263)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-dynamic-feature-service` (0.4.3 → [0.4.4](../../changelogs/@backstage/backend-dynamic-feature-service.md#044))
-
-_No changelog entries found._
-
-### `@backstage/plugin-scaffolder-backend` (1.26.2 → [1.26.3](../../changelogs/@backstage/plugin-scaffolder-backend.md#1263))
 
 _No changelog entries found._
 
@@ -95,6 +93,12 @@ _No changelog entries found._
 - [`5d74716`](https://github.com/backstage/backstage/commit/5d74716): Remove unused backend-common dependency
 
 ### `@backstage/plugin-scaffolder-node` (0.5.0 → [0.5.1](../../changelogs/@backstage/plugin-scaffolder-node.md#051))
+
+_No changelog entries found._
+
+## Other patch version bumps
+
+### `@backstage/plugin-scaffolder-backend` (1.26.2 → [1.26.3](../../changelogs/@backstage/plugin-scaffolder-backend.md#1263))
 
 _No changelog entries found._
 

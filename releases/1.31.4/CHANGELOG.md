@@ -1,17 +1,17 @@
 # Backstage Release 1.31.4 changelog
 
-Changes between 1.31.3 and 1.31.4 — 19 changed and 0 added packages.
+Changes between 1.31.3 and 1.31.4 — 0 added, 0 removed, 19 upgraded, 159 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 14 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 13 packages
+- [Other patch version bumps](#other-patch-version-bumps): 1 package
 - [Excluded dependency updates](#excluded-dependency-updates): 5 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-dynamic-feature-service` (0.4.1 → 0.4.2)](#backstagebackend-dynamic-feature-service-041--042)
-  - [`@backstage/plugin-scaffolder-backend` (1.25.0 → 1.25.1)](#backstageplugin-scaffolder-backend-1250--1251)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.2.0 → 0.2.1)](#backstageplugin-scaffolder-backend-module-azure-020--021)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.0 → 0.2.1)](#backstageplugin-scaffolder-backend-module-bitbucket-server-020--021)
   - [`@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.3.0 → 0.3.1)](#backstageplugin-scaffolder-backend-module-confluence-to-markdown-030--031)
@@ -24,9 +24,11 @@ Changes between 1.31.3 and 1.31.4 — 19 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.0 → 0.4.1)](#backstageplugin-scaffolder-backend-module-yeoman-040--041)
   - [`@backstage/plugin-scaffolder-node` (0.4.11 → 0.4.12)](#backstageplugin-scaffolder-node-0411--0412)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.1.12 → 0.1.13)](#backstageplugin-scaffolder-node-test-utils-0112--0113)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-scaffolder-backend` (1.25.0 → 1.25.1)](#backstageplugin-scaffolder-backend-1250--1251)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-dynamic-feature-service` (0.4.1 → [0.4.2](../../changelogs/@backstage/backend-dynamic-feature-service.md#042))
 
@@ -47,10 +49,6 @@ Changes between 1.31.3 and 1.31.4 — 19 changed and 0 added packages.
 - [`4c89e47`](https://github.com/backstage/backstage/commit/4c89e47): Allow passing an async module loader in the `DynamicPluginsFeatureLoaderOptions`.
 - [`094eaa3`](https://github.com/backstage/backstage/commit/094eaa3): Remove references to in-repo backend-common
 - [`2f88f88`](https://github.com/backstage/backstage/commit/2f88f88): Updated backend installation instructions.
-
-### `@backstage/plugin-scaffolder-backend` (1.25.0 → [1.25.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#1251))
-
-_No changelog entries found._
 
 ### `@backstage/plugin-scaffolder-backend-module-azure` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#021))
 
@@ -163,6 +161,12 @@ _No changelog entries found._
 
 - [`e969dc7`](https://github.com/backstage/backstage/commit/e969dc7): Move `@types/react` to a peer dependency.
 - [`094eaa3`](https://github.com/backstage/backstage/commit/094eaa3): Remove references to in-repo backend-common
+
+## Other patch version bumps
+
+### `@backstage/plugin-scaffolder-backend` (1.25.0 → [1.25.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#1251))
+
+_No changelog entries found._
 
 ## Excluded dependency updates
 

@@ -1,6 +1,6 @@
 # Backstage Release 1.41.2 changelog
 
-Changes between 1.41.1 and 1.41.2 — 1 changed and 0 added packages.
+Changes between 1.41.1 and 1.41.2 — 0 added, 0 removed, 1 upgraded, 187 unchanged packages.
 
 ## Summary
 

@@ -1,6 +1,6 @@
 # Backstage Release 1.17.0 changelog
 
-Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
+Changes between 1.16.0 and 1.17.0 — 3 added, 0 removed, 189 upgraded, 29 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [Breaking changes](#breaking-changes): 11 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 3 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 102 packages
 - [Other minor version bumps](#other-minor-version-bumps): 6 packages
-- [Other patch version bumps](#other-patch-version-bumps): 115 packages
+- [Other patch version bumps](#other-patch-version-bumps): 13 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 52 packages
 
 ## Table of contents
@@ -37,23 +38,13 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/backend-openapi-utils` (0.0.2 → 0.0.3)](#backstagebackend-openapi-utils-002--003)
   - [`@backstage/plugin-explore-backend` (0.0.9 → 0.0.10)](#backstageplugin-explore-backend-009--0010)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config-loader` (1.3.2 → 1.4.0)](#backstageconfig-loader-132--140)
-  - [`@backstage/integration` (1.5.1 → 1.6.0)](#backstageintegration-151--160)
-  - [`@backstage/plugin-catalog-backend` (1.11.0 → 1.12.0)](#backstageplugin-catalog-backend-1110--1120)
-  - [`@backstage/plugin-scaffolder-backend` (1.15.1 → 1.16.0)](#backstageplugin-scaffolder-backend-1151--1160)
-  - [`@backstage/plugin-scaffolder-common` (1.3.2 → 1.4.0)](#backstageplugin-scaffolder-common-132--140)
-  - [`@backstage/plugin-search-backend` (1.3.3 → 1.4.0)](#backstageplugin-search-backend-133--140)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.19.1 → 0.19.2)](#backstagebackend-common-0191--0192)
   - [`@backstage/backend-tasks` (0.5.4 → 0.5.5)](#backstagebackend-tasks-054--055)
   - [`@backstage/cli` (0.22.9 → 0.22.10)](#backstagecli-0229--02210)
   - [`@backstage/cli-node` (0.1.2 → 0.1.3)](#backstagecli-node-012--013)
-  - [`@backstage/core-app-api` (1.9.0 → 1.9.1)](#backstagecore-app-api-190--191)
   - [`@backstage/core-components` (0.13.3 → 0.13.4)](#backstagecore-components-0133--0134)
   - [`@backstage/create-app` (0.5.3 → 0.5.4)](#backstagecreate-app-053--054)
-  - [`@backstage/dev-utils` (1.0.17 → 1.0.18)](#backstagedev-utils-1017--1018)
-  - [`@backstage/integration-react` (1.1.15 → 1.1.16)](#backstageintegration-react-1115--1116)
   - [`@backstage/plugin-adr` (0.6.3 → 0.6.4)](#backstageplugin-adr-063--064)
   - [`@backstage/plugin-airbrake` (0.3.20 → 0.3.21)](#backstageplugin-airbrake-0320--0321)
   - [`@backstage/plugin-airbrake-backend` (0.2.20 → 0.2.21)](#backstageplugin-airbrake-backend-0220--0221)
@@ -71,7 +62,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
   - [`@backstage/plugin-bazaar-backend` (0.2.10 → 0.2.11)](#backstageplugin-bazaar-backend-0210--0211)
   - [`@backstage/plugin-bitbucket-cloud-common` (0.2.8 → 0.2.9)](#backstageplugin-bitbucket-cloud-common-028--029)
   - [`@backstage/plugin-bitrise` (0.1.47 → 0.1.48)](#backstageplugin-bitrise-0147--0148)
-  - [`@backstage/plugin-catalog` (1.12.0 → 1.12.1)](#backstageplugin-catalog-1120--1121)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.2.2 → 0.2.3)](#backstageplugin-catalog-backend-module-aws-022--023)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.18 → 0.1.19)](#backstageplugin-catalog-backend-module-azure-0118--0119)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.14 → 0.1.15)](#backstageplugin-catalog-backend-module-bitbucket-cloud-0114--0115)
@@ -83,8 +73,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.5.6 → 0.5.7)](#backstageplugin-catalog-backend-module-msgraph-056--057)
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.1.4 → 0.1.5)](#backstageplugin-catalog-backend-module-puppetdb-014--015)
   - [`@backstage/plugin-catalog-graph` (0.2.32 → 0.2.33)](#backstageplugin-catalog-graph-0232--0233)
-  - [`@backstage/plugin-catalog-node` (1.4.0 → 1.4.1)](#backstageplugin-catalog-node-140--141)
-  - [`@backstage/plugin-catalog-react` (1.8.0 → 1.8.1)](#backstageplugin-catalog-react-180--181)
   - [`@backstage/plugin-cicd-statistics-module-gitlab` (0.1.16 → 0.1.17)](#backstageplugin-cicd-statistics-module-gitlab-0116--0117)
   - [`@backstage/plugin-code-climate` (0.1.20 → 0.1.21)](#backstageplugin-code-climate-0120--0121)
   - [`@backstage/plugin-code-coverage` (0.2.13 → 0.2.14)](#backstageplugin-code-coverage-0213--0214)
@@ -94,7 +82,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
   - [`@backstage/plugin-devtools` (0.1.2 → 0.1.3)](#backstageplugin-devtools-012--013)
   - [`@backstage/plugin-devtools-backend` (0.1.2 → 0.1.3)](#backstageplugin-devtools-backend-012--013)
   - [`@backstage/plugin-devtools-common` (0.1.2 → 0.1.3)](#backstageplugin-devtools-common-012--013)
-  - [`@backstage/plugin-dynatrace` (7.0.0 → 7.0.1)](#backstageplugin-dynatrace-700--701)
   - [`@backstage/plugin-entity-feedback` (0.2.3 → 0.2.4)](#backstageplugin-entity-feedback-023--024)
   - [`@backstage/plugin-entity-feedback-backend` (0.1.5 → 0.1.6)](#backstageplugin-entity-feedback-backend-015--016)
   - [`@backstage/plugin-entity-feedback-common` (0.1.1 → 0.1.2)](#backstageplugin-entity-feedback-common-011--012)
@@ -139,26 +126,41 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
   - [`@backstage/plugin-playlist` (0.1.12 → 0.1.13)](#backstageplugin-playlist-0112--0113)
   - [`@backstage/plugin-playlist-backend` (0.3.3 → 0.3.4)](#backstageplugin-playlist-backend-033--034)
   - [`@backstage/plugin-playlist-common` (0.1.8 → 0.1.9)](#backstageplugin-playlist-common-018--019)
-  - [`@backstage/plugin-scaffolder` (1.14.1 → 1.14.2)](#backstageplugin-scaffolder-1141--1142)
   - [`@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.2.0 → 0.2.1)](#backstageplugin-scaffolder-backend-module-confluence-to-markdown-020--021)
   - [`@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.23 → 0.2.24)](#backstageplugin-scaffolder-backend-module-cookiecutter-0223--0224)
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.16 → 0.4.17)](#backstageplugin-scaffolder-backend-module-rails-0416--0417)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.1.7 → 0.1.8)](#backstageplugin-scaffolder-backend-module-sentry-017--018)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.20 → 0.2.21)](#backstageplugin-scaffolder-backend-module-yeoman-0220--0221)
-  - [`@backstage/plugin-scaffolder-react` (1.5.1 → 1.5.2)](#backstageplugin-scaffolder-react-151--152)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.2 → 1.3.3)](#backstageplugin-search-backend-module-elasticsearch-132--133)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.8 → 0.5.9)](#backstageplugin-search-backend-module-pg-058--059)
-  - [`@backstage/plugin-search-backend-node` (1.2.3 → 1.2.4)](#backstageplugin-search-backend-node-123--124)
   - [`@backstage/plugin-shortcuts` (0.3.12 → 0.3.13)](#backstageplugin-shortcuts-0312--0313)
   - [`@backstage/plugin-sonarqube` (0.7.1 → 0.7.2)](#backstageplugin-sonarqube-071--072)
   - [`@backstage/plugin-sonarqube-backend` (0.2.1 → 0.2.2)](#backstageplugin-sonarqube-backend-021--022)
   - [`@backstage/plugin-splunk-on-call` (0.4.9 → 0.4.10)](#backstageplugin-splunk-on-call-049--0410)
   - [`@backstage/plugin-stack-overflow` (0.1.18 → 0.1.19)](#backstageplugin-stack-overflow-0118--0119)
   - [`@backstage/plugin-tech-insights` (0.3.12 → 0.3.13)](#backstageplugin-tech-insights-0312--0313)
-  - [`@backstage/plugin-techdocs-backend` (1.6.4 → 1.6.5)](#backstageplugin-techdocs-backend-164--165)
   - [`@backstage/plugin-user-settings-backend` (0.1.11 → 0.1.12)](#backstageplugin-user-settings-backend-0111--0112)
   - [`@backstage/plugin-xcmetrics` (0.2.40 → 0.2.41)](#backstageplugin-xcmetrics-0240--0241)
   - [`@backstage/repo-tools` (0.3.2 → 0.3.3)](#backstagerepo-tools-032--033)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config-loader` (1.3.2 → 1.4.0)](#backstageconfig-loader-132--140)
+  - [`@backstage/integration` (1.5.1 → 1.6.0)](#backstageintegration-151--160)
+  - [`@backstage/plugin-catalog-backend` (1.11.0 → 1.12.0)](#backstageplugin-catalog-backend-1110--1120)
+  - [`@backstage/plugin-scaffolder-backend` (1.15.1 → 1.16.0)](#backstageplugin-scaffolder-backend-1151--1160)
+  - [`@backstage/plugin-scaffolder-common` (1.3.2 → 1.4.0)](#backstageplugin-scaffolder-common-132--140)
+  - [`@backstage/plugin-search-backend` (1.3.3 → 1.4.0)](#backstageplugin-search-backend-133--140)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/core-app-api` (1.9.0 → 1.9.1)](#backstagecore-app-api-190--191)
+  - [`@backstage/dev-utils` (1.0.17 → 1.0.18)](#backstagedev-utils-1017--1018)
+  - [`@backstage/integration-react` (1.1.15 → 1.1.16)](#backstageintegration-react-1115--1116)
+  - [`@backstage/plugin-catalog` (1.12.0 → 1.12.1)](#backstageplugin-catalog-1120--1121)
+  - [`@backstage/plugin-catalog-node` (1.4.0 → 1.4.1)](#backstageplugin-catalog-node-140--141)
+  - [`@backstage/plugin-catalog-react` (1.8.0 → 1.8.1)](#backstageplugin-catalog-react-180--181)
+  - [`@backstage/plugin-dynatrace` (7.0.0 → 7.0.1)](#backstageplugin-dynatrace-700--701)
+  - [`@backstage/plugin-scaffolder` (1.14.1 → 1.14.2)](#backstageplugin-scaffolder-1141--1142)
+  - [`@backstage/plugin-scaffolder-react` (1.5.1 → 1.5.2)](#backstageplugin-scaffolder-react-151--152)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.2 → 1.3.3)](#backstageplugin-search-backend-module-elasticsearch-132--133)
+  - [`@backstage/plugin-search-backend-node` (1.2.3 → 1.2.4)](#backstageplugin-search-backend-node-123--124)
+  - [`@backstage/plugin-techdocs-backend` (1.6.4 → 1.6.5)](#backstageplugin-techdocs-backend-164--165)
   - [`@techdocs/cli` (1.4.4 → 1.4.5)](#techdocscli-144--145)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -445,150 +447,7 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [`eda2a699f40d`](https://github.com/backstage/backstage/commit/eda2a699f40d): Moved the config example from the "Tools as Code" section to the "Tools as Config" section of the README
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-## Other minor version bumps
-
-### `@backstage/config-loader` (1.3.2 → [1.4.0](../../changelogs/@backstage/config-loader.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`2f1859585998`](https://github.com/backstage/backstage/commit/2f1859585998): Loading invalid TypeScript configuration schemas will now throw an error rather than silently being ignored.
-
-  In particular this includes defining any additional types other than `Config` in the schema file, or use of unsupported types such as `Record` or `Partial`.
-
-- [`cd514545d1d0`](https://github.com/backstage/backstage/commit/cd514545d1d0): Adds a new `deepVisibility` schema keyword that sets child visibility recursively to the defined value, respecting preexisting values or child `deepVisibility`.
-
-  Example usage:
-
-  ```ts
-  export interface Config {
-    /**
-     * Enforces a default of `secret` instead of `backend` for this object.
-     * @deepVisibility secret
-     */
-    mySecretProperty: {
-      type: 'object';
-      properties: {
-        secretValue: {
-          type: 'string';
-        };
-
-        verySecretProperty: {
-          type: 'string';
-        };
-      };
-    };
-  }
-  ```
-
-  Example of a schema that would not be allowed:
-
-  ```ts
-  export interface Config {
-    /**
-     * Set the top level property to secret, enforcing a default of `secret` instead of `backend` for this object.
-     * @deepVisibility secret
-     */
-    mySecretProperty: {
-      type: 'object';
-      properties: {
-        frontendUrl: {
-          /**
-           * We can NOT override the visibility to reveal a property to the front end.
-           * @visibility frontend
-           */
-          type: 'string';
-        };
-
-        verySecretProperty: {
-          type: 'string';
-        };
-      };
-    };
-  }
-  ```
-
-### `@backstage/integration` (1.5.1 → [1.6.0](../../changelogs/@backstage/integration.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`443afcf7f567`](https://github.com/backstage/backstage/commit/443afcf7f567): Added `buildGerritGitilesArchiveUrl()` to construct a Gitiles URL to download an archive.
-  Gitiles URL that uses an authenticated prefix (`/a/`) can now be parsed by the integration.
-
-### `@backstage/plugin-catalog-backend` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-catalog-backend.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`b8cccd8ee858`](https://github.com/backstage/backstage/commit/b8cccd8ee858): Support configuring applicable kinds for `AnnotateScmSlugEntityProcessor`
-- [`f32252cdf631`](https://github.com/backstage/backstage/commit/f32252cdf631): Added OpenTelemetry spans for catalog processing
-- [`ebeb77586975`](https://github.com/backstage/backstage/commit/ebeb77586975): Now performs request validation based on OpenAPI schema through `@backstage/backend-openapi-utils`. Error responses for invalid input, like `"a"` instead of a number, may have changed.
-
-##### Patch Changes
-
-- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
-- [`b8d6b22acd57`](https://github.com/backstage/backstage/commit/b8d6b22acd57): Internal refactor for load test
-
-### `@backstage/plugin-scaffolder-backend` (1.15.1 → [1.16.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1160))
-
-#### 1.16.0
-
-##### Minor Changes
-
-- [`e514aac3eac0`](https://github.com/backstage/backstage/commit/e514aac3eac0): Introduce `each` property on action steps, allowing them to be ran repeatedly.
-
-##### Patch Changes
-
-- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
-- [`349611126ae2`](https://github.com/backstage/backstage/commit/349611126ae2): Removed the options from the alpha `scaffolderPlugin` export. To extend the scaffolder plugin you instead now use the available extension points, `scaffolderActionsExtensionPoint`, `scaffolderTaskBrokerExtensionPoint`, and `scaffolderTemplatingExtensionPoint`.
-- [`33c76caef72a`](https://github.com/backstage/backstage/commit/33c76caef72a): Added examples for the `fs:delete` and `fs:rename` actions
-- [`e07a4914f621`](https://github.com/backstage/backstage/commit/e07a4914f621): Deprecated the following type exports, which have been moved to `@backstage/plugin-scaffolder-node` instead:
-
-  - `TemplateFilter`
-  - `TemplateGlobal`
-  - `TaskStatus`
-  - `TaskCompletionState`
-  - `SerializedTask`
-  - `TaskEventType`
-  - `SerializedTaskEvent`
-  - `TaskBrokerDispatchResult`
-  - `TaskBrokerDispatchOptions`
-  - `TaskContext`
-  - `TaskBroker`
-
-- [`0b1d775be05b`](https://github.com/backstage/backstage/commit/0b1d775be05b): Adds examples to a few scaffolder actions.
-- [`88bc6e27a213`](https://github.com/backstage/backstage/commit/88bc6e27a213): The `concurrentTasksLimit` option can now be configured via static configuration as well. Setting it to 0 will now also disable the task worker.
-- [`0f873325068d`](https://github.com/backstage/backstage/commit/0f873325068d): Add examples for `github:repo:create` and `github:repo:push` scaffolder actions.
-- [`5c28ebc79fd6`](https://github.com/backstage/backstage/commit/5c28ebc79fd6): Updated dependency `esbuild` to `^0.19.0`.
-- [`d3b31a791eb1`](https://github.com/backstage/backstage/commit/d3b31a791eb1): Deprecated `executeShellCommand`, `RunCommandOptions`, and `fetchContents` from `@backstage/plugin-scaffolder-backend`, since they are useful for Scaffolder modules (who should not be importing from the plugin package itself). You should now import these from `@backstage/plugin-scaffolder-backend-node` instead. `RunCommandOptions` was renamed in the Node package as `ExecuteShellCommandOptions`, for consistency.
-
-### `@backstage/plugin-scaffolder-common` (1.3.2 → [1.4.0](../../changelogs/@backstage/plugin-scaffolder-common.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`e514aac3eac0`](https://github.com/backstage/backstage/commit/e514aac3eac0): Introduce `each` property on action steps, allowing them to be ran repeatedly.
-
-### `@backstage/plugin-search-backend` (1.3.3 → [1.4.0](../../changelogs/@backstage/plugin-search-backend.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`ebeb77586975`](https://github.com/backstage/backstage/commit/ebeb77586975): Now performs request validation based on OpenAPI schema through `@backstage/backend-openapi-utils`. Error responses for invalid input, like `"a"` instead of a number, may have changed.
-
-##### Patch Changes
-
-- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
-- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
-- [`951ab6c9db58`](https://github.com/backstage/backstage/commit/951ab6c9db58): Add missing `configSchema` to package.json
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.19.1 → [0.19.2](../../changelogs/@backstage/backend-common.md#0192))
 
@@ -632,14 +491,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-### `@backstage/core-app-api` (1.9.0 → [1.9.1](../../changelogs/@backstage/core-app-api.md#191))
-
-#### 1.9.1
-
-##### Patch Changes
-
-- [`9ae4e7e63836`](https://github.com/backstage/backstage/commit/9ae4e7e63836): Fixed a bug that could cause `navigate` analytics events to be misattributed to the plugin mounted on the root route (e.g. the `home` plugin at `/`) when the route that was navigated to wasn't associated with a routable extension.
-
 ### `@backstage/core-components` (0.13.3 → [0.13.4](../../changelogs/@backstage/core-components.md#0134))
 
 #### 0.13.4
@@ -660,22 +511,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [`5cc0ac5ef3d1`](https://github.com/backstage/backstage/commit/5cc0ac5ef3d1): Bump to a newer version of the `concurrently` library
 - [`46c9a798e41d`](https://github.com/backstage/backstage/commit/46c9a798e41d): Updated the `app-config.yaml` template to use `proxy.endpoints`.
 - [`971bdd6a4732`](https://github.com/backstage/backstage/commit/971bdd6a4732): Bumped internal `nodemon` dependency.
-
-### `@backstage/dev-utils` (1.0.17 → [1.0.18](../../changelogs/@backstage/dev-utils.md#1018))
-
-#### 1.0.18
-
-##### Patch Changes
-
-- [`254ad469f053`](https://github.com/backstage/backstage/commit/254ad469f053): Removed deprecated calls to `app.getProvider()` and `app.getRouter()` in `DevAppBuilder`
-
-### `@backstage/integration-react` (1.1.15 → [1.1.16](../../changelogs/@backstage/integration-react.md#1116))
-
-#### 1.1.16
-
-##### Patch Changes
-
-- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
 ### `@backstage/plugin-adr` (0.6.3 → [0.6.4](../../changelogs/@backstage/plugin-adr.md#064))
 
@@ -819,15 +654,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-### `@backstage/plugin-catalog` (1.12.0 → [1.12.1](../../changelogs/@backstage/plugin-catalog.md#1121))
-
-#### 1.12.1
-
-##### Patch Changes
-
-- [`3d86be999fdf`](https://github.com/backstage/backstage/commit/3d86be999fdf): Prefer simple `theme.spacing` without string interpolation
-- [`136cea792bd4`](https://github.com/backstage/backstage/commit/136cea792bd4): Fixed an issue causing `EntitySwitch` to unmount its children once entity refresh was invoked
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.2.2 → [0.2.3](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#023))
 
 #### 0.2.3
@@ -933,22 +759,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [`62dc7a2b1ad1`](https://github.com/backstage/backstage/commit/62dc7a2b1ad1): Added maximum depth parameter to the catalogGraphParams in CatalogGraphCard.
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-### `@backstage/plugin-catalog-node` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-catalog-node.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
-
-### `@backstage/plugin-catalog-react` (1.8.0 → [1.8.1](../../changelogs/@backstage/plugin-catalog-react.md#181))
-
-#### 1.8.1
-
-##### Patch Changes
-
-- [`aa3feedce10a`](https://github.com/backstage/backstage/commit/aa3feedce10a): Allow specifying screen size when catalog filters are hidden in drawer
-
 ### `@backstage/plugin-cicd-statistics-module-gitlab` (0.1.16 → [0.1.17](../../changelogs/@backstage/plugin-cicd-statistics-module-gitlab.md#0117))
 
 #### 0.1.17
@@ -1027,14 +837,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 ### `@backstage/plugin-devtools-common` (0.1.2 → [0.1.3](../../changelogs/@backstage/plugin-devtools-common.md#013))
 
 #### 0.1.3
-
-##### Patch Changes
-
-- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
-
-### `@backstage/plugin-dynatrace` (7.0.0 → [7.0.1](../../changelogs/@backstage/plugin-dynatrace.md#701))
-
-#### 7.0.1
 
 ##### Patch Changes
 
@@ -1409,14 +1211,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-### `@backstage/plugin-scaffolder` (1.14.1 → [1.14.2](../../changelogs/@backstage/plugin-scaffolder.md#1142))
-
-#### 1.14.2
-
-##### Patch Changes
-
-- [`8a0490fb669e`](https://github.com/backstage/backstage/commit/8a0490fb669e): Fix the get entities query in the `MyGroupsPicker` to query the `kind=Group` entities.
-
 ### `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-confluence-to-markdown.md#021))
 
 #### 0.2.1
@@ -1462,26 +1256,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-### `@backstage/plugin-scaffolder-react` (1.5.1 → [1.5.2](../../changelogs/@backstage/plugin-scaffolder-react.md#152))
-
-#### 1.5.2
-
-##### Patch Changes
-
-- [`ba9ee98a37bd`](https://github.com/backstage/backstage/commit/ba9ee98a37bd): Fixed bug in Workflow component by passing a prop `templateName` down to Stepper component.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.2 → [1.3.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#133))
-
-#### 1.3.3
-
-##### Patch Changes
-
-- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
-- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
-- [`631eb3816b48`](https://github.com/backstage/backstage/commit/631eb3816b48): Index templates can now be configured through configuration under the `search.elasticsearch.indexTemplates`. In addition, the `ElasticSearchSearchEngine.fromConfig` now also accepts a `LoggerService` as the `logger` option as well as a new `translator` option.
-
-  The alpha `searchModuleElasticsearchEngine` export no longer accepts options and a new alpha `elasticsearchTranslatorExtensionPoint` export has been added which lets you customize the query translator.
-
 ### `@backstage/plugin-search-backend-module-pg` (0.5.8 → [0.5.9](../../changelogs/@backstage/plugin-search-backend-module-pg.md#059))
 
 #### 0.5.9
@@ -1490,15 +1264,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
-
-### `@backstage/plugin-search-backend-node` (1.2.3 → [1.2.4](../../changelogs/@backstage/plugin-search-backend-node.md#124))
-
-#### 1.2.4
-
-##### Patch Changes
-
-- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
-- [`e3e9bc10298b`](https://github.com/backstage/backstage/commit/e3e9bc10298b): Fix Lunr search engine highlight by ignoring invalid metadata positions.
 
 ### `@backstage/plugin-shortcuts` (0.3.12 → [0.3.13](../../changelogs/@backstage/plugin-shortcuts.md#0313))
 
@@ -1550,14 +1315,6 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 
 - [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
 
-### `@backstage/plugin-techdocs-backend` (1.6.4 → [1.6.5](../../changelogs/@backstage/plugin-techdocs-backend.md#165))
-
-#### 1.6.5
-
-##### Patch Changes
-
-- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
-
 ### `@backstage/plugin-user-settings-backend` (0.1.11 → [0.1.12](../../changelogs/@backstage/plugin-user-settings-backend.md#0112))
 
 #### 0.1.12
@@ -1584,6 +1341,253 @@ Changes between 1.16.0 and 1.17.0 — 189 changed and 3 added packages.
 - [`75702e85862a`](https://github.com/backstage/backstage/commit/75702e85862a): Bumped `@microsoft/api-extractor` dependency to `^7.36.4`, and `@microsoft/api-documenter` to `^7.22.33`.
 - [`1f3337ebc707`](https://github.com/backstage/backstage/commit/1f3337ebc707): Introducing a new, experimental command `backstage-repo-tools generate-catalog-info`, which can be used to create standardized `catalog-info.yaml` files for each Backstage package in a Backstage monorepo. It can also be used to automatically fix existing `catalog-info.yaml` files with the correct metadata (including `metadata.name`, `metadata.title`, and `metadata.description` introspected from the package's `package.json`, as well as `spec.owner` introspected from `CODEOWNERS`), e.g. in a post-commit hook.
 - [`ebeb77586975`](https://github.com/backstage/backstage/commit/ebeb77586975): Update `schema openapi generate` command to now create a default router that can be imported and used directly.
+
+## Other minor version bumps
+
+### `@backstage/config-loader` (1.3.2 → [1.4.0](../../changelogs/@backstage/config-loader.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`2f1859585998`](https://github.com/backstage/backstage/commit/2f1859585998): Loading invalid TypeScript configuration schemas will now throw an error rather than silently being ignored.
+
+  In particular this includes defining any additional types other than `Config` in the schema file, or use of unsupported types such as `Record` or `Partial`.
+
+- [`cd514545d1d0`](https://github.com/backstage/backstage/commit/cd514545d1d0): Adds a new `deepVisibility` schema keyword that sets child visibility recursively to the defined value, respecting preexisting values or child `deepVisibility`.
+
+  Example usage:
+
+  ```ts
+  export interface Config {
+    /**
+     * Enforces a default of `secret` instead of `backend` for this object.
+     * @deepVisibility secret
+     */
+    mySecretProperty: {
+      type: 'object';
+      properties: {
+        secretValue: {
+          type: 'string';
+        };
+
+        verySecretProperty: {
+          type: 'string';
+        };
+      };
+    };
+  }
+  ```
+
+  Example of a schema that would not be allowed:
+
+  ```ts
+  export interface Config {
+    /**
+     * Set the top level property to secret, enforcing a default of `secret` instead of `backend` for this object.
+     * @deepVisibility secret
+     */
+    mySecretProperty: {
+      type: 'object';
+      properties: {
+        frontendUrl: {
+          /**
+           * We can NOT override the visibility to reveal a property to the front end.
+           * @visibility frontend
+           */
+          type: 'string';
+        };
+
+        verySecretProperty: {
+          type: 'string';
+        };
+      };
+    };
+  }
+  ```
+
+### `@backstage/integration` (1.5.1 → [1.6.0](../../changelogs/@backstage/integration.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`443afcf7f567`](https://github.com/backstage/backstage/commit/443afcf7f567): Added `buildGerritGitilesArchiveUrl()` to construct a Gitiles URL to download an archive.
+  Gitiles URL that uses an authenticated prefix (`/a/`) can now be parsed by the integration.
+
+### `@backstage/plugin-catalog-backend` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-catalog-backend.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`b8cccd8ee858`](https://github.com/backstage/backstage/commit/b8cccd8ee858): Support configuring applicable kinds for `AnnotateScmSlugEntityProcessor`
+- [`f32252cdf631`](https://github.com/backstage/backstage/commit/f32252cdf631): Added OpenTelemetry spans for catalog processing
+- [`ebeb77586975`](https://github.com/backstage/backstage/commit/ebeb77586975): Now performs request validation based on OpenAPI schema through `@backstage/backend-openapi-utils`. Error responses for invalid input, like `"a"` instead of a number, may have changed.
+
+##### Patch Changes
+
+- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
+- [`b8d6b22acd57`](https://github.com/backstage/backstage/commit/b8d6b22acd57): Internal refactor for load test
+
+### `@backstage/plugin-scaffolder-backend` (1.15.1 → [1.16.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1160))
+
+#### 1.16.0
+
+##### Minor Changes
+
+- [`e514aac3eac0`](https://github.com/backstage/backstage/commit/e514aac3eac0): Introduce `each` property on action steps, allowing them to be ran repeatedly.
+
+##### Patch Changes
+
+- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
+- [`349611126ae2`](https://github.com/backstage/backstage/commit/349611126ae2): Removed the options from the alpha `scaffolderPlugin` export. To extend the scaffolder plugin you instead now use the available extension points, `scaffolderActionsExtensionPoint`, `scaffolderTaskBrokerExtensionPoint`, and `scaffolderTemplatingExtensionPoint`.
+- [`33c76caef72a`](https://github.com/backstage/backstage/commit/33c76caef72a): Added examples for the `fs:delete` and `fs:rename` actions
+- [`e07a4914f621`](https://github.com/backstage/backstage/commit/e07a4914f621): Deprecated the following type exports, which have been moved to `@backstage/plugin-scaffolder-node` instead:
+
+  - `TemplateFilter`
+  - `TemplateGlobal`
+  - `TaskStatus`
+  - `TaskCompletionState`
+  - `SerializedTask`
+  - `TaskEventType`
+  - `SerializedTaskEvent`
+  - `TaskBrokerDispatchResult`
+  - `TaskBrokerDispatchOptions`
+  - `TaskContext`
+  - `TaskBroker`
+
+- [`0b1d775be05b`](https://github.com/backstage/backstage/commit/0b1d775be05b): Adds examples to a few scaffolder actions.
+- [`88bc6e27a213`](https://github.com/backstage/backstage/commit/88bc6e27a213): The `concurrentTasksLimit` option can now be configured via static configuration as well. Setting it to 0 will now also disable the task worker.
+- [`0f873325068d`](https://github.com/backstage/backstage/commit/0f873325068d): Add examples for `github:repo:create` and `github:repo:push` scaffolder actions.
+- [`5c28ebc79fd6`](https://github.com/backstage/backstage/commit/5c28ebc79fd6): Updated dependency `esbuild` to `^0.19.0`.
+- [`d3b31a791eb1`](https://github.com/backstage/backstage/commit/d3b31a791eb1): Deprecated `executeShellCommand`, `RunCommandOptions`, and `fetchContents` from `@backstage/plugin-scaffolder-backend`, since they are useful for Scaffolder modules (who should not be importing from the plugin package itself). You should now import these from `@backstage/plugin-scaffolder-backend-node` instead. `RunCommandOptions` was renamed in the Node package as `ExecuteShellCommandOptions`, for consistency.
+
+### `@backstage/plugin-scaffolder-common` (1.3.2 → [1.4.0](../../changelogs/@backstage/plugin-scaffolder-common.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`e514aac3eac0`](https://github.com/backstage/backstage/commit/e514aac3eac0): Introduce `each` property on action steps, allowing them to be ran repeatedly.
+
+### `@backstage/plugin-search-backend` (1.3.3 → [1.4.0](../../changelogs/@backstage/plugin-search-backend.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`ebeb77586975`](https://github.com/backstage/backstage/commit/ebeb77586975): Now performs request validation based on OpenAPI schema through `@backstage/backend-openapi-utils`. Error responses for invalid input, like `"a"` instead of a number, may have changed.
+
+##### Patch Changes
+
+- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
+- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
+- [`951ab6c9db58`](https://github.com/backstage/backstage/commit/951ab6c9db58): Add missing `configSchema` to package.json
+
+## Other patch version bumps
+
+### `@backstage/core-app-api` (1.9.0 → [1.9.1](../../changelogs/@backstage/core-app-api.md#191))
+
+#### 1.9.1
+
+##### Patch Changes
+
+- [`9ae4e7e63836`](https://github.com/backstage/backstage/commit/9ae4e7e63836): Fixed a bug that could cause `navigate` analytics events to be misattributed to the plugin mounted on the root route (e.g. the `home` plugin at `/`) when the route that was navigated to wasn't associated with a routable extension.
+
+### `@backstage/dev-utils` (1.0.17 → [1.0.18](../../changelogs/@backstage/dev-utils.md#1018))
+
+#### 1.0.18
+
+##### Patch Changes
+
+- [`254ad469f053`](https://github.com/backstage/backstage/commit/254ad469f053): Removed deprecated calls to `app.getProvider()` and `app.getRouter()` in `DevAppBuilder`
+
+### `@backstage/integration-react` (1.1.15 → [1.1.16](../../changelogs/@backstage/integration-react.md#1116))
+
+#### 1.1.16
+
+##### Patch Changes
+
+- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
+
+### `@backstage/plugin-catalog` (1.12.0 → [1.12.1](../../changelogs/@backstage/plugin-catalog.md#1121))
+
+#### 1.12.1
+
+##### Patch Changes
+
+- [`3d86be999fdf`](https://github.com/backstage/backstage/commit/3d86be999fdf): Prefer simple `theme.spacing` without string interpolation
+- [`136cea792bd4`](https://github.com/backstage/backstage/commit/136cea792bd4): Fixed an issue causing `EntitySwitch` to unmount its children once entity refresh was invoked
+
+### `@backstage/plugin-catalog-node` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-catalog-node.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
+
+### `@backstage/plugin-catalog-react` (1.8.0 → [1.8.1](../../changelogs/@backstage/plugin-catalog-react.md#181))
+
+#### 1.8.1
+
+##### Patch Changes
+
+- [`aa3feedce10a`](https://github.com/backstage/backstage/commit/aa3feedce10a): Allow specifying screen size when catalog filters are hidden in drawer
+
+### `@backstage/plugin-dynatrace` (7.0.0 → [7.0.1](../../changelogs/@backstage/plugin-dynatrace.md#701))
+
+#### 7.0.1
+
+##### Patch Changes
+
+- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
+
+### `@backstage/plugin-scaffolder` (1.14.1 → [1.14.2](../../changelogs/@backstage/plugin-scaffolder.md#1142))
+
+#### 1.14.2
+
+##### Patch Changes
+
+- [`8a0490fb669e`](https://github.com/backstage/backstage/commit/8a0490fb669e): Fix the get entities query in the `MyGroupsPicker` to query the `kind=Group` entities.
+
+### `@backstage/plugin-scaffolder-react` (1.5.1 → [1.5.2](../../changelogs/@backstage/plugin-scaffolder-react.md#152))
+
+#### 1.5.2
+
+##### Patch Changes
+
+- [`ba9ee98a37bd`](https://github.com/backstage/backstage/commit/ba9ee98a37bd): Fixed bug in Workflow component by passing a prop `templateName` down to Stepper component.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.2 → [1.3.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#133))
+
+#### 1.3.3
+
+##### Patch Changes
+
+- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
+- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
+- [`631eb3816b48`](https://github.com/backstage/backstage/commit/631eb3816b48): Index templates can now be configured through configuration under the `search.elasticsearch.indexTemplates`. In addition, the `ElasticSearchSearchEngine.fromConfig` now also accepts a `LoggerService` as the `logger` option as well as a new `translator` option.
+
+  The alpha `searchModuleElasticsearchEngine` export no longer accepts options and a new alpha `elasticsearchTranslatorExtensionPoint` export has been added which lets you customize the query translator.
+
+### `@backstage/plugin-search-backend-node` (1.2.3 → [1.2.4](../../changelogs/@backstage/plugin-search-backend-node.md#124))
+
+#### 1.2.4
+
+##### Patch Changes
+
+- [`12a8c94eda8d`](https://github.com/backstage/backstage/commit/12a8c94eda8d): Add package repository and homepage metadata
+- [`e3e9bc10298b`](https://github.com/backstage/backstage/commit/e3e9bc10298b): Fix Lunr search engine highlight by ignoring invalid metadata positions.
+
+### `@backstage/plugin-techdocs-backend` (1.6.4 → [1.6.5](../../changelogs/@backstage/plugin-techdocs-backend.md#165))
+
+#### 1.6.5
+
+##### Patch Changes
+
+- [`629cbd194a87`](https://github.com/backstage/backstage/commit/629cbd194a87): Use `coreServices.rootConfig` instead of `coreService.config`
 
 ### `@techdocs/cli` (1.4.4 → [1.4.5](../../changelogs/@techdocs/cli.md#145))
 

@@ -1,18 +1,18 @@
 # Backstage Release 1.26.1 changelog
 
-Changes between 1.26.0 and 1.26.1 — 2 changed and 0 added packages.
+Changes between 1.26.0 and 1.26.1 — 0 added, 0 removed, 2 upgraded, 268 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 2 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-todo` (0.2.38 → 0.2.39)](#backstageplugin-todo-0238--0239)
   - [`@backstage/plugin-todo-backend` (0.3.16 → 0.3.17)](#backstageplugin-todo-backend-0316--0317)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-todo` (0.2.38 → [0.2.39](../../changelogs/@backstage/plugin-todo.md#0239))
 

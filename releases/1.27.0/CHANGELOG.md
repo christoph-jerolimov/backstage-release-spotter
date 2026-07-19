@@ -1,14 +1,16 @@
 # Backstage Release 1.27.0 changelog
 
-Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
+Changes between 1.26.5 and 1.27.0 — 3 added, 103 removed, 146 upgraded, 21 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 3 packages
+- [Removed packages](#removed-packages): 103 packages
 - [Breaking changes](#breaking-changes): 3 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 53 packages
 - [Other minor version bumps](#other-minor-version-bumps): 6 packages
-- [Patch version bumps](#patch-version-bumps): 66 packages
+- [Other patch version bumps](#other-patch-version-bumps): 13 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 68 packages
 
 ## Table of contents
@@ -17,6 +19,7 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
   - [`@backstage/plugin-catalog-backend-module-gitlab-org` (new, 0.0.1)](#backstageplugin-catalog-backend-module-gitlab-org-new-001)
   - [`@backstage/plugin-notifications-backend-module-email` (new, 0.0.1)](#backstageplugin-notifications-backend-module-email-new-001)
   - [`@backstage/plugin-scaffolder-backend-module-notifications` (new, 0.0.1)](#backstageplugin-scaffolder-backend-module-notifications-new-001)
+- [Removed packages](#removed-packages)
 - [Breaking changes](#breaking-changes)
   - [`@backstage/backend-common` (0.21.7 → 0.22.0)](#backstagebackend-common-0217--0220)
   - [`@backstage/plugin-catalog-node` (1.11.1 → 1.12.0)](#backstageplugin-catalog-node-1111--1120)
@@ -25,14 +28,7 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
   - [`@backstage/frontend-app-api` (0.6.4 → 0.7.0)](#backstagefrontend-app-api-064--070)
   - [`@backstage/plugin-catalog-import` (0.10.10 → 0.11.0)](#backstageplugin-catalog-import-01010--0110)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.3.3 → 0.4.0)](#backstageplugin-scaffolder-backend-module-gitlab-033--040)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/catalog-model` (1.4.5 → 1.5.0)](#backstagecatalog-model-145--150)
-  - [`@backstage/integration` (1.10.0 → 1.11.0)](#backstageintegration-1100--1110)
-  - [`@backstage/plugin-catalog` (1.19.0 → 1.20.0)](#backstageplugin-catalog-1190--1200)
-  - [`@backstage/plugin-catalog-backend` (1.21.1 → 1.22.0)](#backstageplugin-catalog-backend-1211--1220)
-  - [`@backstage/plugin-catalog-react` (1.11.3 → 1.12.0)](#backstageplugin-catalog-react-1113--1120)
-  - [`@backstage/plugin-scaffolder` (1.19.3 → 1.20.0)](#backstageplugin-scaffolder-1193--1200)
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.7.2 → 0.7.3)](#backstagebackend-app-api-072--073)
   - [`@backstage/backend-defaults` (0.2.17 → 0.2.18)](#backstagebackend-defaults-0217--0218)
   - [`@backstage/backend-dynamic-feature-service` (0.2.9 → 0.2.10)](#backstagebackend-dynamic-feature-service-029--0210)
@@ -40,7 +36,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
   - [`@backstage/backend-tasks` (0.5.22 → 0.5.23)](#backstagebackend-tasks-0522--0523)
   - [`@backstage/backend-test-utils` (0.3.7 → 0.3.8)](#backstagebackend-test-utils-037--038)
   - [`@backstage/cli` (0.26.4 → 0.26.5)](#backstagecli-0264--0265)
-  - [`@backstage/core-app-api` (1.12.4 → 1.12.5)](#backstagecore-app-api-1124--1125)
   - [`@backstage/core-compat-api` (0.2.4 → 0.2.5)](#backstagecore-compat-api-024--025)
   - [`@backstage/core-components` (0.14.6 → 0.14.7)](#backstagecore-components-0146--0147)
   - [`@backstage/create-app` (0.5.14 → 0.5.15)](#backstagecreate-app-0514--0515)
@@ -74,30 +69,39 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
   - [`@backstage/plugin-notifications-backend` (0.2.0 → 0.2.1)](#backstageplugin-notifications-backend-020--021)
   - [`@backstage/plugin-notifications-node` (0.1.3 → 0.1.4)](#backstageplugin-notifications-node-013--014)
   - [`@backstage/plugin-org` (0.6.24 → 0.6.25)](#backstageplugin-org-0624--0625)
-  - [`@backstage/plugin-scaffolder-backend` (1.22.5 → 1.22.6)](#backstageplugin-scaffolder-backend-1225--1226)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.1.7 → 0.1.8)](#backstageplugin-scaffolder-backend-module-bitbucket-server-017--018)
   - [`@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.41 → 0.2.42)](#backstageplugin-scaffolder-backend-module-cookiecutter-0241--0242)
   - [`@backstage/plugin-scaffolder-backend-module-gitea` (0.1.7 → 0.1.8)](#backstageplugin-scaffolder-backend-module-gitea-017--018)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.2.7 → 0.2.8)](#backstageplugin-scaffolder-backend-module-github-027--028)
-  - [`@backstage/plugin-scaffolder-common` (1.5.1 → 1.5.2)](#backstageplugin-scaffolder-common-151--152)
   - [`@backstage/plugin-scaffolder-node` (0.4.3 → 0.4.4)](#backstageplugin-scaffolder-node-043--044)
-  - [`@backstage/plugin-scaffolder-react` (1.8.4 → 1.8.5)](#backstageplugin-scaffolder-react-184--185)
-  - [`@backstage/plugin-search` (1.4.10 → 1.4.11)](#backstageplugin-search-1410--1411)
-  - [`@backstage/plugin-search-backend` (1.5.7 → 1.5.8)](#backstageplugin-search-backend-157--158)
   - [`@backstage/plugin-search-backend-module-catalog` (0.1.23 → 0.1.24)](#backstageplugin-search-backend-module-catalog-0123--0124)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.4.0 → 1.4.1)](#backstageplugin-search-backend-module-elasticsearch-140--141)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.23 → 0.1.24)](#backstageplugin-search-backend-module-explore-0123--0124)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.26 → 0.5.27)](#backstageplugin-search-backend-module-pg-0526--0527)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.1.22 → 0.1.23)](#backstageplugin-search-backend-module-techdocs-0122--0123)
-  - [`@backstage/plugin-search-backend-node` (1.2.21 → 1.2.22)](#backstageplugin-search-backend-node-1221--1222)
   - [`@backstage/plugin-signals-backend` (0.1.3 → 0.1.4)](#backstageplugin-signals-backend-013--014)
+  - [`@backstage/plugin-user-settings` (0.8.5 → 0.8.6)](#backstageplugin-user-settings-085--086)
+  - [`@backstage/plugin-user-settings-backend` (0.2.16 → 0.2.17)](#backstageplugin-user-settings-backend-0216--0217)
+  - [`@backstage/theme` (0.5.3 → 0.5.4)](#backstagetheme-053--054)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/catalog-model` (1.4.5 → 1.5.0)](#backstagecatalog-model-145--150)
+  - [`@backstage/integration` (1.10.0 → 1.11.0)](#backstageintegration-1100--1110)
+  - [`@backstage/plugin-catalog` (1.19.0 → 1.20.0)](#backstageplugin-catalog-1190--1200)
+  - [`@backstage/plugin-catalog-backend` (1.21.1 → 1.22.0)](#backstageplugin-catalog-backend-1211--1220)
+  - [`@backstage/plugin-catalog-react` (1.11.3 → 1.12.0)](#backstageplugin-catalog-react-1113--1120)
+  - [`@backstage/plugin-scaffolder` (1.19.3 → 1.20.0)](#backstageplugin-scaffolder-1193--1200)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/core-app-api` (1.12.4 → 1.12.5)](#backstagecore-app-api-1124--1125)
+  - [`@backstage/plugin-scaffolder-backend` (1.22.5 → 1.22.6)](#backstageplugin-scaffolder-backend-1225--1226)
+  - [`@backstage/plugin-scaffolder-common` (1.5.1 → 1.5.2)](#backstageplugin-scaffolder-common-151--152)
+  - [`@backstage/plugin-scaffolder-react` (1.8.4 → 1.8.5)](#backstageplugin-scaffolder-react-184--185)
+  - [`@backstage/plugin-search` (1.4.10 → 1.4.11)](#backstageplugin-search-1410--1411)
+  - [`@backstage/plugin-search-backend` (1.5.7 → 1.5.8)](#backstageplugin-search-backend-157--158)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.4.0 → 1.4.1)](#backstageplugin-search-backend-module-elasticsearch-140--141)
+  - [`@backstage/plugin-search-backend-node` (1.2.21 → 1.2.22)](#backstageplugin-search-backend-node-1221--1222)
   - [`@backstage/plugin-techdocs` (1.10.4 → 1.10.5)](#backstageplugin-techdocs-1104--1105)
   - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.31 → 1.0.32)](#backstageplugin-techdocs-addons-test-utils-1031--1032)
   - [`@backstage/plugin-techdocs-backend` (1.10.4 → 1.10.5)](#backstageplugin-techdocs-backend-1104--1105)
   - [`@backstage/plugin-techdocs-node` (1.12.3 → 1.12.4)](#backstageplugin-techdocs-node-1123--1124)
-  - [`@backstage/plugin-user-settings` (0.8.5 → 0.8.6)](#backstageplugin-user-settings-085--086)
-  - [`@backstage/plugin-user-settings-backend` (0.2.16 → 0.2.17)](#backstageplugin-user-settings-backend-0216--0217)
-  - [`@backstage/theme` (0.5.3 → 0.5.4)](#backstagetheme-053--054)
   - [`@techdocs/cli` (1.8.10 → 1.8.11)](#techdocscli-1810--1811)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -128,6 +132,112 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 ##### Patch Changes
 
 - [`503d769`](https://github.com/backstage/backstage/commit/503d769): Add a new scaffolder action to allow sending notifications from templates
+
+## Removed packages
+
+- `@backstage/plugin-adr` ([0.6.18](../../changelogs/@backstage/plugin-adr.md#0618))
+- `@backstage/plugin-adr-backend` ([0.4.15](../../changelogs/@backstage/plugin-adr-backend.md#0415))
+- `@backstage/plugin-adr-common` ([0.2.23](../../changelogs/@backstage/plugin-adr-common.md#0223))
+- `@backstage/plugin-airbrake` ([0.3.35](../../changelogs/@backstage/plugin-airbrake.md#0335))
+- `@backstage/plugin-airbrake-backend` ([0.3.15](../../changelogs/@backstage/plugin-airbrake-backend.md#0315))
+- `@backstage/plugin-allure` ([0.1.51](../../changelogs/@backstage/plugin-allure.md#0151))
+- `@backstage/plugin-analytics-module-ga` ([0.2.5](../../changelogs/@backstage/plugin-analytics-module-ga.md#025))
+- `@backstage/plugin-analytics-module-ga4` ([0.2.5](../../changelogs/@backstage/plugin-analytics-module-ga4.md#025))
+- `@backstage/plugin-analytics-module-newrelic-browser` ([0.1.5](../../changelogs/@backstage/plugin-analytics-module-newrelic-browser.md#015))
+- `@backstage/plugin-apache-airflow` ([0.2.25](../../changelogs/@backstage/plugin-apache-airflow.md#0225))
+- `@backstage/plugin-apollo-explorer` ([0.2.1](../../changelogs/@backstage/plugin-apollo-explorer.md#021))
+- `@backstage/plugin-azure-devops` ([0.4.4](../../changelogs/@backstage/plugin-azure-devops.md#044))
+- `@backstage/plugin-azure-devops-backend` ([0.6.5](../../changelogs/@backstage/plugin-azure-devops-backend.md#065))
+- `@backstage/plugin-azure-devops-common` ([0.4.2](../../changelogs/@backstage/plugin-azure-devops-common.md#042))
+- `@backstage/plugin-azure-sites` ([0.1.24](../../changelogs/@backstage/plugin-azure-sites.md#0124))
+- `@backstage/plugin-azure-sites-backend` ([0.3.5](../../changelogs/@backstage/plugin-azure-sites-backend.md#035))
+- `@backstage/plugin-azure-sites-common` ([0.1.4](../../changelogs/@backstage/plugin-azure-sites-common.md#014))
+- `@backstage/plugin-badges` ([0.2.59](../../changelogs/@backstage/plugin-badges.md#0259))
+- `@backstage/plugin-badges-backend` ([0.4.1](../../changelogs/@backstage/plugin-badges-backend.md#041))
+- `@backstage/plugin-bazaar` ([0.2.27](../../changelogs/@backstage/plugin-bazaar.md#0227))
+- `@backstage/plugin-bazaar-backend` ([0.3.16](../../changelogs/@backstage/plugin-bazaar-backend.md#0316))
+- `@backstage/plugin-bitrise` ([0.1.62](../../changelogs/@backstage/plugin-bitrise.md#0162))
+- `@backstage/plugin-cicd-statistics` ([0.1.37](../../changelogs/@backstage/plugin-cicd-statistics.md#0137))
+- `@backstage/plugin-cicd-statistics-module-gitlab` ([0.1.31](../../changelogs/@backstage/plugin-cicd-statistics-module-gitlab.md#0131))
+- `@backstage/plugin-circleci` ([0.3.35](../../changelogs/@backstage/plugin-circleci.md#0335))
+- `@backstage/plugin-cloudbuild` ([0.5.2](../../changelogs/@backstage/plugin-cloudbuild.md#052))
+- `@backstage/plugin-code-climate` ([0.1.35](../../changelogs/@backstage/plugin-code-climate.md#0135))
+- `@backstage/plugin-code-coverage` ([0.2.28](../../changelogs/@backstage/plugin-code-coverage.md#0228))
+- `@backstage/plugin-code-coverage-backend` ([0.2.32](../../changelogs/@backstage/plugin-code-coverage-backend.md#0232))
+- `@backstage/plugin-codescene` ([0.1.27](../../changelogs/@backstage/plugin-codescene.md#0127))
+- `@backstage/plugin-cost-insights` ([0.12.24](../../changelogs/@backstage/plugin-cost-insights.md#01224))
+- `@backstage/plugin-cost-insights-common` ([0.1.3](../../changelogs/@backstage/plugin-cost-insights-common.md#013))
+- `@backstage/plugin-dynatrace` ([10.0.4](../../changelogs/@backstage/plugin-dynatrace.md#1004))
+- `@backstage/plugin-entity-feedback` ([0.2.18](../../changelogs/@backstage/plugin-entity-feedback.md#0218))
+- `@backstage/plugin-entity-feedback-backend` ([0.2.15](../../changelogs/@backstage/plugin-entity-feedback-backend.md#0215))
+- `@backstage/plugin-entity-feedback-common` ([0.1.4](../../changelogs/@backstage/plugin-entity-feedback-common.md#014))
+- `@backstage/plugin-entity-validation` ([0.1.20](../../changelogs/@backstage/plugin-entity-validation.md#0120))
+- `@backstage/plugin-explore` ([0.4.21](../../changelogs/@backstage/plugin-explore.md#0421))
+- `@backstage/plugin-explore-backend` ([0.0.28](../../changelogs/@backstage/plugin-explore-backend.md#0028))
+- `@backstage/plugin-explore-common` ([0.0.3](../../changelogs/@backstage/plugin-explore-common.md#003))
+- `@backstage/plugin-explore-react` ([0.0.39](../../changelogs/@backstage/plugin-explore-react.md#0039))
+- `@backstage/plugin-firehydrant` ([0.2.19](../../changelogs/@backstage/plugin-firehydrant.md#0219))
+- `@backstage/plugin-fossa` ([0.2.67](../../changelogs/@backstage/plugin-fossa.md#0267))
+- `@backstage/plugin-gcalendar` ([0.3.28](../../changelogs/@backstage/plugin-gcalendar.md#0328))
+- `@backstage/plugin-gcp-projects` ([0.3.51](../../changelogs/@backstage/plugin-gcp-projects.md#0351))
+- `@backstage/plugin-git-release-manager` ([0.3.47](../../changelogs/@backstage/plugin-git-release-manager.md#0347))
+- `@backstage/plugin-github-actions` ([0.6.16](../../changelogs/@backstage/plugin-github-actions.md#0616))
+- `@backstage/plugin-github-deployments` ([0.1.66](../../changelogs/@backstage/plugin-github-deployments.md#0166))
+- `@backstage/plugin-github-issues` ([0.4.2](../../changelogs/@backstage/plugin-github-issues.md#042))
+- `@backstage/plugin-github-pull-requests-board` ([0.2.1](../../changelogs/@backstage/plugin-github-pull-requests-board.md#021))
+- `@backstage/plugin-gitops-profiles` ([0.3.50](../../changelogs/@backstage/plugin-gitops-profiles.md#0350))
+- `@backstage/plugin-gocd` ([0.1.41](../../changelogs/@backstage/plugin-gocd.md#0141))
+- `@backstage/plugin-graphiql` ([0.3.8](../../changelogs/@backstage/plugin-graphiql.md#038))
+- `@backstage/plugin-graphql-voyager` ([0.1.17](../../changelogs/@backstage/plugin-graphql-voyager.md#0117))
+- `@backstage/plugin-ilert` ([0.2.24](../../changelogs/@backstage/plugin-ilert.md#0224))
+- `@backstage/plugin-jenkins` ([0.9.10](../../changelogs/@backstage/plugin-jenkins.md#0910))
+- `@backstage/plugin-jenkins-backend` ([0.4.5](../../changelogs/@backstage/plugin-jenkins-backend.md#045))
+- `@backstage/plugin-jenkins-common` ([0.1.26](../../changelogs/@backstage/plugin-jenkins-common.md#0126))
+- `@backstage/plugin-kafka` ([0.3.35](../../changelogs/@backstage/plugin-kafka.md#0335))
+- `@backstage/plugin-kafka-backend` ([0.3.16](../../changelogs/@backstage/plugin-kafka-backend.md#0316))
+- `@backstage/plugin-lighthouse` ([0.4.20](../../changelogs/@backstage/plugin-lighthouse.md#0420))
+- `@backstage/plugin-lighthouse-backend` ([0.4.11](../../changelogs/@backstage/plugin-lighthouse-backend.md#0411))
+- `@backstage/plugin-lighthouse-common` ([0.1.6](../../changelogs/@backstage/plugin-lighthouse-common.md#016))
+- `@backstage/plugin-linguist` ([0.1.20](../../changelogs/@backstage/plugin-linguist.md#0120))
+- `@backstage/plugin-linguist-backend` ([0.5.16](../../changelogs/@backstage/plugin-linguist-backend.md#0516))
+- `@backstage/plugin-linguist-common` ([0.1.3](../../changelogs/@backstage/plugin-linguist-common.md#013))
+- `@backstage/plugin-microsoft-calendar` ([0.1.17](../../changelogs/@backstage/plugin-microsoft-calendar.md#0117))
+- `@backstage/plugin-newrelic` ([0.3.50](../../changelogs/@backstage/plugin-newrelic.md#0350))
+- `@backstage/plugin-newrelic-dashboard` ([0.3.10](../../changelogs/@backstage/plugin-newrelic-dashboard.md#0310))
+- `@backstage/plugin-nomad` ([0.1.16](../../changelogs/@backstage/plugin-nomad.md#0116))
+- `@backstage/plugin-nomad-backend` ([0.1.20](../../changelogs/@backstage/plugin-nomad-backend.md#0120))
+- `@backstage/plugin-octopus-deploy` ([0.2.17](../../changelogs/@backstage/plugin-octopus-deploy.md#0217))
+- `@backstage/plugin-opencost` ([0.2.10](../../changelogs/@backstage/plugin-opencost.md#0210))
+- `@backstage/plugin-pagerduty` ([0.7.7](../../changelogs/@backstage/plugin-pagerduty.md#077))
+- `@backstage/plugin-periskop` ([0.1.33](../../changelogs/@backstage/plugin-periskop.md#0133))
+- `@backstage/plugin-periskop-backend` ([0.2.16](../../changelogs/@backstage/plugin-periskop-backend.md#0216))
+- `@backstage/plugin-playlist` ([0.2.9](../../changelogs/@backstage/plugin-playlist.md#029))
+- `@backstage/plugin-playlist-backend` ([0.3.22](../../changelogs/@backstage/plugin-playlist-backend.md#0322))
+- `@backstage/plugin-playlist-common` ([0.1.16](../../changelogs/@backstage/plugin-playlist-common.md#0116))
+- `@backstage/plugin-puppetdb` ([0.1.18](../../changelogs/@backstage/plugin-puppetdb.md#0118))
+- `@backstage/plugin-rollbar` ([0.4.35](../../changelogs/@backstage/plugin-rollbar.md#0435))
+- `@backstage/plugin-rollbar-backend` ([0.1.63](../../changelogs/@backstage/plugin-rollbar-backend.md#0163))
+- `@backstage/plugin-sentry` ([0.5.20](../../changelogs/@backstage/plugin-sentry.md#0520))
+- `@backstage/plugin-shortcuts` ([0.3.24](../../changelogs/@backstage/plugin-shortcuts.md#0324))
+- `@backstage/plugin-sonarqube` ([0.7.17](../../changelogs/@backstage/plugin-sonarqube.md#0717))
+- `@backstage/plugin-sonarqube-backend` ([0.2.20](../../changelogs/@backstage/plugin-sonarqube-backend.md#0220))
+- `@backstage/plugin-sonarqube-react` ([0.1.16](../../changelogs/@backstage/plugin-sonarqube-react.md#0116))
+- `@backstage/plugin-splunk-on-call` ([0.4.24](../../changelogs/@backstage/plugin-splunk-on-call.md#0424))
+- `@backstage/plugin-stack-overflow` ([0.1.30](../../changelogs/@backstage/plugin-stack-overflow.md#0130))
+- `@backstage/plugin-stack-overflow-backend` ([0.2.22](../../changelogs/@backstage/plugin-stack-overflow-backend.md#0222))
+- `@backstage/plugin-stackstorm` ([0.1.16](../../changelogs/@backstage/plugin-stackstorm.md#0116))
+- `@backstage/plugin-tech-insights` ([0.3.27](../../changelogs/@backstage/plugin-tech-insights.md#0327))
+- `@backstage/plugin-tech-insights-backend` ([0.5.32](../../changelogs/@backstage/plugin-tech-insights-backend.md#0532))
+- `@backstage/plugin-tech-insights-backend-module-jsonfc` ([0.1.50](../../changelogs/@backstage/plugin-tech-insights-backend-module-jsonfc.md#0150))
+- `@backstage/plugin-tech-insights-common` ([0.2.13](../../changelogs/@backstage/plugin-tech-insights-common.md#0213))
+- `@backstage/plugin-tech-insights-node` ([0.6.1](../../changelogs/@backstage/plugin-tech-insights-node.md#061))
+- `@backstage/plugin-tech-radar` ([0.7.4](../../changelogs/@backstage/plugin-tech-radar.md#074))
+- `@backstage/plugin-todo` ([0.2.39](../../changelogs/@backstage/plugin-todo.md#0239))
+- `@backstage/plugin-todo-backend` ([0.3.17](../../changelogs/@backstage/plugin-todo-backend.md#0317))
+- `@backstage/plugin-vault` ([0.1.30](../../changelogs/@backstage/plugin-vault.md#0130))
+- `@backstage/plugin-vault-backend` ([0.4.11](../../changelogs/@backstage/plugin-vault-backend.md#0411))
+- `@backstage/plugin-vault-node` ([0.1.11](../../changelogs/@backstage/plugin-vault-node.md#0111))
+- `@backstage/plugin-xcmetrics` ([0.2.53](../../changelogs/@backstage/plugin-xcmetrics.md#0253))
 
 ## Breaking changes
 
@@ -205,82 +315,7 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 - [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
 - [`ffc73ec`](https://github.com/backstage/backstage/commit/ffc73ec): Add examples for `gitlab:repo:push` scaffolder action & improve related tests
 
-## Other minor version bumps
-
-### `@backstage/catalog-model` (1.4.5 → [1.5.0](../../changelogs/@backstage/catalog-model.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`79025f3`](https://github.com/backstage/backstage/commit/79025f3): Introduce a domain attribute to the domain entity to allow a hierarchy of domains to exist.
-
-### `@backstage/integration` (1.10.0 → [1.11.0](../../changelogs/@backstage/integration.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`2cc750d`](https://github.com/backstage/backstage/commit/2cc750d): Added `HarnessIntegration` via the `ScmIntegrations` interface.
-
-### `@backstage/plugin-catalog` (1.19.0 → [1.20.0](../../changelogs/@backstage/plugin-catalog.md#1200))
-
-#### 1.20.0
-
-##### Minor Changes
-
-- [`8834daf`](https://github.com/backstage/backstage/commit/8834daf): Updated the presentation API to return a promise, in addition to the snapshot and observable that were there before. This makes it much easier to consume the API in a non-React context.
-
-##### Patch Changes
-
-- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
-- [`5d99272`](https://github.com/backstage/backstage/commit/5d99272): Update local development dependencies.
-- [`4118530`](https://github.com/backstage/backstage/commit/4118530): Avoiding pre-loading display total count undefined for table counts
-
-### `@backstage/plugin-catalog-backend` (1.21.1 → [1.22.0](../../changelogs/@backstage/plugin-catalog-backend.md#1220))
-
-#### 1.22.0
-
-##### Minor Changes
-
-- [`f2a2a83`](https://github.com/backstage/backstage/commit/f2a2a83): Deprecated the `LocationAnalyzer` type, which has been moved to `@backstage/plugin-catalog-node`.
-- [`f2a2a83`](https://github.com/backstage/backstage/commit/f2a2a83): The `/alpha` plugin export has had its implementation of the `catalogAnalysisExtensionPoint` updated to reflect the new API.
-- [`8d14475`](https://github.com/backstage/backstage/commit/8d14475): Emit well known relationships for the Domain entity kind.
-
-##### Patch Changes
-
-- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
-- [`c6cb568`](https://github.com/backstage/backstage/commit/c6cb568): Add lifecycle monitoring for the catalog processing
-- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
-- [`8479a0b`](https://github.com/backstage/backstage/commit/8479a0b): Fixed bug in stitching queue gauge that included entities that are scheduled in the future.
-
-### `@backstage/plugin-catalog-react` (1.11.3 → [1.12.0](../../changelogs/@backstage/plugin-catalog-react.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`8834daf`](https://github.com/backstage/backstage/commit/8834daf): Updated the presentation API to return a promise, in addition to the snapshot and observable that were there before. This makes it much easier to consume the API in a non-React context.
-
-### `@backstage/plugin-scaffolder` (1.19.3 → [1.20.0](../../changelogs/@backstage/plugin-scaffolder.md#1200))
-
-#### 1.20.0
-
-##### Minor Changes
-
-- [`4268696`](https://github.com/backstage/backstage/commit/4268696): `MultiEntityPicker` uses `EntityDisplayName` instead of `humanizeEntityRef` to display entity.
-
-##### Patch Changes
-
-- [`9156654`](https://github.com/backstage/backstage/commit/9156654): Capturing more event clicks for scaffolder
-- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
-- [`0040ec2`](https://github.com/backstage/backstage/commit/0040ec2): Updated dependency `@rjsf/utils` to `5.18.2`.
-  Updated dependency `@rjsf/core` to `5.18.2`.
-  Updated dependency `@rjsf/material-ui` to `5.18.2`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.18.2`.
-- [`762141c`](https://github.com/backstage/backstage/commit/762141c): Fixed a bug where the `MultiEntityPicker` was not able to be set as required
-
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.7.2 → [0.7.3](../../changelogs/@backstage/backend-app-api.md#073))
 
@@ -364,14 +399,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 - [`cc3c518`](https://github.com/backstage/backstage/commit/cc3c518): Fixed an issue causing the `repo fix` command to set an incorrect `workspace` property using Windows
 - [`812dff0`](https://github.com/backstage/backstage/commit/812dff0): Add previously-missing semicolon in file templated by `backstage-cli new --select plugin`.
 - [`f185603`](https://github.com/backstage/backstage/commit/f185603): Fixed the dynamic import of vite.
-
-### `@backstage/core-app-api` (1.12.4 → [1.12.5](../../changelogs/@backstage/core-app-api.md#1125))
-
-#### 1.12.5
-
-##### Patch Changes
-
-- [`1bed9a3`](https://github.com/backstage/backstage/commit/1bed9a3): The Backstage identity session expiration check will no longer fall back to using the provider expiration. This was introduced to smooth out the rollout of Backstage release 1.18, and is no longer needed.
 
 ### `@backstage/core-compat-api` (0.2.4 → [0.2.5](../../changelogs/@backstage/core-compat-api.md#025))
 
@@ -679,18 +706,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 
 - [`99e6105`](https://github.com/backstage/backstage/commit/99e6105): Fix ownership card sometimes locking up for complex org structures
 
-### `@backstage/plugin-scaffolder-backend` (1.22.5 → [1.22.6](../../changelogs/@backstage/plugin-scaffolder-backend.md#1226))
-
-#### 1.22.6
-
-##### Patch Changes
-
-- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
-- [`025641b`](https://github.com/backstage/backstage/commit/025641b): Fix issue with the log format not being respected when logging from actions
-- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
-- [`e4b50ab`](https://github.com/backstage/backstage/commit/e4b50ab): Scaffolder workspace serialization
-- [`025641b`](https://github.com/backstage/backstage/commit/025641b): Redact `meta` fields too with the logger
-
 ### `@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.1.7 → [0.1.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-server.md#018))
 
 #### 0.1.8
@@ -725,14 +740,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 - [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
 - [`52ab241`](https://github.com/backstage/backstage/commit/52ab241): Adding support to change the default commit author for `publish:github:pull-request`
 
-### `@backstage/plugin-scaffolder-common` (1.5.1 → [1.5.2](../../changelogs/@backstage/plugin-scaffolder-common.md#152))
-
-#### 1.5.2
-
-##### Patch Changes
-
-- [`9156654`](https://github.com/backstage/backstage/commit/9156654): Capturing more event clicks for scaffolder
-
 ### `@backstage/plugin-scaffolder-node` (0.4.3 → [0.4.4](../../changelogs/@backstage/plugin-scaffolder-node.md#044))
 
 #### 0.4.4
@@ -742,6 +749,178 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 - [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
 - [`e4b50ab`](https://github.com/backstage/backstage/commit/e4b50ab): Scaffolder workspace serialization
 - [`f633efa`](https://github.com/backstage/backstage/commit/f633efa): To remove the dependency on the soon-to-be-deprecated `backend-common` package, this package now maintains its own isomorphic Git class implementation.
+
+### `@backstage/plugin-search-backend-module-catalog` (0.1.23 → [0.1.24](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#0124))
+
+#### 0.1.24
+
+##### Patch Changes
+
+- [`b192752`](https://github.com/backstage/backstage/commit/b192752): Updated `README.md` to point to `packages/backend` instead of `packages/backend-next`.
+- [`d5fff66`](https://github.com/backstage/backstage/commit/d5fff66): Fix wiring of the module exported at the `/alpha` path, which was causing authentication failures.
+- [`5dc5f4f`](https://github.com/backstage/backstage/commit/5dc5f4f): Allow the `tokenManager` parameter to be optional when instantiating collator
+
+### `@backstage/plugin-search-backend-module-explore` (0.1.23 → [0.1.24](../../changelogs/@backstage/plugin-search-backend-module-explore.md#0124))
+
+#### 0.1.24
+
+##### Patch Changes
+
+- [`ca6e2e0`](https://github.com/backstage/backstage/commit/ca6e2e0): Migrate search collator to use the new auth services.
+- [`5d99272`](https://github.com/backstage/backstage/commit/5d99272): Update README.md to point to explore plugin in community-plugins repository.
+
+### `@backstage/plugin-search-backend-module-pg` (0.5.26 → [0.5.27](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0527))
+
+#### 0.5.27
+
+##### Patch Changes
+
+- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
+
+### `@backstage/plugin-search-backend-module-techdocs` (0.1.22 → [0.1.23](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#0123))
+
+#### 0.1.23
+
+##### Patch Changes
+
+- [`5dc5f4f`](https://github.com/backstage/backstage/commit/5dc5f4f): Allow the `tokenManager` parameter to be optional when instantiating collator
+
+### `@backstage/plugin-signals-backend` (0.1.3 → [0.1.4](../../changelogs/@backstage/plugin-signals-backend.md#014))
+
+#### 0.1.4
+
+##### Patch Changes
+
+- [`845d56a`](https://github.com/backstage/backstage/commit/845d56a): Improved signal lifecycle management and added server side pinging of connections
+
+### `@backstage/plugin-user-settings` (0.8.5 → [0.8.6](../../changelogs/@backstage/plugin-user-settings.md#086))
+
+#### 0.8.6
+
+##### Patch Changes
+
+- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
+
+### `@backstage/plugin-user-settings-backend` (0.2.16 → [0.2.17](../../changelogs/@backstage/plugin-user-settings-backend.md#0217))
+
+#### 0.2.17
+
+##### Patch Changes
+
+- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
+
+### `@backstage/theme` (0.5.3 → [0.5.4](../../changelogs/@backstage/theme.md#054))
+
+#### 0.5.4
+
+##### Patch Changes
+
+- [`f1462df`](https://github.com/backstage/backstage/commit/f1462df): Fixed bug where scrollbars don't pick up the theme when in dark mode
+
+## Other minor version bumps
+
+### `@backstage/catalog-model` (1.4.5 → [1.5.0](../../changelogs/@backstage/catalog-model.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`79025f3`](https://github.com/backstage/backstage/commit/79025f3): Introduce a domain attribute to the domain entity to allow a hierarchy of domains to exist.
+
+### `@backstage/integration` (1.10.0 → [1.11.0](../../changelogs/@backstage/integration.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`2cc750d`](https://github.com/backstage/backstage/commit/2cc750d): Added `HarnessIntegration` via the `ScmIntegrations` interface.
+
+### `@backstage/plugin-catalog` (1.19.0 → [1.20.0](../../changelogs/@backstage/plugin-catalog.md#1200))
+
+#### 1.20.0
+
+##### Minor Changes
+
+- [`8834daf`](https://github.com/backstage/backstage/commit/8834daf): Updated the presentation API to return a promise, in addition to the snapshot and observable that were there before. This makes it much easier to consume the API in a non-React context.
+
+##### Patch Changes
+
+- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
+- [`5d99272`](https://github.com/backstage/backstage/commit/5d99272): Update local development dependencies.
+- [`4118530`](https://github.com/backstage/backstage/commit/4118530): Avoiding pre-loading display total count undefined for table counts
+
+### `@backstage/plugin-catalog-backend` (1.21.1 → [1.22.0](../../changelogs/@backstage/plugin-catalog-backend.md#1220))
+
+#### 1.22.0
+
+##### Minor Changes
+
+- [`f2a2a83`](https://github.com/backstage/backstage/commit/f2a2a83): Deprecated the `LocationAnalyzer` type, which has been moved to `@backstage/plugin-catalog-node`.
+- [`f2a2a83`](https://github.com/backstage/backstage/commit/f2a2a83): The `/alpha` plugin export has had its implementation of the `catalogAnalysisExtensionPoint` updated to reflect the new API.
+- [`8d14475`](https://github.com/backstage/backstage/commit/8d14475): Emit well known relationships for the Domain entity kind.
+
+##### Patch Changes
+
+- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
+- [`c6cb568`](https://github.com/backstage/backstage/commit/c6cb568): Add lifecycle monitoring for the catalog processing
+- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
+- [`8479a0b`](https://github.com/backstage/backstage/commit/8479a0b): Fixed bug in stitching queue gauge that included entities that are scheduled in the future.
+
+### `@backstage/plugin-catalog-react` (1.11.3 → [1.12.0](../../changelogs/@backstage/plugin-catalog-react.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`8834daf`](https://github.com/backstage/backstage/commit/8834daf): Updated the presentation API to return a promise, in addition to the snapshot and observable that were there before. This makes it much easier to consume the API in a non-React context.
+
+### `@backstage/plugin-scaffolder` (1.19.3 → [1.20.0](../../changelogs/@backstage/plugin-scaffolder.md#1200))
+
+#### 1.20.0
+
+##### Minor Changes
+
+- [`4268696`](https://github.com/backstage/backstage/commit/4268696): `MultiEntityPicker` uses `EntityDisplayName` instead of `humanizeEntityRef` to display entity.
+
+##### Patch Changes
+
+- [`9156654`](https://github.com/backstage/backstage/commit/9156654): Capturing more event clicks for scaffolder
+- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
+- [`0040ec2`](https://github.com/backstage/backstage/commit/0040ec2): Updated dependency `@rjsf/utils` to `5.18.2`.
+  Updated dependency `@rjsf/core` to `5.18.2`.
+  Updated dependency `@rjsf/material-ui` to `5.18.2`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.18.2`.
+- [`762141c`](https://github.com/backstage/backstage/commit/762141c): Fixed a bug where the `MultiEntityPicker` was not able to be set as required
+
+## Other patch version bumps
+
+### `@backstage/core-app-api` (1.12.4 → [1.12.5](../../changelogs/@backstage/core-app-api.md#1125))
+
+#### 1.12.5
+
+##### Patch Changes
+
+- [`1bed9a3`](https://github.com/backstage/backstage/commit/1bed9a3): The Backstage identity session expiration check will no longer fall back to using the provider expiration. This was introduced to smooth out the rollout of Backstage release 1.18, and is no longer needed.
+
+### `@backstage/plugin-scaffolder-backend` (1.22.5 → [1.22.6](../../changelogs/@backstage/plugin-scaffolder-backend.md#1226))
+
+#### 1.22.6
+
+##### Patch Changes
+
+- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
+- [`025641b`](https://github.com/backstage/backstage/commit/025641b): Fix issue with the log format not being respected when logging from actions
+- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
+- [`e4b50ab`](https://github.com/backstage/backstage/commit/e4b50ab): Scaffolder workspace serialization
+- [`025641b`](https://github.com/backstage/backstage/commit/025641b): Redact `meta` fields too with the logger
+
+### `@backstage/plugin-scaffolder-common` (1.5.1 → [1.5.2](../../changelogs/@backstage/plugin-scaffolder-common.md#152))
+
+#### 1.5.2
+
+##### Patch Changes
+
+- [`9156654`](https://github.com/backstage/backstage/commit/9156654): Capturing more event clicks for scaffolder
 
 ### `@backstage/plugin-scaffolder-react` (1.8.4 → [1.8.5](../../changelogs/@backstage/plugin-scaffolder-react.md#185))
 
@@ -771,16 +950,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 
 - [`c6cb568`](https://github.com/backstage/backstage/commit/c6cb568): Add lifecycle monitoring for the search index registry
 
-### `@backstage/plugin-search-backend-module-catalog` (0.1.23 → [0.1.24](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#0124))
-
-#### 0.1.24
-
-##### Patch Changes
-
-- [`b192752`](https://github.com/backstage/backstage/commit/b192752): Updated `README.md` to point to `packages/backend` instead of `packages/backend-next`.
-- [`d5fff66`](https://github.com/backstage/backstage/commit/d5fff66): Fix wiring of the module exported at the `/alpha` path, which was causing authentication failures.
-- [`5dc5f4f`](https://github.com/backstage/backstage/commit/5dc5f4f): Allow the `tokenManager` parameter to be optional when instantiating collator
-
 ### `@backstage/plugin-search-backend-module-elasticsearch` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#141))
 
 #### 1.4.1
@@ -789,31 +958,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 
 - [`5252ee1`](https://github.com/backstage/backstage/commit/5252ee1): Fix never resolved indexer promise.
 
-### `@backstage/plugin-search-backend-module-explore` (0.1.23 → [0.1.24](../../changelogs/@backstage/plugin-search-backend-module-explore.md#0124))
-
-#### 0.1.24
-
-##### Patch Changes
-
-- [`ca6e2e0`](https://github.com/backstage/backstage/commit/ca6e2e0): Migrate search collator to use the new auth services.
-- [`5d99272`](https://github.com/backstage/backstage/commit/5d99272): Update README.md to point to explore plugin in community-plugins repository.
-
-### `@backstage/plugin-search-backend-module-pg` (0.5.26 → [0.5.27](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0527))
-
-#### 0.5.27
-
-##### Patch Changes
-
-- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
-
-### `@backstage/plugin-search-backend-module-techdocs` (0.1.22 → [0.1.23](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#0123))
-
-#### 0.1.23
-
-##### Patch Changes
-
-- [`5dc5f4f`](https://github.com/backstage/backstage/commit/5dc5f4f): Allow the `tokenManager` parameter to be optional when instantiating collator
-
 ### `@backstage/plugin-search-backend-node` (1.2.21 → [1.2.22](../../changelogs/@backstage/plugin-search-backend-node.md#1222))
 
 #### 1.2.22
@@ -821,14 +965,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 ##### Patch Changes
 
 - [`c6cb568`](https://github.com/backstage/backstage/commit/c6cb568): Add lifecycle monitoring for the search index registry
-
-### `@backstage/plugin-signals-backend` (0.1.3 → [0.1.4](../../changelogs/@backstage/plugin-signals-backend.md#014))
-
-#### 0.1.4
-
-##### Patch Changes
-
-- [`845d56a`](https://github.com/backstage/backstage/commit/845d56a): Improved signal lifecycle management and added server side pinging of connections
 
 ### `@backstage/plugin-techdocs` (1.10.4 → [1.10.5](../../changelogs/@backstage/plugin-techdocs.md#1105))
 
@@ -862,30 +998,6 @@ Changes between 1.26.5 and 1.27.0 — 146 changed and 3 added packages.
 ##### Patch Changes
 
 - [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
-
-### `@backstage/plugin-user-settings` (0.8.5 → [0.8.6](../../changelogs/@backstage/plugin-user-settings.md#086))
-
-#### 0.8.6
-
-##### Patch Changes
-
-- [`131e5cb`](https://github.com/backstage/backstage/commit/131e5cb): Fix broken links in README.
-
-### `@backstage/plugin-user-settings-backend` (0.2.16 → [0.2.17](../../changelogs/@backstage/plugin-user-settings-backend.md#0217))
-
-#### 0.2.17
-
-##### Patch Changes
-
-- [`d229dc4`](https://github.com/backstage/backstage/commit/d229dc4): Move path utilities from `backend-common` to the `backend-plugin-api` package.
-
-### `@backstage/theme` (0.5.3 → [0.5.4](../../changelogs/@backstage/theme.md#054))
-
-#### 0.5.4
-
-##### Patch Changes
-
-- [`f1462df`](https://github.com/backstage/backstage/commit/f1462df): Fixed bug where scrollbars don't pick up the theme when in dark mode
 
 ### `@techdocs/cli` (1.8.10 → [1.8.11](../../changelogs/@techdocs/cli.md#1811))
 

@@ -1,6 +1,6 @@
 # Backstage Release 1.51.0 changelog
 
-Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
+Changes between 1.50.4 and 1.51.0 — 2 added, 0 removed, 198 upgraded, 9 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 - [Major version bumps](#major-version-bumps): 3 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 2 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 66 packages
 - [Other minor version bumps](#other-minor-version-bumps): 7 packages
-- [Other patch version bumps](#other-patch-version-bumps): 80 packages
+- [Other patch version bumps](#other-patch-version-bumps): 14 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 97 packages
 
 ## Table of contents
@@ -36,33 +37,20 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-catalog-unprocessed-entities-common` (0.0.15 → 0.0.16)](#backstageplugin-catalog-unprocessed-entities-common-0015--0016)
   - [`@backstage/plugin-signals` (0.0.30 → 0.0.31)](#backstageplugin-signals-0030--0031)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-app-api` (1.6.1 → 1.7.0)](#backstagebackend-app-api-161--170)
-  - [`@backstage/catalog-model` (1.8.0 → 1.9.0)](#backstagecatalog-model-180--190)
-  - [`@backstage/plugin-scaffolder` (1.36.2 → 1.37.0)](#backstageplugin-scaffolder-1362--1370)
-  - [`@backstage/plugin-scaffolder-common` (2.1.0 → 2.2.0)](#backstageplugin-scaffolder-common-210--220)
-  - [`@backstage/plugin-techdocs-backend` (2.1.7 → 2.2.0)](#backstageplugin-techdocs-backend-217--220)
-  - [`@backstage/plugin-techdocs-node` (1.14.5 → 1.15.0)](#backstageplugin-techdocs-node-1145--1150)
-  - [`@techdocs/cli` (1.10.7 → 1.11.0)](#techdocscli-1107--1110)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.17.0 → 0.17.1)](#backstagebackend-defaults-0170--0171)
   - [`@backstage/backend-dynamic-feature-service` (0.8.1 → 0.8.2)](#backstagebackend-dynamic-feature-service-081--082)
-  - [`@backstage/backend-plugin-api` (1.9.0 → 1.9.1)](#backstagebackend-plugin-api-190--191)
-  - [`@backstage/backend-test-utils` (1.11.2 → 1.11.3)](#backstagebackend-test-utils-1112--1113)
   - [`@backstage/cli` (0.36.1 → 0.36.2)](#backstagecli-0361--0362)
   - [`@backstage/cli-module-build` (0.1.2 → 0.1.3)](#backstagecli-module-build-012--013)
   - [`@backstage/cli-module-new` (0.1.2 → 0.1.3)](#backstagecli-module-new-012--013)
   - [`@backstage/cli-node` (0.3.1 → 0.3.2)](#backstagecli-node-031--032)
   - [`@backstage/core-compat-api` (0.5.10 → 0.5.11)](#backstagecore-compat-api-0510--0511)
   - [`@backstage/core-components` (0.18.9 → 0.18.10)](#backstagecore-components-0189--01810)
-  - [`@backstage/core-plugin-api` (1.12.5 → 1.12.6)](#backstagecore-plugin-api-1125--1126)
   - [`@backstage/create-app` (0.8.2 → 0.8.3)](#backstagecreate-app-082--083)
-  - [`@backstage/errors` (1.3.0 → 1.3.1)](#backstageerrors-130--131)
   - [`@backstage/filter-predicates` (0.1.2 → 0.1.3)](#backstagefilter-predicates-012--013)
   - [`@backstage/frontend-app-api` (0.16.2 → 0.16.3)](#backstagefrontend-app-api-0162--0163)
   - [`@backstage/frontend-defaults` (0.5.1 → 0.5.2)](#backstagefrontend-defaults-051--052)
   - [`@backstage/frontend-dynamic-feature-loader` (0.1.11 → 0.1.12)](#backstagefrontend-dynamic-feature-loader-0111--0112)
-  - [`@backstage/integration` (2.0.1 → 2.0.2)](#backstageintegration-201--202)
   - [`@backstage/module-federation-common` (0.1.3 → 0.1.4)](#backstagemodule-federation-common-013--014)
   - [`@backstage/plugin-api-docs` (0.14.0 → 0.14.1)](#backstageplugin-api-docs-0140--0141)
   - [`@backstage/plugin-app` (0.4.5 → 0.4.6)](#backstageplugin-app-045--046)
@@ -72,7 +60,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
   - [`@backstage/plugin-auth-backend-module-cloudflare-access-provider` (0.4.14 → 0.4.15)](#backstageplugin-auth-backend-module-cloudflare-access-provider-0414--0415)
   - [`@backstage/plugin-auth-backend-module-oidc-provider` (0.4.15 → 0.4.16)](#backstageplugin-auth-backend-module-oidc-provider-0415--0416)
   - [`@backstage/plugin-auth-node` (0.7.0 → 0.7.1)](#backstageplugin-auth-node-070--071)
-  - [`@backstage/plugin-catalog` (2.0.4 → 2.0.5)](#backstageplugin-catalog-204--205)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.4.22 → 0.4.23)](#backstageplugin-catalog-backend-module-aws-0422--0423)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.3.16 → 0.3.17)](#backstageplugin-catalog-backend-module-azure-0316--0317)
   - [`@backstage/plugin-catalog-backend-module-backstage-openapi` (0.5.13 → 0.5.14)](#backstageplugin-catalog-backend-module-backstage-openapi-0513--0514)
@@ -89,7 +76,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
   - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.6.11 → 0.6.12)](#backstageplugin-catalog-backend-module-unprocessed-0611--0612)
   - [`@backstage/plugin-catalog-graph` (0.6.3 → 0.6.4)](#backstageplugin-catalog-graph-063--064)
   - [`@backstage/plugin-catalog-import` (0.13.12 → 0.13.13)](#backstageplugin-catalog-import-01312--01313)
-  - [`@backstage/plugin-catalog-node` (2.2.0 → 2.2.1)](#backstageplugin-catalog-node-220--221)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.30 → 0.2.31)](#backstageplugin-catalog-unprocessed-entities-0230--0231)
   - [`@backstage/plugin-devtools` (0.1.38 → 0.1.39)](#backstageplugin-devtools-0138--0139)
   - [`@backstage/plugin-devtools-backend` (0.5.16 → 0.5.17)](#backstageplugin-devtools-backend-0516--0517)
@@ -112,19 +98,35 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.11.5 → 0.11.6)](#backstageplugin-scaffolder-backend-module-gitlab-0115--0116)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.21 → 0.4.22)](#backstageplugin-scaffolder-backend-module-yeoman-0421--0422)
   - [`@backstage/plugin-scaffolder-node` (0.13.2 → 0.13.3)](#backstageplugin-scaffolder-node-0132--0133)
-  - [`@backstage/plugin-search` (1.7.3 → 1.7.4)](#backstageplugin-search-173--174)
-  - [`@backstage/plugin-search-backend` (2.1.1 → 2.1.2)](#backstageplugin-search-backend-211--212)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.8.2 → 1.8.3)](#backstageplugin-search-backend-module-elasticsearch-182--183)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.54 → 0.5.55)](#backstageplugin-search-backend-module-pg-0554--0555)
-  - [`@backstage/plugin-search-backend-node` (1.4.3 → 1.4.4)](#backstageplugin-search-backend-node-143--144)
-  - [`@backstage/plugin-search-react` (1.11.3 → 1.11.4)](#backstageplugin-search-react-1113--1114)
   - [`@backstage/plugin-signals-backend` (0.3.14 → 0.3.15)](#backstageplugin-signals-backend-0314--0315)
   - [`@backstage/plugin-signals-node` (0.2.0 → 0.2.1)](#backstageplugin-signals-node-020--021)
-  - [`@backstage/plugin-techdocs` (1.17.5 → 1.17.6)](#backstageplugin-techdocs-1175--1176)
-  - [`@backstage/plugin-techdocs-react` (1.3.10 → 1.3.11)](#backstageplugin-techdocs-react-1310--1311)
   - [`@backstage/plugin-user-settings` (0.9.2 → 0.9.3)](#backstageplugin-user-settings-092--093)
   - [`@backstage/plugin-user-settings-backend` (0.4.2 → 0.4.3)](#backstageplugin-user-settings-backend-042--043)
   - [`@backstage/repo-tools` (0.17.1 → 0.17.2)](#backstagerepo-tools-0171--0172)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-app-api` (1.6.1 → 1.7.0)](#backstagebackend-app-api-161--170)
+  - [`@backstage/catalog-model` (1.8.0 → 1.9.0)](#backstagecatalog-model-180--190)
+  - [`@backstage/plugin-scaffolder` (1.36.2 → 1.37.0)](#backstageplugin-scaffolder-1362--1370)
+  - [`@backstage/plugin-scaffolder-common` (2.1.0 → 2.2.0)](#backstageplugin-scaffolder-common-210--220)
+  - [`@backstage/plugin-techdocs-backend` (2.1.7 → 2.2.0)](#backstageplugin-techdocs-backend-217--220)
+  - [`@backstage/plugin-techdocs-node` (1.14.5 → 1.15.0)](#backstageplugin-techdocs-node-1145--1150)
+  - [`@techdocs/cli` (1.10.7 → 1.11.0)](#techdocscli-1107--1110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-plugin-api` (1.9.0 → 1.9.1)](#backstagebackend-plugin-api-190--191)
+  - [`@backstage/backend-test-utils` (1.11.2 → 1.11.3)](#backstagebackend-test-utils-1112--1113)
+  - [`@backstage/core-plugin-api` (1.12.5 → 1.12.6)](#backstagecore-plugin-api-1125--1126)
+  - [`@backstage/errors` (1.3.0 → 1.3.1)](#backstageerrors-130--131)
+  - [`@backstage/integration` (2.0.1 → 2.0.2)](#backstageintegration-201--202)
+  - [`@backstage/plugin-catalog` (2.0.4 → 2.0.5)](#backstageplugin-catalog-204--205)
+  - [`@backstage/plugin-catalog-node` (2.2.0 → 2.2.1)](#backstageplugin-catalog-node-220--221)
+  - [`@backstage/plugin-search` (1.7.3 → 1.7.4)](#backstageplugin-search-173--174)
+  - [`@backstage/plugin-search-backend` (2.1.1 → 2.1.2)](#backstageplugin-search-backend-211--212)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.8.2 → 1.8.3)](#backstageplugin-search-backend-module-elasticsearch-182--183)
+  - [`@backstage/plugin-search-backend-node` (1.4.3 → 1.4.4)](#backstageplugin-search-backend-node-143--144)
+  - [`@backstage/plugin-search-react` (1.11.3 → 1.11.4)](#backstageplugin-search-react-1113--1114)
+  - [`@backstage/plugin-techdocs` (1.17.5 → 1.17.6)](#backstageplugin-techdocs-1175--1176)
+  - [`@backstage/plugin-techdocs-react` (1.3.10 → 1.3.11)](#backstageplugin-techdocs-react-1310--1311)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -575,136 +577,7 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 - [`f635139`](https://github.com/backstage/backstage/commit/f635139): Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
 - [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
 
-## Other minor version bumps
-
-### `@backstage/backend-app-api` (1.6.1 → [1.7.0](../../changelogs/@backstage/backend-app-api.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`3595c97`](https://github.com/backstage/backstage/commit/3595c97): Added `ExtensionPointFactoryMiddleware` type and `createExtensionPointFactoryMiddleware` helper to reimplement extension point outputs at backend creation time.
-
-### `@backstage/catalog-model` (1.8.0 → [1.9.0](../../changelogs/@backstage/catalog-model.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`3664148`](https://github.com/backstage/backstage/commit/3664148): Introduced the `AiResource` catalog entity kind. Entity types, validators, type guards, and the model layer are exported from `@backstage/catalog-model/alpha`. Install `@backstage/plugin-catalog-backend-module-ai-model` in your backend to register the kind with the catalog.
-- [`be71476`](https://github.com/backstage/backstage/commit/be71476): Added `spec.type: 'mcp-server'` as a structured subtype of the `API` kind under `v1alpha1`/`v1beta1`. MCP server entities carry a `spec.remotes` list instead of a string `definition`, for representing Model Context Protocol servers in the catalog. See RFC [#32062](https://github.com/backstage/backstage/issues/32062). New public exports: `McpServerApiEntity`, `McpServerRemote`, `mcpServerApiEntityValidator`, and `isMcpServerApiEntity`. Also adds `addKindVersion` to `CatalogModelLayerBuilder` (alpha) so layers can add new versions or spec types to existing kinds.
-
-##### Patch Changes
-
-- [`ab1cdbb`](https://github.com/backstage/backstage/commit/ab1cdbb): Removed a handful of internal imports that referenced the package by its own name. Value imports were switched to relative paths, and type-only imports to `import type`. These self-referential imports could trigger circular initialization errors in bundled ESM and when the package was loaded via `jest.requireActual` — most visibly `Cannot access '_AppRootElementBlueprintesm' before initialization` from `@backstage/frontend-plugin-api`. There are no user-facing API changes.
-
-### `@backstage/plugin-scaffolder` (1.36.2 → [1.37.0](../../changelogs/@backstage/plugin-scaffolder.md#1370))
-
-#### 1.37.0
-
-##### Minor Changes
-
-- [`dbeb7aa`](https://github.com/backstage/backstage/commit/dbeb7aa): Added experimental BUI (Backstage UI) form theme for scaffolder forms. All default field extensions render BUI variants when enabled.
-
-  **Extension config:**
-
-  ```yaml
-  app:
-    extensions:
-      - sub-page:scaffolder/templates:
-          config:
-            enableBackstageUi: true
-  ```
-
-  **JSX props:**
-
-  ```tsx
-  <ScaffolderPage formProps={{ EXPERIMENTAL_theme: 'bui' }} />
-  ```
-
-- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): Promoted `formDecoratorsApiRef`, `ScaffolderFormDecoratorsApi`,
-  `DefaultScaffolderFormDecoratorsApi`, and `formDecoratorsApi` from `@alpha`
-  to `@public`.
-- [`d09c21c`](https://github.com/backstage/backstage/commit/d09c21c): The `sub-page:scaffolder/templates` extension now accepts a `groups` config
-  field that lets you define template groups on the template list page. Each group
-  has a `title` and a `filter` predicate. Templates not matched by any
-  configured group fall into an automatically appended "Other Templates" group.
-  With no groups configured, the page renders a single "Templates" group as
-  before.
-
-  Example:
-
-  ```yaml
-  app:
-    extensions:
-      - sub-page:scaffolder/templates:
-          config:
-            groups:
-              - title: Recommended Services
-                filter:
-                  spec.type: service
-              - title: Documentation
-                filter:
-                  spec.type: documentation
-  ```
-
-##### Patch Changes
-
-- [`1ecc3ca`](https://github.com/backstage/backstage/commit/1ecc3ca): Fixed spelling mistakes in internal code
-- [`f635139`](https://github.com/backstage/backstage/commit/f635139): Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
-- [`415e30b`](https://github.com/backstage/backstage/commit/415e30b): Simplified the `OwnerEntityColumn` in the task list to rely on `EntityRefLink` and the entity presentation API instead of manually fetching entities from the catalog.
-- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
-- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): Form decorator input is now parsed against the zod schema configured on the
-  decorator before the decorator runs, so defaults declared via `.default()`
-  are applied and invalid input is reported through the error API instead of
-  silently passing through.
-- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): The template wizard now reads form decorators from the new
-  `spec.formDecorators` field on a template, falling back to the deprecated
-  `spec.EXPERIMENTAL_formDecorators` for templates that have not been migrated.
-
-### `@backstage/plugin-scaffolder-common` (2.1.0 → [2.2.0](../../changelogs/@backstage/plugin-scaffolder-common.md#220))
-
-#### 2.2.0
-
-##### Minor Changes
-
-- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): Promote the `formDecorators` field on the `Template` spec out of experimental.
-  The previous `EXPERIMENTAL_formDecorators` field continues to work and is
-  kept as a deprecated alias.
-
-### `@backstage/plugin-techdocs-backend` (2.1.7 → [2.2.0](../../changelogs/@backstage/plugin-techdocs-backend.md#220))
-
-#### 2.2.0
-
-##### Minor Changes
-
-- [`5ef8d16`](https://github.com/backstage/backstage/commit/5ef8d16): Add support for disabling external font downloads via app-config option `techdocs.generator.mkdocs.disableExternalFonts`, useful for air-gapped Backstage instances.
-
-### `@backstage/plugin-techdocs-node` (1.14.5 → [1.15.0](../../changelogs/@backstage/plugin-techdocs-node.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`5ef8d16`](https://github.com/backstage/backstage/commit/5ef8d16): Add support for disabling external font downloads via app-config option `techdocs.generator.mkdocs.disableExternalFonts`, useful for air-gapped Backstage instances.
-
-##### Patch Changes
-
-- [`6ce8462`](https://github.com/backstage/backstage/commit/6ce8462): Fixed bug causing `--legacyCopyReadmeMdToIndexMd` option to fail if docs directory is not present
-
-### `@techdocs/cli` (1.10.7 → [1.11.0](../../changelogs/@techdocs/cli.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`329f592`](https://github.com/backstage/backstage/commit/329f592): Add support for disabling external font downloads via techdocs-cli `techdocs-cli generate --disableExternalFonts`, useful for air-gapped Backstage instances.
-
-##### Patch Changes
-
-- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.17.0 → [0.17.1](../../changelogs/@backstage/backend-defaults.md#0171))
 
@@ -733,26 +606,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 ##### Patch Changes
 
 - [`41070b8`](https://github.com/backstage/backstage/commit/41070b8): Upgraded `@module-federation/enhanced`, `@module-federation/runtime`, and `@module-federation/sdk` from `^0.21.6` to `^2.3.3` to address known vulnerabilities.
-
-### `@backstage/backend-plugin-api` (1.9.0 → [1.9.1](../../changelogs/@backstage/backend-plugin-api.md#191))
-
-#### 1.9.1
-
-##### Patch Changes
-
-- [`90b572e`](https://github.com/backstage/backstage/commit/90b572e): Adds an alpha `TracingService` to provide a unified interface for emitting trace spans across Backstage plugins.
-- [`6209065`](https://github.com/backstage/backstage/commit/6209065): Added `context` and `propagation` to the alpha `TracingService`. Plugins can bridge OpenTelemetry context across async boundaries via `tracing.propagation.extract(tracing.context.active(), carrier)` followed by `tracing.context.with(ctx, fn)`, and read propagated baggage via `tracing.propagation.getActiveBaggage()` or `tracing.propagation.getBaggage(ctx)`.
-
-### `@backstage/backend-test-utils` (1.11.2 → [1.11.3](../../changelogs/@backstage/backend-test-utils.md#1113))
-
-#### 1.11.3
-
-##### Patch Changes
-
-- [`7fb12b8`](https://github.com/backstage/backstage/commit/7fb12b8): Added a new tracing service mock to be leveraged in tests
-- [`ada7df7`](https://github.com/backstage/backstage/commit/ada7df7): Fixed `mockCredentials` to include the internal `version: 'v1'` field on all credential objects (`none()`, `user()`, `limitedUser()`, `service()`), and fixed `user()` to encode the user entity ref into the token (matching `user.token(ref)` behavior). This makes mock credentials compatible with `toInternalBackstageCredentials()`, which validates the version field, and ensures that credentials for different users produce different tokens.
-- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
-- [`6209065`](https://github.com/backstage/backstage/commit/6209065): Added `context` and `propagation` to the alpha `TracingService`. Plugins can bridge OpenTelemetry context across async boundaries via `tracing.propagation.extract(tracing.context.active(), carrier)` followed by `tracing.context.with(ctx, fn)`, and read propagated baggage via `tracing.propagation.getActiveBaggage()` or `tracing.propagation.getBaggage(ctx)`.
 
 ### `@backstage/cli` (0.36.1 → [0.36.2](../../changelogs/@backstage/cli.md#0362))
 
@@ -806,14 +659,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 - [`021b368`](https://github.com/backstage/backstage/commit/021b368): Added stable DOM markers to the legacy Page and Header so adjacent layout components can coordinate spacing without relying on generated class names.
 - [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
 
-### `@backstage/core-plugin-api` (1.12.5 → [1.12.6](../../changelogs/@backstage/core-plugin-api.md#1126))
-
-#### 1.12.6
-
-##### Patch Changes
-
-- [`ab1cdbb`](https://github.com/backstage/backstage/commit/ab1cdbb): Removed a handful of internal imports that referenced the package by its own name. Value imports were switched to relative paths, and type-only imports to `import type`. These self-referential imports could trigger circular initialization errors in bundled ESM and when the package was loaded via `jest.requireActual` — most visibly `Cannot access '_AppRootElementBlueprintesm' before initialization` from `@backstage/frontend-plugin-api`. There are no user-facing API changes.
-
 ### `@backstage/create-app` (0.8.2 → [0.8.3](../../changelogs/@backstage/create-app.md#083))
 
 #### 0.8.3
@@ -824,14 +669,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 - [`b0bc1e5`](https://github.com/backstage/backstage/commit/b0bc1e5): Bumped create-app version.
 - [`14e2056`](https://github.com/backstage/backstage/commit/14e2056): Pinned the Jest version range in app templates to `~30.2.0` to prevent automatic upgrades to Jest 30.4.x, which requires Node.js v24.9+ and breaks tests on Node 22.
 - [`927c003`](https://github.com/backstage/backstage/commit/927c003): Replaced internal error utilities with shared ones from `@backstage/cli-common`.
-
-### `@backstage/errors` (1.3.0 → [1.3.1](../../changelogs/@backstage/errors.md#131))
-
-#### 1.3.1
-
-##### Patch Changes
-
-- [`8741e5a`](https://github.com/backstage/backstage/commit/8741e5a): Added explicit `name` property to `ServiceUnavailableError` for consistency with all other error classes, making it resilient to minification.
 
 ### `@backstage/filter-predicates` (0.1.2 → [0.1.3](../../changelogs/@backstage/filter-predicates.md#013))
 
@@ -865,19 +702,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 ##### Patch Changes
 
 - [`41070b8`](https://github.com/backstage/backstage/commit/41070b8): Upgraded `@module-federation/enhanced`, `@module-federation/runtime`, and `@module-federation/sdk` from `^0.21.6` to `^2.3.3` to address known vulnerabilities.
-
-### `@backstage/integration` (2.0.1 → [2.0.2](../../changelogs/@backstage/integration.md#202))
-
-#### 2.0.2
-
-##### Patch Changes
-
-- [`6b112d3`](https://github.com/backstage/backstage/commit/6b112d3): Fixed two issues in the GitLab integration's fetch behavior:
-
-  - The internal fetch wrapper was passing `mode: 'same-origin'` on every request. This had no practical effect server-side, but would have caused cross-origin requests to be rejected when the integration is used from a browser. Requests now use the default fetch mode and work correctly in both browser and Node environments.
-  - When retries are configured, transient network errors (such as dropped connections or DNS hiccups) are now retried using the same `maxRetries` and exponential delay as retryable HTTP status codes. Previously, a thrown fetch error would propagate immediately on the first failure regardless of the retry configuration. Caller-initiated aborts continue to surface immediately without being retried.
-
-- [`b62781f`](https://github.com/backstage/backstage/commit/b62781f): Moved `registerMswTestHooks` to test files.
 
 ### `@backstage/module-federation-common` (0.1.3 → [0.1.4](../../changelogs/@backstage/module-federation-common.md#014))
 
@@ -975,18 +799,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 
 - [`744fa1f`](https://github.com/backstage/backstage/commit/744fa1f): Removed duplicated entries that appeared in both `dependencies` and `devDependencies`.
 - [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
-
-### `@backstage/plugin-catalog` (2.0.4 → [2.0.5](../../changelogs/@backstage/plugin-catalog.md#205))
-
-#### 2.0.5
-
-##### Patch Changes
-
-- [`728629c`](https://github.com/backstage/backstage/commit/728629c): Fixed an issue where navigating to an unknown sub-path on an entity page (for example `/catalog/default/component/foo/blob`) would silently render the first available route. Unknown paths now show the standard not-found page instead.
-- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
-- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
-- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
-- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
 
 ### `@backstage/plugin-catalog-backend-module-aws` (0.4.22 → [0.4.23](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0423))
 
@@ -1125,14 +937,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 
 - [`f635139`](https://github.com/backstage/backstage/commit/f635139): Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
 - [`39eb61b`](https://github.com/backstage/backstage/commit/39eb61b): Internal refactor
-
-### `@backstage/plugin-catalog-node` (2.2.0 → [2.2.1](../../changelogs/@backstage/plugin-catalog-node.md#221))
-
-#### 2.2.1
-
-##### Patch Changes
-
-- [`ab1cdbb`](https://github.com/backstage/backstage/commit/ab1cdbb): Removed a handful of internal imports that referenced the package by its own name. Value imports were switched to relative paths, and type-only imports to `import type`. These self-referential imports could trigger circular initialization errors in bundled ESM and when the package was loaded via `jest.requireActual` — most visibly `Cannot access '_AppRootElementBlueprintesm' before initialization` from `@backstage/frontend-plugin-api`. There are no user-facing API changes.
 
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.30 → [0.2.31](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0231))
 
@@ -1323,33 +1127,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 
 - [`77bee9f`](https://github.com/backstage/backstage/commit/77bee9f): Added optional `status` filter to `ScaffolderService.listTasks`, allowing callers to retrieve tasks matching a specific status.
 
-### `@backstage/plugin-search` (1.7.3 → [1.7.4](../../changelogs/@backstage/plugin-search.md#174))
-
-#### 1.7.4
-
-##### Patch Changes
-
-- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
-- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
-- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
-
-### `@backstage/plugin-search-backend` (2.1.1 → [2.1.2](../../changelogs/@backstage/plugin-search-backend.md#212))
-
-#### 2.1.2
-
-##### Patch Changes
-
-- [`303954b`](https://github.com/backstage/backstage/commit/303954b): Added action for search backend to query search engine using the actions registry
-- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.8.2 → [1.8.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#183))
-
-#### 1.8.3
-
-##### Patch Changes
-
-- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
-
 ### `@backstage/plugin-search-backend-module-pg` (0.5.54 → [0.5.55](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0555))
 
 #### 0.5.55
@@ -1357,24 +1134,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 ##### Patch Changes
 
 - [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
-
-### `@backstage/plugin-search-backend-node` (1.4.3 → [1.4.4](../../changelogs/@backstage/plugin-search-backend-node.md#144))
-
-#### 1.4.4
-
-##### Patch Changes
-
-- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
-
-### `@backstage/plugin-search-react` (1.11.3 → [1.11.4](../../changelogs/@backstage/plugin-search-react.md#1114))
-
-#### 1.11.4
-
-##### Patch Changes
-
-- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
-- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
-- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
 
 ### `@backstage/plugin-signals-backend` (0.3.14 → [0.3.15](../../changelogs/@backstage/plugin-signals-backend.md#0315))
 
@@ -1387,26 +1146,6 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 ### `@backstage/plugin-signals-node` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-signals-node.md#021))
 
 #### 0.2.1
-
-##### Patch Changes
-
-- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
-
-### `@backstage/plugin-techdocs` (1.17.5 → [1.17.6](../../changelogs/@backstage/plugin-techdocs.md#1176))
-
-#### 1.17.6
-
-##### Patch Changes
-
-- [`8d1e093`](https://github.com/backstage/backstage/commit/8d1e093): Made the TechDocs sidebar positioning at tablet breakpoints configurable via CSS custom properties, allowing apps with custom sidebar widths to override the defaults. The available properties are `--techdocs-sidebar-closed-offset-pinned`, `--techdocs-sidebar-closed-offset-collapsed`, and `--techdocs-sidebar-open-translate`.
-- [`f635139`](https://github.com/backstage/backstage/commit/f635139): Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
-- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
-- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
-- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
-
-### `@backstage/plugin-techdocs-react` (1.3.10 → [1.3.11](../../changelogs/@backstage/plugin-techdocs-react.md#1311))
-
-#### 1.3.11
 
 ##### Patch Changes
 
@@ -1436,6 +1175,271 @@ Changes between 1.50.4 and 1.51.0 — 198 changed and 2 added packages.
 ##### Patch Changes
 
 - [`927c003`](https://github.com/backstage/backstage/commit/927c003): Replaced internal error utilities with shared ones from `@backstage/cli-common`.
+
+## Other minor version bumps
+
+### `@backstage/backend-app-api` (1.6.1 → [1.7.0](../../changelogs/@backstage/backend-app-api.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`3595c97`](https://github.com/backstage/backstage/commit/3595c97): Added `ExtensionPointFactoryMiddleware` type and `createExtensionPointFactoryMiddleware` helper to reimplement extension point outputs at backend creation time.
+
+### `@backstage/catalog-model` (1.8.0 → [1.9.0](../../changelogs/@backstage/catalog-model.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`3664148`](https://github.com/backstage/backstage/commit/3664148): Introduced the `AiResource` catalog entity kind. Entity types, validators, type guards, and the model layer are exported from `@backstage/catalog-model/alpha`. Install `@backstage/plugin-catalog-backend-module-ai-model` in your backend to register the kind with the catalog.
+- [`be71476`](https://github.com/backstage/backstage/commit/be71476): Added `spec.type: 'mcp-server'` as a structured subtype of the `API` kind under `v1alpha1`/`v1beta1`. MCP server entities carry a `spec.remotes` list instead of a string `definition`, for representing Model Context Protocol servers in the catalog. See RFC [#32062](https://github.com/backstage/backstage/issues/32062). New public exports: `McpServerApiEntity`, `McpServerRemote`, `mcpServerApiEntityValidator`, and `isMcpServerApiEntity`. Also adds `addKindVersion` to `CatalogModelLayerBuilder` (alpha) so layers can add new versions or spec types to existing kinds.
+
+##### Patch Changes
+
+- [`ab1cdbb`](https://github.com/backstage/backstage/commit/ab1cdbb): Removed a handful of internal imports that referenced the package by its own name. Value imports were switched to relative paths, and type-only imports to `import type`. These self-referential imports could trigger circular initialization errors in bundled ESM and when the package was loaded via `jest.requireActual` — most visibly `Cannot access '_AppRootElementBlueprintesm' before initialization` from `@backstage/frontend-plugin-api`. There are no user-facing API changes.
+
+### `@backstage/plugin-scaffolder` (1.36.2 → [1.37.0](../../changelogs/@backstage/plugin-scaffolder.md#1370))
+
+#### 1.37.0
+
+##### Minor Changes
+
+- [`dbeb7aa`](https://github.com/backstage/backstage/commit/dbeb7aa): Added experimental BUI (Backstage UI) form theme for scaffolder forms. All default field extensions render BUI variants when enabled.
+
+  **Extension config:**
+
+  ```yaml
+  app:
+    extensions:
+      - sub-page:scaffolder/templates:
+          config:
+            enableBackstageUi: true
+  ```
+
+  **JSX props:**
+
+  ```tsx
+  <ScaffolderPage formProps={{ EXPERIMENTAL_theme: 'bui' }} />
+  ```
+
+- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): Promoted `formDecoratorsApiRef`, `ScaffolderFormDecoratorsApi`,
+  `DefaultScaffolderFormDecoratorsApi`, and `formDecoratorsApi` from `@alpha`
+  to `@public`.
+- [`d09c21c`](https://github.com/backstage/backstage/commit/d09c21c): The `sub-page:scaffolder/templates` extension now accepts a `groups` config
+  field that lets you define template groups on the template list page. Each group
+  has a `title` and a `filter` predicate. Templates not matched by any
+  configured group fall into an automatically appended "Other Templates" group.
+  With no groups configured, the page renders a single "Templates" group as
+  before.
+
+  Example:
+
+  ```yaml
+  app:
+    extensions:
+      - sub-page:scaffolder/templates:
+          config:
+            groups:
+              - title: Recommended Services
+                filter:
+                  spec.type: service
+              - title: Documentation
+                filter:
+                  spec.type: documentation
+  ```
+
+##### Patch Changes
+
+- [`1ecc3ca`](https://github.com/backstage/backstage/commit/1ecc3ca): Fixed spelling mistakes in internal code
+- [`f635139`](https://github.com/backstage/backstage/commit/f635139): Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
+- [`415e30b`](https://github.com/backstage/backstage/commit/415e30b): Simplified the `OwnerEntityColumn` in the task list to rely on `EntityRefLink` and the entity presentation API instead of manually fetching entities from the catalog.
+- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
+- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): Form decorator input is now parsed against the zod schema configured on the
+  decorator before the decorator runs, so defaults declared via `.default()`
+  are applied and invalid input is reported through the error API instead of
+  silently passing through.
+- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): The template wizard now reads form decorators from the new
+  `spec.formDecorators` field on a template, falling back to the deprecated
+  `spec.EXPERIMENTAL_formDecorators` for templates that have not been migrated.
+
+### `@backstage/plugin-scaffolder-common` (2.1.0 → [2.2.0](../../changelogs/@backstage/plugin-scaffolder-common.md#220))
+
+#### 2.2.0
+
+##### Minor Changes
+
+- [`8006acf`](https://github.com/backstage/backstage/commit/8006acf): Promote the `formDecorators` field on the `Template` spec out of experimental.
+  The previous `EXPERIMENTAL_formDecorators` field continues to work and is
+  kept as a deprecated alias.
+
+### `@backstage/plugin-techdocs-backend` (2.1.7 → [2.2.0](../../changelogs/@backstage/plugin-techdocs-backend.md#220))
+
+#### 2.2.0
+
+##### Minor Changes
+
+- [`5ef8d16`](https://github.com/backstage/backstage/commit/5ef8d16): Add support for disabling external font downloads via app-config option `techdocs.generator.mkdocs.disableExternalFonts`, useful for air-gapped Backstage instances.
+
+### `@backstage/plugin-techdocs-node` (1.14.5 → [1.15.0](../../changelogs/@backstage/plugin-techdocs-node.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`5ef8d16`](https://github.com/backstage/backstage/commit/5ef8d16): Add support for disabling external font downloads via app-config option `techdocs.generator.mkdocs.disableExternalFonts`, useful for air-gapped Backstage instances.
+
+##### Patch Changes
+
+- [`6ce8462`](https://github.com/backstage/backstage/commit/6ce8462): Fixed bug causing `--legacyCopyReadmeMdToIndexMd` option to fail if docs directory is not present
+
+### `@techdocs/cli` (1.10.7 → [1.11.0](../../changelogs/@techdocs/cli.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`329f592`](https://github.com/backstage/backstage/commit/329f592): Add support for disabling external font downloads via techdocs-cli `techdocs-cli generate --disableExternalFonts`, useful for air-gapped Backstage instances.
+
+##### Patch Changes
+
+- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
+
+## Other patch version bumps
+
+### `@backstage/backend-plugin-api` (1.9.0 → [1.9.1](../../changelogs/@backstage/backend-plugin-api.md#191))
+
+#### 1.9.1
+
+##### Patch Changes
+
+- [`90b572e`](https://github.com/backstage/backstage/commit/90b572e): Adds an alpha `TracingService` to provide a unified interface for emitting trace spans across Backstage plugins.
+- [`6209065`](https://github.com/backstage/backstage/commit/6209065): Added `context` and `propagation` to the alpha `TracingService`. Plugins can bridge OpenTelemetry context across async boundaries via `tracing.propagation.extract(tracing.context.active(), carrier)` followed by `tracing.context.with(ctx, fn)`, and read propagated baggage via `tracing.propagation.getActiveBaggage()` or `tracing.propagation.getBaggage(ctx)`.
+
+### `@backstage/backend-test-utils` (1.11.2 → [1.11.3](../../changelogs/@backstage/backend-test-utils.md#1113))
+
+#### 1.11.3
+
+##### Patch Changes
+
+- [`7fb12b8`](https://github.com/backstage/backstage/commit/7fb12b8): Added a new tracing service mock to be leveraged in tests
+- [`ada7df7`](https://github.com/backstage/backstage/commit/ada7df7): Fixed `mockCredentials` to include the internal `version: 'v1'` field on all credential objects (`none()`, `user()`, `limitedUser()`, `service()`), and fixed `user()` to encode the user entity ref into the token (matching `user.token(ref)` behavior). This makes mock credentials compatible with `toInternalBackstageCredentials()`, which validates the version field, and ensures that credentials for different users produce different tokens.
+- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
+- [`6209065`](https://github.com/backstage/backstage/commit/6209065): Added `context` and `propagation` to the alpha `TracingService`. Plugins can bridge OpenTelemetry context across async boundaries via `tracing.propagation.extract(tracing.context.active(), carrier)` followed by `tracing.context.with(ctx, fn)`, and read propagated baggage via `tracing.propagation.getActiveBaggage()` or `tracing.propagation.getBaggage(ctx)`.
+
+### `@backstage/core-plugin-api` (1.12.5 → [1.12.6](../../changelogs/@backstage/core-plugin-api.md#1126))
+
+#### 1.12.6
+
+##### Patch Changes
+
+- [`ab1cdbb`](https://github.com/backstage/backstage/commit/ab1cdbb): Removed a handful of internal imports that referenced the package by its own name. Value imports were switched to relative paths, and type-only imports to `import type`. These self-referential imports could trigger circular initialization errors in bundled ESM and when the package was loaded via `jest.requireActual` — most visibly `Cannot access '_AppRootElementBlueprintesm' before initialization` from `@backstage/frontend-plugin-api`. There are no user-facing API changes.
+
+### `@backstage/errors` (1.3.0 → [1.3.1](../../changelogs/@backstage/errors.md#131))
+
+#### 1.3.1
+
+##### Patch Changes
+
+- [`8741e5a`](https://github.com/backstage/backstage/commit/8741e5a): Added explicit `name` property to `ServiceUnavailableError` for consistency with all other error classes, making it resilient to minification.
+
+### `@backstage/integration` (2.0.1 → [2.0.2](../../changelogs/@backstage/integration.md#202))
+
+#### 2.0.2
+
+##### Patch Changes
+
+- [`6b112d3`](https://github.com/backstage/backstage/commit/6b112d3): Fixed two issues in the GitLab integration's fetch behavior:
+
+  - The internal fetch wrapper was passing `mode: 'same-origin'` on every request. This had no practical effect server-side, but would have caused cross-origin requests to be rejected when the integration is used from a browser. Requests now use the default fetch mode and work correctly in both browser and Node environments.
+  - When retries are configured, transient network errors (such as dropped connections or DNS hiccups) are now retried using the same `maxRetries` and exponential delay as retryable HTTP status codes. Previously, a thrown fetch error would propagate immediately on the first failure regardless of the retry configuration. Caller-initiated aborts continue to surface immediately without being retried.
+
+- [`b62781f`](https://github.com/backstage/backstage/commit/b62781f): Moved `registerMswTestHooks` to test files.
+
+### `@backstage/plugin-catalog` (2.0.4 → [2.0.5](../../changelogs/@backstage/plugin-catalog.md#205))
+
+#### 2.0.5
+
+##### Patch Changes
+
+- [`728629c`](https://github.com/backstage/backstage/commit/728629c): Fixed an issue where navigating to an unknown sub-path on an entity page (for example `/catalog/default/component/foo/blob`) would silently render the first available route. Unknown paths now show the standard not-found page instead.
+- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
+- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
+- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
+- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
+
+### `@backstage/plugin-catalog-node` (2.2.0 → [2.2.1](../../changelogs/@backstage/plugin-catalog-node.md#221))
+
+#### 2.2.1
+
+##### Patch Changes
+
+- [`ab1cdbb`](https://github.com/backstage/backstage/commit/ab1cdbb): Removed a handful of internal imports that referenced the package by its own name. Value imports were switched to relative paths, and type-only imports to `import type`. These self-referential imports could trigger circular initialization errors in bundled ESM and when the package was loaded via `jest.requireActual` — most visibly `Cannot access '_AppRootElementBlueprintesm' before initialization` from `@backstage/frontend-plugin-api`. There are no user-facing API changes.
+
+### `@backstage/plugin-search` (1.7.3 → [1.7.4](../../changelogs/@backstage/plugin-search.md#174))
+
+#### 1.7.4
+
+##### Patch Changes
+
+- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
+- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
+- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
+
+### `@backstage/plugin-search-backend` (2.1.1 → [2.1.2](../../changelogs/@backstage/plugin-search-backend.md#212))
+
+#### 2.1.2
+
+##### Patch Changes
+
+- [`303954b`](https://github.com/backstage/backstage/commit/303954b): Added action for search backend to query search engine using the actions registry
+- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.8.2 → [1.8.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#183))
+
+#### 1.8.3
+
+##### Patch Changes
+
+- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
+
+### `@backstage/plugin-search-backend-node` (1.4.3 → [1.4.4](../../changelogs/@backstage/plugin-search-backend-node.md#144))
+
+#### 1.4.4
+
+##### Patch Changes
+
+- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
+
+### `@backstage/plugin-search-react` (1.11.3 → [1.11.4](../../changelogs/@backstage/plugin-search-react.md#1114))
+
+#### 1.11.4
+
+##### Patch Changes
+
+- [`e9b78e9`](https://github.com/backstage/backstage/commit/e9b78e9): Removed the `uuid` dependency and replaced usage with the built-in `crypto.randomUUID()`.
+- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
+- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
+
+### `@backstage/plugin-techdocs` (1.17.5 → [1.17.6](../../changelogs/@backstage/plugin-techdocs.md#1176))
+
+#### 1.17.6
+
+##### Patch Changes
+
+- [`8d1e093`](https://github.com/backstage/backstage/commit/8d1e093): Made the TechDocs sidebar positioning at tablet breakpoints configurable via CSS custom properties, allowing apps with custom sidebar widths to override the defaults. The available properties are `--techdocs-sidebar-closed-offset-pinned`, `--techdocs-sidebar-closed-offset-collapsed`, and `--techdocs-sidebar-open-translate`.
+- [`f635139`](https://github.com/backstage/backstage/commit/f635139): Limited `@remixicon/react` dependency to versions below 4.9.0 due to a license change in that release.
+- [`44d77e9`](https://github.com/backstage/backstage/commit/44d77e9): Removed separate nav item extensions. Sidebar entries are now provided via `title` and `icon` on each plugin's page extension.
+- [`cad156e`](https://github.com/backstage/backstage/commit/cad156e): Replaced old config schema values from existing extensions and blueprints.
+- [`085133f`](https://github.com/backstage/backstage/commit/085133f): The `zod` dependency has been bumped from `^3.25.76 || ^4.0.0` to `^4.0.0`, since `configSchema` requires the full Zod v4 package for JSON Schema support.
+
+### `@backstage/plugin-techdocs-react` (1.3.10 → [1.3.11](../../changelogs/@backstage/plugin-techdocs-react.md#1311))
+
+#### 1.3.11
+
+##### Patch Changes
+
+- [`0c5e41f`](https://github.com/backstage/backstage/commit/0c5e41f): Removed unused dependencies that had no imports in source code.
 
 ## Excluded dependency updates
 

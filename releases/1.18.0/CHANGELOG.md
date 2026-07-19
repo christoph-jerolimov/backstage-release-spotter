@@ -1,6 +1,6 @@
 # Backstage Release 1.18.0 changelog
 
-Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
+Changes between 1.17.5 and 1.18.0 — 10 added, 0 removed, 217 upgraded, 4 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
 - [Breaking changes](#breaking-changes): 19 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 3 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 4 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 123 packages
 - [Other minor version bumps](#other-minor-version-bumps): 15 packages
-- [Other patch version bumps](#other-patch-version-bumps): 142 packages
+- [Other patch version bumps](#other-patch-version-bumps): 19 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 34 packages
 
 ## Table of contents
@@ -54,37 +55,15 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
   - [`@backstage/plugin-explore-common` (0.0.1 → 0.0.2)](#backstageplugin-explore-common-001--002)
   - [`@backstage/plugin-explore-react` (0.0.30 → 0.0.31)](#backstageplugin-explore-react-0030--0031)
   - [`@backstage/release-manifests` (0.0.9 → 0.0.10)](#backstagerelease-manifests-009--0010)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config` (1.0.8 → 1.1.0)](#backstageconfig-108--110)
-  - [`@backstage/config-loader` (1.4.0 → 1.5.0)](#backstageconfig-loader-140--150)
-  - [`@backstage/core-plugin-api` (1.5.3 → 1.6.0)](#backstagecore-plugin-api-153--160)
-  - [`@backstage/integration` (1.6.2 → 1.7.0)](#backstageintegration-162--170)
-  - [`@backstage/plugin-catalog` (1.12.4 → 1.13.0)](#backstageplugin-catalog-1124--1130)
-  - [`@backstage/plugin-catalog-backend` (1.12.4 → 1.13.0)](#backstageplugin-catalog-backend-1124--1130)
-  - [`@backstage/plugin-scaffolder` (1.14.4 → 1.15.0)](#backstageplugin-scaffolder-1144--1150)
-  - [`@backstage/plugin-scaffolder-backend` (1.16.5 → 1.17.0)](#backstageplugin-scaffolder-backend-1165--1170)
-  - [`@backstage/plugin-search` (1.3.6 → 1.4.0)](#backstageplugin-search-136--140)
-  - [`@backstage/plugin-search-react` (1.6.4 → 1.7.0)](#backstageplugin-search-react-164--170)
-  - [`@backstage/plugin-techdocs` (1.6.8 → 1.7.0)](#backstageplugin-techdocs-168--170)
-  - [`@backstage/plugin-techdocs-backend` (1.6.7 → 1.7.0)](#backstageplugin-techdocs-backend-167--170)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.18 → 1.1.0)](#backstageplugin-techdocs-module-addons-contrib-1018--110)
-  - [`@backstage/plugin-techdocs-node` (1.7.6 → 1.8.0)](#backstageplugin-techdocs-node-176--180)
-  - [`@techdocs/cli` (1.4.7 → 1.5.0)](#techdocscli-147--150)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.4.2 → 1.4.3)](#backstageapp-defaults-142--143)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.5.2 → 0.5.3)](#backstagebackend-app-api-052--053)
   - [`@backstage/backend-common` (0.19.4 → 0.19.5)](#backstagebackend-common-0194--0195)
   - [`@backstage/backend-plugin-api` (0.6.2 → 0.6.3)](#backstagebackend-plugin-api-062--063)
   - [`@backstage/backend-tasks` (0.5.7 → 0.5.8)](#backstagebackend-tasks-057--058)
   - [`@backstage/backend-test-utils` (0.2.2 → 0.2.3)](#backstagebackend-test-utils-022--023)
-  - [`@backstage/catalog-client` (1.4.3 → 1.4.4)](#backstagecatalog-client-143--144)
-  - [`@backstage/catalog-model` (1.4.1 → 1.4.2)](#backstagecatalog-model-141--142)
   - [`@backstage/cli` (0.22.12 → 0.22.13)](#backstagecli-02212--02213)
   - [`@backstage/core-components` (0.13.4 → 0.13.5)](#backstagecore-components-0134--0135)
   - [`@backstage/create-app` (0.5.4 → 0.5.5)](#backstagecreate-app-054--055)
-  - [`@backstage/dev-utils` (1.0.20 → 1.0.21)](#backstagedev-utils-1020--1021)
-  - [`@backstage/errors` (1.2.1 → 1.2.2)](#backstageerrors-121--122)
-  - [`@backstage/integration-react` (1.1.18 → 1.1.19)](#backstageintegration-react-1118--1119)
   - [`@backstage/plugin-adr` (0.6.6 → 0.6.7)](#backstageplugin-adr-066--067)
   - [`@backstage/plugin-adr-common` (0.2.14 → 0.2.15)](#backstageplugin-adr-common-0214--0215)
   - [`@backstage/plugin-airbrake` (0.3.23 → 0.3.24)](#backstageplugin-airbrake-0323--0324)
@@ -113,9 +92,7 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
   - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.4.5 → 0.4.6)](#backstageplugin-catalog-backend-module-incremental-ingestion-045--046)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.5.9 → 0.5.10)](#backstageplugin-catalog-backend-module-msgraph-059--0510)
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.1.7 → 0.1.8)](#backstageplugin-catalog-backend-module-puppetdb-017--018)
-  - [`@backstage/plugin-catalog-common` (1.0.15 → 1.0.16)](#backstageplugin-catalog-common-1015--1016)
   - [`@backstage/plugin-catalog-graph` (0.2.35 → 0.2.36)](#backstageplugin-catalog-graph-0235--0236)
-  - [`@backstage/plugin-catalog-react` (1.8.3 → 1.8.4)](#backstageplugin-catalog-react-183--184)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.1.2 → 0.1.3)](#backstageplugin-catalog-unprocessed-entities-012--013)
   - [`@backstage/plugin-cicd-statistics` (0.1.25 → 0.1.26)](#backstageplugin-cicd-statistics-0125--0126)
   - [`@backstage/plugin-cicd-statistics-module-gitlab` (0.1.19 → 0.1.20)](#backstageplugin-cicd-statistics-module-gitlab-0119--0120)
@@ -130,7 +107,6 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
   - [`@backstage/plugin-cost-insights-common` (0.1.1 → 0.1.2)](#backstageplugin-cost-insights-common-011--012)
   - [`@backstage/plugin-devtools` (0.1.3 → 0.1.4)](#backstageplugin-devtools-013--014)
   - [`@backstage/plugin-devtools-common` (0.1.3 → 0.1.4)](#backstageplugin-devtools-common-013--014)
-  - [`@backstage/plugin-dynatrace` (7.0.3 → 7.0.4)](#backstageplugin-dynatrace-703--704)
   - [`@backstage/plugin-entity-feedback` (0.2.6 → 0.2.7)](#backstageplugin-entity-feedback-026--027)
   - [`@backstage/plugin-entity-feedback-common` (0.1.2 → 0.1.3)](#backstageplugin-entity-feedback-common-012--013)
   - [`@backstage/plugin-entity-validation` (0.1.8 → 0.1.9)](#backstageplugin-entity-validation-018--019)
@@ -180,15 +156,10 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
   - [`@backstage/plugin-puppetdb` (0.1.6 → 0.1.7)](#backstageplugin-puppetdb-016--017)
   - [`@backstage/plugin-rollbar` (0.4.23 → 0.4.24)](#backstageplugin-rollbar-0423--0424)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.23 → 0.2.24)](#backstageplugin-scaffolder-backend-module-yeoman-0223--0224)
-  - [`@backstage/plugin-scaffolder-common` (1.4.0 → 1.4.1)](#backstageplugin-scaffolder-common-140--141)
-  - [`@backstage/plugin-scaffolder-react` (1.5.4 → 1.5.5)](#backstageplugin-scaffolder-react-154--155)
-  - [`@backstage/plugin-search-backend` (1.4.2 → 1.4.3)](#backstageplugin-search-backend-142--143)
   - [`@backstage/plugin-search-backend-module-catalog` (0.1.6 → 0.1.7)](#backstageplugin-search-backend-module-catalog-016--017)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.5 → 1.3.6)](#backstageplugin-search-backend-module-elasticsearch-135--136)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.6 → 0.1.7)](#backstageplugin-search-backend-module-explore-016--017)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.11 → 0.5.12)](#backstageplugin-search-backend-module-pg-0511--0512)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.1.6 → 0.1.7)](#backstageplugin-search-backend-module-techdocs-016--017)
-  - [`@backstage/plugin-search-common` (1.2.5 → 1.2.6)](#backstageplugin-search-common-125--126)
   - [`@backstage/plugin-sentry` (0.5.8 → 0.5.9)](#backstageplugin-sentry-058--059)
   - [`@backstage/plugin-shortcuts` (0.3.13 → 0.3.14)](#backstageplugin-shortcuts-0313--0314)
   - [`@backstage/plugin-sonarqube` (0.7.4 → 0.7.5)](#backstageplugin-sonarqube-074--075)
@@ -201,16 +172,47 @@ Changes between 1.17.5 and 1.18.0 — 217 changed and 10 added packages.
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.34 → 0.1.35)](#backstageplugin-tech-insights-backend-module-jsonfc-0134--0135)
   - [`@backstage/plugin-tech-insights-common` (0.2.11 → 0.2.12)](#backstageplugin-tech-insights-common-0211--0212)
   - [`@backstage/plugin-tech-radar` (0.6.7 → 0.6.8)](#backstageplugin-tech-radar-067--068)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.20 → 1.0.21)](#backstageplugin-techdocs-addons-test-utils-1020--1021)
-  - [`@backstage/plugin-techdocs-react` (1.1.9 → 1.1.11)](#backstageplugin-techdocs-react-119--1111)
   - [`@backstage/plugin-todo` (0.2.25 → 0.2.27)](#backstageplugin-todo-0225--0227)
   - [`@backstage/plugin-user-settings` (0.7.8 → 0.7.10)](#backstageplugin-user-settings-078--0710)
   - [`@backstage/plugin-vault` (0.1.17 → 0.1.19)](#backstageplugin-vault-0117--0119)
   - [`@backstage/plugin-vault-backend` (0.3.6 → 0.3.8)](#backstageplugin-vault-backend-036--038)
   - [`@backstage/plugin-xcmetrics` (0.2.41 → 0.2.43)](#backstageplugin-xcmetrics-0241--0243)
   - [`@backstage/repo-tools` (0.3.3 → 0.3.4)](#backstagerepo-tools-033--034)
-  - [`@backstage/test-utils` (1.4.2 → 1.4.3)](#backstagetest-utils-142--143)
   - [`@backstage/theme` (0.4.1 → 0.4.2)](#backstagetheme-041--042)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config` (1.0.8 → 1.1.0)](#backstageconfig-108--110)
+  - [`@backstage/config-loader` (1.4.0 → 1.5.0)](#backstageconfig-loader-140--150)
+  - [`@backstage/core-plugin-api` (1.5.3 → 1.6.0)](#backstagecore-plugin-api-153--160)
+  - [`@backstage/integration` (1.6.2 → 1.7.0)](#backstageintegration-162--170)
+  - [`@backstage/plugin-catalog` (1.12.4 → 1.13.0)](#backstageplugin-catalog-1124--1130)
+  - [`@backstage/plugin-catalog-backend` (1.12.4 → 1.13.0)](#backstageplugin-catalog-backend-1124--1130)
+  - [`@backstage/plugin-scaffolder` (1.14.4 → 1.15.0)](#backstageplugin-scaffolder-1144--1150)
+  - [`@backstage/plugin-scaffolder-backend` (1.16.5 → 1.17.0)](#backstageplugin-scaffolder-backend-1165--1170)
+  - [`@backstage/plugin-search` (1.3.6 → 1.4.0)](#backstageplugin-search-136--140)
+  - [`@backstage/plugin-search-react` (1.6.4 → 1.7.0)](#backstageplugin-search-react-164--170)
+  - [`@backstage/plugin-techdocs` (1.6.8 → 1.7.0)](#backstageplugin-techdocs-168--170)
+  - [`@backstage/plugin-techdocs-backend` (1.6.7 → 1.7.0)](#backstageplugin-techdocs-backend-167--170)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.18 → 1.1.0)](#backstageplugin-techdocs-module-addons-contrib-1018--110)
+  - [`@backstage/plugin-techdocs-node` (1.7.6 → 1.8.0)](#backstageplugin-techdocs-node-176--180)
+  - [`@techdocs/cli` (1.4.7 → 1.5.0)](#techdocscli-147--150)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.4.2 → 1.4.3)](#backstageapp-defaults-142--143)
+  - [`@backstage/catalog-client` (1.4.3 → 1.4.4)](#backstagecatalog-client-143--144)
+  - [`@backstage/catalog-model` (1.4.1 → 1.4.2)](#backstagecatalog-model-141--142)
+  - [`@backstage/dev-utils` (1.0.20 → 1.0.21)](#backstagedev-utils-1020--1021)
+  - [`@backstage/errors` (1.2.1 → 1.2.2)](#backstageerrors-121--122)
+  - [`@backstage/integration-react` (1.1.18 → 1.1.19)](#backstageintegration-react-1118--1119)
+  - [`@backstage/plugin-catalog-common` (1.0.15 → 1.0.16)](#backstageplugin-catalog-common-1015--1016)
+  - [`@backstage/plugin-catalog-react` (1.8.3 → 1.8.4)](#backstageplugin-catalog-react-183--184)
+  - [`@backstage/plugin-dynatrace` (7.0.3 → 7.0.4)](#backstageplugin-dynatrace-703--704)
+  - [`@backstage/plugin-scaffolder-common` (1.4.0 → 1.4.1)](#backstageplugin-scaffolder-common-140--141)
+  - [`@backstage/plugin-scaffolder-react` (1.5.4 → 1.5.5)](#backstageplugin-scaffolder-react-154--155)
+  - [`@backstage/plugin-search-backend` (1.4.2 → 1.4.3)](#backstageplugin-search-backend-142--143)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.5 → 1.3.6)](#backstageplugin-search-backend-module-elasticsearch-135--136)
+  - [`@backstage/plugin-search-common` (1.2.5 → 1.2.6)](#backstageplugin-search-common-125--126)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.20 → 1.0.21)](#backstageplugin-techdocs-addons-test-utils-1020--1021)
+  - [`@backstage/plugin-techdocs-react` (1.1.9 → 1.1.11)](#backstageplugin-techdocs-react-119--1111)
+  - [`@backstage/test-utils` (1.4.2 → 1.4.3)](#backstagetest-utils-142--143)
   - [`@backstage/types` (1.1.0 → 1.1.1)](#backstagetypes-110--111)
   - [`@backstage/version-bridge` (1.0.4 → 1.0.5)](#backstageversion-bridge-104--105)
 - [Excluded dependency updates](#excluded-dependency-updates)
@@ -996,335 +998,7 @@ Skipped due to publishing issues.
 - [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
 - [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
 
-## Other minor version bumps
-
-### `@backstage/config` (1.0.8 → [1.1.0](../../changelogs/@backstage/config.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`62f448edb0b5`](https://github.com/backstage/backstage/commit/62f448edb0b5): Added a `readDurationFromConfig` function
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/config-loader` (1.4.0 → [1.5.0](../../changelogs/@backstage/config-loader.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`9606ba0939e6`](https://github.com/backstage/backstage/commit/9606ba0939e6): Deep visibility now also applies to values that are not covered by the configuration schema.
-
-  For example, given the following configuration schema:
-
-  ```ts
-  // plugins/a/config.schema.ts
-  export interface Config {
-    /** @deepVisibility frontend */
-    a?: unknown;
-  }
-
-  // plugins/a/config.schema.ts
-  export interface Config {
-    a?: {
-      b?: string;
-    };
-  }
-  ```
-
-  All values under `a` are now visible to the frontend, while previously only `a` and `a/b` would've been visible.
-
-##### Patch Changes
-
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-- [`f9657b891b00`](https://github.com/backstage/backstage/commit/f9657b891b00): Do not unnecessarily notify subscribers when no-op updates to config happen
-
-### `@backstage/core-plugin-api` (1.5.3 → [1.6.0](../../changelogs/@backstage/core-plugin-api.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`18619f793c94`](https://github.com/backstage/backstage/commit/18619f793c94): Added the optional `expiresAt` field that may now be part of a `BackstageIdentityResponse`.
-- [`6e30769cc627`](https://github.com/backstage/backstage/commit/6e30769cc627): Introduced experimental support for internationalization.
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/integration` (1.6.2 → [1.7.0](../../changelogs/@backstage/integration.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`5f1a92b9f19f`](https://github.com/backstage/backstage/commit/5f1a92b9f19f): Added `AzureDevOpsCredentialsProvider` to support multiple Azure DevOps organizations and **deprecated** `AzureIntegrationConfig.credential` and `AzureIntegrationConfig.token` in favour of `AzureIntegrationConfig.credentials`. You can now use specific credentials for different Azure DevOps (Server) organizations by specifying the `organizations` field on a credential:
-
-  ```yaml
-  integrations:
-    azure:
-      - host: dev.azure.com
-        credentials:
-          - organizations:
-              - my-org
-              - my-other-org
-            clientId: ${AZURE_CLIENT_ID}
-            clientSecret: ${AZURE_CLIENT_SECRET}
-            tenantId: ${AZURE_TENANT_ID}
-          - organizations:
-              - yet-another-org
-            personalAccessToken: ${PERSONAL_ACCESS_TOKEN}
-  ```
-
-  See the [Azure integration documentation](https://backstage.io/docs/integrations/azure/locations) for more information.
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`2d2fc9d20ebb`](https://github.com/backstage/backstage/commit/2d2fc9d20ebb): Additional fix for Gitiles auth links
-- [`cb2e19d82d95`](https://github.com/backstage/backstage/commit/cb2e19d82d95): Gitiles: Fixed auth prefix issue
-
-### `@backstage/plugin-catalog` (1.12.4 → [1.13.0](../../changelogs/@backstage/plugin-catalog.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`e44f45ac4515`](https://github.com/backstage/backstage/commit/e44f45ac4515): This change allows a new annotation of `backstage.io/techdocs-entity` this ref allows you to reference another entity for its TechDocs. This allows you have a single TechDoc for all items in a system, for example you might have a frontend and a backend in the same repo. This would allow you to have TechDocs build under a `System` entity while referencing the system e.g.: `backstage.io/techdocs-entity: system:default/example` that will show the systems docs in both the TechDocs button and the TechDocs tab without needing to do duplicate builds and filling the TechDocs page with garbage.
-
-##### Patch Changes
-
-- [`832eef72485b`](https://github.com/backstage/backstage/commit/832eef72485b): Added title to props for `Has<kind>Cards`.
-- [`163a41035e42`](https://github.com/backstage/backstage/commit/163a41035e42): Fixed an issue where `EntitySwitch` was preventing the display of entity errors.
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
-### `@backstage/plugin-catalog-backend` (1.12.4 → [1.13.0](../../changelogs/@backstage/plugin-catalog-backend.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`62f448edb0b5`](https://github.com/backstage/backstage/commit/62f448edb0b5): Allow configuring the processing interval in your app-config, under the `catalog.processingInterval` key.
-- [`09cfc3cf467d`](https://github.com/backstage/backstage/commit/09cfc3cf467d): set azure annotation `dev.azure.com/project-repo` in `AnnotateScmSlugEntityProcessor` to find the project and repo information for the repos that contains `dev.azure.com` in the url
-
-##### Patch Changes
-
-- [`149361e81622`](https://github.com/backstage/backstage/commit/149361e81622): Fix to the `limit` parameter on entity queries.
-- [`1fd2109739c1`](https://github.com/backstage/backstage/commit/1fd2109739c1): Changed the processing loop task pipeline implementation from recursive to iterative
-- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
-
-  For example, if you are currently importing the plugin using the following pattern:
-
-  ```ts
-  import { examplePlugin } from '@backstage/plugin-example-backend';
-
-  backend.add(examplePlugin);
-  ```
-
-  It should be migrated to this:
-
-  ```ts
-  backend.add(import('@backstage/plugin-example-backend'));
-  ```
-
-- [`0f8a97777489`](https://github.com/backstage/backstage/commit/0f8a97777489): Update OpenAPI schema to relax the encoding validation of all request parameters.
-- [`0198aa596fd9`](https://github.com/backstage/backstage/commit/0198aa596fd9): Fixed a link to the frontend Backstage plugin that had pointed to itself.
-- [`2d32d8a611e3`](https://github.com/backstage/backstage/commit/2d32d8a611e3): Fixed validation of the `fullTextFilterFields` query parameter.
-- [`acffa17027b6`](https://github.com/backstage/backstage/commit/acffa17027b6): Added some examples to the catalog OpenAPI definition
-- [`45947d3b2759`](https://github.com/backstage/backstage/commit/45947d3b2759): Fixes an issue where `order` was not a recognized parameter for the `/entities` endpoint.
-- [`41d1b2d628ea`](https://github.com/backstage/backstage/commit/41d1b2d628ea): Fix OpenAPI schema for the facets endpoint
-- [`618257f3e413`](https://github.com/backstage/backstage/commit/618257f3e413): Fix issue with `catalogFileName` not being a required property for `/analyze-location`
-- [`cfc3ca6ce060`](https://github.com/backstage/backstage/commit/cfc3ca6ce060): Changes needed to support MySQL
-- [`814feeed7343`](https://github.com/backstage/backstage/commit/814feeed7343): Update to handle invalid luxon values
-
-### `@backstage/plugin-scaffolder` (1.14.4 → [1.15.0](../../changelogs/@backstage/plugin-scaffolder.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`0119c326394a`](https://github.com/backstage/backstage/commit/0119c326394a): adding a .zip download to dry run results page, including zip.js as dependency
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`6e69c11a3535`](https://github.com/backstage/backstage/commit/6e69c11a3535): Restored functionality to `OwnedEntityPicker` by converting deprecated `ui:options` input to `catalogFilter`.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-- [`b16c341ced45`](https://github.com/backstage/backstage/commit/b16c341ced45): Updated dependency `@rjsf/utils` to `5.13.0`.
-  Updated dependency `@rjsf/core-v5` to `npm:@rjsf/core@5.13.0`.
-  Updated dependency `@rjsf/material-ui-v5` to `npm:@rjsf/material-ui@5.13.0`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.13.0`.
-
-### `@backstage/plugin-scaffolder-backend` (1.16.5 → [1.17.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1170))
-
-#### 1.17.0
-
-##### Minor Changes
-
-- [`b5f239b50bcf`](https://github.com/backstage/backstage/commit/b5f239b50bcf): Improved the `parseEntityRef` Scaffolder filter by introducing the ability for users to provide default kind and/or namespace values. The filter now takes
-  2 arguments, similarly to the original [parseEntityRef](https://github.com/backstage/backstage/blob/v1.17.2/packages/catalog-model/src/entity/ref.ts#L77).
-- [`d5313ede3529`](https://github.com/backstage/backstage/commit/d5313ede3529): **DEPRECATION**: Deprecated `ScaffolderEntitiesProcessor`, which should now instead be imported from `@backstage/plugin-catalog-backend-module-scaffolder-entity-model`.
-
-  `catalogModuleTemplateKind` was also moved to that package and renamed to `catalogModuleScaffolderEntityModel`, without any deprecation since it was an alpha export.
-
-##### Patch Changes
-
-- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
-
-  For example, if you are currently importing the plugin using the following pattern:
-
-  ```ts
-  import { examplePlugin } from '@backstage/plugin-example-backend';
-
-  backend.add(examplePlugin);
-  ```
-
-  It should be migrated to this:
-
-  ```ts
-  backend.add(import('@backstage/plugin-example-backend'));
-  ```
-
-- [`a4989552d828`](https://github.com/backstage/backstage/commit/a4989552d828): Add examples for `publish:github` and `publish:gitlab` scaffolder actions.
-- [`ded27b83ead2`](https://github.com/backstage/backstage/commit/ded27b83ead2): Add examples for `publish:bitbucket` scaffolder actions.
-- [`5f1a92b9f19f`](https://github.com/backstage/backstage/commit/5f1a92b9f19f): Use `DefaultAzureDevOpsCredentialsProvider` to retrieve credentials for Azure DevOps.
-- [`fb57a4694fc6`](https://github.com/backstage/backstage/commit/fb57a4694fc6): Fixed the plugin and module ID of the alpha `catalogModuleTemplateKind` export.
-- [`f3c0b95e3ef1`](https://github.com/backstage/backstage/commit/f3c0b95e3ef1): Add examples for `github:actions:dispatch` scaffolder actions.
-- [`cfc3ca6ce060`](https://github.com/backstage/backstage/commit/cfc3ca6ce060): Changes needed to support MySQL
-- [`814feeed7343`](https://github.com/backstage/backstage/commit/814feeed7343): Update to handle invalid luxon values
-
-### `@backstage/plugin-search` (1.3.6 → [1.4.0](../../changelogs/@backstage/plugin-search.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`b78f570f44d3`](https://github.com/backstage/backstage/commit/b78f570f44d3): The SearchPage component can now be configured via app-config.yaml with default query parameters to define how it behaves when it is first loaded or reset. Check out the following example:
-
-  ```yaml
-  search:
-    query:
-      pageLimit: 50
-  ```
-
-  Acceptable values for `pageLimit` are `10`, `25`, `50` or `100`.
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/plugin-search-react` (1.6.4 → [1.7.0](../../changelogs/@backstage/plugin-search-react.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`b78f570f44d3`](https://github.com/backstage/backstage/commit/b78f570f44d3): The SearchPage component can now be configured via app-config.yaml with default query parameters to define how it behaves when it is first loaded or reset. Check out the following example:
-
-  ```yaml
-  search:
-    query:
-      pageLimit: 50
-  ```
-
-  Acceptable values for `pageLimit` are `10`, `25`, `50` or `100`.
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`45f8a95e1068`](https://github.com/backstage/backstage/commit/45f8a95e1068): Optionally initializes the search context with default settings for search queries only when the config is defined, rather than always overriding it.
-- [`3d63e60f3c36`](https://github.com/backstage/backstage/commit/3d63e60f3c36): Internal restructure to avoid circular imports
-
-### `@backstage/plugin-techdocs` (1.6.8 → [1.7.0](../../changelogs/@backstage/plugin-techdocs.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`e44f45ac4515`](https://github.com/backstage/backstage/commit/e44f45ac4515): This change allows a new annotation of `backstage.io/techdocs-entity` this ref allows you to reference another entity for its TechDocs. This allows you have a single TechDoc for all items in a system, for example you might have a frontend and a backend in the same repo. This would allow you to have TechDocs build under a `System` entity while referencing the system e.g.: `backstage.io/techdocs-entity: system:default/example` that will show the systems docs in both the TechDocs button and the TechDocs tab without needing to do duplicate builds and filling the TechDocs page with garbage.
-
-##### Patch Changes
-
-- [`88c9525a36f3`](https://github.com/backstage/backstage/commit/88c9525a36f3): Fixed bug in styles that caused next and previous links in footer to overlap page content.
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/plugin-techdocs-backend` (1.6.7 → [1.7.0](../../changelogs/@backstage/plugin-techdocs-backend.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`5985d458ee30`](https://github.com/backstage/backstage/commit/5985d458ee30): Add a `techdocs.publisher.azureBlobStorage.connectionString` app-config setting, which can be leveraged for improved Azurite support.
-- [`10a86bd4ae12`](https://github.com/backstage/backstage/commit/10a86bd4ae12): Add optional config and cli option for techdocs to specify default mkdocs plugins.
-
-##### Patch Changes
-
-- [`60af8017dd84`](https://github.com/backstage/backstage/commit/60af8017dd84): Expand techdocs.publisher.type with `googleGcs`,`awsS3`,`azureBlobStorage` and `openStackSwift`
-- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
-
-  For example, if you are currently importing the plugin using the following pattern:
-
-  ```ts
-  import { examplePlugin } from '@backstage/plugin-example-backend';
-
-  backend.add(examplePlugin);
-  ```
-
-  It should be migrated to this:
-
-  ```ts
-  backend.add(import('@backstage/plugin-example-backend'));
-  ```
-
-- [`a8a614ba0d07`](https://github.com/backstage/backstage/commit/a8a614ba0d07): Minor `package.json` update.
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.18 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`86c19906fe4b`](https://github.com/backstage/backstage/commit/86c19906fe4b): Enable zoom icon for techdocs images inside lightbox
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/plugin-techdocs-node` (1.7.6 → [1.8.0](../../changelogs/@backstage/plugin-techdocs-node.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`5985d458ee30`](https://github.com/backstage/backstage/commit/5985d458ee30): Add a `techdocs.publisher.azureBlobStorage.connectionString` app-config setting, which can be leveraged for improved Azurite support.
-- [`10a86bd4ae12`](https://github.com/backstage/backstage/commit/10a86bd4ae12): Add optional config and cli option for techdocs to specify default mkdocs plugins.
-
-### `@techdocs/cli` (1.4.7 → [1.5.0](../../changelogs/@techdocs/cli.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`10a86bd4ae12`](https://github.com/backstage/backstage/commit/10a86bd4ae12): Add optional config and cli option for techdocs to specify default mkdocs plugins.
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.4.2 → [1.4.3](../../changelogs/@backstage/app-defaults.md#143))
-
-#### 1.4.3
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.5.2 → [0.5.3](../../changelogs/@backstage/backend-app-api.md#053))
 
@@ -1387,22 +1061,6 @@ Skipped due to publishing issues.
 - [`202e52c5e361`](https://github.com/backstage/backstage/commit/202e52c5e361): Add support for installing backend features via module imports, for example `startTestBackend({ features: [import('my-plugin')] })`.
 - [`9fb3b5373c45`](https://github.com/backstage/backstage/commit/9fb3b5373c45): Extended `mockService` to also include mocked variants, for example `mockServices.lifecycle.mock()`. The returned mocked implementation will have a `factory` property which is a service factory for itself. You can also pass a partial implementation of the service to the mock function to use a mock implementation of specific methods.
 - [`eb1594da5812`](https://github.com/backstage/backstage/commit/eb1594da5812): Serialize test database shutdown, and add logging
-
-### `@backstage/catalog-client` (1.4.3 → [1.4.4](../../changelogs/@backstage/catalog-client.md#144))
-
-#### 1.4.4
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
-### `@backstage/catalog-model` (1.4.1 → [1.4.2](../../changelogs/@backstage/catalog-model.md#142))
-
-#### 1.4.2
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
 
 ### `@backstage/cli` (0.22.12 → [0.22.13](../../changelogs/@backstage/cli.md#02213))
 
@@ -1471,33 +1129,6 @@ Skipped due to publishing issues.
 
 - [`612594022245`](https://github.com/backstage/backstage/commit/612594022245): Add a notification when `yarn install` is taking a long time.
 - [`8db70ecbb325`](https://github.com/backstage/backstage/commit/8db70ecbb325): Updated Dockerfile to include `apt-get update` when installing the SQLite dependency
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/dev-utils` (1.0.20 → [1.0.21](../../changelogs/@backstage/dev-utils.md#1021))
-
-#### 1.0.21
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/errors` (1.2.1 → [1.2.2](../../changelogs/@backstage/errors.md#122))
-
-#### 1.2.2
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
-### `@backstage/integration-react` (1.1.18 → [1.1.19](../../changelogs/@backstage/integration-react.md#1119))
-
-#### 1.1.19
-
-##### Patch Changes
-
-- [`482bb5c0bbf8`](https://github.com/backstage/backstage/commit/482bb5c0bbf8): Moved `@types/react` to be a regular dependency
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
 - [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
 
 ### `@backstage/plugin-adr` (0.6.6 → [0.6.7](../../changelogs/@backstage/plugin-adr.md#067))
@@ -1898,14 +1529,6 @@ Skipped due to publishing issues.
   backend.add(import('@backstage/plugin-example-backend'));
   ```
 
-### `@backstage/plugin-catalog-common` (1.0.15 → [1.0.16](../../changelogs/@backstage/plugin-catalog-common.md#1016))
-
-#### 1.0.16
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
 ### `@backstage/plugin-catalog-graph` (0.2.35 → [0.2.36](../../changelogs/@backstage/plugin-catalog-graph.md#0236))
 
 #### 0.2.36
@@ -1913,16 +1536,6 @@ Skipped due to publishing issues.
 ##### Patch Changes
 
 - [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
-### `@backstage/plugin-catalog-react` (1.8.3 → [1.8.4](../../changelogs/@backstage/plugin-catalog-react.md#184))
-
-#### 1.8.4
-
-##### Patch Changes
-
-- [`bd817209ddd7`](https://github.com/backstage/backstage/commit/bd817209ddd7): Export the `EntityAutocompletePicker` component.
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`7029ba1ce0af`](https://github.com/backstage/backstage/commit/7029ba1ce0af): Added delete alert popup when user delete the entity
 
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.1.2 → [0.1.3](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#013))
 
@@ -2070,16 +1683,6 @@ Skipped due to publishing issues.
 
 - [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
 - [`12e644aa4eef`](https://github.com/backstage/backstage/commit/12e644aa4eef): Show resource utilization in `DevTools` plugin
-
-### `@backstage/plugin-dynatrace` (7.0.3 → [7.0.4](../../changelogs/@backstage/plugin-dynatrace.md#704))
-
-#### 7.0.4
-
-##### Patch Changes
-
-- [`482bb5c0bbf8`](https://github.com/backstage/backstage/commit/482bb5c0bbf8): Moved `@types/react` to be a regular dependency
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
 
 ### `@backstage/plugin-entity-feedback` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-entity-feedback.md#027))
 
@@ -2615,74 +2218,9 @@ Skipped due to publishing issues.
 
 - [`4fa1c74cbadc`](https://github.com/backstage/backstage/commit/4fa1c74cbadc): Enables dry-run functionality for the run:yeoman scaffolder action
 
-### `@backstage/plugin-scaffolder-common` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-scaffolder-common.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
-### `@backstage/plugin-scaffolder-react` (1.5.4 → [1.5.5](../../changelogs/@backstage/plugin-scaffolder-react.md#155))
-
-#### 1.5.5
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`b16c341ced45`](https://github.com/backstage/backstage/commit/b16c341ced45): Updated dependency `@rjsf/utils` to `5.13.0`.
-  Updated dependency `@rjsf/core-v5` to `npm:@rjsf/core@5.13.0`.
-  Updated dependency `@rjsf/material-ui-v5` to `npm:@rjsf/material-ui@5.13.0`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.13.0`.
-- [`27fef07f9229`](https://github.com/backstage/backstage/commit/27fef07f9229): Updated dependency `use-immer` to `^0.9.0`.
-
-### `@backstage/plugin-search-backend` (1.4.2 → [1.4.3](../../changelogs/@backstage/plugin-search-backend.md#143))
-
-#### 1.4.3
-
-##### Patch Changes
-
-- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
-
-  For example, if you are currently importing the plugin using the following pattern:
-
-  ```ts
-  import { examplePlugin } from '@backstage/plugin-example-backend';
-
-  backend.add(examplePlugin);
-  ```
-
-  It should be migrated to this:
-
-  ```ts
-  backend.add(import('@backstage/plugin-example-backend'));
-  ```
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.1.6 → [0.1.7](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#017))
 
 #### 0.1.7
-
-##### Patch Changes
-
-- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
-
-  For example, if you are currently importing the plugin using the following pattern:
-
-  ```ts
-  import { examplePlugin } from '@backstage/plugin-example-backend';
-
-  backend.add(examplePlugin);
-  ```
-
-  It should be migrated to this:
-
-  ```ts
-  backend.add(import('@backstage/plugin-example-backend'));
-  ```
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.5 → [1.3.6](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#136))
-
-#### 1.3.6
 
 ##### Patch Changes
 
@@ -2768,14 +2306,6 @@ Skipped due to publishing issues.
   ```ts
   backend.add(import('@backstage/plugin-example-backend'));
   ```
-
-### `@backstage/plugin-search-common` (1.2.5 → [1.2.6](../../changelogs/@backstage/plugin-search-common.md#126))
-
-#### 1.2.6
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
 
 ### `@backstage/plugin-sentry` (0.5.8 → [0.5.9](../../changelogs/@backstage/plugin-sentry.md#059))
 
@@ -2892,27 +2422,6 @@ Skipped due to publishing issues.
 - [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
 - [`c357f62052af`](https://github.com/backstage/backstage/commit/c357f62052af): Fixed `RadarTimeline` text formatting.
 
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.20 → [1.0.21](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1021))
-
-#### 1.0.21
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
-
-### `@backstage/plugin-techdocs-react` (1.1.9 → [1.1.11](../../changelogs/@backstage/plugin-techdocs-react.md#1111))
-
-#### 1.1.11
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
-
-#### 1.1.10
-
-Skipped due to publishing issues.
-
 ### `@backstage/plugin-todo` (0.2.25 → [0.2.27](../../changelogs/@backstage/plugin-todo.md#0227))
 
 #### 0.2.27
@@ -2998,6 +2507,509 @@ Skipped due to publishing issues.
 - [`ec13d3e86028`](https://github.com/backstage/backstage/commit/ec13d3e86028): Fixed a bug with the `generate-catalog-info` command that could cause the `--dry-run` flag to indicate changes to files when no changes would actually be made if the command were run without the flag.
 - [`db60a16e0a54`](https://github.com/backstage/backstage/commit/db60a16e0a54): Added a `--ci` flag to the `generate-catalog-info` command. This flag behaves similarly to the same flag on `api-reports`: if `catalog-info.yaml` files would have been added or modified, then the process exits with status code `1`, and instructions are printed.
 
+### `@backstage/theme` (0.4.1 → [0.4.2](../../changelogs/@backstage/theme.md#042))
+
+#### 0.4.2
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+## Other minor version bumps
+
+### `@backstage/config` (1.0.8 → [1.1.0](../../changelogs/@backstage/config.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`62f448edb0b5`](https://github.com/backstage/backstage/commit/62f448edb0b5): Added a `readDurationFromConfig` function
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/config-loader` (1.4.0 → [1.5.0](../../changelogs/@backstage/config-loader.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`9606ba0939e6`](https://github.com/backstage/backstage/commit/9606ba0939e6): Deep visibility now also applies to values that are not covered by the configuration schema.
+
+  For example, given the following configuration schema:
+
+  ```ts
+  // plugins/a/config.schema.ts
+  export interface Config {
+    /** @deepVisibility frontend */
+    a?: unknown;
+  }
+
+  // plugins/a/config.schema.ts
+  export interface Config {
+    a?: {
+      b?: string;
+    };
+  }
+  ```
+
+  All values under `a` are now visible to the frontend, while previously only `a` and `a/b` would've been visible.
+
+##### Patch Changes
+
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+- [`f9657b891b00`](https://github.com/backstage/backstage/commit/f9657b891b00): Do not unnecessarily notify subscribers when no-op updates to config happen
+
+### `@backstage/core-plugin-api` (1.5.3 → [1.6.0](../../changelogs/@backstage/core-plugin-api.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`18619f793c94`](https://github.com/backstage/backstage/commit/18619f793c94): Added the optional `expiresAt` field that may now be part of a `BackstageIdentityResponse`.
+- [`6e30769cc627`](https://github.com/backstage/backstage/commit/6e30769cc627): Introduced experimental support for internationalization.
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/integration` (1.6.2 → [1.7.0](../../changelogs/@backstage/integration.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`5f1a92b9f19f`](https://github.com/backstage/backstage/commit/5f1a92b9f19f): Added `AzureDevOpsCredentialsProvider` to support multiple Azure DevOps organizations and **deprecated** `AzureIntegrationConfig.credential` and `AzureIntegrationConfig.token` in favour of `AzureIntegrationConfig.credentials`. You can now use specific credentials for different Azure DevOps (Server) organizations by specifying the `organizations` field on a credential:
+
+  ```yaml
+  integrations:
+    azure:
+      - host: dev.azure.com
+        credentials:
+          - organizations:
+              - my-org
+              - my-other-org
+            clientId: ${AZURE_CLIENT_ID}
+            clientSecret: ${AZURE_CLIENT_SECRET}
+            tenantId: ${AZURE_TENANT_ID}
+          - organizations:
+              - yet-another-org
+            personalAccessToken: ${PERSONAL_ACCESS_TOKEN}
+  ```
+
+  See the [Azure integration documentation](https://backstage.io/docs/integrations/azure/locations) for more information.
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`2d2fc9d20ebb`](https://github.com/backstage/backstage/commit/2d2fc9d20ebb): Additional fix for Gitiles auth links
+- [`cb2e19d82d95`](https://github.com/backstage/backstage/commit/cb2e19d82d95): Gitiles: Fixed auth prefix issue
+
+### `@backstage/plugin-catalog` (1.12.4 → [1.13.0](../../changelogs/@backstage/plugin-catalog.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`e44f45ac4515`](https://github.com/backstage/backstage/commit/e44f45ac4515): This change allows a new annotation of `backstage.io/techdocs-entity` this ref allows you to reference another entity for its TechDocs. This allows you have a single TechDoc for all items in a system, for example you might have a frontend and a backend in the same repo. This would allow you to have TechDocs build under a `System` entity while referencing the system e.g.: `backstage.io/techdocs-entity: system:default/example` that will show the systems docs in both the TechDocs button and the TechDocs tab without needing to do duplicate builds and filling the TechDocs page with garbage.
+
+##### Patch Changes
+
+- [`832eef72485b`](https://github.com/backstage/backstage/commit/832eef72485b): Added title to props for `Has<kind>Cards`.
+- [`163a41035e42`](https://github.com/backstage/backstage/commit/163a41035e42): Fixed an issue where `EntitySwitch` was preventing the display of entity errors.
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/plugin-catalog-backend` (1.12.4 → [1.13.0](../../changelogs/@backstage/plugin-catalog-backend.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`62f448edb0b5`](https://github.com/backstage/backstage/commit/62f448edb0b5): Allow configuring the processing interval in your app-config, under the `catalog.processingInterval` key.
+- [`09cfc3cf467d`](https://github.com/backstage/backstage/commit/09cfc3cf467d): set azure annotation `dev.azure.com/project-repo` in `AnnotateScmSlugEntityProcessor` to find the project and repo information for the repos that contains `dev.azure.com` in the url
+
+##### Patch Changes
+
+- [`149361e81622`](https://github.com/backstage/backstage/commit/149361e81622): Fix to the `limit` parameter on entity queries.
+- [`1fd2109739c1`](https://github.com/backstage/backstage/commit/1fd2109739c1): Changed the processing loop task pipeline implementation from recursive to iterative
+- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
+
+  For example, if you are currently importing the plugin using the following pattern:
+
+  ```ts
+  import { examplePlugin } from '@backstage/plugin-example-backend';
+
+  backend.add(examplePlugin);
+  ```
+
+  It should be migrated to this:
+
+  ```ts
+  backend.add(import('@backstage/plugin-example-backend'));
+  ```
+
+- [`0f8a97777489`](https://github.com/backstage/backstage/commit/0f8a97777489): Update OpenAPI schema to relax the encoding validation of all request parameters.
+- [`0198aa596fd9`](https://github.com/backstage/backstage/commit/0198aa596fd9): Fixed a link to the frontend Backstage plugin that had pointed to itself.
+- [`2d32d8a611e3`](https://github.com/backstage/backstage/commit/2d32d8a611e3): Fixed validation of the `fullTextFilterFields` query parameter.
+- [`acffa17027b6`](https://github.com/backstage/backstage/commit/acffa17027b6): Added some examples to the catalog OpenAPI definition
+- [`45947d3b2759`](https://github.com/backstage/backstage/commit/45947d3b2759): Fixes an issue where `order` was not a recognized parameter for the `/entities` endpoint.
+- [`41d1b2d628ea`](https://github.com/backstage/backstage/commit/41d1b2d628ea): Fix OpenAPI schema for the facets endpoint
+- [`618257f3e413`](https://github.com/backstage/backstage/commit/618257f3e413): Fix issue with `catalogFileName` not being a required property for `/analyze-location`
+- [`cfc3ca6ce060`](https://github.com/backstage/backstage/commit/cfc3ca6ce060): Changes needed to support MySQL
+- [`814feeed7343`](https://github.com/backstage/backstage/commit/814feeed7343): Update to handle invalid luxon values
+
+### `@backstage/plugin-scaffolder` (1.14.4 → [1.15.0](../../changelogs/@backstage/plugin-scaffolder.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`0119c326394a`](https://github.com/backstage/backstage/commit/0119c326394a): adding a .zip download to dry run results page, including zip.js as dependency
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`6e69c11a3535`](https://github.com/backstage/backstage/commit/6e69c11a3535): Restored functionality to `OwnedEntityPicker` by converting deprecated `ui:options` input to `catalogFilter`.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+- [`b16c341ced45`](https://github.com/backstage/backstage/commit/b16c341ced45): Updated dependency `@rjsf/utils` to `5.13.0`.
+  Updated dependency `@rjsf/core-v5` to `npm:@rjsf/core@5.13.0`.
+  Updated dependency `@rjsf/material-ui-v5` to `npm:@rjsf/material-ui@5.13.0`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.13.0`.
+
+### `@backstage/plugin-scaffolder-backend` (1.16.5 → [1.17.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1170))
+
+#### 1.17.0
+
+##### Minor Changes
+
+- [`b5f239b50bcf`](https://github.com/backstage/backstage/commit/b5f239b50bcf): Improved the `parseEntityRef` Scaffolder filter by introducing the ability for users to provide default kind and/or namespace values. The filter now takes
+  2 arguments, similarly to the original [parseEntityRef](https://github.com/backstage/backstage/blob/v1.17.2/packages/catalog-model/src/entity/ref.ts#L77).
+- [`d5313ede3529`](https://github.com/backstage/backstage/commit/d5313ede3529): **DEPRECATION**: Deprecated `ScaffolderEntitiesProcessor`, which should now instead be imported from `@backstage/plugin-catalog-backend-module-scaffolder-entity-model`.
+
+  `catalogModuleTemplateKind` was also moved to that package and renamed to `catalogModuleScaffolderEntityModel`, without any deprecation since it was an alpha export.
+
+##### Patch Changes
+
+- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
+
+  For example, if you are currently importing the plugin using the following pattern:
+
+  ```ts
+  import { examplePlugin } from '@backstage/plugin-example-backend';
+
+  backend.add(examplePlugin);
+  ```
+
+  It should be migrated to this:
+
+  ```ts
+  backend.add(import('@backstage/plugin-example-backend'));
+  ```
+
+- [`a4989552d828`](https://github.com/backstage/backstage/commit/a4989552d828): Add examples for `publish:github` and `publish:gitlab` scaffolder actions.
+- [`ded27b83ead2`](https://github.com/backstage/backstage/commit/ded27b83ead2): Add examples for `publish:bitbucket` scaffolder actions.
+- [`5f1a92b9f19f`](https://github.com/backstage/backstage/commit/5f1a92b9f19f): Use `DefaultAzureDevOpsCredentialsProvider` to retrieve credentials for Azure DevOps.
+- [`fb57a4694fc6`](https://github.com/backstage/backstage/commit/fb57a4694fc6): Fixed the plugin and module ID of the alpha `catalogModuleTemplateKind` export.
+- [`f3c0b95e3ef1`](https://github.com/backstage/backstage/commit/f3c0b95e3ef1): Add examples for `github:actions:dispatch` scaffolder actions.
+- [`cfc3ca6ce060`](https://github.com/backstage/backstage/commit/cfc3ca6ce060): Changes needed to support MySQL
+- [`814feeed7343`](https://github.com/backstage/backstage/commit/814feeed7343): Update to handle invalid luxon values
+
+### `@backstage/plugin-search` (1.3.6 → [1.4.0](../../changelogs/@backstage/plugin-search.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`b78f570f44d3`](https://github.com/backstage/backstage/commit/b78f570f44d3): The SearchPage component can now be configured via app-config.yaml with default query parameters to define how it behaves when it is first loaded or reset. Check out the following example:
+
+  ```yaml
+  search:
+    query:
+      pageLimit: 50
+  ```
+
+  Acceptable values for `pageLimit` are `10`, `25`, `50` or `100`.
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/plugin-search-react` (1.6.4 → [1.7.0](../../changelogs/@backstage/plugin-search-react.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`b78f570f44d3`](https://github.com/backstage/backstage/commit/b78f570f44d3): The SearchPage component can now be configured via app-config.yaml with default query parameters to define how it behaves when it is first loaded or reset. Check out the following example:
+
+  ```yaml
+  search:
+    query:
+      pageLimit: 50
+  ```
+
+  Acceptable values for `pageLimit` are `10`, `25`, `50` or `100`.
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`45f8a95e1068`](https://github.com/backstage/backstage/commit/45f8a95e1068): Optionally initializes the search context with default settings for search queries only when the config is defined, rather than always overriding it.
+- [`3d63e60f3c36`](https://github.com/backstage/backstage/commit/3d63e60f3c36): Internal restructure to avoid circular imports
+
+### `@backstage/plugin-techdocs` (1.6.8 → [1.7.0](../../changelogs/@backstage/plugin-techdocs.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`e44f45ac4515`](https://github.com/backstage/backstage/commit/e44f45ac4515): This change allows a new annotation of `backstage.io/techdocs-entity` this ref allows you to reference another entity for its TechDocs. This allows you have a single TechDoc for all items in a system, for example you might have a frontend and a backend in the same repo. This would allow you to have TechDocs build under a `System` entity while referencing the system e.g.: `backstage.io/techdocs-entity: system:default/example` that will show the systems docs in both the TechDocs button and the TechDocs tab without needing to do duplicate builds and filling the TechDocs page with garbage.
+
+##### Patch Changes
+
+- [`88c9525a36f3`](https://github.com/backstage/backstage/commit/88c9525a36f3): Fixed bug in styles that caused next and previous links in footer to overlap page content.
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/plugin-techdocs-backend` (1.6.7 → [1.7.0](../../changelogs/@backstage/plugin-techdocs-backend.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`5985d458ee30`](https://github.com/backstage/backstage/commit/5985d458ee30): Add a `techdocs.publisher.azureBlobStorage.connectionString` app-config setting, which can be leveraged for improved Azurite support.
+- [`10a86bd4ae12`](https://github.com/backstage/backstage/commit/10a86bd4ae12): Add optional config and cli option for techdocs to specify default mkdocs plugins.
+
+##### Patch Changes
+
+- [`60af8017dd84`](https://github.com/backstage/backstage/commit/60af8017dd84): Expand techdocs.publisher.type with `googleGcs`,`awsS3`,`azureBlobStorage` and `openStackSwift`
+- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
+
+  For example, if you are currently importing the plugin using the following pattern:
+
+  ```ts
+  import { examplePlugin } from '@backstage/plugin-example-backend';
+
+  backend.add(examplePlugin);
+  ```
+
+  It should be migrated to this:
+
+  ```ts
+  backend.add(import('@backstage/plugin-example-backend'));
+  ```
+
+- [`a8a614ba0d07`](https://github.com/backstage/backstage/commit/a8a614ba0d07): Minor `package.json` update.
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.18 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`86c19906fe4b`](https://github.com/backstage/backstage/commit/86c19906fe4b): Enable zoom icon for techdocs images inside lightbox
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/plugin-techdocs-node` (1.7.6 → [1.8.0](../../changelogs/@backstage/plugin-techdocs-node.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`5985d458ee30`](https://github.com/backstage/backstage/commit/5985d458ee30): Add a `techdocs.publisher.azureBlobStorage.connectionString` app-config setting, which can be leveraged for improved Azurite support.
+- [`10a86bd4ae12`](https://github.com/backstage/backstage/commit/10a86bd4ae12): Add optional config and cli option for techdocs to specify default mkdocs plugins.
+
+### `@techdocs/cli` (1.4.7 → [1.5.0](../../changelogs/@techdocs/cli.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`10a86bd4ae12`](https://github.com/backstage/backstage/commit/10a86bd4ae12): Add optional config and cli option for techdocs to specify default mkdocs plugins.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.4.2 → [1.4.3](../../changelogs/@backstage/app-defaults.md#143))
+
+#### 1.4.3
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/catalog-client` (1.4.3 → [1.4.4](../../changelogs/@backstage/catalog-client.md#144))
+
+#### 1.4.4
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/catalog-model` (1.4.1 → [1.4.2](../../changelogs/@backstage/catalog-model.md#142))
+
+#### 1.4.2
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/dev-utils` (1.0.20 → [1.0.21](../../changelogs/@backstage/dev-utils.md#1021))
+
+#### 1.0.21
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/errors` (1.2.1 → [1.2.2](../../changelogs/@backstage/errors.md#122))
+
+#### 1.2.2
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/integration-react` (1.1.18 → [1.1.19](../../changelogs/@backstage/integration-react.md#1119))
+
+#### 1.1.19
+
+##### Patch Changes
+
+- [`482bb5c0bbf8`](https://github.com/backstage/backstage/commit/482bb5c0bbf8): Moved `@types/react` to be a regular dependency
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/plugin-catalog-common` (1.0.15 → [1.0.16](../../changelogs/@backstage/plugin-catalog-common.md#1016))
+
+#### 1.0.16
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/plugin-catalog-react` (1.8.3 → [1.8.4](../../changelogs/@backstage/plugin-catalog-react.md#184))
+
+#### 1.8.4
+
+##### Patch Changes
+
+- [`bd817209ddd7`](https://github.com/backstage/backstage/commit/bd817209ddd7): Export the `EntityAutocompletePicker` component.
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`7029ba1ce0af`](https://github.com/backstage/backstage/commit/7029ba1ce0af): Added delete alert popup when user delete the entity
+
+### `@backstage/plugin-dynatrace` (7.0.3 → [7.0.4](../../changelogs/@backstage/plugin-dynatrace.md#704))
+
+#### 7.0.4
+
+##### Patch Changes
+
+- [`482bb5c0bbf8`](https://github.com/backstage/backstage/commit/482bb5c0bbf8): Moved `@types/react` to be a regular dependency
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/plugin-scaffolder-common` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-scaffolder-common.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/plugin-scaffolder-react` (1.5.4 → [1.5.5](../../changelogs/@backstage/plugin-scaffolder-react.md#155))
+
+#### 1.5.5
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`b16c341ced45`](https://github.com/backstage/backstage/commit/b16c341ced45): Updated dependency `@rjsf/utils` to `5.13.0`.
+  Updated dependency `@rjsf/core-v5` to `npm:@rjsf/core@5.13.0`.
+  Updated dependency `@rjsf/material-ui-v5` to `npm:@rjsf/material-ui@5.13.0`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.13.0`.
+- [`27fef07f9229`](https://github.com/backstage/backstage/commit/27fef07f9229): Updated dependency `use-immer` to `^0.9.0`.
+
+### `@backstage/plugin-search-backend` (1.4.2 → [1.4.3](../../changelogs/@backstage/plugin-search-backend.md#143))
+
+#### 1.4.3
+
+##### Patch Changes
+
+- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
+
+  For example, if you are currently importing the plugin using the following pattern:
+
+  ```ts
+  import { examplePlugin } from '@backstage/plugin-example-backend';
+
+  backend.add(examplePlugin);
+  ```
+
+  It should be migrated to this:
+
+  ```ts
+  backend.add(import('@backstage/plugin-example-backend'));
+  ```
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.5 → [1.3.6](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#136))
+
+#### 1.3.6
+
+##### Patch Changes
+
+- [`71114ac50e02`](https://github.com/backstage/backstage/commit/71114ac50e02): The export for the new backend system has been moved to be the `default` export.
+
+  For example, if you are currently importing the plugin using the following pattern:
+
+  ```ts
+  import { examplePlugin } from '@backstage/plugin-example-backend';
+
+  backend.add(examplePlugin);
+  ```
+
+  It should be migrated to this:
+
+  ```ts
+  backend.add(import('@backstage/plugin-example-backend'));
+  ```
+
+### `@backstage/plugin-search-common` (1.2.5 → [1.2.6](../../changelogs/@backstage/plugin-search-common.md#126))
+
+#### 1.2.6
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.20 → [1.0.21](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1021))
+
+#### 1.0.21
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+- [`8cec7664e146`](https://github.com/backstage/backstage/commit/8cec7664e146): Removed `@types/node` dependency
+
+### `@backstage/plugin-techdocs-react` (1.1.9 → [1.1.11](../../changelogs/@backstage/plugin-techdocs-react.md#1111))
+
+#### 1.1.11
+
+##### Patch Changes
+
+- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
+
+#### 1.1.10
+
+Skipped due to publishing issues.
+
 ### `@backstage/test-utils` (1.4.2 → [1.4.3](../../changelogs/@backstage/test-utils.md#143))
 
 #### 1.4.3
@@ -3011,14 +3023,6 @@ Skipped due to publishing issues.
 - [`9ceb6195275a`](https://github.com/backstage/backstage/commit/9ceb6195275a): Add support for React Testing Library 13+, and thus React 18.
 
   We're exposing an additional option to the `render*` methods to enable the [`legacyRoot`](https://testing-library.com/docs/react-testing-library/api/#legacyroot) flow.
-
-### `@backstage/theme` (0.4.1 → [0.4.2](../../changelogs/@backstage/theme.md#042))
-
-#### 0.4.2
-
-##### Patch Changes
-
-- [`406b786a2a2c`](https://github.com/backstage/backstage/commit/406b786a2a2c): Mark package as being free of side effects, allowing more optimized Webpack builds.
 
 ### `@backstage/types` (1.1.0 → [1.1.1](../../changelogs/@backstage/types.md#111))
 

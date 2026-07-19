@@ -1,14 +1,15 @@
 # Backstage Release 1.34.0 changelog
 
-Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
+Changes between 1.33.6 and 1.34.0 — 0 added, 0 removed, 167 upgraded, 10 unchanged packages.
 
 ## Summary
 
 - [Breaking changes](#breaking-changes): 5 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 8 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 45 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
-- [Other patch version bumps](#other-patch-version-bumps): 57 packages
+- [Other patch version bumps](#other-patch-version-bumps): 12 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 85 packages
 
 ## Table of contents
@@ -30,27 +31,12 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
   - [`@backstage/repo-tools` (0.11.1 → 0.12.0)](#backstagerepo-tools-0111--0120)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/release-manifests` (0.0.11 → 0.0.12)](#backstagerelease-manifests-0011--0012)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-app-api` (1.0.2 → 1.1.0)](#backstagebackend-app-api-102--110)
-  - [`@backstage/backend-plugin-api` (1.0.2 → 1.1.0)](#backstagebackend-plugin-api-102--110)
-  - [`@backstage/catalog-client` (1.8.0 → 1.9.0)](#backstagecatalog-client-180--190)
-  - [`@backstage/integration` (1.15.2 → 1.16.0)](#backstageintegration-1152--1160)
-  - [`@backstage/plugin-catalog` (1.25.1 → 1.26.0)](#backstageplugin-catalog-1251--1260)
-  - [`@backstage/plugin-catalog-backend` (1.28.0 → 1.29.0)](#backstageplugin-catalog-backend-1280--1290)
-  - [`@backstage/plugin-catalog-node` (1.14.0 → 1.15.0)](#backstageplugin-catalog-node-1140--1150)
-  - [`@backstage/plugin-catalog-react` (1.14.2 → 1.15.0)](#backstageplugin-catalog-react-1142--1150)
-  - [`@backstage/plugin-scaffolder-backend` (1.27.2 → 1.28.0)](#backstageplugin-scaffolder-backend-1272--1280)
-  - [`@backstage/plugin-search-backend` (1.7.0 → 1.8.0)](#backstageplugin-search-backend-170--180)
-  - [`@backstage/plugin-techdocs` (1.11.2 → 1.12.0)](#backstageplugin-techdocs-1112--1120)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.29.3 → 0.29.4)](#backstagecli-0293--0294)
   - [`@backstage/cli-node` (0.2.10 → 0.2.11)](#backstagecli-node-0210--0211)
-  - [`@backstage/config-loader` (1.9.2 → 1.9.3)](#backstageconfig-loader-192--193)
-  - [`@backstage/core-app-api` (1.15.2 → 1.15.3)](#backstagecore-app-api-1152--1153)
   - [`@backstage/core-compat-api` (0.3.3 → 0.3.4)](#backstagecore-compat-api-033--034)
   - [`@backstage/core-components` (0.16.1 → 0.16.2)](#backstagecore-components-0161--0162)
   - [`@backstage/create-app` (0.5.22 → 0.5.23)](#backstagecreate-app-0522--0523)
-  - [`@backstage/errors` (1.2.5 → 1.2.6)](#backstageerrors-125--126)
   - [`@backstage/frontend-plugin-api` (0.9.2 → 0.9.3)](#backstagefrontend-plugin-api-092--093)
   - [`@backstage/plugin-api-docs` (0.12.1 → 0.12.2)](#backstageplugin-api-docs-0121--0122)
   - [`@backstage/plugin-app` (0.1.3 → 0.1.4)](#backstageplugin-app-013--014)
@@ -76,7 +62,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
   - [`@backstage/plugin-permission-backend` (0.5.51 → 0.5.52)](#backstageplugin-permission-backend-0551--0552)
   - [`@backstage/plugin-permission-node` (0.8.5 → 0.8.6)](#backstageplugin-permission-node-085--086)
   - [`@backstage/plugin-proxy-backend` (0.5.8 → 0.5.9)](#backstageplugin-proxy-backend-058--059)
-  - [`@backstage/plugin-scaffolder` (1.27.1 → 1.27.2)](#backstageplugin-scaffolder-1271--1272)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.4 → 0.3.5)](#backstageplugin-scaffolder-backend-module-bitbucket-034--035)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.3 → 0.2.4)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-023--024)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.3 → 0.2.4)](#backstageplugin-scaffolder-backend-module-bitbucket-server-023--024)
@@ -85,21 +70,38 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-gitea` (0.2.3 → 0.2.4)](#backstageplugin-scaffolder-backend-module-gitea-023--024)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.5.3 → 0.5.4)](#backstageplugin-scaffolder-backend-module-github-053--054)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.2.3 → 0.2.4)](#backstageplugin-scaffolder-backend-module-sentry-023--024)
-  - [`@backstage/plugin-scaffolder-common` (1.5.7 → 1.5.8)](#backstageplugin-scaffolder-common-157--158)
   - [`@backstage/plugin-scaffolder-node` (0.6.1 → 0.6.2)](#backstageplugin-scaffolder-node-061--062)
-  - [`@backstage/plugin-scaffolder-react` (1.14.1 → 1.14.2)](#backstageplugin-scaffolder-react-1141--1142)
-  - [`@backstage/plugin-search` (1.4.20 → 1.4.21)](#backstageplugin-search-1420--1421)
   - [`@backstage/plugin-search-backend-module-catalog` (0.2.5 → 0.2.6)](#backstageplugin-search-backend-module-catalog-025--026)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.6.2 → 1.6.3)](#backstageplugin-search-backend-module-elasticsearch-162--163)
   - [`@backstage/plugin-search-backend-module-explore` (0.2.5 → 0.2.6)](#backstageplugin-search-backend-module-explore-025--026)
   - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.3.3 → 0.3.4)](#backstageplugin-search-backend-module-stack-overflow-collator-033--034)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.3.3 → 0.3.4)](#backstageplugin-search-backend-module-techdocs-033--034)
+  - [`@backstage/plugin-signals-backend` (0.2.3 → 0.2.4)](#backstageplugin-signals-backend-023--024)
+  - [`@backstage/theme` (0.6.2 → 0.6.3)](#backstagetheme-062--063)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-app-api` (1.0.2 → 1.1.0)](#backstagebackend-app-api-102--110)
+  - [`@backstage/backend-plugin-api` (1.0.2 → 1.1.0)](#backstagebackend-plugin-api-102--110)
+  - [`@backstage/catalog-client` (1.8.0 → 1.9.0)](#backstagecatalog-client-180--190)
+  - [`@backstage/integration` (1.15.2 → 1.16.0)](#backstageintegration-1152--1160)
+  - [`@backstage/plugin-catalog` (1.25.1 → 1.26.0)](#backstageplugin-catalog-1251--1260)
+  - [`@backstage/plugin-catalog-backend` (1.28.0 → 1.29.0)](#backstageplugin-catalog-backend-1280--1290)
+  - [`@backstage/plugin-catalog-node` (1.14.0 → 1.15.0)](#backstageplugin-catalog-node-1140--1150)
+  - [`@backstage/plugin-catalog-react` (1.14.2 → 1.15.0)](#backstageplugin-catalog-react-1142--1150)
+  - [`@backstage/plugin-scaffolder-backend` (1.27.2 → 1.28.0)](#backstageplugin-scaffolder-backend-1272--1280)
+  - [`@backstage/plugin-search-backend` (1.7.0 → 1.8.0)](#backstageplugin-search-backend-170--180)
+  - [`@backstage/plugin-techdocs` (1.11.2 → 1.12.0)](#backstageplugin-techdocs-1112--1120)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/config-loader` (1.9.2 → 1.9.3)](#backstageconfig-loader-192--193)
+  - [`@backstage/core-app-api` (1.15.2 → 1.15.3)](#backstagecore-app-api-1152--1153)
+  - [`@backstage/errors` (1.2.5 → 1.2.6)](#backstageerrors-125--126)
+  - [`@backstage/plugin-scaffolder` (1.27.1 → 1.27.2)](#backstageplugin-scaffolder-1271--1272)
+  - [`@backstage/plugin-scaffolder-common` (1.5.7 → 1.5.8)](#backstageplugin-scaffolder-common-157--158)
+  - [`@backstage/plugin-scaffolder-react` (1.14.1 → 1.14.2)](#backstageplugin-scaffolder-react-1141--1142)
+  - [`@backstage/plugin-search` (1.4.20 → 1.4.21)](#backstageplugin-search-1420--1421)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.6.2 → 1.6.3)](#backstageplugin-search-backend-module-elasticsearch-162--163)
   - [`@backstage/plugin-search-backend-node` (1.3.5 → 1.3.6)](#backstageplugin-search-backend-node-135--136)
   - [`@backstage/plugin-search-react` (1.8.3 → 1.8.4)](#backstageplugin-search-react-183--184)
-  - [`@backstage/plugin-signals-backend` (0.2.3 → 0.2.4)](#backstageplugin-signals-backend-023--024)
   - [`@backstage/plugin-techdocs-backend` (1.11.3 → 1.11.4)](#backstageplugin-techdocs-backend-1113--1114)
   - [`@backstage/plugin-techdocs-node` (1.12.14 → 1.12.15)](#backstageplugin-techdocs-node-11214--11215)
-  - [`@backstage/theme` (0.6.2 → 0.6.3)](#backstagetheme-062--063)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Breaking changes
@@ -326,160 +328,7 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 - [`2e140dc`](https://github.com/backstage/backstage/commit/2e140dc): Switch to native fetch for loading release manifests
 - [`b29eaea`](https://github.com/backstage/backstage/commit/b29eaea): Allow overriding the fetch function used inside getManifestByVersion
 
-## Other minor version bumps
-
-### `@backstage/backend-app-api` (1.0.2 → [1.1.0](../../changelogs/@backstage/backend-app-api.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`ebf083d`](https://github.com/backstage/backstage/commit/ebf083d): Service factories added by feature loaders now have lower priority and will be ignored if a factory for the same service is added directly by `backend.add(serviceFactory)`.
-- [`12eac85`](https://github.com/backstage/backstage/commit/12eac85): **EXPERIMENTAL**: Adds a new `instanceMetadataService` to hold information about a specific backend instance.
-
-##### Patch Changes
-
-- [`eef3ef1`](https://github.com/backstage/backstage/commit/eef3ef1): Removed unused `express` dependencies.
-- [`ae2408b`](https://github.com/backstage/backstage/commit/ae2408b): Add a `toString` on the default `BackendFeatureMeta` implementations
-- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
-- [`0e9c9fa`](https://github.com/backstage/backstage/commit/0e9c9fa): As soon as a backend termination signal is received, call before shutting down root lifecycle hooks.
-
-### `@backstage/backend-plugin-api` (1.0.2 → [1.1.0](../../changelogs/@backstage/backend-plugin-api.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`12eac85`](https://github.com/backstage/backstage/commit/12eac85): **EXPERIMENTAL**: Adds a new `instanceMetadataService` to hold information about a specific backend instance.
-
-##### Patch Changes
-
-- [`eef3ef1`](https://github.com/backstage/backstage/commit/eef3ef1): Removed unused `express` dependencies.
-- [`0e9c9fa`](https://github.com/backstage/backstage/commit/0e9c9fa): The `RootLifecycleService` now has a new `addBeforeShutdownHook` method, and hooks added through this method will run immediately when a termination event is received.
-
-  The backend will not proceed with the shutdown and run the `Shutdown` hooks until all `BeforeShutdown` hooks have completed.
-
-### `@backstage/catalog-client` (1.8.0 → [1.9.0](../../changelogs/@backstage/catalog-client.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`384e494`](https://github.com/backstage/backstage/commit/384e494): Internal updates to generated code.
-
-##### Patch Changes
-
-- [`d7e7836`](https://github.com/backstage/backstage/commit/d7e7836): Fixed a bug in the `queryEntities` method where errors were not being handled properly.
-
-### `@backstage/integration` (1.15.2 → [1.16.0](../../changelogs/@backstage/integration.md#1160))
-
-#### 1.16.0
-
-##### Minor Changes
-
-- [`277092a`](https://github.com/backstage/backstage/commit/277092a): Add the integration for Azure blob storage to read the credentials to access the storage account and provide the default credential provider.
-
-### `@backstage/plugin-catalog` (1.25.1 → [1.26.0](../../changelogs/@backstage/plugin-catalog.md#1260))
-
-#### 1.26.0
-
-##### Minor Changes
-
-- [`25beb82`](https://github.com/backstage/backstage/commit/25beb82): Adds an optional columns attribute to HasSubdomainsCardProps and changes its default columns
-- [`39f1abc`](https://github.com/backstage/backstage/commit/39f1abc): Consistent title behaviour across CatalogTable, CursorPaginatedCatalogTable, and OffsetPaginatedCatalogTable.
-- [`1ffb9f3`](https://github.com/backstage/backstage/commit/1ffb9f3): Update `CatalogTable` title to use properly capitalized Kind facets (e.g. 'Component' instead of 'component')
-
-### `@backstage/plugin-catalog-backend` (1.28.0 → [1.29.0](../../changelogs/@backstage/plugin-catalog-backend.md#1290))
-
-#### 1.29.0
-
-##### Minor Changes
-
-- [`02bd2cb`](https://github.com/backstage/backstage/commit/02bd2cb): Added a new `catalog.disableRelationsCompatibility` configuration option that avoids JSON deserialization and serialization if possible when reading entities. This significantly reduces the memory usage of the catalog, and slightly increases performance, but it removes the backwards compatibility processing that ensures that both `entity.relation[].target` and `entity.relation[].targetRef` are present in returned entities.
-- [`c1307b4`](https://github.com/backstage/backstage/commit/c1307b4): Implement `/entities` in terms of `queryEntities` to not run into memory and performance problems on large catalogs
-- [`384e494`](https://github.com/backstage/backstage/commit/384e494): Internal updates to generated code.
-- [`1d0bc11`](https://github.com/backstage/backstage/commit/1d0bc11): Fetch all facets in a single database query
-
-##### Patch Changes
-
-- [`dfc8b41`](https://github.com/backstage/backstage/commit/dfc8b41): Updated dependency `@opentelemetry/api` to `^1.9.0`.
-- [`8013c9c`](https://github.com/backstage/backstage/commit/8013c9c): Perform the by-query count inlined with the main query
-- [`feba9ee`](https://github.com/backstage/backstage/commit/feba9ee): Internal refactor of filter parsing logic.
-- [`1fdb48e`](https://github.com/backstage/backstage/commit/1fdb48e): Use a faster count method on pg when computing some metrics
-- [`e4aab10`](https://github.com/backstage/backstage/commit/e4aab10): Fix a bug where sometimes the `by-query` endpoint could return nulls for entities that were not yet stitched.
-- [`f159b25`](https://github.com/backstage/backstage/commit/f159b25): Compute deltas more efficiently, which generally leads to less wasted processing cycles
-- [`0c33465`](https://github.com/backstage/backstage/commit/0c33465): Implement `/entities/by-name/:kind/:namespace/:name` using `getEntitiesByRefs`
-- [`56511ba`](https://github.com/backstage/backstage/commit/56511ba): Be more aggressive in dequeueing entities for stitching
-- [`71152e3`](https://github.com/backstage/backstage/commit/71152e3): Correctly report stitching queue length
-- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
-- [`d93390d`](https://github.com/backstage/backstage/commit/d93390d): When parsing filters, do not make redundant `anyOf` and `allOf` nodes when there's only a single entry within them
-- [`3ab57c6`](https://github.com/backstage/backstage/commit/3ab57c6): Support changing location keys on existing entities, in delta mutations
-- [`24ecea8`](https://github.com/backstage/backstage/commit/24ecea8): Avoid extra ordering in by-query when the user doesn't ask for it
-- [`2924ffe`](https://github.com/backstage/backstage/commit/2924ffe): Compute some metrics using search table facet aggregations instead of reading the full refresh state
-
-### `@backstage/plugin-catalog-node` (1.14.0 → [1.15.0](../../changelogs/@backstage/plugin-catalog-node.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`8edc4cd`](https://github.com/backstage/backstage/commit/8edc4cd): Updated the `catalogServiceMock` return type to match both `CatalogService` and `CatalogApi`
-
-### `@backstage/plugin-catalog-react` (1.14.2 → [1.15.0](../../changelogs/@backstage/plugin-catalog-react.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`1ffb9f3`](https://github.com/backstage/backstage/commit/1ffb9f3): Update `EntityKindFilter` to include a `label` field with the properly capitalized Kind facet string
-- [`ceaf602`](https://github.com/backstage/backstage/commit/ceaf602): Sort EntityTypePicker by default
-
-##### Patch Changes
-
-- [`d97a2cd`](https://github.com/backstage/backstage/commit/d97a2cd): Fixed an issue causing the `EntityOwnerPicker` to reset scrolling when more elements are loaded.
-- [`c36bd35`](https://github.com/backstage/backstage/commit/c36bd35): Internal refactor to break potential circular imports
-- [`f18c67d`](https://github.com/backstage/backstage/commit/f18c67d): Fix catalog filtering to allow searching entities by display name
-- [`95092a6`](https://github.com/backstage/backstage/commit/95092a6): Fixed an issue where `<CatalogFilterLayout.Filters />` would re-render its children on page load for smaller screens, potentially leading to unnecessary additional backend requests.
-- [`4a43398`](https://github.com/backstage/backstage/commit/4a43398): Fixed an issue where the `EntityOwnerPicker` component failed to load when the `mode` prop was set to `owners-only`. In this mode, the `EntityOwnerPicker` does not load details about the owners, such as `displayName` or `title`. To display these details, use `mode=all` instead.
-
-### `@backstage/plugin-scaffolder-backend` (1.27.2 → [1.28.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1280))
-
-#### 1.28.0
-
-##### Minor Changes
-
-- [`c05a343`](https://github.com/backstage/backstage/commit/c05a343): Emit scaffolder events using the optional `EventsService`
-
-##### Patch Changes
-
-- [`dfc8b41`](https://github.com/backstage/backstage/commit/dfc8b41): Updated dependency `@opentelemetry/api` to `^1.9.0`.
-- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
-- [`6c326cf`](https://github.com/backstage/backstage/commit/6c326cf): The --no-node-snapshot check needs to be done against process.execArgv instead of process.argv
-- [`e913fdf`](https://github.com/backstage/backstage/commit/e913fdf): Add github backend module to create-app and improve error messages
-- [`8f59dc5`](https://github.com/backstage/backstage/commit/8f59dc5): Add fs:readdir to scaffolder startup
-- [`0851834`](https://github.com/backstage/backstage/commit/0851834): Resolved an issue where the `templateManagementPermission` was not being exposed through the `/permissions/metadata` endpoint.
-
-### `@backstage/plugin-search-backend` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-search-backend.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`384e494`](https://github.com/backstage/backstage/commit/384e494): Internal updates to generated code.
-
-### `@backstage/plugin-techdocs` (1.11.2 → [1.12.0](../../changelogs/@backstage/plugin-techdocs.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`e153ca6`](https://github.com/backstage/backstage/commit/e153ca6): Add pagination support to TechDocs Index Page and make it the default
-
-##### Patch Changes
-
-- [`7d8777d`](https://github.com/backstage/backstage/commit/7d8777d): Added support for the Search bar in docs residing in the entity page tab, and not only the global "/docs" page.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.29.3 → [0.29.4](../../changelogs/@backstage/cli.md#0294))
 
@@ -512,23 +361,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 - [`af665ea`](https://github.com/backstage/backstage/commit/af665ea): add PackageManager and Lockfile interfaces for future use
 - [`cbfc69e`](https://github.com/backstage/backstage/commit/cbfc69e): Internal refactor
 
-### `@backstage/config-loader` (1.9.2 → [1.9.3](../../changelogs/@backstage/config-loader.md#193))
-
-#### 1.9.3
-
-##### Patch Changes
-
-- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
-
-### `@backstage/core-app-api` (1.15.2 → [1.15.3](../../changelogs/@backstage/core-app-api.md#1153))
-
-#### 1.15.3
-
-##### Patch Changes
-
-- [`e5fa018`](https://github.com/backstage/backstage/commit/e5fa018): The OAuth 2 client implementations will now attempt to refresh the session when the existing session doesn't have the required scopes. The previous behavior was to only try to refresh the session of it was missing, and otherwise directly request a new session. This fixes an issue where some auth providers will not return access tokens with certain scopes unless explicitly requested, leading to an auth popup even if the underlying session already had been granted the requested scopes.
-- [`2830689`](https://github.com/backstage/backstage/commit/2830689): Decrease OAuth2 token refresh grace period
-
 ### `@backstage/core-compat-api` (0.3.3 → [0.3.4](../../changelogs/@backstage/core-compat-api.md#034))
 
 #### 0.3.4
@@ -555,14 +387,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 - [`583f3d4`](https://github.com/backstage/backstage/commit/583f3d4): Updated the template to use `@backstage/cli/config/prettier` instead of `@spotify/prettier-config`.
 - [`e913fdf`](https://github.com/backstage/backstage/commit/e913fdf): Add github backend module to create-app and improve error messages
 - [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
-
-### `@backstage/errors` (1.2.5 → [1.2.6](../../changelogs/@backstage/errors.md#126))
-
-#### 1.2.6
-
-##### Patch Changes
-
-- [`1d4b5b9`](https://github.com/backstage/backstage/commit/1d4b5b9): Trim `error.cause.stack` in addition to `error.stack` when trimming stack traces from serialized errors.
 
 ### `@backstage/frontend-plugin-api` (0.9.2 → [0.9.3](../../changelogs/@backstage/frontend-plugin-api.md#093))
 
@@ -833,20 +657,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 
 - [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
 
-### `@backstage/plugin-scaffolder` (1.27.1 → [1.27.2](../../changelogs/@backstage/plugin-scaffolder.md#1272))
-
-#### 1.27.2
-
-##### Patch Changes
-
-- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
-- [`c4ffd13`](https://github.com/backstage/backstage/commit/c4ffd13): Added the autocomplete feature to GitlabRepoUrlPicker
-- [`9951ba4`](https://github.com/backstage/backstage/commit/9951ba4): Updated dependency `@rjsf/utils` to `5.23.1`.
-  Updated dependency `@rjsf/core` to `5.23.1`.
-  Updated dependency `@rjsf/material-ui` to `5.23.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.23.1`.
-- [`184161f`](https://github.com/backstage/backstage/commit/184161f): Scaffolder field extensions registered with `FormFieldBlueprint` are now collected in the `useCustomFieldExtensions` hook, enabling them for use in the scaffolder.
-
 ### `@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.4 → [0.3.5](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket.md#035))
 
 #### 0.3.5
@@ -916,14 +726,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 
 - [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
 
-### `@backstage/plugin-scaffolder-common` (1.5.7 → [1.5.8](../../changelogs/@backstage/plugin-scaffolder-common.md#158))
-
-#### 1.5.8
-
-##### Patch Changes
-
-- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
-
 ### `@backstage/plugin-scaffolder-node` (0.6.1 → [0.6.2](../../changelogs/@backstage/plugin-scaffolder-node.md#062))
 
 #### 0.6.2
@@ -933,32 +735,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 - [`c4ffd13`](https://github.com/backstage/backstage/commit/c4ffd13): Added the autocomplete feature to GitlabRepoUrlPicker
 - [`1a23421`](https://github.com/backstage/backstage/commit/1a23421): Make sure that isomorphic git push commands are not proxied.
 
-### `@backstage/plugin-scaffolder-react` (1.14.1 → [1.14.2](../../changelogs/@backstage/plugin-scaffolder-react.md#1142))
-
-#### 1.14.2
-
-##### Patch Changes
-
-- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
-- [`c4ffd13`](https://github.com/backstage/backstage/commit/c4ffd13): Added the autocomplete feature to GitlabRepoUrlPicker
-- [`28e286f`](https://github.com/backstage/backstage/commit/28e286f): Added test coverage selectors to TemplateCard and its sub-components
-- [`c846d76`](https://github.com/backstage/backstage/commit/c846d76): Updated dependency `flatted` to `3.3.2`.
-- [`9951ba4`](https://github.com/backstage/backstage/commit/9951ba4): Updated dependency `@rjsf/utils` to `5.23.1`.
-  Updated dependency `@rjsf/core` to `5.23.1`.
-  Updated dependency `@rjsf/material-ui` to `5.23.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.23.1`.
-- [`97a13ad`](https://github.com/backstage/backstage/commit/97a13ad): Improve performance of typing into scaffolder secret widget
-- [`184161f`](https://github.com/backstage/backstage/commit/184161f): Scaffolder field extensions registered with `FormFieldBlueprint` are now collected in the `useCustomFieldExtensions` hook, enabling them for use in the scaffolder.
-- [`b21a5ae`](https://github.com/backstage/backstage/commit/b21a5ae): Open links in the scaffolder entity and step descriptions in a new tab, to ensure consistency and improve user experience
-
-### `@backstage/plugin-search` (1.4.20 → [1.4.21](../../changelogs/@backstage/plugin-search.md#1421))
-
-#### 1.4.21
-
-##### Patch Changes
-
-- [`d311c84`](https://github.com/backstage/backstage/commit/d311c84): Use Select from core-components and update Lifecycle filter to use Select instead checkboxes.
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.2.5 → [0.2.6](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#026))
 
 #### 0.2.6
@@ -966,14 +742,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 ##### Patch Changes
 
 - [`ed0aaec`](https://github.com/backstage/backstage/commit/ed0aaec): Update README
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.6.2 → [1.6.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#163))
-
-#### 1.6.3
-
-##### Patch Changes
-
-- [`991c9fe`](https://github.com/backstage/backstage/commit/991c9fe): Update the ElasticSearchSearchEngine translator to handle phrase searches.
 
 ### `@backstage/plugin-search-backend-module-explore` (0.2.5 → [0.2.6](../../changelogs/@backstage/plugin-search-backend-module-explore.md#026))
 
@@ -1001,6 +769,259 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 - [`ed0aaec`](https://github.com/backstage/backstage/commit/ed0aaec): Update README
 - [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
 
+### `@backstage/plugin-signals-backend` (0.2.3 → [0.2.4](../../changelogs/@backstage/plugin-signals-backend.md#024))
+
+#### 0.2.4
+
+##### Patch Changes
+
+- [`1e624ca`](https://github.com/backstage/backstage/commit/1e624ca): Restrict `@types/express` version range from `*` to `^4.17.6`.
+- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
+
+### `@backstage/theme` (0.6.2 → [0.6.3](../../changelogs/@backstage/theme.md#063))
+
+#### 0.6.3
+
+##### Patch Changes
+
+- [`5f04976`](https://github.com/backstage/backstage/commit/5f04976): Fixed a bug that caused missing code in published packages.
+
+## Other minor version bumps
+
+### `@backstage/backend-app-api` (1.0.2 → [1.1.0](../../changelogs/@backstage/backend-app-api.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`ebf083d`](https://github.com/backstage/backstage/commit/ebf083d): Service factories added by feature loaders now have lower priority and will be ignored if a factory for the same service is added directly by `backend.add(serviceFactory)`.
+- [`12eac85`](https://github.com/backstage/backstage/commit/12eac85): **EXPERIMENTAL**: Adds a new `instanceMetadataService` to hold information about a specific backend instance.
+
+##### Patch Changes
+
+- [`eef3ef1`](https://github.com/backstage/backstage/commit/eef3ef1): Removed unused `express` dependencies.
+- [`ae2408b`](https://github.com/backstage/backstage/commit/ae2408b): Add a `toString` on the default `BackendFeatureMeta` implementations
+- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
+- [`0e9c9fa`](https://github.com/backstage/backstage/commit/0e9c9fa): As soon as a backend termination signal is received, call before shutting down root lifecycle hooks.
+
+### `@backstage/backend-plugin-api` (1.0.2 → [1.1.0](../../changelogs/@backstage/backend-plugin-api.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`12eac85`](https://github.com/backstage/backstage/commit/12eac85): **EXPERIMENTAL**: Adds a new `instanceMetadataService` to hold information about a specific backend instance.
+
+##### Patch Changes
+
+- [`eef3ef1`](https://github.com/backstage/backstage/commit/eef3ef1): Removed unused `express` dependencies.
+- [`0e9c9fa`](https://github.com/backstage/backstage/commit/0e9c9fa): The `RootLifecycleService` now has a new `addBeforeShutdownHook` method, and hooks added through this method will run immediately when a termination event is received.
+
+  The backend will not proceed with the shutdown and run the `Shutdown` hooks until all `BeforeShutdown` hooks have completed.
+
+### `@backstage/catalog-client` (1.8.0 → [1.9.0](../../changelogs/@backstage/catalog-client.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`384e494`](https://github.com/backstage/backstage/commit/384e494): Internal updates to generated code.
+
+##### Patch Changes
+
+- [`d7e7836`](https://github.com/backstage/backstage/commit/d7e7836): Fixed a bug in the `queryEntities` method where errors were not being handled properly.
+
+### `@backstage/integration` (1.15.2 → [1.16.0](../../changelogs/@backstage/integration.md#1160))
+
+#### 1.16.0
+
+##### Minor Changes
+
+- [`277092a`](https://github.com/backstage/backstage/commit/277092a): Add the integration for Azure blob storage to read the credentials to access the storage account and provide the default credential provider.
+
+### `@backstage/plugin-catalog` (1.25.1 → [1.26.0](../../changelogs/@backstage/plugin-catalog.md#1260))
+
+#### 1.26.0
+
+##### Minor Changes
+
+- [`25beb82`](https://github.com/backstage/backstage/commit/25beb82): Adds an optional columns attribute to HasSubdomainsCardProps and changes its default columns
+- [`39f1abc`](https://github.com/backstage/backstage/commit/39f1abc): Consistent title behaviour across CatalogTable, CursorPaginatedCatalogTable, and OffsetPaginatedCatalogTable.
+- [`1ffb9f3`](https://github.com/backstage/backstage/commit/1ffb9f3): Update `CatalogTable` title to use properly capitalized Kind facets (e.g. 'Component' instead of 'component')
+
+### `@backstage/plugin-catalog-backend` (1.28.0 → [1.29.0](../../changelogs/@backstage/plugin-catalog-backend.md#1290))
+
+#### 1.29.0
+
+##### Minor Changes
+
+- [`02bd2cb`](https://github.com/backstage/backstage/commit/02bd2cb): Added a new `catalog.disableRelationsCompatibility` configuration option that avoids JSON deserialization and serialization if possible when reading entities. This significantly reduces the memory usage of the catalog, and slightly increases performance, but it removes the backwards compatibility processing that ensures that both `entity.relation[].target` and `entity.relation[].targetRef` are present in returned entities.
+- [`c1307b4`](https://github.com/backstage/backstage/commit/c1307b4): Implement `/entities` in terms of `queryEntities` to not run into memory and performance problems on large catalogs
+- [`384e494`](https://github.com/backstage/backstage/commit/384e494): Internal updates to generated code.
+- [`1d0bc11`](https://github.com/backstage/backstage/commit/1d0bc11): Fetch all facets in a single database query
+
+##### Patch Changes
+
+- [`dfc8b41`](https://github.com/backstage/backstage/commit/dfc8b41): Updated dependency `@opentelemetry/api` to `^1.9.0`.
+- [`8013c9c`](https://github.com/backstage/backstage/commit/8013c9c): Perform the by-query count inlined with the main query
+- [`feba9ee`](https://github.com/backstage/backstage/commit/feba9ee): Internal refactor of filter parsing logic.
+- [`1fdb48e`](https://github.com/backstage/backstage/commit/1fdb48e): Use a faster count method on pg when computing some metrics
+- [`e4aab10`](https://github.com/backstage/backstage/commit/e4aab10): Fix a bug where sometimes the `by-query` endpoint could return nulls for entities that were not yet stitched.
+- [`f159b25`](https://github.com/backstage/backstage/commit/f159b25): Compute deltas more efficiently, which generally leads to less wasted processing cycles
+- [`0c33465`](https://github.com/backstage/backstage/commit/0c33465): Implement `/entities/by-name/:kind/:namespace/:name` using `getEntitiesByRefs`
+- [`56511ba`](https://github.com/backstage/backstage/commit/56511ba): Be more aggressive in dequeueing entities for stitching
+- [`71152e3`](https://github.com/backstage/backstage/commit/71152e3): Correctly report stitching queue length
+- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
+- [`d93390d`](https://github.com/backstage/backstage/commit/d93390d): When parsing filters, do not make redundant `anyOf` and `allOf` nodes when there's only a single entry within them
+- [`3ab57c6`](https://github.com/backstage/backstage/commit/3ab57c6): Support changing location keys on existing entities, in delta mutations
+- [`24ecea8`](https://github.com/backstage/backstage/commit/24ecea8): Avoid extra ordering in by-query when the user doesn't ask for it
+- [`2924ffe`](https://github.com/backstage/backstage/commit/2924ffe): Compute some metrics using search table facet aggregations instead of reading the full refresh state
+
+### `@backstage/plugin-catalog-node` (1.14.0 → [1.15.0](../../changelogs/@backstage/plugin-catalog-node.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`8edc4cd`](https://github.com/backstage/backstage/commit/8edc4cd): Updated the `catalogServiceMock` return type to match both `CatalogService` and `CatalogApi`
+
+### `@backstage/plugin-catalog-react` (1.14.2 → [1.15.0](../../changelogs/@backstage/plugin-catalog-react.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`1ffb9f3`](https://github.com/backstage/backstage/commit/1ffb9f3): Update `EntityKindFilter` to include a `label` field with the properly capitalized Kind facet string
+- [`ceaf602`](https://github.com/backstage/backstage/commit/ceaf602): Sort EntityTypePicker by default
+
+##### Patch Changes
+
+- [`d97a2cd`](https://github.com/backstage/backstage/commit/d97a2cd): Fixed an issue causing the `EntityOwnerPicker` to reset scrolling when more elements are loaded.
+- [`c36bd35`](https://github.com/backstage/backstage/commit/c36bd35): Internal refactor to break potential circular imports
+- [`f18c67d`](https://github.com/backstage/backstage/commit/f18c67d): Fix catalog filtering to allow searching entities by display name
+- [`95092a6`](https://github.com/backstage/backstage/commit/95092a6): Fixed an issue where `<CatalogFilterLayout.Filters />` would re-render its children on page load for smaller screens, potentially leading to unnecessary additional backend requests.
+- [`4a43398`](https://github.com/backstage/backstage/commit/4a43398): Fixed an issue where the `EntityOwnerPicker` component failed to load when the `mode` prop was set to `owners-only`. In this mode, the `EntityOwnerPicker` does not load details about the owners, such as `displayName` or `title`. To display these details, use `mode=all` instead.
+
+### `@backstage/plugin-scaffolder-backend` (1.27.2 → [1.28.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1280))
+
+#### 1.28.0
+
+##### Minor Changes
+
+- [`c05a343`](https://github.com/backstage/backstage/commit/c05a343): Emit scaffolder events using the optional `EventsService`
+
+##### Patch Changes
+
+- [`dfc8b41`](https://github.com/backstage/backstage/commit/dfc8b41): Updated dependency `@opentelemetry/api` to `^1.9.0`.
+- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
+- [`6c326cf`](https://github.com/backstage/backstage/commit/6c326cf): The --no-node-snapshot check needs to be done against process.execArgv instead of process.argv
+- [`e913fdf`](https://github.com/backstage/backstage/commit/e913fdf): Add github backend module to create-app and improve error messages
+- [`8f59dc5`](https://github.com/backstage/backstage/commit/8f59dc5): Add fs:readdir to scaffolder startup
+- [`0851834`](https://github.com/backstage/backstage/commit/0851834): Resolved an issue where the `templateManagementPermission` was not being exposed through the `/permissions/metadata` endpoint.
+
+### `@backstage/plugin-search-backend` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-search-backend.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`384e494`](https://github.com/backstage/backstage/commit/384e494): Internal updates to generated code.
+
+### `@backstage/plugin-techdocs` (1.11.2 → [1.12.0](../../changelogs/@backstage/plugin-techdocs.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`e153ca6`](https://github.com/backstage/backstage/commit/e153ca6): Add pagination support to TechDocs Index Page and make it the default
+
+##### Patch Changes
+
+- [`7d8777d`](https://github.com/backstage/backstage/commit/7d8777d): Added support for the Search bar in docs residing in the entity page tab, and not only the global "/docs" page.
+
+## Other patch version bumps
+
+### `@backstage/config-loader` (1.9.2 → [1.9.3](../../changelogs/@backstage/config-loader.md#193))
+
+#### 1.9.3
+
+##### Patch Changes
+
+- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
+
+### `@backstage/core-app-api` (1.15.2 → [1.15.3](../../changelogs/@backstage/core-app-api.md#1153))
+
+#### 1.15.3
+
+##### Patch Changes
+
+- [`e5fa018`](https://github.com/backstage/backstage/commit/e5fa018): The OAuth 2 client implementations will now attempt to refresh the session when the existing session doesn't have the required scopes. The previous behavior was to only try to refresh the session of it was missing, and otherwise directly request a new session. This fixes an issue where some auth providers will not return access tokens with certain scopes unless explicitly requested, leading to an auth popup even if the underlying session already had been granted the requested scopes.
+- [`2830689`](https://github.com/backstage/backstage/commit/2830689): Decrease OAuth2 token refresh grace period
+
+### `@backstage/errors` (1.2.5 → [1.2.6](../../changelogs/@backstage/errors.md#126))
+
+#### 1.2.6
+
+##### Patch Changes
+
+- [`1d4b5b9`](https://github.com/backstage/backstage/commit/1d4b5b9): Trim `error.cause.stack` in addition to `error.stack` when trimming stack traces from serialized errors.
+
+### `@backstage/plugin-scaffolder` (1.27.1 → [1.27.2](../../changelogs/@backstage/plugin-scaffolder.md#1272))
+
+#### 1.27.2
+
+##### Patch Changes
+
+- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
+- [`c4ffd13`](https://github.com/backstage/backstage/commit/c4ffd13): Added the autocomplete feature to GitlabRepoUrlPicker
+- [`9951ba4`](https://github.com/backstage/backstage/commit/9951ba4): Updated dependency `@rjsf/utils` to `5.23.1`.
+  Updated dependency `@rjsf/core` to `5.23.1`.
+  Updated dependency `@rjsf/material-ui` to `5.23.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.23.1`.
+- [`184161f`](https://github.com/backstage/backstage/commit/184161f): Scaffolder field extensions registered with `FormFieldBlueprint` are now collected in the `useCustomFieldExtensions` hook, enabling them for use in the scaffolder.
+
+### `@backstage/plugin-scaffolder-common` (1.5.7 → [1.5.8](../../changelogs/@backstage/plugin-scaffolder-common.md#158))
+
+#### 1.5.8
+
+##### Patch Changes
+
+- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
+
+### `@backstage/plugin-scaffolder-react` (1.14.1 → [1.14.2](../../changelogs/@backstage/plugin-scaffolder-react.md#1142))
+
+#### 1.14.2
+
+##### Patch Changes
+
+- [`3c62a50`](https://github.com/backstage/backstage/commit/3c62a50): Experimental support for `formDecorators` to enable secret collection and mutations to the parameters for scaffolder tasks
+- [`c4ffd13`](https://github.com/backstage/backstage/commit/c4ffd13): Added the autocomplete feature to GitlabRepoUrlPicker
+- [`28e286f`](https://github.com/backstage/backstage/commit/28e286f): Added test coverage selectors to TemplateCard and its sub-components
+- [`c846d76`](https://github.com/backstage/backstage/commit/c846d76): Updated dependency `flatted` to `3.3.2`.
+- [`9951ba4`](https://github.com/backstage/backstage/commit/9951ba4): Updated dependency `@rjsf/utils` to `5.23.1`.
+  Updated dependency `@rjsf/core` to `5.23.1`.
+  Updated dependency `@rjsf/material-ui` to `5.23.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.23.1`.
+- [`97a13ad`](https://github.com/backstage/backstage/commit/97a13ad): Improve performance of typing into scaffolder secret widget
+- [`184161f`](https://github.com/backstage/backstage/commit/184161f): Scaffolder field extensions registered with `FormFieldBlueprint` are now collected in the `useCustomFieldExtensions` hook, enabling them for use in the scaffolder.
+- [`b21a5ae`](https://github.com/backstage/backstage/commit/b21a5ae): Open links in the scaffolder entity and step descriptions in a new tab, to ensure consistency and improve user experience
+
+### `@backstage/plugin-search` (1.4.20 → [1.4.21](../../changelogs/@backstage/plugin-search.md#1421))
+
+#### 1.4.21
+
+##### Patch Changes
+
+- [`d311c84`](https://github.com/backstage/backstage/commit/d311c84): Use Select from core-components and update Lifecycle filter to use Select instead checkboxes.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.6.2 → [1.6.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#163))
+
+#### 1.6.3
+
+##### Patch Changes
+
+- [`991c9fe`](https://github.com/backstage/backstage/commit/991c9fe): Update the ElasticSearchSearchEngine translator to handle phrase searches.
+
 ### `@backstage/plugin-search-backend-node` (1.3.5 → [1.3.6](../../changelogs/@backstage/plugin-search-backend-node.md#136))
 
 #### 1.3.6
@@ -1017,15 +1038,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 
 - [`d311c84`](https://github.com/backstage/backstage/commit/d311c84): Use Select from core-components and update Lifecycle filter to use Select instead checkboxes.
 
-### `@backstage/plugin-signals-backend` (0.2.3 → [0.2.4](../../changelogs/@backstage/plugin-signals-backend.md#024))
-
-#### 0.2.4
-
-##### Patch Changes
-
-- [`1e624ca`](https://github.com/backstage/backstage/commit/1e624ca): Restrict `@types/express` version range from `*` to `^4.17.6`.
-- [`5c9cc05`](https://github.com/backstage/backstage/commit/5c9cc05): Use native fetch instead of node-fetch
-
 ### `@backstage/plugin-techdocs-backend` (1.11.3 → [1.11.4](../../changelogs/@backstage/plugin-techdocs-backend.md#1114))
 
 #### 1.11.4
@@ -1037,14 +1049,6 @@ Changes between 1.33.6 and 1.34.0 — 167 changed and 0 added packages.
 ### `@backstage/plugin-techdocs-node` (1.12.14 → [1.12.15](../../changelogs/@backstage/plugin-techdocs-node.md#11215))
 
 #### 1.12.15
-
-##### Patch Changes
-
-- [`5f04976`](https://github.com/backstage/backstage/commit/5f04976): Fixed a bug that caused missing code in published packages.
-
-### `@backstage/theme` (0.6.2 → [0.6.3](../../changelogs/@backstage/theme.md#063))
-
-#### 0.6.3
 
 ##### Patch Changes
 

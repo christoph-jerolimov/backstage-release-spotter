@@ -1,6 +1,6 @@
 # Backstage Release 1.48.0 changelog
 
-Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
+Changes between 1.47.4 and 1.48.0 — 2 added, 0 removed, 186 upgraded, 6 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 - [Major version bumps](#major-version-bumps): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 12 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 103 packages
 - [Other minor version bumps](#other-minor-version-bumps): 10 packages
-- [Other patch version bumps](#other-patch-version-bumps): 124 packages
+- [Other patch version bumps](#other-patch-version-bumps): 21 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 29 packages
 
 ## Table of contents
@@ -45,19 +46,7 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
   - [`@backstage/plugin-kubernetes-cluster` (0.0.33 → 0.0.34)](#backstageplugin-kubernetes-cluster-0033--0034)
   - [`@backstage/plugin-signals` (0.0.27 → 0.0.28)](#backstageplugin-signals-0027--0028)
   - [`@backstage/plugin-signals-react` (0.0.18 → 0.0.19)](#backstageplugin-signals-react-0018--0019)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-app-api` (1.4.1 → 1.5.0)](#backstagebackend-app-api-141--150)
-  - [`@backstage/backend-plugin-api` (1.6.2 → 1.7.0)](#backstagebackend-plugin-api-162--170)
-  - [`@backstage/backend-test-utils` (1.10.4 → 1.11.0)](#backstagebackend-test-utils-1104--1110)
-  - [`@backstage/catalog-client` (1.12.1 → 1.13.0)](#backstagecatalog-client-1121--1130)
-  - [`@backstage/integration` (1.19.2 → 1.20.0)](#backstageintegration-1192--1200)
-  - [`@backstage/plugin-catalog` (1.32.2 → 1.33.0)](#backstageplugin-catalog-1322--1330)
-  - [`@backstage/plugin-catalog-backend` (3.3.2 → 3.4.0)](#backstageplugin-catalog-backend-332--340)
-  - [`@backstage/plugin-search` (1.5.3 → 1.6.0)](#backstageplugin-search-153--160)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.7.9 → 1.8.0)](#backstageplugin-search-backend-module-elasticsearch-179--180)
-  - [`@backstage/plugin-techdocs` (1.16.2 → 1.17.0)](#backstageplugin-techdocs-1162--1170)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.7.4 → 1.7.5)](#backstageapp-defaults-174--175)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.15.1 → 0.15.2)](#backstagebackend-defaults-0151--0152)
   - [`@backstage/backend-dev-utils` (0.1.6 → 0.1.7)](#backstagebackend-dev-utils-016--017)
   - [`@backstage/backend-dynamic-feature-service` (0.7.8 → 0.7.9)](#backstagebackend-dynamic-feature-service-078--079)
@@ -66,18 +55,13 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
   - [`@backstage/cli-common` (0.1.17 → 0.1.18)](#backstagecli-common-0117--0118)
   - [`@backstage/cli-node` (0.2.17 → 0.2.18)](#backstagecli-node-0217--0218)
   - [`@backstage/codemods` (0.1.53 → 0.1.54)](#backstagecodemods-0153--0154)
-  - [`@backstage/config-loader` (1.10.7 → 1.10.8)](#backstageconfig-loader-1107--1108)
-  - [`@backstage/core-app-api` (1.19.4 → 1.19.5)](#backstagecore-app-api-1194--1195)
   - [`@backstage/core-compat-api` (0.5.7 → 0.5.8)](#backstagecore-compat-api-057--058)
   - [`@backstage/core-components` (0.18.6 → 0.18.7)](#backstagecore-components-0186--0187)
-  - [`@backstage/core-plugin-api` (1.12.2 → 1.12.3)](#backstagecore-plugin-api-1122--1123)
   - [`@backstage/create-app` (0.7.8 → 0.7.9)](#backstagecreate-app-078--079)
-  - [`@backstage/dev-utils` (1.1.19 → 1.1.20)](#backstagedev-utils-1119--1120)
   - [`@backstage/e2e-test-utils` (0.1.1 → 0.1.2)](#backstagee2e-test-utils-011--012)
   - [`@backstage/eslint-plugin` (0.2.0 → 0.2.1)](#backstageeslint-plugin-020--021)
   - [`@backstage/frontend-dynamic-feature-loader` (0.1.8 → 0.1.9)](#backstagefrontend-dynamic-feature-loader-018--019)
   - [`@backstage/integration-aws-node` (0.1.19 → 0.1.20)](#backstageintegration-aws-node-0119--0120)
-  - [`@backstage/integration-react` (1.2.14 → 1.2.15)](#backstageintegration-react-1214--1215)
   - [`@backstage/plugin-api-docs` (0.13.3 → 0.13.4)](#backstageplugin-api-docs-0133--0134)
   - [`@backstage/plugin-api-docs-module-protoc-gen-doc` (0.1.10 → 0.1.11)](#backstageplugin-api-docs-module-protoc-gen-doc-0110--0111)
   - [`@backstage/plugin-app-backend` (0.5.10 → 0.5.11)](#backstageplugin-app-backend-0510--0511)
@@ -145,8 +129,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
   - [`@backstage/plugin-permission-node` (0.10.9 → 0.10.10)](#backstageplugin-permission-node-0109--01010)
   - [`@backstage/plugin-permission-react` (0.4.39 → 0.4.40)](#backstageplugin-permission-react-0439--0440)
   - [`@backstage/plugin-proxy-backend` (0.6.9 → 0.6.10)](#backstageplugin-proxy-backend-069--0610)
-  - [`@backstage/plugin-scaffolder` (1.35.2 → 1.35.3)](#backstageplugin-scaffolder-1352--1353)
-  - [`@backstage/plugin-scaffolder-backend` (3.1.2 → 3.1.3)](#backstageplugin-scaffolder-backend-312--313)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.18 → 0.3.19)](#backstageplugin-scaffolder-backend-module-bitbucket-0318--0319)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.3.2 → 0.3.3)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-032--033)
   - [`@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.3.17 → 0.3.18)](#backstageplugin-scaffolder-backend-module-confluence-to-markdown-0317--0318)
@@ -160,25 +142,45 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.18 → 0.4.19)](#backstageplugin-scaffolder-backend-module-yeoman-0418--0419)
   - [`@backstage/plugin-scaffolder-node` (0.12.4 → 0.12.5)](#backstageplugin-scaffolder-node-0124--0125)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.3.7 → 0.3.8)](#backstageplugin-scaffolder-node-test-utils-037--038)
-  - [`@backstage/plugin-scaffolder-react` (1.19.6 → 1.19.7)](#backstageplugin-scaffolder-react-1196--1197)
-  - [`@backstage/plugin-search-backend` (2.0.11 → 2.0.12)](#backstageplugin-search-backend-2011--2012)
   - [`@backstage/plugin-search-backend-module-catalog` (0.3.11 → 0.3.12)](#backstageplugin-search-backend-module-catalog-0311--0312)
   - [`@backstage/plugin-search-backend-module-explore` (0.3.10 → 0.3.11)](#backstageplugin-search-backend-module-explore-0310--0311)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.51 → 0.5.52)](#backstageplugin-search-backend-module-pg-0551--0552)
   - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.3.16 → 0.3.17)](#backstageplugin-search-backend-module-stack-overflow-collator-0316--0317)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.4.10 → 0.4.11)](#backstageplugin-search-backend-module-techdocs-0410--0411)
+  - [`@backstage/plugin-signals-backend` (0.3.11 → 0.3.12)](#backstageplugin-signals-backend-0311--0312)
+  - [`@backstage/repo-tools` (0.16.3 → 0.16.4)](#backstagerepo-tools-0163--0164)
+  - [`@backstage/theme` (0.7.1 → 0.7.2)](#backstagetheme-071--072)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-app-api` (1.4.1 → 1.5.0)](#backstagebackend-app-api-141--150)
+  - [`@backstage/backend-plugin-api` (1.6.2 → 1.7.0)](#backstagebackend-plugin-api-162--170)
+  - [`@backstage/backend-test-utils` (1.10.4 → 1.11.0)](#backstagebackend-test-utils-1104--1110)
+  - [`@backstage/catalog-client` (1.12.1 → 1.13.0)](#backstagecatalog-client-1121--1130)
+  - [`@backstage/integration` (1.19.2 → 1.20.0)](#backstageintegration-1192--1200)
+  - [`@backstage/plugin-catalog` (1.32.2 → 1.33.0)](#backstageplugin-catalog-1322--1330)
+  - [`@backstage/plugin-catalog-backend` (3.3.2 → 3.4.0)](#backstageplugin-catalog-backend-332--340)
+  - [`@backstage/plugin-search` (1.5.3 → 1.6.0)](#backstageplugin-search-153--160)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.7.9 → 1.8.0)](#backstageplugin-search-backend-module-elasticsearch-179--180)
+  - [`@backstage/plugin-techdocs` (1.16.2 → 1.17.0)](#backstageplugin-techdocs-1162--1170)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.7.4 → 1.7.5)](#backstageapp-defaults-174--175)
+  - [`@backstage/config-loader` (1.10.7 → 1.10.8)](#backstageconfig-loader-1107--1108)
+  - [`@backstage/core-app-api` (1.19.4 → 1.19.5)](#backstagecore-app-api-1194--1195)
+  - [`@backstage/core-plugin-api` (1.12.2 → 1.12.3)](#backstagecore-plugin-api-1122--1123)
+  - [`@backstage/dev-utils` (1.1.19 → 1.1.20)](#backstagedev-utils-1119--1120)
+  - [`@backstage/integration-react` (1.2.14 → 1.2.15)](#backstageintegration-react-1214--1215)
+  - [`@backstage/plugin-scaffolder` (1.35.2 → 1.35.3)](#backstageplugin-scaffolder-1352--1353)
+  - [`@backstage/plugin-scaffolder-backend` (3.1.2 → 3.1.3)](#backstageplugin-scaffolder-backend-312--313)
+  - [`@backstage/plugin-scaffolder-react` (1.19.6 → 1.19.7)](#backstageplugin-scaffolder-react-1196--1197)
+  - [`@backstage/plugin-search-backend` (2.0.11 → 2.0.12)](#backstageplugin-search-backend-2011--2012)
   - [`@backstage/plugin-search-backend-node` (1.4.0 → 1.4.1)](#backstageplugin-search-backend-node-140--141)
   - [`@backstage/plugin-search-common` (1.2.21 → 1.2.22)](#backstageplugin-search-common-1221--1222)
   - [`@backstage/plugin-search-react` (1.10.2 → 1.10.3)](#backstageplugin-search-react-1102--1103)
-  - [`@backstage/plugin-signals-backend` (0.3.11 → 0.3.12)](#backstageplugin-signals-backend-0311--0312)
   - [`@backstage/plugin-techdocs-addons-test-utils` (2.0.1 → 2.0.2)](#backstageplugin-techdocs-addons-test-utils-201--202)
   - [`@backstage/plugin-techdocs-backend` (2.1.4 → 2.1.5)](#backstageplugin-techdocs-backend-214--215)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.32 → 1.1.33)](#backstageplugin-techdocs-module-addons-contrib-1132--1133)
   - [`@backstage/plugin-techdocs-node` (1.14.1 → 1.14.2)](#backstageplugin-techdocs-node-1141--1142)
   - [`@backstage/plugin-techdocs-react` (1.3.7 → 1.3.8)](#backstageplugin-techdocs-react-137--138)
-  - [`@backstage/repo-tools` (0.16.3 → 0.16.4)](#backstagerepo-tools-0163--0164)
   - [`@backstage/test-utils` (1.7.14 → 1.7.15)](#backstagetest-utils-1714--1715)
-  - [`@backstage/theme` (0.7.1 → 0.7.2)](#backstagetheme-071--072)
   - [`@backstage/version-bridge` (1.0.11 → 1.0.12)](#backstageversion-bridge-1011--1012)
   - [`@techdocs/cli` (1.10.4 → 1.10.5)](#techdocscli-1104--1105)
 - [Excluded dependency updates](#excluded-dependency-updates)
@@ -1027,212 +1029,7 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 
 - [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 
-## Other minor version bumps
-
-### `@backstage/backend-app-api` (1.4.1 → [1.5.0](../../changelogs/@backstage/backend-app-api.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Added support for extension point factories, along with the ability to report module startup failures via the extension point factory context.
-
-##### Patch Changes
-
-- [`6bb2f21`](https://github.com/backstage/backstage/commit/6bb2f21): Fixed memory leak by properly cleaning up process event listeners on backend shutdown.
-
-### `@backstage/backend-plugin-api` (1.6.2 → [1.7.0](../../changelogs/@backstage/backend-plugin-api.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Added support for extension point factories. This makes it possible to call `registerExtensionPoint` with a single options argument and provide a factory for the extension point rather than a direct implementation. The factory is passed a context with a `reportModuleStartupFailure` method that makes it possible for plugins to report and attribute startup errors to the module that consumed the extension point.
-- [`bb9b471`](https://github.com/backstage/backstage/commit/bb9b471): Plugin IDs that do not match the standard format are deprecated (letters, digits, and dashes only, starting with a letter). Plugin IDs that do no match this format will be rejected in a future release.
-
-  In addition, plugin IDs that don't match the legacy pattern that also allows underscores, with be rejected.
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
-### `@backstage/backend-test-utils` (1.10.4 → [1.11.0](../../changelogs/@backstage/backend-test-utils.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`42abfb1`](https://github.com/backstage/backstage/commit/42abfb1): Added `createServiceMock`, a public utility for creating `ServiceMock` instances for custom service refs. This allows plugin authors to define mock creators for their own services following the same pattern as the built-in `mockServices` mocks.
-
-##### Patch Changes
-
-- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Updated `startTestBackend` to support factory-based extension points (v1.1 format) in addition to the existing direct implementation format.
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`68eb322`](https://github.com/backstage/backstage/commit/68eb322): Added `@types/jest` as an optional peer dependency, since jest types are exposed in the public API surface.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
-### `@backstage/catalog-client` (1.12.1 → [1.13.0](../../changelogs/@backstage/catalog-client.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`b4e8249`](https://github.com/backstage/backstage/commit/b4e8249): Implemented support for the new `queryLocations` and `streamLocations` that allow paginated/streamed and filtered location queries
-
-##### Patch Changes
-
-- [`9cf6762`](https://github.com/backstage/backstage/commit/9cf6762): Improved the `InMemoryCatalogClient` test utility to support ordering, pagination, full-text search, and field projection for entity query methods. Also fixed `getEntityFacets` to correctly handle multi-valued fields.
-
-### `@backstage/integration` (1.19.2 → [1.20.0](../../changelogs/@backstage/integration.md#1200))
-
-#### 1.20.0
-
-##### Minor Changes
-
-- [`6999f6d`](https://github.com/backstage/backstage/commit/6999f6d): The AzureUrl class in the @backstage/integration package is now able to process BOTH git branches and git tags. Initially this class only processed git branches and threw an error when non-branch Azure URLs were passed in.
-
-##### Patch Changes
-
-- [`cc6206e`](https://github.com/backstage/backstage/commit/cc6206e): Added support for `{org}.visualstudio.com` domains used by Azure DevOps
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-
-### `@backstage/plugin-catalog` (1.32.2 → [1.33.0](../../changelogs/@backstage/plugin-catalog.md#1330))
-
-#### 1.33.0
-
-##### Minor Changes
-
-- [`491a06c`](https://github.com/backstage/backstage/commit/491a06c): Add the ability to show icons for the tabs on the entity page (new frontend)
-- [`05aac34`](https://github.com/backstage/backstage/commit/05aac34): Migrated `DeleteEntityDialog` and `EntityOrphanWarning` components to Backstage UI.
-
-  The `deleteEntity.description` translation key no longer includes "Click here to delete" text. A new `deleteEntity.actionButtonTitle` key was added for the action button.
-
-##### Patch Changes
-
-- [`220d6c3`](https://github.com/backstage/backstage/commit/220d6c3): Add missing translation entries for catalog UI text.
-
-  This change adds translation keys and updates relevant UI components to use the correct localized labels and text in the catalog plugin. It ensures that catalog screens such as entity layout, tabs, search result items, table labels, and other UI elements correctly reference the i18n system for translation.
-
-  No functional behavior is changed aside from the improved internationalization support.
-
-- [`8d4c48b`](https://github.com/backstage/backstage/commit/8d4c48b): Fixed vertical spacing between tags in the catalog table.
-- [`7feb83b`](https://github.com/backstage/backstage/commit/7feb83b): Adjusted to use the new `@backstage/filter-predicates` types for predicate expressions.
-- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
-- [`e8258d0`](https://github.com/backstage/backstage/commit/e8258d0): The default entity content layout still supports rendering summary cards at runtime for backward compatibility, but logs a console warning when they are detected to help identify where migration is needed.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`75ac651`](https://github.com/backstage/backstage/commit/75ac651): Migrated `EntityRelationWarning` and `EntityProcessingErrorsPanel` components from Material UI to Backstage UI.
-
-### `@backstage/plugin-catalog-backend` (3.3.2 → [3.4.0](../../changelogs/@backstage/plugin-catalog-backend.md#340))
-
-#### 3.4.0
-
-##### Minor Changes
-
-- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Failures to connect catalog providers are now attributed to the module that provided the failing provider. This means that such failures will be reported as module startup failures rather than a failure to start the catalog plugin, and will therefore respect `onPluginModuleBootFailure` configuration instead.
-- [`34cc520`](https://github.com/backstage/backstage/commit/34cc520): Implemented handling of events from the newly introduced alpha
-  `catalogScmEventsServiceRef` service, in the builtin entity providers. This
-  allows entities to get refreshed, and locations updated or removed, as a
-  response to incoming events. In its first iteration, only the GitHub module
-  implements such event handling however.
-
-  This is not yet enabled by default, but this fact may change in a future
-  release. To try it out, ensure that you have the latest catalog GitHub module
-  installed, and set the following in your app-config:
-
-  ```yaml
-  catalog:
-    scmEvents: true
-  ```
-
-  Or if you want to pick and choose from the various features:
-
-  ```yaml
-  catalog:
-    scmEvents:
-      # refresh (reprocess) upon events?
-      refresh: true
-      # automatically unregister locations based on events? (files deleted, repos archived, etc)
-      unregister: true
-      # automatically move locations based on events? (repo transferred, file renamed, etc)
-      move: true
-  ```
-
-- [`b4e8249`](https://github.com/backstage/backstage/commit/b4e8249): Implemented the `POST /locations/by-query` endpoint which allows paginated, filtered location queries
-
-##### Patch Changes
-
-- [`cfd8103`](https://github.com/backstage/backstage/commit/cfd8103): Updated imports to use stable catalog extension points from `@backstage/plugin-catalog-node` instead of the deprecated alpha exports.
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`5e3ef57`](https://github.com/backstage/backstage/commit/5e3ef57): Added `peerModules` metadata declaring recommended modules for cross-plugin integrations.
-- [`08a5813`](https://github.com/backstage/backstage/commit/08a5813): Fixed O(n²) performance bottleneck in `buildEntitySearch` `traverse()` by replacing `Array.some()` linear scan with a `Set` for O(1) duplicate path key detection.
-- [`1e669cc`](https://github.com/backstage/backstage/commit/1e669cc): Migrate audit events reference docs to http://backstage.io/docs.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
-### `@backstage/plugin-search` (1.5.3 → [1.6.0](../../changelogs/@backstage/plugin-search.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`feef8d9`](https://github.com/backstage/backstage/commit/feef8d9): Added support for configuring the default search type in the search page via the `search.defaultType` option in `app-config.yaml`. This applies to both the legacy and new frontend systems. If not set, the default is empty, which means searching for "all" types.
-
-##### Patch Changes
-
-- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.7.9 → [1.8.0](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`583bd3a`](https://github.com/backstage/backstage/commit/583bd3a): Added `elasticsearchAuthExtensionPoint` to enable dynamic authentication mechanisms such as bearer tokens with automatic rotation.
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`7021165`](https://github.com/backstage/backstage/commit/7021165): Fixed bulk indexing to refresh only the target index instead of all indexes, improving performance in multi-index deployments.
-
-### `@backstage/plugin-techdocs` (1.16.2 → [1.17.0](../../changelogs/@backstage/plugin-techdocs.md#1170))
-
-#### 1.17.0
-
-##### Minor Changes
-
-- [`27798df`](https://github.com/backstage/backstage/commit/27798df): Add two config values to the `page:techdocs/reader` extension that configure default layout, `withoutSearch` and `withoutHeader`. Default are unchanged to `false`.
-
-  E.g. to disable the search and header on the Techdocs Reader Page:
-
-  ```yaml
-  app:
-    extensions:
-      - page:techdocs/reader:
-          config:
-            withoutSearch: true
-            withoutHeader: true
-  ```
-
-##### Patch Changes
-
-- [`7feb83b`](https://github.com/backstage/backstage/commit/7feb83b): Adjusted to use the new `@backstage/filter-predicates` types for predicate expressions.
-- [`491a06c`](https://github.com/backstage/backstage/commit/491a06c): Add the ability to show icons for the tabs on the entity page (new frontend)
-- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
-- [`9e29545`](https://github.com/backstage/backstage/commit/9e29545): Improve sidebars (nav/TOC) layout and scrolling
-- [`22dce2b`](https://github.com/backstage/backstage/commit/22dce2b): TechDocs addons in the new frontend system now use a Utility API pattern instead of multiple attachment points. The `AddonBlueprint` now uses this new approach, and while addons created with older versions still work, they will produce a deprecation warning and will stop working in a future release.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`0a88779`](https://github.com/backstage/backstage/commit/0a88779): Added title prop to OffsetPaginatedDocsTable for proper display
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.7.4 → [1.7.5](../../changelogs/@backstage/app-defaults.md#175))
-
-#### 1.7.5
-
-##### Patch Changes
-
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.15.1 → [0.15.2](../../changelogs/@backstage/backend-defaults.md#0152))
 
@@ -1320,24 +1117,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 
 - [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
 
-### `@backstage/config-loader` (1.10.7 → [1.10.8](../../changelogs/@backstage/config-loader.md#1108))
-
-#### 1.10.8
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-
-### `@backstage/core-app-api` (1.19.4 → [1.19.5](../../changelogs/@backstage/core-app-api.md#1195))
-
-#### 1.19.5
-
-##### Patch Changes
-
-- [`5a71e7a`](https://github.com/backstage/backstage/commit/5a71e7a): Fixed memory leak caused by duplicate `AppThemeSelector` instances and missing cleanup in `AppThemeSelector` and `AppLanguageSelector`. Added `dispose()` method to both selectors for proper resource cleanup.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
 ### `@backstage/core-compat-api` (0.5.7 → [0.5.8](../../changelogs/@backstage/core-compat-api.md#058))
 
 #### 0.5.8
@@ -1361,16 +1140,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 - [`cebfea7`](https://github.com/backstage/backstage/commit/cebfea7): Removed link styles from LinkButton to avoid styling inconsistencies related to import order.
 - [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
 
-### `@backstage/core-plugin-api` (1.12.2 → [1.12.3](../../changelogs/@backstage/core-plugin-api.md#1123))
-
-#### 1.12.3
-
-##### Patch Changes
-
-- [`53b6549`](https://github.com/backstage/backstage/commit/53b6549): Plugins in the new frontend system now have a `pluginId` field rather than `id` to better align with naming conventions used throughout the frontend and backend systems. The old field is still present but marked as deprecated. All internal code has been updated to prefer `pluginId` while maintaining backward compatibility by falling back to `id` when needed.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
 ### `@backstage/create-app` (0.7.8 → [0.7.9](../../changelogs/@backstage/create-app.md#079))
 
 #### 0.7.9
@@ -1383,14 +1152,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 - [`65ba820`](https://github.com/backstage/backstage/commit/65ba820): Updated the app template sidebar to use the new `NavContentBlueprint` API for page-based navigation.
 - [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
 - [`c38b74d`](https://github.com/backstage/backstage/commit/c38b74d): Switched `next-app` template to use blueprint from `@backstage/plugin-app-react`.
-
-### `@backstage/dev-utils` (1.1.19 → [1.1.20](../../changelogs/@backstage/dev-utils.md#1120))
-
-#### 1.1.20
-
-##### Patch Changes
-
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 
 ### `@backstage/e2e-test-utils` (0.1.1 → [0.1.2](../../changelogs/@backstage/e2e-test-utils.md#012))
 
@@ -1437,14 +1198,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 ##### Patch Changes
 
 - [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-
-### `@backstage/integration-react` (1.2.14 → [1.2.15](../../changelogs/@backstage/integration-react.md#1215))
-
-#### 1.2.15
-
-##### Patch Changes
-
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 
 ### `@backstage/plugin-api-docs` (0.13.3 → [0.13.4](../../changelogs/@backstage/plugin-api-docs.md#0134))
 
@@ -2050,41 +1803,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 
 - [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
 
-### `@backstage/plugin-scaffolder` (1.35.2 → [1.35.3](../../changelogs/@backstage/plugin-scaffolder.md#1353))
-
-#### 1.35.3
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`4e581a6`](https://github.com/backstage/backstage/commit/4e581a6): Updated the browser tab title on the template wizard page to display the specific template title instead of the generic "Create a new component" text.
-- [`7feb83b`](https://github.com/backstage/backstage/commit/7feb83b): Adjusted to use the new `@backstage/filter-predicates` types for predicate expressions.
-- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
-- [`2eeca03`](https://github.com/backstage/backstage/commit/2eeca03): Scaffolder form fields in the new frontend system now use a Utility API pattern instead of multiple attachment points. The `FormFieldBlueprint` now uses this new approach, and while form fields created with older versions still work, they will produce a deprecation warning and will stop working in a future release.
-
-  As part of this change, the following alpha exports were removed:
-
-  - `formFieldsApiRef`
-  - `ScaffolderFormFieldsApi`
-
-- [`b9d90a7`](https://github.com/backstage/backstage/commit/b9d90a7): Added `@backstage/frontend-test-utils` as a dev dependency for mock API usage in tests.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
-### `@backstage/plugin-scaffolder-backend` (3.1.2 → [3.1.3](../../changelogs/@backstage/plugin-scaffolder-backend.md#313))
-
-#### 3.1.3
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`4fc7bf0`](https://github.com/backstage/backstage/commit/4fc7bf0): Removed unused dependency
-- [`0ce78b0`](https://github.com/backstage/backstage/commit/0ce78b0): Support `if` conditions inside `each` loops for scaffolder steps
-- [`5e3ef57`](https://github.com/backstage/backstage/commit/5e3ef57): Added `peerModules` metadata declaring recommended modules for cross-plugin integrations.
-- [`8148621`](https://github.com/backstage/backstage/commit/8148621): Moved `@backstage/backend-defaults` from `dependencies` to `devDependencies`.
-- [`1e669cc`](https://github.com/backstage/backstage/commit/1e669cc): Migrate audit events reference docs to http://backstage.io/docs.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
 ### `@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.18 → [0.3.19](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket.md#0319))
 
 #### 0.3.19
@@ -2202,34 +1920,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 - [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
 - [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 
-### `@backstage/plugin-scaffolder-react` (1.19.6 → [1.19.7](../../changelogs/@backstage/plugin-scaffolder-react.md#1197))
-
-#### 1.19.7
-
-##### Patch Changes
-
-- [`2eeca03`](https://github.com/backstage/backstage/commit/2eeca03): Scaffolder form fields in the new frontend system now use a Utility API pattern instead of multiple attachment points. The `FormFieldBlueprint` now uses this new approach, and while form fields created with older versions still work, they will produce a deprecation warning and will stop working in a future release.
-
-  As part of this change, the following alpha exports were removed:
-
-  - `formFieldsApi`
-  - `formFieldsApiRef`
-  - `ScaffolderFormFieldsApi`
-
-- [`b9d90a7`](https://github.com/backstage/backstage/commit/b9d90a7): Added `@backstage/frontend-test-utils` as a dev dependency for mock API usage in tests.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
-### `@backstage/plugin-search-backend` (2.0.11 → [2.0.12](../../changelogs/@backstage/plugin-search-backend.md#2012))
-
-#### 2.0.12
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`8148621`](https://github.com/backstage/backstage/commit/8148621): Moved `@backstage/backend-defaults` from `dependencies` to `devDependencies`.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#0312))
 
 #### 0.3.12
@@ -2272,6 +1962,352 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 
 - [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
 
+### `@backstage/plugin-signals-backend` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-signals-backend.md#0312))
+
+#### 0.3.12
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+
+### `@backstage/repo-tools` (0.16.3 → [0.16.4](../../changelogs/@backstage/repo-tools.md#0164))
+
+#### 0.16.4
+
+##### Patch Changes
+
+- [`cd75ed0`](https://github.com/backstage/backstage/commit/cd75ed0): Add newline to OpenAPI license template files.
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`4fc7bf0`](https://github.com/backstage/backstage/commit/4fc7bf0): Bump to tar v7
+- [`6523040`](https://github.com/backstage/backstage/commit/6523040): Support Prettier v3 for api-reports
+- [`be7ebad`](https://github.com/backstage/backstage/commit/be7ebad): Updated package-docs exclude list to reflect renamed example app packages.
+- [`df59ee6`](https://github.com/backstage/backstage/commit/df59ee6): The `type-deps` command now follows relative imports and re-exports into declaration chunk files, and detects ambient global types such as the `jest` namespace.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/theme` (0.7.1 → [0.7.2](../../changelogs/@backstage/theme.md#072))
+
+#### 0.7.2
+
+##### Patch Changes
+
+- [`1c52dcc`](https://github.com/backstage/backstage/commit/1c52dcc): add square shape
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+
+## Other minor version bumps
+
+### `@backstage/backend-app-api` (1.4.1 → [1.5.0](../../changelogs/@backstage/backend-app-api.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Added support for extension point factories, along with the ability to report module startup failures via the extension point factory context.
+
+##### Patch Changes
+
+- [`6bb2f21`](https://github.com/backstage/backstage/commit/6bb2f21): Fixed memory leak by properly cleaning up process event listeners on backend shutdown.
+
+### `@backstage/backend-plugin-api` (1.6.2 → [1.7.0](../../changelogs/@backstage/backend-plugin-api.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Added support for extension point factories. This makes it possible to call `registerExtensionPoint` with a single options argument and provide a factory for the extension point rather than a direct implementation. The factory is passed a context with a `reportModuleStartupFailure` method that makes it possible for plugins to report and attribute startup errors to the module that consumed the extension point.
+- [`bb9b471`](https://github.com/backstage/backstage/commit/bb9b471): Plugin IDs that do not match the standard format are deprecated (letters, digits, and dashes only, starting with a letter). Plugin IDs that do no match this format will be rejected in a future release.
+
+  In addition, plugin IDs that don't match the legacy pattern that also allows underscores, with be rejected.
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/backend-test-utils` (1.10.4 → [1.11.0](../../changelogs/@backstage/backend-test-utils.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`42abfb1`](https://github.com/backstage/backstage/commit/42abfb1): Added `createServiceMock`, a public utility for creating `ServiceMock` instances for custom service refs. This allows plugin authors to define mock creators for their own services following the same pattern as the built-in `mockServices` mocks.
+
+##### Patch Changes
+
+- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Updated `startTestBackend` to support factory-based extension points (v1.1 format) in addition to the existing direct implementation format.
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`68eb322`](https://github.com/backstage/backstage/commit/68eb322): Added `@types/jest` as an optional peer dependency, since jest types are exposed in the public API surface.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/catalog-client` (1.12.1 → [1.13.0](../../changelogs/@backstage/catalog-client.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`b4e8249`](https://github.com/backstage/backstage/commit/b4e8249): Implemented support for the new `queryLocations` and `streamLocations` that allow paginated/streamed and filtered location queries
+
+##### Patch Changes
+
+- [`9cf6762`](https://github.com/backstage/backstage/commit/9cf6762): Improved the `InMemoryCatalogClient` test utility to support ordering, pagination, full-text search, and field projection for entity query methods. Also fixed `getEntityFacets` to correctly handle multi-valued fields.
+
+### `@backstage/integration` (1.19.2 → [1.20.0](../../changelogs/@backstage/integration.md#1200))
+
+#### 1.20.0
+
+##### Minor Changes
+
+- [`6999f6d`](https://github.com/backstage/backstage/commit/6999f6d): The AzureUrl class in the @backstage/integration package is now able to process BOTH git branches and git tags. Initially this class only processed git branches and threw an error when non-branch Azure URLs were passed in.
+
+##### Patch Changes
+
+- [`cc6206e`](https://github.com/backstage/backstage/commit/cc6206e): Added support for `{org}.visualstudio.com` domains used by Azure DevOps
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+
+### `@backstage/plugin-catalog` (1.32.2 → [1.33.0](../../changelogs/@backstage/plugin-catalog.md#1330))
+
+#### 1.33.0
+
+##### Minor Changes
+
+- [`491a06c`](https://github.com/backstage/backstage/commit/491a06c): Add the ability to show icons for the tabs on the entity page (new frontend)
+- [`05aac34`](https://github.com/backstage/backstage/commit/05aac34): Migrated `DeleteEntityDialog` and `EntityOrphanWarning` components to Backstage UI.
+
+  The `deleteEntity.description` translation key no longer includes "Click here to delete" text. A new `deleteEntity.actionButtonTitle` key was added for the action button.
+
+##### Patch Changes
+
+- [`220d6c3`](https://github.com/backstage/backstage/commit/220d6c3): Add missing translation entries for catalog UI text.
+
+  This change adds translation keys and updates relevant UI components to use the correct localized labels and text in the catalog plugin. It ensures that catalog screens such as entity layout, tabs, search result items, table labels, and other UI elements correctly reference the i18n system for translation.
+
+  No functional behavior is changed aside from the improved internationalization support.
+
+- [`8d4c48b`](https://github.com/backstage/backstage/commit/8d4c48b): Fixed vertical spacing between tags in the catalog table.
+- [`7feb83b`](https://github.com/backstage/backstage/commit/7feb83b): Adjusted to use the new `@backstage/filter-predicates` types for predicate expressions.
+- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
+- [`e8258d0`](https://github.com/backstage/backstage/commit/e8258d0): The default entity content layout still supports rendering summary cards at runtime for backward compatibility, but logs a console warning when they are detected to help identify where migration is needed.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`75ac651`](https://github.com/backstage/backstage/commit/75ac651): Migrated `EntityRelationWarning` and `EntityProcessingErrorsPanel` components from Material UI to Backstage UI.
+
+### `@backstage/plugin-catalog-backend` (3.3.2 → [3.4.0](../../changelogs/@backstage/plugin-catalog-backend.md#340))
+
+#### 3.4.0
+
+##### Minor Changes
+
+- [`f1d29b4`](https://github.com/backstage/backstage/commit/f1d29b4): Failures to connect catalog providers are now attributed to the module that provided the failing provider. This means that such failures will be reported as module startup failures rather than a failure to start the catalog plugin, and will therefore respect `onPluginModuleBootFailure` configuration instead.
+- [`34cc520`](https://github.com/backstage/backstage/commit/34cc520): Implemented handling of events from the newly introduced alpha
+  `catalogScmEventsServiceRef` service, in the builtin entity providers. This
+  allows entities to get refreshed, and locations updated or removed, as a
+  response to incoming events. In its first iteration, only the GitHub module
+  implements such event handling however.
+
+  This is not yet enabled by default, but this fact may change in a future
+  release. To try it out, ensure that you have the latest catalog GitHub module
+  installed, and set the following in your app-config:
+
+  ```yaml
+  catalog:
+    scmEvents: true
+  ```
+
+  Or if you want to pick and choose from the various features:
+
+  ```yaml
+  catalog:
+    scmEvents:
+      # refresh (reprocess) upon events?
+      refresh: true
+      # automatically unregister locations based on events? (files deleted, repos archived, etc)
+      unregister: true
+      # automatically move locations based on events? (repo transferred, file renamed, etc)
+      move: true
+  ```
+
+- [`b4e8249`](https://github.com/backstage/backstage/commit/b4e8249): Implemented the `POST /locations/by-query` endpoint which allows paginated, filtered location queries
+
+##### Patch Changes
+
+- [`cfd8103`](https://github.com/backstage/backstage/commit/cfd8103): Updated imports to use stable catalog extension points from `@backstage/plugin-catalog-node` instead of the deprecated alpha exports.
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`5e3ef57`](https://github.com/backstage/backstage/commit/5e3ef57): Added `peerModules` metadata declaring recommended modules for cross-plugin integrations.
+- [`08a5813`](https://github.com/backstage/backstage/commit/08a5813): Fixed O(n²) performance bottleneck in `buildEntitySearch` `traverse()` by replacing `Array.some()` linear scan with a `Set` for O(1) duplicate path key detection.
+- [`1e669cc`](https://github.com/backstage/backstage/commit/1e669cc): Migrate audit events reference docs to http://backstage.io/docs.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/plugin-search` (1.5.3 → [1.6.0](../../changelogs/@backstage/plugin-search.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`feef8d9`](https://github.com/backstage/backstage/commit/feef8d9): Added support for configuring the default search type in the search page via the `search.defaultType` option in `app-config.yaml`. This applies to both the legacy and new frontend systems. If not set, the default is empty, which means searching for "all" types.
+
+##### Patch Changes
+
+- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.7.9 → [1.8.0](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`583bd3a`](https://github.com/backstage/backstage/commit/583bd3a): Added `elasticsearchAuthExtensionPoint` to enable dynamic authentication mechanisms such as bearer tokens with automatic rotation.
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`7021165`](https://github.com/backstage/backstage/commit/7021165): Fixed bulk indexing to refresh only the target index instead of all indexes, improving performance in multi-index deployments.
+
+### `@backstage/plugin-techdocs` (1.16.2 → [1.17.0](../../changelogs/@backstage/plugin-techdocs.md#1170))
+
+#### 1.17.0
+
+##### Minor Changes
+
+- [`27798df`](https://github.com/backstage/backstage/commit/27798df): Add two config values to the `page:techdocs/reader` extension that configure default layout, `withoutSearch` and `withoutHeader`. Default are unchanged to `false`.
+
+  E.g. to disable the search and header on the Techdocs Reader Page:
+
+  ```yaml
+  app:
+    extensions:
+      - page:techdocs/reader:
+          config:
+            withoutSearch: true
+            withoutHeader: true
+  ```
+
+##### Patch Changes
+
+- [`7feb83b`](https://github.com/backstage/backstage/commit/7feb83b): Adjusted to use the new `@backstage/filter-predicates` types for predicate expressions.
+- [`491a06c`](https://github.com/backstage/backstage/commit/491a06c): Add the ability to show icons for the tabs on the entity page (new frontend)
+- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
+- [`9e29545`](https://github.com/backstage/backstage/commit/9e29545): Improve sidebars (nav/TOC) layout and scrolling
+- [`22dce2b`](https://github.com/backstage/backstage/commit/22dce2b): TechDocs addons in the new frontend system now use a Utility API pattern instead of multiple attachment points. The `AddonBlueprint` now uses this new approach, and while addons created with older versions still work, they will produce a deprecation warning and will stop working in a future release.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`0a88779`](https://github.com/backstage/backstage/commit/0a88779): Added title prop to OffsetPaginatedDocsTable for proper display
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.7.4 → [1.7.5](../../changelogs/@backstage/app-defaults.md#175))
+
+#### 1.7.5
+
+##### Patch Changes
+
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+
+### `@backstage/config-loader` (1.10.7 → [1.10.8](../../changelogs/@backstage/config-loader.md#1108))
+
+#### 1.10.8
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+
+### `@backstage/core-app-api` (1.19.4 → [1.19.5](../../changelogs/@backstage/core-app-api.md#1195))
+
+#### 1.19.5
+
+##### Patch Changes
+
+- [`5a71e7a`](https://github.com/backstage/backstage/commit/5a71e7a): Fixed memory leak caused by duplicate `AppThemeSelector` instances and missing cleanup in `AppThemeSelector` and `AppLanguageSelector`. Added `dispose()` method to both selectors for proper resource cleanup.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/core-plugin-api` (1.12.2 → [1.12.3](../../changelogs/@backstage/core-plugin-api.md#1123))
+
+#### 1.12.3
+
+##### Patch Changes
+
+- [`53b6549`](https://github.com/backstage/backstage/commit/53b6549): Plugins in the new frontend system now have a `pluginId` field rather than `id` to better align with naming conventions used throughout the frontend and backend systems. The old field is still present but marked as deprecated. All internal code has been updated to prefer `pluginId` while maintaining backward compatibility by falling back to `id` when needed.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/dev-utils` (1.1.19 → [1.1.20](../../changelogs/@backstage/dev-utils.md#1120))
+
+#### 1.1.20
+
+##### Patch Changes
+
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+
+### `@backstage/integration-react` (1.2.14 → [1.2.15](../../changelogs/@backstage/integration-react.md#1215))
+
+#### 1.2.15
+
+##### Patch Changes
+
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+
+### `@backstage/plugin-scaffolder` (1.35.2 → [1.35.3](../../changelogs/@backstage/plugin-scaffolder.md#1353))
+
+#### 1.35.3
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`4e581a6`](https://github.com/backstage/backstage/commit/4e581a6): Updated the browser tab title on the template wizard page to display the specific template title instead of the generic "Create a new component" text.
+- [`7feb83b`](https://github.com/backstage/backstage/commit/7feb83b): Adjusted to use the new `@backstage/filter-predicates` types for predicate expressions.
+- [`018ca87`](https://github.com/backstage/backstage/commit/018ca87): Added `title` and `icon` to the plugin definition for the new frontend system.
+- [`2eeca03`](https://github.com/backstage/backstage/commit/2eeca03): Scaffolder form fields in the new frontend system now use a Utility API pattern instead of multiple attachment points. The `FormFieldBlueprint` now uses this new approach, and while form fields created with older versions still work, they will produce a deprecation warning and will stop working in a future release.
+
+  As part of this change, the following alpha exports were removed:
+
+  - `formFieldsApiRef`
+  - `ScaffolderFormFieldsApi`
+
+- [`b9d90a7`](https://github.com/backstage/backstage/commit/b9d90a7): Added `@backstage/frontend-test-utils` as a dev dependency for mock API usage in tests.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/plugin-scaffolder-backend` (3.1.2 → [3.1.3](../../changelogs/@backstage/plugin-scaffolder-backend.md#313))
+
+#### 3.1.3
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`4fc7bf0`](https://github.com/backstage/backstage/commit/4fc7bf0): Removed unused dependency
+- [`0ce78b0`](https://github.com/backstage/backstage/commit/0ce78b0): Support `if` conditions inside `each` loops for scaffolder steps
+- [`5e3ef57`](https://github.com/backstage/backstage/commit/5e3ef57): Added `peerModules` metadata declaring recommended modules for cross-plugin integrations.
+- [`8148621`](https://github.com/backstage/backstage/commit/8148621): Moved `@backstage/backend-defaults` from `dependencies` to `devDependencies`.
+- [`1e669cc`](https://github.com/backstage/backstage/commit/1e669cc): Migrate audit events reference docs to http://backstage.io/docs.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/plugin-scaffolder-react` (1.19.6 → [1.19.7](../../changelogs/@backstage/plugin-scaffolder-react.md#1197))
+
+#### 1.19.7
+
+##### Patch Changes
+
+- [`2eeca03`](https://github.com/backstage/backstage/commit/2eeca03): Scaffolder form fields in the new frontend system now use a Utility API pattern instead of multiple attachment points. The `FormFieldBlueprint` now uses this new approach, and while form fields created with older versions still work, they will produce a deprecation warning and will stop working in a future release.
+
+  As part of this change, the following alpha exports were removed:
+
+  - `formFieldsApi`
+  - `formFieldsApiRef`
+  - `ScaffolderFormFieldsApi`
+
+- [`b9d90a7`](https://github.com/backstage/backstage/commit/b9d90a7): Added `@backstage/frontend-test-utils` as a dev dependency for mock API usage in tests.
+- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
+### `@backstage/plugin-search-backend` (2.0.11 → [2.0.12](../../changelogs/@backstage/plugin-search-backend.md#2012))
+
+#### 2.0.12
+
+##### Patch Changes
+
+- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
+- [`8148621`](https://github.com/backstage/backstage/commit/8148621): Moved `@backstage/backend-defaults` from `dependencies` to `devDependencies`.
+- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
+
 ### `@backstage/plugin-search-backend-node` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-search-backend-node.md#141))
 
 #### 1.4.1
@@ -2295,14 +2331,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 ##### Patch Changes
 
 - [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-
-### `@backstage/plugin-signals-backend` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-signals-backend.md#0312))
-
-#### 0.3.12
-
-##### Patch Changes
-
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
 
 ### `@backstage/plugin-techdocs-addons-test-utils` (2.0.1 → [2.0.2](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#202))
 
@@ -2352,21 +2380,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 
 - [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 
-### `@backstage/repo-tools` (0.16.3 → [0.16.4](../../changelogs/@backstage/repo-tools.md#0164))
-
-#### 0.16.4
-
-##### Patch Changes
-
-- [`cd75ed0`](https://github.com/backstage/backstage/commit/cd75ed0): Add newline to OpenAPI license template files.
-- [`7455dae`](https://github.com/backstage/backstage/commit/7455dae): Use node prefix on native imports
-- [`4fc7bf0`](https://github.com/backstage/backstage/commit/4fc7bf0): Bump to tar v7
-- [`6523040`](https://github.com/backstage/backstage/commit/6523040): Support Prettier v3 for api-reports
-- [`be7ebad`](https://github.com/backstage/backstage/commit/be7ebad): Updated package-docs exclude list to reflect renamed example app packages.
-- [`df59ee6`](https://github.com/backstage/backstage/commit/df59ee6): The `type-deps` command now follows relative imports and re-exports into declaration chunk files, and detects ambient global types such as the `jest` namespace.
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
-- [`69d880e`](https://github.com/backstage/backstage/commit/69d880e): Bump to latest zod to ensure it has the latest features
-
 ### `@backstage/test-utils` (1.7.14 → [1.7.15](../../changelogs/@backstage/test-utils.md#1715))
 
 #### 1.7.15
@@ -2375,15 +2388,6 @@ Changes between 1.47.4 and 1.48.0 — 186 changed and 2 added packages.
 
 - [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 - [`68eb322`](https://github.com/backstage/backstage/commit/68eb322): Added `@types/jest` as an optional peer dependency, since jest types are exposed in the public API surface.
-
-### `@backstage/theme` (0.7.1 → [0.7.2](../../changelogs/@backstage/theme.md#072))
-
-#### 0.7.2
-
-##### Patch Changes
-
-- [`1c52dcc`](https://github.com/backstage/backstage/commit/1c52dcc): add square shape
-- [`a7e0d50`](https://github.com/backstage/backstage/commit/a7e0d50): Updated `react-router-dom` peer dependency to `^6.30.2` and explicitly disabled v7 future flags to suppress deprecation warnings.
 
 ### `@backstage/version-bridge` (1.0.11 → [1.0.12](../../changelogs/@backstage/version-bridge.md#1012))
 

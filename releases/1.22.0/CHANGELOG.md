@@ -1,6 +1,6 @@
 # Backstage Release 1.22.0 changelog
 
-Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
+Changes between 1.21.1 and 1.22.0 — 2 added, 0 removed, 226 upgraded, 23 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 - [Breaking changes](#breaking-changes): 2 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 1 package
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 5 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 149 packages
 - [Other minor version bumps](#other-minor-version-bumps): 1 package
-- [Other patch version bumps](#other-patch-version-bumps): 167 packages
+- [Other patch version bumps](#other-patch-version-bumps): 18 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 50 packages
 
 ## Table of contents
@@ -28,22 +29,17 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-explore-backend` (0.0.18 → 0.0.19)](#backstageplugin-explore-backend-0018--0019)
   - [`@backstage/plugin-explore-react` (0.0.34 → 0.0.35)](#backstageplugin-explore-react-0034--0035)
   - [`@backstage/plugin-kubernetes-cluster` (0.0.4 → 0.0.5)](#backstageplugin-kubernetes-cluster-004--005)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/plugin-scaffolder-backend` (1.19.2 → 1.20.0)](#backstageplugin-scaffolder-backend-1192--1200)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.5.9 → 0.5.10)](#backstagebackend-app-api-059--0510)
   - [`@backstage/backend-common` (0.20.0 → 0.20.1)](#backstagebackend-common-0200--0201)
   - [`@backstage/backend-defaults` (0.2.8 → 0.2.9)](#backstagebackend-defaults-028--029)
   - [`@backstage/backend-dev-utils` (0.1.2 → 0.1.3)](#backstagebackend-dev-utils-012--013)
   - [`@backstage/backend-openapi-utils` (0.1.1 → 0.1.2)](#backstagebackend-openapi-utils-011--012)
   - [`@backstage/backend-plugin-api` (0.6.8 → 0.6.9)](#backstagebackend-plugin-api-068--069)
-  - [`@backstage/catalog-client` (1.5.1 → 1.5.2)](#backstagecatalog-client-151--152)
   - [`@backstage/cli` (0.25.0 → 0.25.1)](#backstagecli-0250--0251)
   - [`@backstage/cli-node` (0.2.1 → 0.2.2)](#backstagecli-node-021--022)
-  - [`@backstage/config-loader` (1.6.0 → 1.6.1)](#backstageconfig-loader-160--161)
   - [`@backstage/core-compat-api` (0.1.0 → 0.1.1)](#backstagecore-compat-api-010--011)
   - [`@backstage/core-components` (0.13.9 → 0.13.10)](#backstagecore-components-0139--01310)
-  - [`@backstage/core-plugin-api` (1.8.1 → 1.8.2)](#backstagecore-plugin-api-181--182)
   - [`@backstage/create-app` (0.5.8 → 0.5.9)](#backstagecreate-app-058--059)
   - [`@backstage/frontend-test-utils` (0.1.0 → 0.1.1)](#backstagefrontend-test-utils-010--011)
   - [`@backstage/plugin-adr` (0.6.11 → 0.6.12)](#backstageplugin-adr-0611--0612)
@@ -77,8 +73,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-bazaar` (0.2.20 → 0.2.21)](#backstageplugin-bazaar-0220--0221)
   - [`@backstage/plugin-bazaar-backend` (0.3.6 → 0.3.7)](#backstageplugin-bazaar-backend-036--037)
   - [`@backstage/plugin-bitrise` (0.1.55 → 0.1.56)](#backstageplugin-bitrise-0155--0156)
-  - [`@backstage/plugin-catalog` (1.16.0 → 1.16.1)](#backstageplugin-catalog-1160--1161)
-  - [`@backstage/plugin-catalog-backend` (1.16.0 → 1.16.1)](#backstageplugin-catalog-backend-1160--1161)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.3.2 → 0.3.3)](#backstageplugin-catalog-backend-module-aws-032--033)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.27 → 0.1.28)](#backstageplugin-catalog-backend-module-azure-0127--0128)
   - [`@backstage/plugin-catalog-backend-module-backstage-openapi` (0.1.1 → 0.1.2)](#backstageplugin-catalog-backend-module-backstage-openapi-011--012)
@@ -87,8 +81,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-catalog-backend-module-openapi` (0.1.25 → 0.1.26)](#backstageplugin-catalog-backend-module-openapi-0125--0126)
   - [`@backstage/plugin-catalog-backend-module-scaffolder-entity-model` (0.1.5 → 0.1.6)](#backstageplugin-catalog-backend-module-scaffolder-entity-model-015--016)
   - [`@backstage/plugin-catalog-graph` (0.3.2 → 0.3.3)](#backstageplugin-catalog-graph-032--033)
-  - [`@backstage/plugin-catalog-node` (1.6.0 → 1.6.1)](#backstageplugin-catalog-node-160--161)
-  - [`@backstage/plugin-catalog-react` (1.9.2 → 1.9.3)](#backstageplugin-catalog-react-192--193)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.1.6 → 0.1.7)](#backstageplugin-catalog-unprocessed-entities-016--017)
   - [`@backstage/plugin-circleci` (0.3.28 → 0.3.29)](#backstageplugin-circleci-0328--0329)
   - [`@backstage/plugin-cloudbuild` (0.3.28 → 0.3.29)](#backstageplugin-cloudbuild-0328--0329)
@@ -100,7 +92,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-cost-insights` (0.12.17 → 0.12.18)](#backstageplugin-cost-insights-01217--01218)
   - [`@backstage/plugin-devtools` (0.1.7 → 0.1.8)](#backstageplugin-devtools-017--018)
   - [`@backstage/plugin-devtools-backend` (0.2.5 → 0.2.6)](#backstageplugin-devtools-backend-025--026)
-  - [`@backstage/plugin-dynatrace` (8.0.2 → 8.0.3)](#backstageplugin-dynatrace-802--803)
   - [`@backstage/plugin-entity-feedback` (0.2.11 → 0.2.12)](#backstageplugin-entity-feedback-0211--0212)
   - [`@backstage/plugin-entity-feedback-backend` (0.2.5 → 0.2.6)](#backstageplugin-entity-feedback-backend-025--026)
   - [`@backstage/plugin-entity-validation` (0.1.13 → 0.1.14)](#backstageplugin-entity-validation-0113--0114)
@@ -159,7 +150,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-playlist-backend` (0.3.12 → 0.3.13)](#backstageplugin-playlist-backend-0312--0313)
   - [`@backstage/plugin-puppetdb` (0.1.11 → 0.1.12)](#backstageplugin-puppetdb-0111--0112)
   - [`@backstage/plugin-rollbar` (0.4.28 → 0.4.29)](#backstageplugin-rollbar-0428--0429)
-  - [`@backstage/plugin-scaffolder` (1.17.0 → 1.17.1)](#backstageplugin-scaffolder-1170--1171)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.1.0 → 0.1.1)](#backstageplugin-scaffolder-backend-module-azure-010--011)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.1.0 → 0.1.1)](#backstageplugin-scaffolder-backend-module-bitbucket-010--011)
   - [`@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.2.9 → 0.2.10)](#backstageplugin-scaffolder-backend-module-confluence-to-markdown-029--0210)
@@ -167,10 +157,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.1.0 → 0.1.1)](#backstageplugin-scaffolder-backend-module-github-010--011)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.11 → 0.2.12)](#backstageplugin-scaffolder-backend-module-gitlab-0211--0212)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.29 → 0.2.30)](#backstageplugin-scaffolder-backend-module-yeoman-0229--0230)
-  - [`@backstage/plugin-scaffolder-common` (1.4.4 → 1.4.5)](#backstageplugin-scaffolder-common-144--145)
-  - [`@backstage/plugin-scaffolder-react` (1.7.0 → 1.7.1)](#backstageplugin-scaffolder-react-170--171)
-  - [`@backstage/plugin-search` (1.4.4 → 1.4.5)](#backstageplugin-search-144--145)
-  - [`@backstage/plugin-search-backend` (1.4.8 → 1.4.9)](#backstageplugin-search-backend-148--149)
   - [`@backstage/plugin-search-backend-module-catalog` (0.1.12 → 0.1.13)](#backstageplugin-search-backend-module-catalog-0112--0113)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.12 → 0.1.13)](#backstageplugin-search-backend-module-explore-0112--0113)
   - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.1.1 → 0.1.2)](#backstageplugin-search-backend-module-stack-overflow-collator-011--012)
@@ -187,17 +173,33 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.40 → 0.1.41)](#backstageplugin-tech-insights-backend-module-jsonfc-0140--0141)
   - [`@backstage/plugin-tech-insights-node` (0.4.14 → 0.4.15)](#backstageplugin-tech-insights-node-0414--0415)
   - [`@backstage/plugin-tech-radar` (0.6.11 → 0.6.12)](#backstageplugin-tech-radar-0611--0612)
-  - [`@backstage/plugin-techdocs` (1.9.2 → 1.9.3)](#backstageplugin-techdocs-192--193)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.25 → 1.0.26)](#backstageplugin-techdocs-addons-test-utils-1025--1026)
-  - [`@backstage/plugin-techdocs-backend` (1.9.1 → 1.9.2)](#backstageplugin-techdocs-backend-191--192)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.3 → 1.1.4)](#backstageplugin-techdocs-module-addons-contrib-113--114)
-  - [`@backstage/plugin-techdocs-react` (1.1.14 → 1.1.15)](#backstageplugin-techdocs-react-1114--1115)
   - [`@backstage/plugin-todo` (0.2.32 → 0.2.33)](#backstageplugin-todo-0232--0233)
   - [`@backstage/plugin-todo-backend` (0.3.6 → 0.3.7)](#backstageplugin-todo-backend-036--037)
   - [`@backstage/plugin-user-settings-backend` (0.2.7 → 0.2.8)](#backstageplugin-user-settings-backend-027--028)
   - [`@backstage/plugin-vault` (0.1.23 → 0.1.24)](#backstageplugin-vault-0123--0124)
   - [`@backstage/plugin-xcmetrics` (0.2.46 → 0.2.47)](#backstageplugin-xcmetrics-0246--0247)
   - [`@backstage/repo-tools` (0.5.1 → 0.5.2)](#backstagerepo-tools-051--052)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/plugin-scaffolder-backend` (1.19.2 → 1.20.0)](#backstageplugin-scaffolder-backend-1192--1200)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-client` (1.5.1 → 1.5.2)](#backstagecatalog-client-151--152)
+  - [`@backstage/config-loader` (1.6.0 → 1.6.1)](#backstageconfig-loader-160--161)
+  - [`@backstage/core-plugin-api` (1.8.1 → 1.8.2)](#backstagecore-plugin-api-181--182)
+  - [`@backstage/plugin-catalog` (1.16.0 → 1.16.1)](#backstageplugin-catalog-1160--1161)
+  - [`@backstage/plugin-catalog-backend` (1.16.0 → 1.16.1)](#backstageplugin-catalog-backend-1160--1161)
+  - [`@backstage/plugin-catalog-node` (1.6.0 → 1.6.1)](#backstageplugin-catalog-node-160--161)
+  - [`@backstage/plugin-catalog-react` (1.9.2 → 1.9.3)](#backstageplugin-catalog-react-192--193)
+  - [`@backstage/plugin-dynatrace` (8.0.2 → 8.0.3)](#backstageplugin-dynatrace-802--803)
+  - [`@backstage/plugin-scaffolder` (1.17.0 → 1.17.1)](#backstageplugin-scaffolder-1170--1171)
+  - [`@backstage/plugin-scaffolder-common` (1.4.4 → 1.4.5)](#backstageplugin-scaffolder-common-144--145)
+  - [`@backstage/plugin-scaffolder-react` (1.7.0 → 1.7.1)](#backstageplugin-scaffolder-react-170--171)
+  - [`@backstage/plugin-search` (1.4.4 → 1.4.5)](#backstageplugin-search-144--145)
+  - [`@backstage/plugin-search-backend` (1.4.8 → 1.4.9)](#backstageplugin-search-backend-148--149)
+  - [`@backstage/plugin-techdocs` (1.9.2 → 1.9.3)](#backstageplugin-techdocs-192--193)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.25 → 1.0.26)](#backstageplugin-techdocs-addons-test-utils-1025--1026)
+  - [`@backstage/plugin-techdocs-backend` (1.9.1 → 1.9.2)](#backstageplugin-techdocs-backend-191--192)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.3 → 1.1.4)](#backstageplugin-techdocs-module-addons-contrib-113--114)
+  - [`@backstage/plugin-techdocs-react` (1.1.14 → 1.1.15)](#backstageplugin-techdocs-react-1114--1115)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -309,22 +311,7 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
 
-## Other minor version bumps
-
-### `@backstage/plugin-scaffolder-backend` (1.19.2 → [1.20.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1200))
-
-#### 1.20.0
-
-##### Minor Changes
-
-- [`a694f71`](https://github.com/backstage/backstage/commit/a694f71): The Scaffolder builtin actions now contains an action for running pipelines from Bitbucket Cloud Rest API
-- [`7c522c5`](https://github.com/backstage/backstage/commit/7c522c5): Add `gitlab:repo:push` scaffolder action to push files to arbitrary branch without creating a Merge Request
-
-##### Patch Changes
-
-- [`e9ab1c4`](https://github.com/backstage/backstage/commit/e9ab1c4): Fixed an issue where not passing a `value` to any of the action's permission conditions caused an error.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.5.9 → [0.5.10](../../changelogs/@backstage/backend-app-api.md#0510))
 
@@ -379,14 +366,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`516fd3e`](https://github.com/backstage/backstage/commit/516fd3e): Updated README to reflect release status
 
-### `@backstage/catalog-client` (1.5.1 → [1.5.2](../../changelogs/@backstage/catalog-client.md#152))
-
-#### 1.5.2
-
-##### Patch Changes
-
-- [`883782e`](https://github.com/backstage/backstage/commit/883782e): Fix a bug in `getLocationByRef` that led to invalid backend calls
-
 ### `@backstage/cli` (0.25.0 → [0.25.1](../../changelogs/@backstage/cli.md#0251))
 
 #### 0.25.1
@@ -400,14 +379,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 ### `@backstage/cli-node` (0.2.1 → [0.2.2](../../changelogs/@backstage/cli-node.md#022))
 
 #### 0.2.2
-
-##### Patch Changes
-
-- [`7acbb5a`](https://github.com/backstage/backstage/commit/7acbb5a): Removed `mock-fs` dev dependency.
-
-### `@backstage/config-loader` (1.6.0 → [1.6.1](../../changelogs/@backstage/config-loader.md#161))
-
-#### 1.6.1
 
 ##### Patch Changes
 
@@ -429,14 +400,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`d625f66`](https://github.com/backstage/backstage/commit/d625f66): Fixed bug in Link where it was possible to select and copy a hidden element into clipboard
 - [`6878b1d`](https://github.com/backstage/backstage/commit/6878b1d): Removed unnecessary `history` and `immer` dependencies.
-
-### `@backstage/core-plugin-api` (1.8.1 → [1.8.2](../../changelogs/@backstage/core-plugin-api.md#182))
-
-#### 1.8.2
-
-##### Patch Changes
-
-- [`6878b1d`](https://github.com/backstage/backstage/commit/6878b1d): Removed unnecessary `i18next` dependency.
 
 ### `@backstage/create-app` (0.5.8 → [0.5.9](../../changelogs/@backstage/create-app.md#059))
 
@@ -713,22 +676,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
 
-### `@backstage/plugin-catalog` (1.16.0 → [1.16.1](../../changelogs/@backstage/plugin-catalog.md#1161))
-
-#### 1.16.1
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-catalog-backend` (1.16.0 → [1.16.1](../../changelogs/@backstage/plugin-catalog-backend.md#1161))
-
-#### 1.16.1
-
-##### Patch Changes
-
-- [`c3249d6`](https://github.com/backstage/backstage/commit/c3249d6): Parse the URL using a different method rather than `git-url-parse` to support wildcards for URLs which are not VCS providers
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.3.2 → [0.3.3](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#033))
 
 #### 0.3.3
@@ -798,22 +745,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 ### `@backstage/plugin-catalog-graph` (0.3.2 → [0.3.3](../../changelogs/@backstage/plugin-catalog-graph.md#033))
 
 #### 0.3.3
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-catalog-node` (1.6.0 → [1.6.1](../../changelogs/@backstage/plugin-catalog-node.md#161))
-
-#### 1.6.1
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-catalog-react` (1.9.2 → [1.9.3](../../changelogs/@backstage/plugin-catalog-react.md#193))
-
-#### 1.9.3
 
 ##### Patch Changes
 
@@ -903,14 +834,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 ### `@backstage/plugin-devtools-backend` (0.2.5 → [0.2.6](../../changelogs/@backstage/plugin-devtools-backend.md#026))
 
 #### 0.2.6
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-dynatrace` (8.0.2 → [8.0.3](../../changelogs/@backstage/plugin-dynatrace.md#803))
-
-#### 8.0.3
 
 ##### Patch Changes
 
@@ -1407,19 +1330,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
 
-### `@backstage/plugin-scaffolder` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-scaffolder.md#1171))
-
-#### 1.17.1
-
-##### Patch Changes
-
-- [`98ac5ab`](https://github.com/backstage/backstage/commit/98ac5ab): Updated dependency `@rjsf/utils` to `5.15.1`.
-  Updated dependency `@rjsf/core` to `5.15.1`.
-  Updated dependency `@rjsf/material-ui` to `5.15.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.15.1`.
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-- [`df4bc9d`](https://github.com/backstage/backstage/commit/df4bc9d): Minor internal refactor
-
 ### `@backstage/plugin-scaffolder-backend-module-azure` (0.1.0 → [0.1.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#011))
 
 #### 0.1.1
@@ -1474,45 +1384,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 ### `@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.29 → [0.2.30](../../changelogs/@backstage/plugin-scaffolder-backend-module-yeoman.md#0230))
 
 #### 0.2.30
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-scaffolder-common` (1.4.4 → [1.4.5](../../changelogs/@backstage/plugin-scaffolder-common.md#145))
-
-#### 1.4.5
-
-##### Patch Changes
-
-- [`178b8d8`](https://github.com/backstage/backstage/commit/178b8d8): Updated Template.v1beta3.schema.json, added a missing "presentation" field
-
-### `@backstage/plugin-scaffolder-react` (1.7.0 → [1.7.1](../../changelogs/@backstage/plugin-scaffolder-react.md#171))
-
-#### 1.7.1
-
-##### Patch Changes
-
-- [`c28f281`](https://github.com/backstage/backstage/commit/c28f281): Scaffolder form now shows a list of errors at the top of the form.
-- [`0b9ce2b`](https://github.com/backstage/backstage/commit/0b9ce2b): Fix for a step with no properties
-- [`98ac5ab`](https://github.com/backstage/backstage/commit/98ac5ab): Updated dependency `@rjsf/utils` to `5.15.1`.
-  Updated dependency `@rjsf/core` to `5.15.1`.
-  Updated dependency `@rjsf/material-ui` to `5.15.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.15.1`.
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-- [`d16f85f`](https://github.com/backstage/backstage/commit/d16f85f): Show first scaffolder output text by default
-
-### `@backstage/plugin-search` (1.4.4 → [1.4.5](../../changelogs/@backstage/plugin-search.md#145))
-
-#### 1.4.5
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-search-backend` (1.4.8 → [1.4.9](../../changelogs/@backstage/plugin-search-backend.md#149))
-
-#### 1.4.9
 
 ##### Patch Changes
 
@@ -1646,46 +1517,6 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
 
-### `@backstage/plugin-techdocs` (1.9.2 → [1.9.3](../../changelogs/@backstage/plugin-techdocs.md#193))
-
-#### 1.9.3
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.25 → [1.0.26](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1026))
-
-#### 1.0.26
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-techdocs-backend` (1.9.1 → [1.9.2](../../changelogs/@backstage/plugin-techdocs-backend.md#192))
-
-#### 1.9.2
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
-### `@backstage/plugin-techdocs-react` (1.1.14 → [1.1.15](../../changelogs/@backstage/plugin-techdocs-react.md#1115))
-
-#### 1.1.15
-
-##### Patch Changes
-
-- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
-
 ### `@backstage/plugin-todo` (0.2.32 → [0.2.33](../../changelogs/@backstage/plugin-todo.md#0233))
 
 #### 0.2.33
@@ -1734,6 +1565,179 @@ Changes between 1.21.1 and 1.22.0 — 226 changed and 2 added packages.
 
 - [`883782e`](https://github.com/backstage/backstage/commit/883782e): Updated the OpenAPI template to export the `TypedResponse` interface so that client code can leverage it
 - [`7acbb5a`](https://github.com/backstage/backstage/commit/7acbb5a): Removed `mock-fs` dev dependency.
+
+## Other minor version bumps
+
+### `@backstage/plugin-scaffolder-backend` (1.19.2 → [1.20.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1200))
+
+#### 1.20.0
+
+##### Minor Changes
+
+- [`a694f71`](https://github.com/backstage/backstage/commit/a694f71): The Scaffolder builtin actions now contains an action for running pipelines from Bitbucket Cloud Rest API
+- [`7c522c5`](https://github.com/backstage/backstage/commit/7c522c5): Add `gitlab:repo:push` scaffolder action to push files to arbitrary branch without creating a Merge Request
+
+##### Patch Changes
+
+- [`e9ab1c4`](https://github.com/backstage/backstage/commit/e9ab1c4): Fixed an issue where not passing a `value` to any of the action's permission conditions caused an error.
+
+## Other patch version bumps
+
+### `@backstage/catalog-client` (1.5.1 → [1.5.2](../../changelogs/@backstage/catalog-client.md#152))
+
+#### 1.5.2
+
+##### Patch Changes
+
+- [`883782e`](https://github.com/backstage/backstage/commit/883782e): Fix a bug in `getLocationByRef` that led to invalid backend calls
+
+### `@backstage/config-loader` (1.6.0 → [1.6.1](../../changelogs/@backstage/config-loader.md#161))
+
+#### 1.6.1
+
+##### Patch Changes
+
+- [`7acbb5a`](https://github.com/backstage/backstage/commit/7acbb5a): Removed `mock-fs` dev dependency.
+
+### `@backstage/core-plugin-api` (1.8.1 → [1.8.2](../../changelogs/@backstage/core-plugin-api.md#182))
+
+#### 1.8.2
+
+##### Patch Changes
+
+- [`6878b1d`](https://github.com/backstage/backstage/commit/6878b1d): Removed unnecessary `i18next` dependency.
+
+### `@backstage/plugin-catalog` (1.16.0 → [1.16.1](../../changelogs/@backstage/plugin-catalog.md#1161))
+
+#### 1.16.1
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-catalog-backend` (1.16.0 → [1.16.1](../../changelogs/@backstage/plugin-catalog-backend.md#1161))
+
+#### 1.16.1
+
+##### Patch Changes
+
+- [`c3249d6`](https://github.com/backstage/backstage/commit/c3249d6): Parse the URL using a different method rather than `git-url-parse` to support wildcards for URLs which are not VCS providers
+
+### `@backstage/plugin-catalog-node` (1.6.0 → [1.6.1](../../changelogs/@backstage/plugin-catalog-node.md#161))
+
+#### 1.6.1
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-catalog-react` (1.9.2 → [1.9.3](../../changelogs/@backstage/plugin-catalog-react.md#193))
+
+#### 1.9.3
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-dynatrace` (8.0.2 → [8.0.3](../../changelogs/@backstage/plugin-dynatrace.md#803))
+
+#### 8.0.3
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-scaffolder` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-scaffolder.md#1171))
+
+#### 1.17.1
+
+##### Patch Changes
+
+- [`98ac5ab`](https://github.com/backstage/backstage/commit/98ac5ab): Updated dependency `@rjsf/utils` to `5.15.1`.
+  Updated dependency `@rjsf/core` to `5.15.1`.
+  Updated dependency `@rjsf/material-ui` to `5.15.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.15.1`.
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+- [`df4bc9d`](https://github.com/backstage/backstage/commit/df4bc9d): Minor internal refactor
+
+### `@backstage/plugin-scaffolder-common` (1.4.4 → [1.4.5](../../changelogs/@backstage/plugin-scaffolder-common.md#145))
+
+#### 1.4.5
+
+##### Patch Changes
+
+- [`178b8d8`](https://github.com/backstage/backstage/commit/178b8d8): Updated Template.v1beta3.schema.json, added a missing "presentation" field
+
+### `@backstage/plugin-scaffolder-react` (1.7.0 → [1.7.1](../../changelogs/@backstage/plugin-scaffolder-react.md#171))
+
+#### 1.7.1
+
+##### Patch Changes
+
+- [`c28f281`](https://github.com/backstage/backstage/commit/c28f281): Scaffolder form now shows a list of errors at the top of the form.
+- [`0b9ce2b`](https://github.com/backstage/backstage/commit/0b9ce2b): Fix for a step with no properties
+- [`98ac5ab`](https://github.com/backstage/backstage/commit/98ac5ab): Updated dependency `@rjsf/utils` to `5.15.1`.
+  Updated dependency `@rjsf/core` to `5.15.1`.
+  Updated dependency `@rjsf/material-ui` to `5.15.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.15.1`.
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+- [`d16f85f`](https://github.com/backstage/backstage/commit/d16f85f): Show first scaffolder output text by default
+
+### `@backstage/plugin-search` (1.4.4 → [1.4.5](../../changelogs/@backstage/plugin-search.md#145))
+
+#### 1.4.5
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-search-backend` (1.4.8 → [1.4.9](../../changelogs/@backstage/plugin-search-backend.md#149))
+
+#### 1.4.9
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-techdocs` (1.9.2 → [1.9.3](../../changelogs/@backstage/plugin-techdocs.md#193))
+
+#### 1.9.3
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.25 → [1.0.26](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1026))
+
+#### 1.0.26
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-techdocs-backend` (1.9.1 → [1.9.2](../../changelogs/@backstage/plugin-techdocs-backend.md#192))
+
+#### 1.9.2
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
+
+### `@backstage/plugin-techdocs-react` (1.1.14 → [1.1.15](../../changelogs/@backstage/plugin-techdocs-react.md#1115))
+
+#### 1.1.15
+
+##### Patch Changes
+
+- [`4016f21`](https://github.com/backstage/backstage/commit/4016f21): Remove some unused dependencies
 
 ## Excluded dependency updates
 

@@ -1,6 +1,6 @@
 # Backstage Release 1.22.2 changelog
 
-Changes between 1.22.1 and 1.22.2 — 1 changed and 0 added packages.
+Changes between 1.22.1 and 1.22.2 — 0 added, 0 removed, 1 upgraded, 250 unchanged packages.
 
 ## Summary
 

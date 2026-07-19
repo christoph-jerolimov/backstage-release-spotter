@@ -1,6 +1,6 @@
 # Backstage Release 1.2.0 changelog
 
-Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
+Changes between 1.1.1 and 1.2.0 — 7 added, 0 removed, 132 upgraded, 5 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 - [Major version bumps](#major-version-bumps): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 1 package
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 40 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
-- [Other patch version bumps](#other-patch-version-bumps): 50 packages
+- [Other patch version bumps](#other-patch-version-bumps): 10 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 67 packages
 
 ## Table of contents
@@ -34,28 +35,14 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
   - [`@backstage/plugin-auth-backend` (0.13.0 → 0.14.0)](#backstageplugin-auth-backend-0130--0140)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/release-manifests` (0.0.2 → 0.0.3)](#backstagerelease-manifests-002--003)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/integration` (1.1.0 → 1.2.0)](#backstageintegration-110--120)
-  - [`@backstage/integration-react` (1.0.1 → 1.1.0)](#backstageintegration-react-101--110)
-  - [`@backstage/plugin-catalog` (1.1.0 → 1.2.0)](#backstageplugin-catalog-110--120)
-  - [`@backstage/plugin-catalog-react` (1.0.1 → 1.1.0)](#backstageplugin-catalog-react-101--110)
-  - [`@backstage/plugin-scaffolder` (1.1.0 → 1.2.0)](#backstageplugin-scaffolder-110--120)
-  - [`@backstage/plugin-scaffolder-backend` (1.1.0 → 1.2.0)](#backstageplugin-scaffolder-backend-110--120)
-  - [`@backstage/plugin-scaffolder-common` (1.0.1 → 1.1.0)](#backstageplugin-scaffolder-common-101--110)
-  - [`@backstage/test-utils` (1.0.1 → 1.1.0)](#backstagetest-utils-101--110)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.13.2 → 0.13.3)](#backstagebackend-common-0132--0133)
   - [`@backstage/backend-tasks` (0.3.0 → 0.3.1)](#backstagebackend-tasks-030--031)
   - [`@backstage/cli` (0.17.0 → 0.17.1)](#backstagecli-0170--0171)
   - [`@backstage/cli-common` (0.1.8 → 0.1.9)](#backstagecli-common-018--019)
   - [`@backstage/codemods` (0.1.37 → 0.1.38)](#backstagecodemods-0137--0138)
-  - [`@backstage/config` (1.0.0 → 1.0.1)](#backstageconfig-100--101)
-  - [`@backstage/config-loader` (1.1.0 → 1.1.1)](#backstageconfig-loader-110--111)
-  - [`@backstage/core-app-api` (1.0.1 → 1.0.2)](#backstagecore-app-api-101--102)
   - [`@backstage/core-components` (0.9.3 → 0.9.4)](#backstagecore-components-093--094)
-  - [`@backstage/core-plugin-api` (1.0.1 → 1.0.2)](#backstagecore-plugin-api-101--102)
   - [`@backstage/create-app` (0.4.26 → 0.4.27)](#backstagecreate-app-0426--0427)
-  - [`@backstage/dev-utils` (1.0.1 → 1.0.2)](#backstagedev-utils-101--102)
   - [`@backstage/plugin-api-docs` (0.8.4 → 0.8.5)](#backstageplugin-api-docs-084--085)
   - [`@backstage/plugin-app-backend` (0.3.31 → 0.3.32)](#backstageplugin-app-backend-0331--0332)
   - [`@backstage/plugin-auth-node` (0.2.0 → 0.2.1)](#backstageplugin-auth-node-020--021)
@@ -63,7 +50,6 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
   - [`@backstage/plugin-azure-devops-backend` (0.3.10 → 0.3.11)](#backstageplugin-azure-devops-backend-0310--0311)
   - [`@backstage/plugin-azure-devops-common` (0.2.2 → 0.2.3)](#backstageplugin-azure-devops-common-022--023)
   - [`@backstage/plugin-bazaar` (0.1.19 → 0.1.20)](#backstageplugin-bazaar-0119--0120)
-  - [`@backstage/plugin-catalog-backend` (1.1.1 → 1.1.2)](#backstageplugin-catalog-backend-111--112)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.1.4 → 0.1.5)](#backstageplugin-catalog-backend-module-aws-014--015)
   - [`@backstage/plugin-catalog-backend-module-github` (0.1.2 → 0.1.3)](#backstageplugin-catalog-backend-module-github-012--013)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.3.1 → 0.3.2)](#backstageplugin-catalog-backend-module-msgraph-031--032)
@@ -89,10 +75,26 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
   - [`@backstage/plugin-tech-insights` (0.2.0 → 0.2.1)](#backstageplugin-tech-insights-020--021)
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.15 → 0.1.16)](#backstageplugin-tech-insights-backend-module-jsonfc-0115--0116)
   - [`@backstage/plugin-tech-radar` (0.5.11 → 0.5.12)](#backstageplugin-tech-radar-0511--0512)
+  - [`@backstage/plugin-user-settings` (0.4.3 → 0.4.4)](#backstageplugin-user-settings-043--044)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/integration` (1.1.0 → 1.2.0)](#backstageintegration-110--120)
+  - [`@backstage/integration-react` (1.0.1 → 1.1.0)](#backstageintegration-react-101--110)
+  - [`@backstage/plugin-catalog` (1.1.0 → 1.2.0)](#backstageplugin-catalog-110--120)
+  - [`@backstage/plugin-catalog-react` (1.0.1 → 1.1.0)](#backstageplugin-catalog-react-101--110)
+  - [`@backstage/plugin-scaffolder` (1.1.0 → 1.2.0)](#backstageplugin-scaffolder-110--120)
+  - [`@backstage/plugin-scaffolder-backend` (1.1.0 → 1.2.0)](#backstageplugin-scaffolder-backend-110--120)
+  - [`@backstage/plugin-scaffolder-common` (1.0.1 → 1.1.0)](#backstageplugin-scaffolder-common-101--110)
+  - [`@backstage/test-utils` (1.0.1 → 1.1.0)](#backstagetest-utils-101--110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/config` (1.0.0 → 1.0.1)](#backstageconfig-100--101)
+  - [`@backstage/config-loader` (1.1.0 → 1.1.1)](#backstageconfig-loader-110--111)
+  - [`@backstage/core-app-api` (1.0.1 → 1.0.2)](#backstagecore-app-api-101--102)
+  - [`@backstage/core-plugin-api` (1.0.1 → 1.0.2)](#backstagecore-plugin-api-101--102)
+  - [`@backstage/dev-utils` (1.0.1 → 1.0.2)](#backstagedev-utils-101--102)
+  - [`@backstage/plugin-catalog-backend` (1.1.1 → 1.1.2)](#backstageplugin-catalog-backend-111--112)
   - [`@backstage/plugin-techdocs` (1.1.0 → 1.1.1)](#backstageplugin-techdocs-110--111)
   - [`@backstage/plugin-techdocs-backend` (1.1.0 → 1.1.1)](#backstageplugin-techdocs-backend-110--111)
   - [`@backstage/plugin-techdocs-node` (1.1.0 → 1.1.1)](#backstageplugin-techdocs-node-110--111)
-  - [`@backstage/plugin-user-settings` (0.4.3 → 0.4.4)](#backstageplugin-user-settings-043--044)
   - [`@techdocs/cli` (1.1.0 → 1.1.1)](#techdocscli-110--111)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -364,190 +366,7 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 
 - [`6e830352d4`](https://github.com/backstage/backstage/commit/6e830352d4): Updated dependency `@types/node` to `^16.0.0`.
 
-## Other minor version bumps
-
-### `@backstage/integration` (1.1.0 → [1.2.0](../../changelogs/@backstage/integration.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`e295ce87de`](https://github.com/backstage/backstage/commit/e295ce87de): added the possibility to handle raw Gitlab URLs with nested namespaces
-- [`6673babab9`](https://github.com/backstage/backstage/commit/6673babab9): Gerrit UrlReader: Implemented `readTree`
-- [`1b4e1e2306`](https://github.com/backstage/backstage/commit/1b4e1e2306): Split `bitbucket` integration into `bitbucketCloud` and `bitbucketServer`
-  (backwards compatible).
-
-  In order to migrate to the new integration configs,
-  move your configs from `integrations.bitbucket`
-  to `integrations.bitbucketCloud` or `integrations.bitbucketServer`.
-
-  Migration example:
-
-  **Before:**
-
-  ```yaml
-  integrations:
-    bitbucket:
-      - host: bitbucket.org
-        username: bitbucket_user
-        appPassword: app-password
-      - host: bitbucket-server.company.com
-        token: my-token
-  ```
-
-  **After:**
-
-  ```yaml
-  integrations:
-    bitbucketCloud:
-      - username: bitbucket_user
-        appPassword: app-password
-    bitbucketServer:
-      - host: bitbucket-server.company.com
-        token: my-token
-  ```
-
-- [`566407bf8a`](https://github.com/backstage/backstage/commit/566407bf8a): Gerrit Integration: Added the `getGerritProjectsApiUrl` function
-
-### `@backstage/integration-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/integration-react.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`1b4e1e2306`](https://github.com/backstage/backstage/commit/1b4e1e2306): Split `bitbucket` integration into `bitbucketCloud` and `bitbucketServer`
-  (backwards compatible).
-
-  In order to migrate to the new integration configs,
-  move your configs from `integrations.bitbucket`
-  to `integrations.bitbucketCloud` or `integrations.bitbucketServer`.
-
-  Migration example:
-
-  **Before:**
-
-  ```yaml
-  integrations:
-    bitbucket:
-      - host: bitbucket.org
-        username: bitbucket_user
-        appPassword: app-password
-      - host: bitbucket-server.company.com
-        token: my-token
-  ```
-
-  **After:**
-
-  ```yaml
-  integrations:
-    bitbucketCloud:
-      - username: bitbucket_user
-        appPassword: app-password
-    bitbucketServer:
-      - host: bitbucket-server.company.com
-        token: my-token
-  ```
-
-### `@backstage/plugin-catalog` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-catalog.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`4274844a8c`](https://github.com/backstage/backstage/commit/4274844a8c): Use InfoCardVariants on custom cards variant attribute
-- [`ceca63d149`](https://github.com/backstage/backstage/commit/ceca63d149): Added the prop `NotFoundComponent` to `EntityLayout` which can be used to include a custom component when an entity is not found in the catalog
-
-##### Patch Changes
-
-- [`051fc60258`](https://github.com/backstage/backstage/commit/051fc60258): Lighthouse was reporting this button as having invalid aria- values, as the popover doesn't exist until clicked. This adds additional labels to the button to make it valid aria
-- [`2bcb0a0e2b`](https://github.com/backstage/backstage/commit/2bcb0a0e2b): Sidebar NAV now includes aria-label. Component AboutField now uses h2 variant instead of subtitle2 (font properties unchanged)
-- [`3a74e203a8`](https://github.com/backstage/backstage/commit/3a74e203a8): Updated search result components to support rendering content with highlighted matched terms
-
-### `@backstage/plugin-catalog-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-catalog-react.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`4274844a8c`](https://github.com/backstage/backstage/commit/4274844a8c): Use InfoCardVariants on custom cards variant attribute
-
-##### Patch Changes
-
-- [`0418447669`](https://github.com/backstage/backstage/commit/0418447669): Added menu parent role for menu items accessibility
-- [`b7514d19ff`](https://github.com/backstage/backstage/commit/b7514d19ff): Update the rendering of links in the entity inspector so that values starting with `https?://` are rendered as links as well.
-- [`b880c0e092`](https://github.com/backstage/backstage/commit/b880c0e092): Fix `EntityTypeFilter` so generating available types is case insensitive
-- [`57f41fb8d6`](https://github.com/backstage/backstage/commit/57f41fb8d6): Make Menu item on filters accessible through keyboard
-
-### `@backstage/plugin-scaffolder` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`06ab5218f9`](https://github.com/backstage/backstage/commit/06ab5218f9): Add new bitbucket(Cloud/Server) integrations to ScaffolderClient.
-
-##### Patch Changes
-
-- [`8dce7d5244`](https://github.com/backstage/backstage/commit/8dce7d5244): Allow validation for custom field extension with type object
-- [`70817dafc0`](https://github.com/backstage/backstage/commit/70817dafc0): Updated dependency `use-immer` to `^0.7.0`.
-- [`ace230b599`](https://github.com/backstage/backstage/commit/ace230b599): Updated dependency `@codemirror/legacy-modes` to `^0.20.0`.
-
-### `@backstage/plugin-scaffolder-backend` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`9818112d12`](https://github.com/backstage/backstage/commit/9818112d12): Update the `github:publish` action to allow passing required status check
-  contexts before merging to the main branch.
-- [`f8baf7df44`](https://github.com/backstage/backstage/commit/f8baf7df44): Added the ability to reference the user in the `template.yaml` manifest
-- [`8d5a2238a9`](https://github.com/backstage/backstage/commit/8d5a2238a9): Split `publish:bitbucket` into `publish:bitbucketCloud` and `publish:bitbucketServer`.
-
-  In order to migrate from the deprecated action, you need to replace the use of action
-  `publish:bitbucket` in your templates with the use of either `publish:bitbucketCloud`
-  or `publish:bitbucketServer` - depending on which destination SCM provider you use.
-
-  Additionally, these actions will not utilize `integrations.bitbucket` anymore,
-  but `integrations.bitbucketCloud` or `integrations.bitbucketServer` respectively.
-  You may or may not have migrated to these already.
-
-  As described in a previous changeset, using these two replacement integrations configs
-  will not compromise use cases which still rely on `integrations.bitbucket` as this was
-  set up in a backwards compatible way.
-
-  Additionally, please mind that the option `enableLFS` is only available (and always was)
-  for Bitbucket Server use cases and therefore, is not even part of the schema for
-  `publish:bitbucketCloud` anymore.
-
-##### Patch Changes
-
-- [`0fc65cbf89`](https://github.com/backstage/backstage/commit/0fc65cbf89): Override default commit message and author details in GitHub, Azure, bitbucket
-- [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
-
-### `@backstage/plugin-scaffolder-common` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder-common.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`f8baf7df44`](https://github.com/backstage/backstage/commit/f8baf7df44): Added the ability to reference the user in the `template.yaml` manifest
-
-### `@backstage/test-utils` (1.0.1 → [1.1.0](../../changelogs/@backstage/test-utils.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`1da8b248c2`](https://github.com/backstage/backstage/commit/1da8b248c2): Added the options parameter to `renderWithEffects`, which if forwarded to the `render` function from `@testling-library/react`. Initially only the `wrapper` option is supported.
-- [`1da8b248c2`](https://github.com/backstage/backstage/commit/1da8b248c2): Added `createTestAppWrapper`, which returns a component that can be used as the `wrapper` option for `render` or `renderWithEffects`.
-
-##### Patch Changes
-
-- [`1da8b248c2`](https://github.com/backstage/backstage/commit/1da8b248c2): Fixed `renderInTestApp` so that it is able to re-render the result without removing the app wrapping.
-- [`7a5ddfd595`](https://github.com/backstage/backstage/commit/7a5ddfd595): Added missing `Routes` element to wrap the `Route` elements of the test app wrapping.
-- [`7a5ddfd595`](https://github.com/backstage/backstage/commit/7a5ddfd595): The internal elements created as part of the `mountedRoutes` implementation are now hidden during rendering.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.13.2 → [0.13.3](../../changelogs/@backstage/backend-common.md#0133))
 
@@ -641,31 +460,6 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 
 - [`344ea56acc`](https://github.com/backstage/backstage/commit/344ea56acc): Bump `commander` to version 9.1.0
 
-### `@backstage/config` (1.0.0 → [1.0.1](../../changelogs/@backstage/config.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`6e830352d4`](https://github.com/backstage/backstage/commit/6e830352d4): Updated dependency `@types/node` to `^16.0.0`.
-
-### `@backstage/config-loader` (1.1.0 → [1.1.1](../../changelogs/@backstage/config-loader.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
-- [`9e8ef53498`](https://github.com/backstage/backstage/commit/9e8ef53498): Handle empty config files gracefully
-
-### `@backstage/core-app-api` (1.0.1 → [1.0.2](../../changelogs/@backstage/core-app-api.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`1fae1f57c9`](https://github.com/backstage/backstage/commit/1fae1f57c9): Fix SAML session schema to no longer require the (deprecated) id, to unbreak session data storage.
-
 ### `@backstage/core-components` (0.9.3 → [0.9.4](../../changelogs/@backstage/core-components.md#094))
 
 #### 0.9.4
@@ -687,14 +481,6 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 - [`2025d7c123`](https://github.com/backstage/backstage/commit/2025d7c123): Properly highlight `SidebarSubmenuItem` dropdown items on hover, use ellipsis styling on long labels in `SidebarSubmenu`, allow `icon` and `to` properties to be optional on `SidebarSubmenuItem`, and fix `SidebarPage` padding to be responsive to pinned state
 - [`2295b4ab2b`](https://github.com/backstage/backstage/commit/2295b4ab2b): Add controls to Storybook stories
 - [`521293b22e`](https://github.com/backstage/backstage/commit/521293b22e): Added a chevron Indicator when the sidebar is collapsed and has a sub-menu
-
-### `@backstage/core-plugin-api` (1.0.1 → [1.0.2](../../changelogs/@backstage/core-plugin-api.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`b653a5595c`](https://github.com/backstage/backstage/commit/b653a5595c): The authentication APIs are no longer `@alpha`. Since the `@backstage/core-plugin-api` has no `/alpha` entrypoint, the only effect of marking the APIs as `@alpha` was to hide them in documentation. They are still expected to be widely used and there will be a migration path if they are changed in the future.
 
 ### `@backstage/create-app` (0.4.26 → [0.4.27](../../changelogs/@backstage/create-app.md#0427))
 
@@ -903,14 +689,6 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
      },
   ```
 
-### `@backstage/dev-utils` (1.0.1 → [1.0.2](../../changelogs/@backstage/dev-utils.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`6e830352d4`](https://github.com/backstage/backstage/commit/6e830352d4): Updated dependency `@types/node` to `^16.0.0`.
-
 ### `@backstage/plugin-api-docs` (0.8.4 → [0.8.5](../../changelogs/@backstage/plugin-api-docs.md#085))
 
 #### 0.8.5
@@ -972,19 +750,6 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 ##### Patch Changes
 
 - [`84c9e35a2f`](https://github.com/backstage/backstage/commit/84c9e35a2f): Exported the SortView component from the Bazaar plugin for use directly
-
-### `@backstage/plugin-catalog-backend` (1.1.1 → [1.1.2](../../changelogs/@backstage/plugin-catalog-backend.md#112))
-
-#### 1.1.2
-
-##### Patch Changes
-
-- [`16a40ac4c0`](https://github.com/backstage/backstage/commit/16a40ac4c0): Fix wrong return type of the `isGroupEntity` function.
-- [`55e09b29dd`](https://github.com/backstage/backstage/commit/55e09b29dd): Fixing broken types for `knex` when checking returned rows
-- [`1ccbe081cc`](https://github.com/backstage/backstage/commit/1ccbe081cc): Minor internal tweak to support TypeScript 4.6
-- [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
-- [`2909746147`](https://github.com/backstage/backstage/commit/2909746147): Updated parseEntityTransformParams to handle keys with '.' in them. This will allow for querying of entities based off annotations such as 'backstage.io/orgin-location' or other entity field keys that have '.' in them.
-- [`8cc75993a6`](https://github.com/backstage/backstage/commit/8cc75993a6): Fixed issue in `PermissionEvaluator` instance check that would cause unexpected "invalid union" errors.
 
 ### `@backstage/plugin-catalog-backend-module-aws` (0.1.4 → [0.1.5](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#015))
 
@@ -1262,6 +1027,253 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 
 - [`3588a77994`](https://github.com/backstage/backstage/commit/3588a77994): Rename `use` to `adopt`, to reflect Zalando Tech Radar regarding quadrants and add link to Zalando explanation.
 
+### `@backstage/plugin-user-settings` (0.4.3 → [0.4.4](../../changelogs/@backstage/plugin-user-settings.md#044))
+
+#### 0.4.4
+
+##### Patch Changes
+
+- [`ed075219aa`](https://github.com/backstage/backstage/commit/ed075219aa): Added alternative text to profile picture
+
+## Other minor version bumps
+
+### `@backstage/integration` (1.1.0 → [1.2.0](../../changelogs/@backstage/integration.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`e295ce87de`](https://github.com/backstage/backstage/commit/e295ce87de): added the possibility to handle raw Gitlab URLs with nested namespaces
+- [`6673babab9`](https://github.com/backstage/backstage/commit/6673babab9): Gerrit UrlReader: Implemented `readTree`
+- [`1b4e1e2306`](https://github.com/backstage/backstage/commit/1b4e1e2306): Split `bitbucket` integration into `bitbucketCloud` and `bitbucketServer`
+  (backwards compatible).
+
+  In order to migrate to the new integration configs,
+  move your configs from `integrations.bitbucket`
+  to `integrations.bitbucketCloud` or `integrations.bitbucketServer`.
+
+  Migration example:
+
+  **Before:**
+
+  ```yaml
+  integrations:
+    bitbucket:
+      - host: bitbucket.org
+        username: bitbucket_user
+        appPassword: app-password
+      - host: bitbucket-server.company.com
+        token: my-token
+  ```
+
+  **After:**
+
+  ```yaml
+  integrations:
+    bitbucketCloud:
+      - username: bitbucket_user
+        appPassword: app-password
+    bitbucketServer:
+      - host: bitbucket-server.company.com
+        token: my-token
+  ```
+
+- [`566407bf8a`](https://github.com/backstage/backstage/commit/566407bf8a): Gerrit Integration: Added the `getGerritProjectsApiUrl` function
+
+### `@backstage/integration-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/integration-react.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`1b4e1e2306`](https://github.com/backstage/backstage/commit/1b4e1e2306): Split `bitbucket` integration into `bitbucketCloud` and `bitbucketServer`
+  (backwards compatible).
+
+  In order to migrate to the new integration configs,
+  move your configs from `integrations.bitbucket`
+  to `integrations.bitbucketCloud` or `integrations.bitbucketServer`.
+
+  Migration example:
+
+  **Before:**
+
+  ```yaml
+  integrations:
+    bitbucket:
+      - host: bitbucket.org
+        username: bitbucket_user
+        appPassword: app-password
+      - host: bitbucket-server.company.com
+        token: my-token
+  ```
+
+  **After:**
+
+  ```yaml
+  integrations:
+    bitbucketCloud:
+      - username: bitbucket_user
+        appPassword: app-password
+    bitbucketServer:
+      - host: bitbucket-server.company.com
+        token: my-token
+  ```
+
+### `@backstage/plugin-catalog` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-catalog.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`4274844a8c`](https://github.com/backstage/backstage/commit/4274844a8c): Use InfoCardVariants on custom cards variant attribute
+- [`ceca63d149`](https://github.com/backstage/backstage/commit/ceca63d149): Added the prop `NotFoundComponent` to `EntityLayout` which can be used to include a custom component when an entity is not found in the catalog
+
+##### Patch Changes
+
+- [`051fc60258`](https://github.com/backstage/backstage/commit/051fc60258): Lighthouse was reporting this button as having invalid aria- values, as the popover doesn't exist until clicked. This adds additional labels to the button to make it valid aria
+- [`2bcb0a0e2b`](https://github.com/backstage/backstage/commit/2bcb0a0e2b): Sidebar NAV now includes aria-label. Component AboutField now uses h2 variant instead of subtitle2 (font properties unchanged)
+- [`3a74e203a8`](https://github.com/backstage/backstage/commit/3a74e203a8): Updated search result components to support rendering content with highlighted matched terms
+
+### `@backstage/plugin-catalog-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-catalog-react.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`4274844a8c`](https://github.com/backstage/backstage/commit/4274844a8c): Use InfoCardVariants on custom cards variant attribute
+
+##### Patch Changes
+
+- [`0418447669`](https://github.com/backstage/backstage/commit/0418447669): Added menu parent role for menu items accessibility
+- [`b7514d19ff`](https://github.com/backstage/backstage/commit/b7514d19ff): Update the rendering of links in the entity inspector so that values starting with `https?://` are rendered as links as well.
+- [`b880c0e092`](https://github.com/backstage/backstage/commit/b880c0e092): Fix `EntityTypeFilter` so generating available types is case insensitive
+- [`57f41fb8d6`](https://github.com/backstage/backstage/commit/57f41fb8d6): Make Menu item on filters accessible through keyboard
+
+### `@backstage/plugin-scaffolder` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`06ab5218f9`](https://github.com/backstage/backstage/commit/06ab5218f9): Add new bitbucket(Cloud/Server) integrations to ScaffolderClient.
+
+##### Patch Changes
+
+- [`8dce7d5244`](https://github.com/backstage/backstage/commit/8dce7d5244): Allow validation for custom field extension with type object
+- [`70817dafc0`](https://github.com/backstage/backstage/commit/70817dafc0): Updated dependency `use-immer` to `^0.7.0`.
+- [`ace230b599`](https://github.com/backstage/backstage/commit/ace230b599): Updated dependency `@codemirror/legacy-modes` to `^0.20.0`.
+
+### `@backstage/plugin-scaffolder-backend` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`9818112d12`](https://github.com/backstage/backstage/commit/9818112d12): Update the `github:publish` action to allow passing required status check
+  contexts before merging to the main branch.
+- [`f8baf7df44`](https://github.com/backstage/backstage/commit/f8baf7df44): Added the ability to reference the user in the `template.yaml` manifest
+- [`8d5a2238a9`](https://github.com/backstage/backstage/commit/8d5a2238a9): Split `publish:bitbucket` into `publish:bitbucketCloud` and `publish:bitbucketServer`.
+
+  In order to migrate from the deprecated action, you need to replace the use of action
+  `publish:bitbucket` in your templates with the use of either `publish:bitbucketCloud`
+  or `publish:bitbucketServer` - depending on which destination SCM provider you use.
+
+  Additionally, these actions will not utilize `integrations.bitbucket` anymore,
+  but `integrations.bitbucketCloud` or `integrations.bitbucketServer` respectively.
+  You may or may not have migrated to these already.
+
+  As described in a previous changeset, using these two replacement integrations configs
+  will not compromise use cases which still rely on `integrations.bitbucket` as this was
+  set up in a backwards compatible way.
+
+  Additionally, please mind that the option `enableLFS` is only available (and always was)
+  for Bitbucket Server use cases and therefore, is not even part of the schema for
+  `publish:bitbucketCloud` anymore.
+
+##### Patch Changes
+
+- [`0fc65cbf89`](https://github.com/backstage/backstage/commit/0fc65cbf89): Override default commit message and author details in GitHub, Azure, bitbucket
+- [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
+
+### `@backstage/plugin-scaffolder-common` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder-common.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`f8baf7df44`](https://github.com/backstage/backstage/commit/f8baf7df44): Added the ability to reference the user in the `template.yaml` manifest
+
+### `@backstage/test-utils` (1.0.1 → [1.1.0](../../changelogs/@backstage/test-utils.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`1da8b248c2`](https://github.com/backstage/backstage/commit/1da8b248c2): Added the options parameter to `renderWithEffects`, which if forwarded to the `render` function from `@testling-library/react`. Initially only the `wrapper` option is supported.
+- [`1da8b248c2`](https://github.com/backstage/backstage/commit/1da8b248c2): Added `createTestAppWrapper`, which returns a component that can be used as the `wrapper` option for `render` or `renderWithEffects`.
+
+##### Patch Changes
+
+- [`1da8b248c2`](https://github.com/backstage/backstage/commit/1da8b248c2): Fixed `renderInTestApp` so that it is able to re-render the result without removing the app wrapping.
+- [`7a5ddfd595`](https://github.com/backstage/backstage/commit/7a5ddfd595): Added missing `Routes` element to wrap the `Route` elements of the test app wrapping.
+- [`7a5ddfd595`](https://github.com/backstage/backstage/commit/7a5ddfd595): The internal elements created as part of the `mountedRoutes` implementation are now hidden during rendering.
+
+## Other patch version bumps
+
+### `@backstage/config` (1.0.0 → [1.0.1](../../changelogs/@backstage/config.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`6e830352d4`](https://github.com/backstage/backstage/commit/6e830352d4): Updated dependency `@types/node` to `^16.0.0`.
+
+### `@backstage/config-loader` (1.1.0 → [1.1.1](../../changelogs/@backstage/config-loader.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
+- [`9e8ef53498`](https://github.com/backstage/backstage/commit/9e8ef53498): Handle empty config files gracefully
+
+### `@backstage/core-app-api` (1.0.1 → [1.0.2](../../changelogs/@backstage/core-app-api.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`1fae1f57c9`](https://github.com/backstage/backstage/commit/1fae1f57c9): Fix SAML session schema to no longer require the (deprecated) id, to unbreak session data storage.
+
+### `@backstage/core-plugin-api` (1.0.1 → [1.0.2](../../changelogs/@backstage/core-plugin-api.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`b653a5595c`](https://github.com/backstage/backstage/commit/b653a5595c): The authentication APIs are no longer `@alpha`. Since the `@backstage/core-plugin-api` has no `/alpha` entrypoint, the only effect of marking the APIs as `@alpha` was to hide them in documentation. They are still expected to be widely used and there will be a migration path if they are changed in the future.
+
+### `@backstage/dev-utils` (1.0.1 → [1.0.2](../../changelogs/@backstage/dev-utils.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`6e830352d4`](https://github.com/backstage/backstage/commit/6e830352d4): Updated dependency `@types/node` to `^16.0.0`.
+
+### `@backstage/plugin-catalog-backend` (1.1.1 → [1.1.2](../../changelogs/@backstage/plugin-catalog-backend.md#112))
+
+#### 1.1.2
+
+##### Patch Changes
+
+- [`16a40ac4c0`](https://github.com/backstage/backstage/commit/16a40ac4c0): Fix wrong return type of the `isGroupEntity` function.
+- [`55e09b29dd`](https://github.com/backstage/backstage/commit/55e09b29dd): Fixing broken types for `knex` when checking returned rows
+- [`1ccbe081cc`](https://github.com/backstage/backstage/commit/1ccbe081cc): Minor internal tweak to support TypeScript 4.6
+- [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
+- [`2909746147`](https://github.com/backstage/backstage/commit/2909746147): Updated parseEntityTransformParams to handle keys with '.' in them. This will allow for querying of entities based off annotations such as 'backstage.io/orgin-location' or other entity field keys that have '.' in them.
+- [`8cc75993a6`](https://github.com/backstage/backstage/commit/8cc75993a6): Fixed issue in `PermissionEvaluator` instance check that would cause unexpected "invalid union" errors.
+
 ### `@backstage/plugin-techdocs` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-techdocs.md#111))
 
 #### 1.1.1
@@ -1295,14 +1307,6 @@ Changes between 1.1.1 and 1.2.0 — 132 changed and 7 added packages.
 - [`cfc0f19699`](https://github.com/backstage/backstage/commit/cfc0f19699): Updated dependency `fs-extra` to `10.1.0`.
 - [`c2a1d8935e`](https://github.com/backstage/backstage/commit/c2a1d8935e): Updated the default version of the `@spotify/techdocs` container used when `techdocs.generator.runIn` is `docker` to `v1.0.3`.
 - [`b26f4cb6a1`](https://github.com/backstage/backstage/commit/b26f4cb6a1): Allow usage of custom tags with sequence node type (such as the !ENV tag) in the techdocs mkdocs config.
-
-### `@backstage/plugin-user-settings` (0.4.3 → [0.4.4](../../changelogs/@backstage/plugin-user-settings.md#044))
-
-#### 0.4.4
-
-##### Patch Changes
-
-- [`ed075219aa`](https://github.com/backstage/backstage/commit/ed075219aa): Added alternative text to profile picture
 
 ### `@techdocs/cli` (1.1.0 → [1.1.1](../../changelogs/@techdocs/cli.md#111))
 

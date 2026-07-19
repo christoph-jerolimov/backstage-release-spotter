@@ -1,17 +1,17 @@
 # Backstage Release 1.0.1 changelog
 
-Changes between 1.0.0 and 1.0.1 — 1 changed and 0 added packages.
+Changes between 1.0.0 and 1.0.1 — 0 added, 0 removed, 1 upgraded, 131 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-auth-backend` (0.12.2 → 0.12.3)](#backstageplugin-auth-backend-0122--0123)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-auth-backend` (0.12.2 → [0.12.3](../../changelogs/@backstage/plugin-auth-backend.md#0123))
 

@@ -1,15 +1,17 @@
 # Backstage Release 1.3.0 changelog
 
-Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
+Changes between 1.2.2 and 1.3.0 — 6 added, 2 removed, 133 upgraded, 9 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 6 packages
+- [Removed packages](#removed-packages): 2 packages
 - [Breaking changes](#breaking-changes): 3 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 5 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 83 packages
 - [Other minor version bumps](#other-minor-version-bumps): 5 packages
-- [Other patch version bumps](#other-patch-version-bumps): 99 packages
+- [Other patch version bumps](#other-patch-version-bumps): 16 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 19 packages
 
 ## Table of contents
@@ -21,6 +23,7 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
   - [`@backstage/plugin-github-pull-requests-board` (new, 0.1.0)](#backstageplugin-github-pull-requests-board-new-010)
   - [`@backstage/plugin-vault` (new, 0.1.0)](#backstageplugin-vault-new-010)
   - [`@backstage/plugin-vault-backend` (new, 0.1.0)](#backstageplugin-vault-backend-new-010)
+- [Removed packages](#removed-packages)
 - [Breaking changes](#breaking-changes)
   - [`@backstage/backend-common` (0.13.5 → 0.14.0)](#backstagebackend-common-0135--0140)
   - [`@backstage/plugin-pagerduty` (0.3.32 → 0.4.0)](#backstageplugin-pagerduty-0332--040)
@@ -34,25 +37,12 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-explore-react` (0.0.17 → 0.0.18)](#backstageplugin-explore-react-0017--0018)
   - [`@backstage/release-manifests` (0.0.3 → 0.0.4)](#backstagerelease-manifests-003--004)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/plugin-catalog` (1.2.0 → 1.3.0)](#backstageplugin-catalog-120--130)
-  - [`@backstage/plugin-catalog-backend` (1.1.2 → 1.2.0)](#backstageplugin-catalog-backend-112--120)
-  - [`@backstage/plugin-scaffolder` (1.2.0 → 1.3.0)](#backstageplugin-scaffolder-120--130)
-  - [`@backstage/plugin-scaffolder-backend` (1.2.0 → 1.3.0)](#backstageplugin-scaffolder-backend-120--130)
-  - [`@backstage/plugin-techdocs` (1.1.1 → 1.2.0)](#backstageplugin-techdocs-111--120)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-tasks` (0.3.1 → 0.3.2)](#backstagebackend-tasks-031--032)
   - [`@backstage/backend-test-utils` (0.1.24 → 0.1.25)](#backstagebackend-test-utils-0124--0125)
-  - [`@backstage/catalog-client` (1.0.2 → 1.0.3)](#backstagecatalog-client-102--103)
-  - [`@backstage/catalog-model` (1.0.2 → 1.0.3)](#backstagecatalog-model-102--103)
   - [`@backstage/cli` (0.17.1 → 0.17.2)](#backstagecli-0171--0172)
-  - [`@backstage/config-loader` (1.1.1 → 1.1.2)](#backstageconfig-loader-111--112)
-  - [`@backstage/core-app-api` (1.0.2 → 1.0.3)](#backstagecore-app-api-102--103)
   - [`@backstage/core-components` (0.9.4 → 0.9.5)](#backstagecore-components-094--095)
-  - [`@backstage/core-plugin-api` (1.0.2 → 1.0.3)](#backstagecore-plugin-api-102--103)
   - [`@backstage/create-app` (0.4.27 → 0.4.28)](#backstagecreate-app-0427--0428)
-  - [`@backstage/integration` (1.2.0 → 1.2.1)](#backstageintegration-120--121)
-  - [`@backstage/integration-react` (1.1.0 → 1.1.1)](#backstageintegration-react-110--111)
   - [`@backstage/plugin-adr` (0.1.0 → 0.1.1)](#backstageplugin-adr-010--011)
   - [`@backstage/plugin-adr-backend` (0.1.0 → 0.1.1)](#backstageplugin-adr-backend-010--011)
   - [`@backstage/plugin-airbrake` (0.3.5 → 0.3.6)](#backstageplugin-airbrake-035--036)
@@ -74,10 +64,8 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
   - [`@backstage/plugin-catalog-backend-module-github` (0.1.3 → 0.1.4)](#backstageplugin-catalog-backend-module-github-013--014)
   - [`@backstage/plugin-catalog-backend-module-gitlab` (0.1.3 → 0.1.4)](#backstageplugin-catalog-backend-module-gitlab-013--014)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.3.2 → 0.3.3)](#backstageplugin-catalog-backend-module-msgraph-032--033)
-  - [`@backstage/plugin-catalog-common` (1.0.2 → 1.0.3)](#backstageplugin-catalog-common-102--103)
   - [`@backstage/plugin-catalog-graphql` (0.3.9 → 0.3.10)](#backstageplugin-catalog-graphql-039--0310)
   - [`@backstage/plugin-catalog-import` (0.8.8 → 0.8.9)](#backstageplugin-catalog-import-088--089)
-  - [`@backstage/plugin-catalog-react` (1.1.0 → 1.1.1)](#backstageplugin-catalog-react-110--111)
   - [`@backstage/plugin-circleci` (0.3.5 → 0.3.6)](#backstageplugin-circleci-035--036)
   - [`@backstage/plugin-cloudbuild` (0.3.5 → 0.3.6)](#backstageplugin-cloudbuild-035--036)
   - [`@backstage/plugin-code-climate` (0.1.5 → 0.1.6)](#backstageplugin-code-climate-015--016)
@@ -129,15 +117,31 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
   - [`@backstage/plugin-tech-insights-backend` (0.4.0 → 0.4.1)](#backstageplugin-tech-insights-backend-040--041)
   - [`@backstage/plugin-tech-insights-node` (0.3.0 → 0.3.1)](#backstageplugin-tech-insights-node-030--031)
   - [`@backstage/plugin-tech-radar` (0.5.12 → 0.5.13)](#backstageplugin-tech-radar-0512--0513)
+  - [`@backstage/plugin-todo` (0.2.7 → 0.2.8)](#backstageplugin-todo-027--028)
+  - [`@backstage/plugin-todo-backend` (0.1.29 → 0.1.30)](#backstageplugin-todo-backend-0129--0130)
+  - [`@backstage/plugin-user-settings` (0.4.4 → 0.4.5)](#backstageplugin-user-settings-044--045)
+  - [`@backstage/plugin-xcmetrics` (0.2.25 → 0.2.26)](#backstageplugin-xcmetrics-0225--0226)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/plugin-catalog` (1.2.0 → 1.3.0)](#backstageplugin-catalog-120--130)
+  - [`@backstage/plugin-catalog-backend` (1.1.2 → 1.2.0)](#backstageplugin-catalog-backend-112--120)
+  - [`@backstage/plugin-scaffolder` (1.2.0 → 1.3.0)](#backstageplugin-scaffolder-120--130)
+  - [`@backstage/plugin-scaffolder-backend` (1.2.0 → 1.3.0)](#backstageplugin-scaffolder-backend-120--130)
+  - [`@backstage/plugin-techdocs` (1.1.1 → 1.2.0)](#backstageplugin-techdocs-111--120)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-client` (1.0.2 → 1.0.3)](#backstagecatalog-client-102--103)
+  - [`@backstage/catalog-model` (1.0.2 → 1.0.3)](#backstagecatalog-model-102--103)
+  - [`@backstage/config-loader` (1.1.1 → 1.1.2)](#backstageconfig-loader-111--112)
+  - [`@backstage/core-app-api` (1.0.2 → 1.0.3)](#backstagecore-app-api-102--103)
+  - [`@backstage/core-plugin-api` (1.0.2 → 1.0.3)](#backstagecore-plugin-api-102--103)
+  - [`@backstage/integration` (1.2.0 → 1.2.1)](#backstageintegration-120--121)
+  - [`@backstage/integration-react` (1.1.0 → 1.1.1)](#backstageintegration-react-110--111)
+  - [`@backstage/plugin-catalog-common` (1.0.2 → 1.0.3)](#backstageplugin-catalog-common-102--103)
+  - [`@backstage/plugin-catalog-react` (1.1.0 → 1.1.1)](#backstageplugin-catalog-react-110--111)
   - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.0 → 1.0.1)](#backstageplugin-techdocs-addons-test-utils-100--101)
   - [`@backstage/plugin-techdocs-backend` (1.1.1 → 1.1.2)](#backstageplugin-techdocs-backend-111--112)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.0 → 1.0.1)](#backstageplugin-techdocs-module-addons-contrib-100--101)
   - [`@backstage/plugin-techdocs-node` (1.1.1 → 1.1.2)](#backstageplugin-techdocs-node-111--112)
   - [`@backstage/plugin-techdocs-react` (1.0.0 → 1.0.1)](#backstageplugin-techdocs-react-100--101)
-  - [`@backstage/plugin-todo` (0.2.7 → 0.2.8)](#backstageplugin-todo-027--028)
-  - [`@backstage/plugin-todo-backend` (0.1.29 → 0.1.30)](#backstageplugin-todo-backend-0129--0130)
-  - [`@backstage/plugin-user-settings` (0.4.4 → 0.4.5)](#backstageplugin-user-settings-044--045)
-  - [`@backstage/plugin-xcmetrics` (0.2.25 → 0.2.26)](#backstageplugin-xcmetrics-0225--0226)
   - [`@backstage/test-utils` (1.1.0 → 1.1.1)](#backstagetest-utils-110--111)
   - [`@techdocs/cli` (1.1.1 → 1.1.2)](#techdocscli-111--112)
 - [Excluded dependency updates](#excluded-dependency-updates)
@@ -255,6 +259,11 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 ##### Minor Changes
 
 - [`7c310a5bc2`](https://github.com/backstage/backstage/commit/7c310a5bc2): First implementation for the backend vault plugin. For more information refer to its `README.md`.
+
+## Removed packages
+
+- `@backstage/search-common` ([0.3.4](../../changelogs/@backstage/search-common.md#034))
+- `@backstage/techdocs-common` ([0.11.15](../../changelogs/@backstage/techdocs-common.md#01115))
 
 ## Breaking changes
 
@@ -374,160 +383,7 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 
 - [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
-## Other minor version bumps
-
-### `@backstage/plugin-catalog` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-catalog.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`fe7614ea54`](https://github.com/backstage/backstage/commit/fe7614ea54): Add an optional icon to the Catalog and TechDocs search results
-
-##### Patch Changes
-
-- [`449dcef98e`](https://github.com/backstage/backstage/commit/449dcef98e): Updates the `isKind`, `ìsComponentType`, and `isNamespace` to allow an array of possible values
-- [`1f70704580`](https://github.com/backstage/backstage/commit/1f70704580): Accessibility updates:
-
-  - Added screen reader elements to describe default table `Action` buttons
-
-- [`915700f64f`](https://github.com/backstage/backstage/commit/915700f64f): In order to simplify analytics on top of the search experience in Backstage, the provided `<*ResultListItem />` component now captures a `discover` analytics event instead of a `click` event. This event includes the result rank as its `value` and, like a click, the URL/path clicked to as its `to` attribute.
-
-### `@backstage/plugin-catalog-backend` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-catalog-backend.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`b594679ae3`](https://github.com/backstage/backstage/commit/b594679ae3): Allow array as non-spread arguments at the `CatalogBuilder`.
-
-  ```typescript
-  builder.addEntityProvider(...getArrayOfProviders());
-  ```
-
-  can be simplified to
-
-  ```typescript
-  builder.addEntityProvider(getArrayOfProviders());
-  ```
-
-##### Patch Changes
-
-- [`8838b13038`](https://github.com/backstage/backstage/commit/8838b13038): Disallow anything but `'url'` locations from being registered via the location service.
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-
-### `@backstage/plugin-scaffolder` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-scaffolder.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`dc39366bdb`](https://github.com/backstage/backstage/commit/dc39366bdb): - Added a new page under `/create/tasks` to show tasks that have been run by the Scaffolder.
-  - Ability to filter these tasks by the signed in user, and all tasks.
-  - Added optional method to the `ScaffolderApi` interface called `listTasks` to get tasks with an required `filterByOwnership` parameter.
-- [`86a4a0f72d`](https://github.com/backstage/backstage/commit/86a4a0f72d): Get data of other fields in Form from a custom field in template Scaffolder.
-  following:
-
-  ```tsx
-  const CustomFieldExtensionComponent = (props: FieldExtensionComponentProps<string[]>) => {
-    const { formData } = props.formContext;
-    ...
-  };
-
-  const CustomFieldExtension = scaffolderPlugin.provide(
-    createScaffolderFieldExtension({
-      name: ...,
-      component: CustomFieldExtensionComponent,
-      validation: ...
-    })
-  );
-  ```
-
-- [`72dfcbc8bf`](https://github.com/backstage/backstage/commit/72dfcbc8bf): Gerrit Integration: Implemented a `RepoUrlPicker` for Gerrit.
-- [`f93af969cd`](https://github.com/backstage/backstage/commit/f93af969cd): Added the ability to support running of templates that are not in the `default` namespace
-- [`3500c13a33`](https://github.com/backstage/backstage/commit/3500c13a33): A new template editor has been added which is accessible via the context menu on the top right hand corner of the Create page. It allows you to load a template from a local directory, edit it with a preview, execute it in dry-run mode, and view the results. Note that the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) must be supported by your browser for this to be available.
-
-  To support the new template editor the `ScaffolderApi` now has an optional `dryRun` method, which is implemented by the default `ScaffolderClient`.
-
-##### Patch Changes
-
-- [`ac0c7e45ee`](https://github.com/backstage/backstage/commit/ac0c7e45ee): Fixes review mask in `MultistepJsonForm` to work as documented. `show: true` no longer needed when mask is set.
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`fd505f40c0`](https://github.com/backstage/backstage/commit/fd505f40c0): Handle binary files and files that are too large during dry-run content upload.
-
-### `@backstage/plugin-scaffolder-backend` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`35a26131b3`](https://github.com/backstage/backstage/commit/35a26131b3): **DEPRECATION**: The `projectid` input parameters to the `publish:gitlab:merge-request`, it's no longer required as it can be decoded from the `repoUrl` input parameter.
-  **DEPRECATION**: The `projectid` output of the action in favour of `projectPath`
-- [`72dfcbc8bf`](https://github.com/backstage/backstage/commit/72dfcbc8bf): A new scaffolder action has been added: `gerrit:publish`
-- [`ce0d8d7eb1`](https://github.com/backstage/backstage/commit/ce0d8d7eb1): Fixed a bug in `publish:github` action that didn't permit to add users as collaborators.
-  This fix required changing the way parameters are passed to the action.
-  In order to add a team as collaborator, now you must use the `team` field instead of `username`.
-  In order to add a user as collaborator, you must use the `user` field.
-
-  It's still possible to use the field `username` but is deprecated in favor of `team`.
-
-  ```yaml
-  - id: publish
-    name: Publish
-    action: publish:github
-    input:
-      repoUrl: ...
-      collaborators:
-        - access: ...
-          team: my_team
-        - access: ...
-          user: my_username
-  ```
-
-- [`582003a059`](https://github.com/backstage/backstage/commit/582003a059): - Added an optional `list` method on the `TaskBroker` and `TaskStore` interface to list tasks by an optional `userEntityRef`
-  - Implemented a `list` method on the `DatabaseTaskStore` class to list tasks by an optional `userEntityRef`
-  - Added a route under `/v2/tasks` to list tasks by a `userEntityRef` using the `createdBy` query parameter
-- [`c042c5eaff`](https://github.com/backstage/backstage/commit/c042c5eaff): Add an option to not protect the default branch.
-- [`f93af969cd`](https://github.com/backstage/backstage/commit/f93af969cd): Added the ability to support running of templates that are not in the `default` namespace
-- [`3500c13a33`](https://github.com/backstage/backstage/commit/3500c13a33): Added a new `/v2/dry-run` endpoint that allows for a synchronous dry run of a provided template. A `supportsDryRun` option has been added to `createTemplateAction`, which signals whether the action should be executed during dry runs. When enabled, the action context will have the new `isDryRun` property set to signal if the action is being executed during a dry run.
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`6901f6be4a`](https://github.com/backstage/backstage/commit/6901f6be4a): Adds more of an explanation when the `publish:github` scaffolder action fails to create a repository.
-
-### `@backstage/plugin-techdocs` (1.1.1 → [1.2.0](../../changelogs/@backstage/plugin-techdocs.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`fe7614ea54`](https://github.com/backstage/backstage/commit/fe7614ea54): Add an optional icon to the Catalog and TechDocs search results
-
-##### Patch Changes
-
-- [`d047d81295`](https://github.com/backstage/backstage/commit/d047d81295): Use entity title as label in `TechDocsReaderPageHeader` if available
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`bff65e6958`](https://github.com/backstage/backstage/commit/bff65e6958): Updated sidebar-related logic to use `<SidebarPinStateProvider>` + `useSidebarPinState()` and/or `<SidebarOpenStateProvider>` + `useSidebarOpenState()` from `@backstage/core-components`.
-- [`915700f64f`](https://github.com/backstage/backstage/commit/915700f64f): In order to simplify analytics on top of the search experience in Backstage, the provided `<*ResultListItem />` component now captures a `discover` analytics event instead of a `click` event. This event includes the result rank as its `value` and, like a click, the URL/path clicked to as its `to` attribute.
-- [`881fbd7e8d`](https://github.com/backstage/backstage/commit/881fbd7e8d): Fix `EntityTechdocsContent` component to use objects instead of `<Route>` elements, otherwise "outlet" will be null on sub-pages and add-ons won't render.
-- [`17c059dfd0`](https://github.com/backstage/backstage/commit/17c059dfd0): Restructures reader style transformations to improve code readability:
-
-  - Extracts the style rules to separate files;
-  - Creates a hook that processes each rule;
-  - And creates another hook that returns a transformer responsible for injecting them into the head tag of a given element.
-
-- [`3b45ad701f`](https://github.com/backstage/backstage/commit/3b45ad701f): Packages a set of tweaks to the TechDocs addons rendering process:
-
-  - Prevents displaying sidebars until page styles are loaded and the sidebar position is updated;
-  - Prevents new sidebar locations from being created every time the reader page is rendered if these locations already exist;
-  - Centers the styles loaded event to avoid having multiple locations setting the opacity style in Shadow Dom causing the screen to flash multiple times.
-
-- [`9b94ade898`](https://github.com/backstage/backstage/commit/9b94ade898): Use entity title in `TechDocsSearch` placeholder if available.
-- [`816f7475ec`](https://github.com/backstage/backstage/commit/816f7475ec): Convert `sanitizeDOM` transformer to hook as part of code readability improvements in dom file.
-- [`50ff56a80f`](https://github.com/backstage/backstage/commit/50ff56a80f): Change the `EntityDocsPage` path to be more specific and also add integration tests for `sub-routes` on this page.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-tasks` (0.3.1 → [0.3.2](../../changelogs/@backstage/backend-tasks.md#032))
 
@@ -548,23 +404,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 
 - [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
-### `@backstage/catalog-client` (1.0.2 → [1.0.3](../../changelogs/@backstage/catalog-client.md#103))
-
-#### 1.0.3
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`35bc0a7c27`](https://github.com/backstage/backstage/commit/35bc0a7c27): Update README to point to catalog-react for frontend usage
-
-### `@backstage/catalog-model` (1.0.2 → [1.0.3](../../changelogs/@backstage/catalog-model.md#103))
-
-#### 1.0.3
-
-##### Patch Changes
-
-- [`131a99e909`](https://github.com/backstage/backstage/commit/131a99e909): Added targetRef to common.schema.json to match the Typescript type
-
 ### `@backstage/cli` (0.17.1 → [0.17.2](../../changelogs/@backstage/cli.md#0172))
 
 #### 0.17.2
@@ -579,23 +418,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 - [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 - [`1a33e8b287`](https://github.com/backstage/backstage/commit/1a33e8b287): Updated dependency `minimatch` to `5.1.0`.
 - [`6de866ea74`](https://github.com/backstage/backstage/commit/6de866ea74): Added console warning to frontend start when the `app.baseUrl` and `backend.baseUrl` are identical
-
-### `@backstage/config-loader` (1.1.1 → [1.1.2](../../changelogs/@backstage/config-loader.md#112))
-
-#### 1.1.2
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-
-### `@backstage/core-app-api` (1.0.2 → [1.0.3](../../changelogs/@backstage/core-app-api.md#103))
-
-#### 1.0.3
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`19781483a2`](https://github.com/backstage/backstage/commit/19781483a2): Handle URLs as the first argument to `fetchApi`, when using the `plugin:` protocol
 
 ### `@backstage/core-components` (0.9.4 → [0.9.5](../../changelogs/@backstage/core-components.md#095))
 
@@ -619,14 +441,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 - [`bff65e6958`](https://github.com/backstage/backstage/commit/bff65e6958): The `SidebarPinStateContext` and `SidebarContext` have been deprecated and will be removed in a future release. Instead, use `<SidebarPinStateProvider>` + `useSidebarPinState()` and/or `<SidebarOpenStateProvider>` + `useSidebarOpenState()`.
 
   This was done to ensure that sidebar state can be shared successfully across components exported by different packages, regardless of what version of this package is resolved and installed for each individual package.
-
-### `@backstage/core-plugin-api` (1.0.2 → [1.0.3](../../changelogs/@backstage/core-plugin-api.md#103))
-
-#### 1.0.3
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
 ### `@backstage/create-app` (0.4.27 → [0.4.28](../../changelogs/@backstage/create-app.md#0428))
 
@@ -802,24 +616,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
   ```
 
 - [`141a1caebe`](https://github.com/backstage/backstage/commit/141a1caebe): Updated the auth backend setup in the template to include a guest sign-in resolver in order to make it quicker to get up and running with a basic sign-in setup. There is no need to update existing apps to match this change, but in case you want to use the guest sign-in resolver you can find it at https://backstage.io/docs/auth/identity-resolver#guest-sign-in-resolver
-
-### `@backstage/integration` (1.2.0 → [1.2.1](../../changelogs/@backstage/integration.md#121))
-
-#### 1.2.1
-
-##### Patch Changes
-
-- [`72dfcbc8bf`](https://github.com/backstage/backstage/commit/72dfcbc8bf): Gerrit Integration: Handle absolute paths in `resolveUrl` properly.
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`e37c71b5a4`](https://github.com/backstage/backstage/commit/e37c71b5a4): Updated to support deployments of Azure DevOps Server under TFS or similar sub path
-
-### `@backstage/integration-react` (1.1.0 → [1.1.1](../../changelogs/@backstage/integration-react.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
 ### `@backstage/plugin-adr` (0.1.0 → [0.1.1](../../changelogs/@backstage/plugin-adr.md#011))
 
@@ -1135,14 +931,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 
 - [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
-### `@backstage/plugin-catalog-common` (1.0.2 → [1.0.3](../../changelogs/@backstage/plugin-catalog-common.md#103))
-
-#### 1.0.3
-
-##### Patch Changes
-
-- [`7d8acfc32e`](https://github.com/backstage/backstage/commit/7d8acfc32e): Replaced all usages of `@backstage/search-common` with `@backstage/plugin-search-common`
-
 ### `@backstage/plugin-catalog-graphql` (0.3.9 → [0.3.10](../../changelogs/@backstage/plugin-catalog-graphql.md#0310))
 
 #### 0.3.10
@@ -1159,19 +947,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 
 - [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 - [`05be420971`](https://github.com/backstage/backstage/commit/05be420971): Updated catalog import page text so they go in the correct hierarchy order
-
-### `@backstage/plugin-catalog-react` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-catalog-react.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`1f70704580`](https://github.com/backstage/backstage/commit/1f70704580): Accessibility updates:
-
-  - Wrapped the `EntityLifecyclePicker`, `EntityOwnerPicker`, `EntityTagPicker`, in `label` elements
-  - Changed group name `Typography` component to `span` (from default `h6`), added `aria-label` to the `List` component, and `role` of `menuitem` to the container of the `MenuItem` component
-
-- [`568f2d1e75`](https://github.com/backstage/backstage/commit/568f2d1e75): Table component no longer has drag and drop columns by default
 
 ### `@backstage/plugin-circleci` (0.3.5 → [0.3.6](../../changelogs/@backstage/plugin-circleci.md#036))
 
@@ -1646,6 +1421,276 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
   Updated dependency `@types/d3-force` to `^3.0.0`.
 - [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
+### `@backstage/plugin-todo` (0.2.7 → [0.2.8](../../changelogs/@backstage/plugin-todo.md#028))
+
+#### 0.2.8
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+### `@backstage/plugin-todo-backend` (0.1.29 → [0.1.30](../../changelogs/@backstage/plugin-todo-backend.md#0130))
+
+#### 0.1.30
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+### `@backstage/plugin-user-settings` (0.4.4 → [0.4.5](../../changelogs/@backstage/plugin-user-settings.md#045))
+
+#### 0.4.5
+
+##### Patch Changes
+
+- [`9d2d6a0cea`](https://github.com/backstage/backstage/commit/9d2d6a0cea): Added new `<UserSettingsIdentityCard />` to show the result of the `identityApi.getBackstageIdentity()` call to help debug ownership issues. The new card has been added to the user settings page.
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`bff65e6958`](https://github.com/backstage/backstage/commit/bff65e6958): Updated sidebar-related logic to use `<SidebarPinStateProvider>` + `useSidebarPinState()` and/or `<SidebarOpenStateProvider>` + `useSidebarOpenState()` from `@backstage/core-components`.
+
+### `@backstage/plugin-xcmetrics` (0.2.25 → [0.2.26](../../changelogs/@backstage/plugin-xcmetrics.md#0226))
+
+#### 0.2.26
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+## Other minor version bumps
+
+### `@backstage/plugin-catalog` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-catalog.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`fe7614ea54`](https://github.com/backstage/backstage/commit/fe7614ea54): Add an optional icon to the Catalog and TechDocs search results
+
+##### Patch Changes
+
+- [`449dcef98e`](https://github.com/backstage/backstage/commit/449dcef98e): Updates the `isKind`, `ìsComponentType`, and `isNamespace` to allow an array of possible values
+- [`1f70704580`](https://github.com/backstage/backstage/commit/1f70704580): Accessibility updates:
+
+  - Added screen reader elements to describe default table `Action` buttons
+
+- [`915700f64f`](https://github.com/backstage/backstage/commit/915700f64f): In order to simplify analytics on top of the search experience in Backstage, the provided `<*ResultListItem />` component now captures a `discover` analytics event instead of a `click` event. This event includes the result rank as its `value` and, like a click, the URL/path clicked to as its `to` attribute.
+
+### `@backstage/plugin-catalog-backend` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-catalog-backend.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`b594679ae3`](https://github.com/backstage/backstage/commit/b594679ae3): Allow array as non-spread arguments at the `CatalogBuilder`.
+
+  ```typescript
+  builder.addEntityProvider(...getArrayOfProviders());
+  ```
+
+  can be simplified to
+
+  ```typescript
+  builder.addEntityProvider(getArrayOfProviders());
+  ```
+
+##### Patch Changes
+
+- [`8838b13038`](https://github.com/backstage/backstage/commit/8838b13038): Disallow anything but `'url'` locations from being registered via the location service.
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+### `@backstage/plugin-scaffolder` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-scaffolder.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`dc39366bdb`](https://github.com/backstage/backstage/commit/dc39366bdb): - Added a new page under `/create/tasks` to show tasks that have been run by the Scaffolder.
+  - Ability to filter these tasks by the signed in user, and all tasks.
+  - Added optional method to the `ScaffolderApi` interface called `listTasks` to get tasks with an required `filterByOwnership` parameter.
+- [`86a4a0f72d`](https://github.com/backstage/backstage/commit/86a4a0f72d): Get data of other fields in Form from a custom field in template Scaffolder.
+  following:
+
+  ```tsx
+  const CustomFieldExtensionComponent = (props: FieldExtensionComponentProps<string[]>) => {
+    const { formData } = props.formContext;
+    ...
+  };
+
+  const CustomFieldExtension = scaffolderPlugin.provide(
+    createScaffolderFieldExtension({
+      name: ...,
+      component: CustomFieldExtensionComponent,
+      validation: ...
+    })
+  );
+  ```
+
+- [`72dfcbc8bf`](https://github.com/backstage/backstage/commit/72dfcbc8bf): Gerrit Integration: Implemented a `RepoUrlPicker` for Gerrit.
+- [`f93af969cd`](https://github.com/backstage/backstage/commit/f93af969cd): Added the ability to support running of templates that are not in the `default` namespace
+- [`3500c13a33`](https://github.com/backstage/backstage/commit/3500c13a33): A new template editor has been added which is accessible via the context menu on the top right hand corner of the Create page. It allows you to load a template from a local directory, edit it with a preview, execute it in dry-run mode, and view the results. Note that the [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) must be supported by your browser for this to be available.
+
+  To support the new template editor the `ScaffolderApi` now has an optional `dryRun` method, which is implemented by the default `ScaffolderClient`.
+
+##### Patch Changes
+
+- [`ac0c7e45ee`](https://github.com/backstage/backstage/commit/ac0c7e45ee): Fixes review mask in `MultistepJsonForm` to work as documented. `show: true` no longer needed when mask is set.
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`fd505f40c0`](https://github.com/backstage/backstage/commit/fd505f40c0): Handle binary files and files that are too large during dry-run content upload.
+
+### `@backstage/plugin-scaffolder-backend` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`35a26131b3`](https://github.com/backstage/backstage/commit/35a26131b3): **DEPRECATION**: The `projectid` input parameters to the `publish:gitlab:merge-request`, it's no longer required as it can be decoded from the `repoUrl` input parameter.
+  **DEPRECATION**: The `projectid` output of the action in favour of `projectPath`
+- [`72dfcbc8bf`](https://github.com/backstage/backstage/commit/72dfcbc8bf): A new scaffolder action has been added: `gerrit:publish`
+- [`ce0d8d7eb1`](https://github.com/backstage/backstage/commit/ce0d8d7eb1): Fixed a bug in `publish:github` action that didn't permit to add users as collaborators.
+  This fix required changing the way parameters are passed to the action.
+  In order to add a team as collaborator, now you must use the `team` field instead of `username`.
+  In order to add a user as collaborator, you must use the `user` field.
+
+  It's still possible to use the field `username` but is deprecated in favor of `team`.
+
+  ```yaml
+  - id: publish
+    name: Publish
+    action: publish:github
+    input:
+      repoUrl: ...
+      collaborators:
+        - access: ...
+          team: my_team
+        - access: ...
+          user: my_username
+  ```
+
+- [`582003a059`](https://github.com/backstage/backstage/commit/582003a059): - Added an optional `list` method on the `TaskBroker` and `TaskStore` interface to list tasks by an optional `userEntityRef`
+  - Implemented a `list` method on the `DatabaseTaskStore` class to list tasks by an optional `userEntityRef`
+  - Added a route under `/v2/tasks` to list tasks by a `userEntityRef` using the `createdBy` query parameter
+- [`c042c5eaff`](https://github.com/backstage/backstage/commit/c042c5eaff): Add an option to not protect the default branch.
+- [`f93af969cd`](https://github.com/backstage/backstage/commit/f93af969cd): Added the ability to support running of templates that are not in the `default` namespace
+- [`3500c13a33`](https://github.com/backstage/backstage/commit/3500c13a33): Added a new `/v2/dry-run` endpoint that allows for a synchronous dry run of a provided template. A `supportsDryRun` option has been added to `createTemplateAction`, which signals whether the action should be executed during dry runs. When enabled, the action context will have the new `isDryRun` property set to signal if the action is being executed during a dry run.
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`6901f6be4a`](https://github.com/backstage/backstage/commit/6901f6be4a): Adds more of an explanation when the `publish:github` scaffolder action fails to create a repository.
+
+### `@backstage/plugin-techdocs` (1.1.1 → [1.2.0](../../changelogs/@backstage/plugin-techdocs.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`fe7614ea54`](https://github.com/backstage/backstage/commit/fe7614ea54): Add an optional icon to the Catalog and TechDocs search results
+
+##### Patch Changes
+
+- [`d047d81295`](https://github.com/backstage/backstage/commit/d047d81295): Use entity title as label in `TechDocsReaderPageHeader` if available
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`bff65e6958`](https://github.com/backstage/backstage/commit/bff65e6958): Updated sidebar-related logic to use `<SidebarPinStateProvider>` + `useSidebarPinState()` and/or `<SidebarOpenStateProvider>` + `useSidebarOpenState()` from `@backstage/core-components`.
+- [`915700f64f`](https://github.com/backstage/backstage/commit/915700f64f): In order to simplify analytics on top of the search experience in Backstage, the provided `<*ResultListItem />` component now captures a `discover` analytics event instead of a `click` event. This event includes the result rank as its `value` and, like a click, the URL/path clicked to as its `to` attribute.
+- [`881fbd7e8d`](https://github.com/backstage/backstage/commit/881fbd7e8d): Fix `EntityTechdocsContent` component to use objects instead of `<Route>` elements, otherwise "outlet" will be null on sub-pages and add-ons won't render.
+- [`17c059dfd0`](https://github.com/backstage/backstage/commit/17c059dfd0): Restructures reader style transformations to improve code readability:
+
+  - Extracts the style rules to separate files;
+  - Creates a hook that processes each rule;
+  - And creates another hook that returns a transformer responsible for injecting them into the head tag of a given element.
+
+- [`3b45ad701f`](https://github.com/backstage/backstage/commit/3b45ad701f): Packages a set of tweaks to the TechDocs addons rendering process:
+
+  - Prevents displaying sidebars until page styles are loaded and the sidebar position is updated;
+  - Prevents new sidebar locations from being created every time the reader page is rendered if these locations already exist;
+  - Centers the styles loaded event to avoid having multiple locations setting the opacity style in Shadow Dom causing the screen to flash multiple times.
+
+- [`9b94ade898`](https://github.com/backstage/backstage/commit/9b94ade898): Use entity title in `TechDocsSearch` placeholder if available.
+- [`816f7475ec`](https://github.com/backstage/backstage/commit/816f7475ec): Convert `sanitizeDOM` transformer to hook as part of code readability improvements in dom file.
+- [`50ff56a80f`](https://github.com/backstage/backstage/commit/50ff56a80f): Change the `EntityDocsPage` path to be more specific and also add integration tests for `sub-routes` on this page.
+
+## Other patch version bumps
+
+### `@backstage/catalog-client` (1.0.2 → [1.0.3](../../changelogs/@backstage/catalog-client.md#103))
+
+#### 1.0.3
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`35bc0a7c27`](https://github.com/backstage/backstage/commit/35bc0a7c27): Update README to point to catalog-react for frontend usage
+
+### `@backstage/catalog-model` (1.0.2 → [1.0.3](../../changelogs/@backstage/catalog-model.md#103))
+
+#### 1.0.3
+
+##### Patch Changes
+
+- [`131a99e909`](https://github.com/backstage/backstage/commit/131a99e909): Added targetRef to common.schema.json to match the Typescript type
+
+### `@backstage/config-loader` (1.1.1 → [1.1.2](../../changelogs/@backstage/config-loader.md#112))
+
+#### 1.1.2
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+### `@backstage/core-app-api` (1.0.2 → [1.0.3](../../changelogs/@backstage/core-app-api.md#103))
+
+#### 1.0.3
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`19781483a2`](https://github.com/backstage/backstage/commit/19781483a2): Handle URLs as the first argument to `fetchApi`, when using the `plugin:` protocol
+
+### `@backstage/core-plugin-api` (1.0.2 → [1.0.3](../../changelogs/@backstage/core-plugin-api.md#103))
+
+#### 1.0.3
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+### `@backstage/integration` (1.2.0 → [1.2.1](../../changelogs/@backstage/integration.md#121))
+
+#### 1.2.1
+
+##### Patch Changes
+
+- [`72dfcbc8bf`](https://github.com/backstage/backstage/commit/72dfcbc8bf): Gerrit Integration: Handle absolute paths in `resolveUrl` properly.
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+- [`e37c71b5a4`](https://github.com/backstage/backstage/commit/e37c71b5a4): Updated to support deployments of Azure DevOps Server under TFS or similar sub path
+
+### `@backstage/integration-react` (1.1.0 → [1.1.1](../../changelogs/@backstage/integration-react.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
+
+### `@backstage/plugin-catalog-common` (1.0.2 → [1.0.3](../../changelogs/@backstage/plugin-catalog-common.md#103))
+
+#### 1.0.3
+
+##### Patch Changes
+
+- [`7d8acfc32e`](https://github.com/backstage/backstage/commit/7d8acfc32e): Replaced all usages of `@backstage/search-common` with `@backstage/plugin-search-common`
+
+### `@backstage/plugin-catalog-react` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-catalog-react.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`1f70704580`](https://github.com/backstage/backstage/commit/1f70704580): Accessibility updates:
+
+  - Wrapped the `EntityLifecyclePicker`, `EntityOwnerPicker`, `EntityTagPicker`, in `label` elements
+  - Changed group name `Typography` component to `span` (from default `h6`), added `aria-label` to the `List` component, and `role` of `menuitem` to the container of the `MenuItem` component
+
+- [`568f2d1e75`](https://github.com/backstage/backstage/commit/568f2d1e75): Table component no longer has drag and drop columns by default
+
 ### `@backstage/plugin-techdocs-addons-test-utils` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#101))
 
 #### 1.0.1
@@ -1752,40 +1797,6 @@ Changes between 1.2.2 and 1.3.0 — 133 changed and 6 added packages.
 
   - Calls the `onAppend` handler when appending the element tree to the shadow root;
   - Also dispatches an event when styles are loaded to let transformers know that the computed styles are ready to be consumed.
-
-### `@backstage/plugin-todo` (0.2.7 → [0.2.8](../../changelogs/@backstage/plugin-todo.md#028))
-
-#### 0.2.8
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-
-### `@backstage/plugin-todo-backend` (0.1.29 → [0.1.30](../../changelogs/@backstage/plugin-todo-backend.md#0130))
-
-#### 0.1.30
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-
-### `@backstage/plugin-user-settings` (0.4.4 → [0.4.5](../../changelogs/@backstage/plugin-user-settings.md#045))
-
-#### 0.4.5
-
-##### Patch Changes
-
-- [`9d2d6a0cea`](https://github.com/backstage/backstage/commit/9d2d6a0cea): Added new `<UserSettingsIdentityCard />` to show the result of the `identityApi.getBackstageIdentity()` call to help debug ownership issues. The new card has been added to the user settings page.
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
-- [`bff65e6958`](https://github.com/backstage/backstage/commit/bff65e6958): Updated sidebar-related logic to use `<SidebarPinStateProvider>` + `useSidebarPinState()` and/or `<SidebarOpenStateProvider>` + `useSidebarOpenState()` from `@backstage/core-components`.
-
-### `@backstage/plugin-xcmetrics` (0.2.25 → [0.2.26](../../changelogs/@backstage/plugin-xcmetrics.md#0226))
-
-#### 0.2.26
-
-##### Patch Changes
-
-- [`8f7b1835df`](https://github.com/backstage/backstage/commit/8f7b1835df): Updated dependency `msw` to `^0.41.0`.
 
 ### `@backstage/test-utils` (1.1.0 → [1.1.1](../../changelogs/@backstage/test-utils.md#111))
 

@@ -1,15 +1,17 @@
 # Backstage Release 1.49.0 changelog
 
-Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
+Changes between 1.48.6 and 1.49.0 — 14 added, 1 removed, 176 upgraded, 17 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 14 packages
+- [Removed packages](#removed-packages): 1 package
 - [Breaking changes](#breaking-changes): 15 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 7 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 57 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
-- [Other patch version bumps](#other-patch-version-bumps): 67 packages
+- [Other patch version bumps](#other-patch-version-bumps): 10 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 75 packages
 
 ## Table of contents
@@ -29,6 +31,7 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
   - [`@backstage/cli-module-test-jest` (new, 0.1.0)](#backstagecli-module-test-jest-new-010)
   - [`@backstage/cli-module-translations` (new, 0.1.0)](#backstagecli-module-translations-new-010)
   - [`@backstage/frontend-dev-utils` (new, 0.1.0)](#backstagefrontend-dev-utils-new-010)
+- [Removed packages](#removed-packages)
 - [Breaking changes](#breaking-changes)
   - [`@backstage/backend-defaults` (0.15.2 → 0.16.0)](#backstagebackend-defaults-0152--0160)
   - [`@backstage/cli` (0.35.4 → 0.36.0)](#backstagecli-0354--0360)
@@ -55,27 +58,10 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
   - [`@backstage/repo-tools` (0.16.5 → 0.17.0)](#backstagerepo-tools-0165--0170)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-kubernetes-cluster` (0.0.34 → 0.0.35)](#backstageplugin-kubernetes-cluster-0034--0035)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-app-api` (1.5.0 → 1.6.0)](#backstagebackend-app-api-150--160)
-  - [`@backstage/backend-plugin-api` (1.7.0 → 1.8.0)](#backstagebackend-plugin-api-170--180)
-  - [`@backstage/catalog-client` (1.13.0 → 1.14.0)](#backstagecatalog-client-1130--1140)
-  - [`@backstage/plugin-catalog-node` (2.0.0 → 2.1.0)](#backstageplugin-catalog-node-200--210)
-  - [`@backstage/plugin-catalog-react` (2.0.0 → 2.1.0)](#backstageplugin-catalog-react-200--210)
-  - [`@backstage/plugin-scaffolder` (1.35.4 → 1.36.0)](#backstageplugin-scaffolder-1354--1360)
-  - [`@backstage/plugin-scaffolder-backend` (3.1.5 → 3.2.0)](#backstageplugin-scaffolder-backend-315--320)
-  - [`@backstage/plugin-scaffolder-react` (1.19.7 → 1.20.0)](#backstageplugin-scaffolder-react-1197--1200)
-  - [`@backstage/plugin-search` (1.6.1 → 1.7.0)](#backstageplugin-search-161--170)
-  - [`@backstage/plugin-search-backend` (2.0.12 → 2.1.0)](#backstageplugin-search-backend-2012--210)
-  - [`@backstage/plugin-search-react` (1.10.4 → 1.11.0)](#backstageplugin-search-react-1104--1110)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/backend-test-utils` (1.11.0 → 1.11.1)](#backstagebackend-test-utils-1110--1111)
-  - [`@backstage/catalog-model` (1.7.6 → 1.7.7)](#backstagecatalog-model-176--177)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/codemods` (0.1.54 → 0.1.55)](#backstagecodemods-0154--0155)
-  - [`@backstage/config-loader` (1.10.8 → 1.10.9)](#backstageconfig-loader-1108--1109)
-  - [`@backstage/core-app-api` (1.19.5 → 1.19.6)](#backstagecore-app-api-1195--1196)
   - [`@backstage/core-compat-api` (0.5.8 → 0.5.9)](#backstagecore-compat-api-058--059)
   - [`@backstage/core-components` (0.18.7 → 0.18.8)](#backstagecore-components-0187--0188)
-  - [`@backstage/core-plugin-api` (1.12.3 → 1.12.4)](#backstagecore-plugin-api-1123--1124)
   - [`@backstage/eslint-plugin` (0.2.1 → 0.2.2)](#backstageeslint-plugin-021--022)
   - [`@backstage/filter-predicates` (0.1.0 → 0.1.1)](#backstagefilter-predicates-010--011)
   - [`@backstage/frontend-dynamic-feature-loader` (0.1.9 → 0.1.10)](#backstagefrontend-dynamic-feature-loader-019--0110)
@@ -128,12 +114,30 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.3.3 → 0.3.4)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-033--034)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.9.6 → 0.9.7)](#backstageplugin-scaffolder-backend-module-github-096--097)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.11.3 → 0.11.4)](#backstageplugin-scaffolder-backend-module-gitlab-0113--0114)
+  - [`@backstage/plugin-user-settings` (0.9.0 → 0.9.1)](#backstageplugin-user-settings-090--091)
+  - [`@backstage/plugin-user-settings-backend` (0.4.0 → 0.4.1)](#backstageplugin-user-settings-backend-040--041)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-app-api` (1.5.0 → 1.6.0)](#backstagebackend-app-api-150--160)
+  - [`@backstage/backend-plugin-api` (1.7.0 → 1.8.0)](#backstagebackend-plugin-api-170--180)
+  - [`@backstage/catalog-client` (1.13.0 → 1.14.0)](#backstagecatalog-client-1130--1140)
+  - [`@backstage/plugin-catalog-node` (2.0.0 → 2.1.0)](#backstageplugin-catalog-node-200--210)
+  - [`@backstage/plugin-catalog-react` (2.0.0 → 2.1.0)](#backstageplugin-catalog-react-200--210)
+  - [`@backstage/plugin-scaffolder` (1.35.4 → 1.36.0)](#backstageplugin-scaffolder-1354--1360)
+  - [`@backstage/plugin-scaffolder-backend` (3.1.5 → 3.2.0)](#backstageplugin-scaffolder-backend-315--320)
+  - [`@backstage/plugin-scaffolder-react` (1.19.7 → 1.20.0)](#backstageplugin-scaffolder-react-1197--1200)
+  - [`@backstage/plugin-search` (1.6.1 → 1.7.0)](#backstageplugin-search-161--170)
+  - [`@backstage/plugin-search-backend` (2.0.12 → 2.1.0)](#backstageplugin-search-backend-2012--210)
+  - [`@backstage/plugin-search-react` (1.10.4 → 1.11.0)](#backstageplugin-search-react-1104--1110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-test-utils` (1.11.0 → 1.11.1)](#backstagebackend-test-utils-1110--1111)
+  - [`@backstage/catalog-model` (1.7.6 → 1.7.7)](#backstagecatalog-model-176--177)
+  - [`@backstage/config-loader` (1.10.8 → 1.10.9)](#backstageconfig-loader-1108--1109)
+  - [`@backstage/core-app-api` (1.19.5 → 1.19.6)](#backstagecore-app-api-1195--1196)
+  - [`@backstage/core-plugin-api` (1.12.3 → 1.12.4)](#backstagecore-plugin-api-1123--1124)
   - [`@backstage/plugin-techdocs` (1.17.0 → 1.17.1)](#backstageplugin-techdocs-1170--1171)
   - [`@backstage/plugin-techdocs-backend` (2.1.5 → 2.1.6)](#backstageplugin-techdocs-backend-215--216)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.33 → 1.1.34)](#backstageplugin-techdocs-module-addons-contrib-1133--1134)
   - [`@backstage/plugin-techdocs-node` (1.14.3 → 1.14.4)](#backstageplugin-techdocs-node-1143--1144)
-  - [`@backstage/plugin-user-settings` (0.9.0 → 0.9.1)](#backstageplugin-user-settings-090--091)
-  - [`@backstage/plugin-user-settings-backend` (0.4.0 → 0.4.1)](#backstageplugin-user-settings-backend-040--041)
   - [`@techdocs/cli` (1.10.5 → 1.10.6)](#techdocscli-1105--1106)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -271,6 +275,10 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
 ##### Minor Changes
 
 - [`c25532a`](https://github.com/backstage/backstage/commit/c25532a): Added `@backstage/frontend-dev-utils`, a new package that provides a minimal helper for wiring up a development app for frontend plugins using the new frontend system. It exports a `createDevApp` function that handles creating and rendering a development app from a `dev/` entry point. The dev app automatically bypasses the sign-in page and loads the `@backstage/ui` CSS. The options interface accepts `features` together with route bindings through `bindRoutes`.
+
+## Removed packages
+
+- `@backstage/plugin-scaffolder-backend-module-bitbucket` ([0.3.19](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket.md#0319))
 
 ## Breaking changes
 
@@ -1231,215 +1239,7 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
 
 - [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
 
-## Other minor version bumps
-
-### `@backstage/backend-app-api` (1.5.0 → [1.6.0](../../changelogs/@backstage/backend-app-api.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`545557a`](https://github.com/backstage/backstage/commit/545557a): Registration errors should be forwarded as BackendStartupResult
-
-### `@backstage/backend-plugin-api` (1.7.0 → [1.8.0](../../changelogs/@backstage/backend-plugin-api.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`cc8348e`](https://github.com/backstage/backstage/commit/cc8348e): Added optional `visibilityPermission` field to `ActionsRegistryActionOptions`, allowing actions to declare a `BasicPermission` that controls visibility and access.
-
-  ```typescript
-  import { createPermission } from '@backstage/plugin-permission-common';
-
-  const myPermission = createPermission({
-    name: 'myPlugin.myAction.use',
-    attributes: {},
-  });
-
-  actionsRegistry.register({
-    name: 'my-action',
-    title: 'My Action',
-    description: 'An action that requires permission',
-    visibilityPermission: myPermission,
-    schema: {
-      input: z => z.object({ name: z.string() }),
-      output: z => z.object({ ok: z.boolean() }),
-    },
-    action: async ({ input }) => {
-      return { output: { ok: true } };
-    },
-  });
-  ```
-
-  Actions without a `visibilityPermission` field continue to work as before.
-
-- [`015668c`](https://github.com/backstage/backstage/commit/015668c): Added `cancelTask` method to the `SchedulerService` interface and implementation, allowing cancellation of currently running scheduled tasks. For global tasks, the database lock is released and a periodic liveness check aborts the running task function. For local tasks, the task's abort signal is triggered directly. A new `POST /.backstage/scheduler/v1/tasks/:id/cancel` endpoint is also available.
-
-##### Patch Changes
-
-- [`dee4283`](https://github.com/backstage/backstage/commit/dee4283): Added `pluginId` field to `ActionsServiceAction` type, populated from the registering plugin's metadata.
-- [`1ee5b28`](https://github.com/backstage/backstage/commit/1ee5b28): Adds an alpha `MetricsService` to provide a unified interface for metrics instrumentation across Backstage plugins.
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-
-### `@backstage/catalog-client` (1.13.0 → [1.14.0](../../changelogs/@backstage/catalog-client.md#1140))
-
-#### 1.14.0
-
-##### Minor Changes
-
-- [`972f686`](https://github.com/backstage/backstage/commit/972f686): Added support for the `query` field in `getEntitiesByRefs` requests, enabling predicate-based filtering with `$all`, `$any`, `$not`, `$exists`, `$in`, `$contains`, and `$hasPrefix` operators.
-- [`5d95e8e`](https://github.com/backstage/backstage/commit/5d95e8e): Add an `onConflict` option to location creation that can refresh an existing location instead of throwing a conflict error.
-- [`56c908e`](https://github.com/backstage/backstage/commit/56c908e): Added support for the `query` field in `getEntityFacets` requests, enabling predicate-based filtering with `$all`, `$any`, `$not`, `$exists`, `$in`, `$contains`, and `$hasPrefix` operators.
-- [`0fbcf23`](https://github.com/backstage/backstage/commit/0fbcf23): Migrated OpenAPI schemas to 3.1.
-- [`51e23eb`](https://github.com/backstage/backstage/commit/51e23eb): Added predicate-based entity filtering via POST /entities/by-query endpoint.
-
-  Supports `$all`, `$any`, `$not`, `$exists`, `$in`, `$hasPrefix`, and (partially) `$contains` operators for expressive entity queries. Integrated into the existing `queryEntities` flow with full cursor-based pagination, permission enforcement, and `totalItems` support.
-
-  The catalog client's `queryEntities()` method automatically routes to the POST endpoint when a `query` predicate is provided.
-
-##### Patch Changes
-
-- [`d2494d6`](https://github.com/backstage/backstage/commit/d2494d6): Minor update to catalog client docs
-
-### `@backstage/plugin-catalog-node` (2.0.0 → [2.1.0](../../changelogs/@backstage/plugin-catalog-node.md#210))
-
-#### 2.1.0
-
-##### Minor Changes
-
-- [`bf71677`](https://github.com/backstage/backstage/commit/bf71677): Added the ability for SCM events subscribers to mark the fact that they have taken actions based on events, which produces output metrics:
-
-  - `catalog.events.scm.actions` with attribute `action`: Counter for the number of actions actually taken by catalog internals or other subscribers, based on SCM events. The `action` is currently either `create`, `delete`, `refresh`, or `move`.
-
-### `@backstage/plugin-catalog-react` (2.0.0 → [2.1.0](../../changelogs/@backstage/plugin-catalog-react.md#210))
-
-#### 2.1.0
-
-##### Minor Changes
-
-- [`c548a0f`](https://github.com/backstage/backstage/commit/c548a0f): Added `EntityDataTable`, `EntityRelationCard`, `entityDataTableColumns`, `entityColumnPresets`, and related types as alpha exports. These replace `EntityTable` and `RelatedEntitiesCard` (from `@backstage/plugin-catalog`) respectively, providing a unified BUI-based pattern for entity table cards.
-- [`4d58894`](https://github.com/backstage/backstage/commit/4d58894): Added `aliases` and `contentOrder` fields to `EntityContentGroupDefinition`, allowing groups to declare alias IDs and control the sort order of their content items.
-- [`d14b6e0`](https://github.com/backstage/backstage/commit/d14b6e0): Exported `useEntityRefLink` hook that returns a function for generating entity page URLs from entity references.
-- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
-- [`c6080eb`](https://github.com/backstage/backstage/commit/c6080eb): Added `EntityInfoCard` component to `@backstage/plugin-catalog-react` as a BUI-based card wrapper for entity page cards.
-
-##### Patch Changes
-
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-
-### `@backstage/plugin-scaffolder` (1.35.4 → [1.36.0](../../changelogs/@backstage/plugin-scaffolder.md#1360))
-
-#### 1.36.0
-
-##### Minor Changes
-
-- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
-
-##### Patch Changes
-
-- [`e27bd4e`](https://github.com/backstage/backstage/commit/e27bd4e): Removed check for deprecated `bitbucket` integration from `repoPickerValidation` function used by the `RepoUrlPicker`, it now validates the `bitbucketServer` and `bitbucketCloud` integrations instead.
-- [`538c985`](https://github.com/backstage/backstage/commit/538c985): Updated installation documentation to use feature discovery as the default.
-- [`bd5b842`](https://github.com/backstage/backstage/commit/bd5b842): Added a new `ui:autoSelect` option to the EntityPicker field that controls whether an entity is automatically selected when the field loses focus. When set to `false`, the field will remain empty if the user closes it without explicitly selecting an entity, preventing unintentional selections. Defaults to `true` for backward compatibility.
-- [`3f36ce1`](https://github.com/backstage/backstage/commit/3f36ce1): Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-
-### `@backstage/plugin-scaffolder-backend` (3.1.5 → [3.2.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#320))
-
-#### 3.2.0
-
-##### Minor Changes
-
-- [`c9b11eb`](https://github.com/backstage/backstage/commit/c9b11eb): Added a new `list-scaffolder-tasks` action that allows querying scaffolder tasks with optional ownership filtering and pagination support
-- [`1b42218`](https://github.com/backstage/backstage/commit/1b42218): Adds a new `get-scaffolder-task-logs` action to `@backstage/plugin-scaffolder-backend` that retrieves log events for a given scaffolder task, with optional support for retrieving only new events after a given event ID.
-- [`0fbcf23`](https://github.com/backstage/backstage/commit/0fbcf23): Migrated OpenAPI schemas to 3.1.
-- [`7695dd2`](https://github.com/backstage/backstage/commit/7695dd2): Added a new `list-scaffolder-actions` action that returns all installed scaffolder actions with their schemas and examples
-- [`e8736ea`](https://github.com/backstage/backstage/commit/e8736ea): Added secrets schema validation for task creation, retry, and dry-run endpoints. When a template defines `spec.secrets.schema`, the API validates provided secrets against the schema and returns a `400` error if validation fails.
-
-##### Patch Changes
-
-- [`e27bd4e`](https://github.com/backstage/backstage/commit/e27bd4e): Removed `@backstage/plugin-scaffolder-backend-module-bitbucket` from `package.json` as the package itself has been deprecated and the code deleted.
-- [`4f5ed06`](https://github.com/backstage/backstage/commit/4f5ed06): Fixed a security vulnerability where server-configured environment secrets were exposed through the scaffolder dry-run endpoint.
-- [`30ff981`](https://github.com/backstage/backstage/commit/30ff981): Fixed a security vulnerability where secrets could bypass log redaction when transformed through Nunjucks filters in scaffolder templates.
-- [`4e39e63`](https://github.com/backstage/backstage/commit/4e39e63): Removed unused dependencies
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-- [`ccc20cf`](https://github.com/backstage/backstage/commit/ccc20cf): create scaffolder MCP action to dry run a provided scaffolder template
-
-### `@backstage/plugin-scaffolder-react` (1.19.7 → [1.20.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1200))
-
-#### 1.20.0
-
-##### Minor Changes
-
-- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
-- [`470f72d`](https://github.com/backstage/backstage/commit/470f72d): The `LogViewer` component from `@backstage/core-components` now supports downloading logs if a callback is passed to `onDownloadLogs`
-
-##### Patch Changes
-
-- [`004b5c1`](https://github.com/backstage/backstage/commit/004b5c1): Added back `formFieldsApiRef` and `ScaffolderFormFieldsApi` as alpha exports.
-- [`bd31ddd`](https://github.com/backstage/backstage/commit/bd31ddd): Updated dependency `flatted` to `3.3.4`.
-- [`f598909`](https://github.com/backstage/backstage/commit/f598909): Added `scaffolderApiMock` test utility, exported from `@backstage/plugin-scaffolder-react/testUtils`.
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-
-### `@backstage/plugin-search` (1.6.1 → [1.7.0](../../changelogs/@backstage/plugin-search.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
-
-##### Patch Changes
-
-- [`d5eb954`](https://github.com/backstage/backstage/commit/d5eb954): Fixes the search component not registering the first search on navigate to the search page.
-- [`aa29b50`](https://github.com/backstage/backstage/commit/aa29b50): New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
-- [`3f36ce1`](https://github.com/backstage/backstage/commit/3f36ce1): Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
-
-### `@backstage/plugin-search-backend` (2.0.12 → [2.1.0](../../changelogs/@backstage/plugin-search-backend.md#210))
-
-#### 2.1.0
-
-##### Minor Changes
-
-- [`0fbcf23`](https://github.com/backstage/backstage/commit/0fbcf23): Migrated OpenAPI schemas to 3.1.
-
-##### Patch Changes
-
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-
-### `@backstage/plugin-search-react` (1.10.4 → [1.11.0](../../changelogs/@backstage/plugin-search-react.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
-
-##### Patch Changes
-
-- [`d5eb954`](https://github.com/backstage/backstage/commit/d5eb954): Fixes the search component not registering the first search on navigate to the search page.
-
-## Other patch version bumps
-
-### `@backstage/backend-test-utils` (1.11.0 → [1.11.1](../../changelogs/@backstage/backend-test-utils.md#1111))
-
-#### 1.11.1
-
-##### Patch Changes
-
-- [`dee4283`](https://github.com/backstage/backstage/commit/dee4283): Added `pluginId` field to `ActionsServiceAction` type, populated from the registering plugin's metadata.
-- [`164711a`](https://github.com/backstage/backstage/commit/164711a): Added `cancelTask` to `MockSchedulerService` and mock scheduler service factory.
-- [`62f0a53`](https://github.com/backstage/backstage/commit/62f0a53): Fixed error forwarding in the actions registry so that known errors like `InputError` and `NotFoundError` thrown by actions preserve their original status codes and messages instead of being wrapped in `ForwardedError` and coerced to 500.
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-- [`1ee5b28`](https://github.com/backstage/backstage/commit/1ee5b28): Adds a new metrics service mock to be leveraged in tests
-
-### `@backstage/catalog-model` (1.7.6 → [1.7.7](../../changelogs/@backstage/catalog-model.md#177))
-
-#### 1.7.7
-
-##### Patch Changes
-
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+## 0.x patch version bumps
 
 ### `@backstage/codemods` (0.1.54 → [0.1.55](../../changelogs/@backstage/codemods.md#0155))
 
@@ -1449,26 +1249,6 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
 
 - [`70fc178`](https://github.com/backstage/backstage/commit/70fc178): Migrated from deprecated `findPaths` to `targetPaths` and `findOwnPaths` from `@backstage/cli-common`.
 - [`de62a9d`](https://github.com/backstage/backstage/commit/de62a9d): Upgraded `commander` dependency from `^12.0.0` to `^14.0.3` across all CLI packages.
-
-### `@backstage/config-loader` (1.10.8 → [1.10.9](../../changelogs/@backstage/config-loader.md#1109))
-
-#### 1.10.9
-
-##### Patch Changes
-
-- [`70fc178`](https://github.com/backstage/backstage/commit/70fc178): Migrated from deprecated `findPaths` to `targetPaths` and `findOwnPaths` from `@backstage/cli-common`.
-
-### `@backstage/core-app-api` (1.19.5 → [1.19.6](../../changelogs/@backstage/core-app-api.md#1196))
-
-#### 1.19.6
-
-##### Patch Changes
-
-- [`12d8afe`](https://github.com/backstage/backstage/commit/12d8afe): Added `BUIProvider` from `@backstage/ui` to the app shell provider tree, enabling BUI components to fire analytics events through the Backstage analytics system.
-- [`59752a2`](https://github.com/backstage/backstage/commit/59752a2): Deprecated `AlertApiForwarder` in favor of the new `ToastApi`. The `AlertApiForwarder` now emits a console warning on first use, guiding developers to migrate to `ToastApi` from `@backstage/frontend-plugin-api`.
-- [`0452d02`](https://github.com/backstage/backstage/commit/0452d02): Add optional `description` field to plugin-level feature flags.
-- [`42f8c9b`](https://github.com/backstage/backstage/commit/42f8c9b): Added `BUIProvider` inside the legacy app router to enable client-side routing for all BUI components.
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
 
 ### `@backstage/core-compat-api` (0.5.8 → [0.5.9](../../changelogs/@backstage/core-compat-api.md#059))
 
@@ -1493,18 +1273,6 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
 - [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
 - [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
 - [`470f72d`](https://github.com/backstage/backstage/commit/470f72d): The `LogViewer` component from `@backstage/core-components` now supports downloading logs if a callback is passed to `onDownloadLogs`
-
-### `@backstage/core-plugin-api` (1.12.3 → [1.12.4](../../changelogs/@backstage/core-plugin-api.md#1124))
-
-#### 1.12.4
-
-##### Patch Changes
-
-- [`d911b72`](https://github.com/backstage/backstage/commit/d911b72): Updated `createApiRef` to preserve the direct config call without deprecation warnings while staying compatible with the new frontend API ref typing.
-- [`59752a2`](https://github.com/backstage/backstage/commit/59752a2): Deprecated `AlertApi`, `AlertMessage`, and `alertApiRef` in favor of the new `ToastApi` from `@backstage/frontend-plugin-api`.
-- [`0452d02`](https://github.com/backstage/backstage/commit/0452d02): Add optional `description` field to plugin-level feature flags.
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
-- [`fe848e0`](https://github.com/backstage/backstage/commit/fe848e0): Changed `useApiHolder` to return an empty `ApiHolder` instead of throwing when used outside of an API context.
 
 ### `@backstage/eslint-plugin` (0.2.1 → [0.2.2](../../changelogs/@backstage/eslint-plugin.md#022))
 
@@ -2036,6 +1804,268 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
 
 - [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
 
+### `@backstage/plugin-user-settings` (0.9.0 → [0.9.1](../../changelogs/@backstage/plugin-user-settings.md#091))
+
+#### 0.9.1
+
+##### Patch Changes
+
+- [`e26e3de`](https://github.com/backstage/backstage/commit/e26e3de): The `ProviderSettingsItem` `icon` prop now accepts `IconElement` in addition to `IconComponent`.
+- [`538c985`](https://github.com/backstage/backstage/commit/538c985): Updated installation documentation to use feature discovery as the default.
+- [`aa29b50`](https://github.com/backstage/backstage/commit/aa29b50): New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
+- [`3f36ce1`](https://github.com/backstage/backstage/commit/3f36ce1): Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
+- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+
+### `@backstage/plugin-user-settings-backend` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-user-settings-backend.md#041))
+
+#### 0.4.1
+
+##### Patch Changes
+
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+## Other minor version bumps
+
+### `@backstage/backend-app-api` (1.5.0 → [1.6.0](../../changelogs/@backstage/backend-app-api.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`545557a`](https://github.com/backstage/backstage/commit/545557a): Registration errors should be forwarded as BackendStartupResult
+
+### `@backstage/backend-plugin-api` (1.7.0 → [1.8.0](../../changelogs/@backstage/backend-plugin-api.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`cc8348e`](https://github.com/backstage/backstage/commit/cc8348e): Added optional `visibilityPermission` field to `ActionsRegistryActionOptions`, allowing actions to declare a `BasicPermission` that controls visibility and access.
+
+  ```typescript
+  import { createPermission } from '@backstage/plugin-permission-common';
+
+  const myPermission = createPermission({
+    name: 'myPlugin.myAction.use',
+    attributes: {},
+  });
+
+  actionsRegistry.register({
+    name: 'my-action',
+    title: 'My Action',
+    description: 'An action that requires permission',
+    visibilityPermission: myPermission,
+    schema: {
+      input: z => z.object({ name: z.string() }),
+      output: z => z.object({ ok: z.boolean() }),
+    },
+    action: async ({ input }) => {
+      return { output: { ok: true } };
+    },
+  });
+  ```
+
+  Actions without a `visibilityPermission` field continue to work as before.
+
+- [`015668c`](https://github.com/backstage/backstage/commit/015668c): Added `cancelTask` method to the `SchedulerService` interface and implementation, allowing cancellation of currently running scheduled tasks. For global tasks, the database lock is released and a periodic liveness check aborts the running task function. For local tasks, the task's abort signal is triggered directly. A new `POST /.backstage/scheduler/v1/tasks/:id/cancel` endpoint is also available.
+
+##### Patch Changes
+
+- [`dee4283`](https://github.com/backstage/backstage/commit/dee4283): Added `pluginId` field to `ActionsServiceAction` type, populated from the registering plugin's metadata.
+- [`1ee5b28`](https://github.com/backstage/backstage/commit/1ee5b28): Adds an alpha `MetricsService` to provide a unified interface for metrics instrumentation across Backstage plugins.
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/catalog-client` (1.13.0 → [1.14.0](../../changelogs/@backstage/catalog-client.md#1140))
+
+#### 1.14.0
+
+##### Minor Changes
+
+- [`972f686`](https://github.com/backstage/backstage/commit/972f686): Added support for the `query` field in `getEntitiesByRefs` requests, enabling predicate-based filtering with `$all`, `$any`, `$not`, `$exists`, `$in`, `$contains`, and `$hasPrefix` operators.
+- [`5d95e8e`](https://github.com/backstage/backstage/commit/5d95e8e): Add an `onConflict` option to location creation that can refresh an existing location instead of throwing a conflict error.
+- [`56c908e`](https://github.com/backstage/backstage/commit/56c908e): Added support for the `query` field in `getEntityFacets` requests, enabling predicate-based filtering with `$all`, `$any`, `$not`, `$exists`, `$in`, `$contains`, and `$hasPrefix` operators.
+- [`0fbcf23`](https://github.com/backstage/backstage/commit/0fbcf23): Migrated OpenAPI schemas to 3.1.
+- [`51e23eb`](https://github.com/backstage/backstage/commit/51e23eb): Added predicate-based entity filtering via POST /entities/by-query endpoint.
+
+  Supports `$all`, `$any`, `$not`, `$exists`, `$in`, `$hasPrefix`, and (partially) `$contains` operators for expressive entity queries. Integrated into the existing `queryEntities` flow with full cursor-based pagination, permission enforcement, and `totalItems` support.
+
+  The catalog client's `queryEntities()` method automatically routes to the POST endpoint when a `query` predicate is provided.
+
+##### Patch Changes
+
+- [`d2494d6`](https://github.com/backstage/backstage/commit/d2494d6): Minor update to catalog client docs
+
+### `@backstage/plugin-catalog-node` (2.0.0 → [2.1.0](../../changelogs/@backstage/plugin-catalog-node.md#210))
+
+#### 2.1.0
+
+##### Minor Changes
+
+- [`bf71677`](https://github.com/backstage/backstage/commit/bf71677): Added the ability for SCM events subscribers to mark the fact that they have taken actions based on events, which produces output metrics:
+
+  - `catalog.events.scm.actions` with attribute `action`: Counter for the number of actions actually taken by catalog internals or other subscribers, based on SCM events. The `action` is currently either `create`, `delete`, `refresh`, or `move`.
+
+### `@backstage/plugin-catalog-react` (2.0.0 → [2.1.0](../../changelogs/@backstage/plugin-catalog-react.md#210))
+
+#### 2.1.0
+
+##### Minor Changes
+
+- [`c548a0f`](https://github.com/backstage/backstage/commit/c548a0f): Added `EntityDataTable`, `EntityRelationCard`, `entityDataTableColumns`, `entityColumnPresets`, and related types as alpha exports. These replace `EntityTable` and `RelatedEntitiesCard` (from `@backstage/plugin-catalog`) respectively, providing a unified BUI-based pattern for entity table cards.
+- [`4d58894`](https://github.com/backstage/backstage/commit/4d58894): Added `aliases` and `contentOrder` fields to `EntityContentGroupDefinition`, allowing groups to declare alias IDs and control the sort order of their content items.
+- [`d14b6e0`](https://github.com/backstage/backstage/commit/d14b6e0): Exported `useEntityRefLink` hook that returns a function for generating entity page URLs from entity references.
+- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- [`c6080eb`](https://github.com/backstage/backstage/commit/c6080eb): Added `EntityInfoCard` component to `@backstage/plugin-catalog-react` as a BUI-based card wrapper for entity page cards.
+
+##### Patch Changes
+
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/plugin-scaffolder` (1.35.4 → [1.36.0](../../changelogs/@backstage/plugin-scaffolder.md#1360))
+
+#### 1.36.0
+
+##### Minor Changes
+
+- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+
+##### Patch Changes
+
+- [`e27bd4e`](https://github.com/backstage/backstage/commit/e27bd4e): Removed check for deprecated `bitbucket` integration from `repoPickerValidation` function used by the `RepoUrlPicker`, it now validates the `bitbucketServer` and `bitbucketCloud` integrations instead.
+- [`538c985`](https://github.com/backstage/backstage/commit/538c985): Updated installation documentation to use feature discovery as the default.
+- [`bd5b842`](https://github.com/backstage/backstage/commit/bd5b842): Added a new `ui:autoSelect` option to the EntityPicker field that controls whether an entity is automatically selected when the field loses focus. When set to `false`, the field will remain empty if the user closes it without explicitly selecting an entity, preventing unintentional selections. Defaults to `true` for backward compatibility.
+- [`3f36ce1`](https://github.com/backstage/backstage/commit/3f36ce1): Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/plugin-scaffolder-backend` (3.1.5 → [3.2.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#320))
+
+#### 3.2.0
+
+##### Minor Changes
+
+- [`c9b11eb`](https://github.com/backstage/backstage/commit/c9b11eb): Added a new `list-scaffolder-tasks` action that allows querying scaffolder tasks with optional ownership filtering and pagination support
+- [`1b42218`](https://github.com/backstage/backstage/commit/1b42218): Adds a new `get-scaffolder-task-logs` action to `@backstage/plugin-scaffolder-backend` that retrieves log events for a given scaffolder task, with optional support for retrieving only new events after a given event ID.
+- [`0fbcf23`](https://github.com/backstage/backstage/commit/0fbcf23): Migrated OpenAPI schemas to 3.1.
+- [`7695dd2`](https://github.com/backstage/backstage/commit/7695dd2): Added a new `list-scaffolder-actions` action that returns all installed scaffolder actions with their schemas and examples
+- [`e8736ea`](https://github.com/backstage/backstage/commit/e8736ea): Added secrets schema validation for task creation, retry, and dry-run endpoints. When a template defines `spec.secrets.schema`, the API validates provided secrets against the schema and returns a `400` error if validation fails.
+
+##### Patch Changes
+
+- [`e27bd4e`](https://github.com/backstage/backstage/commit/e27bd4e): Removed `@backstage/plugin-scaffolder-backend-module-bitbucket` from `package.json` as the package itself has been deprecated and the code deleted.
+- [`4f5ed06`](https://github.com/backstage/backstage/commit/4f5ed06): Fixed a security vulnerability where server-configured environment secrets were exposed through the scaffolder dry-run endpoint.
+- [`30ff981`](https://github.com/backstage/backstage/commit/30ff981): Fixed a security vulnerability where secrets could bypass log redaction when transformed through Nunjucks filters in scaffolder templates.
+- [`4e39e63`](https://github.com/backstage/backstage/commit/4e39e63): Removed unused dependencies
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- [`ccc20cf`](https://github.com/backstage/backstage/commit/ccc20cf): create scaffolder MCP action to dry run a provided scaffolder template
+
+### `@backstage/plugin-scaffolder-react` (1.19.7 → [1.20.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1200))
+
+#### 1.20.0
+
+##### Minor Changes
+
+- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+- [`470f72d`](https://github.com/backstage/backstage/commit/470f72d): The `LogViewer` component from `@backstage/core-components` now supports downloading logs if a callback is passed to `onDownloadLogs`
+
+##### Patch Changes
+
+- [`004b5c1`](https://github.com/backstage/backstage/commit/004b5c1): Added back `formFieldsApiRef` and `ScaffolderFormFieldsApi` as alpha exports.
+- [`bd31ddd`](https://github.com/backstage/backstage/commit/bd31ddd): Updated dependency `flatted` to `3.3.4`.
+- [`f598909`](https://github.com/backstage/backstage/commit/f598909): Added `scaffolderApiMock` test utility, exported from `@backstage/plugin-scaffolder-react/testUtils`.
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/plugin-search` (1.6.1 → [1.7.0](../../changelogs/@backstage/plugin-search.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+
+##### Patch Changes
+
+- [`d5eb954`](https://github.com/backstage/backstage/commit/d5eb954): Fixes the search component not registering the first search on navigate to the search page.
+- [`aa29b50`](https://github.com/backstage/backstage/commit/aa29b50): New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
+- [`3f36ce1`](https://github.com/backstage/backstage/commit/3f36ce1): Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
+
+### `@backstage/plugin-search-backend` (2.0.12 → [2.1.0](../../changelogs/@backstage/plugin-search-backend.md#210))
+
+#### 2.1.0
+
+##### Minor Changes
+
+- [`0fbcf23`](https://github.com/backstage/backstage/commit/0fbcf23): Migrated OpenAPI schemas to 3.1.
+
+##### Patch Changes
+
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/plugin-search-react` (1.10.4 → [1.11.0](../../changelogs/@backstage/plugin-search-react.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
+
+##### Patch Changes
+
+- [`d5eb954`](https://github.com/backstage/backstage/commit/d5eb954): Fixes the search component not registering the first search on navigate to the search page.
+
+## Other patch version bumps
+
+### `@backstage/backend-test-utils` (1.11.0 → [1.11.1](../../changelogs/@backstage/backend-test-utils.md#1111))
+
+#### 1.11.1
+
+##### Patch Changes
+
+- [`dee4283`](https://github.com/backstage/backstage/commit/dee4283): Added `pluginId` field to `ActionsServiceAction` type, populated from the registering plugin's metadata.
+- [`164711a`](https://github.com/backstage/backstage/commit/164711a): Added `cancelTask` to `MockSchedulerService` and mock scheduler service factory.
+- [`62f0a53`](https://github.com/backstage/backstage/commit/62f0a53): Fixed error forwarding in the actions registry so that known errors like `InputError` and `NotFoundError` thrown by actions preserve their original status codes and messages instead of being wrapped in `ForwardedError` and coerced to 500.
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- [`1ee5b28`](https://github.com/backstage/backstage/commit/1ee5b28): Adds a new metrics service mock to be leveraged in tests
+
+### `@backstage/catalog-model` (1.7.6 → [1.7.7](../../changelogs/@backstage/catalog-model.md#177))
+
+#### 1.7.7
+
+##### Patch Changes
+
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/config-loader` (1.10.8 → [1.10.9](../../changelogs/@backstage/config-loader.md#1109))
+
+#### 1.10.9
+
+##### Patch Changes
+
+- [`70fc178`](https://github.com/backstage/backstage/commit/70fc178): Migrated from deprecated `findPaths` to `targetPaths` and `findOwnPaths` from `@backstage/cli-common`.
+
+### `@backstage/core-app-api` (1.19.5 → [1.19.6](../../changelogs/@backstage/core-app-api.md#1196))
+
+#### 1.19.6
+
+##### Patch Changes
+
+- [`12d8afe`](https://github.com/backstage/backstage/commit/12d8afe): Added `BUIProvider` from `@backstage/ui` to the app shell provider tree, enabling BUI components to fire analytics events through the Backstage analytics system.
+- [`59752a2`](https://github.com/backstage/backstage/commit/59752a2): Deprecated `AlertApiForwarder` in favor of the new `ToastApi`. The `AlertApiForwarder` now emits a console warning on first use, guiding developers to migrate to `ToastApi` from `@backstage/frontend-plugin-api`.
+- [`0452d02`](https://github.com/backstage/backstage/commit/0452d02): Add optional `description` field to plugin-level feature flags.
+- [`42f8c9b`](https://github.com/backstage/backstage/commit/42f8c9b): Added `BUIProvider` inside the legacy app router to enable client-side routing for all BUI components.
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+
+### `@backstage/core-plugin-api` (1.12.3 → [1.12.4](../../changelogs/@backstage/core-plugin-api.md#1124))
+
+#### 1.12.4
+
+##### Patch Changes
+
+- [`d911b72`](https://github.com/backstage/backstage/commit/d911b72): Updated `createApiRef` to preserve the direct config call without deprecation warnings while staying compatible with the new frontend API ref typing.
+- [`59752a2`](https://github.com/backstage/backstage/commit/59752a2): Deprecated `AlertApi`, `AlertMessage`, and `alertApiRef` in favor of the new `ToastApi` from `@backstage/frontend-plugin-api`.
+- [`0452d02`](https://github.com/backstage/backstage/commit/0452d02): Add optional `description` field to plugin-level feature flags.
+- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
+- [`fe848e0`](https://github.com/backstage/backstage/commit/fe848e0): Changed `useApiHolder` to return an empty `ApiHolder` instead of throwing when used outside of an API context.
+
 ### `@backstage/plugin-techdocs` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-techdocs.md#1171))
 
 #### 1.17.1
@@ -2070,26 +2100,6 @@ Changes between 1.48.6 and 1.49.0 — 176 changed and 14 added packages.
 
 - [`cb7c6b1`](https://github.com/backstage/backstage/commit/cb7c6b1): Added `techdocs.generator.mkdocs.dangerouslyAllowAdditionalKeys` configuration option to explicitly bypass MkDocs configuration key restrictions. This enables support for additional MkDocs configuration keys beyond the default safe allow list, such as the `hooks` key which some MkDocs plugins require.
 - [`e96f6d9`](https://github.com/backstage/backstage/commit/e96f6d9): Removed `INHERIT` from the `ALLOWED_MKDOCS_KEYS` set to address a security concern with MkDocs configuration inheritance.
-
-### `@backstage/plugin-user-settings` (0.9.0 → [0.9.1](../../changelogs/@backstage/plugin-user-settings.md#091))
-
-#### 0.9.1
-
-##### Patch Changes
-
-- [`e26e3de`](https://github.com/backstage/backstage/commit/e26e3de): The `ProviderSettingsItem` `icon` prop now accepts `IconElement` in addition to `IconComponent`.
-- [`538c985`](https://github.com/backstage/backstage/commit/538c985): Updated installation documentation to use feature discovery as the default.
-- [`aa29b50`](https://github.com/backstage/backstage/commit/aa29b50): New frontend system pages now use the default plugin header together with `HeaderPage` instead of the legacy core page header pattern.
-- [`3f36ce1`](https://github.com/backstage/backstage/commit/3f36ce1): Updated alpha plugin icons to follow the new frontend icon sizing rules when rendered in plugin and navigation surfaces.
-- [`0be2541`](https://github.com/backstage/backstage/commit/0be2541): Promoted the plugin's translation ref to the stable package entry point. It was previously only available through the alpha entry point.
-
-### `@backstage/plugin-user-settings-backend` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-user-settings-backend.md#041))
-
-#### 0.4.1
-
-##### Patch Changes
-
-- [`a49a40d`](https://github.com/backstage/backstage/commit/a49a40d): Updated dependency `zod` to `^3.25.76 || ^4.0.0` & migrated to `/v3` or `/v4` imports.
 
 ### `@techdocs/cli` (1.10.5 → [1.10.6](../../changelogs/@techdocs/cli.md#1106))
 

@@ -1,14 +1,14 @@
 # Backstage Release 1.26.3 changelog
 
-Changes between 1.26.2 and 1.26.3 — 6 changed and 0 added packages.
+Changes between 1.26.2 and 1.26.3 — 0 added, 0 removed, 6 upgraded, 264 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 6 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 6 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-linguist` (0.1.19 → 0.1.20)](#backstageplugin-linguist-0119--0120)
   - [`@backstage/plugin-linguist-backend` (0.5.15 → 0.5.16)](#backstageplugin-linguist-backend-0515--0516)
   - [`@backstage/plugin-linguist-common` (0.1.2 → 0.1.3)](#backstageplugin-linguist-common-012--013)
@@ -16,7 +16,7 @@ Changes between 1.26.2 and 1.26.3 — 6 changed and 0 added packages.
   - [`@backstage/plugin-nomad-backend` (0.1.19 → 0.1.20)](#backstageplugin-nomad-backend-0119--0120)
   - [`@backstage/plugin-pagerduty` (0.7.6 → 0.7.7)](#backstageplugin-pagerduty-076--077)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-linguist` (0.1.19 → [0.1.20](../../changelogs/@backstage/plugin-linguist.md#0120))
 

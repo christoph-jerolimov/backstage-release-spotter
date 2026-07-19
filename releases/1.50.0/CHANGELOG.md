@@ -1,14 +1,15 @@
 # Backstage Release 1.50.0 changelog
 
-Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
+Changes between 1.49.5 and 1.50.0 — 0 added, 0 removed, 197 upgraded, 10 unchanged packages.
 
 ## Summary
 
 - [Breaking changes](#breaking-changes): 8 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 4 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 45 packages
 - [Other minor version bumps](#other-minor-version-bumps): 7 packages
-- [Other patch version bumps](#other-patch-version-bumps): 61 packages
+- [Other patch version bumps](#other-patch-version-bumps): 16 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 116 packages
 
 ## Table of contents
@@ -29,6 +30,52 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
   - [`@backstage/plugin-auth-backend-module-auth0-provider` (0.3.1 → 0.4.0)](#backstageplugin-auth-backend-module-auth0-provider-031--040)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-signals` (0.0.29 → 0.0.30)](#backstageplugin-signals-0029--0030)
+- [0.x patch version bumps](#0x-patch-version-bumps)
+  - [`@backstage/backend-dynamic-feature-service` (0.8.0 → 0.8.1)](#backstagebackend-dynamic-feature-service-080--081)
+  - [`@backstage/backend-openapi-utils` (0.6.7 → 0.6.8)](#backstagebackend-openapi-utils-067--068)
+  - [`@backstage/cli` (0.36.0 → 0.36.1)](#backstagecli-0360--0361)
+  - [`@backstage/cli-common` (0.2.0 → 0.2.1)](#backstagecli-common-020--021)
+  - [`@backstage/cli-module-auth` (0.1.0 → 0.1.1)](#backstagecli-module-auth-010--011)
+  - [`@backstage/cli-module-build` (0.1.0 → 0.1.1)](#backstagecli-module-build-010--011)
+  - [`@backstage/cli-module-migrate` (0.1.0 → 0.1.1)](#backstagecli-module-migrate-010--011)
+  - [`@backstage/cli-module-new` (0.1.1 → 0.1.2)](#backstagecli-module-new-011--012)
+  - [`@backstage/cli-module-test-jest` (0.1.0 → 0.1.1)](#backstagecli-module-test-jest-010--011)
+  - [`@backstage/cli-node` (0.3.0 → 0.3.1)](#backstagecli-node-030--031)
+  - [`@backstage/core-compat-api` (0.5.9 → 0.5.10)](#backstagecore-compat-api-059--0510)
+  - [`@backstage/core-components` (0.18.8 → 0.18.9)](#backstagecore-components-0188--0189)
+  - [`@backstage/create-app` (0.8.1 → 0.8.2)](#backstagecreate-app-081--082)
+  - [`@backstage/eslint-plugin` (0.2.2 → 0.2.3)](#backstageeslint-plugin-022--023)
+  - [`@backstage/filter-predicates` (0.1.1 → 0.1.2)](#backstagefilter-predicates-011--012)
+  - [`@backstage/frontend-app-api` (0.16.1 → 0.16.2)](#backstagefrontend-app-api-0161--0162)
+  - [`@backstage/plugin-auth` (0.1.6 → 0.1.7)](#backstageplugin-auth-016--017)
+  - [`@backstage/plugin-catalog-backend-module-azure` (0.3.15 → 0.3.16)](#backstageplugin-catalog-backend-module-azure-0315--0316)
+  - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.5.9 → 0.5.10)](#backstageplugin-catalog-backend-module-bitbucket-cloud-059--0510)
+  - [`@backstage/plugin-catalog-backend-module-github` (0.13.0 → 0.13.1)](#backstageplugin-catalog-backend-module-github-0130--0131)
+  - [`@backstage/plugin-catalog-backend-module-gitlab` (0.8.1 → 0.8.2)](#backstageplugin-catalog-backend-module-gitlab-081--082)
+  - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.10 → 0.7.11)](#backstageplugin-catalog-backend-module-incremental-ingestion-0710--0711)
+  - [`@backstage/plugin-catalog-graph` (0.6.0 → 0.6.1)](#backstageplugin-catalog-graph-060--061)
+  - [`@backstage/plugin-catalog-import` (0.13.11 → 0.13.12)](#backstageplugin-catalog-import-01311--01312)
+  - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.28 → 0.2.29)](#backstageplugin-catalog-unprocessed-entities-0228--0229)
+  - [`@backstage/plugin-devtools-backend` (0.5.15 → 0.5.16)](#backstageplugin-devtools-backend-0515--0516)
+  - [`@backstage/plugin-events-backend-module-google-pubsub` (0.2.1 → 0.2.2)](#backstageplugin-events-backend-module-google-pubsub-021--022)
+  - [`@backstage/plugin-kubernetes` (0.12.17 → 0.12.18)](#backstageplugin-kubernetes-01217--01218)
+  - [`@backstage/plugin-kubernetes-backend` (0.21.2 → 0.21.3)](#backstageplugin-kubernetes-backend-0212--0213)
+  - [`@backstage/plugin-mcp-actions-backend` (0.1.11 → 0.1.12)](#backstageplugin-mcp-actions-backend-0111--0112)
+  - [`@backstage/plugin-notifications` (0.5.15 → 0.5.16)](#backstageplugin-notifications-0515--0516)
+  - [`@backstage/plugin-notifications-backend` (0.6.3 → 0.6.4)](#backstageplugin-notifications-backend-063--064)
+  - [`@backstage/plugin-notifications-backend-module-email` (0.3.19 → 0.3.20)](#backstageplugin-notifications-backend-module-email-0319--0320)
+  - [`@backstage/plugin-notifications-backend-module-slack` (0.4.0 → 0.4.1)](#backstageplugin-notifications-backend-module-slack-040--041)
+  - [`@backstage/plugin-org` (0.7.0 → 0.7.1)](#backstageplugin-org-070--071)
+  - [`@backstage/plugin-org-react` (0.1.48 → 0.1.49)](#backstageplugin-org-react-0148--0149)
+  - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.3.4 → 0.3.5)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-034--035)
+  - [`@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.19 → 0.2.20)](#backstageplugin-scaffolder-backend-module-bitbucket-server-0219--0220)
+  - [`@backstage/plugin-scaffolder-backend-module-github` (0.9.7 → 0.9.8)](#backstageplugin-scaffolder-backend-module-github-097--098)
+  - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.19 → 0.5.20)](#backstageplugin-scaffolder-backend-module-rails-0519--0520)
+  - [`@backstage/plugin-scaffolder-node` (0.13.1 → 0.13.2)](#backstageplugin-scaffolder-node-0131--0132)
+  - [`@backstage/plugin-search-backend-module-pg` (0.5.53 → 0.5.54)](#backstageplugin-search-backend-module-pg-0553--0554)
+  - [`@backstage/plugin-search-backend-module-techdocs` (0.4.12 → 0.4.13)](#backstageplugin-search-backend-module-techdocs-0412--0413)
+  - [`@backstage/repo-tools` (0.17.0 → 0.17.1)](#backstagerepo-tools-0170--0171)
+  - [`@backstage/theme` (0.7.2 → 0.7.3)](#backstagetheme-072--073)
 - [Other minor version bumps](#other-minor-version-bumps)
   - [`@backstage/backend-plugin-api` (1.8.0 → 1.9.0)](#backstagebackend-plugin-api-180--190)
   - [`@backstage/catalog-model` (1.7.7 → 1.8.0)](#backstagecatalog-model-177--180)
@@ -40,64 +87,19 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 - [Other patch version bumps](#other-patch-version-bumps)
   - [`@backstage/app-defaults` (1.7.6 → 1.7.7)](#backstageapp-defaults-176--177)
   - [`@backstage/backend-app-api` (1.6.0 → 1.6.1)](#backstagebackend-app-api-160--161)
-  - [`@backstage/backend-dynamic-feature-service` (0.8.0 → 0.8.1)](#backstagebackend-dynamic-feature-service-080--081)
-  - [`@backstage/backend-openapi-utils` (0.6.7 → 0.6.8)](#backstagebackend-openapi-utils-067--068)
   - [`@backstage/backend-test-utils` (1.11.1 → 1.11.2)](#backstagebackend-test-utils-1111--1112)
-  - [`@backstage/cli` (0.36.0 → 0.36.1)](#backstagecli-0360--0361)
-  - [`@backstage/cli-common` (0.2.0 → 0.2.1)](#backstagecli-common-020--021)
-  - [`@backstage/cli-module-auth` (0.1.0 → 0.1.1)](#backstagecli-module-auth-010--011)
-  - [`@backstage/cli-module-build` (0.1.0 → 0.1.1)](#backstagecli-module-build-010--011)
-  - [`@backstage/cli-module-migrate` (0.1.0 → 0.1.1)](#backstagecli-module-migrate-010--011)
-  - [`@backstage/cli-module-new` (0.1.1 → 0.1.2)](#backstagecli-module-new-011--012)
-  - [`@backstage/cli-module-test-jest` (0.1.0 → 0.1.1)](#backstagecli-module-test-jest-010--011)
-  - [`@backstage/cli-node` (0.3.0 → 0.3.1)](#backstagecli-node-030--031)
   - [`@backstage/config-loader` (1.10.9 → 1.10.10)](#backstageconfig-loader-1109--11010)
-  - [`@backstage/core-compat-api` (0.5.9 → 0.5.10)](#backstagecore-compat-api-059--0510)
-  - [`@backstage/core-components` (0.18.8 → 0.18.9)](#backstagecore-components-0188--0189)
-  - [`@backstage/create-app` (0.8.1 → 0.8.2)](#backstagecreate-app-081--082)
-  - [`@backstage/eslint-plugin` (0.2.2 → 0.2.3)](#backstageeslint-plugin-022--023)
-  - [`@backstage/filter-predicates` (0.1.1 → 0.1.2)](#backstagefilter-predicates-011--012)
-  - [`@backstage/frontend-app-api` (0.16.1 → 0.16.2)](#backstagefrontend-app-api-0161--0162)
   - [`@backstage/integration` (2.0.0 → 2.0.1)](#backstageintegration-200--201)
-  - [`@backstage/plugin-auth` (0.1.6 → 0.1.7)](#backstageplugin-auth-016--017)
   - [`@backstage/plugin-catalog` (2.0.1 → 2.0.2)](#backstageplugin-catalog-201--202)
-  - [`@backstage/plugin-catalog-backend-module-azure` (0.3.15 → 0.3.16)](#backstageplugin-catalog-backend-module-azure-0315--0316)
-  - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.5.9 → 0.5.10)](#backstageplugin-catalog-backend-module-bitbucket-cloud-059--0510)
-  - [`@backstage/plugin-catalog-backend-module-github` (0.13.0 → 0.13.1)](#backstageplugin-catalog-backend-module-github-0130--0131)
-  - [`@backstage/plugin-catalog-backend-module-gitlab` (0.8.1 → 0.8.2)](#backstageplugin-catalog-backend-module-gitlab-081--082)
-  - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.10 → 0.7.11)](#backstageplugin-catalog-backend-module-incremental-ingestion-0710--0711)
-  - [`@backstage/plugin-catalog-graph` (0.6.0 → 0.6.1)](#backstageplugin-catalog-graph-060--061)
-  - [`@backstage/plugin-catalog-import` (0.13.11 → 0.13.12)](#backstageplugin-catalog-import-01311--01312)
   - [`@backstage/plugin-catalog-react` (2.1.1 → 2.1.2)](#backstageplugin-catalog-react-211--212)
-  - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.28 → 0.2.29)](#backstageplugin-catalog-unprocessed-entities-0228--0229)
-  - [`@backstage/plugin-devtools-backend` (0.5.15 → 0.5.16)](#backstageplugin-devtools-backend-0515--0516)
-  - [`@backstage/plugin-events-backend-module-google-pubsub` (0.2.1 → 0.2.2)](#backstageplugin-events-backend-module-google-pubsub-021--022)
   - [`@backstage/plugin-gateway-backend` (1.1.3 → 1.1.4)](#backstageplugin-gateway-backend-113--114)
-  - [`@backstage/plugin-kubernetes` (0.12.17 → 0.12.18)](#backstageplugin-kubernetes-01217--01218)
-  - [`@backstage/plugin-kubernetes-backend` (0.21.2 → 0.21.3)](#backstageplugin-kubernetes-backend-0212--0213)
-  - [`@backstage/plugin-mcp-actions-backend` (0.1.11 → 0.1.12)](#backstageplugin-mcp-actions-backend-0111--0112)
-  - [`@backstage/plugin-notifications` (0.5.15 → 0.5.16)](#backstageplugin-notifications-0515--0516)
-  - [`@backstage/plugin-notifications-backend` (0.6.3 → 0.6.4)](#backstageplugin-notifications-backend-063--064)
-  - [`@backstage/plugin-notifications-backend-module-email` (0.3.19 → 0.3.20)](#backstageplugin-notifications-backend-module-email-0319--0320)
-  - [`@backstage/plugin-notifications-backend-module-slack` (0.4.0 → 0.4.1)](#backstageplugin-notifications-backend-module-slack-040--041)
-  - [`@backstage/plugin-org` (0.7.0 → 0.7.1)](#backstageplugin-org-070--071)
-  - [`@backstage/plugin-org-react` (0.1.48 → 0.1.49)](#backstageplugin-org-react-0148--0149)
   - [`@backstage/plugin-scaffolder` (1.36.1 → 1.36.2)](#backstageplugin-scaffolder-1361--1362)
-  - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.3.4 → 0.3.5)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-034--035)
-  - [`@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.19 → 0.2.20)](#backstageplugin-scaffolder-backend-module-bitbucket-server-0219--0220)
-  - [`@backstage/plugin-scaffolder-backend-module-github` (0.9.7 → 0.9.8)](#backstageplugin-scaffolder-backend-module-github-097--098)
-  - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.19 → 0.5.20)](#backstageplugin-scaffolder-backend-module-rails-0519--0520)
-  - [`@backstage/plugin-scaffolder-node` (0.13.1 → 0.13.2)](#backstageplugin-scaffolder-node-0131--0132)
   - [`@backstage/plugin-scaffolder-react` (1.20.0 → 1.20.1)](#backstageplugin-scaffolder-react-1200--1201)
   - [`@backstage/plugin-search` (1.7.0 → 1.7.1)](#backstageplugin-search-170--171)
-  - [`@backstage/plugin-search-backend-module-pg` (0.5.53 → 0.5.54)](#backstageplugin-search-backend-module-pg-0553--0554)
-  - [`@backstage/plugin-search-backend-module-techdocs` (0.4.12 → 0.4.13)](#backstageplugin-search-backend-module-techdocs-0412--0413)
   - [`@backstage/plugin-search-backend-node` (1.4.2 → 1.4.3)](#backstageplugin-search-backend-node-142--143)
   - [`@backstage/plugin-techdocs` (1.17.2 → 1.17.3)](#backstageplugin-techdocs-1172--1173)
   - [`@backstage/plugin-techdocs-backend` (2.1.6 → 2.1.7)](#backstageplugin-techdocs-backend-216--217)
   - [`@backstage/plugin-techdocs-node` (1.14.4 → 1.14.5)](#backstageplugin-techdocs-node-1144--1145)
-  - [`@backstage/repo-tools` (0.17.0 → 0.17.1)](#backstagerepo-tools-0170--0171)
-  - [`@backstage/theme` (0.7.2 → 0.7.3)](#backstagetheme-072--073)
   - [`@techdocs/cli` (1.10.6 → 1.10.7)](#techdocscli-1106--1107)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -394,6 +396,421 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 - [`79453c0`](https://github.com/backstage/backstage/commit/79453c0): Updated dependency `wait-for-expect` to `^4.0.0`.
 - [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
 
+## 0.x patch version bumps
+
+### `@backstage/backend-dynamic-feature-service` (0.8.0 → [0.8.1](../../changelogs/@backstage/backend-dynamic-feature-service.md#081))
+
+#### 0.8.1
+
+##### Patch Changes
+
+- [`79453c0`](https://github.com/backstage/backstage/commit/79453c0): Updated dependency `wait-for-expect` to `^4.0.0`.
+
+### `@backstage/backend-openapi-utils` (0.6.7 → [0.6.8](../../changelogs/@backstage/backend-openapi-utils.md#068))
+
+#### 0.6.8
+
+##### Patch Changes
+
+- [`59dd9b9`](https://github.com/backstage/backstage/commit/59dd9b9): Fixes a memory leak during `wrapServer` where stopped servers weren't removed from the clean up list.
+
+### `@backstage/cli` (0.36.0 → [0.36.1](../../changelogs/@backstage/cli.md#0361))
+
+#### 0.36.1
+
+##### Patch Changes
+
+- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`a2f0c72`](https://github.com/backstage/backstage/commit/a2f0c72): Removed the unused `isDev` export from the internal version module.
+- [`a7a14b7`](https://github.com/backstage/backstage/commit/a7a14b7): Added `DOM.AsyncIterable` to the default `lib` in the shared TypeScript configuration, enabling standard async iteration support for DOM APIs such as `FileSystemDirectoryHandle`. This aligns behavior with [TypeScript 6.0](https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/#the-dom-lib-now-contains-domiterable-and-domasynciterable), where this lib is included in `DOM` by default.
+
+### `@backstage/cli-common` (0.2.0 → [0.2.1](../../changelogs/@backstage/cli-common.md#021))
+
+#### 0.2.1
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`e928e73`](https://github.com/backstage/backstage/commit/e928e73): chore(deps): bump `undici` from 7.22.0 to 7.24.0
+- [`46ff470`](https://github.com/backstage/backstage/commit/46ff470): Deprecated `bootstrapEnvProxyAgents()` in favor of Node.js built-in proxy support. Set `NODE_USE_ENV_PROXY=1` alongside your `HTTP_PROXY`/`HTTPS_PROXY` environment variables instead. See the [corporate proxy guide](https://backstage.io/docs/tutorials/corporate-proxy/) for details. This function will be removed in a future release.
+
+### `@backstage/cli-module-auth` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-auth.md#011))
+
+#### 0.1.1
+
+##### Patch Changes
+
+- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
+- [`c705d44`](https://github.com/backstage/backstage/commit/c705d44): Fixed `auth login` clearing previously configured action sources and other instance metadata when re-authenticating.
+
+### `@backstage/cli-module-build` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-build.md#011))
+
+#### 0.1.1
+
+##### Patch Changes
+
+- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
+- [`f1b493f`](https://github.com/backstage/backstage/commit/f1b493f): Fixed the embedded-postgres PID file being written before database initialization, which prevented the database from initializing successfully.
+- [`f52a296`](https://github.com/backstage/backstage/commit/f52a296): Suppressed false-positive Module Federation warning for shared dependencies that use secondary entry points (e.g. `@mui/material/styles`). These sub-path `package.json` files lack a `version` field, causing the bundler to emit "No version specified" warnings that fail CI builds.
+- [`c16c508`](https://github.com/backstage/backstage/commit/c16c508): When building dist-workspaces with --always-pack, batch `yarn pack` operations to avoid packing packages and their dependencies simultaneously.
+- [`f14df56`](https://github.com/backstage/backstage/commit/f14df56): Added experimental support for using `embedded-postgres` as the database for local development. Set `backend.database.client` to `embedded-postgres` in your app config to enable this. The `embedded-postgres` package must be installed as an explicit dependency in your project.
+
+### `@backstage/cli-module-migrate` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-migrate.md#011))
+
+#### 0.1.1
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/cli-module-new` (0.1.1 → [0.1.2](../../changelogs/@backstage/cli-module-new.md#012))
+
+#### 0.1.2
+
+##### Patch Changes
+
+- [`64a91d0`](https://github.com/backstage/backstage/commit/64a91d0): Rename the legacy `frontend-plugin` to `frontend-plugin-legacy`
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`2b4f97a`](https://github.com/backstage/backstage/commit/2b4f97a): Updated frontend-plugin template to provide a todo list visualization compatible with the backend plugin.
+
+### `@backstage/cli-module-test-jest` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-test-jest.md#011))
+
+#### 0.1.1
+
+##### Patch Changes
+
+- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
+- [`6cc4811`](https://github.com/backstage/backstage/commit/6cc4811): Minor error message update
+
+### `@backstage/cli-node` (0.3.0 → [0.3.1](../../changelogs/@backstage/cli-node.md#031))
+
+#### 0.3.1
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/core-compat-api` (0.5.9 → [0.5.10](../../changelogs/@backstage/core-compat-api.md#0510))
+
+#### 0.5.10
+
+##### Patch Changes
+
+- [`77ab7d5`](https://github.com/backstage/backstage/commit/77ab7d5): Hide the default page header for pages created through the compatibility wrappers, since legacy plugins already render their own headers.
+- [`49397c1`](https://github.com/backstage/backstage/commit/49397c1): Removed unnecessary type argument from internal `createRouteRef` call.
+
+### `@backstage/core-components` (0.18.8 → [0.18.9](../../changelogs/@backstage/core-components.md#0189))
+
+#### 0.18.9
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`320eed3`](https://github.com/backstage/backstage/commit/320eed3): Resolved DOM nesting warning in OAuthRequestDialog by rendering secondary text as block-level spans.
+- [`58b9f3f`](https://github.com/backstage/backstage/commit/58b9f3f): Use Backstage Link component for markdown anchor rendering to ensure consistent internal and external link behavior.
+
+### `@backstage/create-app` (0.8.1 → [0.8.2](../../changelogs/@backstage/create-app.md#082))
+
+#### 0.8.2
+
+##### Patch Changes
+
+- [`a2cb332`](https://github.com/backstage/backstage/commit/a2cb332): Bumped create-app version.
+- [`6c10d88`](https://github.com/backstage/backstage/commit/6c10d88): Bumped create-app version.
+- [`e8ffac1`](https://github.com/backstage/backstage/commit/e8ffac1): Various fixes for the `create-app` template: reorganizing sidebar items, removing redundant config and code, and adding a documentation example.
+- [`72a493a`](https://github.com/backstage/backstage/commit/72a493a): Added the `mcp-actions-backend` and `plugin-auth` plugins
+- [`4cf9f3a`](https://github.com/backstage/backstage/commit/4cf9f3a): Removed the unnecessary `@backstage/cli-module-new` dependency from the `next-app` template, since it is already included through `@backstage/cli-defaults`.
+- [`2541837`](https://github.com/backstage/backstage/commit/2541837): Renamed the built-in template directories from `next-app` to `default-app` and `default-app` to `legacy-app`.
+
+### `@backstage/eslint-plugin` (0.2.2 → [0.2.3](../../changelogs/@backstage/eslint-plugin.md#023))
+
+#### 0.2.3
+
+##### Patch Changes
+
+- [`df43b0e`](https://github.com/backstage/backstage/commit/df43b0e): Fixed `no-mixed-plugin-imports` rule to return `null` from non-fixable suggestion handlers and added an explicit `SuggestionReportDescriptor[]` type annotation, matching the stricter type checking in TypeScript 6.0.
+
+### `@backstage/filter-predicates` (0.1.1 → [0.1.2](../../changelogs/@backstage/filter-predicates.md#012))
+
+#### 0.1.2
+
+##### Patch Changes
+
+- [`8923d6d`](https://github.com/backstage/backstage/commit/8923d6d): Added `createZodV4FilterPredicateSchema` as a zod v4 counterpart to `createZodV3FilterPredicateSchema`.
+
+### `@backstage/frontend-app-api` (0.16.1 → [0.16.2](../../changelogs/@backstage/frontend-app-api.md#0162))
+
+#### 0.16.2
+
+##### Patch Changes
+
+- [`400aa23`](https://github.com/backstage/backstage/commit/400aa23): Wrapped extension permission authorization in a try/catch to surface errors as `ForwardedError` with a clear message.
+- [`364d4fe`](https://github.com/backstage/backstage/commit/364d4fe): Added `apis` to `BootstrapSpecializedApp` and `FinalizedSpecializedApp` types.
+
+### `@backstage/plugin-auth` (0.1.6 → [0.1.7](../../changelogs/@backstage/plugin-auth.md#017))
+
+#### 0.1.7
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/plugin-catalog-backend-module-azure` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-catalog-backend-module-azure.md#0316))
+
+#### 0.3.16
+
+##### Patch Changes
+
+- [`39d27ee`](https://github.com/backstage/backstage/commit/39d27ee): Add Azure DevOps SCM event translation layer for instant catalog reprocessing.
+
+### `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.5.9 → [0.5.10](../../changelogs/@backstage/plugin-catalog-backend-module-bitbucket-cloud.md#0510))
+
+#### 0.5.10
+
+##### Patch Changes
+
+- [`f215863`](https://github.com/backstage/backstage/commit/f215863): Added Bitbucket Cloud SCM event translation layer for the catalog backend module. The module now subscribes to Bitbucket Cloud webhook events and translates them into generic catalog SCM events, enabling instant catalog reprocessing when repositories are pushed to, renamed, transferred, or deleted. The `analyzeBitbucketCloudWebhookEvent` function is exported from the alpha entry point for custom integrations.
+
+### `@backstage/plugin-catalog-backend-module-github` (0.13.0 → [0.13.1](../../changelogs/@backstage/plugin-catalog-backend-module-github.md#0131))
+
+#### 0.13.1
+
+##### Patch Changes
+
+- [`b11e338`](https://github.com/backstage/backstage/commit/b11e338): Fixed a bug where `GithubEntityProvider` with `validateLocationsExist: true` and `filters.branch` configured would always check for the catalog file on the repository's default branch (`HEAD`) instead of the configured branch. This caused repositories to be filtered out when the catalog file only existed on the non-default branch.
+- [`edf465f`](https://github.com/backstage/backstage/commit/edf465f): Removed the `type-fest` dev dependency, replacing its `PartialDeep` import with a local helper type in tests.
+- [`cca9fc2`](https://github.com/backstage/backstage/commit/cca9fc2): Added automatic retry on temporary errors (like 5XX) to the shared GitHub GraphQL client used by `GithubOrgEntityProvider` and replaced the GraphQL client in `GithubEntityProvider` by this one as well, improving resilience against intermittent GitHub API failures.
+
+### `@backstage/plugin-catalog-backend-module-gitlab` (0.8.1 → [0.8.2](../../changelogs/@backstage/plugin-catalog-backend-module-gitlab.md#082))
+
+#### 0.8.2
+
+##### Patch Changes
+
+- [`8df0796`](https://github.com/backstage/backstage/commit/8df0796): Fixed GitLab project topic filtering by using correct API parameter 'topic' instead of 'topics'
+- [`54a8300`](https://github.com/backstage/backstage/commit/54a8300): Add GitLab SCM event translation layer for instant catalog reprocessing.
+
+### `@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.10 → [0.7.11](../../changelogs/@backstage/plugin-catalog-backend-module-incremental-ingestion.md#0711))
+
+#### 0.7.11
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/plugin-catalog-graph` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-catalog-graph.md#061))
+
+#### 0.6.1
+
+##### Patch Changes
+
+- [`effa7bf`](https://github.com/backstage/backstage/commit/effa7bf): Updated `README-alpha.md` extension examples to use current APIs.
+- [`0e147e8`](https://github.com/backstage/backstage/commit/0e147e8): Added `title` and `icon` to the new frontend system plugin definition.
+- [`416ad45`](https://github.com/backstage/backstage/commit/416ad45): Replaced `humanizeEntityRef` with the Catalog Presentation API in `CatalogGraphCard` and `CatalogGraphPage` components for consistent entity display.
+- [`d5899c2`](https://github.com/backstage/backstage/commit/d5899c2): Support configuring `showArrowHeads` on `page:catalog-graph` and `entity-card:catalog-graph/relations`.
+
+### `@backstage/plugin-catalog-import` (0.13.11 → [0.13.12](../../changelogs/@backstage/plugin-catalog-import.md#01312))
+
+#### 0.13.12
+
+##### Patch Changes
+
+- [`fa0593e`](https://github.com/backstage/backstage/commit/fa0593e): Added `title` and `icon` to the new frontend system plugin definition.
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`e5af44c`](https://github.com/backstage/backstage/commit/e5af44c): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
+
+### `@backstage/plugin-catalog-unprocessed-entities` (0.2.28 → [0.2.29](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0229))
+
+#### 0.2.29
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`b6f1fae`](https://github.com/backstage/backstage/commit/b6f1fae): The unprocessed entities view is now primarily intended for use as a tab within the DevTools plugin. The standalone page is still available but disabled by default. To re-enable it, add the following to your `app-config.yaml`:
+
+  ```yaml
+  app:
+    extensions:
+      - page:catalog-unprocessed-entities
+  ```
+
+### `@backstage/plugin-devtools-backend` (0.5.15 → [0.5.16](../../changelogs/@backstage/plugin-devtools-backend.md#0516))
+
+#### 0.5.16
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/plugin-events-backend-module-google-pubsub` (0.2.1 → [0.2.2](../../changelogs/@backstage/plugin-events-backend-module-google-pubsub.md#022))
+
+#### 0.2.2
+
+##### Patch Changes
+
+- [`eacf362`](https://github.com/backstage/backstage/commit/eacf362): Migrated internal metrics in `GooglePubSubConsumingEventPublisher` and `EventConsumingGooglePubSubPublisher` to use the new alpha `MetricsService`
+- [`79453c0`](https://github.com/backstage/backstage/commit/79453c0): Updated dependency `wait-for-expect` to `^4.0.0`.
+
+### `@backstage/plugin-kubernetes` (0.12.17 → [0.12.18](../../changelogs/@backstage/plugin-kubernetes.md#01218))
+
+#### 0.12.18
+
+##### Patch Changes
+
+- [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
+
+### `@backstage/plugin-kubernetes-backend` (0.21.2 → [0.21.3](../../changelogs/@backstage/plugin-kubernetes-backend.md#0213))
+
+#### 0.21.3
+
+##### Patch Changes
+
+- [`ed6b53c`](https://github.com/backstage/backstage/commit/ed6b53c): Removed bare catch-and-rethrow blocks that served no purpose.
+
+### `@backstage/plugin-mcp-actions-backend` (0.1.11 → [0.1.12](../../changelogs/@backstage/plugin-mcp-actions-backend.md#0112))
+
+#### 0.1.12
+
+##### Patch Changes
+
+- [`282c114`](https://github.com/backstage/backstage/commit/282c114): Fix OAuth 2.0 Protected Resource Metadata endpoint returning internal plugin URL, preventing some MCP clients like Claude Code from authenticating
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`c6abc52`](https://github.com/backstage/backstage/commit/c6abc52): Fixed the `.well-known/oauth-protected-resource` resource URL to comply with
+  [RFC 9728 Section 7.3](https://datatracker.ietf.org/doc/html/rfc9728#name-impersonation-attacks). Enabling dynamic resource paths.
+
+### `@backstage/plugin-notifications` (0.5.15 → [0.5.16](../../changelogs/@backstage/plugin-notifications.md#0516))
+
+#### 0.5.16
+
+##### Patch Changes
+
+- [`19a2a03`](https://github.com/backstage/backstage/commit/19a2a03): Migrated notifications plugin to use backstage UI
+- [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
+
+### `@backstage/plugin-notifications-backend` (0.6.3 → [0.6.4](../../changelogs/@backstage/plugin-notifications-backend.md#064))
+
+#### 0.6.4
+
+##### Patch Changes
+
+- [`4c1fd43`](https://github.com/backstage/backstage/commit/4c1fd43): Added an action to get a user's notifications
+- [`070af42`](https://github.com/backstage/backstage/commit/070af42): Fix handling of `limit=0` in `getNotifications` query to return empty results instead of all notifications
+
+### `@backstage/plugin-notifications-backend-module-email` (0.3.19 → [0.3.20](../../changelogs/@backstage/plugin-notifications-backend-module-email.md#0320))
+
+#### 0.3.20
+
+##### Patch Changes
+
+- [`19ef9fb`](https://github.com/backstage/backstage/commit/19ef9fb): build(deps): bump `nodemailer` from 7.0.13 to 8.0.4
+
+### `@backstage/plugin-notifications-backend-module-slack` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-notifications-backend-module-slack.md#041))
+
+#### 0.4.1
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/plugin-org` (0.7.0 → [0.7.1](../../changelogs/@backstage/plugin-org.md#071))
+
+#### 0.7.1
+
+##### Patch Changes
+
+- [`64c9a20`](https://github.com/backstage/backstage/commit/64c9a20): The `MembersListCard` now prefers `metadata.title` over `metadata.name` when displaying the group membership card, similarly to the rest of the group profile cards
+- [`87eb31c`](https://github.com/backstage/backstage/commit/87eb31c): Fixed `GroupProfileCard` and `UserProfileCard` content overflowing on narrow screens.
+- [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
+- [`f1f59b1`](https://github.com/backstage/backstage/commit/f1f59b1): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
+
+### `@backstage/plugin-org-react` (0.1.48 → [0.1.49](../../changelogs/@backstage/plugin-org-react.md#0149))
+
+#### 0.1.49
+
+##### Patch Changes
+
+- [`e5af44c`](https://github.com/backstage/backstage/commit/e5af44c): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
+
+### `@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.3.4 → [0.3.5](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-cloud.md#035))
+
+#### 0.3.5
+
+##### Patch Changes
+
+- [`ed6b53c`](https://github.com/backstage/backstage/commit/ed6b53c): Removed bare catch-and-rethrow blocks that served no purpose.
+
+### `@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.19 → [0.2.20](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-server.md#0220))
+
+#### 0.2.20
+
+##### Patch Changes
+
+- [`ed6b53c`](https://github.com/backstage/backstage/commit/ed6b53c): Removed bare catch-and-rethrow blocks that served no purpose.
+
+### `@backstage/plugin-scaffolder-backend-module-github` (0.9.7 → [0.9.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-github.md#098))
+
+#### 0.9.8
+
+##### Patch Changes
+
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+
+### `@backstage/plugin-scaffolder-backend-module-rails` (0.5.19 → [0.5.20](../../changelogs/@backstage/plugin-scaffolder-backend-module-rails.md#0520))
+
+#### 0.5.20
+
+##### Patch Changes
+
+- [`2905c59`](https://github.com/backstage/backstage/commit/2905c59): Removed unused `jest-when` dev dependency.
+
+### `@backstage/plugin-scaffolder-node` (0.13.1 → [0.13.2](../../changelogs/@backstage/plugin-scaffolder-node.md#0132))
+
+#### 0.13.2
+
+##### Patch Changes
+
+- [`5af48e7`](https://github.com/backstage/backstage/commit/5af48e7): Added `PermissionResourceRef` definitions for scaffolder resource types: `scaffolderTemplatePermissionResourceRef`, `scaffolderActionPermissionResourceRef`, and `scaffolderTaskPermissionResourceRef`. These are exported from `@backstage/plugin-scaffolder-node/alpha`.
+
+### `@backstage/plugin-search-backend-module-pg` (0.5.53 → [0.5.54](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0554))
+
+#### 0.5.54
+
+##### Patch Changes
+
+- [`aa08b7f`](https://github.com/backstage/backstage/commit/aa08b7f): Fix a bug in large document indexing logic by using sub-transaction rollbacks
+
+### `@backstage/plugin-search-backend-module-techdocs` (0.4.12 → [0.4.13](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#0413))
+
+#### 0.4.13
+
+##### Patch Changes
+
+- [`5e32f77`](https://github.com/backstage/backstage/commit/5e32f77): Migrated internal usage of the deprecated `catalogServiceRef` from `@backstage/plugin-catalog-node/alpha` to the stable `catalogServiceRef` from `@backstage/plugin-catalog-node`.
+
+### `@backstage/repo-tools` (0.17.0 → [0.17.1](../../changelogs/@backstage/repo-tools.md#0171))
+
+#### 0.17.1
+
+##### Patch Changes
+
+- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
+- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
+- [`377de36`](https://github.com/backstage/backstage/commit/377de36): Fixed the `peer-deps` command to only require peer dependencies that are actually referenced by each package, rather than requiring all tracked peer dependencies for every package with any React dependency.
+- [`8e9679b`](https://github.com/backstage/backstage/commit/8e9679b): Parallelized CLI report generation, reducing wall-clock time by ~4x.
+- [`ca2dc15`](https://github.com/backstage/backstage/commit/ca2dc15): Internal code cleanup.
+- [`270efef`](https://github.com/backstage/backstage/commit/270efef): Added support for packages that only support React 18+ in the `peer-deps` command.
+
+### `@backstage/theme` (0.7.2 → [0.7.3](../../changelogs/@backstage/theme.md#073))
+
+#### 0.7.3
+
+##### Patch Changes
+
+- [`a0100d4`](https://github.com/backstage/backstage/commit/a0100d4): Fixes occasional duplication of v5 class name prefix for MUI 5 components.
+
+  Documentation added to explain how to resolve missing v5 prefix in class names when using MUI 5 components in main app.
+
 ## Other minor version bumps
 
 ### `@backstage/backend-plugin-api` (1.8.0 → [1.9.0](../../changelogs/@backstage/backend-plugin-api.md#190))
@@ -510,22 +927,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 
 - [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
 
-### `@backstage/backend-dynamic-feature-service` (0.8.0 → [0.8.1](../../changelogs/@backstage/backend-dynamic-feature-service.md#081))
-
-#### 0.8.1
-
-##### Patch Changes
-
-- [`79453c0`](https://github.com/backstage/backstage/commit/79453c0): Updated dependency `wait-for-expect` to `^4.0.0`.
-
-### `@backstage/backend-openapi-utils` (0.6.7 → [0.6.8](../../changelogs/@backstage/backend-openapi-utils.md#068))
-
-#### 0.6.8
-
-##### Patch Changes
-
-- [`59dd9b9`](https://github.com/backstage/backstage/commit/59dd9b9): Fixes a memory leak during `wrapServer` where stopped servers weren't removed from the clean up list.
-
 ### `@backstage/backend-test-utils` (1.11.1 → [1.11.2](../../changelogs/@backstage/backend-test-utils.md#1112))
 
 #### 1.11.2
@@ -535,83 +936,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 - [`4559806`](https://github.com/backstage/backstage/commit/4559806): Added support for typed `examples` on actions registered via the actions registry. Action authors can now provide examples with compile-time-checked `input` and `output` values that match their schema definitions.
 - [`f44c6bd`](https://github.com/backstage/backstage/commit/f44c6bd): Deduplicated internal readiness-polling helpers used by the database and cache test infrastructure.
 
-### `@backstage/cli` (0.36.0 → [0.36.1](../../changelogs/@backstage/cli.md#0361))
-
-#### 0.36.1
-
-##### Patch Changes
-
-- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`a2f0c72`](https://github.com/backstage/backstage/commit/a2f0c72): Removed the unused `isDev` export from the internal version module.
-- [`a7a14b7`](https://github.com/backstage/backstage/commit/a7a14b7): Added `DOM.AsyncIterable` to the default `lib` in the shared TypeScript configuration, enabling standard async iteration support for DOM APIs such as `FileSystemDirectoryHandle`. This aligns behavior with [TypeScript 6.0](https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/#the-dom-lib-now-contains-domiterable-and-domasynciterable), where this lib is included in `DOM` by default.
-
-### `@backstage/cli-common` (0.2.0 → [0.2.1](../../changelogs/@backstage/cli-common.md#021))
-
-#### 0.2.1
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`e928e73`](https://github.com/backstage/backstage/commit/e928e73): chore(deps): bump `undici` from 7.22.0 to 7.24.0
-- [`46ff470`](https://github.com/backstage/backstage/commit/46ff470): Deprecated `bootstrapEnvProxyAgents()` in favor of Node.js built-in proxy support. Set `NODE_USE_ENV_PROXY=1` alongside your `HTTP_PROXY`/`HTTPS_PROXY` environment variables instead. See the [corporate proxy guide](https://backstage.io/docs/tutorials/corporate-proxy/) for details. This function will be removed in a future release.
-
-### `@backstage/cli-module-auth` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-auth.md#011))
-
-#### 0.1.1
-
-##### Patch Changes
-
-- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
-- [`c705d44`](https://github.com/backstage/backstage/commit/c705d44): Fixed `auth login` clearing previously configured action sources and other instance metadata when re-authenticating.
-
-### `@backstage/cli-module-build` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-build.md#011))
-
-#### 0.1.1
-
-##### Patch Changes
-
-- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
-- [`f1b493f`](https://github.com/backstage/backstage/commit/f1b493f): Fixed the embedded-postgres PID file being written before database initialization, which prevented the database from initializing successfully.
-- [`f52a296`](https://github.com/backstage/backstage/commit/f52a296): Suppressed false-positive Module Federation warning for shared dependencies that use secondary entry points (e.g. `@mui/material/styles`). These sub-path `package.json` files lack a `version` field, causing the bundler to emit "No version specified" warnings that fail CI builds.
-- [`c16c508`](https://github.com/backstage/backstage/commit/c16c508): When building dist-workspaces with --always-pack, batch `yarn pack` operations to avoid packing packages and their dependencies simultaneously.
-- [`f14df56`](https://github.com/backstage/backstage/commit/f14df56): Added experimental support for using `embedded-postgres` as the database for local development. Set `backend.database.client` to `embedded-postgres` in your app config to enable this. The `embedded-postgres` package must be installed as an explicit dependency in your project.
-
-### `@backstage/cli-module-migrate` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-migrate.md#011))
-
-#### 0.1.1
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
-### `@backstage/cli-module-new` (0.1.1 → [0.1.2](../../changelogs/@backstage/cli-module-new.md#012))
-
-#### 0.1.2
-
-##### Patch Changes
-
-- [`64a91d0`](https://github.com/backstage/backstage/commit/64a91d0): Rename the legacy `frontend-plugin` to `frontend-plugin-legacy`
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`2b4f97a`](https://github.com/backstage/backstage/commit/2b4f97a): Updated frontend-plugin template to provide a todo list visualization compatible with the backend plugin.
-
-### `@backstage/cli-module-test-jest` (0.1.0 → [0.1.1](../../changelogs/@backstage/cli-module-test-jest.md#011))
-
-#### 0.1.1
-
-##### Patch Changes
-
-- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
-- [`6cc4811`](https://github.com/backstage/backstage/commit/6cc4811): Minor error message update
-
-### `@backstage/cli-node` (0.3.0 → [0.3.1](../../changelogs/@backstage/cli-node.md#031))
-
-#### 0.3.1
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
 ### `@backstage/config-loader` (1.10.9 → [1.10.10](../../changelogs/@backstage/config-loader.md#11010))
 
 #### 1.10.10
@@ -620,63 +944,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 
 - [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
 
-### `@backstage/core-compat-api` (0.5.9 → [0.5.10](../../changelogs/@backstage/core-compat-api.md#0510))
-
-#### 0.5.10
-
-##### Patch Changes
-
-- [`77ab7d5`](https://github.com/backstage/backstage/commit/77ab7d5): Hide the default page header for pages created through the compatibility wrappers, since legacy plugins already render their own headers.
-- [`49397c1`](https://github.com/backstage/backstage/commit/49397c1): Removed unnecessary type argument from internal `createRouteRef` call.
-
-### `@backstage/core-components` (0.18.8 → [0.18.9](../../changelogs/@backstage/core-components.md#0189))
-
-#### 0.18.9
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`320eed3`](https://github.com/backstage/backstage/commit/320eed3): Resolved DOM nesting warning in OAuthRequestDialog by rendering secondary text as block-level spans.
-- [`58b9f3f`](https://github.com/backstage/backstage/commit/58b9f3f): Use Backstage Link component for markdown anchor rendering to ensure consistent internal and external link behavior.
-
-### `@backstage/create-app` (0.8.1 → [0.8.2](../../changelogs/@backstage/create-app.md#082))
-
-#### 0.8.2
-
-##### Patch Changes
-
-- [`a2cb332`](https://github.com/backstage/backstage/commit/a2cb332): Bumped create-app version.
-- [`6c10d88`](https://github.com/backstage/backstage/commit/6c10d88): Bumped create-app version.
-- [`e8ffac1`](https://github.com/backstage/backstage/commit/e8ffac1): Various fixes for the `create-app` template: reorganizing sidebar items, removing redundant config and code, and adding a documentation example.
-- [`72a493a`](https://github.com/backstage/backstage/commit/72a493a): Added the `mcp-actions-backend` and `plugin-auth` plugins
-- [`4cf9f3a`](https://github.com/backstage/backstage/commit/4cf9f3a): Removed the unnecessary `@backstage/cli-module-new` dependency from the `next-app` template, since it is already included through `@backstage/cli-defaults`.
-- [`2541837`](https://github.com/backstage/backstage/commit/2541837): Renamed the built-in template directories from `next-app` to `default-app` and `default-app` to `legacy-app`.
-
-### `@backstage/eslint-plugin` (0.2.2 → [0.2.3](../../changelogs/@backstage/eslint-plugin.md#023))
-
-#### 0.2.3
-
-##### Patch Changes
-
-- [`df43b0e`](https://github.com/backstage/backstage/commit/df43b0e): Fixed `no-mixed-plugin-imports` rule to return `null` from non-fixable suggestion handlers and added an explicit `SuggestionReportDescriptor[]` type annotation, matching the stricter type checking in TypeScript 6.0.
-
-### `@backstage/filter-predicates` (0.1.1 → [0.1.2](../../changelogs/@backstage/filter-predicates.md#012))
-
-#### 0.1.2
-
-##### Patch Changes
-
-- [`8923d6d`](https://github.com/backstage/backstage/commit/8923d6d): Added `createZodV4FilterPredicateSchema` as a zod v4 counterpart to `createZodV3FilterPredicateSchema`.
-
-### `@backstage/frontend-app-api` (0.16.1 → [0.16.2](../../changelogs/@backstage/frontend-app-api.md#0162))
-
-#### 0.16.2
-
-##### Patch Changes
-
-- [`400aa23`](https://github.com/backstage/backstage/commit/400aa23): Wrapped extension permission authorization in a try/catch to surface errors as `ForwardedError` with a clear message.
-- [`364d4fe`](https://github.com/backstage/backstage/commit/364d4fe): Added `apis` to `BootstrapSpecializedApp` and `FinalizedSpecializedApp` types.
-
 ### `@backstage/integration` (2.0.0 → [2.0.1](../../changelogs/@backstage/integration.md#201))
 
 #### 2.0.1
@@ -684,14 +951,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 ##### Patch Changes
 
 - [`d112499`](https://github.com/backstage/backstage/commit/d112499): Fixed `SingleInstanceGithubCredentialsProvider` to return app credentials when `getCredentials` is called with a bare host URL (e.g. `https://github.com`) instead of falling back to a personal access token.
-
-### `@backstage/plugin-auth` (0.1.6 → [0.1.7](../../changelogs/@backstage/plugin-auth.md#017))
-
-#### 0.1.7
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
 
 ### `@backstage/plugin-catalog` (2.0.1 → [2.0.2](../../changelogs/@backstage/plugin-catalog.md#202))
 
@@ -705,70 +964,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 - [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
 - [`744f904`](https://github.com/backstage/backstage/commit/744f904): Fixed the catalog table briefly showing an empty loading state when changing filters. The table now keeps displaying stale results until new data arrives.
 - [`c193ef1`](https://github.com/backstage/backstage/commit/c193ef1): Added Kind field to the About Card. Tags moved before Type and Lifecycle, Kind placed after them. A new `aboutCard.kindField.label` translation key was added.
-- [`e5af44c`](https://github.com/backstage/backstage/commit/e5af44c): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
-
-### `@backstage/plugin-catalog-backend-module-azure` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-catalog-backend-module-azure.md#0316))
-
-#### 0.3.16
-
-##### Patch Changes
-
-- [`39d27ee`](https://github.com/backstage/backstage/commit/39d27ee): Add Azure DevOps SCM event translation layer for instant catalog reprocessing.
-
-### `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.5.9 → [0.5.10](../../changelogs/@backstage/plugin-catalog-backend-module-bitbucket-cloud.md#0510))
-
-#### 0.5.10
-
-##### Patch Changes
-
-- [`f215863`](https://github.com/backstage/backstage/commit/f215863): Added Bitbucket Cloud SCM event translation layer for the catalog backend module. The module now subscribes to Bitbucket Cloud webhook events and translates them into generic catalog SCM events, enabling instant catalog reprocessing when repositories are pushed to, renamed, transferred, or deleted. The `analyzeBitbucketCloudWebhookEvent` function is exported from the alpha entry point for custom integrations.
-
-### `@backstage/plugin-catalog-backend-module-github` (0.13.0 → [0.13.1](../../changelogs/@backstage/plugin-catalog-backend-module-github.md#0131))
-
-#### 0.13.1
-
-##### Patch Changes
-
-- [`b11e338`](https://github.com/backstage/backstage/commit/b11e338): Fixed a bug where `GithubEntityProvider` with `validateLocationsExist: true` and `filters.branch` configured would always check for the catalog file on the repository's default branch (`HEAD`) instead of the configured branch. This caused repositories to be filtered out when the catalog file only existed on the non-default branch.
-- [`edf465f`](https://github.com/backstage/backstage/commit/edf465f): Removed the `type-fest` dev dependency, replacing its `PartialDeep` import with a local helper type in tests.
-- [`cca9fc2`](https://github.com/backstage/backstage/commit/cca9fc2): Added automatic retry on temporary errors (like 5XX) to the shared GitHub GraphQL client used by `GithubOrgEntityProvider` and replaced the GraphQL client in `GithubEntityProvider` by this one as well, improving resilience against intermittent GitHub API failures.
-
-### `@backstage/plugin-catalog-backend-module-gitlab` (0.8.1 → [0.8.2](../../changelogs/@backstage/plugin-catalog-backend-module-gitlab.md#082))
-
-#### 0.8.2
-
-##### Patch Changes
-
-- [`8df0796`](https://github.com/backstage/backstage/commit/8df0796): Fixed GitLab project topic filtering by using correct API parameter 'topic' instead of 'topics'
-- [`54a8300`](https://github.com/backstage/backstage/commit/54a8300): Add GitLab SCM event translation layer for instant catalog reprocessing.
-
-### `@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.10 → [0.7.11](../../changelogs/@backstage/plugin-catalog-backend-module-incremental-ingestion.md#0711))
-
-#### 0.7.11
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
-### `@backstage/plugin-catalog-graph` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-catalog-graph.md#061))
-
-#### 0.6.1
-
-##### Patch Changes
-
-- [`effa7bf`](https://github.com/backstage/backstage/commit/effa7bf): Updated `README-alpha.md` extension examples to use current APIs.
-- [`0e147e8`](https://github.com/backstage/backstage/commit/0e147e8): Added `title` and `icon` to the new frontend system plugin definition.
-- [`416ad45`](https://github.com/backstage/backstage/commit/416ad45): Replaced `humanizeEntityRef` with the Catalog Presentation API in `CatalogGraphCard` and `CatalogGraphPage` components for consistent entity display.
-- [`d5899c2`](https://github.com/backstage/backstage/commit/d5899c2): Support configuring `showArrowHeads` on `page:catalog-graph` and `entity-card:catalog-graph/relations`.
-
-### `@backstage/plugin-catalog-import` (0.13.11 → [0.13.12](../../changelogs/@backstage/plugin-catalog-import.md#01312))
-
-#### 0.13.12
-
-##### Patch Changes
-
-- [`fa0593e`](https://github.com/backstage/backstage/commit/fa0593e): Added `title` and `icon` to the new frontend system plugin definition.
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
 - [`e5af44c`](https://github.com/backstage/backstage/commit/e5af44c): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
 
 ### `@backstage/plugin-catalog-react` (2.1.1 → [2.1.2](../../changelogs/@backstage/plugin-catalog-react.md#212))
@@ -786,38 +981,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 - [`0416216`](https://github.com/backstage/backstage/commit/0416216): Fixed entity relation cards (e.g., "Has components") only showing one entity at a time by using `paginationOptions: { type: 'none' }` instead of deriving page size from data length.
 - [`fa232da`](https://github.com/backstage/backstage/commit/fa232da): Migrated `InspectEntityDialog` from Material UI to Backstage UI components. Added new translation keys: `inspectEntityDialog.overviewPage.copyAriaLabel`, `inspectEntityDialog.overviewPage.copiedStatus`, `inspectEntityDialog.overviewPage.helpLinkAriaLabel`, and `inspectEntityDialog.colocatedPage.entityListAriaLabel`.
 
-### `@backstage/plugin-catalog-unprocessed-entities` (0.2.28 → [0.2.29](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0229))
-
-#### 0.2.29
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`b6f1fae`](https://github.com/backstage/backstage/commit/b6f1fae): The unprocessed entities view is now primarily intended for use as a tab within the DevTools plugin. The standalone page is still available but disabled by default. To re-enable it, add the following to your `app-config.yaml`:
-
-  ```yaml
-  app:
-    extensions:
-      - page:catalog-unprocessed-entities
-  ```
-
-### `@backstage/plugin-devtools-backend` (0.5.15 → [0.5.16](../../changelogs/@backstage/plugin-devtools-backend.md#0516))
-
-#### 0.5.16
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
-### `@backstage/plugin-events-backend-module-google-pubsub` (0.2.1 → [0.2.2](../../changelogs/@backstage/plugin-events-backend-module-google-pubsub.md#022))
-
-#### 0.2.2
-
-##### Patch Changes
-
-- [`eacf362`](https://github.com/backstage/backstage/commit/eacf362): Migrated internal metrics in `GooglePubSubConsumingEventPublisher` and `EventConsumingGooglePubSubPublisher` to use the new alpha `MetricsService`
-- [`79453c0`](https://github.com/backstage/backstage/commit/79453c0): Updated dependency `wait-for-expect` to `^4.0.0`.
-
 ### `@backstage/plugin-gateway-backend` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-gateway-backend.md#114))
 
 #### 1.1.4
@@ -825,86 +988,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 ##### Patch Changes
 
 - [`79453c0`](https://github.com/backstage/backstage/commit/79453c0): Updated dependency `wait-for-expect` to `^4.0.0`.
-
-### `@backstage/plugin-kubernetes` (0.12.17 → [0.12.18](../../changelogs/@backstage/plugin-kubernetes.md#01218))
-
-#### 0.12.18
-
-##### Patch Changes
-
-- [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
-
-### `@backstage/plugin-kubernetes-backend` (0.21.2 → [0.21.3](../../changelogs/@backstage/plugin-kubernetes-backend.md#0213))
-
-#### 0.21.3
-
-##### Patch Changes
-
-- [`ed6b53c`](https://github.com/backstage/backstage/commit/ed6b53c): Removed bare catch-and-rethrow blocks that served no purpose.
-
-### `@backstage/plugin-mcp-actions-backend` (0.1.11 → [0.1.12](../../changelogs/@backstage/plugin-mcp-actions-backend.md#0112))
-
-#### 0.1.12
-
-##### Patch Changes
-
-- [`282c114`](https://github.com/backstage/backstage/commit/282c114): Fix OAuth 2.0 Protected Resource Metadata endpoint returning internal plugin URL, preventing some MCP clients like Claude Code from authenticating
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`c6abc52`](https://github.com/backstage/backstage/commit/c6abc52): Fixed the `.well-known/oauth-protected-resource` resource URL to comply with
-  [RFC 9728 Section 7.3](https://datatracker.ietf.org/doc/html/rfc9728#name-impersonation-attacks). Enabling dynamic resource paths.
-
-### `@backstage/plugin-notifications` (0.5.15 → [0.5.16](../../changelogs/@backstage/plugin-notifications.md#0516))
-
-#### 0.5.16
-
-##### Patch Changes
-
-- [`19a2a03`](https://github.com/backstage/backstage/commit/19a2a03): Migrated notifications plugin to use backstage UI
-- [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
-
-### `@backstage/plugin-notifications-backend` (0.6.3 → [0.6.4](../../changelogs/@backstage/plugin-notifications-backend.md#064))
-
-#### 0.6.4
-
-##### Patch Changes
-
-- [`4c1fd43`](https://github.com/backstage/backstage/commit/4c1fd43): Added an action to get a user's notifications
-- [`070af42`](https://github.com/backstage/backstage/commit/070af42): Fix handling of `limit=0` in `getNotifications` query to return empty results instead of all notifications
-
-### `@backstage/plugin-notifications-backend-module-email` (0.3.19 → [0.3.20](../../changelogs/@backstage/plugin-notifications-backend-module-email.md#0320))
-
-#### 0.3.20
-
-##### Patch Changes
-
-- [`19ef9fb`](https://github.com/backstage/backstage/commit/19ef9fb): build(deps): bump `nodemailer` from 7.0.13 to 8.0.4
-
-### `@backstage/plugin-notifications-backend-module-slack` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-notifications-backend-module-slack.md#041))
-
-#### 0.4.1
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
-### `@backstage/plugin-org` (0.7.0 → [0.7.1](../../changelogs/@backstage/plugin-org.md#071))
-
-#### 0.7.1
-
-##### Patch Changes
-
-- [`64c9a20`](https://github.com/backstage/backstage/commit/64c9a20): The `MembersListCard` now prefers `metadata.title` over `metadata.name` when displaying the group membership card, similarly to the rest of the group profile cards
-- [`87eb31c`](https://github.com/backstage/backstage/commit/87eb31c): Fixed `GroupProfileCard` and `UserProfileCard` content overflowing on narrow screens.
-- [`d156cf4`](https://github.com/backstage/backstage/commit/d156cf4): Added `title` and `icon` to the new frontend system plugin definition.
-- [`f1f59b1`](https://github.com/backstage/backstage/commit/f1f59b1): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
-
-### `@backstage/plugin-org-react` (0.1.48 → [0.1.49](../../changelogs/@backstage/plugin-org-react.md#0149))
-
-#### 0.1.49
-
-##### Patch Changes
-
-- [`e5af44c`](https://github.com/backstage/backstage/commit/e5af44c): Replaced deprecated `humanizeEntityRef` usage with the Catalog Presentation API.
 
 ### `@backstage/plugin-scaffolder` (1.36.1 → [1.36.2](../../changelogs/@backstage/plugin-scaffolder.md#1362))
 
@@ -923,46 +1006,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 - [`4cc9af2`](https://github.com/backstage/backstage/commit/4cc9af2): Fixed the layout of the scaffolder plugin in the new frontend system to use the new page layout.
 - [`a7a14b7`](https://github.com/backstage/backstage/commit/a7a14b7): Removed custom `IterableDirectoryHandle` and `WritableFileHandle` types in favor of the standard DOM `FileSystemDirectoryHandle` and `FileSystemFileHandle` types, which are now available through the `DOM.AsyncIterable` lib added to the shared TypeScript configuration.
 
-### `@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.3.4 → [0.3.5](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-cloud.md#035))
-
-#### 0.3.5
-
-##### Patch Changes
-
-- [`ed6b53c`](https://github.com/backstage/backstage/commit/ed6b53c): Removed bare catch-and-rethrow blocks that served no purpose.
-
-### `@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.19 → [0.2.20](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-server.md#0220))
-
-#### 0.2.20
-
-##### Patch Changes
-
-- [`ed6b53c`](https://github.com/backstage/backstage/commit/ed6b53c): Removed bare catch-and-rethrow blocks that served no purpose.
-
-### `@backstage/plugin-scaffolder-backend-module-github` (0.9.7 → [0.9.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-github.md#098))
-
-#### 0.9.8
-
-##### Patch Changes
-
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
-### `@backstage/plugin-scaffolder-backend-module-rails` (0.5.19 → [0.5.20](../../changelogs/@backstage/plugin-scaffolder-backend-module-rails.md#0520))
-
-#### 0.5.20
-
-##### Patch Changes
-
-- [`2905c59`](https://github.com/backstage/backstage/commit/2905c59): Removed unused `jest-when` dev dependency.
-
-### `@backstage/plugin-scaffolder-node` (0.13.1 → [0.13.2](../../changelogs/@backstage/plugin-scaffolder-node.md#0132))
-
-#### 0.13.2
-
-##### Patch Changes
-
-- [`5af48e7`](https://github.com/backstage/backstage/commit/5af48e7): Added `PermissionResourceRef` definitions for scaffolder resource types: `scaffolderTemplatePermissionResourceRef`, `scaffolderActionPermissionResourceRef`, and `scaffolderTaskPermissionResourceRef`. These are exported from `@backstage/plugin-scaffolder-node/alpha`.
-
 ### `@backstage/plugin-scaffolder-react` (1.20.0 → [1.20.1](../../changelogs/@backstage/plugin-scaffolder-react.md#1201))
 
 #### 1.20.1
@@ -978,22 +1021,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 ##### Patch Changes
 
 - [`34aebcc`](https://github.com/backstage/backstage/commit/34aebcc): Fixed the `SearchModal` leaving the page in a broken state by not restoring body overflow and aria-hidden attributes when closing.
-
-### `@backstage/plugin-search-backend-module-pg` (0.5.53 → [0.5.54](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0554))
-
-#### 0.5.54
-
-##### Patch Changes
-
-- [`aa08b7f`](https://github.com/backstage/backstage/commit/aa08b7f): Fix a bug in large document indexing logic by using sub-transaction rollbacks
-
-### `@backstage/plugin-search-backend-module-techdocs` (0.4.12 → [0.4.13](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#0413))
-
-#### 0.4.13
-
-##### Patch Changes
-
-- [`5e32f77`](https://github.com/backstage/backstage/commit/5e32f77): Migrated internal usage of the deprecated `catalogServiceRef` from `@backstage/plugin-catalog-node/alpha` to the stable `catalogServiceRef` from `@backstage/plugin-catalog-node`.
 
 ### `@backstage/plugin-search-backend-node` (1.4.2 → [1.4.3](../../changelogs/@backstage/plugin-search-backend-node.md#143))
 
@@ -1028,29 +1055,6 @@ Changes between 1.49.5 and 1.50.0 — 197 changed and 0 added packages.
 ##### Patch Changes
 
 - [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-
-### `@backstage/repo-tools` (0.17.0 → [0.17.1](../../changelogs/@backstage/repo-tools.md#0171))
-
-#### 0.17.1
-
-##### Patch Changes
-
-- [`2e5c5f8`](https://github.com/backstage/backstage/commit/2e5c5f8): Bumped `glob` dependency from v7/v8/v11 to v13 to address security vulnerabilities in older versions. Bumped `rollup` from v4.27 to v4.59+ to fix a high severity path traversal vulnerability (GHSA-mw96-cpmx-2vgc).
-- [`482ceed`](https://github.com/backstage/backstage/commit/482ceed): Migrated from `assertError` to `toError` for error handling.
-- [`377de36`](https://github.com/backstage/backstage/commit/377de36): Fixed the `peer-deps` command to only require peer dependencies that are actually referenced by each package, rather than requiring all tracked peer dependencies for every package with any React dependency.
-- [`8e9679b`](https://github.com/backstage/backstage/commit/8e9679b): Parallelized CLI report generation, reducing wall-clock time by ~4x.
-- [`ca2dc15`](https://github.com/backstage/backstage/commit/ca2dc15): Internal code cleanup.
-- [`270efef`](https://github.com/backstage/backstage/commit/270efef): Added support for packages that only support React 18+ in the `peer-deps` command.
-
-### `@backstage/theme` (0.7.2 → [0.7.3](../../changelogs/@backstage/theme.md#073))
-
-#### 0.7.3
-
-##### Patch Changes
-
-- [`a0100d4`](https://github.com/backstage/backstage/commit/a0100d4): Fixes occasional duplication of v5 class name prefix for MUI 5 components.
-
-  Documentation added to explain how to resolve missing v5 prefix in class names when using MUI 5 components in main app.
 
 ### `@techdocs/cli` (1.10.6 → [1.10.7](../../changelogs/@techdocs/cli.md#1107))
 

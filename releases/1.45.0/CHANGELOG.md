@@ -1,14 +1,15 @@
 # Backstage Release 1.45.0 changelog
 
-Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
+Changes between 1.44.3 and 1.45.0 — 0 added, 0 removed, 178 upgraded, 12 unchanged packages.
 
 ## Summary
 
 - [Breaking changes](#breaking-changes): 3 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 6 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 58 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
-- [Other patch version bumps](#other-patch-version-bumps): 74 packages
+- [Other patch version bumps](#other-patch-version-bumps): 16 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 83 packages
 
 ## Table of contents
@@ -26,33 +27,15 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
   - [`@backstage/repo-tools` (0.15.4 → 0.16.0)](#backstagerepo-tools-0154--0160)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-signals` (0.0.24 → 0.0.25)](#backstageplugin-signals-0024--0025)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-app-api` (1.2.8 → 1.3.0)](#backstagebackend-app-api-128--130)
-  - [`@backstage/backend-plugin-api` (1.4.4 → 1.5.0)](#backstagebackend-plugin-api-144--150)
-  - [`@backstage/backend-test-utils` (1.9.1 → 1.10.0)](#backstagebackend-test-utils-191--1100)
-  - [`@backstage/core-plugin-api` (1.11.1 → 1.12.0)](#backstagecore-plugin-api-1111--1120)
-  - [`@backstage/plugin-catalog` (1.31.4 → 1.32.0)](#backstageplugin-catalog-1314--1320)
-  - [`@backstage/plugin-catalog-backend` (3.1.2 → 3.2.0)](#backstageplugin-catalog-backend-312--320)
-  - [`@backstage/plugin-catalog-node` (1.19.1 → 1.20.0)](#backstageplugin-catalog-node-1191--1200)
-  - [`@backstage/plugin-gateway-backend` (1.0.6 → 1.1.0)](#backstageplugin-gateway-backend-106--110)
-  - [`@backstage/plugin-search` (1.4.31 → 1.5.0)](#backstageplugin-search-1431--150)
-  - [`@backstage/plugin-search-react` (1.9.5 → 1.10.0)](#backstageplugin-search-react-195--1100)
-  - [`@backstage/plugin-techdocs` (1.15.2 → 1.16.0)](#backstageplugin-techdocs-1152--1160)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.13.0 → 0.13.1)](#backstagebackend-defaults-0130--0131)
   - [`@backstage/backend-dynamic-feature-service` (0.7.5 → 0.7.6)](#backstagebackend-dynamic-feature-service-075--076)
-  - [`@backstage/catalog-model` (1.7.5 → 1.7.6)](#backstagecatalog-model-175--176)
   - [`@backstage/cli` (0.34.4 → 0.34.5)](#backstagecli-0344--0345)
   - [`@backstage/cli-node` (0.2.14 → 0.2.15)](#backstagecli-node-0214--0215)
-  - [`@backstage/config` (1.3.5 → 1.3.6)](#backstageconfig-135--136)
-  - [`@backstage/config-loader` (1.10.5 → 1.10.6)](#backstageconfig-loader-1105--1106)
-  - [`@backstage/core-app-api` (1.19.1 → 1.19.2)](#backstagecore-app-api-1191--1192)
   - [`@backstage/core-compat-api` (0.5.3 → 0.5.4)](#backstagecore-compat-api-053--054)
   - [`@backstage/core-components` (0.18.2 → 0.18.3)](#backstagecore-components-0182--0183)
   - [`@backstage/create-app` (0.7.5 → 0.7.6)](#backstagecreate-app-075--076)
-  - [`@backstage/dev-utils` (1.1.16 → 1.1.17)](#backstagedev-utils-1116--1117)
   - [`@backstage/frontend-app-api` (0.13.1 → 0.13.2)](#backstagefrontend-app-api-0131--0132)
-  - [`@backstage/integration` (1.18.1 → 1.18.2)](#backstageintegration-1181--1182)
   - [`@backstage/integration-aws-node` (0.1.18 → 0.1.19)](#backstageintegration-aws-node-0118--0119)
   - [`@backstage/plugin-api-docs` (0.13.0 → 0.13.1)](#backstageplugin-api-docs-0130--0131)
   - [`@backstage/plugin-app-visualizer` (0.1.24 → 0.1.25)](#backstageplugin-app-visualizer-0124--0125)
@@ -72,7 +55,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
   - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.6.5 → 0.6.6)](#backstageplugin-catalog-backend-module-unprocessed-065--066)
   - [`@backstage/plugin-catalog-graph` (0.5.2 → 0.5.3)](#backstageplugin-catalog-graph-052--053)
   - [`@backstage/plugin-catalog-import` (0.13.6 → 0.13.7)](#backstageplugin-catalog-import-0136--0137)
-  - [`@backstage/plugin-catalog-react` (1.21.2 → 1.21.3)](#backstageplugin-catalog-react-1212--1213)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.22 → 0.2.23)](#backstageplugin-catalog-unprocessed-entities-0222--0223)
   - [`@backstage/plugin-devtools-backend` (0.5.10 → 0.5.11)](#backstageplugin-devtools-backend-0510--0511)
   - [`@backstage/plugin-devtools-common` (0.1.18 → 0.1.19)](#backstageplugin-devtools-common-0118--0119)
@@ -94,24 +76,44 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
   - [`@backstage/plugin-permission-backend` (0.7.5 → 0.7.6)](#backstageplugin-permission-backend-075--076)
   - [`@backstage/plugin-permission-common` (0.9.2 → 0.9.3)](#backstageplugin-permission-common-092--093)
   - [`@backstage/plugin-permission-react` (0.4.37 → 0.4.38)](#backstageplugin-permission-react-0437--0438)
-  - [`@backstage/plugin-scaffolder` (1.34.2 → 1.34.3)](#backstageplugin-scaffolder-1342--1343)
-  - [`@backstage/plugin-scaffolder-backend` (3.0.0 → 3.0.1)](#backstageplugin-scaffolder-backend-300--301)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.15 → 0.3.16)](#backstageplugin-scaffolder-backend-module-bitbucket-0315--0316)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.14 → 0.2.15)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-0214--0215)
   - [`@backstage/plugin-scaffolder-backend-module-gcp` (0.2.14 → 0.2.15)](#backstageplugin-scaffolder-backend-module-gcp-0214--0215)
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.14 → 0.5.15)](#backstageplugin-scaffolder-backend-module-rails-0514--0515)
   - [`@backstage/plugin-scaffolder-node` (0.12.0 → 0.12.1)](#backstageplugin-scaffolder-node-0120--0121)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.3.4 → 0.3.5)](#backstageplugin-scaffolder-node-test-utils-034--035)
+  - [`@backstage/plugin-search-backend-module-pg` (0.5.49 → 0.5.50)](#backstageplugin-search-backend-module-pg-0549--0550)
+  - [`@backstage/plugin-signals-backend` (0.3.9 → 0.3.10)](#backstageplugin-signals-backend-039--0310)
+  - [`@backstage/plugin-user-settings` (0.8.28 → 0.8.29)](#backstageplugin-user-settings-0828--0829)
+  - [`@backstage/plugin-user-settings-backend` (0.3.7 → 0.3.8)](#backstageplugin-user-settings-backend-037--038)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-app-api` (1.2.8 → 1.3.0)](#backstagebackend-app-api-128--130)
+  - [`@backstage/backend-plugin-api` (1.4.4 → 1.5.0)](#backstagebackend-plugin-api-144--150)
+  - [`@backstage/backend-test-utils` (1.9.1 → 1.10.0)](#backstagebackend-test-utils-191--1100)
+  - [`@backstage/core-plugin-api` (1.11.1 → 1.12.0)](#backstagecore-plugin-api-1111--1120)
+  - [`@backstage/plugin-catalog` (1.31.4 → 1.32.0)](#backstageplugin-catalog-1314--1320)
+  - [`@backstage/plugin-catalog-backend` (3.1.2 → 3.2.0)](#backstageplugin-catalog-backend-312--320)
+  - [`@backstage/plugin-catalog-node` (1.19.1 → 1.20.0)](#backstageplugin-catalog-node-1191--1200)
+  - [`@backstage/plugin-gateway-backend` (1.0.6 → 1.1.0)](#backstageplugin-gateway-backend-106--110)
+  - [`@backstage/plugin-search` (1.4.31 → 1.5.0)](#backstageplugin-search-1431--150)
+  - [`@backstage/plugin-search-react` (1.9.5 → 1.10.0)](#backstageplugin-search-react-195--1100)
+  - [`@backstage/plugin-techdocs` (1.15.2 → 1.16.0)](#backstageplugin-techdocs-1152--1160)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-model` (1.7.5 → 1.7.6)](#backstagecatalog-model-175--176)
+  - [`@backstage/config` (1.3.5 → 1.3.6)](#backstageconfig-135--136)
+  - [`@backstage/config-loader` (1.10.5 → 1.10.6)](#backstageconfig-loader-1105--1106)
+  - [`@backstage/core-app-api` (1.19.1 → 1.19.2)](#backstagecore-app-api-1191--1192)
+  - [`@backstage/dev-utils` (1.1.16 → 1.1.17)](#backstagedev-utils-1116--1117)
+  - [`@backstage/integration` (1.18.1 → 1.18.2)](#backstageintegration-1181--1182)
+  - [`@backstage/plugin-catalog-react` (1.21.2 → 1.21.3)](#backstageplugin-catalog-react-1212--1213)
+  - [`@backstage/plugin-scaffolder` (1.34.2 → 1.34.3)](#backstageplugin-scaffolder-1342--1343)
+  - [`@backstage/plugin-scaffolder-backend` (3.0.0 → 3.0.1)](#backstageplugin-scaffolder-backend-300--301)
   - [`@backstage/plugin-scaffolder-react` (1.19.2 → 1.19.3)](#backstageplugin-scaffolder-react-1192--1193)
   - [`@backstage/plugin-search-backend` (2.0.7 → 2.0.8)](#backstageplugin-search-backend-207--208)
   - [`@backstage/plugin-search-backend-module-elasticsearch` (1.7.7 → 1.7.8)](#backstageplugin-search-backend-module-elasticsearch-177--178)
-  - [`@backstage/plugin-search-backend-module-pg` (0.5.49 → 0.5.50)](#backstageplugin-search-backend-module-pg-0549--0550)
   - [`@backstage/plugin-search-backend-node` (1.3.16 → 1.3.17)](#backstageplugin-search-backend-node-1316--1317)
-  - [`@backstage/plugin-signals-backend` (0.3.9 → 0.3.10)](#backstageplugin-signals-backend-039--0310)
   - [`@backstage/plugin-techdocs-backend` (2.1.1 → 2.1.2)](#backstageplugin-techdocs-backend-211--212)
   - [`@backstage/plugin-techdocs-node` (1.13.8 → 1.13.9)](#backstageplugin-techdocs-node-1138--1139)
-  - [`@backstage/plugin-user-settings` (0.8.28 → 0.8.29)](#backstageplugin-user-settings-0828--0829)
-  - [`@backstage/plugin-user-settings-backend` (0.3.7 → 0.3.8)](#backstageplugin-user-settings-backend-037--038)
   - [`@techdocs/cli` (1.10.1 → 1.10.2)](#techdocscli-1101--1102)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -525,137 +527,7 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 - [`f0f006e`](https://github.com/backstage/backstage/commit/f0f006e): Fixes a bug where the `SignalClient` would try to subscribe to the same channel twice after an error, instead of just once.
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
-## Other minor version bumps
-
-### `@backstage/backend-app-api` (1.2.8 → [1.3.0](../../changelogs/@backstage/backend-app-api.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`a17d9df`](https://github.com/backstage/backstage/commit/a17d9df): Updates API for `instanceMetadata` service to return a list of plugins not features.
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/backend-plugin-api` (1.4.4 → [1.5.0](../../changelogs/@backstage/backend-plugin-api.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`a17d9df`](https://github.com/backstage/backstage/commit/a17d9df): Promote `instanceMetadata` service to main entrypoint.
-- [`62fc2de`](https://github.com/backstage/backstage/commit/62fc2de): Explicitly mark `coreServices.rootInstanceMetadata` as a root service.
-
-### `@backstage/backend-test-utils` (1.9.1 → [1.10.0](../../changelogs/@backstage/backend-test-utils.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`d57b13b`](https://github.com/backstage/backstage/commit/d57b13b): Added support for Postgres 18 to the available `TestDatabases`.
-
-  Note that the set of _default_ databases to test against for users of the `TestDatabases` class was also updated to include Postgres 14 and 18, instead of 13 and 17. If you need to override this, you can pass in an explicit `ids` argument, for example `ids: ['POSTGRES_17', 'POSTGRES_13', 'SQLITE_3']`.
-
-##### Patch Changes
-
-- [`f3001fd`](https://github.com/backstage/backstage/commit/f3001fd): Tweak some of the mock services to have more precise types
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/core-plugin-api` (1.11.1 → [1.12.0](../../changelogs/@backstage/core-plugin-api.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`83439b1`](https://github.com/backstage/backstage/commit/83439b1): All route references are now forwards compatible with the new frontend system, i.e. `@backstage/frontend-plugin-api`. This means they no longer need to be converted with `convertLegacyRouteRef` or `convertLegacyRouteRefs` from `@backstage/core-compat-api`.
-
-##### Patch Changes
-
-- [`b2bef92`](https://github.com/backstage/backstage/commit/b2bef92): Convert all enums to erasable-syntax compliant patterns
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-catalog` (1.31.4 → [1.32.0](../../changelogs/@backstage/plugin-catalog.md#1320))
-
-#### 1.32.0
-
-##### Minor Changes
-
-- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
-
-##### Patch Changes
-
-- [`b500bcc`](https://github.com/backstage/backstage/commit/b500bcc): Fix React warnings for elements not having stable keys.
-- [`a87c0a5`](https://github.com/backstage/backstage/commit/a87c0a5): Fixed responsiveness issues with catalog entity content layout using the new frontend system.
-- [`aff04d3`](https://github.com/backstage/backstage/commit/aff04d3): Fixed missing margins for entity warning content area on catalog entity page in NFS.
-
-### `@backstage/plugin-catalog-backend` (3.1.2 → [3.2.0](../../changelogs/@backstage/plugin-catalog-backend.md#320))
-
-#### 3.2.0
-
-##### Minor Changes
-
-- [`2d229b2`](https://github.com/backstage/backstage/commit/2d229b2): Enable YAML merge keys in yamlPlaceholderResolver
-- [`9d3ec06`](https://github.com/backstage/backstage/commit/9d3ec06): Make YAML merge (<<:) support configurable in the Backstage Catalog instead of always being enabled
-- [`8c26af4`](https://github.com/backstage/backstage/commit/8c26af4): Enable YAML merge keys in yamlPlaceholderResolver
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-catalog-node` (1.19.1 → [1.20.0](../../changelogs/@backstage/plugin-catalog-node.md#1200))
-
-#### 1.20.0
-
-##### Minor Changes
-
-- [`9d3ec06`](https://github.com/backstage/backstage/commit/9d3ec06): Make YAML merge (<<:) support configurable in the Backstage Catalog instead of always being enabled
-- [`8c26af4`](https://github.com/backstage/backstage/commit/8c26af4): Enable YAML merge keys in yamlPlaceholderResolver
-
-### `@backstage/plugin-gateway-backend` (1.0.6 → [1.1.0](../../changelogs/@backstage/plugin-gateway-backend.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`229f63e`](https://github.com/backstage/backstage/commit/229f63e): Added hop count tracking to prevent proxy loops. The gateway now tracks the number of proxy hops using the `backstage-gateway-hops` header and rejects requests that exceed 3 hops with a 508 Loop Detected error.
-- [`a17d9df`](https://github.com/backstage/backstage/commit/a17d9df): Update usage of the `instanceMetadata` service.
-
-### `@backstage/plugin-search` (1.4.31 → [1.5.0](../../changelogs/@backstage/plugin-search.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
-
-### `@backstage/plugin-search-react` (1.9.5 → [1.10.0](../../changelogs/@backstage/plugin-search-react.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-techdocs` (1.15.2 → [1.16.0](../../changelogs/@backstage/plugin-techdocs.md#1160))
-
-#### 1.16.0
-
-##### Minor Changes
-
-- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
-
-##### Patch Changes
-
-- [`71c22f3`](https://github.com/backstage/backstage/commit/71c22f3): Removed/moved unused dependencies
-- [`a4d4a70`](https://github.com/backstage/backstage/commit/a4d4a70): Fixed an issue where the entire TechDocs page would re-render when navigating between pages within the same entity's documentation.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.13.0 → [0.13.1](../../changelogs/@backstage/backend-defaults.md#0131))
 
@@ -687,14 +559,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
-### `@backstage/catalog-model` (1.7.5 → [1.7.6](../../changelogs/@backstage/catalog-model.md#176))
-
-#### 1.7.6
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
 ### `@backstage/cli` (0.34.4 → [0.34.5](../../changelogs/@backstage/cli.md#0345))
 
 #### 0.34.5
@@ -714,31 +578,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 
 ##### Patch Changes
 
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/config` (1.3.5 → [1.3.6](../../changelogs/@backstage/config.md#136))
-
-#### 1.3.6
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/config-loader` (1.10.5 → [1.10.6](../../changelogs/@backstage/config-loader.md#1106))
-
-#### 1.10.6
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/core-app-api` (1.19.1 → [1.19.2](../../changelogs/@backstage/core-app-api.md#1192))
-
-#### 1.19.2
-
-##### Patch Changes
-
-- [`b2bef92`](https://github.com/backstage/backstage/commit/b2bef92): Convert all enums to erasable-syntax compliant patterns
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
 ### `@backstage/core-compat-api` (0.5.3 → [0.5.4](../../changelogs/@backstage/core-compat-api.md#054))
@@ -772,14 +611,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 - [`9f939a6`](https://github.com/backstage/backstage/commit/9f939a6): Added `@backstage/plugin-app-visualizer` to the app in the `--next` template.
 - [`fc7cbfc`](https://github.com/backstage/backstage/commit/fc7cbfc): Added the new `@backstage/cli/templates/catalog-provider-module` template to the explicit template configuration for the `next-app` template.
 
-### `@backstage/dev-utils` (1.1.16 → [1.1.17](../../changelogs/@backstage/dev-utils.md#1117))
-
-#### 1.1.17
-
-##### Patch Changes
-
-- [`b29a856`](https://github.com/backstage/backstage/commit/b29a856): Fixed styling of the dev app by adding a lazy import of `@backstage/ui/css/styles.css`.
-
 ### `@backstage/frontend-app-api` (0.13.1 → [0.13.2](../../changelogs/@backstage/frontend-app-api.md#0132))
 
 #### 0.13.2
@@ -787,25 +618,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 ##### Patch Changes
 
 - [`4d03f08`](https://github.com/backstage/backstage/commit/4d03f08): Internal refactor of route reference implementations with minor updates to the `toString` implementations.
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/integration` (1.18.1 → [1.18.2](../../changelogs/@backstage/integration.md#1182))
-
-#### 1.18.2
-
-##### Patch Changes
-
-- [`fa255f5`](https://github.com/backstage/backstage/commit/fa255f5): Support for Bitbucket Cloud's API token was added as `appPassword` is deprecated (no new creation from September 9, 2025) and will be removed on June 9, 2026.
-
-  API token usage example:
-
-  ```yaml
-  integrations:
-    bitbucketCloud:
-      - username: user@domain.com
-        token: my-token
-  ```
-
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
 ### `@backstage/integration-aws-node` (0.1.18 → [0.1.19](../../changelogs/@backstage/integration-aws-node.md#0119))
@@ -980,17 +792,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 - [`f987bfd`](https://github.com/backstage/backstage/commit/f987bfd): Fixed missing `catalog.entity.create` permission authorization in the default page extension.
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
-### `@backstage/plugin-catalog-react` (1.21.2 → [1.21.3](../../changelogs/@backstage/plugin-catalog-react.md#1213))
-
-#### 1.21.3
-
-##### Patch Changes
-
-- [`36d7582`](https://github.com/backstage/backstage/commit/36d7582): Added missing i18n
-- [`2b7924b`](https://github.com/backstage/backstage/commit/2b7924b): Apply default ordering of templates
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-- [`904d136`](https://github.com/backstage/backstage/commit/904d136): Fixed catalog filter "all" not appearing as selected when set as the initially selected filter.
-
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.22 → [0.2.23](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0223))
 
 #### 0.2.23
@@ -1164,22 +965,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
-### `@backstage/plugin-scaffolder` (1.34.2 → [1.34.3](../../changelogs/@backstage/plugin-scaffolder.md#1343))
-
-#### 1.34.3
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-scaffolder-backend` (3.0.0 → [3.0.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#301))
-
-#### 3.0.1
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
 ### `@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket.md#0316))
 
 #### 0.3.16
@@ -1246,6 +1031,258 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
+### `@backstage/plugin-search-backend-module-pg` (0.5.49 → [0.5.50](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0550))
+
+#### 0.5.50
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-signals-backend` (0.3.9 → [0.3.10](../../changelogs/@backstage/plugin-signals-backend.md#0310))
+
+#### 0.3.10
+
+##### Patch Changes
+
+- [`71c22f3`](https://github.com/backstage/backstage/commit/71c22f3): Removed/moved unused dependencies
+
+### `@backstage/plugin-user-settings` (0.8.28 → [0.8.29](../../changelogs/@backstage/plugin-user-settings.md#0829))
+
+#### 0.8.29
+
+##### Patch Changes
+
+- [`2b6fda3`](https://github.com/backstage/backstage/commit/2b6fda3): Revert `storageApiRef` implementation
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-user-settings-backend` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-user-settings-backend.md#038))
+
+#### 0.3.8
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+## Other minor version bumps
+
+### `@backstage/backend-app-api` (1.2.8 → [1.3.0](../../changelogs/@backstage/backend-app-api.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`a17d9df`](https://github.com/backstage/backstage/commit/a17d9df): Updates API for `instanceMetadata` service to return a list of plugins not features.
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/backend-plugin-api` (1.4.4 → [1.5.0](../../changelogs/@backstage/backend-plugin-api.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`a17d9df`](https://github.com/backstage/backstage/commit/a17d9df): Promote `instanceMetadata` service to main entrypoint.
+- [`62fc2de`](https://github.com/backstage/backstage/commit/62fc2de): Explicitly mark `coreServices.rootInstanceMetadata` as a root service.
+
+### `@backstage/backend-test-utils` (1.9.1 → [1.10.0](../../changelogs/@backstage/backend-test-utils.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`d57b13b`](https://github.com/backstage/backstage/commit/d57b13b): Added support for Postgres 18 to the available `TestDatabases`.
+
+  Note that the set of _default_ databases to test against for users of the `TestDatabases` class was also updated to include Postgres 14 and 18, instead of 13 and 17. If you need to override this, you can pass in an explicit `ids` argument, for example `ids: ['POSTGRES_17', 'POSTGRES_13', 'SQLITE_3']`.
+
+##### Patch Changes
+
+- [`f3001fd`](https://github.com/backstage/backstage/commit/f3001fd): Tweak some of the mock services to have more precise types
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/core-plugin-api` (1.11.1 → [1.12.0](../../changelogs/@backstage/core-plugin-api.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`83439b1`](https://github.com/backstage/backstage/commit/83439b1): All route references are now forwards compatible with the new frontend system, i.e. `@backstage/frontend-plugin-api`. This means they no longer need to be converted with `convertLegacyRouteRef` or `convertLegacyRouteRefs` from `@backstage/core-compat-api`.
+
+##### Patch Changes
+
+- [`b2bef92`](https://github.com/backstage/backstage/commit/b2bef92): Convert all enums to erasable-syntax compliant patterns
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-catalog` (1.31.4 → [1.32.0](../../changelogs/@backstage/plugin-catalog.md#1320))
+
+#### 1.32.0
+
+##### Minor Changes
+
+- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
+
+##### Patch Changes
+
+- [`b500bcc`](https://github.com/backstage/backstage/commit/b500bcc): Fix React warnings for elements not having stable keys.
+- [`a87c0a5`](https://github.com/backstage/backstage/commit/a87c0a5): Fixed responsiveness issues with catalog entity content layout using the new frontend system.
+- [`aff04d3`](https://github.com/backstage/backstage/commit/aff04d3): Fixed missing margins for entity warning content area on catalog entity page in NFS.
+
+### `@backstage/plugin-catalog-backend` (3.1.2 → [3.2.0](../../changelogs/@backstage/plugin-catalog-backend.md#320))
+
+#### 3.2.0
+
+##### Minor Changes
+
+- [`2d229b2`](https://github.com/backstage/backstage/commit/2d229b2): Enable YAML merge keys in yamlPlaceholderResolver
+- [`9d3ec06`](https://github.com/backstage/backstage/commit/9d3ec06): Make YAML merge (<<:) support configurable in the Backstage Catalog instead of always being enabled
+- [`8c26af4`](https://github.com/backstage/backstage/commit/8c26af4): Enable YAML merge keys in yamlPlaceholderResolver
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-catalog-node` (1.19.1 → [1.20.0](../../changelogs/@backstage/plugin-catalog-node.md#1200))
+
+#### 1.20.0
+
+##### Minor Changes
+
+- [`9d3ec06`](https://github.com/backstage/backstage/commit/9d3ec06): Make YAML merge (<<:) support configurable in the Backstage Catalog instead of always being enabled
+- [`8c26af4`](https://github.com/backstage/backstage/commit/8c26af4): Enable YAML merge keys in yamlPlaceholderResolver
+
+### `@backstage/plugin-gateway-backend` (1.0.6 → [1.1.0](../../changelogs/@backstage/plugin-gateway-backend.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`229f63e`](https://github.com/backstage/backstage/commit/229f63e): Added hop count tracking to prevent proxy loops. The gateway now tracks the number of proxy hops using the `backstage-gateway-hops` header and rejects requests that exceed 3 hops with a 508 Loop Detected error.
+- [`a17d9df`](https://github.com/backstage/backstage/commit/a17d9df): Update usage of the `instanceMetadata` service.
+
+### `@backstage/plugin-search` (1.4.31 → [1.5.0](../../changelogs/@backstage/plugin-search.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
+
+### `@backstage/plugin-search-react` (1.9.5 → [1.10.0](../../changelogs/@backstage/plugin-search-react.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-techdocs` (1.15.2 → [1.16.0](../../changelogs/@backstage/plugin-techdocs.md#1160))
+
+#### 1.16.0
+
+##### Minor Changes
+
+- [`a521911`](https://github.com/backstage/backstage/commit/a521911): Add support for customizable icons in `SearchResultListItemBlueprint` and related components
+
+##### Patch Changes
+
+- [`71c22f3`](https://github.com/backstage/backstage/commit/71c22f3): Removed/moved unused dependencies
+- [`a4d4a70`](https://github.com/backstage/backstage/commit/a4d4a70): Fixed an issue where the entire TechDocs page would re-render when navigating between pages within the same entity's documentation.
+
+## Other patch version bumps
+
+### `@backstage/catalog-model` (1.7.5 → [1.7.6](../../changelogs/@backstage/catalog-model.md#176))
+
+#### 1.7.6
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/config` (1.3.5 → [1.3.6](../../changelogs/@backstage/config.md#136))
+
+#### 1.3.6
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/config-loader` (1.10.5 → [1.10.6](../../changelogs/@backstage/config-loader.md#1106))
+
+#### 1.10.6
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/core-app-api` (1.19.1 → [1.19.2](../../changelogs/@backstage/core-app-api.md#1192))
+
+#### 1.19.2
+
+##### Patch Changes
+
+- [`b2bef92`](https://github.com/backstage/backstage/commit/b2bef92): Convert all enums to erasable-syntax compliant patterns
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/dev-utils` (1.1.16 → [1.1.17](../../changelogs/@backstage/dev-utils.md#1117))
+
+#### 1.1.17
+
+##### Patch Changes
+
+- [`b29a856`](https://github.com/backstage/backstage/commit/b29a856): Fixed styling of the dev app by adding a lazy import of `@backstage/ui/css/styles.css`.
+
+### `@backstage/integration` (1.18.1 → [1.18.2](../../changelogs/@backstage/integration.md#1182))
+
+#### 1.18.2
+
+##### Patch Changes
+
+- [`fa255f5`](https://github.com/backstage/backstage/commit/fa255f5): Support for Bitbucket Cloud's API token was added as `appPassword` is deprecated (no new creation from September 9, 2025) and will be removed on June 9, 2026.
+
+  API token usage example:
+
+  ```yaml
+  integrations:
+    bitbucketCloud:
+      - username: user@domain.com
+        token: my-token
+  ```
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-catalog-react` (1.21.2 → [1.21.3](../../changelogs/@backstage/plugin-catalog-react.md#1213))
+
+#### 1.21.3
+
+##### Patch Changes
+
+- [`36d7582`](https://github.com/backstage/backstage/commit/36d7582): Added missing i18n
+- [`2b7924b`](https://github.com/backstage/backstage/commit/2b7924b): Apply default ordering of templates
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+- [`904d136`](https://github.com/backstage/backstage/commit/904d136): Fixed catalog filter "all" not appearing as selected when set as the initially selected filter.
+
+### `@backstage/plugin-scaffolder` (1.34.2 → [1.34.3](../../changelogs/@backstage/plugin-scaffolder.md#1343))
+
+#### 1.34.3
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
+### `@backstage/plugin-scaffolder-backend` (3.0.0 → [3.0.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#301))
+
+#### 3.0.1
+
+##### Patch Changes
+
+- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
+
 ### `@backstage/plugin-scaffolder-react` (1.19.2 → [1.19.3](../../changelogs/@backstage/plugin-scaffolder-react.md#1193))
 
 #### 1.19.3
@@ -1273,14 +1310,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 - [`71c22f3`](https://github.com/backstage/backstage/commit/71c22f3): Removed/moved unused dependencies
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
 
-### `@backstage/plugin-search-backend-module-pg` (0.5.49 → [0.5.50](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0550))
-
-#### 0.5.50
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
 ### `@backstage/plugin-search-backend-node` (1.3.16 → [1.3.17](../../changelogs/@backstage/plugin-search-backend-node.md#1317))
 
 #### 1.3.17
@@ -1288,14 +1317,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 ##### Patch Changes
 
 - [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-signals-backend` (0.3.9 → [0.3.10](../../changelogs/@backstage/plugin-signals-backend.md#0310))
-
-#### 0.3.10
-
-##### Patch Changes
-
-- [`71c22f3`](https://github.com/backstage/backstage/commit/71c22f3): Removed/moved unused dependencies
 
 ### `@backstage/plugin-techdocs-backend` (2.1.1 → [2.1.2](../../changelogs/@backstage/plugin-techdocs-backend.md#212))
 
@@ -1308,23 +1329,6 @@ Changes between 1.44.3 and 1.45.0 — 178 changed and 0 added packages.
 ### `@backstage/plugin-techdocs-node` (1.13.8 → [1.13.9](../../changelogs/@backstage/plugin-techdocs-node.md#1139))
 
 #### 1.13.9
-
-##### Patch Changes
-
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-user-settings` (0.8.28 → [0.8.29](../../changelogs/@backstage/plugin-user-settings.md#0829))
-
-#### 0.8.29
-
-##### Patch Changes
-
-- [`2b6fda3`](https://github.com/backstage/backstage/commit/2b6fda3): Revert `storageApiRef` implementation
-- [`05f60e1`](https://github.com/backstage/backstage/commit/05f60e1): Refactored constructor parameter properties to explicit property declarations for compatibility with TypeScript's `erasableSyntaxOnly` setting. This internal refactoring maintains all existing functionality while ensuring TypeScript compilation compatibility.
-
-### `@backstage/plugin-user-settings-backend` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-user-settings-backend.md#038))
-
-#### 0.3.8
 
 ##### Patch Changes
 

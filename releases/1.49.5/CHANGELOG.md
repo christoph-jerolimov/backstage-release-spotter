@@ -1,19 +1,19 @@
 # Backstage Release 1.49.5 changelog
 
-Changes between 1.49.4 and 1.49.5 — 3 changed and 0 added packages.
+Changes between 1.49.4 and 1.49.5 — 0 added, 0 removed, 3 upgraded, 204 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 3 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-app` (0.4.2 → 0.4.3)](#backstageplugin-app-042--043)
   - [`@backstage/plugin-app-visualizer` (0.2.1 → 0.2.2)](#backstageplugin-app-visualizer-021--022)
   - [`@backstage/ui` (0.13.2 → 0.13.3)](#backstageui-0132--0133)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-app` (0.4.2 → [0.4.3](../../changelogs/@backstage/plugin-app.md#043))
 

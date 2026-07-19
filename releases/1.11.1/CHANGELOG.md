@@ -1,14 +1,14 @@
 # Backstage Release 1.11.1 changelog
 
-Changes between 1.11.0 and 1.11.1 — 9 changed and 0 added packages.
+Changes between 1.11.0 and 1.11.1 — 0 added, 0 removed, 9 upgraded, 189 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 9 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 9 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.22.2 → 0.22.3)](#backstagecli-0222--0223)
   - [`@backstage/eslint-plugin` (0.1.0 → 0.1.1)](#backstageeslint-plugin-010--011)
   - [`@backstage/plugin-bazaar` (0.2.4 → 0.2.5)](#backstageplugin-bazaar-024--025)
@@ -19,7 +19,7 @@ Changes between 1.11.0 and 1.11.1 — 9 changed and 0 added packages.
   - [`@backstage/plugin-sonarqube-react` (0.1.2 → 0.1.3)](#backstageplugin-sonarqube-react-012--013)
   - [`@backstage/plugin-vault-backend` (0.2.8 → 0.2.9)](#backstageplugin-vault-backend-028--029)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.22.2 → [0.22.3](../../changelogs/@backstage/cli.md#0223))
 

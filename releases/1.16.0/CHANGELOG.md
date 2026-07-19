@@ -1,13 +1,14 @@
 # Backstage Release 1.16.0 changelog
 
-Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
+Changes between 1.15.0 and 1.16.0 — 0 added, 0 removed, 201 upgraded, 17 unchanged packages.
 
 ## Summary
 
 - [Breaking changes](#breaking-changes): 2 packages
 - [Major version bumps](#major-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 40 packages
 - [Minor version bumps](#minor-version-bumps): 5 packages
-- [Patch version bumps](#patch-version-bumps): 46 packages
+- [Other patch version bumps](#other-patch-version-bumps): 6 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 147 packages
 
 ## Table of contents
@@ -17,21 +18,13 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.1.3 → 0.2.0)](#backstageplugin-scaffolder-backend-module-confluence-to-markdown-013--020)
 - [Major version bumps](#major-version-bumps)
   - [`@backstage/plugin-dynatrace` (6.0.0 → 7.0.0)](#backstageplugin-dynatrace-600--700)
-- [Minor version bumps](#minor-version-bumps)
-  - [`@backstage/core-app-api` (1.8.1 → 1.9.0)](#backstagecore-app-api-181--190)
-  - [`@backstage/plugin-catalog` (1.11.2 → 1.12.0)](#backstageplugin-catalog-1112--1120)
-  - [`@backstage/plugin-catalog-backend` (1.10.0 → 1.11.0)](#backstageplugin-catalog-backend-1100--1110)
-  - [`@backstage/plugin-catalog-node` (1.3.7 → 1.4.0)](#backstageplugin-catalog-node-137--140)
-  - [`@backstage/plugin-catalog-react` (1.7.0 → 1.8.0)](#backstageplugin-catalog-react-170--180)
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.19.0 → 0.19.1)](#backstagebackend-common-0190--0191)
   - [`@backstage/cli` (0.22.8 → 0.22.9)](#backstagecli-0228--0229)
   - [`@backstage/cli-node` (0.1.1 → 0.1.2)](#backstagecli-node-011--012)
   - [`@backstage/codemods` (0.1.44 → 0.1.45)](#backstagecodemods-0144--0145)
   - [`@backstage/core-components` (0.13.2 → 0.13.3)](#backstagecore-components-0132--0133)
-  - [`@backstage/core-plugin-api` (1.5.2 → 1.5.3)](#backstagecore-plugin-api-152--153)
   - [`@backstage/create-app` (0.5.2 → 0.5.3)](#backstagecreate-app-052--053)
-  - [`@backstage/errors` (1.2.0 → 1.2.1)](#backstageerrors-120--121)
   - [`@backstage/plugin-adr` (0.6.2 → 0.6.3)](#backstageplugin-adr-062--063)
   - [`@backstage/plugin-adr-backend` (0.3.4 → 0.3.5)](#backstageplugin-adr-backend-034--035)
   - [`@backstage/plugin-adr-common` (0.2.10 → 0.2.11)](#backstageplugin-adr-common-0210--0211)
@@ -59,17 +52,26 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
   - [`@backstage/plugin-nomad` (0.1.0 → 0.1.1)](#backstageplugin-nomad-010--011)
   - [`@backstage/plugin-playlist` (0.1.11 → 0.1.12)](#backstageplugin-playlist-0111--0112)
   - [`@backstage/plugin-puppetdb` (0.1.2 → 0.1.3)](#backstageplugin-puppetdb-012--013)
-  - [`@backstage/plugin-scaffolder-backend` (1.15.0 → 1.15.1)](#backstageplugin-scaffolder-backend-1150--1151)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.1 → 0.2.2)](#backstageplugin-scaffolder-backend-module-gitlab-021--022)
-  - [`@backstage/plugin-scaffolder-react` (1.5.0 → 1.5.1)](#backstageplugin-scaffolder-react-150--151)
-  - [`@backstage/plugin-search` (1.3.2 → 1.3.3)](#backstageplugin-search-132--133)
   - [`@backstage/plugin-sonarqube` (0.7.0 → 0.7.1)](#backstageplugin-sonarqube-070--071)
   - [`@backstage/plugin-sonarqube-backend` (0.2.0 → 0.2.1)](#backstageplugin-sonarqube-backend-020--021)
   - [`@backstage/plugin-stackstorm` (0.1.3 → 0.1.4)](#backstageplugin-stackstorm-013--014)
   - [`@backstage/plugin-tech-insights-backend` (0.5.12 → 0.5.13)](#backstageplugin-tech-insights-backend-0512--0513)
   - [`@backstage/plugin-user-settings` (0.7.4 → 0.7.5)](#backstageplugin-user-settings-074--075)
-  - [`@backstage/test-utils` (1.4.0 → 1.4.1)](#backstagetest-utils-140--141)
   - [`@backstage/theme` (0.4.0 → 0.4.1)](#backstagetheme-040--041)
+- [Minor version bumps](#minor-version-bumps)
+  - [`@backstage/core-app-api` (1.8.1 → 1.9.0)](#backstagecore-app-api-181--190)
+  - [`@backstage/plugin-catalog` (1.11.2 → 1.12.0)](#backstageplugin-catalog-1112--1120)
+  - [`@backstage/plugin-catalog-backend` (1.10.0 → 1.11.0)](#backstageplugin-catalog-backend-1100--1110)
+  - [`@backstage/plugin-catalog-node` (1.3.7 → 1.4.0)](#backstageplugin-catalog-node-137--140)
+  - [`@backstage/plugin-catalog-react` (1.7.0 → 1.8.0)](#backstageplugin-catalog-react-170--180)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/core-plugin-api` (1.5.2 → 1.5.3)](#backstagecore-plugin-api-152--153)
+  - [`@backstage/errors` (1.2.0 → 1.2.1)](#backstageerrors-120--121)
+  - [`@backstage/plugin-scaffolder-backend` (1.15.0 → 1.15.1)](#backstageplugin-scaffolder-backend-1150--1151)
+  - [`@backstage/plugin-scaffolder-react` (1.5.0 → 1.5.1)](#backstageplugin-scaffolder-react-150--151)
+  - [`@backstage/plugin-search` (1.3.2 → 1.3.3)](#backstageplugin-search-132--133)
+  - [`@backstage/test-utils` (1.4.0 → 1.4.1)](#backstagetest-utils-140--141)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Breaking changes
@@ -208,57 +210,7 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 
 - [`3424cbfe5f4a`](https://github.com/backstage/backstage/commit/3424cbfe5f4a): updated the link that the "View Entity in Dynatrace" redirects the user to.
 
-## Minor version bumps
-
-### `@backstage/core-app-api` (1.8.1 → [1.9.0](../../changelogs/@backstage/core-app-api.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`a77ddf7ccd71`](https://github.com/backstage/backstage/commit/a77ddf7ccd71): add login in popup options to config popup width and height
-
-##### Patch Changes
-
-- [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
-
-### `@backstage/plugin-catalog` (1.11.2 → [1.12.0](../../changelogs/@backstage/plugin-catalog.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`eae0352d3864`](https://github.com/backstage/backstage/commit/eae0352d3864): Tables which use `EntityTableProps` now have an additional `tableOptions` prop which can be used to provide additional table options to these components.
-
-##### Patch Changes
-
-- [`294b1629de28`](https://github.com/backstage/backstage/commit/294b1629de28): Display a warning alert if relations are defined, which don't exist in the catalog.
-
-### `@backstage/plugin-catalog-backend` (1.10.0 → [1.11.0](../../changelogs/@backstage/plugin-catalog-backend.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`f06f0e46ba88`](https://github.com/backstage/backstage/commit/f06f0e46ba88): Support placeholder resolvers in the CatalogPlugin, also moves `PlaceholderResolver` and related types from `@backstage/plugin-catalog-backend` to `@backstage/plugin-catalog-node`.
-
-### `@backstage/plugin-catalog-node` (1.3.7 → [1.4.0](../../changelogs/@backstage/plugin-catalog-node.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`f06f0e46ba88`](https://github.com/backstage/backstage/commit/f06f0e46ba88): Support placeholder resolvers in the CatalogPlugin, also moves `PlaceholderResolver` and related types from `@backstage/plugin-catalog-backend` to `@backstage/plugin-catalog-node`.
-
-### `@backstage/plugin-catalog-react` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-catalog-react.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`eae0352d3864`](https://github.com/backstage/backstage/commit/eae0352d3864): Tables which use `EntityTableProps` now have an additional `tableOptions` prop which can be used to provide additional table options to these components.
-
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.19.0 → [0.19.1](../../changelogs/@backstage/backend-common.md#0191))
 
@@ -309,15 +261,6 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 - [`4317b1c2f430`](https://github.com/backstage/backstage/commit/4317b1c2f430): Remove zooming in restrictions in the catalog graph
 - [`a011d2316a58`](https://github.com/backstage/backstage/commit/a011d2316a58): Fix keyboard navigation & focus highlight on Select component.
 
-### `@backstage/core-plugin-api` (1.5.2 → [1.5.3](../../changelogs/@backstage/core-plugin-api.md#153))
-
-#### 1.5.3
-
-##### Patch Changes
-
-- [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
-- [`13426ebd1235`](https://github.com/backstage/backstage/commit/13426ebd1235): Change `IconComponent` type to be compatible with Material UI v5 icons.
-
 ### `@backstage/create-app` (0.5.2 → [0.5.3](../../changelogs/@backstage/create-app.md#053))
 
 #### 0.5.3
@@ -330,14 +273,6 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 - [`f920a61031c5`](https://github.com/backstage/backstage/commit/f920a61031c5): Enable specifying an external application template when using the `create-app` CLI command.
 - [`294b1629de28`](https://github.com/backstage/backstage/commit/294b1629de28): Display a warning alert if relations are defined, which don't exist in the catalog.
 - [`4f7292c74dff`](https://github.com/backstage/backstage/commit/4f7292c74dff): Updated included Dockerfile to include `g++`. Also updated the comments to note that some of the dependencies are also needed by isolated-vm
-
-### `@backstage/errors` (1.2.0 → [1.2.1](../../changelogs/@backstage/errors.md#121))
-
-#### 1.2.1
-
-##### Patch Changes
-
-- [`e205b3e6ede8`](https://github.com/backstage/backstage/commit/e205b3e6ede8): Set `this.name` in all error classes that extend `CustomErrorBase` class to their actual name
 
 ### `@backstage/plugin-adr` (0.6.2 → [0.6.3](../../changelogs/@backstage/plugin-adr.md#063))
 
@@ -588,15 +523,6 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 
 - [`e6f50426333b`](https://github.com/backstage/backstage/commit/e6f50426333b): update some peer dependencies to silence yarn install
 
-### `@backstage/plugin-scaffolder-backend` (1.15.0 → [1.15.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#1151))
-
-#### 1.15.1
-
-##### Patch Changes
-
-- [`600be804927d`](https://github.com/backstage/backstage/commit/600be804927d): Indicate the name of the option that is being deprecated in task deprecation warning.
-- [`ff45cb559e49`](https://github.com/backstage/backstage/commit/ff45cb559e49): Updated dependency `esbuild` to `^0.18.0`.
-
 ### `@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.1 → [0.2.2](../../changelogs/@backstage/plugin-scaffolder-backend-module-gitlab.md#022))
 
 #### 0.2.2
@@ -604,22 +530,6 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 ##### Patch Changes
 
 - [`dd367967e2e1`](https://github.com/backstage/backstage/commit/dd367967e2e1): Fixed a bug in `gitlab:group:ensureExists` where `repos` was always set as the root group.
-
-### `@backstage/plugin-scaffolder-react` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-scaffolder-react.md#151))
-
-#### 1.5.1
-
-##### Patch Changes
-
-- [`f74a27de4d2c`](https://github.com/backstage/backstage/commit/f74a27de4d2c): Made markdown description theme-able
-
-### `@backstage/plugin-search` (1.3.2 → [1.3.3](../../changelogs/@backstage/plugin-search.md#133))
-
-#### 1.3.3
-
-##### Patch Changes
-
-- [`c3381408d633`](https://github.com/backstage/backstage/commit/c3381408d633): Fixed bug in "View Full Results" link of Search Modal that did not navigate to the full results page.
 
 ### `@backstage/plugin-sonarqube` (0.7.0 → [0.7.1](../../changelogs/@backstage/plugin-sonarqube.md#071))
 
@@ -662,14 +572,6 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 
 - [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
 
-### `@backstage/test-utils` (1.4.0 → [1.4.1](../../changelogs/@backstage/test-utils.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
-
 ### `@backstage/theme` (0.4.0 → [0.4.1](../../changelogs/@backstage/theme.md#041))
 
 #### 0.4.1
@@ -682,6 +584,108 @@ Changes between 1.15.0 and 1.16.0 — 201 changed and 0 added packages.
 - [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
 - [`f0444f094396`](https://github.com/backstage/backstage/commit/f0444f094396): Removed the hard coded color and background color in the `MuiChip` overrides so that they work better with custom themes
 - [`874c3e8bf909`](https://github.com/backstage/backstage/commit/874c3e8bf909): Override the spacing to a v5 compliant method
+
+## Minor version bumps
+
+### `@backstage/core-app-api` (1.8.1 → [1.9.0](../../changelogs/@backstage/core-app-api.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`a77ddf7ccd71`](https://github.com/backstage/backstage/commit/a77ddf7ccd71): add login in popup options to config popup width and height
+
+##### Patch Changes
+
+- [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
+
+### `@backstage/plugin-catalog` (1.11.2 → [1.12.0](../../changelogs/@backstage/plugin-catalog.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`eae0352d3864`](https://github.com/backstage/backstage/commit/eae0352d3864): Tables which use `EntityTableProps` now have an additional `tableOptions` prop which can be used to provide additional table options to these components.
+
+##### Patch Changes
+
+- [`294b1629de28`](https://github.com/backstage/backstage/commit/294b1629de28): Display a warning alert if relations are defined, which don't exist in the catalog.
+
+### `@backstage/plugin-catalog-backend` (1.10.0 → [1.11.0](../../changelogs/@backstage/plugin-catalog-backend.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`f06f0e46ba88`](https://github.com/backstage/backstage/commit/f06f0e46ba88): Support placeholder resolvers in the CatalogPlugin, also moves `PlaceholderResolver` and related types from `@backstage/plugin-catalog-backend` to `@backstage/plugin-catalog-node`.
+
+### `@backstage/plugin-catalog-node` (1.3.7 → [1.4.0](../../changelogs/@backstage/plugin-catalog-node.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`f06f0e46ba88`](https://github.com/backstage/backstage/commit/f06f0e46ba88): Support placeholder resolvers in the CatalogPlugin, also moves `PlaceholderResolver` and related types from `@backstage/plugin-catalog-backend` to `@backstage/plugin-catalog-node`.
+
+### `@backstage/plugin-catalog-react` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-catalog-react.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`eae0352d3864`](https://github.com/backstage/backstage/commit/eae0352d3864): Tables which use `EntityTableProps` now have an additional `tableOptions` prop which can be used to provide additional table options to these components.
+
+## Other patch version bumps
+
+### `@backstage/core-plugin-api` (1.5.2 → [1.5.3](../../changelogs/@backstage/core-plugin-api.md#153))
+
+#### 1.5.3
+
+##### Patch Changes
+
+- [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
+- [`13426ebd1235`](https://github.com/backstage/backstage/commit/13426ebd1235): Change `IconComponent` type to be compatible with Material UI v5 icons.
+
+### `@backstage/errors` (1.2.0 → [1.2.1](../../changelogs/@backstage/errors.md#121))
+
+#### 1.2.1
+
+##### Patch Changes
+
+- [`e205b3e6ede8`](https://github.com/backstage/backstage/commit/e205b3e6ede8): Set `this.name` in all error classes that extend `CustomErrorBase` class to their actual name
+
+### `@backstage/plugin-scaffolder-backend` (1.15.0 → [1.15.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#1151))
+
+#### 1.15.1
+
+##### Patch Changes
+
+- [`600be804927d`](https://github.com/backstage/backstage/commit/600be804927d): Indicate the name of the option that is being deprecated in task deprecation warning.
+- [`ff45cb559e49`](https://github.com/backstage/backstage/commit/ff45cb559e49): Updated dependency `esbuild` to `^0.18.0`.
+
+### `@backstage/plugin-scaffolder-react` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-scaffolder-react.md#151))
+
+#### 1.5.1
+
+##### Patch Changes
+
+- [`f74a27de4d2c`](https://github.com/backstage/backstage/commit/f74a27de4d2c): Made markdown description theme-able
+
+### `@backstage/plugin-search` (1.3.2 → [1.3.3](../../changelogs/@backstage/plugin-search.md#133))
+
+#### 1.3.3
+
+##### Patch Changes
+
+- [`c3381408d633`](https://github.com/backstage/backstage/commit/c3381408d633): Fixed bug in "View Full Results" link of Search Modal that did not navigate to the full results page.
+
+### `@backstage/test-utils` (1.4.0 → [1.4.1](../../changelogs/@backstage/test-utils.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`8174cf4c0edf`](https://github.com/backstage/backstage/commit/8174cf4c0edf): Fixing MUI / Material UI references
 
 ## Excluded dependency updates
 

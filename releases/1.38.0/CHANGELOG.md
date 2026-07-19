@@ -1,6 +1,6 @@
 # Backstage Release 1.38.0 changelog
 
-Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
+Changes between 1.37.1 and 1.38.0 — 4 added, 0 removed, 154 upgraded, 25 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 - [Breaking changes](#breaking-changes): 9 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 5 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 42 packages
 - [Other minor version bumps](#other-minor-version-bumps): 4 packages
-- [Other patch version bumps](#other-patch-version-bumps): 58 packages
+- [Other patch version bumps](#other-patch-version-bumps): 16 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 77 packages
 
 ## Table of contents
@@ -37,25 +38,14 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.8.1 → 0.9.0)](#backstageplugin-scaffolder-backend-module-gitlab-081--090)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-kubernetes-cluster` (0.0.23 → 0.0.24)](#backstageplugin-kubernetes-cluster-0023--0024)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-plugin-api` (1.2.1 → 1.3.0)](#backstagebackend-plugin-api-121--130)
-  - [`@backstage/backend-test-utils` (1.3.1 → 1.4.0)](#backstagebackend-test-utils-131--140)
-  - [`@backstage/plugin-scaffolder-backend` (1.31.0 → 1.32.0)](#backstageplugin-scaffolder-backend-1310--1320)
-  - [`@backstage/plugin-scaffolder-react` (1.14.6 → 1.15.0)](#backstageplugin-scaffolder-react-1146--1150)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.6.0 → 1.6.1)](#backstageapp-defaults-160--161)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-dynamic-feature-service` (0.6.1 → 0.6.2)](#backstagebackend-dynamic-feature-service-061--062)
-  - [`@backstage/core-app-api` (1.16.0 → 1.16.1)](#backstagecore-app-api-1160--1161)
   - [`@backstage/core-compat-api` (0.4.0 → 0.4.1)](#backstagecore-compat-api-040--041)
   - [`@backstage/core-components` (0.17.0 → 0.17.1)](#backstagecore-components-0170--0171)
-  - [`@backstage/core-plugin-api` (1.10.5 → 1.10.6)](#backstagecore-plugin-api-1105--1106)
-  - [`@backstage/dev-utils` (1.1.8 → 1.1.9)](#backstagedev-utils-118--119)
   - [`@backstage/frontend-app-api` (0.11.0 → 0.11.1)](#backstagefrontend-app-api-0110--0111)
   - [`@backstage/frontend-defaults` (0.2.0 → 0.2.1)](#backstagefrontend-defaults-020--021)
   - [`@backstage/frontend-plugin-api` (0.10.0 → 0.10.1)](#backstagefrontend-plugin-api-0100--0101)
   - [`@backstage/frontend-test-utils` (0.3.0 → 0.3.1)](#backstagefrontend-test-utils-030--031)
-  - [`@backstage/integration` (1.16.2 → 1.16.3)](#backstageintegration-1162--1163)
-  - [`@backstage/integration-react` (1.2.5 → 1.2.6)](#backstageintegration-react-125--126)
   - [`@backstage/plugin-api-docs` (0.12.5 → 0.12.6)](#backstageplugin-api-docs-0125--0126)
   - [`@backstage/plugin-api-docs-module-protoc-gen-doc` (0.1.9 → 0.1.10)](#backstageplugin-api-docs-module-protoc-gen-doc-019--0110)
   - [`@backstage/plugin-app` (0.1.7 → 0.1.8)](#backstageplugin-app-017--018)
@@ -64,13 +54,11 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
   - [`@backstage/plugin-auth-backend-module-bitbucket-provider` (0.3.1 → 0.3.2)](#backstageplugin-auth-backend-module-bitbucket-provider-031--032)
   - [`@backstage/plugin-auth-backend-module-oidc-provider` (0.4.1 → 0.4.2)](#backstageplugin-auth-backend-module-oidc-provider-041--042)
   - [`@backstage/plugin-auth-react` (0.1.13 → 0.1.14)](#backstageplugin-auth-react-0113--0114)
-  - [`@backstage/plugin-catalog-backend` (1.32.0 → 1.32.1)](#backstageplugin-catalog-backend-1320--1321)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.4.6 → 0.4.7)](#backstageplugin-catalog-backend-module-bitbucket-cloud-046--047)
   - [`@backstage/plugin-catalog-backend-module-gitlab` (0.6.4 → 0.6.5)](#backstageplugin-catalog-backend-module-gitlab-064--065)
   - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.6.4 → 0.6.5)](#backstageplugin-catalog-backend-module-incremental-ingestion-064--065)
   - [`@backstage/plugin-catalog-graph` (0.4.17 → 0.4.18)](#backstageplugin-catalog-graph-0417--0418)
   - [`@backstage/plugin-catalog-import` (0.12.12 → 0.12.13)](#backstageplugin-catalog-import-01212--01213)
-  - [`@backstage/plugin-catalog-node` (1.16.2 → 1.16.3)](#backstageplugin-catalog-node-1162--1163)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.15 → 0.2.16)](#backstageplugin-catalog-unprocessed-entities-0215--0216)
   - [`@backstage/plugin-config-schema` (0.1.66 → 0.1.67)](#backstageplugin-config-schema-0166--0167)
   - [`@backstage/plugin-devtools` (0.1.25 → 0.1.26)](#backstageplugin-devtools-0125--0126)
@@ -90,6 +78,23 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-notifications` (0.1.8 → 0.1.9)](#backstageplugin-scaffolder-backend-module-notifications-018--019)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.2.7 → 0.2.8)](#backstageplugin-scaffolder-backend-module-sentry-027--028)
   - [`@backstage/plugin-scaffolder-node` (0.8.0 → 0.8.1)](#backstageplugin-scaffolder-node-080--081)
+  - [`@backstage/plugin-user-settings` (0.8.20 → 0.8.21)](#backstageplugin-user-settings-0820--0821)
+  - [`@backstage/repo-tools` (0.13.1 → 0.13.2)](#backstagerepo-tools-0131--0132)
+  - [`@backstage/theme` (0.6.4 → 0.6.5)](#backstagetheme-064--065)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-plugin-api` (1.2.1 → 1.3.0)](#backstagebackend-plugin-api-121--130)
+  - [`@backstage/backend-test-utils` (1.3.1 → 1.4.0)](#backstagebackend-test-utils-131--140)
+  - [`@backstage/plugin-scaffolder-backend` (1.31.0 → 1.32.0)](#backstageplugin-scaffolder-backend-1310--1320)
+  - [`@backstage/plugin-scaffolder-react` (1.14.6 → 1.15.0)](#backstageplugin-scaffolder-react-1146--1150)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.6.0 → 1.6.1)](#backstageapp-defaults-160--161)
+  - [`@backstage/core-app-api` (1.16.0 → 1.16.1)](#backstagecore-app-api-1160--1161)
+  - [`@backstage/core-plugin-api` (1.10.5 → 1.10.6)](#backstagecore-plugin-api-1105--1106)
+  - [`@backstage/dev-utils` (1.1.8 → 1.1.9)](#backstagedev-utils-118--119)
+  - [`@backstage/integration` (1.16.2 → 1.16.3)](#backstageintegration-1162--1163)
+  - [`@backstage/integration-react` (1.2.5 → 1.2.6)](#backstageintegration-react-125--126)
+  - [`@backstage/plugin-catalog-backend` (1.32.0 → 1.32.1)](#backstageplugin-catalog-backend-1320--1321)
+  - [`@backstage/plugin-catalog-node` (1.16.2 → 1.16.3)](#backstageplugin-catalog-node-1162--1163)
   - [`@backstage/plugin-search` (1.4.24 → 1.4.25)](#backstageplugin-search-1424--1425)
   - [`@backstage/plugin-search-react` (1.8.7 → 1.8.8)](#backstageplugin-search-react-187--188)
   - [`@backstage/plugin-techdocs` (1.12.4 → 1.12.5)](#backstageplugin-techdocs-1124--1125)
@@ -97,10 +102,7 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.22 → 1.1.23)](#backstageplugin-techdocs-module-addons-contrib-1122--1123)
   - [`@backstage/plugin-techdocs-node` (1.13.1 → 1.13.2)](#backstageplugin-techdocs-node-1131--1132)
   - [`@backstage/plugin-techdocs-react` (1.2.15 → 1.2.16)](#backstageplugin-techdocs-react-1215--1216)
-  - [`@backstage/plugin-user-settings` (0.8.20 → 0.8.21)](#backstageplugin-user-settings-0820--0821)
-  - [`@backstage/repo-tools` (0.13.1 → 0.13.2)](#backstagerepo-tools-0131--0132)
   - [`@backstage/test-utils` (1.7.6 → 1.7.7)](#backstagetest-utils-176--177)
-  - [`@backstage/theme` (0.6.4 → 0.6.5)](#backstagetheme-064--065)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -571,65 +573,7 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 
   <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
 
-## Other minor version bumps
-
-### `@backstage/backend-plugin-api` (1.2.1 → [1.3.0](../../changelogs/@backstage/backend-plugin-api.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`cf4eb13`](https://github.com/backstage/backstage/commit/cf4eb13): Added `actor` property to `BackstageUserPrincipal` containing the subject of the last service (if any) who performed authentication on behalf of the user.
-
-### `@backstage/backend-test-utils` (1.3.1 → [1.4.0](../../changelogs/@backstage/backend-test-utils.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`cf4eb13`](https://github.com/backstage/backstage/commit/cf4eb13): Added `actor` property to `BackstageUserPrincipal` containing the subject of the last service (if any) who performed authentication on behalf of the user.
-
-### `@backstage/plugin-scaffolder-backend` (1.31.0 → [1.32.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1320))
-
-#### 1.32.0
-
-##### Minor Changes
-
-- [`75e4db4`](https://github.com/backstage/backstage/commit/75e4db4): add template-extensions scaffolder service endpoint
-
-##### Patch Changes
-
-- [`8685cab`](https://github.com/backstage/backstage/commit/8685cab): Added `template` and `step` labels for scaffolder histogram metrics: `scaffolder_task_duration` and `scaffolder_step_duration`
-- [`497d47a`](https://github.com/backstage/backstage/commit/497d47a): Document the internal built-in filters, and ensure that the types are validated when using `createTemplateFilter` and `createTemplateGlobalFunction` from the `zod` schema.
-
-### `@backstage/plugin-scaffolder-react` (1.14.6 → [1.15.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`5890016`](https://github.com/backstage/backstage/commit/5890016): add api to retrieve template extensions info from scaffolder-backend
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
-
-- [`6ed42b7`](https://github.com/backstage/backstage/commit/6ed42b7): Scaffolding - Template card - button to show template entity detail
-- [`7ae9996`](https://github.com/backstage/backstage/commit/7ae9996): Fixes the detail icon in light theme to be visible in proper color (same as favorite star).
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.6.0 → [1.6.1](../../changelogs/@backstage/app-defaults.md#161))
-
-#### 1.6.1
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+## 0.x patch version bumps
 
 ### `@backstage/backend-dynamic-feature-service` (0.6.1 → [0.6.2](../../changelogs/@backstage/backend-dynamic-feature-service.md#062))
 
@@ -641,16 +585,6 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
   loads frontend features based on the new frontend system and exposed as module federation remotes.
   This new frontend feature loader works hand-in-hand with a new server of frontend plugin module federation
   remotes, which is added as part of backend dynamic feature service in package `@backstage/backend-dynamic-feature-service`.
-
-### `@backstage/core-app-api` (1.16.0 → [1.16.1](../../changelogs/@backstage/core-app-api.md#1161))
-
-#### 1.16.1
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
 
 ### `@backstage/core-compat-api` (0.4.0 → [0.4.1](../../changelogs/@backstage/core-compat-api.md#041))
 
@@ -673,26 +607,6 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
   <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
 
 - [`5d7bad4`](https://github.com/backstage/backstage/commit/5d7bad4): Fixed the messaging in the `AlertDisplay` where it was claiming that there were older messages available rather than newer.
-
-### `@backstage/core-plugin-api` (1.10.5 → [1.10.6](../../changelogs/@backstage/core-plugin-api.md#1106))
-
-#### 1.10.6
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
-
-### `@backstage/dev-utils` (1.1.8 → [1.1.9](../../changelogs/@backstage/dev-utils.md#119))
-
-#### 1.1.9
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
 
 ### `@backstage/frontend-app-api` (0.11.0 → [0.11.1](../../changelogs/@backstage/frontend-app-api.md#0111))
 
@@ -738,26 +652,6 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 - [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
 
   <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
-
-### `@backstage/integration` (1.16.2 → [1.16.3](../../changelogs/@backstage/integration.md#1163))
-
-#### 1.16.3
-
-##### Patch Changes
-
-- [`9768992`](https://github.com/backstage/backstage/commit/9768992): Mark GitHub `webhookSecret` config property as optional. A `webhookSecret` is not required when creating a GitHub App.
-
-### `@backstage/integration-react` (1.2.5 → [1.2.6](../../changelogs/@backstage/integration-react.md#126))
-
-#### 1.2.6
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
-
-- [`5d10f99`](https://github.com/backstage/backstage/commit/5d10f99): Added scope `project` for Bitbucket Cloud.
 
 ### `@backstage/plugin-api-docs` (0.12.5 → [0.12.6](../../changelogs/@backstage/plugin-api-docs.md#0126))
 
@@ -846,14 +740,6 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 
   <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
 
-### `@backstage/plugin-catalog-backend` (1.32.0 → [1.32.1](../../changelogs/@backstage/plugin-catalog-backend.md#1321))
-
-#### 1.32.1
-
-##### Patch Changes
-
-- [`7cc4995`](https://github.com/backstage/backstage/commit/7cc4995): Fix for duplicate results in `queryEntities` when providing an `orderField` parameter
-
 ### `@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.4.6 → [0.4.7](../../changelogs/@backstage/plugin-catalog-backend-module-bitbucket-cloud.md#047))
 
 #### 0.4.7
@@ -901,15 +787,6 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 
 - [`5b9514f`](https://github.com/backstage/backstage/commit/5b9514f): Expose the `UnpackNestedValue` type as it's been removed from `react-hook-form`
 - [`f1d9a64`](https://github.com/backstage/backstage/commit/f1d9a64): adding translation for `Register an existing component` text
-
-### `@backstage/plugin-catalog-node` (1.16.2 → [1.16.3](../../changelogs/@backstage/plugin-catalog-node.md#1163))
-
-#### 1.16.3
-
-##### Patch Changes
-
-- [`2c5598c`](https://github.com/backstage/backstage/commit/2c5598c): Adds documentation for the CatalogProcessingExtensionPoint functions.
-- [`98b7131`](https://github.com/backstage/backstage/commit/98b7131): Use a different ID for the deprecated alpha version of the catalog service, as it has a different type definition and cannot be used interchangeably with the non-alpha version.
 
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.15 → [0.2.16](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0216))
 
@@ -1092,6 +969,161 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 
 - [`497d47a`](https://github.com/backstage/backstage/commit/497d47a): Document the internal built-in filters, and ensure that the types are validated when using `createTemplateFilter` and `createTemplateGlobalFunction` from the `zod` schema.
 
+### `@backstage/plugin-user-settings` (0.8.20 → [0.8.21](../../changelogs/@backstage/plugin-user-settings.md#0821))
+
+#### 0.8.21
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+### `@backstage/repo-tools` (0.13.1 → [0.13.2](../../changelogs/@backstage/repo-tools.md#0132))
+
+#### 0.13.2
+
+##### Patch Changes
+
+- [`18ce51c`](https://github.com/backstage/backstage/commit/18ce51c): Checking up the files where `createRouter` has been declared and check if `@deprecated` tag exists. If it does not exist then only the message will appear.
+
+### `@backstage/theme` (0.6.4 → [0.6.5](../../changelogs/@backstage/theme.md#065))
+
+#### 0.6.5
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+## Other minor version bumps
+
+### `@backstage/backend-plugin-api` (1.2.1 → [1.3.0](../../changelogs/@backstage/backend-plugin-api.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`cf4eb13`](https://github.com/backstage/backstage/commit/cf4eb13): Added `actor` property to `BackstageUserPrincipal` containing the subject of the last service (if any) who performed authentication on behalf of the user.
+
+### `@backstage/backend-test-utils` (1.3.1 → [1.4.0](../../changelogs/@backstage/backend-test-utils.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`cf4eb13`](https://github.com/backstage/backstage/commit/cf4eb13): Added `actor` property to `BackstageUserPrincipal` containing the subject of the last service (if any) who performed authentication on behalf of the user.
+
+### `@backstage/plugin-scaffolder-backend` (1.31.0 → [1.32.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1320))
+
+#### 1.32.0
+
+##### Minor Changes
+
+- [`75e4db4`](https://github.com/backstage/backstage/commit/75e4db4): add template-extensions scaffolder service endpoint
+
+##### Patch Changes
+
+- [`8685cab`](https://github.com/backstage/backstage/commit/8685cab): Added `template` and `step` labels for scaffolder histogram metrics: `scaffolder_task_duration` and `scaffolder_step_duration`
+- [`497d47a`](https://github.com/backstage/backstage/commit/497d47a): Document the internal built-in filters, and ensure that the types are validated when using `createTemplateFilter` and `createTemplateGlobalFunction` from the `zod` schema.
+
+### `@backstage/plugin-scaffolder-react` (1.14.6 → [1.15.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`5890016`](https://github.com/backstage/backstage/commit/5890016): add api to retrieve template extensions info from scaffolder-backend
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+- [`6ed42b7`](https://github.com/backstage/backstage/commit/6ed42b7): Scaffolding - Template card - button to show template entity detail
+- [`7ae9996`](https://github.com/backstage/backstage/commit/7ae9996): Fixes the detail icon in light theme to be visible in proper color (same as favorite star).
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.6.0 → [1.6.1](../../changelogs/@backstage/app-defaults.md#161))
+
+#### 1.6.1
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+### `@backstage/core-app-api` (1.16.0 → [1.16.1](../../changelogs/@backstage/core-app-api.md#1161))
+
+#### 1.16.1
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+### `@backstage/core-plugin-api` (1.10.5 → [1.10.6](../../changelogs/@backstage/core-plugin-api.md#1106))
+
+#### 1.10.6
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+### `@backstage/dev-utils` (1.1.8 → [1.1.9](../../changelogs/@backstage/dev-utils.md#119))
+
+#### 1.1.9
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+### `@backstage/integration` (1.16.2 → [1.16.3](../../changelogs/@backstage/integration.md#1163))
+
+#### 1.16.3
+
+##### Patch Changes
+
+- [`9768992`](https://github.com/backstage/backstage/commit/9768992): Mark GitHub `webhookSecret` config property as optional. A `webhookSecret` is not required when creating a GitHub App.
+
+### `@backstage/integration-react` (1.2.5 → [1.2.6](../../changelogs/@backstage/integration-react.md#126))
+
+#### 1.2.6
+
+##### Patch Changes
+
+- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
+
+  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
+
+- [`5d10f99`](https://github.com/backstage/backstage/commit/5d10f99): Added scope `project` for Bitbucket Cloud.
+
+### `@backstage/plugin-catalog-backend` (1.32.0 → [1.32.1](../../changelogs/@backstage/plugin-catalog-backend.md#1321))
+
+#### 1.32.1
+
+##### Patch Changes
+
+- [`7cc4995`](https://github.com/backstage/backstage/commit/7cc4995): Fix for duplicate results in `queryEntities` when providing an `orderField` parameter
+
+### `@backstage/plugin-catalog-node` (1.16.2 → [1.16.3](../../changelogs/@backstage/plugin-catalog-node.md#1163))
+
+#### 1.16.3
+
+##### Patch Changes
+
+- [`2c5598c`](https://github.com/backstage/backstage/commit/2c5598c): Adds documentation for the CatalogProcessingExtensionPoint functions.
+- [`98b7131`](https://github.com/backstage/backstage/commit/98b7131): Use a different ID for the deprecated alpha version of the catalog service, as it has a different type definition and cannot be used interchangeably with the non-alpha version.
+
 ### `@backstage/plugin-search` (1.4.24 → [1.4.25](../../changelogs/@backstage/plugin-search.md#1425))
 
 #### 1.4.25
@@ -1165,37 +1197,9 @@ Changes between 1.37.1 and 1.38.0 — 154 changed and 4 added packages.
 
   <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
 
-### `@backstage/plugin-user-settings` (0.8.20 → [0.8.21](../../changelogs/@backstage/plugin-user-settings.md#0821))
-
-#### 0.8.21
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
-
-### `@backstage/repo-tools` (0.13.1 → [0.13.2](../../changelogs/@backstage/repo-tools.md#0132))
-
-#### 0.13.2
-
-##### Patch Changes
-
-- [`18ce51c`](https://github.com/backstage/backstage/commit/18ce51c): Checking up the files where `createRouter` has been declared and check if `@deprecated` tag exists. If it does not exist then only the message will appear.
-
 ### `@backstage/test-utils` (1.7.6 → [1.7.7](../../changelogs/@backstage/test-utils.md#177))
 
 #### 1.7.7
-
-##### Patch Changes
-
-- [`a47fd39`](https://github.com/backstage/backstage/commit/a47fd39): Removes instances of default React imports, a necessary update for the upcoming React 19 migration.
-
-  <https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html>
-
-### `@backstage/theme` (0.6.4 → [0.6.5](../../changelogs/@backstage/theme.md#065))
-
-#### 0.6.5
 
 ##### Patch Changes
 

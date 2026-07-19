@@ -1,6 +1,6 @@
 # Backstage Release 1.39.0 changelog
 
-Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
+Changes between 1.38.1 and 1.39.0 — 2 added, 0 removed, 169 upgraded, 14 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
 - [Breaking changes](#breaking-changes): 13 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 3 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 64 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
-- [Other patch version bumps](#other-patch-version-bumps): 76 packages
+- [Other patch version bumps](#other-patch-version-bumps): 12 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 63 packages
 
 ## Table of contents
@@ -39,27 +40,10 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
   - [`@backstage/plugin-kubernetes-cluster` (0.0.24 → 0.0.25)](#backstageplugin-kubernetes-cluster-0024--0025)
   - [`@backstage/plugin-signals` (0.0.18 → 0.0.19)](#backstageplugin-signals-0018--0019)
   - [`@backstage/release-manifests` (0.0.12 → 0.0.13)](#backstagerelease-manifests-0012--0013)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-test-utils` (1.4.0 → 1.5.0)](#backstagebackend-test-utils-140--150)
-  - [`@backstage/catalog-client` (1.9.1 → 1.10.0)](#backstagecatalog-client-191--1100)
-  - [`@backstage/core-app-api` (1.16.1 → 1.17.0)](#backstagecore-app-api-1161--1170)
-  - [`@backstage/integration` (1.16.3 → 1.17.0)](#backstageintegration-1163--1170)
-  - [`@backstage/plugin-catalog` (1.29.0 → 1.30.0)](#backstageplugin-catalog-1290--1300)
-  - [`@backstage/plugin-catalog-node` (1.16.3 → 1.17.0)](#backstageplugin-catalog-node-1163--1170)
-  - [`@backstage/plugin-catalog-react` (1.17.0 → 1.18.0)](#backstageplugin-catalog-react-1170--1180)
-  - [`@backstage/plugin-scaffolder` (1.30.1 → 1.31.0)](#backstageplugin-scaffolder-1301--1310)
-  - [`@backstage/plugin-scaffolder-backend` (1.32.1 → 1.33.0)](#backstageplugin-scaffolder-backend-1321--1330)
-  - [`@backstage/plugin-scaffolder-react` (1.15.1 → 1.16.0)](#backstageplugin-scaffolder-react-1151--1160)
-  - [`@backstage/plugin-search-react` (1.8.8 → 1.9.0)](#backstageplugin-search-react-188--190)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/backend-app-api` (1.2.2 → 1.2.3)](#backstagebackend-app-api-122--123)
-  - [`@backstage/backend-plugin-api` (1.3.0 → 1.3.1)](#backstagebackend-plugin-api-130--131)
-  - [`@backstage/catalog-model` (1.7.3 → 1.7.4)](#backstagecatalog-model-173--174)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.32.0 → 0.32.1)](#backstagecli-0320--0321)
-  - [`@backstage/config-loader` (1.10.0 → 1.10.1)](#backstageconfig-loader-1100--1101)
   - [`@backstage/core-compat-api` (0.4.1 → 0.4.2)](#backstagecore-compat-api-041--042)
   - [`@backstage/core-components` (0.17.1 → 0.17.2)](#backstagecore-components-0171--0172)
-  - [`@backstage/core-plugin-api` (1.10.6 → 1.10.7)](#backstagecore-plugin-api-1106--1107)
   - [`@backstage/create-app` (0.6.1 → 0.6.2)](#backstagecreate-app-061--062)
   - [`@backstage/frontend-app-api` (0.11.1 → 0.11.2)](#backstagefrontend-app-api-0111--0112)
   - [`@backstage/frontend-plugin-api` (0.10.1 → 0.10.2)](#backstagefrontend-plugin-api-0101--0102)
@@ -118,16 +102,34 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-notifications` (0.1.9 → 0.1.10)](#backstageplugin-scaffolder-backend-module-notifications-019--0110)
   - [`@backstage/plugin-scaffolder-node` (0.8.1 → 0.8.2)](#backstageplugin-scaffolder-node-081--082)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.2.1 → 0.2.2)](#backstageplugin-scaffolder-node-test-utils-021--022)
+  - [`@backstage/plugin-user-settings` (0.8.21 → 0.8.22)](#backstageplugin-user-settings-0821--0822)
+  - [`@backstage/repo-tools` (0.13.2 → 0.13.3)](#backstagerepo-tools-0132--0133)
+  - [`@backstage/theme` (0.6.5 → 0.6.6)](#backstagetheme-065--066)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-test-utils` (1.4.0 → 1.5.0)](#backstagebackend-test-utils-140--150)
+  - [`@backstage/catalog-client` (1.9.1 → 1.10.0)](#backstagecatalog-client-191--1100)
+  - [`@backstage/core-app-api` (1.16.1 → 1.17.0)](#backstagecore-app-api-1161--1170)
+  - [`@backstage/integration` (1.16.3 → 1.17.0)](#backstageintegration-1163--1170)
+  - [`@backstage/plugin-catalog` (1.29.0 → 1.30.0)](#backstageplugin-catalog-1290--1300)
+  - [`@backstage/plugin-catalog-node` (1.16.3 → 1.17.0)](#backstageplugin-catalog-node-1163--1170)
+  - [`@backstage/plugin-catalog-react` (1.17.0 → 1.18.0)](#backstageplugin-catalog-react-1170--1180)
+  - [`@backstage/plugin-scaffolder` (1.30.1 → 1.31.0)](#backstageplugin-scaffolder-1301--1310)
+  - [`@backstage/plugin-scaffolder-backend` (1.32.1 → 1.33.0)](#backstageplugin-scaffolder-backend-1321--1330)
+  - [`@backstage/plugin-scaffolder-react` (1.15.1 → 1.16.0)](#backstageplugin-scaffolder-react-1151--1160)
+  - [`@backstage/plugin-search-react` (1.8.8 → 1.9.0)](#backstageplugin-search-react-188--190)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-app-api` (1.2.2 → 1.2.3)](#backstagebackend-app-api-122--123)
+  - [`@backstage/backend-plugin-api` (1.3.0 → 1.3.1)](#backstagebackend-plugin-api-130--131)
+  - [`@backstage/catalog-model` (1.7.3 → 1.7.4)](#backstagecatalog-model-173--174)
+  - [`@backstage/config-loader` (1.10.0 → 1.10.1)](#backstageconfig-loader-1100--1101)
+  - [`@backstage/core-plugin-api` (1.10.6 → 1.10.7)](#backstagecore-plugin-api-1106--1107)
   - [`@backstage/plugin-search` (1.4.25 → 1.4.26)](#backstageplugin-search-1425--1426)
   - [`@backstage/plugin-search-backend-module-elasticsearch` (1.7.1 → 1.7.2)](#backstageplugin-search-backend-module-elasticsearch-171--172)
   - [`@backstage/plugin-techdocs` (1.12.5 → 1.12.6)](#backstageplugin-techdocs-1125--1126)
   - [`@backstage/plugin-techdocs-backend` (2.0.1 → 2.0.2)](#backstageplugin-techdocs-backend-201--202)
   - [`@backstage/plugin-techdocs-node` (1.13.2 → 1.13.3)](#backstageplugin-techdocs-node-1132--1133)
   - [`@backstage/plugin-techdocs-react` (1.2.16 → 1.2.17)](#backstageplugin-techdocs-react-1216--1217)
-  - [`@backstage/plugin-user-settings` (0.8.21 → 0.8.22)](#backstageplugin-user-settings-0821--0822)
-  - [`@backstage/repo-tools` (0.13.2 → 0.13.3)](#backstagerepo-tools-0132--0133)
   - [`@backstage/test-utils` (1.7.7 → 1.7.8)](#backstagetest-utils-177--178)
-  - [`@backstage/theme` (0.6.5 → 0.6.6)](#backstagetheme-065--066)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -499,266 +501,7 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
   working in restricted or heavily governed development environments (common in large enterprises and government
   entities).
 
-## Other minor version bumps
-
-### `@backstage/backend-test-utils` (1.4.0 → [1.5.0](../../changelogs/@backstage/backend-test-utils.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`b3832d1`](https://github.com/backstage/backstage/commit/b3832d1): Add a functional `mockServices.events()`
-- [`c6bc67d`](https://github.com/backstage/backstage/commit/c6bc67d): Added Valkey support alongside Redis in backend-defaults cache clients, using the new Keyv Valkey package. Also extended backend-test-utils to support Valkey in tests.
-
-### `@backstage/catalog-client` (1.9.1 → [1.10.0](../../changelogs/@backstage/catalog-client.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`1a003ff`](https://github.com/backstage/backstage/commit/1a003ff): Add `getLocations` method to `CatalogApi` and `CatalogClient`. This method calls the [`GET /locations`](https://backstage.io/docs/features/software-catalog/software-catalog-api/#get-locations) endpoint from the catalog backend.
-
-### `@backstage/core-app-api` (1.16.1 → [1.17.0](../../changelogs/@backstage/core-app-api.md#1170))
-
-#### 1.17.0
-
-##### Minor Changes
-
-- [`1e0230e`](https://github.com/backstage/backstage/commit/1e0230e): Support custom `AuthConnector` for `OAuth2`.
-
-  A user can pass their own `AuthConnector` implementation in `OAuth2` constructor.
-  In which case the session manager will use that instead of the `DefaultAuthConnector` to interact with the
-  authentication provider.
-
-  A custom `AuthConnector` may call the authentication provider from the front-end, store and retrieve tokens
-  in the session storage, for example, and otherwise send custom requests to the authentication provider and
-  handle its responses.
-
-  Note, that if the custom `AuthConnector` transforms scopes returned from the authentication provider,
-  the transformation must be the same as `OAuth2CreateOptions#scopeTransform` passed to `OAuth2` constructor.
-  See creating `DefaultAuthConnector` in `OAuth2#create(...)` for an example.
-
-##### Patch Changes
-
-- [`73f6cc3`](https://github.com/backstage/backstage/commit/73f6cc3): Updated `I18nextTranslationApi` to support interpolation of JSX elements.
-- [`cc119b2`](https://github.com/backstage/backstage/commit/cc119b2): Fixed an issue causing `OAuthRequestDialog` to re-render on mount.
-
-### `@backstage/integration` (1.16.3 → [1.17.0](../../changelogs/@backstage/integration.md#1170))
-
-#### 1.17.0
-
-##### Minor Changes
-
-- [`d945206`](https://github.com/backstage/backstage/commit/d945206): Added support for federated credentials using managed identities in the Azure DevOps integration. Federated credentials are only available for Azure DevOps organizations that have been configured to use Entra ID for authentication.
-
-  ```diff
-  integrations:
-    azure:
-      - host: dev.azure.com
-        credentials:
-  +       - clientId: ${APP_REGISTRATION_CLIENT_ID}
-  +         managedIdentityClientId: system-assigned
-  +         tenantId: ${AZURE_TENANT_ID}
-  ```
-
-  This also adds support for automatically using the system-assigned managed identity of an Azure resource by specifying `system-assigned` as the client ID of the managed identity.
-
-  ```diff
-  integrations:
-    azure:
-      - host: dev.azure.com
-        credentials:
-  -       - clientId: ${AZURE_CLIENT_ID}
-  +       - clientId: system-assigned
-  ```
-
-- [`f134cea`](https://github.com/backstage/backstage/commit/f134cea): Implement Edit URL feature for Gerrit 3.9+.
-
-  It's possible to disable the edit url by adding the `disableEditUrl: true` config in the Gerrit integration.
-
-##### Patch Changes
-
-- [`f3381d3`](https://github.com/backstage/backstage/commit/f3381d3): Added missing `organizations` property to `azure` section in `config.d.ts` file
-- [`acea1d4`](https://github.com/backstage/backstage/commit/acea1d4): update documentation
-
-### `@backstage/plugin-catalog` (1.29.0 → [1.30.0](../../changelogs/@backstage/plugin-catalog.md#1300))
-
-#### 1.30.0
-
-##### Minor Changes
-
-- [`970cb48`](https://github.com/backstage/backstage/commit/970cb48): Show the pagination text for the offset-paginated catalog table, and remove the pagination bar from the top of the `CatalogTable` when pagination is enabled.
-
-##### Patch Changes
-
-- [`fb58f20`](https://github.com/backstage/backstage/commit/fb58f20): Internal update to use the new `pluginId` option of `createFrontendPlugin`.
-- [`2ddbc50`](https://github.com/backstage/backstage/commit/2ddbc50): A new `filter` parameter has been added to `EntityContextMenuItemBlueprint` to make it easier to configure which entities a menu item should appear for. The `filter` parameter is a function which accepts an entity and returns a boolean.
-- [`bf85d37`](https://github.com/backstage/backstage/commit/bf85d37): Fix for missing `routeRef` when using `core-plugin-api` in a dialog context
-
-### `@backstage/plugin-catalog-node` (1.16.3 → [1.17.0](../../changelogs/@backstage/plugin-catalog-node.md#1170))
-
-#### 1.17.0
-
-##### Minor Changes
-
-- [`a459f17`](https://github.com/backstage/backstage/commit/a459f17): Added `parseEntityYaml` from `@backstage/plugin-catalog-backend`, to make it more easily usable by custom plugins and modules
-- [`1a003ff`](https://github.com/backstage/backstage/commit/1a003ff): Add `getLocations` method to `CatalogApi` and `CatalogClient`. This method calls the [`GET /locations`](https://backstage.io/docs/features/software-catalog/software-catalog-api/#get-locations) endpoint from the catalog backend.
-
-### `@backstage/plugin-catalog-react` (1.17.0 → [1.18.0](../../changelogs/@backstage/plugin-catalog-react.md#1180))
-
-#### 1.18.0
-
-##### Minor Changes
-
-- [`d47aaa3`](https://github.com/backstage/backstage/commit/d47aaa3): Added EntityOrderFilter to sort entities by different fields/columns. This new filter allows users to specify the order in which entities are displayed in the catalog.
-
-  Example usage:
-
-  ```ts
-  import {
-    EntityOrderFilter,
-    useEntityList,
-  } from '@backstage/plugin-catalog-react';
-  // ...
-  const { updateFilters } = useEntityList();
-
-  // ...
-  updateFilters({
-    order: new EntityOrderFilter([
-      {
-        field: 'metadata.name',
-        order: 'desc',
-      },
-    ]),
-  });
-  ```
-
-- [`1a003ff`](https://github.com/backstage/backstage/commit/1a003ff): Add `getLocations` method to `CatalogApi` and `CatalogClient`. This method calls the [`GET /locations`](https://backstage.io/docs/features/software-catalog/software-catalog-api/#get-locations) endpoint from the catalog backend.
-
-##### Patch Changes
-
-- [`2ddbc50`](https://github.com/backstage/backstage/commit/2ddbc50): A new `filter` parameter has been added to `EntityContextMenuItemBlueprint` to make it easier to configure which entities a menu item should appear for. The `filter` parameter is a function which accepts an entity and returns a boolean.
-- [`6d7f0d5`](https://github.com/backstage/backstage/commit/6d7f0d5): Fixed an issue causing entities of kind user and group to be empty when an owner was selected
-
-### `@backstage/plugin-scaffolder` (1.30.1 → [1.31.0](../../changelogs/@backstage/plugin-scaffolder.md#1310))
-
-#### 1.31.0
-
-##### Minor Changes
-
-- [`4235e87`](https://github.com/backstage/backstage/commit/4235e87): add templating extensions page
-
-##### Patch Changes
-
-- [`92c3658`](https://github.com/backstage/backstage/commit/92c3658): Full support in EntityPicker (and derivatives) for default EntityPresentationApi
-- [`fb58f20`](https://github.com/backstage/backstage/commit/fb58f20): Internal update to use the new `pluginId` option of `createFrontendPlugin`.
-- [`d7da01d`](https://github.com/backstage/backstage/commit/d7da01d): Fix EntityPicker field to render description as markdown, matching other form components in the system.
-- [`36ae651`](https://github.com/backstage/backstage/commit/36ae651): Fixing a bug where the name for `templatingExtensions` was incorrectly set to `templateExtensions`
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-- [`a274e0a`](https://github.com/backstage/backstage/commit/a274e0a): Migrate custom fields to new schema factory function;
-  standardize field descriptions to prefer ui:description and present consistently,
-  utilizing ScaffolderField component where possible.
-
-### `@backstage/plugin-scaffolder-backend` (1.32.1 → [1.33.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1330))
-
-#### 1.33.0
-
-##### Minor Changes
-
-- [`587cb05`](https://github.com/backstage/backstage/commit/587cb05): Added `workspace:template` and `workspace:template:file` actions to complement respective `fetch:*` actions
-
-##### Patch Changes
-
-- [`eb39388`](https://github.com/backstage/backstage/commit/eb39388): Fixed bug in fs:delete that prevented wildcard patterns from matching paths starting with "."
-- [`36ae651`](https://github.com/backstage/backstage/commit/36ae651): Fixing a bug where the name for `templatingExtensions` was incorrectly set to `templateExtensions`
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-- [`ec42f8e`](https://github.com/backstage/backstage/commit/ec42f8e): Generating new tokens on each Scaffolder Task Retry
-
-### `@backstage/plugin-scaffolder-react` (1.15.1 → [1.16.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1160))
-
-#### 1.16.0
-
-##### Minor Changes
-
-- [`4235e87`](https://github.com/backstage/backstage/commit/4235e87): add templating extensions page
-
-##### Patch Changes
-
-- [`36ae651`](https://github.com/backstage/backstage/commit/36ae651): Fixing a bug where the name for `templatingExtensions` was incorrectly set to `templateExtensions`
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-
-### `@backstage/plugin-search-react` (1.8.8 → [1.9.0](../../changelogs/@backstage/plugin-search-react.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`611c941`](https://github.com/backstage/backstage/commit/611c941): Allow search filters to provide labels and values separately, and not only values
-
-##### Patch Changes
-
-- [`2c76614`](https://github.com/backstage/backstage/commit/2c76614): Fix memoization of `filterValue` in `SearchFilter.Autocomplete` to prevent unintended resets
-- [`fa48594`](https://github.com/backstage/backstage/commit/fa48594): search plugin support i18n
-
-## Other patch version bumps
-
-### `@backstage/backend-app-api` (1.2.2 → [1.2.3](../../changelogs/@backstage/backend-app-api.md#123))
-
-#### 1.2.3
-
-##### Patch Changes
-
-- [`729a7d6`](https://github.com/backstage/backstage/commit/729a7d6): Added a configuration to permit backend plugin module failures on startup:
-
-  ```yaml
-  backend:
-    ...
-    startup:
-      plugins:
-        plugin-x:
-          modules:
-            module-y:
-              onPluginModuleBootFailure: continue
-  ```
-
-  This configuration permits `plugin-x` with `module-y` to fail on startup. Omitting the
-  `onPluginModuleBootFailure` configuration matches the previous behavior, wherein any
-  individual plugin module failure is forwarded to the plugin and aborts backend startup.
-
-  The default can also be changed, so that continuing on failure is the default
-  unless otherwise specified:
-
-  ```yaml
-  backend:
-    startup:
-      default:
-        onPluginModuleBootFailure: continue
-      plugins:
-        catalog:
-          modules:
-            github:
-              onPluginModuleBootFailure: abort
-  ```
-
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-
-### `@backstage/backend-plugin-api` (1.3.0 → [1.3.1](../../changelogs/@backstage/backend-plugin-api.md#131))
-
-#### 1.3.1
-
-##### Patch Changes
-
-- [`acea1d4`](https://github.com/backstage/backstage/commit/acea1d4): update documentation
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-- [`d385854`](https://github.com/backstage/backstage/commit/d385854): Minor doc comment update
-
-### `@backstage/catalog-model` (1.7.3 → [1.7.4](../../changelogs/@backstage/catalog-model.md#174))
-
-#### 1.7.4
-
-##### Patch Changes
-
-- [`ed4e625`](https://github.com/backstage/backstage/commit/ed4e625): Added support for icons containing colons
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.32.0 → [0.32.1](../../changelogs/@backstage/cli.md#0321))
 
@@ -776,14 +519,6 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
 - [`5cd3c54`](https://github.com/backstage/backstage/commit/5cd3c54): Updated dependency `react-refresh` to `^0.17.0`.
 - [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
 - [`19a4e7c`](https://github.com/backstage/backstage/commit/19a4e7c): Internal refactor to move things closer to home
-
-### `@backstage/config-loader` (1.10.0 → [1.10.1](../../changelogs/@backstage/config-loader.md#1101))
-
-#### 1.10.1
-
-##### Patch Changes
-
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
 
 ### `@backstage/core-compat-api` (0.4.1 → [0.4.2](../../changelogs/@backstage/core-compat-api.md#042))
 
@@ -805,14 +540,6 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
 - [`e0d1025`](https://github.com/backstage/backstage/commit/e0d1025): `LogViewer` now supports a `textWrap` prop that wraps log lines to the next line for overflowing content instead of using horizontal scroll
 - [`bb84534`](https://github.com/backstage/backstage/commit/bb84534): Fix the hidden sidebar's sub-menu when the sidebar is scrollable
 - [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-
-### `@backstage/core-plugin-api` (1.10.6 → [1.10.7](../../changelogs/@backstage/core-plugin-api.md#1107))
-
-#### 1.10.7
-
-##### Patch Changes
-
-- [`73f6cc3`](https://github.com/backstage/backstage/commit/73f6cc3): The `TranslationApi` now supports interpolation of JSX elements by passing them directly as values to the translation function. If any of the provided interpolation values are JSX elements, the translation function will return a JSX element instead of a string.
 
 ### `@backstage/create-app` (0.6.1 → [0.6.2](../../changelogs/@backstage/create-app.md#062))
 
@@ -1391,6 +1118,311 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
 
 - [`b27c48d`](https://github.com/backstage/backstage/commit/b27c48d): Include optional `user` in `createMockActionContext`
 
+### `@backstage/plugin-user-settings` (0.8.21 → [0.8.22](../../changelogs/@backstage/plugin-user-settings.md#0822))
+
+#### 0.8.22
+
+##### Patch Changes
+
+- [`a7bfdb6`](https://github.com/backstage/backstage/commit/a7bfdb6): plugin-user-settingsgs support i18n
+- [`fb58f20`](https://github.com/backstage/backstage/commit/fb58f20): Internal update to use the new `pluginId` option of `createFrontendPlugin`.
+- [`5b04b14`](https://github.com/backstage/backstage/commit/5b04b14): Uppercase language name in language select
+
+### `@backstage/repo-tools` (0.13.2 → [0.13.3](../../changelogs/@backstage/repo-tools.md#0133))
+
+#### 0.13.3
+
+##### Patch Changes
+
+- [`b229476`](https://github.com/backstage/backstage/commit/b229476): Support passing additional properties to OpenAPI server generator
+- [`659f2ce`](https://github.com/backstage/backstage/commit/659f2ce): Updated dependency `typedoc` to `^0.28.0`.
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+
+### `@backstage/theme` (0.6.5 → [0.6.6](../../changelogs/@backstage/theme.md#066))
+
+#### 0.6.6
+
+##### Patch Changes
+
+- [`1b14572`](https://github.com/backstage/backstage/commit/1b14572): Show arrow when MuiTableSortLabel receives focus
+
+## Other minor version bumps
+
+### `@backstage/backend-test-utils` (1.4.0 → [1.5.0](../../changelogs/@backstage/backend-test-utils.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`b3832d1`](https://github.com/backstage/backstage/commit/b3832d1): Add a functional `mockServices.events()`
+- [`c6bc67d`](https://github.com/backstage/backstage/commit/c6bc67d): Added Valkey support alongside Redis in backend-defaults cache clients, using the new Keyv Valkey package. Also extended backend-test-utils to support Valkey in tests.
+
+### `@backstage/catalog-client` (1.9.1 → [1.10.0](../../changelogs/@backstage/catalog-client.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`1a003ff`](https://github.com/backstage/backstage/commit/1a003ff): Add `getLocations` method to `CatalogApi` and `CatalogClient`. This method calls the [`GET /locations`](https://backstage.io/docs/features/software-catalog/software-catalog-api/#get-locations) endpoint from the catalog backend.
+
+### `@backstage/core-app-api` (1.16.1 → [1.17.0](../../changelogs/@backstage/core-app-api.md#1170))
+
+#### 1.17.0
+
+##### Minor Changes
+
+- [`1e0230e`](https://github.com/backstage/backstage/commit/1e0230e): Support custom `AuthConnector` for `OAuth2`.
+
+  A user can pass their own `AuthConnector` implementation in `OAuth2` constructor.
+  In which case the session manager will use that instead of the `DefaultAuthConnector` to interact with the
+  authentication provider.
+
+  A custom `AuthConnector` may call the authentication provider from the front-end, store and retrieve tokens
+  in the session storage, for example, and otherwise send custom requests to the authentication provider and
+  handle its responses.
+
+  Note, that if the custom `AuthConnector` transforms scopes returned from the authentication provider,
+  the transformation must be the same as `OAuth2CreateOptions#scopeTransform` passed to `OAuth2` constructor.
+  See creating `DefaultAuthConnector` in `OAuth2#create(...)` for an example.
+
+##### Patch Changes
+
+- [`73f6cc3`](https://github.com/backstage/backstage/commit/73f6cc3): Updated `I18nextTranslationApi` to support interpolation of JSX elements.
+- [`cc119b2`](https://github.com/backstage/backstage/commit/cc119b2): Fixed an issue causing `OAuthRequestDialog` to re-render on mount.
+
+### `@backstage/integration` (1.16.3 → [1.17.0](../../changelogs/@backstage/integration.md#1170))
+
+#### 1.17.0
+
+##### Minor Changes
+
+- [`d945206`](https://github.com/backstage/backstage/commit/d945206): Added support for federated credentials using managed identities in the Azure DevOps integration. Federated credentials are only available for Azure DevOps organizations that have been configured to use Entra ID for authentication.
+
+  ```diff
+  integrations:
+    azure:
+      - host: dev.azure.com
+        credentials:
+  +       - clientId: ${APP_REGISTRATION_CLIENT_ID}
+  +         managedIdentityClientId: system-assigned
+  +         tenantId: ${AZURE_TENANT_ID}
+  ```
+
+  This also adds support for automatically using the system-assigned managed identity of an Azure resource by specifying `system-assigned` as the client ID of the managed identity.
+
+  ```diff
+  integrations:
+    azure:
+      - host: dev.azure.com
+        credentials:
+  -       - clientId: ${AZURE_CLIENT_ID}
+  +       - clientId: system-assigned
+  ```
+
+- [`f134cea`](https://github.com/backstage/backstage/commit/f134cea): Implement Edit URL feature for Gerrit 3.9+.
+
+  It's possible to disable the edit url by adding the `disableEditUrl: true` config in the Gerrit integration.
+
+##### Patch Changes
+
+- [`f3381d3`](https://github.com/backstage/backstage/commit/f3381d3): Added missing `organizations` property to `azure` section in `config.d.ts` file
+- [`acea1d4`](https://github.com/backstage/backstage/commit/acea1d4): update documentation
+
+### `@backstage/plugin-catalog` (1.29.0 → [1.30.0](../../changelogs/@backstage/plugin-catalog.md#1300))
+
+#### 1.30.0
+
+##### Minor Changes
+
+- [`970cb48`](https://github.com/backstage/backstage/commit/970cb48): Show the pagination text for the offset-paginated catalog table, and remove the pagination bar from the top of the `CatalogTable` when pagination is enabled.
+
+##### Patch Changes
+
+- [`fb58f20`](https://github.com/backstage/backstage/commit/fb58f20): Internal update to use the new `pluginId` option of `createFrontendPlugin`.
+- [`2ddbc50`](https://github.com/backstage/backstage/commit/2ddbc50): A new `filter` parameter has been added to `EntityContextMenuItemBlueprint` to make it easier to configure which entities a menu item should appear for. The `filter` parameter is a function which accepts an entity and returns a boolean.
+- [`bf85d37`](https://github.com/backstage/backstage/commit/bf85d37): Fix for missing `routeRef` when using `core-plugin-api` in a dialog context
+
+### `@backstage/plugin-catalog-node` (1.16.3 → [1.17.0](../../changelogs/@backstage/plugin-catalog-node.md#1170))
+
+#### 1.17.0
+
+##### Minor Changes
+
+- [`a459f17`](https://github.com/backstage/backstage/commit/a459f17): Added `parseEntityYaml` from `@backstage/plugin-catalog-backend`, to make it more easily usable by custom plugins and modules
+- [`1a003ff`](https://github.com/backstage/backstage/commit/1a003ff): Add `getLocations` method to `CatalogApi` and `CatalogClient`. This method calls the [`GET /locations`](https://backstage.io/docs/features/software-catalog/software-catalog-api/#get-locations) endpoint from the catalog backend.
+
+### `@backstage/plugin-catalog-react` (1.17.0 → [1.18.0](../../changelogs/@backstage/plugin-catalog-react.md#1180))
+
+#### 1.18.0
+
+##### Minor Changes
+
+- [`d47aaa3`](https://github.com/backstage/backstage/commit/d47aaa3): Added EntityOrderFilter to sort entities by different fields/columns. This new filter allows users to specify the order in which entities are displayed in the catalog.
+
+  Example usage:
+
+  ```ts
+  import {
+    EntityOrderFilter,
+    useEntityList,
+  } from '@backstage/plugin-catalog-react';
+  // ...
+  const { updateFilters } = useEntityList();
+
+  // ...
+  updateFilters({
+    order: new EntityOrderFilter([
+      {
+        field: 'metadata.name',
+        order: 'desc',
+      },
+    ]),
+  });
+  ```
+
+- [`1a003ff`](https://github.com/backstage/backstage/commit/1a003ff): Add `getLocations` method to `CatalogApi` and `CatalogClient`. This method calls the [`GET /locations`](https://backstage.io/docs/features/software-catalog/software-catalog-api/#get-locations) endpoint from the catalog backend.
+
+##### Patch Changes
+
+- [`2ddbc50`](https://github.com/backstage/backstage/commit/2ddbc50): A new `filter` parameter has been added to `EntityContextMenuItemBlueprint` to make it easier to configure which entities a menu item should appear for. The `filter` parameter is a function which accepts an entity and returns a boolean.
+- [`6d7f0d5`](https://github.com/backstage/backstage/commit/6d7f0d5): Fixed an issue causing entities of kind user and group to be empty when an owner was selected
+
+### `@backstage/plugin-scaffolder` (1.30.1 → [1.31.0](../../changelogs/@backstage/plugin-scaffolder.md#1310))
+
+#### 1.31.0
+
+##### Minor Changes
+
+- [`4235e87`](https://github.com/backstage/backstage/commit/4235e87): add templating extensions page
+
+##### Patch Changes
+
+- [`92c3658`](https://github.com/backstage/backstage/commit/92c3658): Full support in EntityPicker (and derivatives) for default EntityPresentationApi
+- [`fb58f20`](https://github.com/backstage/backstage/commit/fb58f20): Internal update to use the new `pluginId` option of `createFrontendPlugin`.
+- [`d7da01d`](https://github.com/backstage/backstage/commit/d7da01d): Fix EntityPicker field to render description as markdown, matching other form components in the system.
+- [`36ae651`](https://github.com/backstage/backstage/commit/36ae651): Fixing a bug where the name for `templatingExtensions` was incorrectly set to `templateExtensions`
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+- [`a274e0a`](https://github.com/backstage/backstage/commit/a274e0a): Migrate custom fields to new schema factory function;
+  standardize field descriptions to prefer ui:description and present consistently,
+  utilizing ScaffolderField component where possible.
+
+### `@backstage/plugin-scaffolder-backend` (1.32.1 → [1.33.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1330))
+
+#### 1.33.0
+
+##### Minor Changes
+
+- [`587cb05`](https://github.com/backstage/backstage/commit/587cb05): Added `workspace:template` and `workspace:template:file` actions to complement respective `fetch:*` actions
+
+##### Patch Changes
+
+- [`eb39388`](https://github.com/backstage/backstage/commit/eb39388): Fixed bug in fs:delete that prevented wildcard patterns from matching paths starting with "."
+- [`36ae651`](https://github.com/backstage/backstage/commit/36ae651): Fixing a bug where the name for `templatingExtensions` was incorrectly set to `templateExtensions`
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+- [`ec42f8e`](https://github.com/backstage/backstage/commit/ec42f8e): Generating new tokens on each Scaffolder Task Retry
+
+### `@backstage/plugin-scaffolder-react` (1.15.1 → [1.16.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1160))
+
+#### 1.16.0
+
+##### Minor Changes
+
+- [`4235e87`](https://github.com/backstage/backstage/commit/4235e87): add templating extensions page
+
+##### Patch Changes
+
+- [`36ae651`](https://github.com/backstage/backstage/commit/36ae651): Fixing a bug where the name for `templatingExtensions` was incorrectly set to `templateExtensions`
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+
+### `@backstage/plugin-search-react` (1.8.8 → [1.9.0](../../changelogs/@backstage/plugin-search-react.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`611c941`](https://github.com/backstage/backstage/commit/611c941): Allow search filters to provide labels and values separately, and not only values
+
+##### Patch Changes
+
+- [`2c76614`](https://github.com/backstage/backstage/commit/2c76614): Fix memoization of `filterValue` in `SearchFilter.Autocomplete` to prevent unintended resets
+- [`fa48594`](https://github.com/backstage/backstage/commit/fa48594): search plugin support i18n
+
+## Other patch version bumps
+
+### `@backstage/backend-app-api` (1.2.2 → [1.2.3](../../changelogs/@backstage/backend-app-api.md#123))
+
+#### 1.2.3
+
+##### Patch Changes
+
+- [`729a7d6`](https://github.com/backstage/backstage/commit/729a7d6): Added a configuration to permit backend plugin module failures on startup:
+
+  ```yaml
+  backend:
+    ...
+    startup:
+      plugins:
+        plugin-x:
+          modules:
+            module-y:
+              onPluginModuleBootFailure: continue
+  ```
+
+  This configuration permits `plugin-x` with `module-y` to fail on startup. Omitting the
+  `onPluginModuleBootFailure` configuration matches the previous behavior, wherein any
+  individual plugin module failure is forwarded to the plugin and aborts backend startup.
+
+  The default can also be changed, so that continuing on failure is the default
+  unless otherwise specified:
+
+  ```yaml
+  backend:
+    startup:
+      default:
+        onPluginModuleBootFailure: continue
+      plugins:
+        catalog:
+          modules:
+            github:
+              onPluginModuleBootFailure: abort
+  ```
+
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+
+### `@backstage/backend-plugin-api` (1.3.0 → [1.3.1](../../changelogs/@backstage/backend-plugin-api.md#131))
+
+#### 1.3.1
+
+##### Patch Changes
+
+- [`acea1d4`](https://github.com/backstage/backstage/commit/acea1d4): update documentation
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+- [`d385854`](https://github.com/backstage/backstage/commit/d385854): Minor doc comment update
+
+### `@backstage/catalog-model` (1.7.3 → [1.7.4](../../changelogs/@backstage/catalog-model.md#174))
+
+#### 1.7.4
+
+##### Patch Changes
+
+- [`ed4e625`](https://github.com/backstage/backstage/commit/ed4e625): Added support for icons containing colons
+
+### `@backstage/config-loader` (1.10.0 → [1.10.1](../../changelogs/@backstage/config-loader.md#1101))
+
+#### 1.10.1
+
+##### Patch Changes
+
+- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
+
+### `@backstage/core-plugin-api` (1.10.6 → [1.10.7](../../changelogs/@backstage/core-plugin-api.md#1107))
+
+#### 1.10.7
+
+##### Patch Changes
+
+- [`73f6cc3`](https://github.com/backstage/backstage/commit/73f6cc3): The `TranslationApi` now supports interpolation of JSX elements by passing them directly as values to the translation function. If any of the provided interpolation values are JSX elements, the translation function will return a JSX element instead of a string.
+
 ### `@backstage/plugin-search` (1.4.25 → [1.4.26](../../changelogs/@backstage/plugin-search.md#1426))
 
 #### 1.4.26
@@ -1444,26 +1476,6 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
 
 - [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
 
-### `@backstage/plugin-user-settings` (0.8.21 → [0.8.22](../../changelogs/@backstage/plugin-user-settings.md#0822))
-
-#### 0.8.22
-
-##### Patch Changes
-
-- [`a7bfdb6`](https://github.com/backstage/backstage/commit/a7bfdb6): plugin-user-settingsgs support i18n
-- [`fb58f20`](https://github.com/backstage/backstage/commit/fb58f20): Internal update to use the new `pluginId` option of `createFrontendPlugin`.
-- [`5b04b14`](https://github.com/backstage/backstage/commit/5b04b14): Uppercase language name in language select
-
-### `@backstage/repo-tools` (0.13.2 → [0.13.3](../../changelogs/@backstage/repo-tools.md#0133))
-
-#### 0.13.3
-
-##### Patch Changes
-
-- [`b229476`](https://github.com/backstage/backstage/commit/b229476): Support passing additional properties to OpenAPI server generator
-- [`659f2ce`](https://github.com/backstage/backstage/commit/659f2ce): Updated dependency `typedoc` to `^0.28.0`.
-- [`72d019d`](https://github.com/backstage/backstage/commit/72d019d): Removed various typos
-
 ### `@backstage/test-utils` (1.7.7 → [1.7.8](../../changelogs/@backstage/test-utils.md#178))
 
 #### 1.7.8
@@ -1471,14 +1483,6 @@ Changes between 1.38.1 and 1.39.0 — 169 changed and 2 added packages.
 ##### Patch Changes
 
 - [`b573341`](https://github.com/backstage/backstage/commit/b573341): Added support for interpolating JSX elements with the `MockTranslationApi`.
-
-### `@backstage/theme` (0.6.5 → [0.6.6](../../changelogs/@backstage/theme.md#066))
-
-#### 0.6.6
-
-##### Patch Changes
-
-- [`1b14572`](https://github.com/backstage/backstage/commit/1b14572): Show arrow when MuiTableSortLabel receives focus
 
 ## Excluded dependency updates
 

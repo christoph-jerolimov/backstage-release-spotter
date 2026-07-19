@@ -1,6 +1,6 @@
 # Backstage Release 1.40.0 changelog
 
-Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
+Changes between 1.39.1 and 1.40.0 — 2 added, 0 removed, 160 upgraded, 25 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 - [Breaking changes](#breaking-changes): 9 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 5 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 44 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
-- [Other patch version bumps](#other-patch-version-bumps): 52 packages
+- [Other patch version bumps](#other-patch-version-bumps): 8 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 84 packages
 
 ## Table of contents
@@ -36,21 +37,9 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-notifications-common` (0.0.8 → 0.0.9)](#backstageplugin-notifications-common-008--009)
   - [`@backstage/plugin-signals` (0.0.19 → 0.0.20)](#backstageplugin-signals-0019--0020)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-plugin-api` (1.3.1 → 1.4.0)](#backstagebackend-plugin-api-131--140)
-  - [`@backstage/backend-test-utils` (1.5.0 → 1.6.0)](#backstagebackend-test-utils-150--160)
-  - [`@backstage/plugin-catalog-backend` (2.0.0 → 2.1.0)](#backstageplugin-catalog-backend-200--210)
-  - [`@backstage/plugin-catalog-react` (1.18.0 → 1.19.0)](#backstageplugin-catalog-react-1180--1190)
-  - [`@backstage/plugin-scaffolder` (1.31.0 → 1.32.0)](#backstageplugin-scaffolder-1310--1320)
-  - [`@backstage/plugin-scaffolder-react` (1.16.0 → 1.17.0)](#backstageplugin-scaffolder-react-1160--1170)
-  - [`@backstage/plugin-techdocs` (1.12.6 → 1.13.0)](#backstageplugin-techdocs-1126--1130)
-  - [`@backstage/plugin-techdocs-react` (1.2.17 → 1.3.0)](#backstageplugin-techdocs-react-1217--130)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/backend-app-api` (1.2.3 → 1.2.4)](#backstagebackend-app-api-123--124)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-dynamic-feature-service` (0.7.0 → 0.7.1)](#backstagebackend-dynamic-feature-service-070--071)
-  - [`@backstage/catalog-client` (1.10.0 → 1.10.1)](#backstagecatalog-client-1100--1101)
   - [`@backstage/core-components` (0.17.2 → 0.17.3)](#backstagecore-components-0172--0173)
-  - [`@backstage/core-plugin-api` (1.10.7 → 1.10.8)](#backstagecore-plugin-api-1107--1108)
   - [`@backstage/eslint-plugin` (0.1.10 → 0.1.11)](#backstageeslint-plugin-0110--0111)
   - [`@backstage/frontend-app-api` (0.11.2 → 0.11.3)](#backstagefrontend-app-api-0112--0113)
   - [`@backstage/frontend-defaults` (0.2.2 → 0.2.3)](#backstagefrontend-defaults-022--023)
@@ -64,7 +53,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
   - [`@backstage/plugin-catalog-backend-module-ldap` (0.11.5 → 0.11.6)](#backstageplugin-catalog-backend-module-ldap-0115--0116)
   - [`@backstage/plugin-catalog-graph` (0.4.19 → 0.4.20)](#backstageplugin-catalog-graph-0419--0420)
   - [`@backstage/plugin-catalog-import` (0.13.0 → 0.13.1)](#backstageplugin-catalog-import-0130--0131)
-  - [`@backstage/plugin-catalog-node` (1.17.0 → 1.17.1)](#backstageplugin-catalog-node-1170--1171)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.17 → 0.2.18)](#backstageplugin-catalog-unprocessed-entities-0217--0218)
   - [`@backstage/plugin-devtools` (0.1.27 → 0.1.28)](#backstageplugin-devtools-0127--0128)
   - [`@backstage/plugin-devtools-backend` (0.5.5 → 0.5.6)](#backstageplugin-devtools-backend-055--056)
@@ -91,13 +79,27 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.9 → 0.5.10)](#backstageplugin-scaffolder-backend-module-rails-059--0510)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.2.9 → 0.2.10)](#backstageplugin-scaffolder-backend-module-sentry-029--0210)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.10 → 0.4.11)](#backstageplugin-scaffolder-backend-module-yeoman-0410--0411)
+  - [`@backstage/plugin-search-backend-module-techdocs` (0.4.2 → 0.4.3)](#backstageplugin-search-backend-module-techdocs-042--043)
+  - [`@backstage/plugin-techdocs-common` (0.1.0 → 0.1.1)](#backstageplugin-techdocs-common-010--011)
+  - [`@backstage/plugin-user-settings` (0.8.22 → 0.8.23)](#backstageplugin-user-settings-0822--0823)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-plugin-api` (1.3.1 → 1.4.0)](#backstagebackend-plugin-api-131--140)
+  - [`@backstage/backend-test-utils` (1.5.0 → 1.6.0)](#backstagebackend-test-utils-150--160)
+  - [`@backstage/plugin-catalog-backend` (2.0.0 → 2.1.0)](#backstageplugin-catalog-backend-200--210)
+  - [`@backstage/plugin-catalog-react` (1.18.0 → 1.19.0)](#backstageplugin-catalog-react-1180--1190)
+  - [`@backstage/plugin-scaffolder` (1.31.0 → 1.32.0)](#backstageplugin-scaffolder-1310--1320)
+  - [`@backstage/plugin-scaffolder-react` (1.16.0 → 1.17.0)](#backstageplugin-scaffolder-react-1160--1170)
+  - [`@backstage/plugin-techdocs` (1.12.6 → 1.13.0)](#backstageplugin-techdocs-1126--1130)
+  - [`@backstage/plugin-techdocs-react` (1.2.17 → 1.3.0)](#backstageplugin-techdocs-react-1217--130)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-app-api` (1.2.3 → 1.2.4)](#backstagebackend-app-api-123--124)
+  - [`@backstage/catalog-client` (1.10.0 → 1.10.1)](#backstagecatalog-client-1100--1101)
+  - [`@backstage/core-plugin-api` (1.10.7 → 1.10.8)](#backstagecore-plugin-api-1107--1108)
+  - [`@backstage/plugin-catalog-node` (1.17.0 → 1.17.1)](#backstageplugin-catalog-node-1170--1171)
   - [`@backstage/plugin-search` (1.4.26 → 1.4.27)](#backstageplugin-search-1426--1427)
   - [`@backstage/plugin-search-backend` (2.0.2 → 2.0.3)](#backstageplugin-search-backend-202--203)
-  - [`@backstage/plugin-search-backend-module-techdocs` (0.4.2 → 0.4.3)](#backstageplugin-search-backend-module-techdocs-042--043)
   - [`@backstage/plugin-search-react` (1.9.0 → 1.9.1)](#backstageplugin-search-react-190--191)
-  - [`@backstage/plugin-techdocs-common` (0.1.0 → 0.1.1)](#backstageplugin-techdocs-common-010--011)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.24 → 1.1.25)](#backstageplugin-techdocs-module-addons-contrib-1124--1125)
-  - [`@backstage/plugin-user-settings` (0.8.22 → 0.8.23)](#backstageplugin-user-settings-0822--0823)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -543,203 +545,7 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 
 - [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
 
-## Other minor version bumps
-
-### `@backstage/backend-plugin-api` (1.3.1 → [1.4.0](../../changelogs/@backstage/backend-plugin-api.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`664c07a`](https://github.com/backstage/backstage/commit/664c07a): Added `actionsRegistry` and `actions` experimental services to `/alpha` to allow registration of distributed actions from plugins, and the ability to invoke these actions. You can use these services by including them like the following:
-
-  ```ts
-  import {
-    actionsRegistryServiceRef,
-    actionsServiceRef,
-  } from '@backstage/backend-plugin-api/alpha';
-
-  createBackendPlugin({
-    pluginId: 'test-plugin',
-    register({ registerInit }) {
-      registerInit({
-        deps: {
-          actions: actionsServiceRef,
-          actionsRegistry: actionsRegistryServiceRef,
-        },
-        async init({ actions, actionsRegistry }) {
-          actionsRegistry.register({
-            ...,
-          });
-
-          await actions.invoke(...);
-        },
-      });
-    },
-  });
-  ```
-
-### `@backstage/backend-test-utils` (1.5.0 → [1.6.0](../../changelogs/@backstage/backend-test-utils.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`6dfb7be`](https://github.com/backstage/backstage/commit/6dfb7be): Added `mockServices.permissions()` that can return actual results.
-- [`c999c25`](https://github.com/backstage/backstage/commit/c999c25): Added an `actionsRegistryServiceMock` and `actionsServiceMock` to `/alpha` export for the experimental services.
-
-  This allows you to write tests for your actions by doing something similar to the following:
-
-  ```ts
-  import { actionsRegistryServiceMock } from '@backstage/backend-test-utils/alpha';
-
-  const mockActionsRegistry = actionsRegistryServiceMock();
-  const mockCatalog = catalogServiceMock({
-    entities: [
-     ...
-    ],
-  });
-
-  createGetCatalogEntityAction({
-    catalog: mockCatalog,
-    actionsRegistry: mockActionsRegistry,
-  });
-
-  await expect(
-    mockActionsRegistry.invoke({
-      id: 'test:get-catalog-entity',
-      input: { name: 'test' },
-    }),
-  ).resolves.toEqual(...)
-  ```
-
-##### Patch Changes
-
-- [`12c1fd4`](https://github.com/backstage/backstage/commit/12c1fd4): Make the `user` credentials mock behave more like production
-
-### `@backstage/plugin-catalog-backend` (2.0.0 → [2.1.0](../../changelogs/@backstage/plugin-catalog-backend.md#210))
-
-#### 2.1.0
-
-##### Minor Changes
-
-- [`2e7adf0`](https://github.com/backstage/backstage/commit/2e7adf0): Implement the action `get-catalog-entity` with the `ActionsRegistry`
-
-##### Patch Changes
-
-- [`2cac8b0`](https://github.com/backstage/backstage/commit/2cac8b0): You can now specify an optional value when applying the `HAS_LABEL` permission rule, similar to the `HAS_ANNOTATION` permission rule.
-- [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
-- [`4654a78`](https://github.com/backstage/backstage/commit/4654a78): Update `refresh_state_references.id` to be a big int
-
-### `@backstage/plugin-catalog-react` (1.18.0 → [1.19.0](../../changelogs/@backstage/plugin-catalog-react.md#1190))
-
-#### 1.19.0
-
-##### Minor Changes
-
-- [`406acb6`](https://github.com/backstage/backstage/commit/406acb6): Introduces a new `EntityIconLinkBlueprint` that customizes the `About` card icon links on the `Catalog` entity page.
-
-  The blueprint currently accepts a `useProps` hook as `param` and this function returns the following props that will be passed to the icon link component:
-
-  | Name       | Description                                         | Type          | Default Value |
-  | ---------- | --------------------------------------------------- | ------------- | ------------- |
-  | `icon`     | The icon to display.                                | `JSX.Element` | N/A           |
-  | `label`    | The label for the element.                          | `string`      | N/A           |
-  | `title`    | The title for the element.                          | `string`      | N/A           |
-  | `disabled` | Whether the element is disabled.                    | `boolean`     | `false`       |
-  | `href`     | The URL to navigate to when the element is clicked. | `string`      | N/A           |
-  | `onClick`  | A function to call when the element is clicked.     | `() => void`  | N/A           |
-
-  Here is an usage example:
-
-  ```tsx
-  import { EntityIconLinkBlueprint } from '@backstage/plugin-catalog-react/alpha';
-  //...
-
-  EntityIconLinkBlueprint.make({
-    name: 'my-icon-link',
-    params: {
-      useProps() {
-        const { t } = useTranslationRef(myIconLinkTranslationRef);
-        return {
-          label: t('myIconLink.label'),
-          icon: <MyIconLinkIcon />,
-          href: '/my-plugin',
-        };
-      },
-    },
-  });
-  ```
-
-  Additionally, the `app-config.yaml` file allows you to override some of the default icon link parameters, including `label` and `title` values. Here's how to set them:
-
-  ```yaml
-  app:
-    extensions:
-      - entity-icon-link:my-plugin/my-icon-link:
-          config:
-            label: 'My Custom Icon Link label'
-  ```
-
-  Finally, you can disable all links if you want to hide the About card header completely (useful, for example, when links are displayed on separate cards). The header is hidden when no icon links extensions are enabled.
-
-### `@backstage/plugin-scaffolder` (1.31.0 → [1.32.0](../../changelogs/@backstage/plugin-scaffolder.md#1320))
-
-#### 1.32.0
-
-##### Minor Changes
-
-- [`6c972fe`](https://github.com/backstage/backstage/commit/6c972fe): Added information about the `entityRef` and `taskId` to the analytics events whenever is possible.
-- [`3c59ece`](https://github.com/backstage/backstage/commit/3c59ece): **New Frontend System Only:**
-  The `Scaffolder` plugin is now responsible for providing an entity icon link extension to launch templates from the catalog entity page.
-
-##### Patch Changes
-
-- [`d781b33`](https://github.com/backstage/backstage/commit/d781b33): render details for composite property schemas
-- [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
-- [`b00c160`](https://github.com/backstage/backstage/commit/b00c160): Remove React import form notification and scaffolder plugin
-- [`95a1d72`](https://github.com/backstage/backstage/commit/95a1d72): Added appropriate message when global templating function metadata is absent.
-
-### `@backstage/plugin-scaffolder-react` (1.16.0 → [1.17.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1170))
-
-#### 1.17.0
-
-##### Minor Changes
-
-- [`6c972fe`](https://github.com/backstage/backstage/commit/6c972fe): Added information about the `entityRef` and `taskId` to the analytics events whenever is possible.
-
-### `@backstage/plugin-techdocs` (1.12.6 → [1.13.0](../../changelogs/@backstage/plugin-techdocs.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`3c59ece`](https://github.com/backstage/backstage/commit/3c59ece): **New Frontend System Only:**
-  The `TechDocs` plugin is now responsible for providing an entity icon link extension to read documentation from the catalog entity page.
-- [`ec7b35d`](https://github.com/backstage/backstage/commit/ec7b35d): Introduced `backstage.io/techdocs-entity-path` annotation which allows deep linking into another entities TechDocs in conjunction with `backstage.io/techdocs-entity`.
-
-##### Patch Changes
-
-- [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
-- [`9dde3ba`](https://github.com/backstage/backstage/commit/9dde3ba): Improved Keyboard accessibility in techdocs.
-
-### `@backstage/plugin-techdocs-react` (1.2.17 → [1.3.0](../../changelogs/@backstage/plugin-techdocs-react.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`ec7b35d`](https://github.com/backstage/backstage/commit/ec7b35d): Introduced `backstage.io/techdocs-entity-path` annotation which allows deep linking into another entities TechDocs in conjunction with `backstage.io/techdocs-entity`.
-
-## Other patch version bumps
-
-### `@backstage/backend-app-api` (1.2.3 → [1.2.4](../../changelogs/@backstage/backend-app-api.md#124))
-
-#### 1.2.4
-
-##### Patch Changes
-
-- [`bb9a501`](https://github.com/backstage/backstage/commit/bb9a501): Fixed a bug where occasionally the initialization order of multiple modules consuming a single extension point could happen in the wrong order.
+## 0.x patch version bumps
 
 ### `@backstage/backend-dynamic-feature-service` (0.7.0 → [0.7.1](../../changelogs/@backstage/backend-dynamic-feature-service.md#071))
 
@@ -749,14 +555,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 
 - [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
 
-### `@backstage/catalog-client` (1.10.0 → [1.10.1](../../changelogs/@backstage/catalog-client.md#1101))
-
-#### 1.10.1
-
-##### Patch Changes
-
-- [`22fad0d`](https://github.com/backstage/backstage/commit/22fad0d): Fixed `CatalogClient` error responses for `refreshEntity` and `addLocation`.
-
 ### `@backstage/core-components` (0.17.2 → [0.17.3](../../changelogs/@backstage/core-components.md#0173))
 
 #### 0.17.3
@@ -764,15 +562,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 ##### Patch Changes
 
 - [`6232160`](https://github.com/backstage/backstage/commit/6232160): table actions header support i18n
-
-### `@backstage/core-plugin-api` (1.10.7 → [1.10.8](../../changelogs/@backstage/core-plugin-api.md#1108))
-
-#### 1.10.8
-
-##### Patch Changes
-
-- [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
-- [`0169b23`](https://github.com/backstage/backstage/commit/0169b23): Internal tweak to avoid circular dependencies
 
 ### `@backstage/eslint-plugin` (0.1.10 → [0.1.11](../../changelogs/@backstage/eslint-plugin.md#0111))
 
@@ -951,14 +740,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 
 - [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
 - [`5d7c539`](https://github.com/backstage/backstage/commit/5d7c539): Catalog import plugin full support i18n
-
-### `@backstage/plugin-catalog-node` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-catalog-node.md#1171))
-
-#### 1.17.1
-
-##### Patch Changes
-
-- [`0169b23`](https://github.com/backstage/backstage/commit/0169b23): Internal tweak to avoid circular dependencies
 
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.17 → [0.2.18](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0218))
 
@@ -1195,6 +976,255 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 
 - [`b392a34`](https://github.com/backstage/backstage/commit/b392a34): Migrate to new actions format
 
+### `@backstage/plugin-search-backend-module-techdocs` (0.4.2 → [0.4.3](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#043))
+
+#### 0.4.3
+
+##### Patch Changes
+
+- [`b47ec38`](https://github.com/backstage/backstage/commit/b47ec38): Exports the default document collator for use in document transformation during search indexing.
+
+### `@backstage/plugin-techdocs-common` (0.1.0 → [0.1.1](../../changelogs/@backstage/plugin-techdocs-common.md#011))
+
+#### 0.1.1
+
+##### Patch Changes
+
+- [`ec7b35d`](https://github.com/backstage/backstage/commit/ec7b35d): Introduced `backstage.io/techdocs-entity-path` annotation which allows deep linking into another entities TechDocs in conjunction with `backstage.io/techdocs-entity`.
+
+### `@backstage/plugin-user-settings` (0.8.22 → [0.8.23](../../changelogs/@backstage/plugin-user-settings.md#0823))
+
+#### 0.8.23
+
+##### Patch Changes
+
+- [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
+- [`ab6d3dd`](https://github.com/backstage/backstage/commit/ab6d3dd): Add some translation to user-setting plugin
+- [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
+
+## Other minor version bumps
+
+### `@backstage/backend-plugin-api` (1.3.1 → [1.4.0](../../changelogs/@backstage/backend-plugin-api.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`664c07a`](https://github.com/backstage/backstage/commit/664c07a): Added `actionsRegistry` and `actions` experimental services to `/alpha` to allow registration of distributed actions from plugins, and the ability to invoke these actions. You can use these services by including them like the following:
+
+  ```ts
+  import {
+    actionsRegistryServiceRef,
+    actionsServiceRef,
+  } from '@backstage/backend-plugin-api/alpha';
+
+  createBackendPlugin({
+    pluginId: 'test-plugin',
+    register({ registerInit }) {
+      registerInit({
+        deps: {
+          actions: actionsServiceRef,
+          actionsRegistry: actionsRegistryServiceRef,
+        },
+        async init({ actions, actionsRegistry }) {
+          actionsRegistry.register({
+            ...,
+          });
+
+          await actions.invoke(...);
+        },
+      });
+    },
+  });
+  ```
+
+### `@backstage/backend-test-utils` (1.5.0 → [1.6.0](../../changelogs/@backstage/backend-test-utils.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`6dfb7be`](https://github.com/backstage/backstage/commit/6dfb7be): Added `mockServices.permissions()` that can return actual results.
+- [`c999c25`](https://github.com/backstage/backstage/commit/c999c25): Added an `actionsRegistryServiceMock` and `actionsServiceMock` to `/alpha` export for the experimental services.
+
+  This allows you to write tests for your actions by doing something similar to the following:
+
+  ```ts
+  import { actionsRegistryServiceMock } from '@backstage/backend-test-utils/alpha';
+
+  const mockActionsRegistry = actionsRegistryServiceMock();
+  const mockCatalog = catalogServiceMock({
+    entities: [
+     ...
+    ],
+  });
+
+  createGetCatalogEntityAction({
+    catalog: mockCatalog,
+    actionsRegistry: mockActionsRegistry,
+  });
+
+  await expect(
+    mockActionsRegistry.invoke({
+      id: 'test:get-catalog-entity',
+      input: { name: 'test' },
+    }),
+  ).resolves.toEqual(...)
+  ```
+
+##### Patch Changes
+
+- [`12c1fd4`](https://github.com/backstage/backstage/commit/12c1fd4): Make the `user` credentials mock behave more like production
+
+### `@backstage/plugin-catalog-backend` (2.0.0 → [2.1.0](../../changelogs/@backstage/plugin-catalog-backend.md#210))
+
+#### 2.1.0
+
+##### Minor Changes
+
+- [`2e7adf0`](https://github.com/backstage/backstage/commit/2e7adf0): Implement the action `get-catalog-entity` with the `ActionsRegistry`
+
+##### Patch Changes
+
+- [`2cac8b0`](https://github.com/backstage/backstage/commit/2cac8b0): You can now specify an optional value when applying the `HAS_LABEL` permission rule, similar to the `HAS_ANNOTATION` permission rule.
+- [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
+- [`4654a78`](https://github.com/backstage/backstage/commit/4654a78): Update `refresh_state_references.id` to be a big int
+
+### `@backstage/plugin-catalog-react` (1.18.0 → [1.19.0](../../changelogs/@backstage/plugin-catalog-react.md#1190))
+
+#### 1.19.0
+
+##### Minor Changes
+
+- [`406acb6`](https://github.com/backstage/backstage/commit/406acb6): Introduces a new `EntityIconLinkBlueprint` that customizes the `About` card icon links on the `Catalog` entity page.
+
+  The blueprint currently accepts a `useProps` hook as `param` and this function returns the following props that will be passed to the icon link component:
+
+  | Name       | Description                                         | Type          | Default Value |
+  | ---------- | --------------------------------------------------- | ------------- | ------------- |
+  | `icon`     | The icon to display.                                | `JSX.Element` | N/A           |
+  | `label`    | The label for the element.                          | `string`      | N/A           |
+  | `title`    | The title for the element.                          | `string`      | N/A           |
+  | `disabled` | Whether the element is disabled.                    | `boolean`     | `false`       |
+  | `href`     | The URL to navigate to when the element is clicked. | `string`      | N/A           |
+  | `onClick`  | A function to call when the element is clicked.     | `() => void`  | N/A           |
+
+  Here is an usage example:
+
+  ```tsx
+  import { EntityIconLinkBlueprint } from '@backstage/plugin-catalog-react/alpha';
+  //...
+
+  EntityIconLinkBlueprint.make({
+    name: 'my-icon-link',
+    params: {
+      useProps() {
+        const { t } = useTranslationRef(myIconLinkTranslationRef);
+        return {
+          label: t('myIconLink.label'),
+          icon: <MyIconLinkIcon />,
+          href: '/my-plugin',
+        };
+      },
+    },
+  });
+  ```
+
+  Additionally, the `app-config.yaml` file allows you to override some of the default icon link parameters, including `label` and `title` values. Here's how to set them:
+
+  ```yaml
+  app:
+    extensions:
+      - entity-icon-link:my-plugin/my-icon-link:
+          config:
+            label: 'My Custom Icon Link label'
+  ```
+
+  Finally, you can disable all links if you want to hide the About card header completely (useful, for example, when links are displayed on separate cards). The header is hidden when no icon links extensions are enabled.
+
+### `@backstage/plugin-scaffolder` (1.31.0 → [1.32.0](../../changelogs/@backstage/plugin-scaffolder.md#1320))
+
+#### 1.32.0
+
+##### Minor Changes
+
+- [`6c972fe`](https://github.com/backstage/backstage/commit/6c972fe): Added information about the `entityRef` and `taskId` to the analytics events whenever is possible.
+- [`3c59ece`](https://github.com/backstage/backstage/commit/3c59ece): **New Frontend System Only:**
+  The `Scaffolder` plugin is now responsible for providing an entity icon link extension to launch templates from the catalog entity page.
+
+##### Patch Changes
+
+- [`d781b33`](https://github.com/backstage/backstage/commit/d781b33): render details for composite property schemas
+- [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
+- [`b00c160`](https://github.com/backstage/backstage/commit/b00c160): Remove React import form notification and scaffolder plugin
+- [`95a1d72`](https://github.com/backstage/backstage/commit/95a1d72): Added appropriate message when global templating function metadata is absent.
+
+### `@backstage/plugin-scaffolder-react` (1.16.0 → [1.17.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1170))
+
+#### 1.17.0
+
+##### Minor Changes
+
+- [`6c972fe`](https://github.com/backstage/backstage/commit/6c972fe): Added information about the `entityRef` and `taskId` to the analytics events whenever is possible.
+
+### `@backstage/plugin-techdocs` (1.12.6 → [1.13.0](../../changelogs/@backstage/plugin-techdocs.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`3c59ece`](https://github.com/backstage/backstage/commit/3c59ece): **New Frontend System Only:**
+  The `TechDocs` plugin is now responsible for providing an entity icon link extension to read documentation from the catalog entity page.
+- [`ec7b35d`](https://github.com/backstage/backstage/commit/ec7b35d): Introduced `backstage.io/techdocs-entity-path` annotation which allows deep linking into another entities TechDocs in conjunction with `backstage.io/techdocs-entity`.
+
+##### Patch Changes
+
+- [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
+- [`9dde3ba`](https://github.com/backstage/backstage/commit/9dde3ba): Improved Keyboard accessibility in techdocs.
+
+### `@backstage/plugin-techdocs-react` (1.2.17 → [1.3.0](../../changelogs/@backstage/plugin-techdocs-react.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`ec7b35d`](https://github.com/backstage/backstage/commit/ec7b35d): Introduced `backstage.io/techdocs-entity-path` annotation which allows deep linking into another entities TechDocs in conjunction with `backstage.io/techdocs-entity`.
+
+## Other patch version bumps
+
+### `@backstage/backend-app-api` (1.2.3 → [1.2.4](../../changelogs/@backstage/backend-app-api.md#124))
+
+#### 1.2.4
+
+##### Patch Changes
+
+- [`bb9a501`](https://github.com/backstage/backstage/commit/bb9a501): Fixed a bug where occasionally the initialization order of multiple modules consuming a single extension point could happen in the wrong order.
+
+### `@backstage/catalog-client` (1.10.0 → [1.10.1](../../changelogs/@backstage/catalog-client.md#1101))
+
+#### 1.10.1
+
+##### Patch Changes
+
+- [`22fad0d`](https://github.com/backstage/backstage/commit/22fad0d): Fixed `CatalogClient` error responses for `refreshEntity` and `addLocation`.
+
+### `@backstage/core-plugin-api` (1.10.7 → [1.10.8](../../changelogs/@backstage/core-plugin-api.md#1108))
+
+#### 1.10.8
+
+##### Patch Changes
+
+- [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
+- [`0169b23`](https://github.com/backstage/backstage/commit/0169b23): Internal tweak to avoid circular dependencies
+
+### `@backstage/plugin-catalog-node` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-catalog-node.md#1171))
+
+#### 1.17.1
+
+##### Patch Changes
+
+- [`0169b23`](https://github.com/backstage/backstage/commit/0169b23): Internal tweak to avoid circular dependencies
+
 ### `@backstage/plugin-search` (1.4.26 → [1.4.27](../../changelogs/@backstage/plugin-search.md#1427))
 
 #### 1.4.27
@@ -1211,14 +1241,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 
 - [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
 
-### `@backstage/plugin-search-backend-module-techdocs` (0.4.2 → [0.4.3](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#043))
-
-#### 0.4.3
-
-##### Patch Changes
-
-- [`b47ec38`](https://github.com/backstage/backstage/commit/b47ec38): Exports the default document collator for use in document transformation during search indexing.
-
 ### `@backstage/plugin-search-react` (1.9.0 → [1.9.1](../../changelogs/@backstage/plugin-search-react.md#191))
 
 #### 1.9.1
@@ -1227,14 +1249,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 
 - [`869fa46`](https://github.com/backstage/backstage/commit/869fa46): SearchBar clear button support i18n
 
-### `@backstage/plugin-techdocs-common` (0.1.0 → [0.1.1](../../changelogs/@backstage/plugin-techdocs-common.md#011))
-
-#### 0.1.1
-
-##### Patch Changes
-
-- [`ec7b35d`](https://github.com/backstage/backstage/commit/ec7b35d): Introduced `backstage.io/techdocs-entity-path` annotation which allows deep linking into another entities TechDocs in conjunction with `backstage.io/techdocs-entity`.
-
 ### `@backstage/plugin-techdocs-module-addons-contrib` (1.1.24 → [1.1.25](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#1125))
 
 #### 1.1.25
@@ -1242,16 +1256,6 @@ Changes between 1.39.1 and 1.40.0 — 160 changed and 2 added packages.
 ##### Patch Changes
 
 - [`9dde3ba`](https://github.com/backstage/backstage/commit/9dde3ba): Improved Keyboard accessibility in techdocs.
-
-### `@backstage/plugin-user-settings` (0.8.22 → [0.8.23](../../changelogs/@backstage/plugin-user-settings.md#0823))
-
-#### 0.8.23
-
-##### Patch Changes
-
-- [`18c64e9`](https://github.com/backstage/backstage/commit/18c64e9): Added the `info.packageJson` option to the plugin instance for the new frontend system.
-- [`ab6d3dd`](https://github.com/backstage/backstage/commit/ab6d3dd): Add some translation to user-setting plugin
-- [`c83cd8b`](https://github.com/backstage/backstage/commit/c83cd8b): Fixed some circular or otherwise unclear imports
 
 ## Excluded dependency updates
 

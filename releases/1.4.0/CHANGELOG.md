@@ -1,6 +1,6 @@
 # Backstage Release 1.4.0 changelog
 
-Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
+Changes between 1.3.1 and 1.4.0 — 7 added, 0 removed, 143 upgraded, 5 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [Major version bumps](#major-version-bumps): 5 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 8 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 89 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
-- [Other patch version bumps](#other-patch-version-bumps): 102 packages
+- [Other patch version bumps](#other-patch-version-bumps): 13 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 9 packages
 
 ## Table of contents
@@ -51,27 +52,11 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-explore-react` (0.0.18 → 0.0.19)](#backstageplugin-explore-react-0018--0019)
   - [`@backstage/release-manifests` (0.0.4 → 0.0.5)](#backstagerelease-manifests-004--005)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/catalog-model` (1.0.3 → 1.1.0)](#backstagecatalog-model-103--110)
-  - [`@backstage/plugin-catalog` (1.3.0 → 1.4.0)](#backstageplugin-catalog-130--140)
-  - [`@backstage/plugin-catalog-backend` (1.2.0 → 1.3.0)](#backstageplugin-catalog-backend-120--130)
-  - [`@backstage/plugin-scaffolder` (1.3.0 → 1.4.0)](#backstageplugin-scaffolder-130--140)
-  - [`@backstage/plugin-scaffolder-backend` (1.3.1 → 1.4.0)](#backstageplugin-scaffolder-backend-131--140)
-  - [`@backstage/plugin-techdocs` (1.2.0 → 1.3.0)](#backstageplugin-techdocs-120--130)
-  - [`@backstage/plugin-techdocs-backend` (1.1.2 → 1.2.0)](#backstageplugin-techdocs-backend-112--120)
-  - [`@backstage/plugin-techdocs-node` (1.1.2 → 1.2.0)](#backstageplugin-techdocs-node-112--120)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.0.3 → 1.0.4)](#backstageapp-defaults-103--104)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.14.0 → 0.14.1)](#backstagebackend-common-0140--0141)
   - [`@backstage/backend-tasks` (0.3.2 → 0.3.3)](#backstagebackend-tasks-032--033)
   - [`@backstage/backend-test-utils` (0.1.25 → 0.1.26)](#backstagebackend-test-utils-0125--0126)
-  - [`@backstage/catalog-client` (1.0.3 → 1.0.4)](#backstagecatalog-client-103--104)
-  - [`@backstage/config-loader` (1.1.2 → 1.1.3)](#backstageconfig-loader-112--113)
-  - [`@backstage/core-app-api` (1.0.3 → 1.0.4)](#backstagecore-app-api-103--104)
-  - [`@backstage/core-plugin-api` (1.0.3 → 1.0.4)](#backstagecore-plugin-api-103--104)
   - [`@backstage/create-app` (0.4.28 → 0.4.29)](#backstagecreate-app-0428--0429)
-  - [`@backstage/integration` (1.2.1 → 1.2.2)](#backstageintegration-121--122)
-  - [`@backstage/integration-react` (1.1.1 → 1.1.2)](#backstageintegration-react-111--112)
   - [`@backstage/plugin-adr` (0.1.1 → 0.1.2)](#backstageplugin-adr-011--012)
   - [`@backstage/plugin-adr-backend` (0.1.1 → 0.1.2)](#backstageplugin-adr-backend-011--012)
   - [`@backstage/plugin-airbrake` (0.3.6 → 0.3.7)](#backstageplugin-airbrake-036--037)
@@ -100,7 +85,6 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
   - [`@backstage/plugin-catalog-backend-module-ldap` (0.5.0 → 0.5.1)](#backstageplugin-catalog-backend-module-ldap-050--051)
   - [`@backstage/plugin-catalog-graphql` (0.3.10 → 0.3.11)](#backstageplugin-catalog-graphql-0310--0311)
   - [`@backstage/plugin-catalog-import` (0.8.9 → 0.8.10)](#backstageplugin-catalog-import-089--0810)
-  - [`@backstage/plugin-catalog-react` (1.1.1 → 1.1.2)](#backstageplugin-catalog-react-111--112)
   - [`@backstage/plugin-cicd-statistics` (0.1.8 → 0.1.9)](#backstageplugin-cicd-statistics-018--019)
   - [`@backstage/plugin-cicd-statistics-module-gitlab` (0.1.2 → 0.1.3)](#backstageplugin-cicd-statistics-module-gitlab-012--013)
   - [`@backstage/plugin-circleci` (0.3.6 → 0.3.7)](#backstageplugin-circleci-036--037)
@@ -152,16 +136,34 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
   - [`@backstage/plugin-tech-insights-common` (0.2.4 → 0.2.5)](#backstageplugin-tech-insights-common-024--025)
   - [`@backstage/plugin-tech-insights-node` (0.3.1 → 0.3.2)](#backstageplugin-tech-insights-node-031--032)
   - [`@backstage/plugin-tech-radar` (0.5.13 → 0.5.14)](#backstageplugin-tech-radar-0513--0514)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.1 → 1.0.2)](#backstageplugin-techdocs-addons-test-utils-101--102)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.1 → 1.0.2)](#backstageplugin-techdocs-module-addons-contrib-101--102)
-  - [`@backstage/plugin-techdocs-react` (1.0.1 → 1.0.2)](#backstageplugin-techdocs-react-101--102)
   - [`@backstage/plugin-todo` (0.2.8 → 0.2.9)](#backstageplugin-todo-028--029)
   - [`@backstage/plugin-todo-backend` (0.1.30 → 0.1.31)](#backstageplugin-todo-backend-0130--0131)
   - [`@backstage/plugin-user-settings` (0.4.5 → 0.4.6)](#backstageplugin-user-settings-045--046)
   - [`@backstage/plugin-vault` (0.1.0 → 0.1.1)](#backstageplugin-vault-010--011)
   - [`@backstage/plugin-xcmetrics` (0.2.26 → 0.2.27)](#backstageplugin-xcmetrics-0226--0227)
-  - [`@backstage/test-utils` (1.1.1 → 1.1.2)](#backstagetest-utils-111--112)
   - [`@backstage/theme` (0.2.15 → 0.2.16)](#backstagetheme-0215--0216)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/catalog-model` (1.0.3 → 1.1.0)](#backstagecatalog-model-103--110)
+  - [`@backstage/plugin-catalog` (1.3.0 → 1.4.0)](#backstageplugin-catalog-130--140)
+  - [`@backstage/plugin-catalog-backend` (1.2.0 → 1.3.0)](#backstageplugin-catalog-backend-120--130)
+  - [`@backstage/plugin-scaffolder` (1.3.0 → 1.4.0)](#backstageplugin-scaffolder-130--140)
+  - [`@backstage/plugin-scaffolder-backend` (1.3.1 → 1.4.0)](#backstageplugin-scaffolder-backend-131--140)
+  - [`@backstage/plugin-techdocs` (1.2.0 → 1.3.0)](#backstageplugin-techdocs-120--130)
+  - [`@backstage/plugin-techdocs-backend` (1.1.2 → 1.2.0)](#backstageplugin-techdocs-backend-112--120)
+  - [`@backstage/plugin-techdocs-node` (1.1.2 → 1.2.0)](#backstageplugin-techdocs-node-112--120)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.0.3 → 1.0.4)](#backstageapp-defaults-103--104)
+  - [`@backstage/catalog-client` (1.0.3 → 1.0.4)](#backstagecatalog-client-103--104)
+  - [`@backstage/config-loader` (1.1.2 → 1.1.3)](#backstageconfig-loader-112--113)
+  - [`@backstage/core-app-api` (1.0.3 → 1.0.4)](#backstagecore-app-api-103--104)
+  - [`@backstage/core-plugin-api` (1.0.3 → 1.0.4)](#backstagecore-plugin-api-103--104)
+  - [`@backstage/integration` (1.2.1 → 1.2.2)](#backstageintegration-121--122)
+  - [`@backstage/integration-react` (1.1.1 → 1.1.2)](#backstageintegration-react-111--112)
+  - [`@backstage/plugin-catalog-react` (1.1.1 → 1.1.2)](#backstageplugin-catalog-react-111--112)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.1 → 1.0.2)](#backstageplugin-techdocs-addons-test-utils-101--102)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.1 → 1.0.2)](#backstageplugin-techdocs-module-addons-contrib-101--102)
+  - [`@backstage/plugin-techdocs-react` (1.0.1 → 1.0.2)](#backstageplugin-techdocs-react-101--102)
+  - [`@backstage/test-utils` (1.1.1 → 1.1.2)](#backstagetest-utils-111--112)
   - [`@techdocs/cli` (1.1.2 → 1.1.3)](#techdocscli-112--113)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -817,316 +819,7 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
 - [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
 
-## Other minor version bumps
-
-### `@backstage/catalog-model` (1.0.3 → [1.1.0](../../changelogs/@backstage/catalog-model.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`4cc81372f8`](https://github.com/backstage/backstage/commit/4cc81372f8): Introduced `GroupDefaultParentEntityPolicy` to set a default group entity parent.
-- [`1380b389dc`](https://github.com/backstage/backstage/commit/1380b389dc): Adding an optional type field to entity links to group and categorize links
-
-##### Patch Changes
-
-- [`c3cfc83af2`](https://github.com/backstage/backstage/commit/c3cfc83af2): Updated JSDoc to be MDX compatible.
-- [`f9f1de8100`](https://github.com/backstage/backstage/commit/f9f1de8100): Add shared annotations for Kubernetes clusters
-- [`f1dcc6f3c6`](https://github.com/backstage/backstage/commit/f1dcc6f3c6): Added type predicates for all entity types, e.g. isUserEntity
-- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
-
-### `@backstage/plugin-catalog` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-catalog.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`97c46f2359`](https://github.com/backstage/backstage/commit/97c46f2359): Add `spec.targets` (or `spec.target`) for Location entities at the `CatalogTable`.
-- [`cf288221d1`](https://github.com/backstage/backstage/commit/cf288221d1): Add `Location` target(s) to `AboutCard`.
-- [`a274fe38b9`](https://github.com/backstage/backstage/commit/a274fe38b9): Add hidden title column to catalog and API table to enable filtering by title.
-
-##### Patch Changes
-
-- [`dcaf1cb418`](https://github.com/backstage/backstage/commit/dcaf1cb418): Previously, the color of the Entity Context Menu (in the Entity Page Header) was hardcoded as `white`.
-
-  This was an issue for themes that use a header with a white background. By default, the color of the icon is now `theme.page.fontColor`.
-
-  It can now also be overridden in the theme, which is only necessary if the header title, subtitle and three-dots icon need to have different colors. For example:
-
-  ```typescript
-  export function createThemeOverrides(theme: BackstageTheme): Overrides {
-    return {
-      PluginCatalogEntityContextMenu: {
-        button: {
-          color: 'blue',
-        },
-      },
-      ...
-    },
-    ...
-    }
-  ```
-
-- [`f1dcc6f3c6`](https://github.com/backstage/backstage/commit/f1dcc6f3c6): Use entity type predicates from catalog-model
-- [`258057a4b9`](https://github.com/backstage/backstage/commit/258057a4b9): Adding ability to customize the "unregister entity" menu item in the entity context menu on the entity page with options 'visible','hidden','disabled'.With this three new options, one can hide the "unregister entity" menu item from the list, disable or keep it enabled.
-
-  The boolean input for "unregister entity" will be deprecated later in favour of the above three options.
-
-- [`385389d23c`](https://github.com/backstage/backstage/commit/385389d23c): Updated to remove usage of the `bursts` object in the theme palette
-- [`be26d95141`](https://github.com/backstage/backstage/commit/be26d95141): Added new `EntityProcessingStatusPicker` that will filter for entities with orphans and/or errors.
-
-  If you are using the default Catalog page this picker will be added automatically. For those who have customized their Catalog page you'll need to add this manually by doing something like this:
-
-  ```diff
-  ...
-  import {
-    CatalogFilterLayout,
-    EntityTypePicker,
-    UserListPicker,
-    EntityTagPicker
-  + EntityProcessingStatusPicker,
-  } from '@backstage/plugin-catalog-react';
-  ...
-  export const CustomCatalogPage = ({
-    columns,
-    actions,
-    initiallySelectedFilter = 'owned',
-  }: CatalogPageProps) => {
-    return (
-      ...
-          <EntityListProvider>
-            <CatalogFilterLayout>
-              <CatalogFilterLayout.Filters>
-                <EntityKindPicker initialFilter="component" hidden />
-                <EntityTypePicker />
-                <UserListPicker initialFilter={initiallySelectedFilter} />
-                <EntityTagPicker />
-  +             <EntityProcessingStatusPicker />
-              <CatalogFilterLayout.Filters>
-              <CatalogFilterLayout.Content>
-                <CatalogTable columns={columns} actions={actions} />
-              </CatalogFilterLayout.Content>
-            </CatalogFilterLayout>
-          </EntityListProvider>
-      ...
-  };
-  ```
-
-### `@backstage/plugin-catalog-backend` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-catalog-backend.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`1dd6c22cc8`](https://github.com/backstage/backstage/commit/1dd6c22cc8): Added an option to be able to trigger refreshes on entities based on a prestored arbitrary key.
-
-  The UrlReaderProcessor, FileReaderProcessor got updated to store the absolute URL of the catalog file as a refresh key. In the format of `<type>:<target>`
-  The PlaceholderProcessor got updated to store the resolverValues as refreshKeys for the entities.
-
-  The custom resolvers will need to be updated to pass in a `CatalogProcessorEmit` function as parameter and they should be updated to emit their refresh processingResults. You can see the updated resolvers in the `PlaceholderProcessor.ts`
-
-  ```ts
-    // yamlPlaceholderResolver
-    ...
-    const { content, url } = await readTextLocation(params);
-
-    params.emit(processingResult.refresh(`url:${url}`));
-    ...
-  ```
-
-- [`91c1d12123`](https://github.com/backstage/backstage/commit/91c1d12123): Export experimental `catalogPlugin` for the new backend system. This export is not considered stable and should not be used in production.
-
-##### Patch Changes
-
-- [`1e02fe46d6`](https://github.com/backstage/backstage/commit/1e02fe46d6): Fixed bug where catalog metrics weren't being tracked.
-- [`5f6b847c15`](https://github.com/backstage/backstage/commit/5f6b847c15): Fix Error Code in Register Component DryRun
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
-- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
-- [`fa0533e604`](https://github.com/backstage/backstage/commit/fa0533e604): CatalogBuilder supports now subscription to processing engine errors.
-
-  ```ts
-  subscribe(options: {
-    onProcessingError: (event: { unprocessedEntity: Entity, error: Error }) => Promise<void> | void;
-  });
-  ```
-
-  If you want to get notified on errors while processing the entities, you call CatalogBuilder.subscribe
-  to get notifications with the parameters defined as above.
-
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-- [`f1dcc6f3c6`](https://github.com/backstage/backstage/commit/f1dcc6f3c6): Use entity type predicates from catalog-model
-- [`9a6aba1d85`](https://github.com/backstage/backstage/commit/9a6aba1d85): Many symbol declarations have been moved to `@backstage/plugin-catalog-node`. This has no affect on users of this package as they are all re-exported. Modules that build on top of the catalog backend plugin should switch all of their imports to the `@backstage/plugin-catalog-node` package and remove the dependency on `@backstage/plugin-catalog-backend`.
-
-### `@backstage/plugin-scaffolder` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-scaffolder.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`d8eb82f447`](https://github.com/backstage/backstage/commit/d8eb82f447): Add `allowedRepos` `ui:option` to `RepoUrlPicker` component, and move `repoName` field to own component
-- [`9a96199f86`](https://github.com/backstage/backstage/commit/9a96199f86): Add support for `allowedOwners` to the `BitbucketRepoPicker` used for the workspace value.
-
-##### Patch Changes
-
-- [`37539e29d8`](https://github.com/backstage/backstage/commit/37539e29d8): The template editor now shows the cause of request errors that happen during a dry-run.
-- [`b557e6c58d`](https://github.com/backstage/backstage/commit/b557e6c58d): Fixed that adding more than one `allowedOwner` or `allowedRepo` in the template config will now still set the first value as default in the initial form state of `RepoUrlPicker`.
-- [`842282ecf9`](https://github.com/backstage/backstage/commit/842282ecf9): Bumped `codemirror` dependencies to `v6.0.0`.
-- [`11a5ca35f3`](https://github.com/backstage/backstage/commit/11a5ca35f3): Add allowArbitraryValues for <OwnerPicker /> to provide input validation. This makes it a better experience of users, as they can now expect the values they enter to correspond to a valid owner. This is set to the default behavior by default.
-- [`d600cb2ab6`](https://github.com/backstage/backstage/commit/d600cb2ab6): contextMenu prop passed through to <ScaffolderPageContents /> from the <ScaffolderPage /> component
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
-- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
-- [`693990d4fe`](https://github.com/backstage/backstage/commit/693990d4fe): Updated dependency `@react-hookz/web` to `^15.0.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-- [`464bb0e6c8`](https://github.com/backstage/backstage/commit/464bb0e6c8): The max content size for dry-run files has been reduced from 256k to 64k.
-- [`14146703e5`](https://github.com/backstage/backstage/commit/14146703e5): Add `allowArbitraryValues` to `ui:options` in `OwnedEntityPicker`, similar to `allowArbitraryValues` in `EntityPicker`
-- [`a7c0b34d70`](https://github.com/backstage/backstage/commit/a7c0b34d70): Swap usage of `MaterialTable` with `Table` from `core-components`
-- [`1764296a68`](https://github.com/backstage/backstage/commit/1764296a68): Allow to create Gerrit project using default owner
-
-### `@backstage/plugin-scaffolder-backend` (1.3.1 → [1.4.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`e1a08d872c`](https://github.com/backstage/backstage/commit/e1a08d872c): Added optional assignee parameter for Gitlab Merge Request action
-- [`dab9bcf2e7`](https://github.com/backstage/backstage/commit/dab9bcf2e7): Add `protectEnforceAdmins` as an option to GitHub publish actions
-- [`4baf8a4ece`](https://github.com/backstage/backstage/commit/4baf8a4ece): Update GitLab Merge Request Action to allow source branch to be deleted
-- [`91c1d12123`](https://github.com/backstage/backstage/commit/91c1d12123): Export experimental `scaffolderCatalogExtension` for the new backend system. This export is not considered stable and should not be used in production.
-- [`d10ccc2ed1`](https://github.com/backstage/backstage/commit/d10ccc2ed1): Introduced audit log message when a new scaffolder task is created
-- [`2db07887cb`](https://github.com/backstage/backstage/commit/2db07887cb): Added two new scaffolder actions: `github:repo:create` and `github:repo:push`
-
-##### Patch Changes
-
-- [`ff316b86d8`](https://github.com/backstage/backstage/commit/ff316b86d8): Add `copyWithoutTemplating` to the fetch template action input. `copyWithoutTemplating` also accepts an array of glob patterns. Contents of matched files or directories are copied without being processed, but paths are subject to rendering.
-
-  Deprecate `copyWithoutRender` in favor of `copyWithoutTemplating`.
-
-- [`801d606909`](https://github.com/backstage/backstage/commit/801d606909): Improve error messaging when passing in malformed auth
-- [`089d846962`](https://github.com/backstage/backstage/commit/089d846962): Fix issues with optional directories and files
-- [`ea6dcb84a4`](https://github.com/backstage/backstage/commit/ea6dcb84a4): Don't resolve symlinks, treat them as binary files and copy them as-is
-- [`af02f54483`](https://github.com/backstage/backstage/commit/af02f54483): new setUserAsOwner flag for publish:gitlab action
-
-  The field default is `false`. When true it will use the token configured in the gitlab integration for the matching host, to try and set the user logged in via `repoUrlPicker` `requestUserCredentials` OAuth flow as owner of the repository created in GitLab.
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
-- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
-- [`511f49ee43`](https://github.com/backstage/backstage/commit/511f49ee43): Updated dependency `octokit` to `^2.0.0`.
-- [`735853353b`](https://github.com/backstage/backstage/commit/735853353b): Updated dependency `@octokit/webhooks` to `^10.0.0`.
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-- [`945a27fa6a`](https://github.com/backstage/backstage/commit/945a27fa6a): Add sourcePath option to publish:gerrit action
-- [`1764296a68`](https://github.com/backstage/backstage/commit/1764296a68): Allow to create Gerrit project using default owner
-
-### `@backstage/plugin-techdocs` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-techdocs.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`ebf3eb1641`](https://github.com/backstage/backstage/commit/ebf3eb1641): Use the same initial filter `owned` for the `TechDocsIndexPage` as for the `CatalogPage`.
-
-  If you prefer to keep the previous behavior, you can change the default for the initial filter
-  to `all` (or `starred` if you rather prefer that).
-
-  ```
-  <TechDocsIndexPage initiallySelectedFilter="all" />
-  ```
-
-  In general, with this change you will be able to set props at `TechDocsIndexPage`.
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-- [`3cbebf710e`](https://github.com/backstage/backstage/commit/3cbebf710e): Reorder browser tab title in Techdocs pages to have the site name first.
-- [`726577958f`](https://github.com/backstage/backstage/commit/726577958f): Remove the 60% factor from the font size calculation of headers to use the exact size defined in BackstageTheme.
-- [`7739141ab2`](https://github.com/backstage/backstage/commit/7739141ab2): Fix: When docs are shown in an entity page under the docs tab the sidebars start overlapping with the header and tabs in the page when you scroll the documentation content.
-
-### `@backstage/plugin-techdocs-backend` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-techdocs-backend.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`860765ff45`](https://github.com/backstage/backstage/commit/860765ff45): Added local publishing target directory `config`: `techdocs.publisher.local.publishDirectory`
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
-- [`726577958f`](https://github.com/backstage/backstage/commit/726577958f): Add sample headings on the documented component homepage.
-
-### `@backstage/plugin-techdocs-node` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-techdocs-node.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`860765ff45`](https://github.com/backstage/backstage/commit/860765ff45): Added local publishing target directory `config`: `techdocs.publisher.local.publishDirectory`
-
-##### Patch Changes
-
-- [`a5d73da942`](https://github.com/backstage/backstage/commit/a5d73da942): Fix the flag parsing for `legacyCopyReadmeMdToIndexMd` in `techdocs-cli generate` command, and decouple it's logic from the `techdocs-ref` flag.
-- [`d505b7b37d`](https://github.com/backstage/backstage/commit/d505b7b37d): Fixed issue with git feedback buttons not appearing automatically in docs pages. This was done by appending `repo_url` to the helper function `getRepoUrlFromLocationAnnotation`.
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.0.3 → [1.0.4](../../changelogs/@backstage/app-defaults.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`881fc75a75`](https://github.com/backstage/backstage/commit/881fc75a75): Internal tweak removing usage of explicit type parameters for the `BackstagePlugin` type.
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.14.0 → [0.14.1](../../changelogs/@backstage/backend-common.md#0141))
 
@@ -1175,49 +868,6 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
 - [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
 
-### `@backstage/catalog-client` (1.0.3 → [1.0.4](../../changelogs/@backstage/catalog-client.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-
-### `@backstage/config-loader` (1.1.2 → [1.1.3](../../changelogs/@backstage/config-loader.md#113))
-
-#### 1.1.3
-
-##### Patch Changes
-
-- [`bcada7cd9f`](https://github.com/backstage/backstage/commit/bcada7cd9f): From now on the `$file` placeholder will trim the whitespaces and newline characters from the end of the file it reads.
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`a3acec8819`](https://github.com/backstage/backstage/commit/a3acec8819): Updated dependency `typescript-json-schema` to `^0.54.0`.
-
-### `@backstage/core-app-api` (1.0.3 → [1.0.4](../../changelogs/@backstage/core-app-api.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`881fc75a75`](https://github.com/backstage/backstage/commit/881fc75a75): Internal tweak removing usage of explicit type parameters for the `BackstagePlugin` type.
-- [`8fe2357101`](https://github.com/backstage/backstage/commit/8fe2357101): The `signOut` method of the `IdentityApi` will now navigate the user back to the base URL of the app as indicated by the `app.baseUrl` config.
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-
-### `@backstage/core-plugin-api` (1.0.3 → [1.0.4](../../changelogs/@backstage/core-plugin-api.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`881fc75a75`](https://github.com/backstage/backstage/commit/881fc75a75): Internal tweak removing usage of explicit type parameters for the `BackstagePlugin` type.
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`2990fff4e5`](https://github.com/backstage/backstage/commit/2990fff4e5): Enabled the `@backstage/core-plugin-api/alpha` entry point.
-
 ### `@backstage/create-app` (0.4.28 → [0.4.29](../../changelogs/@backstage/create-app.md#0429))
 
 #### 0.4.29
@@ -1237,39 +887,6 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
   +    "node-gyp": "^9.0.0"
      },
   ```
-
-### `@backstage/integration` (1.2.1 → [1.2.2](../../changelogs/@backstage/integration.md#122))
-
-#### 1.2.2
-
-##### Patch Changes
-
-- [`9de15a41d7`](https://github.com/backstage/backstage/commit/9de15a41d7): Upgrade @octokit/rest to 19.0.3
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`1f29047bad`](https://github.com/backstage/backstage/commit/1f29047bad): Updated dependency `@octokit/auth-app` to `^4.0.0`.
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-- [`8829e175f2`](https://github.com/backstage/backstage/commit/8829e175f2): Allow frontend visibility for `integrations` itself.
-- [`954a94f52f`](https://github.com/backstage/backstage/commit/954a94f52f): Support self-hosted gitlab installations with relative URL.
-- [`4df3390795`](https://github.com/backstage/backstage/commit/4df3390795): Avoid double encoding of the file path in `getBitbucketServerDownloadUrl`
-
-### `@backstage/integration-react` (1.1.1 → [1.1.2](../../changelogs/@backstage/integration-react.md#112))
-
-#### 1.1.2
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
 
 ### `@backstage/plugin-adr` (0.1.1 → [0.1.2](../../changelogs/@backstage/plugin-adr.md#012))
 
@@ -1570,52 +1187,6 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
   - SNYK-JS-PARSEURL-2936249
 
 - [`272106fdad`](https://github.com/backstage/backstage/commit/272106fdad): Support use without `integrations` or only integrations without frontend visible properties (e.g., `bitbucketCloud`) being configured by checking `integrations.github` directly without attempting to load `integrations`.
-
-### `@backstage/plugin-catalog-react` (1.1.1 → [1.1.2](../../changelogs/@backstage/plugin-catalog-react.md#112))
-
-#### 1.1.2
-
-##### Patch Changes
-
-- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
-- [`be26d95141`](https://github.com/backstage/backstage/commit/be26d95141): Added new `EntityProcessingStatusPicker` that will filter for entities with orphans and/or errors.
-
-  If you are using the default Catalog page this picker will be added automatically. For those who have customized their Catalog page you'll need to add this manually by doing something like this:
-
-  ```diff
-  ...
-  import {
-    CatalogFilterLayout,
-    EntityTypePicker,
-    UserListPicker,
-    EntityTagPicker
-  + EntityProcessingStatusPicker,
-  } from '@backstage/plugin-catalog-react';
-  ...
-  export const CustomCatalogPage = ({
-    columns,
-    actions,
-    initiallySelectedFilter = 'owned',
-  }: CatalogPageProps) => {
-    return (
-      ...
-          <EntityListProvider>
-            <CatalogFilterLayout>
-              <CatalogFilterLayout.Filters>
-                <EntityKindPicker initialFilter="component" hidden />
-                <EntityTypePicker />
-                <UserListPicker initialFilter={initiallySelectedFilter} />
-                <EntityTagPicker />
-  +             <EntityProcessingStatusPicker />
-              <CatalogFilterLayout.Filters>
-              <CatalogFilterLayout.Content>
-                <CatalogTable columns={columns} actions={actions} />
-              </CatalogFilterLayout.Content>
-            </CatalogFilterLayout>
-          </EntityListProvider>
-      ...
-  };
-  ```
 
 ### `@backstage/plugin-cicd-statistics` (0.1.8 → [0.1.9](../../changelogs/@backstage/plugin-cicd-statistics.md#019))
 
@@ -2133,41 +1704,6 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
 - [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
 
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`693990d4fe`](https://github.com/backstage/backstage/commit/693990d4fe): Updated dependency `@react-hookz/web` to `^15.0.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
-
-  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
-  to several CVEs detected by Snyk.
-
-  - SNYK-JS-PARSEURL-2935944
-  - SNYK-JS-PARSEURL-2935947
-  - SNYK-JS-PARSEURL-2936249
-
-### `@backstage/plugin-techdocs-react` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-techdocs-react.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`c3cfc83af2`](https://github.com/backstage/backstage/commit/c3cfc83af2): Updated JSDoc to be MDX compatible.
-
 ### `@backstage/plugin-todo` (0.2.8 → [0.2.9](../../changelogs/@backstage/plugin-todo.md#029))
 
 #### 0.2.9
@@ -2216,15 +1752,6 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
 - [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
 - [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
 
-### `@backstage/test-utils` (1.1.1 → [1.1.2](../../changelogs/@backstage/test-utils.md#112))
-
-#### 1.1.2
-
-##### Patch Changes
-
-- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
-- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
-
 ### `@backstage/theme` (0.2.15 → [0.2.16](../../changelogs/@backstage/theme.md#0216))
 
 #### 0.2.16
@@ -2236,6 +1763,483 @@ Changes between 1.3.1 and 1.4.0 — 143 changed and 7 added packages.
   The `genPageTheme` function now includes an optional options object with an optional `fontColor` which defaults to white if not provided.
 
 - [`4c09c09102`](https://github.com/backstage/backstage/commit/4c09c09102): Adds optional `htmlFontSize` property and also sets typography design tokens for h5 and h6 in base theme.
+
+## Other minor version bumps
+
+### `@backstage/catalog-model` (1.0.3 → [1.1.0](../../changelogs/@backstage/catalog-model.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`4cc81372f8`](https://github.com/backstage/backstage/commit/4cc81372f8): Introduced `GroupDefaultParentEntityPolicy` to set a default group entity parent.
+- [`1380b389dc`](https://github.com/backstage/backstage/commit/1380b389dc): Adding an optional type field to entity links to group and categorize links
+
+##### Patch Changes
+
+- [`c3cfc83af2`](https://github.com/backstage/backstage/commit/c3cfc83af2): Updated JSDoc to be MDX compatible.
+- [`f9f1de8100`](https://github.com/backstage/backstage/commit/f9f1de8100): Add shared annotations for Kubernetes clusters
+- [`f1dcc6f3c6`](https://github.com/backstage/backstage/commit/f1dcc6f3c6): Added type predicates for all entity types, e.g. isUserEntity
+- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
+
+### `@backstage/plugin-catalog` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-catalog.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`97c46f2359`](https://github.com/backstage/backstage/commit/97c46f2359): Add `spec.targets` (or `spec.target`) for Location entities at the `CatalogTable`.
+- [`cf288221d1`](https://github.com/backstage/backstage/commit/cf288221d1): Add `Location` target(s) to `AboutCard`.
+- [`a274fe38b9`](https://github.com/backstage/backstage/commit/a274fe38b9): Add hidden title column to catalog and API table to enable filtering by title.
+
+##### Patch Changes
+
+- [`dcaf1cb418`](https://github.com/backstage/backstage/commit/dcaf1cb418): Previously, the color of the Entity Context Menu (in the Entity Page Header) was hardcoded as `white`.
+
+  This was an issue for themes that use a header with a white background. By default, the color of the icon is now `theme.page.fontColor`.
+
+  It can now also be overridden in the theme, which is only necessary if the header title, subtitle and three-dots icon need to have different colors. For example:
+
+  ```typescript
+  export function createThemeOverrides(theme: BackstageTheme): Overrides {
+    return {
+      PluginCatalogEntityContextMenu: {
+        button: {
+          color: 'blue',
+        },
+      },
+      ...
+    },
+    ...
+    }
+  ```
+
+- [`f1dcc6f3c6`](https://github.com/backstage/backstage/commit/f1dcc6f3c6): Use entity type predicates from catalog-model
+- [`258057a4b9`](https://github.com/backstage/backstage/commit/258057a4b9): Adding ability to customize the "unregister entity" menu item in the entity context menu on the entity page with options 'visible','hidden','disabled'.With this three new options, one can hide the "unregister entity" menu item from the list, disable or keep it enabled.
+
+  The boolean input for "unregister entity" will be deprecated later in favour of the above three options.
+
+- [`385389d23c`](https://github.com/backstage/backstage/commit/385389d23c): Updated to remove usage of the `bursts` object in the theme palette
+- [`be26d95141`](https://github.com/backstage/backstage/commit/be26d95141): Added new `EntityProcessingStatusPicker` that will filter for entities with orphans and/or errors.
+
+  If you are using the default Catalog page this picker will be added automatically. For those who have customized their Catalog page you'll need to add this manually by doing something like this:
+
+  ```diff
+  ...
+  import {
+    CatalogFilterLayout,
+    EntityTypePicker,
+    UserListPicker,
+    EntityTagPicker
+  + EntityProcessingStatusPicker,
+  } from '@backstage/plugin-catalog-react';
+  ...
+  export const CustomCatalogPage = ({
+    columns,
+    actions,
+    initiallySelectedFilter = 'owned',
+  }: CatalogPageProps) => {
+    return (
+      ...
+          <EntityListProvider>
+            <CatalogFilterLayout>
+              <CatalogFilterLayout.Filters>
+                <EntityKindPicker initialFilter="component" hidden />
+                <EntityTypePicker />
+                <UserListPicker initialFilter={initiallySelectedFilter} />
+                <EntityTagPicker />
+  +             <EntityProcessingStatusPicker />
+              <CatalogFilterLayout.Filters>
+              <CatalogFilterLayout.Content>
+                <CatalogTable columns={columns} actions={actions} />
+              </CatalogFilterLayout.Content>
+            </CatalogFilterLayout>
+          </EntityListProvider>
+      ...
+  };
+  ```
+
+### `@backstage/plugin-catalog-backend` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-catalog-backend.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`1dd6c22cc8`](https://github.com/backstage/backstage/commit/1dd6c22cc8): Added an option to be able to trigger refreshes on entities based on a prestored arbitrary key.
+
+  The UrlReaderProcessor, FileReaderProcessor got updated to store the absolute URL of the catalog file as a refresh key. In the format of `<type>:<target>`
+  The PlaceholderProcessor got updated to store the resolverValues as refreshKeys for the entities.
+
+  The custom resolvers will need to be updated to pass in a `CatalogProcessorEmit` function as parameter and they should be updated to emit their refresh processingResults. You can see the updated resolvers in the `PlaceholderProcessor.ts`
+
+  ```ts
+    // yamlPlaceholderResolver
+    ...
+    const { content, url } = await readTextLocation(params);
+
+    params.emit(processingResult.refresh(`url:${url}`));
+    ...
+  ```
+
+- [`91c1d12123`](https://github.com/backstage/backstage/commit/91c1d12123): Export experimental `catalogPlugin` for the new backend system. This export is not considered stable and should not be used in production.
+
+##### Patch Changes
+
+- [`1e02fe46d6`](https://github.com/backstage/backstage/commit/1e02fe46d6): Fixed bug where catalog metrics weren't being tracked.
+- [`5f6b847c15`](https://github.com/backstage/backstage/commit/5f6b847c15): Fix Error Code in Register Component DryRun
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
+- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
+- [`fa0533e604`](https://github.com/backstage/backstage/commit/fa0533e604): CatalogBuilder supports now subscription to processing engine errors.
+
+  ```ts
+  subscribe(options: {
+    onProcessingError: (event: { unprocessedEntity: Entity, error: Error }) => Promise<void> | void;
+  });
+  ```
+
+  If you want to get notified on errors while processing the entities, you call CatalogBuilder.subscribe
+  to get notifications with the parameters defined as above.
+
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+- [`f1dcc6f3c6`](https://github.com/backstage/backstage/commit/f1dcc6f3c6): Use entity type predicates from catalog-model
+- [`9a6aba1d85`](https://github.com/backstage/backstage/commit/9a6aba1d85): Many symbol declarations have been moved to `@backstage/plugin-catalog-node`. This has no affect on users of this package as they are all re-exported. Modules that build on top of the catalog backend plugin should switch all of their imports to the `@backstage/plugin-catalog-node` package and remove the dependency on `@backstage/plugin-catalog-backend`.
+
+### `@backstage/plugin-scaffolder` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-scaffolder.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`d8eb82f447`](https://github.com/backstage/backstage/commit/d8eb82f447): Add `allowedRepos` `ui:option` to `RepoUrlPicker` component, and move `repoName` field to own component
+- [`9a96199f86`](https://github.com/backstage/backstage/commit/9a96199f86): Add support for `allowedOwners` to the `BitbucketRepoPicker` used for the workspace value.
+
+##### Patch Changes
+
+- [`37539e29d8`](https://github.com/backstage/backstage/commit/37539e29d8): The template editor now shows the cause of request errors that happen during a dry-run.
+- [`b557e6c58d`](https://github.com/backstage/backstage/commit/b557e6c58d): Fixed that adding more than one `allowedOwner` or `allowedRepo` in the template config will now still set the first value as default in the initial form state of `RepoUrlPicker`.
+- [`842282ecf9`](https://github.com/backstage/backstage/commit/842282ecf9): Bumped `codemirror` dependencies to `v6.0.0`.
+- [`11a5ca35f3`](https://github.com/backstage/backstage/commit/11a5ca35f3): Add allowArbitraryValues for <OwnerPicker /> to provide input validation. This makes it a better experience of users, as they can now expect the values they enter to correspond to a valid owner. This is set to the default behavior by default.
+- [`d600cb2ab6`](https://github.com/backstage/backstage/commit/d600cb2ab6): contextMenu prop passed through to <ScaffolderPageContents /> from the <ScaffolderPage /> component
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
+- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
+- [`693990d4fe`](https://github.com/backstage/backstage/commit/693990d4fe): Updated dependency `@react-hookz/web` to `^15.0.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+- [`464bb0e6c8`](https://github.com/backstage/backstage/commit/464bb0e6c8): The max content size for dry-run files has been reduced from 256k to 64k.
+- [`14146703e5`](https://github.com/backstage/backstage/commit/14146703e5): Add `allowArbitraryValues` to `ui:options` in `OwnedEntityPicker`, similar to `allowArbitraryValues` in `EntityPicker`
+- [`a7c0b34d70`](https://github.com/backstage/backstage/commit/a7c0b34d70): Swap usage of `MaterialTable` with `Table` from `core-components`
+- [`1764296a68`](https://github.com/backstage/backstage/commit/1764296a68): Allow to create Gerrit project using default owner
+
+### `@backstage/plugin-scaffolder-backend` (1.3.1 → [1.4.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`e1a08d872c`](https://github.com/backstage/backstage/commit/e1a08d872c): Added optional assignee parameter for Gitlab Merge Request action
+- [`dab9bcf2e7`](https://github.com/backstage/backstage/commit/dab9bcf2e7): Add `protectEnforceAdmins` as an option to GitHub publish actions
+- [`4baf8a4ece`](https://github.com/backstage/backstage/commit/4baf8a4ece): Update GitLab Merge Request Action to allow source branch to be deleted
+- [`91c1d12123`](https://github.com/backstage/backstage/commit/91c1d12123): Export experimental `scaffolderCatalogExtension` for the new backend system. This export is not considered stable and should not be used in production.
+- [`d10ccc2ed1`](https://github.com/backstage/backstage/commit/d10ccc2ed1): Introduced audit log message when a new scaffolder task is created
+- [`2db07887cb`](https://github.com/backstage/backstage/commit/2db07887cb): Added two new scaffolder actions: `github:repo:create` and `github:repo:push`
+
+##### Patch Changes
+
+- [`ff316b86d8`](https://github.com/backstage/backstage/commit/ff316b86d8): Add `copyWithoutTemplating` to the fetch template action input. `copyWithoutTemplating` also accepts an array of glob patterns. Contents of matched files or directories are copied without being processed, but paths are subject to rendering.
+
+  Deprecate `copyWithoutRender` in favor of `copyWithoutTemplating`.
+
+- [`801d606909`](https://github.com/backstage/backstage/commit/801d606909): Improve error messaging when passing in malformed auth
+- [`089d846962`](https://github.com/backstage/backstage/commit/089d846962): Fix issues with optional directories and files
+- [`ea6dcb84a4`](https://github.com/backstage/backstage/commit/ea6dcb84a4): Don't resolve symlinks, treat them as binary files and copy them as-is
+- [`af02f54483`](https://github.com/backstage/backstage/commit/af02f54483): new setUserAsOwner flag for publish:gitlab action
+
+  The field default is `false`. When true it will use the token configured in the gitlab integration for the matching host, to try and set the user logged in via `repoUrlPicker` `requestUserCredentials` OAuth flow as owner of the repository created in GitLab.
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
+- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
+- [`511f49ee43`](https://github.com/backstage/backstage/commit/511f49ee43): Updated dependency `octokit` to `^2.0.0`.
+- [`735853353b`](https://github.com/backstage/backstage/commit/735853353b): Updated dependency `@octokit/webhooks` to `^10.0.0`.
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+- [`945a27fa6a`](https://github.com/backstage/backstage/commit/945a27fa6a): Add sourcePath option to publish:gerrit action
+- [`1764296a68`](https://github.com/backstage/backstage/commit/1764296a68): Allow to create Gerrit project using default owner
+
+### `@backstage/plugin-techdocs` (1.2.0 → [1.3.0](../../changelogs/@backstage/plugin-techdocs.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`ebf3eb1641`](https://github.com/backstage/backstage/commit/ebf3eb1641): Use the same initial filter `owned` for the `TechDocsIndexPage` as for the `CatalogPage`.
+
+  If you prefer to keep the previous behavior, you can change the default for the initial filter
+  to `all` (or `starred` if you rather prefer that).
+
+  ```
+  <TechDocsIndexPage initiallySelectedFilter="all" />
+  ```
+
+  In general, with this change you will be able to set props at `TechDocsIndexPage`.
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+- [`3cbebf710e`](https://github.com/backstage/backstage/commit/3cbebf710e): Reorder browser tab title in Techdocs pages to have the site name first.
+- [`726577958f`](https://github.com/backstage/backstage/commit/726577958f): Remove the 60% factor from the font size calculation of headers to use the exact size defined in BackstageTheme.
+- [`7739141ab2`](https://github.com/backstage/backstage/commit/7739141ab2): Fix: When docs are shown in an entity page under the docs tab the sidebars start overlapping with the header and tabs in the page when you scroll the documentation content.
+
+### `@backstage/plugin-techdocs-backend` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-techdocs-backend.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`860765ff45`](https://github.com/backstage/backstage/commit/860765ff45): Added local publishing target directory `config`: `techdocs.publisher.local.publishDirectory`
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`679b32172e`](https://github.com/backstage/backstage/commit/679b32172e): Updated dependency `knex` to `^2.0.0`.
+- [`726577958f`](https://github.com/backstage/backstage/commit/726577958f): Add sample headings on the documented component homepage.
+
+### `@backstage/plugin-techdocs-node` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-techdocs-node.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`860765ff45`](https://github.com/backstage/backstage/commit/860765ff45): Added local publishing target directory `config`: `techdocs.publisher.local.publishDirectory`
+
+##### Patch Changes
+
+- [`a5d73da942`](https://github.com/backstage/backstage/commit/a5d73da942): Fix the flag parsing for `legacyCopyReadmeMdToIndexMd` in `techdocs-cli generate` command, and decouple it's logic from the `techdocs-ref` flag.
+- [`d505b7b37d`](https://github.com/backstage/backstage/commit/d505b7b37d): Fixed issue with git feedback buttons not appearing automatically in docs pages. This was done by appending `repo_url` to the helper function `getRepoUrlFromLocationAnnotation`.
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.0.3 → [1.0.4](../../changelogs/@backstage/app-defaults.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`881fc75a75`](https://github.com/backstage/backstage/commit/881fc75a75): Internal tweak removing usage of explicit type parameters for the `BackstagePlugin` type.
+
+### `@backstage/catalog-client` (1.0.3 → [1.0.4](../../changelogs/@backstage/catalog-client.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+
+### `@backstage/config-loader` (1.1.2 → [1.1.3](../../changelogs/@backstage/config-loader.md#113))
+
+#### 1.1.3
+
+##### Patch Changes
+
+- [`bcada7cd9f`](https://github.com/backstage/backstage/commit/bcada7cd9f): From now on the `$file` placeholder will trim the whitespaces and newline characters from the end of the file it reads.
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`a3acec8819`](https://github.com/backstage/backstage/commit/a3acec8819): Updated dependency `typescript-json-schema` to `^0.54.0`.
+
+### `@backstage/core-app-api` (1.0.3 → [1.0.4](../../changelogs/@backstage/core-app-api.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`881fc75a75`](https://github.com/backstage/backstage/commit/881fc75a75): Internal tweak removing usage of explicit type parameters for the `BackstagePlugin` type.
+- [`8fe2357101`](https://github.com/backstage/backstage/commit/8fe2357101): The `signOut` method of the `IdentityApi` will now navigate the user back to the base URL of the app as indicated by the `app.baseUrl` config.
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+
+### `@backstage/core-plugin-api` (1.0.3 → [1.0.4](../../changelogs/@backstage/core-plugin-api.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`881fc75a75`](https://github.com/backstage/backstage/commit/881fc75a75): Internal tweak removing usage of explicit type parameters for the `BackstagePlugin` type.
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`2990fff4e5`](https://github.com/backstage/backstage/commit/2990fff4e5): Enabled the `@backstage/core-plugin-api/alpha` entry point.
+
+### `@backstage/integration` (1.2.1 → [1.2.2](../../changelogs/@backstage/integration.md#122))
+
+#### 1.2.2
+
+##### Patch Changes
+
+- [`9de15a41d7`](https://github.com/backstage/backstage/commit/9de15a41d7): Upgrade @octokit/rest to 19.0.3
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`4e9a90e307`](https://github.com/backstage/backstage/commit/4e9a90e307): Updated dependency `luxon` to `^3.0.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`1f29047bad`](https://github.com/backstage/backstage/commit/1f29047bad): Updated dependency `@octokit/auth-app` to `^4.0.0`.
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+- [`8829e175f2`](https://github.com/backstage/backstage/commit/8829e175f2): Allow frontend visibility for `integrations` itself.
+- [`954a94f52f`](https://github.com/backstage/backstage/commit/954a94f52f): Support self-hosted gitlab installations with relative URL.
+- [`4df3390795`](https://github.com/backstage/backstage/commit/4df3390795): Avoid double encoding of the file path in `getBitbucketServerDownloadUrl`
+
+### `@backstage/integration-react` (1.1.1 → [1.1.2](../../changelogs/@backstage/integration-react.md#112))
+
+#### 1.1.2
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+
+### `@backstage/plugin-catalog-react` (1.1.1 → [1.1.2](../../changelogs/@backstage/plugin-catalog-react.md#112))
+
+#### 1.1.2
+
+##### Patch Changes
+
+- [`72622d9143`](https://github.com/backstage/backstage/commit/72622d9143): Updated dependency `yaml` to `^2.0.0`.
+- [`be26d95141`](https://github.com/backstage/backstage/commit/be26d95141): Added new `EntityProcessingStatusPicker` that will filter for entities with orphans and/or errors.
+
+  If you are using the default Catalog page this picker will be added automatically. For those who have customized their Catalog page you'll need to add this manually by doing something like this:
+
+  ```diff
+  ...
+  import {
+    CatalogFilterLayout,
+    EntityTypePicker,
+    UserListPicker,
+    EntityTagPicker
+  + EntityProcessingStatusPicker,
+  } from '@backstage/plugin-catalog-react';
+  ...
+  export const CustomCatalogPage = ({
+    columns,
+    actions,
+    initiallySelectedFilter = 'owned',
+  }: CatalogPageProps) => {
+    return (
+      ...
+          <EntityListProvider>
+            <CatalogFilterLayout>
+              <CatalogFilterLayout.Filters>
+                <EntityKindPicker initialFilter="component" hidden />
+                <EntityTypePicker />
+                <UserListPicker initialFilter={initiallySelectedFilter} />
+                <EntityTagPicker />
+  +             <EntityProcessingStatusPicker />
+              <CatalogFilterLayout.Filters>
+              <CatalogFilterLayout.Content>
+                <CatalogTable columns={columns} actions={actions} />
+              </CatalogFilterLayout.Content>
+            </CatalogFilterLayout>
+          </EntityListProvider>
+      ...
+  };
+  ```
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`693990d4fe`](https://github.com/backstage/backstage/commit/693990d4fe): Updated dependency `@react-hookz/web` to `^15.0.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
+- [`e2d7b76f43`](https://github.com/backstage/backstage/commit/e2d7b76f43): Upgrade git-url-parse to 12.0.0.
+
+  Motivation for upgrade is transitively upgrading parse-url which is vulnerable
+  to several CVEs detected by Snyk.
+
+  - SNYK-JS-PARSEURL-2935944
+  - SNYK-JS-PARSEURL-2935947
+  - SNYK-JS-PARSEURL-2936249
+
+### `@backstage/plugin-techdocs-react` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-techdocs-react.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`c3cfc83af2`](https://github.com/backstage/backstage/commit/c3cfc83af2): Updated JSDoc to be MDX compatible.
+
+### `@backstage/test-utils` (1.1.1 → [1.1.2](../../changelogs/@backstage/test-utils.md#112))
+
+#### 1.1.2
+
+##### Patch Changes
+
+- [`a70869e775`](https://github.com/backstage/backstage/commit/a70869e775): Updated dependency `msw` to `^0.43.0`.
+- [`8006d0f9bf`](https://github.com/backstage/backstage/commit/8006d0f9bf): Updated dependency `msw` to `^0.44.0`.
 
 ### `@techdocs/cli` (1.1.2 → [1.1.3](../../changelogs/@techdocs/cli.md#113))
 

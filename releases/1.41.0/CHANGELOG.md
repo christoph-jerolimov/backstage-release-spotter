@@ -1,6 +1,6 @@
 # Backstage Release 1.41.0 changelog
 
-Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
+Changes between 1.40.2 and 1.41.0 — 1 added, 0 removed, 174 upgraded, 13 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 - [Breaking changes](#breaking-changes): 8 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 1 package
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 28 packages
 - [Other minor version bumps](#other-minor-version-bumps): 2 packages
-- [Other patch version bumps](#other-patch-version-bumps): 41 packages
+- [Other patch version bumps](#other-patch-version-bumps): 13 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 121 packages
 
 ## Table of contents
@@ -29,32 +30,20 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
   - [`@backstage/repo-tools` (0.14.0 → 0.15.0)](#backstagerepo-tools-0140--0150)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-signals` (0.0.20 → 0.0.21)](#backstageplugin-signals-0020--0021)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-test-utils` (1.6.0 → 1.7.0)](#backstagebackend-test-utils-160--170)
-  - [`@backstage/core-app-api` (1.17.1 → 1.18.0)](#backstagecore-app-api-1171--1180)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.11.0 → 0.11.1)](#backstagebackend-defaults-0110--0111)
   - [`@backstage/backend-dynamic-feature-service` (0.7.1 → 0.7.2)](#backstagebackend-dynamic-feature-service-071--072)
-  - [`@backstage/catalog-client` (1.10.1 → 1.10.2)](#backstagecatalog-client-1101--1102)
-  - [`@backstage/catalog-model` (1.7.4 → 1.7.5)](#backstagecatalog-model-174--175)
   - [`@backstage/cli` (0.33.0 → 0.33.1)](#backstagecli-0330--0331)
-  - [`@backstage/config` (1.3.2 → 1.3.3)](#backstageconfig-132--133)
-  - [`@backstage/config-loader` (1.10.1 → 1.10.2)](#backstageconfig-loader-1101--1102)
   - [`@backstage/core-components` (0.17.3 → 0.17.4)](#backstagecore-components-0173--0174)
-  - [`@backstage/core-plugin-api` (1.10.8 → 1.10.9)](#backstagecore-plugin-api-1108--1109)
   - [`@backstage/frontend-app-api` (0.11.3 → 0.11.4)](#backstagefrontend-app-api-0113--0114)
-  - [`@backstage/integration` (1.17.0 → 1.17.1)](#backstageintegration-1170--1171)
-  - [`@backstage/integration-react` (1.2.8 → 1.2.9)](#backstageintegration-react-128--129)
   - [`@backstage/plugin-app` (0.1.10 → 0.1.11)](#backstageplugin-app-0110--0111)
   - [`@backstage/plugin-auth-backend` (0.25.1 → 0.25.2)](#backstageplugin-auth-backend-0251--0252)
-  - [`@backstage/plugin-catalog` (1.31.0 → 1.31.1)](#backstageplugin-catalog-1310--1311)
   - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.1 → 0.7.2)](#backstageplugin-catalog-backend-module-incremental-ingestion-071--072)
   - [`@backstage/plugin-catalog-backend-module-ldap` (0.11.6 → 0.11.7)](#backstageplugin-catalog-backend-module-ldap-0116--0117)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.7.1 → 0.7.2)](#backstageplugin-catalog-backend-module-msgraph-071--072)
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.2.11 → 0.2.12)](#backstageplugin-catalog-backend-module-puppetdb-0211--0212)
   - [`@backstage/plugin-catalog-graph` (0.4.20 → 0.4.21)](#backstageplugin-catalog-graph-0420--0421)
   - [`@backstage/plugin-catalog-import` (0.13.2 → 0.13.3)](#backstageplugin-catalog-import-0132--0133)
-  - [`@backstage/plugin-catalog-react` (1.19.0 → 1.19.1)](#backstageplugin-catalog-react-1190--1191)
   - [`@backstage/plugin-home` (0.8.9 → 0.8.10)](#backstageplugin-home-089--0810)
   - [`@backstage/plugin-kubernetes-node` (0.3.1 → 0.3.2)](#backstageplugin-kubernetes-node-031--032)
   - [`@backstage/plugin-mcp-actions-backend` (0.1.0 → 0.1.1)](#backstageplugin-mcp-actions-backend-010--011)
@@ -68,12 +57,25 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.8.0 → 0.8.1)](#backstageplugin-scaffolder-backend-module-github-080--081)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.2.10 → 0.2.11)](#backstageplugin-scaffolder-backend-module-sentry-0210--0211)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.3.0 → 0.3.1)](#backstageplugin-scaffolder-node-test-utils-030--031)
+  - [`@backstage/plugin-user-settings` (0.8.23 → 0.8.24)](#backstageplugin-user-settings-0823--0824)
+  - [`@backstage/theme` (0.6.6 → 0.6.7)](#backstagetheme-066--067)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-test-utils` (1.6.0 → 1.7.0)](#backstagebackend-test-utils-160--170)
+  - [`@backstage/core-app-api` (1.17.1 → 1.18.0)](#backstagecore-app-api-1171--1180)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-client` (1.10.1 → 1.10.2)](#backstagecatalog-client-1101--1102)
+  - [`@backstage/catalog-model` (1.7.4 → 1.7.5)](#backstagecatalog-model-174--175)
+  - [`@backstage/config` (1.3.2 → 1.3.3)](#backstageconfig-132--133)
+  - [`@backstage/config-loader` (1.10.1 → 1.10.2)](#backstageconfig-loader-1101--1102)
+  - [`@backstage/core-plugin-api` (1.10.8 → 1.10.9)](#backstagecore-plugin-api-1108--1109)
+  - [`@backstage/integration` (1.17.0 → 1.17.1)](#backstageintegration-1170--1171)
+  - [`@backstage/integration-react` (1.2.8 → 1.2.9)](#backstageintegration-react-128--129)
+  - [`@backstage/plugin-catalog` (1.31.0 → 1.31.1)](#backstageplugin-catalog-1310--1311)
+  - [`@backstage/plugin-catalog-react` (1.19.0 → 1.19.1)](#backstageplugin-catalog-react-1190--1191)
   - [`@backstage/plugin-search-backend` (2.0.3 → 2.0.4)](#backstageplugin-search-backend-203--204)
   - [`@backstage/plugin-search-backend-module-elasticsearch` (1.7.3 → 1.7.4)](#backstageplugin-search-backend-module-elasticsearch-173--174)
   - [`@backstage/plugin-techdocs` (1.13.1 → 1.13.2)](#backstageplugin-techdocs-1131--1132)
   - [`@backstage/plugin-techdocs-node` (1.13.4 → 1.13.5)](#backstageplugin-techdocs-node-1134--1135)
-  - [`@backstage/plugin-user-settings` (0.8.23 → 0.8.24)](#backstageplugin-user-settings-0823--0824)
-  - [`@backstage/theme` (0.6.6 → 0.6.7)](#backstagetheme-066--067)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -374,25 +376,7 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 
 - [`d52d67f`](https://github.com/backstage/backstage/commit/d52d67f): Added a New Frontend System App Root Element for the `<SignalsDisplay />` component
 
-## Other minor version bumps
-
-### `@backstage/backend-test-utils` (1.6.0 → [1.7.0](../../changelogs/@backstage/backend-test-utils.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`ead925a`](https://github.com/backstage/backstage/commit/ead925a): Add a standard `toString` on credentials objects
-
-### `@backstage/core-app-api` (1.17.1 → [1.18.0](../../changelogs/@backstage/core-app-api.md#1180))
-
-#### 1.18.0
-
-##### Minor Changes
-
-- [`5ddc0fe`](https://github.com/backstage/backstage/commit/5ddc0fe): if session exists and refresh fails, then create a new session if not instant popup
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.11.0 → [0.11.1](../../changelogs/@backstage/backend-defaults.md#0111))
 
@@ -413,22 +397,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 - [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
 - [`3d61c36`](https://github.com/backstage/backstage/commit/3d61c36): Fix wrong imports which lead to module initialization failures when enabling dynamic plugins.
 
-### `@backstage/catalog-client` (1.10.1 → [1.10.2](../../changelogs/@backstage/catalog-client.md#1102))
-
-#### 1.10.2
-
-##### Patch Changes
-
-- [`6fb4143`](https://github.com/backstage/backstage/commit/6fb4143): allow arrays in the InMemoryCatalogClient to filter entities
-
-### `@backstage/catalog-model` (1.7.4 → [1.7.5](../../changelogs/@backstage/catalog-model.md#175))
-
-#### 1.7.5
-
-##### Patch Changes
-
-- [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
-
 ### `@backstage/cli` (0.33.0 → [0.33.1](../../changelogs/@backstage/cli.md#0331))
 
 #### 0.33.1
@@ -436,23 +404,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 ##### Patch Changes
 
 - [`50f0ce6`](https://github.com/backstage/backstage/commit/50f0ce6): Fixes a module not found error when running `backstage-cli info`.
-
-### `@backstage/config` (1.3.2 → [1.3.3](../../changelogs/@backstage/config.md#133))
-
-#### 1.3.3
-
-##### Patch Changes
-
-- [`ff23618`](https://github.com/backstage/backstage/commit/ff23618): Loosen the requirements for a key to be considered valid config.
-- [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
-
-### `@backstage/config-loader` (1.10.1 → [1.10.2](../../changelogs/@backstage/config-loader.md#1102))
-
-#### 1.10.2
-
-##### Patch Changes
-
-- [`ff23618`](https://github.com/backstage/backstage/commit/ff23618): Loosen the requirements for a key to be considered valid config.
 
 ### `@backstage/core-components` (0.17.3 → [0.17.4](../../changelogs/@backstage/core-components.md#0174))
 
@@ -463,14 +414,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 - [`f6ffea6`](https://github.com/backstage/backstage/commit/f6ffea6): Add optional message field for auth providers. This is intended to be a user friendly message that displays in the OAuth request dialog. A default message will be displayed if one is not provided.
 - [`aa3b054`](https://github.com/backstage/backstage/commit/aa3b054): Added `signIn` and `signOut` analytic events to the `@backstage/core-components` of sign in and sign out.
 
-### `@backstage/core-plugin-api` (1.10.8 → [1.10.9](../../changelogs/@backstage/core-plugin-api.md#1109))
-
-#### 1.10.9
-
-##### Patch Changes
-
-- [`f6ffea6`](https://github.com/backstage/backstage/commit/f6ffea6): Add optional message field for auth providers. This is intended to be a user friendly message that displays in the OAuth request dialog. A default message will be displayed if one is not provided.
-
 ### `@backstage/frontend-app-api` (0.11.3 → [0.11.4](../../changelogs/@backstage/frontend-app-api.md#0114))
 
 #### 0.11.4
@@ -478,23 +421,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 ##### Patch Changes
 
 - [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
-
-### `@backstage/integration` (1.17.0 → [1.17.1](../../changelogs/@backstage/integration.md#1171))
-
-#### 1.17.1
-
-##### Patch Changes
-
-- [`e0189b8`](https://github.com/backstage/backstage/commit/e0189b8): UrlReader: Fix handling of access tokens for GitLab readURL requests
-- [`d1e4a6d`](https://github.com/backstage/backstage/commit/d1e4a6d): Fixed bug where the GitLab user token and GitLab integration token were being merged together
-
-### `@backstage/integration-react` (1.2.8 → [1.2.9](../../changelogs/@backstage/integration-react.md#129))
-
-#### 1.2.9
-
-##### Patch Changes
-
-- [`998fd15`](https://github.com/backstage/backstage/commit/998fd15): Separated gitlab `write_repository` and `api` scope to pass checks in `RefreshingAuthSessionManager`
 
 ### `@backstage/plugin-app` (0.1.10 → [0.1.11](../../changelogs/@backstage/plugin-app.md#0111))
 
@@ -512,15 +438,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 
 - [`e88cb70`](https://github.com/backstage/backstage/commit/e88cb70): Small internal refactor to move out the `userInfo` database from the `tokenIssuer`. Also removes `exp` from being stored in `UserInfo` and it's now replaced with `created_at` and `updated_at` in the database instead.
 - [`207778c`](https://github.com/backstage/backstage/commit/207778c): Internal refactor of OIDC endpoints and `UserInfoDatabase`
-
-### `@backstage/plugin-catalog` (1.31.0 → [1.31.1](../../changelogs/@backstage/plugin-catalog.md#1311))
-
-#### 1.31.1
-
-##### Patch Changes
-
-- [`6991dab`](https://github.com/backstage/backstage/commit/6991dab): Turn on `pagination` by default in new frontend system, and also make configurable
-- [`3ab9b96`](https://github.com/backstage/backstage/commit/3ab9b96): Updated card extensions for the new frontend system to use the new entity predicates, and to not show the about card on User and Group pages.
 
 ### `@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.7.1 → [0.7.2](../../changelogs/@backstage/plugin-catalog-backend-module-incremental-ingestion.md#072))
 
@@ -570,15 +487,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 ##### Patch Changes
 
 - [`406b8b8`](https://github.com/backstage/backstage/commit/406b8b8): Fixed bug with error message since ResponseError is now thrown from CatalogClient
-
-### `@backstage/plugin-catalog-react` (1.19.0 → [1.19.1](../../changelogs/@backstage/plugin-catalog-react.md#1191))
-
-#### 1.19.1
-
-##### Patch Changes
-
-- [`a07feb7`](https://github.com/backstage/backstage/commit/a07feb7): Fixed a but in the new alpha entity predicates where the `$in` operator mistakenly case sensitive.
-- [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
 
 ### `@backstage/plugin-home` (0.8.9 → [0.8.10](../../changelogs/@backstage/plugin-home.md#0810))
 
@@ -703,6 +611,119 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 
 - [`dbde180`](https://github.com/backstage/backstage/commit/dbde180): An internal refactor which adds additional types to experimental checkpoints
 
+### `@backstage/plugin-user-settings` (0.8.23 → [0.8.24](../../changelogs/@backstage/plugin-user-settings.md#0824))
+
+#### 0.8.24
+
+##### Patch Changes
+
+- [`aa3b054`](https://github.com/backstage/backstage/commit/aa3b054): Added `signIn` and `signOut` analytic events to the `@backstage/core-components` of sign in and sign out.
+
+### `@backstage/theme` (0.6.6 → [0.6.7](../../changelogs/@backstage/theme.md#067))
+
+#### 0.6.7
+
+##### Patch Changes
+
+- [`373486e`](https://github.com/backstage/backstage/commit/373486e): Add a different background colour to focused `MenuItem`s to fix a bug in MUI 4 (which is fixed in MUI 5)
+- [`b68d269`](https://github.com/backstage/backstage/commit/b68d269): Update uncomfortably bright color in recently visited and top visited home page cards
+
+## Other minor version bumps
+
+### `@backstage/backend-test-utils` (1.6.0 → [1.7.0](../../changelogs/@backstage/backend-test-utils.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`ead925a`](https://github.com/backstage/backstage/commit/ead925a): Add a standard `toString` on credentials objects
+
+### `@backstage/core-app-api` (1.17.1 → [1.18.0](../../changelogs/@backstage/core-app-api.md#1180))
+
+#### 1.18.0
+
+##### Minor Changes
+
+- [`5ddc0fe`](https://github.com/backstage/backstage/commit/5ddc0fe): if session exists and refresh fails, then create a new session if not instant popup
+
+## Other patch version bumps
+
+### `@backstage/catalog-client` (1.10.1 → [1.10.2](../../changelogs/@backstage/catalog-client.md#1102))
+
+#### 1.10.2
+
+##### Patch Changes
+
+- [`6fb4143`](https://github.com/backstage/backstage/commit/6fb4143): allow arrays in the InMemoryCatalogClient to filter entities
+
+### `@backstage/catalog-model` (1.7.4 → [1.7.5](../../changelogs/@backstage/catalog-model.md#175))
+
+#### 1.7.5
+
+##### Patch Changes
+
+- [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
+
+### `@backstage/config` (1.3.2 → [1.3.3](../../changelogs/@backstage/config.md#133))
+
+#### 1.3.3
+
+##### Patch Changes
+
+- [`ff23618`](https://github.com/backstage/backstage/commit/ff23618): Loosen the requirements for a key to be considered valid config.
+- [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
+
+### `@backstage/config-loader` (1.10.1 → [1.10.2](../../changelogs/@backstage/config-loader.md#1102))
+
+#### 1.10.2
+
+##### Patch Changes
+
+- [`ff23618`](https://github.com/backstage/backstage/commit/ff23618): Loosen the requirements for a key to be considered valid config.
+
+### `@backstage/core-plugin-api` (1.10.8 → [1.10.9](../../changelogs/@backstage/core-plugin-api.md#1109))
+
+#### 1.10.9
+
+##### Patch Changes
+
+- [`f6ffea6`](https://github.com/backstage/backstage/commit/f6ffea6): Add optional message field for auth providers. This is intended to be a user friendly message that displays in the OAuth request dialog. A default message will be displayed if one is not provided.
+
+### `@backstage/integration` (1.17.0 → [1.17.1](../../changelogs/@backstage/integration.md#1171))
+
+#### 1.17.1
+
+##### Patch Changes
+
+- [`e0189b8`](https://github.com/backstage/backstage/commit/e0189b8): UrlReader: Fix handling of access tokens for GitLab readURL requests
+- [`d1e4a6d`](https://github.com/backstage/backstage/commit/d1e4a6d): Fixed bug where the GitLab user token and GitLab integration token were being merged together
+
+### `@backstage/integration-react` (1.2.8 → [1.2.9](../../changelogs/@backstage/integration-react.md#129))
+
+#### 1.2.9
+
+##### Patch Changes
+
+- [`998fd15`](https://github.com/backstage/backstage/commit/998fd15): Separated gitlab `write_repository` and `api` scope to pass checks in `RefreshingAuthSessionManager`
+
+### `@backstage/plugin-catalog` (1.31.0 → [1.31.1](../../changelogs/@backstage/plugin-catalog.md#1311))
+
+#### 1.31.1
+
+##### Patch Changes
+
+- [`6991dab`](https://github.com/backstage/backstage/commit/6991dab): Turn on `pagination` by default in new frontend system, and also make configurable
+- [`3ab9b96`](https://github.com/backstage/backstage/commit/3ab9b96): Updated card extensions for the new frontend system to use the new entity predicates, and to not show the about card on User and Group pages.
+
+### `@backstage/plugin-catalog-react` (1.19.0 → [1.19.1](../../changelogs/@backstage/plugin-catalog-react.md#1191))
+
+#### 1.19.1
+
+##### Patch Changes
+
+- [`a07feb7`](https://github.com/backstage/backstage/commit/a07feb7): Fixed a but in the new alpha entity predicates where the `$in` operator mistakenly case sensitive.
+- [`3507fcd`](https://github.com/backstage/backstage/commit/3507fcd): Just some more circular dep cleanup
+
 ### `@backstage/plugin-search-backend` (2.0.3 → [2.0.4](../../changelogs/@backstage/plugin-search-backend.md#204))
 
 #### 2.0.4
@@ -734,23 +755,6 @@ Changes between 1.40.2 and 1.41.0 — 174 changed and 1 added packages.
 ##### Patch Changes
 
 - [`029526c`](https://github.com/backstage/backstage/commit/029526c): Updated the error message thrown by parseReferenceAnnotation to reflect the annotation value passed as an argument rather than in correctly assuming location.
-
-### `@backstage/plugin-user-settings` (0.8.23 → [0.8.24](../../changelogs/@backstage/plugin-user-settings.md#0824))
-
-#### 0.8.24
-
-##### Patch Changes
-
-- [`aa3b054`](https://github.com/backstage/backstage/commit/aa3b054): Added `signIn` and `signOut` analytic events to the `@backstage/core-components` of sign in and sign out.
-
-### `@backstage/theme` (0.6.6 → [0.6.7](../../changelogs/@backstage/theme.md#067))
-
-#### 0.6.7
-
-##### Patch Changes
-
-- [`373486e`](https://github.com/backstage/backstage/commit/373486e): Add a different background colour to focused `MenuItem`s to fix a bug in MUI 4 (which is fixed in MUI 5)
-- [`b68d269`](https://github.com/backstage/backstage/commit/b68d269): Update uncomfortably bright color in recently visited and top visited home page cards
 
 ## Excluded dependency updates
 

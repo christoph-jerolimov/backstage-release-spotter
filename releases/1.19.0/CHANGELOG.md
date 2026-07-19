@@ -1,6 +1,6 @@
 # Backstage Release 1.19.0 changelog
 
-Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
+Changes between 1.18.5 and 1.19.0 — 7 added, 0 removed, 221 upgraded, 10 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [Breaking changes](#breaking-changes): 6 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 8 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 104 packages
 - [Other minor version bumps](#other-minor-version-bumps): 9 packages
-- [Other patch version bumps](#other-patch-version-bumps): 125 packages
+- [Other patch version bumps](#other-patch-version-bumps): 21 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 70 packages
 
 ## Table of contents
@@ -42,33 +43,16 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   - [`@backstage/backend-openapi-utils` (0.0.4 → 0.0.5)](#backstagebackend-openapi-utils-004--005)
   - [`@backstage/plugin-analytics-module-newrelic-browser` (0.0.2 → 0.0.3)](#backstageplugin-analytics-module-newrelic-browser-002--003)
   - [`@backstage/plugin-explore-react` (0.0.31 → 0.0.32)](#backstageplugin-explore-react-0031--0032)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/core-app-api` (1.10.0 → 1.11.0)](#backstagecore-app-api-1100--1110)
-  - [`@backstage/core-plugin-api` (1.6.0 → 1.7.0)](#backstagecore-plugin-api-160--170)
-  - [`@backstage/plugin-catalog` (1.13.0 → 1.14.0)](#backstageplugin-catalog-1130--1140)
-  - [`@backstage/plugin-catalog-backend` (1.13.3 → 1.14.0)](#backstageplugin-catalog-backend-1133--1140)
-  - [`@backstage/plugin-scaffolder-backend` (1.17.3 → 1.18.0)](#backstageplugin-scaffolder-backend-1173--1180)
-  - [`@backstage/plugin-techdocs` (1.7.0 → 1.8.0)](#backstageplugin-techdocs-170--180)
-  - [`@backstage/plugin-techdocs-backend` (1.7.2 → 1.8.0)](#backstageplugin-techdocs-backend-172--180)
-  - [`@backstage/plugin-techdocs-node` (1.8.2 → 1.9.0)](#backstageplugin-techdocs-node-182--190)
-  - [`@techdocs/cli` (1.5.2 → 1.6.0)](#techdocscli-152--160)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.4.3 → 1.4.4)](#backstageapp-defaults-143--144)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.5.5 → 0.5.6)](#backstagebackend-app-api-055--056)
   - [`@backstage/backend-common` (0.19.7 → 0.19.8)](#backstagebackend-common-0197--0198)
   - [`@backstage/backend-dev-utils` (0.1.1 → 0.1.2)](#backstagebackend-dev-utils-011--012)
   - [`@backstage/backend-tasks` (0.5.10 → 0.5.11)](#backstagebackend-tasks-0510--0511)
   - [`@backstage/backend-test-utils` (0.2.6 → 0.2.7)](#backstagebackend-test-utils-026--027)
-  - [`@backstage/catalog-model` (1.4.2 → 1.4.3)](#backstagecatalog-model-142--143)
   - [`@backstage/cli-common` (0.1.12 → 0.1.13)](#backstagecli-common-0112--0113)
   - [`@backstage/codemods` (0.1.45 → 0.1.46)](#backstagecodemods-0145--0146)
-  - [`@backstage/config-loader` (1.5.0 → 1.5.1)](#backstageconfig-loader-150--151)
   - [`@backstage/core-components` (0.13.5 → 0.13.6)](#backstagecore-components-0135--0136)
   - [`@backstage/create-app` (0.5.5 → 0.5.6)](#backstagecreate-app-055--056)
-  - [`@backstage/dev-utils` (1.0.21 → 1.0.22)](#backstagedev-utils-1021--1022)
-  - [`@backstage/errors` (1.2.2 → 1.2.3)](#backstageerrors-122--123)
-  - [`@backstage/integration` (1.7.0 → 1.7.1)](#backstageintegration-170--171)
-  - [`@backstage/integration-react` (1.1.19 → 1.1.20)](#backstageintegration-react-1119--1120)
   - [`@backstage/plugin-adr` (0.6.7 → 0.6.8)](#backstageplugin-adr-067--068)
   - [`@backstage/plugin-airbrake` (0.3.24 → 0.3.25)](#backstageplugin-airbrake-0324--0325)
   - [`@backstage/plugin-allure` (0.1.40 → 0.1.41)](#backstageplugin-allure-0140--0141)
@@ -98,8 +82,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.1.10 → 0.1.11)](#backstageplugin-catalog-backend-module-puppetdb-0110--0111)
   - [`@backstage/plugin-catalog-graph` (0.2.36 → 0.2.37)](#backstageplugin-catalog-graph-0236--0237)
   - [`@backstage/plugin-catalog-import` (0.10.0 → 0.10.1)](#backstageplugin-catalog-import-0100--0101)
-  - [`@backstage/plugin-catalog-node` (1.4.6 → 1.4.7)](#backstageplugin-catalog-node-146--147)
-  - [`@backstage/plugin-catalog-react` (1.8.4 → 1.8.5)](#backstageplugin-catalog-react-184--185)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.1.3 → 0.1.4)](#backstageplugin-catalog-unprocessed-entities-013--014)
   - [`@backstage/plugin-cicd-statistics` (0.1.26 → 0.1.27)](#backstageplugin-cicd-statistics-0126--0127)
   - [`@backstage/plugin-circleci` (0.3.24 → 0.3.25)](#backstageplugin-circleci-0324--0325)
@@ -111,7 +93,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   - [`@backstage/plugin-config-schema` (0.1.45 → 0.1.46)](#backstageplugin-config-schema-0145--0146)
   - [`@backstage/plugin-cost-insights` (0.12.13 → 0.12.14)](#backstageplugin-cost-insights-01213--01214)
   - [`@backstage/plugin-devtools` (0.1.4 → 0.1.5)](#backstageplugin-devtools-014--015)
-  - [`@backstage/plugin-dynatrace` (7.0.4 → 7.0.5)](#backstageplugin-dynatrace-704--705)
   - [`@backstage/plugin-entity-feedback` (0.2.7 → 0.2.8)](#backstageplugin-entity-feedback-027--028)
   - [`@backstage/plugin-entity-validation` (0.1.9 → 0.1.10)](#backstageplugin-entity-validation-019--0110)
   - [`@backstage/plugin-explore` (0.4.10 → 0.4.11)](#backstageplugin-explore-0410--0411)
@@ -150,13 +131,7 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   - [`@backstage/plugin-puppetdb` (0.1.7 → 0.1.8)](#backstageplugin-puppetdb-017--018)
   - [`@backstage/plugin-rollbar` (0.4.24 → 0.4.25)](#backstageplugin-rollbar-0424--0425)
   - [`@backstage/plugin-rollbar-backend` (0.1.50 → 0.1.51)](#backstageplugin-rollbar-backend-0150--0151)
-  - [`@backstage/plugin-scaffolder` (1.15.0 → 1.15.1)](#backstageplugin-scaffolder-1150--1151)
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.22 → 0.4.23)](#backstageplugin-scaffolder-backend-module-rails-0422--0423)
-  - [`@backstage/plugin-scaffolder-react` (1.5.5 → 1.5.6)](#backstageplugin-scaffolder-react-155--156)
-  - [`@backstage/plugin-search` (1.4.0 → 1.4.1)](#backstageplugin-search-140--141)
-  - [`@backstage/plugin-search-backend` (1.4.5 → 1.4.6)](#backstageplugin-search-backend-145--146)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.8 → 1.3.9)](#backstageplugin-search-backend-module-elasticsearch-138--139)
-  - [`@backstage/plugin-search-react` (1.7.0 → 1.7.1)](#backstageplugin-search-react-170--171)
   - [`@backstage/plugin-sentry` (0.5.9 → 0.5.10)](#backstageplugin-sentry-059--0510)
   - [`@backstage/plugin-shortcuts` (0.3.14 → 0.3.15)](#backstageplugin-shortcuts-0314--0315)
   - [`@backstage/plugin-sonarqube` (0.7.5 → 0.7.6)](#backstageplugin-sonarqube-075--076)
@@ -167,16 +142,43 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   - [`@backstage/plugin-tech-insights` (0.3.16 → 0.3.17)](#backstageplugin-tech-insights-0316--0317)
   - [`@backstage/plugin-tech-insights-backend` (0.5.19 → 0.5.20)](#backstageplugin-tech-insights-backend-0519--0520)
   - [`@backstage/plugin-tech-radar` (0.6.8 → 0.6.9)](#backstageplugin-tech-radar-068--069)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.21 → 1.0.22)](#backstageplugin-techdocs-addons-test-utils-1021--1022)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.0 → 1.1.1)](#backstageplugin-techdocs-module-addons-contrib-110--111)
-  - [`@backstage/plugin-techdocs-react` (1.1.11 → 1.1.12)](#backstageplugin-techdocs-react-1111--1112)
   - [`@backstage/plugin-todo` (0.2.27 → 0.2.28)](#backstageplugin-todo-0227--0228)
   - [`@backstage/plugin-user-settings` (0.7.10 → 0.7.11)](#backstageplugin-user-settings-0710--0711)
   - [`@backstage/plugin-vault` (0.1.19 → 0.1.20)](#backstageplugin-vault-0119--0120)
   - [`@backstage/plugin-xcmetrics` (0.2.43 → 0.2.44)](#backstageplugin-xcmetrics-0243--0244)
   - [`@backstage/repo-tools` (0.3.4 → 0.3.5)](#backstagerepo-tools-034--035)
-  - [`@backstage/test-utils` (1.4.3 → 1.4.4)](#backstagetest-utils-143--144)
   - [`@backstage/theme` (0.4.2 → 0.4.3)](#backstagetheme-042--043)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/core-app-api` (1.10.0 → 1.11.0)](#backstagecore-app-api-1100--1110)
+  - [`@backstage/core-plugin-api` (1.6.0 → 1.7.0)](#backstagecore-plugin-api-160--170)
+  - [`@backstage/plugin-catalog` (1.13.0 → 1.14.0)](#backstageplugin-catalog-1130--1140)
+  - [`@backstage/plugin-catalog-backend` (1.13.3 → 1.14.0)](#backstageplugin-catalog-backend-1133--1140)
+  - [`@backstage/plugin-scaffolder-backend` (1.17.3 → 1.18.0)](#backstageplugin-scaffolder-backend-1173--1180)
+  - [`@backstage/plugin-techdocs` (1.7.0 → 1.8.0)](#backstageplugin-techdocs-170--180)
+  - [`@backstage/plugin-techdocs-backend` (1.7.2 → 1.8.0)](#backstageplugin-techdocs-backend-172--180)
+  - [`@backstage/plugin-techdocs-node` (1.8.2 → 1.9.0)](#backstageplugin-techdocs-node-182--190)
+  - [`@techdocs/cli` (1.5.2 → 1.6.0)](#techdocscli-152--160)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.4.3 → 1.4.4)](#backstageapp-defaults-143--144)
+  - [`@backstage/catalog-model` (1.4.2 → 1.4.3)](#backstagecatalog-model-142--143)
+  - [`@backstage/config-loader` (1.5.0 → 1.5.1)](#backstageconfig-loader-150--151)
+  - [`@backstage/dev-utils` (1.0.21 → 1.0.22)](#backstagedev-utils-1021--1022)
+  - [`@backstage/errors` (1.2.2 → 1.2.3)](#backstageerrors-122--123)
+  - [`@backstage/integration` (1.7.0 → 1.7.1)](#backstageintegration-170--171)
+  - [`@backstage/integration-react` (1.1.19 → 1.1.20)](#backstageintegration-react-1119--1120)
+  - [`@backstage/plugin-catalog-node` (1.4.6 → 1.4.7)](#backstageplugin-catalog-node-146--147)
+  - [`@backstage/plugin-catalog-react` (1.8.4 → 1.8.5)](#backstageplugin-catalog-react-184--185)
+  - [`@backstage/plugin-dynatrace` (7.0.4 → 7.0.5)](#backstageplugin-dynatrace-704--705)
+  - [`@backstage/plugin-scaffolder` (1.15.0 → 1.15.1)](#backstageplugin-scaffolder-1150--1151)
+  - [`@backstage/plugin-scaffolder-react` (1.5.5 → 1.5.6)](#backstageplugin-scaffolder-react-155--156)
+  - [`@backstage/plugin-search` (1.4.0 → 1.4.1)](#backstageplugin-search-140--141)
+  - [`@backstage/plugin-search-backend` (1.4.5 → 1.4.6)](#backstageplugin-search-backend-145--146)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.8 → 1.3.9)](#backstageplugin-search-backend-module-elasticsearch-138--139)
+  - [`@backstage/plugin-search-react` (1.7.0 → 1.7.1)](#backstageplugin-search-react-170--171)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.21 → 1.0.22)](#backstageplugin-techdocs-addons-test-utils-1021--1022)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.0 → 1.1.1)](#backstageplugin-techdocs-module-addons-contrib-110--111)
+  - [`@backstage/plugin-techdocs-react` (1.1.11 → 1.1.12)](#backstageplugin-techdocs-react-1111--1112)
+  - [`@backstage/test-utils` (1.4.3 → 1.4.4)](#backstagetest-utils-143--144)
   - [`@backstage/version-bridge` (1.0.5 → 1.0.6)](#backstageversion-bridge-105--106)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -520,178 +522,7 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
 - [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
 
-## Other minor version bumps
-
-### `@backstage/core-app-api` (1.10.0 → [1.11.0](../../changelogs/@backstage/core-app-api.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`c9d9bfeca2`](https://github.com/backstage/backstage/commit/c9d9bfeca2): URL encode some well known unsafe characters in `RouteResolver` (and therefore `useRouteRef`)
-
-##### Patch Changes
-
-- [`29e4d8b76b`](https://github.com/backstage/backstage/commit/29e4d8b76b): Fixed bug in `AppRouter` to determine the correct `signOutTargetUrl` if `app.baseUrl` contains a `basePath`
-- [`acca17e91a`](https://github.com/backstage/backstage/commit/acca17e91a): Wrap entire app in `<Suspense>`, enabling support for using translations outside plugins.
-- [`1a0616fa10`](https://github.com/backstage/backstage/commit/1a0616fa10): Add missing resource and template app icons
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`f1b349cfba`](https://github.com/backstage/backstage/commit/f1b349cfba): Fixed a bug in `TranslationApi` implementation where in some cases it wouldn't notify subscribers of language changes.
-
-### `@backstage/core-plugin-api` (1.6.0 → [1.7.0](../../changelogs/@backstage/core-plugin-api.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`322bbcae24`](https://github.com/backstage/backstage/commit/322bbcae24): Removed the exprimental plugin configuration API. The `__experimentalReconfigure()` from the plugin options as well as the `__experimentalConfigure()` method on plugin instances have both been removed.
-
-##### Patch Changes
-
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-
-### `@backstage/plugin-catalog` (1.13.0 → [1.14.0](../../changelogs/@backstage/plugin-catalog.md#1140))
-
-#### 1.14.0
-
-##### Minor Changes
-
-- [`28f1ab2e1a`](https://github.com/backstage/backstage/commit/28f1ab2e1a): The catalog plugin no longer implements the experimental reconfiguration API. The create button title can now instead be configured using the new experimental internationalization API, via the `catalogTranslationRef` exported at `/alpha`. For example:
-
-  ```ts
-  import { catalogTranslationRef } from '@backstage/plugin-catalog/alpha';
-
-  const app = createApp({
-    __experimentalTranslations: {
-      resources: [
-        createTranslationMessages({
-          ref: catalogTranslationRef,
-          catalog_page_create_button_title: 'Create Software',
-        }),
-      ],
-    },
-  });
-  ```
-
-- [`f3561a2935`](https://github.com/backstage/backstage/commit/f3561a2935): include owner chip in catalog search result item
-
-##### Patch Changes
-
-- [`7c4a8e4d5f`](https://github.com/backstage/backstage/commit/7c4a8e4d5f): Create an experimental `CatalogSearchResultItemExtension` for declarative integration with Backstage; it can be accessed via the `/alpha` import.
-- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `spec.lifecycle' field in entities will now always be rendered as a string.
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`e5a2956dd2`](https://github.com/backstage/backstage/commit/e5a2956dd2): Migrate catalog api to declarative integration system, it is exported from `/alpha` subpath.
-
-### `@backstage/plugin-catalog-backend` (1.13.3 → [1.14.0](../../changelogs/@backstage/plugin-catalog-backend.md#1140))
-
-#### 1.14.0
-
-##### Minor Changes
-
-- [`78af9433c8`](https://github.com/backstage/backstage/commit/78af9433c8): Instrumenting some missing metrics with `OpenTelemetry`
-
-##### Patch Changes
-
-- [`7a2e2924c7`](https://github.com/backstage/backstage/commit/7a2e2924c7): Marked the `LocationEntityProcessor` as deprecated, as it is no longer used internally since way back and can even be harmful at this point.
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-- [`348e8c1cdb`](https://github.com/backstage/backstage/commit/348e8c1cdb): Fixes a bug where eagerly deleted entities did not properly trigger re-stitching of entities that they had relations to.
-- [`b97e9790f0`](https://github.com/backstage/backstage/commit/b97e9790f0): Internal refactors, laying the foundation for later introducing deferred stitching (see #18062).
-
-### `@backstage/plugin-scaffolder-backend` (1.17.3 → [1.18.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1180))
-
-#### 1.18.0
-
-##### Minor Changes
-
-- [`dea0aafda7`](https://github.com/backstage/backstage/commit/dea0aafda7): Updated `publish:gitlab` action properties to support additional Gitlab project settings:
-
-  - general project settings provided by gitlab project create API (new `settings` property)
-  - branch level settings to create additional branches and make them protected (new `branches` property)
-  - project level environment variables settings (new `projectVariables` property)
-
-  Marked existed properties `repoVisibility` and `topics` as deprecated, as they are covered by `settings` property.
-
-- [`f41099bb31`](https://github.com/backstage/backstage/commit/f41099bb31): Display meaningful error to the output if Gitlab namespace not found inside `publish:gitlab`.
-
-##### Patch Changes
-
-- [`7dd82cc07e`](https://github.com/backstage/backstage/commit/7dd82cc07e): Add examples for `github:issues:label` scaffolder action & improve related tests
-- [`733ddf7130`](https://github.com/backstage/backstage/commit/733ddf7130): Add examples for `publish:Azure` scaffolder action.
-
-### `@backstage/plugin-techdocs` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-techdocs.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`27740caa2d`](https://github.com/backstage/backstage/commit/27740caa2d): Added experimental support for declarative integration via the `/alpha` subpath.
-
-##### Patch Changes
-
-- [`4918f65ab2`](https://github.com/backstage/backstage/commit/4918f65ab2): Create an experimental `TechDocsSearchResultItemExtension` for declarative integration with Backstage; it can be accessed via the `/alpha` import.
-- [`3605370af6`](https://github.com/backstage/backstage/commit/3605370af6): Improved `DocsTable` to display pagination controls dynamically, appearing only when needed.
-- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `spec.lifecycle' field in entities will now always be rendered as a string.
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`9468a67b92`](https://github.com/backstage/backstage/commit/9468a67b92): Added support for React 18. The new `createRoot` API from `react-dom/client` will now be used if present.
-- [`df449a7a31`](https://github.com/backstage/backstage/commit/df449a7a31): Add kind column by default to TechDocsTable
-
-### `@backstage/plugin-techdocs-backend` (1.7.2 → [1.8.0](../../changelogs/@backstage/plugin-techdocs-backend.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`344cfbcfbc`](https://github.com/backstage/backstage/commit/344cfbcfbc): Allow prepared directory clean up for custom preparers
-
-  When using custom preparer for TechDocs, the `preparedDir` might
-  end up taking disk space. This requires all custom preparers to
-  implement a new method `shouldCleanPreparedDirectory` which indicates
-  whether the prepared directory should be cleaned after generation.
-
-### `@backstage/plugin-techdocs-node` (1.8.2 → [1.9.0](../../changelogs/@backstage/plugin-techdocs-node.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`344cfbcfbc`](https://github.com/backstage/backstage/commit/344cfbcfbc): Allow prepared directory clean up for custom preparers
-
-  When using custom preparer for TechDocs, the `preparedDir` might
-  end up taking disk space. This requires all custom preparers to
-  implement a new method `shouldCleanPreparedDirectory` which indicates
-  whether the prepared directory should be cleaned after generation.
-
-- [`d06b30b050`](https://github.com/backstage/backstage/commit/d06b30b050): Add possibility to use a mkdocs config file with a different name than `mkdocs.<yaml|yml> with the serve command using the `--mkdocs-config-file-name` argument
-
-### `@techdocs/cli` (1.5.2 → [1.6.0](../../changelogs/@techdocs/cli.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`d06b30b050`](https://github.com/backstage/backstage/commit/d06b30b050): Add possibility to use a mkdocs config file with a different name than `mkdocs.<yaml|yml> with the serve command using the `--mkdocs-config-file-name` argument
-
-##### Patch Changes
-
-- [`de42eebaaf`](https://github.com/backstage/backstage/commit/de42eebaaf): Bumped dev dependencies `@types/node` and `mock-fs`.
-- [`2b6e572051`](https://github.com/backstage/backstage/commit/2b6e572051): Restructured tests.
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.4.3 → [1.4.4](../../changelogs/@backstage/app-defaults.md#144))
-
-#### 1.4.4
-
-##### Patch Changes
-
-- [`1a0616fa10`](https://github.com/backstage/backstage/commit/1a0616fa10): Add missing resource and template app icons
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.5.5 → [0.5.6](../../changelogs/@backstage/backend-app-api.md#056))
 
@@ -751,14 +582,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [`5ddc03813e`](https://github.com/backstage/backstage/commit/5ddc03813e): Remove third type parameter used for `MockInstance`, in order to be compatible with older versions of `@types/jest`.
 - [`74491c9602`](https://github.com/backstage/backstage/commit/74491c9602): Updated to import `HostDiscovery` from `@backstage/backend-app-api`.
 
-### `@backstage/catalog-model` (1.4.2 → [1.4.3](../../changelogs/@backstage/catalog-model.md#143))
-
-#### 1.4.3
-
-##### Patch Changes
-
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-
 ### `@backstage/cli-common` (0.1.12 → [0.1.13](../../changelogs/@backstage/cli-common.md#0113))
 
 #### 0.1.13
@@ -774,17 +597,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 ##### Patch Changes
 
 - [`de42eebaaf`](https://github.com/backstage/backstage/commit/de42eebaaf): Bumped dev dependencies `@types/node` and `mock-fs`.
-
-### `@backstage/config-loader` (1.5.0 → [1.5.1](../../changelogs/@backstage/config-loader.md#151))
-
-#### 1.5.1
-
-##### Patch Changes
-
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-- [`30c553c1d2`](https://github.com/backstage/backstage/commit/30c553c1d2): Updated dependency `typescript-json-schema` to `^0.61.0`.
-- [`773ea341d2`](https://github.com/backstage/backstage/commit/773ea341d2): The `FileConfigSource` will now retry file reading after a short delay if it reads an empty file. This is to avoid flakiness during watch mode where change events can trigger before the file content has been written.
-- [`a4617c422a`](https://github.com/backstage/backstage/commit/a4617c422a): Added `watch` option to configuration loaders that can be used to disable file watching by setting it to `false`.
 
 ### `@backstage/core-components` (0.13.5 → [0.13.6](../../changelogs/@backstage/core-components.md#0136))
 
@@ -835,44 +647,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
   ```diff
   + playwright.config.ts
   ```
-
-### `@backstage/dev-utils` (1.0.21 → [1.0.22](../../changelogs/@backstage/dev-utils.md#1022))
-
-#### 1.0.22
-
-##### Patch Changes
-
-- [`080d1beb2a`](https://github.com/backstage/backstage/commit/080d1beb2a): Moving development `dependencies` to `devDependencies`
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`9468a67b92`](https://github.com/backstage/backstage/commit/9468a67b92): Added support for React 18. The new `createRoot` API from `react-dom/client` will now be used if present.
-
-### `@backstage/errors` (1.2.2 → [1.2.3](../../changelogs/@backstage/errors.md#123))
-
-#### 1.2.3
-
-##### Patch Changes
-
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-
-### `@backstage/integration` (1.7.0 → [1.7.1](../../changelogs/@backstage/integration.md#171))
-
-#### 1.7.1
-
-##### Patch Changes
-
-- [`3963d0b885`](https://github.com/backstage/backstage/commit/3963d0b885): Ensure that all relevant config fields are properly marked as secret
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-
-### `@backstage/integration-react` (1.1.19 → [1.1.20](../../changelogs/@backstage/integration-react.md#1120))
-
-#### 1.1.20
-
-##### Patch Changes
-
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
 
 ### `@backstage/plugin-adr` (0.6.7 → [0.6.8](../../changelogs/@backstage/plugin-adr.md#068))
 
@@ -1148,26 +922,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
 - [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `app.title` configuration is now properly required to be a string.
 
-### `@backstage/plugin-catalog-node` (1.4.6 → [1.4.7](../../changelogs/@backstage/plugin-catalog-node.md#147))
-
-#### 1.4.7
-
-##### Patch Changes
-
-- [`7a2e2924c7`](https://github.com/backstage/backstage/commit/7a2e2924c7): Added docs to `processingResult`
-
-### `@backstage/plugin-catalog-react` (1.8.4 → [1.8.5](../../changelogs/@backstage/plugin-catalog-react.md#185))
-
-#### 1.8.5
-
-##### Patch Changes
-
-- [`a402e1dfb9`](https://github.com/backstage/backstage/commit/a402e1dfb9): Fixed an issue causing `EntityPage` to show an error for entities containing special characters
-- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `spec.type` field in entities will now always be rendered as a string.
-
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.1.3 → [0.1.4](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#014))
 
 #### 0.1.4
@@ -1268,15 +1022,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 ##### Patch Changes
 
 - [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-
-### `@backstage/plugin-dynatrace` (7.0.4 → [7.0.5](../../changelogs/@backstage/plugin-dynatrace.md#705))
-
-#### 7.0.5
-
-##### Patch Changes
-
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
 
 ### `@backstage/plugin-entity-feedback` (0.2.7 → [0.2.8](../../changelogs/@backstage/plugin-entity-feedback.md#028))
 
@@ -1627,19 +1372,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 
 - [`407f4284be`](https://github.com/backstage/backstage/commit/407f4284be): ensure rollbar token is hidden
 
-### `@backstage/plugin-scaffolder` (1.15.0 → [1.15.1](../../changelogs/@backstage/plugin-scaffolder.md#1151))
-
-#### 1.15.1
-
-##### Patch Changes
-
-- [`b337d78c3b`](https://github.com/backstage/backstage/commit/b337d78c3b): fixed issue related template editor fails with multiple templates per file.
-- [`ff2ab02690`](https://github.com/backstage/backstage/commit/ff2ab02690): Make entity picker more reliable with only one available entity
-- [`83e4a42ccd`](https://github.com/backstage/backstage/commit/83e4a42ccd): Display log visibility button on the template panel
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`4c70fe497d`](https://github.com/backstage/backstage/commit/4c70fe497d): `RepoUrlPickerRepoName` now correctly handles value changes in allowed repos.
-
 ### `@backstage/plugin-scaffolder-backend-module-rails` (0.4.22 → [0.4.23](../../changelogs/@backstage/plugin-scaffolder-backend-module-rails.md#0423))
 
 #### 0.4.23
@@ -1647,54 +1379,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 ##### Patch Changes
 
 - [`de42eebaaf`](https://github.com/backstage/backstage/commit/de42eebaaf): Bumped dev dependencies `@types/node` and `mock-fs`.
-
-### `@backstage/plugin-scaffolder-react` (1.5.5 → [1.5.6](../../changelogs/@backstage/plugin-scaffolder-react.md#156))
-
-#### 1.5.6
-
-##### Patch Changes
-
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-
-### `@backstage/plugin-search` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-search.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`e5a2956dd2`](https://github.com/backstage/backstage/commit/e5a2956dd2): Create an experimental search plugin that is compatible with the declarative integration system, it is exported from `/alpha` subpath.
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): Minor internal code cleanup.
-
-### `@backstage/plugin-search-backend` (1.4.5 → [1.4.6](../../changelogs/@backstage/plugin-search-backend.md#146))
-
-#### 1.4.6
-
-##### Patch Changes
-
-- [`16be6f9473`](https://github.com/backstage/backstage/commit/16be6f9473): Set the default length limit to search query to 100. To override it, define `search.maxTermLength` in the config file.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.8 → [1.3.9](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#139))
-
-#### 1.3.9
-
-##### Patch Changes
-
-- [`3963d0b885`](https://github.com/backstage/backstage/commit/3963d0b885): Ensure that all relevant config fields are properly marked as secret
-
-### `@backstage/plugin-search-react` (1.7.0 → [1.7.1](../../changelogs/@backstage/plugin-search-react.md#171))
-
-#### 1.7.1
-
-##### Patch Changes
-
-- [`06432f900c`](https://github.com/backstage/backstage/commit/06432f900c): Updated `/alpha` exports to use new `attachTo` option.
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The filter options passed to `SearchResultGroupLayout` are now always explicitly rendered as strings by default.
-- [`703a4ffc5b`](https://github.com/backstage/backstage/commit/703a4ffc5b): Create `createSearchResultListItem` alpha version that only supports declarative integration.
 
 ### `@backstage/plugin-sentry` (0.5.9 → [0.5.10](../../changelogs/@backstage/plugin-sentry.md#0510))
 
@@ -1787,32 +1471,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
 - [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
 
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.21 → [1.0.22](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1022))
-
-#### 1.0.22
-
-##### Patch Changes
-
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
-
-### `@backstage/plugin-techdocs-react` (1.1.11 → [1.1.12](../../changelogs/@backstage/plugin-techdocs-react.md#1112))
-
-#### 1.1.12
-
-##### Patch Changes
-
-- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-
 ### `@backstage/plugin-todo` (0.2.27 → [0.2.28](../../changelogs/@backstage/plugin-todo.md#0228))
 
 #### 0.2.28
@@ -1859,6 +1517,360 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 
 - [`de42eebaaf`](https://github.com/backstage/backstage/commit/de42eebaaf): Bumped dev dependencies `@types/node` and `mock-fs`.
 
+### `@backstage/theme` (0.4.2 → [0.4.3](../../changelogs/@backstage/theme.md#043))
+
+#### 0.4.3
+
+##### Patch Changes
+
+- [`5ad5344756`](https://github.com/backstage/backstage/commit/5ad5344756): Added support for string `fontSize` values (e.g. `"2.5rem"`) in themes in addition to numbers. Also added an optional `fontFamily` prop for header typography variants to allow further customization.
+
+## Other minor version bumps
+
+### `@backstage/core-app-api` (1.10.0 → [1.11.0](../../changelogs/@backstage/core-app-api.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`c9d9bfeca2`](https://github.com/backstage/backstage/commit/c9d9bfeca2): URL encode some well known unsafe characters in `RouteResolver` (and therefore `useRouteRef`)
+
+##### Patch Changes
+
+- [`29e4d8b76b`](https://github.com/backstage/backstage/commit/29e4d8b76b): Fixed bug in `AppRouter` to determine the correct `signOutTargetUrl` if `app.baseUrl` contains a `basePath`
+- [`acca17e91a`](https://github.com/backstage/backstage/commit/acca17e91a): Wrap entire app in `<Suspense>`, enabling support for using translations outside plugins.
+- [`1a0616fa10`](https://github.com/backstage/backstage/commit/1a0616fa10): Add missing resource and template app icons
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`f1b349cfba`](https://github.com/backstage/backstage/commit/f1b349cfba): Fixed a bug in `TranslationApi` implementation where in some cases it wouldn't notify subscribers of language changes.
+
+### `@backstage/core-plugin-api` (1.6.0 → [1.7.0](../../changelogs/@backstage/core-plugin-api.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`322bbcae24`](https://github.com/backstage/backstage/commit/322bbcae24): Removed the exprimental plugin configuration API. The `__experimentalReconfigure()` from the plugin options as well as the `__experimentalConfigure()` method on plugin instances have both been removed.
+
+##### Patch Changes
+
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+
+### `@backstage/plugin-catalog` (1.13.0 → [1.14.0](../../changelogs/@backstage/plugin-catalog.md#1140))
+
+#### 1.14.0
+
+##### Minor Changes
+
+- [`28f1ab2e1a`](https://github.com/backstage/backstage/commit/28f1ab2e1a): The catalog plugin no longer implements the experimental reconfiguration API. The create button title can now instead be configured using the new experimental internationalization API, via the `catalogTranslationRef` exported at `/alpha`. For example:
+
+  ```ts
+  import { catalogTranslationRef } from '@backstage/plugin-catalog/alpha';
+
+  const app = createApp({
+    __experimentalTranslations: {
+      resources: [
+        createTranslationMessages({
+          ref: catalogTranslationRef,
+          catalog_page_create_button_title: 'Create Software',
+        }),
+      ],
+    },
+  });
+  ```
+
+- [`f3561a2935`](https://github.com/backstage/backstage/commit/f3561a2935): include owner chip in catalog search result item
+
+##### Patch Changes
+
+- [`7c4a8e4d5f`](https://github.com/backstage/backstage/commit/7c4a8e4d5f): Create an experimental `CatalogSearchResultItemExtension` for declarative integration with Backstage; it can be accessed via the `/alpha` import.
+- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `spec.lifecycle' field in entities will now always be rendered as a string.
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`e5a2956dd2`](https://github.com/backstage/backstage/commit/e5a2956dd2): Migrate catalog api to declarative integration system, it is exported from `/alpha` subpath.
+
+### `@backstage/plugin-catalog-backend` (1.13.3 → [1.14.0](../../changelogs/@backstage/plugin-catalog-backend.md#1140))
+
+#### 1.14.0
+
+##### Minor Changes
+
+- [`78af9433c8`](https://github.com/backstage/backstage/commit/78af9433c8): Instrumenting some missing metrics with `OpenTelemetry`
+
+##### Patch Changes
+
+- [`7a2e2924c7`](https://github.com/backstage/backstage/commit/7a2e2924c7): Marked the `LocationEntityProcessor` as deprecated, as it is no longer used internally since way back and can even be harmful at this point.
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+- [`348e8c1cdb`](https://github.com/backstage/backstage/commit/348e8c1cdb): Fixes a bug where eagerly deleted entities did not properly trigger re-stitching of entities that they had relations to.
+- [`b97e9790f0`](https://github.com/backstage/backstage/commit/b97e9790f0): Internal refactors, laying the foundation for later introducing deferred stitching (see #18062).
+
+### `@backstage/plugin-scaffolder-backend` (1.17.3 → [1.18.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1180))
+
+#### 1.18.0
+
+##### Minor Changes
+
+- [`dea0aafda7`](https://github.com/backstage/backstage/commit/dea0aafda7): Updated `publish:gitlab` action properties to support additional Gitlab project settings:
+
+  - general project settings provided by gitlab project create API (new `settings` property)
+  - branch level settings to create additional branches and make them protected (new `branches` property)
+  - project level environment variables settings (new `projectVariables` property)
+
+  Marked existed properties `repoVisibility` and `topics` as deprecated, as they are covered by `settings` property.
+
+- [`f41099bb31`](https://github.com/backstage/backstage/commit/f41099bb31): Display meaningful error to the output if Gitlab namespace not found inside `publish:gitlab`.
+
+##### Patch Changes
+
+- [`7dd82cc07e`](https://github.com/backstage/backstage/commit/7dd82cc07e): Add examples for `github:issues:label` scaffolder action & improve related tests
+- [`733ddf7130`](https://github.com/backstage/backstage/commit/733ddf7130): Add examples for `publish:Azure` scaffolder action.
+
+### `@backstage/plugin-techdocs` (1.7.0 → [1.8.0](../../changelogs/@backstage/plugin-techdocs.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`27740caa2d`](https://github.com/backstage/backstage/commit/27740caa2d): Added experimental support for declarative integration via the `/alpha` subpath.
+
+##### Patch Changes
+
+- [`4918f65ab2`](https://github.com/backstage/backstage/commit/4918f65ab2): Create an experimental `TechDocsSearchResultItemExtension` for declarative integration with Backstage; it can be accessed via the `/alpha` import.
+- [`3605370af6`](https://github.com/backstage/backstage/commit/3605370af6): Improved `DocsTable` to display pagination controls dynamically, appearing only when needed.
+- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `spec.lifecycle' field in entities will now always be rendered as a string.
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`9468a67b92`](https://github.com/backstage/backstage/commit/9468a67b92): Added support for React 18. The new `createRoot` API from `react-dom/client` will now be used if present.
+- [`df449a7a31`](https://github.com/backstage/backstage/commit/df449a7a31): Add kind column by default to TechDocsTable
+
+### `@backstage/plugin-techdocs-backend` (1.7.2 → [1.8.0](../../changelogs/@backstage/plugin-techdocs-backend.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`344cfbcfbc`](https://github.com/backstage/backstage/commit/344cfbcfbc): Allow prepared directory clean up for custom preparers
+
+  When using custom preparer for TechDocs, the `preparedDir` might
+  end up taking disk space. This requires all custom preparers to
+  implement a new method `shouldCleanPreparedDirectory` which indicates
+  whether the prepared directory should be cleaned after generation.
+
+### `@backstage/plugin-techdocs-node` (1.8.2 → [1.9.0](../../changelogs/@backstage/plugin-techdocs-node.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`344cfbcfbc`](https://github.com/backstage/backstage/commit/344cfbcfbc): Allow prepared directory clean up for custom preparers
+
+  When using custom preparer for TechDocs, the `preparedDir` might
+  end up taking disk space. This requires all custom preparers to
+  implement a new method `shouldCleanPreparedDirectory` which indicates
+  whether the prepared directory should be cleaned after generation.
+
+- [`d06b30b050`](https://github.com/backstage/backstage/commit/d06b30b050): Add possibility to use a mkdocs config file with a different name than `mkdocs.<yaml|yml> with the serve command using the `--mkdocs-config-file-name` argument
+
+### `@techdocs/cli` (1.5.2 → [1.6.0](../../changelogs/@techdocs/cli.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`d06b30b050`](https://github.com/backstage/backstage/commit/d06b30b050): Add possibility to use a mkdocs config file with a different name than `mkdocs.<yaml|yml> with the serve command using the `--mkdocs-config-file-name` argument
+
+##### Patch Changes
+
+- [`de42eebaaf`](https://github.com/backstage/backstage/commit/de42eebaaf): Bumped dev dependencies `@types/node` and `mock-fs`.
+- [`2b6e572051`](https://github.com/backstage/backstage/commit/2b6e572051): Restructured tests.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.4.3 → [1.4.4](../../changelogs/@backstage/app-defaults.md#144))
+
+#### 1.4.4
+
+##### Patch Changes
+
+- [`1a0616fa10`](https://github.com/backstage/backstage/commit/1a0616fa10): Add missing resource and template app icons
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+
+### `@backstage/catalog-model` (1.4.2 → [1.4.3](../../changelogs/@backstage/catalog-model.md#143))
+
+#### 1.4.3
+
+##### Patch Changes
+
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+
+### `@backstage/config-loader` (1.5.0 → [1.5.1](../../changelogs/@backstage/config-loader.md#151))
+
+#### 1.5.1
+
+##### Patch Changes
+
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+- [`30c553c1d2`](https://github.com/backstage/backstage/commit/30c553c1d2): Updated dependency `typescript-json-schema` to `^0.61.0`.
+- [`773ea341d2`](https://github.com/backstage/backstage/commit/773ea341d2): The `FileConfigSource` will now retry file reading after a short delay if it reads an empty file. This is to avoid flakiness during watch mode where change events can trigger before the file content has been written.
+- [`a4617c422a`](https://github.com/backstage/backstage/commit/a4617c422a): Added `watch` option to configuration loaders that can be used to disable file watching by setting it to `false`.
+
+### `@backstage/dev-utils` (1.0.21 → [1.0.22](../../changelogs/@backstage/dev-utils.md#1022))
+
+#### 1.0.22
+
+##### Patch Changes
+
+- [`080d1beb2a`](https://github.com/backstage/backstage/commit/080d1beb2a): Moving development `dependencies` to `devDependencies`
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`9468a67b92`](https://github.com/backstage/backstage/commit/9468a67b92): Added support for React 18. The new `createRoot` API from `react-dom/client` will now be used if present.
+
+### `@backstage/errors` (1.2.2 → [1.2.3](../../changelogs/@backstage/errors.md#123))
+
+#### 1.2.3
+
+##### Patch Changes
+
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+
+### `@backstage/integration` (1.7.0 → [1.7.1](../../changelogs/@backstage/integration.md#171))
+
+#### 1.7.1
+
+##### Patch Changes
+
+- [`3963d0b885`](https://github.com/backstage/backstage/commit/3963d0b885): Ensure that all relevant config fields are properly marked as secret
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+
+### `@backstage/integration-react` (1.1.19 → [1.1.20](../../changelogs/@backstage/integration-react.md#1120))
+
+#### 1.1.20
+
+##### Patch Changes
+
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+
+### `@backstage/plugin-catalog-node` (1.4.6 → [1.4.7](../../changelogs/@backstage/plugin-catalog-node.md#147))
+
+#### 1.4.7
+
+##### Patch Changes
+
+- [`7a2e2924c7`](https://github.com/backstage/backstage/commit/7a2e2924c7): Added docs to `processingResult`
+
+### `@backstage/plugin-catalog-react` (1.8.4 → [1.8.5](../../changelogs/@backstage/plugin-catalog-react.md#185))
+
+#### 1.8.5
+
+##### Patch Changes
+
+- [`a402e1dfb9`](https://github.com/backstage/backstage/commit/a402e1dfb9): Fixed an issue causing `EntityPage` to show an error for entities containing special characters
+- [`0b55f773a7`](https://github.com/backstage/backstage/commit/0b55f773a7): Removed some unused dependencies
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The `spec.type` field in entities will now always be rendered as a string.
+
+### `@backstage/plugin-dynatrace` (7.0.4 → [7.0.5](../../changelogs/@backstage/plugin-dynatrace.md#705))
+
+#### 7.0.5
+
+##### Patch Changes
+
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+
+### `@backstage/plugin-scaffolder` (1.15.0 → [1.15.1](../../changelogs/@backstage/plugin-scaffolder.md#1151))
+
+#### 1.15.1
+
+##### Patch Changes
+
+- [`b337d78c3b`](https://github.com/backstage/backstage/commit/b337d78c3b): fixed issue related template editor fails with multiple templates per file.
+- [`ff2ab02690`](https://github.com/backstage/backstage/commit/ff2ab02690): Make entity picker more reliable with only one available entity
+- [`83e4a42ccd`](https://github.com/backstage/backstage/commit/83e4a42ccd): Display log visibility button on the template panel
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`4c70fe497d`](https://github.com/backstage/backstage/commit/4c70fe497d): `RepoUrlPickerRepoName` now correctly handles value changes in allowed repos.
+
+### `@backstage/plugin-scaffolder-react` (1.5.5 → [1.5.6](../../changelogs/@backstage/plugin-scaffolder-react.md#156))
+
+#### 1.5.6
+
+##### Patch Changes
+
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+
+### `@backstage/plugin-search` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-search.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`e5a2956dd2`](https://github.com/backstage/backstage/commit/e5a2956dd2): Create an experimental search plugin that is compatible with the declarative integration system, it is exported from `/alpha` subpath.
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): Minor internal code cleanup.
+
+### `@backstage/plugin-search-backend` (1.4.5 → [1.4.6](../../changelogs/@backstage/plugin-search-backend.md#146))
+
+#### 1.4.6
+
+##### Patch Changes
+
+- [`16be6f9473`](https://github.com/backstage/backstage/commit/16be6f9473): Set the default length limit to search query to 100. To override it, define `search.maxTermLength` in the config file.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.8 → [1.3.9](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#139))
+
+#### 1.3.9
+
+##### Patch Changes
+
+- [`3963d0b885`](https://github.com/backstage/backstage/commit/3963d0b885): Ensure that all relevant config fields are properly marked as secret
+
+### `@backstage/plugin-search-react` (1.7.0 → [1.7.1](../../changelogs/@backstage/plugin-search-react.md#171))
+
+#### 1.7.1
+
+##### Patch Changes
+
+- [`06432f900c`](https://github.com/backstage/backstage/commit/06432f900c): Updated `/alpha` exports to use new `attachTo` option.
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+- [`0296f272b4`](https://github.com/backstage/backstage/commit/0296f272b4): The filter options passed to `SearchResultGroupLayout` are now always explicitly rendered as strings by default.
+- [`703a4ffc5b`](https://github.com/backstage/backstage/commit/703a4ffc5b): Create `createSearchResultListItem` alpha version that only supports declarative integration.
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.21 → [1.0.22](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1022))
+
+#### 1.0.22
+
+##### Patch Changes
+
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+- [`f95af4e540`](https://github.com/backstage/backstage/commit/f95af4e540): Updated dependency `@testing-library/dom` to `^9.0.0`.
+
+### `@backstage/plugin-techdocs-react` (1.1.11 → [1.1.12](../../changelogs/@backstage/plugin-techdocs-react.md#1112))
+
+#### 1.1.12
+
+##### Patch Changes
+
+- [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
+
 ### `@backstage/test-utils` (1.4.3 → [1.4.4](../../changelogs/@backstage/test-utils.md#144))
 
 #### 1.4.4
@@ -1868,14 +1880,6 @@ Changes between 1.18.5 and 1.19.0 — 221 changed and 7 added packages.
 - [`322bbcae24`](https://github.com/backstage/backstage/commit/322bbcae24): Removed the alpha `MockPluginProvider` export since the plugin configuration API has been removed.
 - [`1a0616fa10`](https://github.com/backstage/backstage/commit/1a0616fa10): Add missing resource and template app icons
 - [`9a1fce352e`](https://github.com/backstage/backstage/commit/9a1fce352e): Updated dependency `@testing-library/jest-dom` to `^6.0.0`.
-
-### `@backstage/theme` (0.4.2 → [0.4.3](../../changelogs/@backstage/theme.md#043))
-
-#### 0.4.3
-
-##### Patch Changes
-
-- [`5ad5344756`](https://github.com/backstage/backstage/commit/5ad5344756): Added support for string `fontSize` values (e.g. `"2.5rem"`) in themes in addition to numbers. Also added an optional `fontFamily` prop for header typography variants to allow further customization.
 
 ### `@backstage/version-bridge` (1.0.5 → [1.0.6](../../changelogs/@backstage/version-bridge.md#106))
 

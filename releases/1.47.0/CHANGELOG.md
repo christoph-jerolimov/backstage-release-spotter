@@ -1,13 +1,14 @@
 # Backstage Release 1.47.0 changelog
 
-Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
+Changes between 1.46.7 and 1.47.0 — 2 added, 0 removed, 109 upgraded, 81 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 2 packages
 - [Breaking changes](#breaking-changes): 4 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 4 packages
-- [Patch version bumps](#patch-version-bumps): 42 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 31 packages
+- [Other patch version bumps](#other-patch-version-bumps): 11 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 59 packages
 
 ## Table of contents
@@ -25,24 +26,19 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
   - [`@backstage/plugin-events-backend-module-kafka` (0.2.0 → 0.3.0)](#backstageplugin-events-backend-module-kafka-020--030)
   - [`@backstage/plugin-home` (0.8.15 → 0.9.0)](#backstageplugin-home-0815--090)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.2.16 → 0.3.0)](#backstageplugin-scaffolder-backend-module-sentry-0216--030)
-- [Patch version bumps](#patch-version-bumps)
-  - [`@backstage/backend-app-api` (1.4.0 → 1.4.1)](#backstagebackend-app-api-140--141)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-openapi-utils` (0.6.4 → 0.6.5)](#backstagebackend-openapi-utils-064--065)
-  - [`@backstage/backend-plugin-api` (1.6.0 → 1.6.1)](#backstagebackend-plugin-api-160--161)
-  - [`@backstage/backend-test-utils` (1.10.2 → 1.10.3)](#backstagebackend-test-utils-1102--1103)
   - [`@backstage/cli` (0.35.1 → 0.35.2)](#backstagecli-0351--0352)
   - [`@backstage/cli-common` (0.1.16 → 0.1.17)](#backstagecli-common-0116--0117)
   - [`@backstage/core-components` (0.18.4 → 0.18.5)](#backstagecore-components-0184--0185)
   - [`@backstage/create-app` (0.7.7 → 0.7.8)](#backstagecreate-app-077--078)
   - [`@backstage/frontend-plugin-api` (0.13.2 → 0.13.3)](#backstagefrontend-plugin-api-0132--0133)
-  - [`@backstage/integration` (1.19.1 → 1.19.2)](#backstageintegration-1191--1192)
   - [`@backstage/plugin-api-docs` (0.13.2 → 0.13.3)](#backstageplugin-api-docs-0132--0133)
   - [`@backstage/plugin-app` (0.3.3 → 0.3.4)](#backstageplugin-app-033--034)
   - [`@backstage/plugin-app-backend` (0.5.9 → 0.5.10)](#backstageplugin-app-backend-059--0510)
   - [`@backstage/plugin-app-node` (0.1.40 → 0.1.41)](#backstageplugin-app-node-0140--0141)
   - [`@backstage/plugin-auth-backend-module-oidc-provider` (0.4.10 → 0.4.11)](#backstageplugin-auth-backend-module-oidc-provider-0410--0411)
   - [`@backstage/plugin-auth-node` (0.6.10 → 0.6.11)](#backstageplugin-auth-node-0610--0611)
-  - [`@backstage/plugin-catalog` (1.32.1 → 1.32.2)](#backstageplugin-catalog-1321--1322)
   - [`@backstage/plugin-catalog-backend-module-github` (0.12.0 → 0.12.1)](#backstageplugin-catalog-backend-module-github-0120--0121)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.8.3 → 0.8.4)](#backstageplugin-catalog-backend-module-msgraph-083--084)
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.2.17 → 0.2.18)](#backstageplugin-catalog-backend-module-puppetdb-0217--0218)
@@ -57,17 +53,23 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
   - [`@backstage/plugin-org` (0.6.47 → 0.6.48)](#backstageplugin-org-0647--0648)
   - [`@backstage/plugin-permission-common` (0.9.3 → 0.9.4)](#backstageplugin-permission-common-093--094)
   - [`@backstage/plugin-permission-node` (0.10.7 → 0.10.8)](#backstageplugin-permission-node-0107--0108)
-  - [`@backstage/plugin-scaffolder` (1.35.0 → 1.35.1)](#backstageplugin-scaffolder-1350--1351)
-  - [`@backstage/plugin-scaffolder-backend` (3.1.0 → 3.1.1)](#backstageplugin-scaffolder-backend-310--311)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.2.16 → 0.2.17)](#backstageplugin-scaffolder-backend-module-azure-0216--0217)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.9.3 → 0.9.4)](#backstageplugin-scaffolder-backend-module-github-093--094)
   - [`@backstage/plugin-scaffolder-node` (0.12.2 → 0.12.3)](#backstageplugin-scaffolder-node-0122--0123)
+  - [`@backstage/plugin-user-settings-backend` (0.3.9 → 0.3.10)](#backstageplugin-user-settings-backend-039--0310)
+  - [`@backstage/repo-tools` (0.16.1 → 0.16.2)](#backstagerepo-tools-0161--0162)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-app-api` (1.4.0 → 1.4.1)](#backstagebackend-app-api-140--141)
+  - [`@backstage/backend-plugin-api` (1.6.0 → 1.6.1)](#backstagebackend-plugin-api-160--161)
+  - [`@backstage/backend-test-utils` (1.10.2 → 1.10.3)](#backstagebackend-test-utils-1102--1103)
+  - [`@backstage/integration` (1.19.1 → 1.19.2)](#backstageintegration-1191--1192)
+  - [`@backstage/plugin-catalog` (1.32.1 → 1.32.2)](#backstageplugin-catalog-1321--1322)
+  - [`@backstage/plugin-scaffolder` (1.35.0 → 1.35.1)](#backstageplugin-scaffolder-1350--1351)
+  - [`@backstage/plugin-scaffolder-backend` (3.1.0 → 3.1.1)](#backstageplugin-scaffolder-backend-310--311)
   - [`@backstage/plugin-scaffolder-react` (1.19.4 → 1.19.5)](#backstageplugin-scaffolder-react-1194--1195)
   - [`@backstage/plugin-search` (1.5.2 → 1.5.3)](#backstageplugin-search-152--153)
   - [`@backstage/plugin-techdocs` (1.16.1 → 1.16.2)](#backstageplugin-techdocs-1161--1162)
   - [`@backstage/plugin-techdocs-backend` (2.1.3 → 2.1.4)](#backstageplugin-techdocs-backend-213--214)
-  - [`@backstage/plugin-user-settings-backend` (0.3.9 → 0.3.10)](#backstageplugin-user-settings-backend-039--0310)
-  - [`@backstage/repo-tools` (0.16.1 → 0.16.2)](#backstagerepo-tools-0161--0162)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -352,15 +354,7 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 
 - [`ab606b2`](https://github.com/backstage/backstage/commit/ab606b2): Add ability to configure the API Base URL
 
-## Patch version bumps
-
-### `@backstage/backend-app-api` (1.4.0 → [1.4.1](../../changelogs/@backstage/backend-app-api.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`04db26b`](https://github.com/backstage/backstage/commit/04db26b): Clean up process event listeners on backend stop to prevent leaks
+## 0.x patch version bumps
 
 ### `@backstage/backend-openapi-utils` (0.6.4 → [0.6.5](../../changelogs/@backstage/backend-openapi-utils.md#065))
 
@@ -369,22 +363,6 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 ##### Patch Changes
 
 - [`6678b78`](https://github.com/backstage/backstage/commit/6678b78): Internal update to use native feature from our request validation library for handling base path determination.
-
-### `@backstage/backend-plugin-api` (1.6.0 → [1.6.1](../../changelogs/@backstage/backend-plugin-api.md#161))
-
-#### 1.6.1
-
-##### Patch Changes
-
-- [`ae4dd5d`](https://github.com/backstage/backstage/commit/ae4dd5d): Move some of the symlink resolution to `isChildPath`
-
-### `@backstage/backend-test-utils` (1.10.2 → [1.10.3](../../changelogs/@backstage/backend-test-utils.md#1103))
-
-#### 1.10.3
-
-##### Patch Changes
-
-- [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
 
 ### `@backstage/cli` (0.35.1 → [0.35.2](../../changelogs/@backstage/cli.md#0352))
 
@@ -449,15 +427,6 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 - [`4554a4e`](https://github.com/backstage/backstage/commit/4554a4e): Added an alpha `PluginWrapperBlueprint` exported from `@backstage/frontend-plugin-api/alpha`, which can install components that will wrap all plugin elements.
 - [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
 
-### `@backstage/integration` (1.19.1 → [1.19.2](../../changelogs/@backstage/integration.md#1192))
-
-#### 1.19.2
-
-##### Patch Changes
-
-- [`3afeab4`](https://github.com/backstage/backstage/commit/3afeab4): Implementing `ScmIntegration` for `GoogleGcs`
-- [`9083273`](https://github.com/backstage/backstage/commit/9083273): Rollback the lowercase replacing in GitHub integration config
-
 ### `@backstage/plugin-api-docs` (0.13.2 → [0.13.3](../../changelogs/@backstage/plugin-api-docs.md#0133))
 
 #### 0.13.3
@@ -517,15 +486,6 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 
 - [`4eeba9e`](https://github.com/backstage/backstage/commit/4eeba9e): Upgrade `zod-validation-error` to version 4
 - [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
-
-### `@backstage/plugin-catalog` (1.32.1 → [1.32.2](../../changelogs/@backstage/plugin-catalog.md#1322))
-
-#### 1.32.2
-
-##### Patch Changes
-
-- [`7ca91e8`](https://github.com/backstage/backstage/commit/7ca91e8): Header in EntityLayout should always be shown.
-  Monitoring the loading status caused flickering when the refresh() method of the Async Entity was invoked.
 
 ### `@backstage/plugin-catalog-backend-module-github` (0.12.0 → [0.12.1](../../changelogs/@backstage/plugin-catalog-backend-module-github.md#0121))
 
@@ -640,26 +600,6 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 
 - [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
 
-### `@backstage/plugin-scaffolder` (1.35.0 → [1.35.1](../../changelogs/@backstage/plugin-scaffolder.md#1351))
-
-#### 1.35.1
-
-##### Patch Changes
-
-- [`9d75495`](https://github.com/backstage/backstage/commit/9d75495): Fixed bug in RepoUrlPickerComponent component where repository names were not being autocompleted.
-- [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
-
-### `@backstage/plugin-scaffolder-backend` (3.1.0 → [3.1.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#311))
-
-#### 3.1.1
-
-##### Patch Changes
-
-- [`5012852`](https://github.com/backstage/backstage/commit/5012852): Remove unused abort controller in debug:wait action
-- [`c641c14`](https://github.com/backstage/backstage/commit/c641c14): Wrap some of the action logic with `resolveSafeChildPath` and improve symlink handling when fetching remote and local files
-- [`27f9061`](https://github.com/backstage/backstage/commit/27f9061): REwrite]
-- [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
-
 ### `@backstage/plugin-scaffolder-backend-module-azure` (0.2.16 → [0.2.17](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#0217))
 
 #### 0.2.17
@@ -700,6 +640,86 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 - [`27f9061`](https://github.com/backstage/backstage/commit/27f9061): REwrite]
 - [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
 
+### `@backstage/plugin-user-settings-backend` (0.3.9 → [0.3.10](../../changelogs/@backstage/plugin-user-settings-backend.md#0310))
+
+#### 0.3.10
+
+##### Patch Changes
+
+- [`ad01e54`](https://github.com/backstage/backstage/commit/ad01e54): Resolves an issue where user setting keys containing slashes returned 404 not found.
+
+### `@backstage/repo-tools` (0.16.1 → [0.16.2](../../changelogs/@backstage/repo-tools.md#0162))
+
+#### 0.16.2
+
+##### Patch Changes
+
+- [`498f9dd`](https://github.com/backstage/backstage/commit/498f9dd): Fixed help text for `backstage-repo-tools package schema openapi generate` command.
+
+## Other patch version bumps
+
+### `@backstage/backend-app-api` (1.4.0 → [1.4.1](../../changelogs/@backstage/backend-app-api.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`04db26b`](https://github.com/backstage/backstage/commit/04db26b): Clean up process event listeners on backend stop to prevent leaks
+
+### `@backstage/backend-plugin-api` (1.6.0 → [1.6.1](../../changelogs/@backstage/backend-plugin-api.md#161))
+
+#### 1.6.1
+
+##### Patch Changes
+
+- [`ae4dd5d`](https://github.com/backstage/backstage/commit/ae4dd5d): Move some of the symlink resolution to `isChildPath`
+
+### `@backstage/backend-test-utils` (1.10.2 → [1.10.3](../../changelogs/@backstage/backend-test-utils.md#1103))
+
+#### 1.10.3
+
+##### Patch Changes
+
+- [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
+
+### `@backstage/integration` (1.19.1 → [1.19.2](../../changelogs/@backstage/integration.md#1192))
+
+#### 1.19.2
+
+##### Patch Changes
+
+- [`3afeab4`](https://github.com/backstage/backstage/commit/3afeab4): Implementing `ScmIntegration` for `GoogleGcs`
+- [`9083273`](https://github.com/backstage/backstage/commit/9083273): Rollback the lowercase replacing in GitHub integration config
+
+### `@backstage/plugin-catalog` (1.32.1 → [1.32.2](../../changelogs/@backstage/plugin-catalog.md#1322))
+
+#### 1.32.2
+
+##### Patch Changes
+
+- [`7ca91e8`](https://github.com/backstage/backstage/commit/7ca91e8): Header in EntityLayout should always be shown.
+  Monitoring the loading status caused flickering when the refresh() method of the Async Entity was invoked.
+
+### `@backstage/plugin-scaffolder` (1.35.0 → [1.35.1](../../changelogs/@backstage/plugin-scaffolder.md#1351))
+
+#### 1.35.1
+
+##### Patch Changes
+
+- [`9d75495`](https://github.com/backstage/backstage/commit/9d75495): Fixed bug in RepoUrlPickerComponent component where repository names were not being autocompleted.
+- [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
+
+### `@backstage/plugin-scaffolder-backend` (3.1.0 → [3.1.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#311))
+
+#### 3.1.1
+
+##### Patch Changes
+
+- [`5012852`](https://github.com/backstage/backstage/commit/5012852): Remove unused abort controller in debug:wait action
+- [`c641c14`](https://github.com/backstage/backstage/commit/c641c14): Wrap some of the action logic with `resolveSafeChildPath` and improve symlink handling when fetching remote and local files
+- [`27f9061`](https://github.com/backstage/backstage/commit/27f9061): REwrite]
+- [`872eb91`](https://github.com/backstage/backstage/commit/872eb91): Upgrade `zod-to-json-schema` to latest version
+
 ### `@backstage/plugin-scaffolder-react` (1.19.4 → [1.19.5](../../changelogs/@backstage/plugin-scaffolder-react.md#1195))
 
 #### 1.19.5
@@ -732,22 +752,6 @@ Changes between 1.46.7 and 1.47.0 — 109 changed and 2 added packages.
 ##### Patch Changes
 
 - [`b6ff2a5`](https://github.com/backstage/backstage/commit/b6ff2a5): Some AWS `publisher` config options such as `region`, `endpoint`, `accountId` are now marked as `@visibility backend` instead of `secret`.
-
-### `@backstage/plugin-user-settings-backend` (0.3.9 → [0.3.10](../../changelogs/@backstage/plugin-user-settings-backend.md#0310))
-
-#### 0.3.10
-
-##### Patch Changes
-
-- [`ad01e54`](https://github.com/backstage/backstage/commit/ad01e54): Resolves an issue where user setting keys containing slashes returned 404 not found.
-
-### `@backstage/repo-tools` (0.16.1 → [0.16.2](../../changelogs/@backstage/repo-tools.md#0162))
-
-#### 0.16.2
-
-##### Patch Changes
-
-- [`498f9dd`](https://github.com/backstage/backstage/commit/498f9dd): Fixed help text for `backstage-repo-tools package schema openapi generate` command.
 
 ## Excluded dependency updates
 

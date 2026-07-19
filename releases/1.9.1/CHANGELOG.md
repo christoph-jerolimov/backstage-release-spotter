@@ -1,19 +1,19 @@
 # Backstage Release 1.9.1 changelog
 
-Changes between 1.9.0 and 1.9.1 — 75 changed and 0 added packages.
+Changes between 1.9.0 and 1.9.1 — 0 added, 0 removed, 75 upgraded, 107 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 - [Excluded dependency updates](#excluded-dependency-updates): 74 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/core-components` (0.12.1 → 0.12.2)](#backstagecore-components-0121--0122)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/core-components` (0.12.1 → [0.12.2](../../changelogs/@backstage/core-components.md#0122))
 

@@ -1,14 +1,15 @@
 # Backstage Release 1.53.0 changelog
 
-Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
+Changes between 1.52.1 and 1.53.0 — 1 added, 0 removed, 185 upgraded, 25 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 1 package
 - [Breaking changes](#breaking-changes): 8 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 21 packages
 - [Other minor version bumps](#other-minor-version-bumps): 1 package
-- [Patch version bumps](#patch-version-bumps): 30 packages
+- [Other patch version bumps](#other-patch-version-bumps): 9 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 144 packages
 
 ## Table of contents
@@ -27,15 +28,11 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 - [0.x minor version bumps](#0x-minor-version-bumps)
   - [`@backstage/connections` (0.1.0 → 0.2.0)](#backstageconnections-010--020)
   - [`@backstage/ui` (0.16.0 → 0.17.0)](#backstageui-0160--0170)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config-loader` (1.10.12 → 1.11.0)](#backstageconfig-loader-11012--1110)
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.17.4 → 0.17.5)](#backstagebackend-defaults-0174--0175)
-  - [`@backstage/backend-test-utils` (1.11.4 → 1.11.5)](#backstagebackend-test-utils-1114--1115)
   - [`@backstage/cli` (0.36.3 → 0.36.4)](#backstagecli-0363--0364)
   - [`@backstage/cli-module-build` (0.1.4 → 0.1.5)](#backstagecli-module-build-014--015)
   - [`@backstage/cli-module-new` (0.1.4 → 0.1.5)](#backstagecli-module-new-014--015)
-  - [`@backstage/core-app-api` (1.20.2 → 1.20.3)](#backstagecore-app-api-1202--1203)
   - [`@backstage/core-components` (0.18.11 → 0.18.12)](#backstagecore-components-01811--01812)
   - [`@backstage/filter-predicates` (0.1.3 → 0.1.4)](#backstagefilter-predicates-013--014)
   - [`@backstage/frontend-app-api` (0.16.5 → 0.16.6)](#backstagefrontend-app-api-0165--0166)
@@ -45,7 +42,6 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
   - [`@backstage/plugin-auth-backend` (0.29.1 → 0.29.2)](#backstageplugin-auth-backend-0291--0292)
   - [`@backstage/plugin-auth-backend-module-auth0-provider` (0.4.2 → 0.4.3)](#backstageplugin-auth-backend-module-auth0-provider-042--043)
   - [`@backstage/plugin-auth-node` (0.7.2 → 0.7.3)](#backstageplugin-auth-node-072--073)
-  - [`@backstage/plugin-catalog-backend` (3.8.0 → 3.8.1)](#backstageplugin-catalog-backend-380--381)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.10.3 → 0.10.4)](#backstageplugin-catalog-backend-module-msgraph-0103--0104)
   - [`@backstage/plugin-events-backend-module-azure` (0.2.32 → 0.2.33)](#backstageplugin-events-backend-module-azure-0232--0233)
   - [`@backstage/plugin-home` (0.9.7 → 0.9.8)](#backstageplugin-home-097--098)
@@ -53,9 +49,15 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
   - [`@backstage/plugin-notifications` (0.5.18 → 0.5.19)](#backstageplugin-notifications-0518--0519)
   - [`@backstage/plugin-notifications-node` (0.2.27 → 0.2.28)](#backstageplugin-notifications-node-0227--0228)
   - [`@backstage/plugin-org` (0.7.5 → 0.7.6)](#backstageplugin-org-075--076)
+  - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.23 → 0.4.24)](#backstageplugin-scaffolder-backend-module-yeoman-0423--0424)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config-loader` (1.10.12 → 1.11.0)](#backstageconfig-loader-11012--1110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-test-utils` (1.11.4 → 1.11.5)](#backstagebackend-test-utils-1114--1115)
+  - [`@backstage/core-app-api` (1.20.2 → 1.20.3)](#backstagecore-app-api-1202--1203)
+  - [`@backstage/plugin-catalog-backend` (3.8.0 → 3.8.1)](#backstageplugin-catalog-backend-380--381)
   - [`@backstage/plugin-scaffolder` (1.38.0 → 1.38.1)](#backstageplugin-scaffolder-1380--1381)
   - [`@backstage/plugin-scaffolder-backend` (4.0.1 → 4.0.2)](#backstageplugin-scaffolder-backend-401--402)
-  - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.23 → 0.4.24)](#backstageplugin-scaffolder-backend-module-yeoman-0423--0424)
   - [`@backstage/plugin-search` (1.7.5 → 1.7.6)](#backstageplugin-search-175--176)
   - [`@backstage/plugin-techdocs` (1.17.7 → 1.17.8)](#backstageplugin-techdocs-1177--1178)
   - [`@backstage/plugin-techdocs-node` (1.15.1 → 1.15.2)](#backstageplugin-techdocs-node-1151--1152)
@@ -228,21 +230,7 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 
 - [`066c7ac`](https://github.com/backstage/backstage/commit/066c7ac): Added a new `TextAreaField` component for multi-line text input, following the same conventions as `TextField` with support for a label, secondary label, and description.
 
-## Other minor version bumps
-
-### `@backstage/config-loader` (1.10.12 → [1.11.0](../../changelogs/@backstage/config-loader.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`4a7240b`](https://github.com/backstage/backstage/commit/4a7240b): Configuration schemas declared in TypeScript now resolve and validate imported types instead of treating them as unconstrained values. Invalid imports now cause schema loading to fail.
-
-##### Patch Changes
-
-- [`005458a`](https://github.com/backstage/backstage/commit/005458a): Added support for comma-separated values in the `BACKSTAGE_ENV` environment variable, allowing multiple environment-specific configuration files to be loaded and stacked at startup. For example, setting `BACKSTAGE_ENV=e2e-test,production` will load `app-config.e2e-test.yaml` and `app-config.production.yaml` in addition to the base `app-config.yaml`, with later environments taking priority. Local override files (`.local.yaml`) are always loaded after all non-local files.
-
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.17.4 → [0.17.5](../../changelogs/@backstage/backend-defaults.md#0175))
 
@@ -254,14 +242,6 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 - [`d62c384`](https://github.com/backstage/backstage/commit/d62c384): Fixed a bug where scheduled tasks that were initially registered with a manual trigger and later re-registered with a duration or cron cadence would never be scheduled to run.
 - [`8419f51`](https://github.com/backstage/backstage/commit/8419f51): Added support for AWS PrivateLink for Amazon S3.
 - [`a624fa3`](https://github.com/backstage/backstage/commit/a624fa3): The `connection` config option for the Redis cache store now accepts either a string URL or an object with additional connection options that are passed directly to the underlying client. The object form is only supported when `backend.cache.store` is `redis`; other stores require a plain string. This allows configuring options like `pingInterval` without needing dedicated config fields. For clustered Redis, the connection object properties are merged into cluster defaults. Fixes https://github.com/backstage/backstage/issues/31813, https://github.com/backstage/backstage/issues/31742.
-
-### `@backstage/backend-test-utils` (1.11.4 → [1.11.5](../../changelogs/@backstage/backend-test-utils.md#1115))
-
-#### 1.11.5
-
-##### Patch Changes
-
-- [`41c56b3`](https://github.com/backstage/backstage/commit/41c56b3): Fixed MySQL test database failures by pinning the Docker image from the floating `mysql:8` tag to `mysql:8.4` and replacing a startup flag that was removed in MySQL 8.4. Connection pool reduced from 50 to 5 per test database, idle connections are now reaped after 5 seconds, and container connection limits raised to 1000 for both MySQL and Postgres to handle parallel Jest workers on high-core machines.
 
 ### `@backstage/cli` (0.36.3 → [0.36.4](../../changelogs/@backstage/cli.md#0364))
 
@@ -289,15 +269,6 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 ##### Patch Changes
 
 - [`28c1c1c`](https://github.com/backstage/backstage/commit/28c1c1c): Synced zod-validation-error versions between packages
-
-### `@backstage/core-app-api` (1.20.2 → [1.20.3](../../changelogs/@backstage/core-app-api.md#1203))
-
-#### 1.20.3
-
-##### Patch Changes
-
-- [`3ef5974`](https://github.com/backstage/backstage/commit/3ef5974): Added support for wildcard plugin entries in frontend discovery endpoints, matching the backend discovery behavior.
-- [`6172725`](https://github.com/backstage/backstage/commit/6172725): Fixed the default fetch API to support discovery endpoints that only define an internal target.
 
 ### `@backstage/core-components` (0.18.11 → [0.18.12](../../changelogs/@backstage/core-components.md#01812))
 
@@ -395,14 +366,6 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 
 - [`28c1c1c`](https://github.com/backstage/backstage/commit/28c1c1c): Synced zod-validation-error versions between packages
 
-### `@backstage/plugin-catalog-backend` (3.8.0 → [3.8.1](../../changelogs/@backstage/plugin-catalog-backend.md#381))
-
-#### 3.8.1
-
-##### Patch Changes
-
-- [`28c1c1c`](https://github.com/backstage/backstage/commit/28c1c1c): Synced zod-validation-error versions between packages
-
 ### `@backstage/plugin-catalog-backend-module-msgraph` (0.10.3 → [0.10.4](../../changelogs/@backstage/plugin-catalog-backend-module-msgraph.md#0104))
 
 #### 0.10.4
@@ -460,6 +423,55 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 
 - [`9585e44`](https://github.com/backstage/backstage/commit/9585e44): Fixed the ownership card emitting duplicate React key warnings when different entity kinds share the same type.
 
+### `@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.23 → [0.4.24](../../changelogs/@backstage/plugin-scaffolder-backend-module-yeoman.md#0424))
+
+#### 0.4.24
+
+##### Patch Changes
+
+- [`5e92512`](https://github.com/backstage/backstage/commit/5e92512): Fixed compatibility with yeoman-environment v4+, which is ESM-only. The previous require() call throws ERR_REQUIRE_ESM; replaced with dynamic import() and updated registration to match the v4+ API.
+
+## Other minor version bumps
+
+### `@backstage/config-loader` (1.10.12 → [1.11.0](../../changelogs/@backstage/config-loader.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`4a7240b`](https://github.com/backstage/backstage/commit/4a7240b): Configuration schemas declared in TypeScript now resolve and validate imported types instead of treating them as unconstrained values. Invalid imports now cause schema loading to fail.
+
+##### Patch Changes
+
+- [`005458a`](https://github.com/backstage/backstage/commit/005458a): Added support for comma-separated values in the `BACKSTAGE_ENV` environment variable, allowing multiple environment-specific configuration files to be loaded and stacked at startup. For example, setting `BACKSTAGE_ENV=e2e-test,production` will load `app-config.e2e-test.yaml` and `app-config.production.yaml` in addition to the base `app-config.yaml`, with later environments taking priority. Local override files (`.local.yaml`) are always loaded after all non-local files.
+
+## Other patch version bumps
+
+### `@backstage/backend-test-utils` (1.11.4 → [1.11.5](../../changelogs/@backstage/backend-test-utils.md#1115))
+
+#### 1.11.5
+
+##### Patch Changes
+
+- [`41c56b3`](https://github.com/backstage/backstage/commit/41c56b3): Fixed MySQL test database failures by pinning the Docker image from the floating `mysql:8` tag to `mysql:8.4` and replacing a startup flag that was removed in MySQL 8.4. Connection pool reduced from 50 to 5 per test database, idle connections are now reaped after 5 seconds, and container connection limits raised to 1000 for both MySQL and Postgres to handle parallel Jest workers on high-core machines.
+
+### `@backstage/core-app-api` (1.20.2 → [1.20.3](../../changelogs/@backstage/core-app-api.md#1203))
+
+#### 1.20.3
+
+##### Patch Changes
+
+- [`3ef5974`](https://github.com/backstage/backstage/commit/3ef5974): Added support for wildcard plugin entries in frontend discovery endpoints, matching the backend discovery behavior.
+- [`6172725`](https://github.com/backstage/backstage/commit/6172725): Fixed the default fetch API to support discovery endpoints that only define an internal target.
+
+### `@backstage/plugin-catalog-backend` (3.8.0 → [3.8.1](../../changelogs/@backstage/plugin-catalog-backend.md#381))
+
+#### 3.8.1
+
+##### Patch Changes
+
+- [`28c1c1c`](https://github.com/backstage/backstage/commit/28c1c1c): Synced zod-validation-error versions between packages
+
 ### `@backstage/plugin-scaffolder` (1.38.0 → [1.38.1](../../changelogs/@backstage/plugin-scaffolder.md#1381))
 
 #### 1.38.1
@@ -482,14 +494,6 @@ Changes between 1.52.1 and 1.53.0 — 185 changed and 1 added packages.
 ##### Patch Changes
 
 - [`55902bb`](https://github.com/backstage/backstage/commit/55902bb): Fixed `DatabaseTaskStore.list` returning `totalTasks` as a string on PostgreSQL. knex returns a `COUNT(*)` aggregate as a string on PostgreSQL (the column is a bigint) while better-sqlite3 returns a number, so the count is now coerced with `Number(...)` and guarded with `Number.isSafeInteger(...)`. This in turn fixes the `list-scaffolder-tasks` action, whose output schema declares `totalTasks: z.number()` and previously failed validation in production with `Invalid output ... totalTasks: Expected number, received string`.
-
-### `@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.23 → [0.4.24](../../changelogs/@backstage/plugin-scaffolder-backend-module-yeoman.md#0424))
-
-#### 0.4.24
-
-##### Patch Changes
-
-- [`5e92512`](https://github.com/backstage/backstage/commit/5e92512): Fixed compatibility with yeoman-environment v4+, which is ESM-only. The previous require() call throws ERR_REQUIRE_ESM; replaced with dynamic import() and updated registration to match the v4+ API.
 
 ### `@backstage/plugin-search` (1.7.5 → [1.7.6](../../changelogs/@backstage/plugin-search.md#176))
 

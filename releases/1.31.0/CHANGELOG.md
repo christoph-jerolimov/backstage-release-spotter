@@ -1,14 +1,16 @@
 # Backstage Release 1.31.0 changelog
 
-Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
+Changes between 1.30.4 and 1.31.0 — 4 added, 1 removed, 158 upgraded, 16 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 4 packages
+- [Removed packages](#removed-packages): 1 package
 - [Breaking changes](#breaking-changes): 62 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 54 packages
 - [Minor version bumps](#minor-version-bumps): 15 packages
-- [Other patch version bumps](#other-patch-version-bumps): 68 packages
+- [Other patch version bumps](#other-patch-version-bumps): 14 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 10 packages
 
 ## Table of contents
@@ -18,6 +20,7 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
   - [`@backstage/plugin-app` (new, 0.1.0)](#backstageplugin-app-new-010)
   - [`@backstage/plugin-auth-backend-module-auth0-provider` (new, 0.1.0)](#backstageplugin-auth-backend-module-auth0-provider-new-010)
   - [`@backstage/plugin-auth-backend-module-bitbucket-server-provider` (new, 0.1.0)](#backstageplugin-auth-backend-module-bitbucket-server-provider-new-010)
+- [Removed packages](#removed-packages)
 - [Breaking changes](#breaking-changes)
   - [`@backstage/backend-app-api` (0.9.3 → 1.0.0)](#backstagebackend-app-api-093--100)
   - [`@backstage/backend-common` (0.24.1 → 0.25.0)](#backstagebackend-common-0241--0250)
@@ -85,33 +88,13 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
   - [`@backstage/plugin-kubernetes-cluster` (0.0.14 → 0.0.15)](#backstageplugin-kubernetes-cluster-0014--0015)
   - [`@backstage/plugin-signals` (0.0.9 → 0.0.10)](#backstageplugin-signals-009--0010)
   - [`@backstage/plugin-signals-react` (0.0.4 → 0.0.5)](#backstageplugin-signals-react-004--005)
-- [Minor version bumps](#minor-version-bumps)
-  - [`@backstage/catalog-client` (1.6.6 → 1.7.0)](#backstagecatalog-client-166--170)
-  - [`@backstage/catalog-model` (1.6.0 → 1.7.0)](#backstagecatalog-model-160--170)
-  - [`@backstage/core-app-api` (1.14.2 → 1.15.0)](#backstagecore-app-api-1142--1150)
-  - [`@backstage/dev-utils` (1.0.37 → 1.1.0)](#backstagedev-utils-1037--110)
-  - [`@backstage/integration` (1.14.0 → 1.15.0)](#backstageintegration-1140--1150)
-  - [`@backstage/plugin-catalog` (1.22.0 → 1.23.0)](#backstageplugin-catalog-1220--1230)
-  - [`@backstage/plugin-catalog-backend` (1.25.2 → 1.26.0)](#backstageplugin-catalog-backend-1252--1260)
-  - [`@backstage/plugin-catalog-common` (1.0.26 → 1.1.0)](#backstageplugin-catalog-common-1026--110)
-  - [`@backstage/plugin-catalog-node` (1.12.6 → 1.13.0)](#backstageplugin-catalog-node-1126--1130)
-  - [`@backstage/plugin-catalog-react` (1.12.3 → 1.13.0)](#backstageplugin-catalog-react-1123--1130)
-  - [`@backstage/plugin-scaffolder` (1.24.0 → 1.25.0)](#backstageplugin-scaffolder-1240--1250)
-  - [`@backstage/plugin-scaffolder-backend` (1.24.1 → 1.25.0)](#backstageplugin-scaffolder-backend-1241--1250)
-  - [`@backstage/plugin-scaffolder-react` (1.11.0 → 1.12.0)](#backstageplugin-scaffolder-react-1110--1120)
-  - [`@backstage/plugin-search-react` (1.7.14 → 1.8.0)](#backstageplugin-search-react-1714--180)
-  - [`@backstage/test-utils` (1.5.10 → 1.6.0)](#backstagetest-utils-1510--160)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.5.10 → 1.5.11)](#backstageapp-defaults-1510--1511)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-openapi-utils` (0.1.17 → 0.1.18)](#backstagebackend-openapi-utils-0117--0118)
   - [`@backstage/cli` (0.27.0 → 0.27.1)](#backstagecli-0270--0271)
   - [`@backstage/cli-node` (0.2.7 → 0.2.8)](#backstagecli-node-027--028)
   - [`@backstage/codemods` (0.1.49 → 0.1.50)](#backstagecodemods-0149--0150)
-  - [`@backstage/config-loader` (1.9.0 → 1.9.1)](#backstageconfig-loader-190--191)
-  - [`@backstage/core-plugin-api` (1.9.3 → 1.9.4)](#backstagecore-plugin-api-193--194)
   - [`@backstage/create-app` (0.5.18 → 0.5.19)](#backstagecreate-app-0518--0519)
   - [`@backstage/eslint-plugin` (0.1.8 → 0.1.9)](#backstageeslint-plugin-018--019)
-  - [`@backstage/integration-react` (1.1.30 → 1.1.31)](#backstageintegration-react-1130--1131)
   - [`@backstage/plugin-api-docs` (0.11.8 → 0.11.9)](#backstageplugin-api-docs-0118--0119)
   - [`@backstage/plugin-app-node` (0.1.24 → 0.1.25)](#backstageplugin-app-node-0124--0125)
   - [`@backstage/plugin-auth-node` (0.5.1 → 0.5.2)](#backstageplugin-auth-node-051--052)
@@ -151,24 +134,45 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
   - [`@backstage/plugin-permission-node` (0.8.2 → 0.8.3)](#backstageplugin-permission-node-082--083)
   - [`@backstage/plugin-permission-react` (0.4.25 → 0.4.26)](#backstageplugin-permission-react-0425--0426)
   - [`@backstage/plugin-proxy-backend` (0.5.5 → 0.5.6)](#backstageplugin-proxy-backend-055--056)
-  - [`@backstage/plugin-search` (1.4.15 → 1.4.16)](#backstageplugin-search-1415--1416)
-  - [`@backstage/plugin-search-backend` (1.5.16 → 1.5.17)](#backstageplugin-search-backend-1516--1517)
   - [`@backstage/plugin-search-backend-module-catalog` (0.2.1 → 0.2.2)](#backstageplugin-search-backend-module-catalog-021--022)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.5.5 → 1.5.6)](#backstageplugin-search-backend-module-elasticsearch-155--156)
   - [`@backstage/plugin-search-backend-module-explore` (0.2.1 → 0.2.2)](#backstageplugin-search-backend-module-explore-021--022)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.34 → 0.5.35)](#backstageplugin-search-backend-module-pg-0534--0535)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.2.1 → 0.2.2)](#backstageplugin-search-backend-module-techdocs-021--022)
   - [`@backstage/plugin-signals-node` (0.1.10 → 0.1.11)](#backstageplugin-signals-node-0110--0111)
+  - [`@backstage/plugin-user-settings` (0.8.11 → 0.8.12)](#backstageplugin-user-settings-0811--0812)
+  - [`@backstage/plugin-user-settings-backend` (0.2.23 → 0.2.24)](#backstageplugin-user-settings-backend-0223--0224)
+  - [`@backstage/repo-tools` (0.9.6 → 0.9.7)](#backstagerepo-tools-096--097)
+  - [`@backstage/theme` (0.5.6 → 0.5.7)](#backstagetheme-056--057)
+- [Minor version bumps](#minor-version-bumps)
+  - [`@backstage/catalog-client` (1.6.6 → 1.7.0)](#backstagecatalog-client-166--170)
+  - [`@backstage/catalog-model` (1.6.0 → 1.7.0)](#backstagecatalog-model-160--170)
+  - [`@backstage/core-app-api` (1.14.2 → 1.15.0)](#backstagecore-app-api-1142--1150)
+  - [`@backstage/dev-utils` (1.0.37 → 1.1.0)](#backstagedev-utils-1037--110)
+  - [`@backstage/integration` (1.14.0 → 1.15.0)](#backstageintegration-1140--1150)
+  - [`@backstage/plugin-catalog` (1.22.0 → 1.23.0)](#backstageplugin-catalog-1220--1230)
+  - [`@backstage/plugin-catalog-backend` (1.25.2 → 1.26.0)](#backstageplugin-catalog-backend-1252--1260)
+  - [`@backstage/plugin-catalog-common` (1.0.26 → 1.1.0)](#backstageplugin-catalog-common-1026--110)
+  - [`@backstage/plugin-catalog-node` (1.12.6 → 1.13.0)](#backstageplugin-catalog-node-1126--1130)
+  - [`@backstage/plugin-catalog-react` (1.12.3 → 1.13.0)](#backstageplugin-catalog-react-1123--1130)
+  - [`@backstage/plugin-scaffolder` (1.24.0 → 1.25.0)](#backstageplugin-scaffolder-1240--1250)
+  - [`@backstage/plugin-scaffolder-backend` (1.24.1 → 1.25.0)](#backstageplugin-scaffolder-backend-1241--1250)
+  - [`@backstage/plugin-scaffolder-react` (1.11.0 → 1.12.0)](#backstageplugin-scaffolder-react-1110--1120)
+  - [`@backstage/plugin-search-react` (1.7.14 → 1.8.0)](#backstageplugin-search-react-1714--180)
+  - [`@backstage/test-utils` (1.5.10 → 1.6.0)](#backstagetest-utils-1510--160)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.5.10 → 1.5.11)](#backstageapp-defaults-1510--1511)
+  - [`@backstage/config-loader` (1.9.0 → 1.9.1)](#backstageconfig-loader-190--191)
+  - [`@backstage/core-plugin-api` (1.9.3 → 1.9.4)](#backstagecore-plugin-api-193--194)
+  - [`@backstage/integration-react` (1.1.30 → 1.1.31)](#backstageintegration-react-1130--1131)
+  - [`@backstage/plugin-search` (1.4.15 → 1.4.16)](#backstageplugin-search-1415--1416)
+  - [`@backstage/plugin-search-backend` (1.5.16 → 1.5.17)](#backstageplugin-search-backend-1516--1517)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.5.5 → 1.5.6)](#backstageplugin-search-backend-module-elasticsearch-155--156)
   - [`@backstage/plugin-techdocs` (1.10.8 → 1.10.9)](#backstageplugin-techdocs-1108--1109)
   - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.37 → 1.0.38)](#backstageplugin-techdocs-addons-test-utils-1037--1038)
   - [`@backstage/plugin-techdocs-backend` (1.10.12 → 1.10.13)](#backstageplugin-techdocs-backend-11012--11013)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.13 → 1.1.14)](#backstageplugin-techdocs-module-addons-contrib-1113--1114)
   - [`@backstage/plugin-techdocs-node` (1.12.10 → 1.12.11)](#backstageplugin-techdocs-node-11210--11211)
   - [`@backstage/plugin-techdocs-react` (1.2.7 → 1.2.8)](#backstageplugin-techdocs-react-127--128)
-  - [`@backstage/plugin-user-settings` (0.8.11 → 0.8.12)](#backstageplugin-user-settings-0811--0812)
-  - [`@backstage/plugin-user-settings-backend` (0.2.23 → 0.2.24)](#backstageplugin-user-settings-backend-0223--0224)
-  - [`@backstage/repo-tools` (0.9.6 → 0.9.7)](#backstagerepo-tools-096--097)
-  - [`@backstage/theme` (0.5.6 → 0.5.7)](#backstagetheme-056--057)
   - [`@backstage/version-bridge` (1.0.8 → 1.0.9)](#backstageversion-bridge-108--109)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -254,6 +258,10 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 ##### Patch Changes
 
 - [`0a3a13e`](https://github.com/backstage/backstage/commit/0a3a13e): Updated dependency `supertest` to `^7.0.0`.
+
+## Removed packages
+
+- `@backstage/backend-tasks` ([0.6.1](../../changelogs/@backstage/backend-tasks.md#061))
 
 ## Breaking changes
 
@@ -1551,265 +1559,7 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 - [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
 - [`0389801`](https://github.com/backstage/backstage/commit/0389801): Fix for `useSignal` returning the inverse value for `isSignalsAvailable`.
 
-## Minor version bumps
-
-### `@backstage/catalog-client` (1.6.6 → [1.7.0](../../changelogs/@backstage/catalog-client.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
-- [`29e57c7`](https://github.com/backstage/backstage/commit/29e57c7): Add catalog service mocks under the `/testUtils` subpath export.
-
-##### Patch Changes
-
-- [`1882cfe`](https://github.com/backstage/backstage/commit/1882cfe): Moved `getEntities` ordering to utilize database instead of having it inside catalog client
-
-  Please note that the latest version of `@backstage/catalog-client` will not order the entities in the same way as before. This is because the ordering is now done in the database query instead of in the client. If you rely on the ordering of the entities, you may need to update your backend plugin or code to handle this change.
-
-### `@backstage/catalog-model` (1.6.0 → [1.7.0](../../changelogs/@backstage/catalog-model.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`74acf06`](https://github.com/backstage/backstage/commit/74acf06): Add `dependencyOf` prop to catalog model for Component kind to enable building relationship graphs with both directions using `dependsOn` and `dependencyOf`.
-
-### `@backstage/core-app-api` (1.14.2 → [1.15.0](../../changelogs/@backstage/core-app-api.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`ddbeace`](https://github.com/backstage/backstage/commit/ddbeace): Added the ability to explicitly disable routes through the `bindRoutes` option by passing `false` as the route target. This also fixes a bug where route bindings in config were incorrectly prioritized above the ones in code in certain situations.
-
-##### Patch Changes
-
-- [`ea69e46`](https://github.com/backstage/backstage/commit/ea69e46): The `defaultConfigLoader` now also reads configuration from scripts tags with `type="backstage.io/config"`. The tag is expected to contain a JSON-serialized array of `AppConfig` objects. If any of these script tags are present, the injected runtime configuration in the static assets will no longer be used.
-- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-
-### `@backstage/dev-utils` (1.0.37 → [1.1.0](../../changelogs/@backstage/dev-utils.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`10b1452`](https://github.com/backstage/backstage/commit/10b1452): Allow using translations in `createDevApp`
-
-##### Patch Changes
-
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-
-### `@backstage/integration` (1.14.0 → [1.15.0](../../changelogs/@backstage/integration.md#1150))
-
-#### 1.15.0
-
-##### Minor Changes
-
-- [`1573014`](https://github.com/backstage/backstage/commit/1573014): The Gerrit integration can now resolve Gitiles urls that point to the following
-  refs:
-
-  - HEAD
-  - A SHA
-  - Tag
-  - Branch
-
-### `@backstage/plugin-catalog` (1.22.0 → [1.23.0](../../changelogs/@backstage/plugin-catalog.md#1230))
-
-#### 1.23.0
-
-##### Minor Changes
-
-- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
-
-##### Patch Changes
-
-- [`c891b69`](https://github.com/backstage/backstage/commit/c891b69): Add `FavoriteToggle` in `core-components` to standardise favorite marking
-- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-- [`5446061`](https://github.com/backstage/backstage/commit/5446061): The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
-- [`0ff53c8`](https://github.com/backstage/backstage/commit/0ff53c8): Enable loading state for paginated catalog tables by passing `isLoading` prop
-- [`180a45f`](https://github.com/backstage/backstage/commit/180a45f): Entity presentation api now only fetches fields that are required to display entity title
-- [`a159180`](https://github.com/backstage/backstage/commit/a159180): Added missing items to `overridableComponents`
-
-### `@backstage/plugin-catalog-backend` (1.25.2 → [1.26.0](../../changelogs/@backstage/plugin-catalog-backend.md#1260))
-
-#### 1.26.0
-
-##### Minor Changes
-
-- [`74acf06`](https://github.com/backstage/backstage/commit/74acf06): Add `dependencyOf` prop to catalog model for Component kind to enable building relationship graphs with both directions using `dependsOn` and `dependencyOf`.
-- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
-- [`bd35cdb`](https://github.com/backstage/backstage/commit/bd35cdb): The `analyze-location` endpoint is now protected by the `catalog.location.analyze` permission.
-  The `validate-entity` endpoint is now protected by the `catalog.entity.validate` permission.
-
-##### Patch Changes
-
-- [`1882cfe`](https://github.com/backstage/backstage/commit/1882cfe): Moved `getEntities` ordering to utilize database instead of having it inside catalog client
-
-  Please note that the latest version of `@backstage/catalog-client` will not order the entities in the same way as before. This is because the ordering is now done in the database query instead of in the client. If you rely on the ordering of the entities, you may need to update your backend plugin or code to handle this change.
-
-- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
-- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
-- [`53cce86`](https://github.com/backstage/backstage/commit/53cce86): Fixed an issue with the by-query call, where ordering by a field that does not exist on all entities led to not all results being returned
-
-### `@backstage/plugin-catalog-common` (1.0.26 → [1.1.0](../../changelogs/@backstage/plugin-catalog-common.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`bd35cdb`](https://github.com/backstage/backstage/commit/bd35cdb): The `analyze-location` endpoint is now protected by the `catalog.location.analyze` permission.
-  The `validate-entity` endpoint is now protected by the `catalog.entity.validate` permission.
-
-### `@backstage/plugin-catalog-node` (1.12.6 → [1.13.0](../../changelogs/@backstage/plugin-catalog-node.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`bd35cdb`](https://github.com/backstage/backstage/commit/bd35cdb): The `analyze-location` endpoint is now protected by the `catalog.location.analyze` permission.
-  The `validate-entity` endpoint is now protected by the `catalog.entity.validate` permission.
-- [`29e57c7`](https://github.com/backstage/backstage/commit/29e57c7): Add catalog service mocks under the `/testUtils` subpath export.
-
-### `@backstage/plugin-catalog-react` (1.12.3 → [1.13.0](../../changelogs/@backstage/plugin-catalog-react.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
-
-##### Patch Changes
-
-- [`c891b69`](https://github.com/backstage/backstage/commit/c891b69): Add `FavoriteToggle` in `core-components` to standardise favorite marking
-- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
-- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-- [`5446061`](https://github.com/backstage/backstage/commit/5446061): The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
-- [`a159180`](https://github.com/backstage/backstage/commit/a159180): Added missing items to `overridableComponents`
-- [`ae9b6cb`](https://github.com/backstage/backstage/commit/ae9b6cb): Small internal fix to better work with recent `lodash` versions
-
-### `@backstage/plugin-scaffolder` (1.24.0 → [1.25.0](../../changelogs/@backstage/plugin-scaffolder.md#1250))
-
-#### 1.25.0
-
-##### Minor Changes
-
-- [`860ad3a`](https://github.com/backstage/backstage/commit/860ad3a): Expose styles for TemplateEditor, TemplateFormPreviewer and CustomFieldExplorer
-- [`4baad34`](https://github.com/backstage/backstage/commit/4baad34): Added support for `omitExtraData` and `liveOmit` for rjsf in the scaffolder
-- [`5143616`](https://github.com/backstage/backstage/commit/5143616): Added EntityOwnerPicker component to the TemplateListPage to allow filtering on owner
-
-##### Patch Changes
-
-- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
-- [`b0a5c9f`](https://github.com/backstage/backstage/commit/b0a5c9f): The `ui:options` for `OwnedEntityPicker` field are now passed to `EntityPicker`. This allows you to use any `ui:options` which `EntityPicker` accepts in the `OwnedEntityPicker` field including `allowArbitraryValues` and `defaultNamespace`.
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-- [`0a50d44`](https://github.com/backstage/backstage/commit/0a50d44): Updated dependency `@rjsf/utils` to `5.21.1`.
-  Updated dependency `@rjsf/core` to `5.21.1`.
-  Updated dependency `@rjsf/material-ui` to `5.21.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.21.1`.
-- [`fa9d8da`](https://github.com/backstage/backstage/commit/fa9d8da): Updated dependency `@rjsf/utils` to `5.20.1`.
-  Updated dependency `@rjsf/core` to `5.20.1`.
-  Updated dependency `@rjsf/material-ui` to `5.20.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.20.1`.
-- [`0944334`](https://github.com/backstage/backstage/commit/0944334): Removed duplicated titles on Scaffolder `TemplateListPage` component
-- [`7976081`](https://github.com/backstage/backstage/commit/7976081): Added support for all request parameters in the Github create/update environment API in the Github environment create scaffolder action.
-
-  Disable MultiEntityPicker when `maxItems` limit is reached defined in `JSONSchema`
-
-### `@backstage/plugin-scaffolder-backend` (1.24.1 → [1.25.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1250))
-
-#### 1.25.0
-
-##### Minor Changes
-
-- [`df9ae9e`](https://github.com/backstage/backstage/commit/df9ae9e): Added scaffolder action publish:bitbucketCloud:pull-request
-- [`62898bd`](https://github.com/backstage/backstage/commit/62898bd): `createRouter` and its related types has been marked as deprecared. This backend should instead be initialized using the new backend system.
-
-##### Patch Changes
-
-- [`f0c6b25`](https://github.com/backstage/backstage/commit/f0c6b25): Allow listing file contents with `debug:log` scaffolder action
-- [`c160951`](https://github.com/backstage/backstage/commit/c160951): Found the issue during testing the clean up of the workspace for the database implementation.
-- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
-- [`f865103`](https://github.com/backstage/backstage/commit/f865103): Updated dependency `esbuild` to `^0.23.0`.
-- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
-- [`7976081`](https://github.com/backstage/backstage/commit/7976081): Added support for all request parameters in the Github create/update environment API in the Github environment create scaffolder action.
-
-  Disable MultiEntityPicker when `maxItems` limit is reached defined in `JSONSchema`
-
-### `@backstage/plugin-scaffolder-react` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`4512f71`](https://github.com/backstage/backstage/commit/4512f71): Add `ui:backstage.review.name` option for custom item names on scaffolder review page, and also add support for rendering the `title` property instead of the key name.
-- [`4baad34`](https://github.com/backstage/backstage/commit/4baad34): Added support for `omitExtraData` and `liveOmit` for rjsf in the scaffolder
-
-##### Patch Changes
-
-- [`1f3c5aa`](https://github.com/backstage/backstage/commit/1f3c5aa): Fix scaffolder review step issue where schema options are not handled for fields on multi-step templates.
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-- [`0a50d44`](https://github.com/backstage/backstage/commit/0a50d44): Updated dependency `@rjsf/utils` to `5.21.1`.
-  Updated dependency `@rjsf/core` to `5.21.1`.
-  Updated dependency `@rjsf/material-ui` to `5.21.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.21.1`.
-- [`fa9d8da`](https://github.com/backstage/backstage/commit/fa9d8da): Updated dependency `@rjsf/utils` to `5.20.1`.
-  Updated dependency `@rjsf/core` to `5.20.1`.
-  Updated dependency `@rjsf/material-ui` to `5.20.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.20.1`.
-- [`c2cbe1e`](https://github.com/backstage/backstage/commit/c2cbe1e): Updated dependency `use-immer` to `^0.10.0`.
-- [`b0f0118`](https://github.com/backstage/backstage/commit/b0f0118): Remove unnecessary singleton wrapping of `scaffolderApiRef`.
-- [`3ebb64f`](https://github.com/backstage/backstage/commit/3ebb64f): - Fix secret widget field not displaying as required.
-  - Fix secret widget not able to be required inside nested objects.
-  - Fix secret widget not able to be disabled.
-  - Support `minLength` and `maxLength` properties for secret widget.
-- [`8dd6ef6`](https://github.com/backstage/backstage/commit/8dd6ef6): Fix an issue where keys with duplicate final key parts are not all displayed in the `ReviewState`. Change the way the keys are formatted to include the full schema path, separated by `>`.
-- [`9a0672a`](https://github.com/backstage/backstage/commit/9a0672a): Scaffolder review page shows static amount of asterisks for secret fields.
-
-### `@backstage/plugin-search-react` (1.7.14 → [1.8.0](../../changelogs/@backstage/plugin-search-react.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`9d66d8c`](https://github.com/backstage/backstage/commit/9d66d8c): Make use of the `useApp` hook to retrieve the specified search icon in the SearchBar
-
-##### Patch Changes
-
-- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
-- [`f26ff99`](https://github.com/backstage/backstage/commit/f26ff99): Slight type tweak to match newer React versions better
-- [`dbbd93e`](https://github.com/backstage/backstage/commit/dbbd93e): Internal update to match recent React types
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-- [`5446061`](https://github.com/backstage/backstage/commit/5446061): The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
-- [`a159180`](https://github.com/backstage/backstage/commit/a159180): Added missing items to `overridableComponents`
-
-### `@backstage/test-utils` (1.5.10 → [1.6.0](../../changelogs/@backstage/test-utils.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`d47be30`](https://github.com/backstage/backstage/commit/d47be30): Added the icons option to the renderInTestApp function's TestAppOptions to be forwarded to the icons option of `createApp`.
-
-##### Patch Changes
-
-- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.5.10 → [1.5.11](../../changelogs/@backstage/app-defaults.md#1511))
-
-#### 1.5.11
-
-##### Patch Changes
-
-- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+## 0.x patch version bumps
 
 ### `@backstage/backend-openapi-utils` (0.1.17 → [0.1.18](../../changelogs/@backstage/backend-openapi-utils.md#0118))
 
@@ -1864,22 +1614,6 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 
 - [`0894166`](https://github.com/backstage/backstage/commit/0894166): Updated dependency `jscodeshift` to `^0.16.0`.
 
-### `@backstage/config-loader` (1.9.0 → [1.9.1](../../changelogs/@backstage/config-loader.md#191))
-
-#### 1.9.1
-
-##### Patch Changes
-
-- [`ef3c507`](https://github.com/backstage/backstage/commit/ef3c507): Updated dependency `typescript-json-schema` to `^0.65.0`.
-
-### `@backstage/core-plugin-api` (1.9.3 → [1.9.4](../../changelogs/@backstage/core-plugin-api.md#194))
-
-#### 1.9.4
-
-##### Patch Changes
-
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-
 ### `@backstage/create-app` (0.5.18 → [0.5.19](../../changelogs/@backstage/create-app.md#0519))
 
 #### 0.5.19
@@ -1904,16 +1638,6 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 ##### Patch Changes
 
 - [`08895e3`](https://github.com/backstage/backstage/commit/08895e3): Added support for linting dependencies on workspace packages with the `backstage.inline` flag.
-
-### `@backstage/integration-react` (1.1.30 → [1.1.31](../../changelogs/@backstage/integration-react.md#1131))
-
-#### 1.1.31
-
-##### Patch Changes
-
-- [`8a9d797`](https://github.com/backstage/backstage/commit/8a9d797): Remove unnecessary broad permissions from Gitlab `SCMAuth`
-
-  Newer versions of Gitlab (after 2019) do not require the broad api permissions to write to repos.
 
 ### `@backstage/plugin-api-docs` (0.11.8 → [0.11.9](../../changelogs/@backstage/plugin-api-docs.md#0119))
 
@@ -2297,26 +2021,6 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 - [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
 - [`d298e6e`](https://github.com/backstage/backstage/commit/d298e6e): Deprecated `createRouter` and its router options in favour of the new backend system.
 
-### `@backstage/plugin-search` (1.4.15 → [1.4.16](../../changelogs/@backstage/plugin-search.md#1416))
-
-#### 1.4.16
-
-##### Patch Changes
-
-- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
-- [`eca03bd`](https://github.com/backstage/backstage/commit/eca03bd): Added ability to customize the search items within the SidebarSearchModal
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-
-### `@backstage/plugin-search-backend` (1.5.16 → [1.5.17](../../changelogs/@backstage/plugin-search-backend.md#1517))
-
-#### 1.5.17
-
-##### Patch Changes
-
-- [`5726390`](https://github.com/backstage/backstage/commit/5726390): Deprecate create router as the legacy backend system will no longer be supported.
-- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
-- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.2.1 → [0.2.2](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#022))
 
 #### 0.2.2
@@ -2330,15 +2034,6 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
   - `DefaultCatalogCollatorFactory`: https://github.com/backstage/backstage/blob/nbs10/search-deprecate-create-router/plugins/search-backend-module-catalog/README.md#installation;
   - `ToolDocumentCollatorFactory`: https://github.com/backstage/backstage/blob/nbs10/search-deprecate-create-router/plugins/search-backend-module-explore/README.md#installation;
   - `DefaultTechDocsCollatorFactory`: https://github.com/backstage/backstage/blob/nbs10/search-deprecate-create-router/plugins/search-backend-module-techdocs/README.md#installation.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.5.5 → [1.5.6](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#156))
-
-#### 1.5.6
-
-##### Patch Changes
-
-- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
-- [`5726390`](https://github.com/backstage/backstage/commit/5726390): Internal refactor to use `LoggerService` and `DatabaseService` instead of the legacy `Logger` and `PluginDatabaseManager` types.
 
 ### `@backstage/plugin-search-backend-module-explore` (0.2.1 → [0.2.2](../../changelogs/@backstage/plugin-search-backend-module-explore.md#022))
 
@@ -2386,6 +2081,360 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 ##### Patch Changes
 
 - [`a0f1f0d`](https://github.com/backstage/backstage/commit/a0f1f0d): Bump the `ws` library
+
+### `@backstage/plugin-user-settings` (0.8.11 → [0.8.12](../../changelogs/@backstage/plugin-user-settings.md#0812))
+
+#### 0.8.12
+
+##### Patch Changes
+
+- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+- [`da86ac2`](https://github.com/backstage/backstage/commit/da86ac2): Update README to clarify location of additional tabs example
+
+### `@backstage/plugin-user-settings-backend` (0.2.23 → [0.2.24](../../changelogs/@backstage/plugin-user-settings-backend.md#0224))
+
+#### 0.2.24
+
+##### Patch Changes
+
+- [`5d1670f`](https://github.com/backstage/backstage/commit/5d1670f): Update README installation instructions
+- [`164ce3e`](https://github.com/backstage/backstage/commit/164ce3e): In preparation to stop supporting to the legacy backend system, the `createRouter` function is now deprecated and we strongly recommend you [migrate](https://backstage.io/docs/backend-system/building-backends/migrating) your backend to the new system.
+- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- [`1b98099`](https://github.com/backstage/backstage/commit/1b98099): Replaced usage of the deprecated identity service with the new HTTP auth service for the new backend system.
+- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
+
+### `@backstage/repo-tools` (0.9.6 → [0.9.7](../../changelogs/@backstage/repo-tools.md#097))
+
+#### 0.9.7
+
+##### Patch Changes
+
+- [`5c4aa2f`](https://github.com/backstage/backstage/commit/5c4aa2f): Updated dependency `@useoptic/openapi-utilities` to `^0.55.0`.
+- [`1a8837e`](https://github.com/backstage/backstage/commit/1a8837e): Avoid generating API reports for packages with `backstage.inline` set.
+
+### `@backstage/theme` (0.5.6 → [0.5.7](../../changelogs/@backstage/theme.md#057))
+
+#### 0.5.7
+
+##### Patch Changes
+
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+## Minor version bumps
+
+### `@backstage/catalog-client` (1.6.6 → [1.7.0](../../changelogs/@backstage/catalog-client.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
+- [`29e57c7`](https://github.com/backstage/backstage/commit/29e57c7): Add catalog service mocks under the `/testUtils` subpath export.
+
+##### Patch Changes
+
+- [`1882cfe`](https://github.com/backstage/backstage/commit/1882cfe): Moved `getEntities` ordering to utilize database instead of having it inside catalog client
+
+  Please note that the latest version of `@backstage/catalog-client` will not order the entities in the same way as before. This is because the ordering is now done in the database query instead of in the client. If you rely on the ordering of the entities, you may need to update your backend plugin or code to handle this change.
+
+### `@backstage/catalog-model` (1.6.0 → [1.7.0](../../changelogs/@backstage/catalog-model.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`74acf06`](https://github.com/backstage/backstage/commit/74acf06): Add `dependencyOf` prop to catalog model for Component kind to enable building relationship graphs with both directions using `dependsOn` and `dependencyOf`.
+
+### `@backstage/core-app-api` (1.14.2 → [1.15.0](../../changelogs/@backstage/core-app-api.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`ddbeace`](https://github.com/backstage/backstage/commit/ddbeace): Added the ability to explicitly disable routes through the `bindRoutes` option by passing `false` as the route target. This also fixes a bug where route bindings in config were incorrectly prioritized above the ones in code in certain situations.
+
+##### Patch Changes
+
+- [`ea69e46`](https://github.com/backstage/backstage/commit/ea69e46): The `defaultConfigLoader` now also reads configuration from scripts tags with `type="backstage.io/config"`. The tag is expected to contain a JSON-serialized array of `AppConfig` objects. If any of these script tags are present, the injected runtime configuration in the static assets will no longer be used.
+- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+### `@backstage/dev-utils` (1.0.37 → [1.1.0](../../changelogs/@backstage/dev-utils.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`10b1452`](https://github.com/backstage/backstage/commit/10b1452): Allow using translations in `createDevApp`
+
+##### Patch Changes
+
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+### `@backstage/integration` (1.14.0 → [1.15.0](../../changelogs/@backstage/integration.md#1150))
+
+#### 1.15.0
+
+##### Minor Changes
+
+- [`1573014`](https://github.com/backstage/backstage/commit/1573014): The Gerrit integration can now resolve Gitiles urls that point to the following
+  refs:
+
+  - HEAD
+  - A SHA
+  - Tag
+  - Branch
+
+### `@backstage/plugin-catalog` (1.22.0 → [1.23.0](../../changelogs/@backstage/plugin-catalog.md#1230))
+
+#### 1.23.0
+
+##### Minor Changes
+
+- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
+
+##### Patch Changes
+
+- [`c891b69`](https://github.com/backstage/backstage/commit/c891b69): Add `FavoriteToggle` in `core-components` to standardise favorite marking
+- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+- [`5446061`](https://github.com/backstage/backstage/commit/5446061): The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
+- [`0ff53c8`](https://github.com/backstage/backstage/commit/0ff53c8): Enable loading state for paginated catalog tables by passing `isLoading` prop
+- [`180a45f`](https://github.com/backstage/backstage/commit/180a45f): Entity presentation api now only fetches fields that are required to display entity title
+- [`a159180`](https://github.com/backstage/backstage/commit/a159180): Added missing items to `overridableComponents`
+
+### `@backstage/plugin-catalog-backend` (1.25.2 → [1.26.0](../../changelogs/@backstage/plugin-catalog-backend.md#1260))
+
+#### 1.26.0
+
+##### Minor Changes
+
+- [`74acf06`](https://github.com/backstage/backstage/commit/74acf06): Add `dependencyOf` prop to catalog model for Component kind to enable building relationship graphs with both directions using `dependsOn` and `dependencyOf`.
+- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
+- [`bd35cdb`](https://github.com/backstage/backstage/commit/bd35cdb): The `analyze-location` endpoint is now protected by the `catalog.location.analyze` permission.
+  The `validate-entity` endpoint is now protected by the `catalog.entity.validate` permission.
+
+##### Patch Changes
+
+- [`1882cfe`](https://github.com/backstage/backstage/commit/1882cfe): Moved `getEntities` ordering to utilize database instead of having it inside catalog client
+
+  Please note that the latest version of `@backstage/catalog-client` will not order the entities in the same way as before. This is because the ordering is now done in the database query instead of in the client. If you rely on the ordering of the entities, you may need to update your backend plugin or code to handle this change.
+
+- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
+- [`53cce86`](https://github.com/backstage/backstage/commit/53cce86): Fixed an issue with the by-query call, where ordering by a field that does not exist on all entities led to not all results being returned
+
+### `@backstage/plugin-catalog-common` (1.0.26 → [1.1.0](../../changelogs/@backstage/plugin-catalog-common.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`bd35cdb`](https://github.com/backstage/backstage/commit/bd35cdb): The `analyze-location` endpoint is now protected by the `catalog.location.analyze` permission.
+  The `validate-entity` endpoint is now protected by the `catalog.entity.validate` permission.
+
+### `@backstage/plugin-catalog-node` (1.12.6 → [1.13.0](../../changelogs/@backstage/plugin-catalog-node.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`bd35cdb`](https://github.com/backstage/backstage/commit/bd35cdb): The `analyze-location` endpoint is now protected by the `catalog.location.analyze` permission.
+  The `validate-entity` endpoint is now protected by the `catalog.entity.validate` permission.
+- [`29e57c7`](https://github.com/backstage/backstage/commit/29e57c7): Add catalog service mocks under the `/testUtils` subpath export.
+
+### `@backstage/plugin-catalog-react` (1.12.3 → [1.13.0](../../changelogs/@backstage/plugin-catalog-react.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`78475c3`](https://github.com/backstage/backstage/commit/78475c3): Allow offset mode paging in entity list provider
+
+##### Patch Changes
+
+- [`c891b69`](https://github.com/backstage/backstage/commit/c891b69): Add `FavoriteToggle` in `core-components` to standardise favorite marking
+- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
+- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+- [`5446061`](https://github.com/backstage/backstage/commit/5446061): The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
+- [`a159180`](https://github.com/backstage/backstage/commit/a159180): Added missing items to `overridableComponents`
+- [`ae9b6cb`](https://github.com/backstage/backstage/commit/ae9b6cb): Small internal fix to better work with recent `lodash` versions
+
+### `@backstage/plugin-scaffolder` (1.24.0 → [1.25.0](../../changelogs/@backstage/plugin-scaffolder.md#1250))
+
+#### 1.25.0
+
+##### Minor Changes
+
+- [`860ad3a`](https://github.com/backstage/backstage/commit/860ad3a): Expose styles for TemplateEditor, TemplateFormPreviewer and CustomFieldExplorer
+- [`4baad34`](https://github.com/backstage/backstage/commit/4baad34): Added support for `omitExtraData` and `liveOmit` for rjsf in the scaffolder
+- [`5143616`](https://github.com/backstage/backstage/commit/5143616): Added EntityOwnerPicker component to the TemplateListPage to allow filtering on owner
+
+##### Patch Changes
+
+- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
+- [`b0a5c9f`](https://github.com/backstage/backstage/commit/b0a5c9f): The `ui:options` for `OwnedEntityPicker` field are now passed to `EntityPicker`. This allows you to use any `ui:options` which `EntityPicker` accepts in the `OwnedEntityPicker` field including `allowArbitraryValues` and `defaultNamespace`.
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+- [`0a50d44`](https://github.com/backstage/backstage/commit/0a50d44): Updated dependency `@rjsf/utils` to `5.21.1`.
+  Updated dependency `@rjsf/core` to `5.21.1`.
+  Updated dependency `@rjsf/material-ui` to `5.21.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.21.1`.
+- [`fa9d8da`](https://github.com/backstage/backstage/commit/fa9d8da): Updated dependency `@rjsf/utils` to `5.20.1`.
+  Updated dependency `@rjsf/core` to `5.20.1`.
+  Updated dependency `@rjsf/material-ui` to `5.20.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.20.1`.
+- [`0944334`](https://github.com/backstage/backstage/commit/0944334): Removed duplicated titles on Scaffolder `TemplateListPage` component
+- [`7976081`](https://github.com/backstage/backstage/commit/7976081): Added support for all request parameters in the Github create/update environment API in the Github environment create scaffolder action.
+
+  Disable MultiEntityPicker when `maxItems` limit is reached defined in `JSONSchema`
+
+### `@backstage/plugin-scaffolder-backend` (1.24.1 → [1.25.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1250))
+
+#### 1.25.0
+
+##### Minor Changes
+
+- [`df9ae9e`](https://github.com/backstage/backstage/commit/df9ae9e): Added scaffolder action publish:bitbucketCloud:pull-request
+- [`62898bd`](https://github.com/backstage/backstage/commit/62898bd): `createRouter` and its related types has been marked as deprecared. This backend should instead be initialized using the new backend system.
+
+##### Patch Changes
+
+- [`f0c6b25`](https://github.com/backstage/backstage/commit/f0c6b25): Allow listing file contents with `debug:log` scaffolder action
+- [`c160951`](https://github.com/backstage/backstage/commit/c160951): Found the issue during testing the clean up of the workspace for the database implementation.
+- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- [`f865103`](https://github.com/backstage/backstage/commit/f865103): Updated dependency `esbuild` to `^0.23.0`.
+- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
+- [`7976081`](https://github.com/backstage/backstage/commit/7976081): Added support for all request parameters in the Github create/update environment API in the Github environment create scaffolder action.
+
+  Disable MultiEntityPicker when `maxItems` limit is reached defined in `JSONSchema`
+
+### `@backstage/plugin-scaffolder-react` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`4512f71`](https://github.com/backstage/backstage/commit/4512f71): Add `ui:backstage.review.name` option for custom item names on scaffolder review page, and also add support for rendering the `title` property instead of the key name.
+- [`4baad34`](https://github.com/backstage/backstage/commit/4baad34): Added support for `omitExtraData` and `liveOmit` for rjsf in the scaffolder
+
+##### Patch Changes
+
+- [`1f3c5aa`](https://github.com/backstage/backstage/commit/1f3c5aa): Fix scaffolder review step issue where schema options are not handled for fields on multi-step templates.
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+- [`0a50d44`](https://github.com/backstage/backstage/commit/0a50d44): Updated dependency `@rjsf/utils` to `5.21.1`.
+  Updated dependency `@rjsf/core` to `5.21.1`.
+  Updated dependency `@rjsf/material-ui` to `5.21.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.21.1`.
+- [`fa9d8da`](https://github.com/backstage/backstage/commit/fa9d8da): Updated dependency `@rjsf/utils` to `5.20.1`.
+  Updated dependency `@rjsf/core` to `5.20.1`.
+  Updated dependency `@rjsf/material-ui` to `5.20.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.20.1`.
+- [`c2cbe1e`](https://github.com/backstage/backstage/commit/c2cbe1e): Updated dependency `use-immer` to `^0.10.0`.
+- [`b0f0118`](https://github.com/backstage/backstage/commit/b0f0118): Remove unnecessary singleton wrapping of `scaffolderApiRef`.
+- [`3ebb64f`](https://github.com/backstage/backstage/commit/3ebb64f): - Fix secret widget field not displaying as required.
+  - Fix secret widget not able to be required inside nested objects.
+  - Fix secret widget not able to be disabled.
+  - Support `minLength` and `maxLength` properties for secret widget.
+- [`8dd6ef6`](https://github.com/backstage/backstage/commit/8dd6ef6): Fix an issue where keys with duplicate final key parts are not all displayed in the `ReviewState`. Change the way the keys are formatted to include the full schema path, separated by `>`.
+- [`9a0672a`](https://github.com/backstage/backstage/commit/9a0672a): Scaffolder review page shows static amount of asterisks for secret fields.
+
+### `@backstage/plugin-search-react` (1.7.14 → [1.8.0](../../changelogs/@backstage/plugin-search-react.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`9d66d8c`](https://github.com/backstage/backstage/commit/9d66d8c): Make use of the `useApp` hook to retrieve the specified search icon in the SearchBar
+
+##### Patch Changes
+
+- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
+- [`f26ff99`](https://github.com/backstage/backstage/commit/f26ff99): Slight type tweak to match newer React versions better
+- [`dbbd93e`](https://github.com/backstage/backstage/commit/dbbd93e): Internal update to match recent React types
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+- [`5446061`](https://github.com/backstage/backstage/commit/5446061): The `/alpha` export no longer export extension creators for the new frontend system, existing usage should be switched to use the equivalent extension blueprint instead. For more information see the [new frontend system 1.30 migration documentation](https://backstage.io/docs/frontend-system/architecture/migrations#130).
+- [`a159180`](https://github.com/backstage/backstage/commit/a159180): Added missing items to `overridableComponents`
+
+### `@backstage/test-utils` (1.5.10 → [1.6.0](../../changelogs/@backstage/test-utils.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`d47be30`](https://github.com/backstage/backstage/commit/d47be30): Added the icons option to the renderInTestApp function's TestAppOptions to be forwarded to the icons option of `createApp`.
+
+##### Patch Changes
+
+- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.5.10 → [1.5.11](../../changelogs/@backstage/app-defaults.md#1511))
+
+#### 1.5.11
+
+##### Patch Changes
+
+- [`b537bd7`](https://github.com/backstage/backstage/commit/b537bd7): Allow custom star icons to be provided via the `star` and `unstarred` icon overrides. See how to override existing icons in the [Backstage documentation](https://backstage.io/docs/getting-started/app-custom-theme/#custom-icons).
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+### `@backstage/config-loader` (1.9.0 → [1.9.1](../../changelogs/@backstage/config-loader.md#191))
+
+#### 1.9.1
+
+##### Patch Changes
+
+- [`ef3c507`](https://github.com/backstage/backstage/commit/ef3c507): Updated dependency `typescript-json-schema` to `^0.65.0`.
+
+### `@backstage/core-plugin-api` (1.9.3 → [1.9.4](../../changelogs/@backstage/core-plugin-api.md#194))
+
+#### 1.9.4
+
+##### Patch Changes
+
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+### `@backstage/integration-react` (1.1.30 → [1.1.31](../../changelogs/@backstage/integration-react.md#1131))
+
+#### 1.1.31
+
+##### Patch Changes
+
+- [`8a9d797`](https://github.com/backstage/backstage/commit/8a9d797): Remove unnecessary broad permissions from Gitlab `SCMAuth`
+
+  Newer versions of Gitlab (after 2019) do not require the broad api permissions to write to repos.
+
+### `@backstage/plugin-search` (1.4.15 → [1.4.16](../../changelogs/@backstage/plugin-search.md#1416))
+
+#### 1.4.16
+
+##### Patch Changes
+
+- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
+- [`eca03bd`](https://github.com/backstage/backstage/commit/eca03bd): Added ability to customize the search items within the SidebarSearchModal
+- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
+
+### `@backstage/plugin-search-backend` (1.5.16 → [1.5.17](../../changelogs/@backstage/plugin-search-backend.md#1517))
+
+#### 1.5.17
+
+##### Patch Changes
+
+- [`5726390`](https://github.com/backstage/backstage/commit/5726390): Deprecate create router as the legacy backend system will no longer be supported.
+- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.5.5 → [1.5.6](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#156))
+
+#### 1.5.6
+
+##### Patch Changes
+
+- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
+- [`5726390`](https://github.com/backstage/backstage/commit/5726390): Internal refactor to use `LoggerService` and `DatabaseService` instead of the legacy `Logger` and `PluginDatabaseManager` types.
 
 ### `@backstage/plugin-techdocs` (1.10.8 → [1.10.9](../../changelogs/@backstage/plugin-techdocs.md#1109))
 
@@ -2456,45 +2505,6 @@ Changes between 1.30.4 and 1.31.0 — 158 changed and 4 added packages.
 ##### Patch Changes
 
 - [`5ee3d27`](https://github.com/backstage/backstage/commit/5ee3d27): Fixed issue in useShadowRootElements which could lead to unlimited render loops
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-
-### `@backstage/plugin-user-settings` (0.8.11 → [0.8.12](../../changelogs/@backstage/plugin-user-settings.md#0812))
-
-#### 0.8.12
-
-##### Patch Changes
-
-- [`fec8b57`](https://github.com/backstage/backstage/commit/fec8b57): Updated exports to use the new type parameters for extensions and extension blueprints.
-- [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
-- [`da86ac2`](https://github.com/backstage/backstage/commit/da86ac2): Update README to clarify location of additional tabs example
-
-### `@backstage/plugin-user-settings-backend` (0.2.23 → [0.2.24](../../changelogs/@backstage/plugin-user-settings-backend.md#0224))
-
-#### 0.2.24
-
-##### Patch Changes
-
-- [`5d1670f`](https://github.com/backstage/backstage/commit/5d1670f): Update README installation instructions
-- [`164ce3e`](https://github.com/backstage/backstage/commit/164ce3e): In preparation to stop supporting to the legacy backend system, the `createRouter` function is now deprecated and we strongly recommend you [migrate](https://backstage.io/docs/backend-system/building-backends/migrating) your backend to the new system.
-- [`d425fc4`](https://github.com/backstage/backstage/commit/d425fc4): Modules, plugins, and services are now `BackendFeature`, not a function that returns a feature.
-- [`1b98099`](https://github.com/backstage/backstage/commit/1b98099): Replaced usage of the deprecated identity service with the new HTTP auth service for the new backend system.
-- [`c2b63ab`](https://github.com/backstage/backstage/commit/c2b63ab): Updated dependency `supertest` to `^7.0.0`.
-
-### `@backstage/repo-tools` (0.9.6 → [0.9.7](../../changelogs/@backstage/repo-tools.md#097))
-
-#### 0.9.7
-
-##### Patch Changes
-
-- [`5c4aa2f`](https://github.com/backstage/backstage/commit/5c4aa2f): Updated dependency `@useoptic/openapi-utilities` to `^0.55.0`.
-- [`1a8837e`](https://github.com/backstage/backstage/commit/1a8837e): Avoid generating API reports for packages with `backstage.inline` set.
-
-### `@backstage/theme` (0.5.6 → [0.5.7](../../changelogs/@backstage/theme.md#057))
-
-#### 0.5.7
-
-##### Patch Changes
-
 - [`836127c`](https://github.com/backstage/backstage/commit/836127c): Updated dependency `@testing-library/react` to `^16.0.0`.
 
 ### `@backstage/version-bridge` (1.0.8 → [1.0.9](../../changelogs/@backstage/version-bridge.md#109))
