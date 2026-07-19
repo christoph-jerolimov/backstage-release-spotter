@@ -1,6 +1,6 @@
 # Backstage Release 1.43.3 changelog
 
-Changes between 1.43.2 and 1.43.3 — 3 changed and 0 added packages.
+Changes between 1.43.2 and 1.43.3 — 0 added, 0 removed, 3 upgraded, 186 unchanged packages.
 
 ## Summary
 

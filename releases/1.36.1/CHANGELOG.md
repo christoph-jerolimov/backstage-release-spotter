@@ -1,19 +1,19 @@
 # Backstage Release 1.36.1 changelog
 
-Changes between 1.36.0 and 1.36.1 — 3 changed and 0 added packages.
+Changes between 1.36.0 and 1.36.1 — 0 added, 0 removed, 3 upgraded, 176 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 3 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.8.0 → 0.8.1)](#backstagebackend-defaults-080--081)
   - [`@backstage/plugin-events-backend` (0.4.2 → 0.4.3)](#backstageplugin-events-backend-042--043)
   - [`@backstage/plugin-notifications-backend` (0.5.2 → 0.5.3)](#backstageplugin-notifications-backend-052--053)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.8.0 → [0.8.1](../../changelogs/@backstage/backend-defaults.md#081))
 

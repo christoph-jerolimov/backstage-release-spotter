@@ -195,8 +195,14 @@ export function buildChangelog(
 
   // Assign every package to its first matching group (newly added packages
   // stay a dedicated first group so they never drown in a large document).
-  const NEWLY_ADDED = 0, BREAKING = 1, MAJOR = 2, ZERO_MINOR = 3, ZERO_PATCH = 4, MINOR = 5, PATCH = 6;
-  const groups: { name: string; label: string; linkedLabel: string; content: string[] }[][] = Array.from({ length: 7 }, () => []);
+  const NEWLY_ADDED = 0, BREAKING = 1, MAJOR = 2, ZERO_MINOR = 3, ZERO_ZERO_PATCH = 4, ZERO_PATCH = 5, MINOR = 6, PATCH = 7;
+  interface PackageEntry {
+    name: string;
+    label: string;
+    linkedLabel: string;
+    content: string[];
+  }
+  const groups: PackageEntry[][] = Array.from({ length: 8 }, () => []);
   const excluded: { name: string; linkedLabel: string }[] = [];
   for (const { name, from, to, label, linkedLabel } of candidates) {
     const sections = sectionsInRange(name, from, to, mode);
@@ -217,13 +223,16 @@ export function buildChangelog(
           : bump?.level === "Minor"
             ? (bump.breaking ? ZERO_MINOR : MINOR)
             : bump?.breaking
-              ? ZERO_PATCH
-              : PATCH;
+              ? ZERO_ZERO_PATCH
+              : bump !== undefined && semver.major(to) === 0
+                ? ZERO_PATCH
+                : PATCH;
       groups[group]!.push(entry);
     }
   }
   for (const group of groups) group.sort((a, b) => byCodepoint(a.name, b.name));
   excluded.sort((a, b) => byCodepoint(a.name, b.name));
+  const removed = [...diff.removed].sort((a, b) => byCodepoint(a.name, b.name));
 
   const titles = [
     "Newly added packages",
@@ -231,8 +240,11 @@ export function buildChangelog(
     "Major version bumps",
     "0.x minor version bumps",
     "0.0.x patch version bumps",
+    "0.x patch version bumps",
     groups[ZERO_MINOR]!.length > 0 ? "Other minor version bumps" : "Minor version bumps",
-    groups[ZERO_PATCH]!.length > 0 ? "Other patch version bumps" : "Patch version bumps",
+    groups[ZERO_ZERO_PATCH]!.length > 0 || groups[ZERO_PATCH]!.length > 0
+      ? "Other patch version bumps"
+      : "Patch version bumps",
   ];
   // The plain heading text drives the anchor and ToC label; the rendered
   // heading links the "to" version to the copied changelog. Both render to the
@@ -241,53 +253,61 @@ export function buildChangelog(
   const packageHeadingLinked = (entry: { name: string; linkedLabel: string }): string =>
     `\`${entry.name}\` (${entry.linkedLabel})`;
 
+  // Summary, table of contents, and body all iterate the same ordered section
+  // list; plain list sections (Removed, Excluded) get no per-package ToC items.
+  interface DocSection {
+    title: string;
+    entries?: PackageEntry[];
+    items?: string[];
+  }
+  const docSections: DocSection[] = [
+    { title: titles[NEWLY_ADDED]!, entries: groups[NEWLY_ADDED]! },
+    {
+      title: "Removed packages",
+      items: removed.map(({ name, version }) => `- \`${name}\` (${versionLink(name, version)})`),
+    },
+    ...groups.slice(BREAKING).map((entries, index) => ({ title: titles[BREAKING + index]!, entries })),
+    {
+      title: "Excluded dependency updates",
+      items: excluded.map(({ name, linkedLabel }) => `- \`${name}\` (${linkedLabel})`),
+    },
+  ].filter(({ entries, items }) => (entries?.length ?? 0) > 0 || (items?.length ?? 0) > 0);
+
   const lines: string[] = [];
   lines.push(`# Backstage Release ${toManifest.releaseVersion} changelog`, "");
   lines.push(
     `Changes between ${fromManifest.releaseVersion} and ${toManifest.releaseVersion} — ` +
-      `${changed.length} changed and ${added.length} added packages.`,
+      `${added.length} added, ${removed.length} removed, ${changed.length} upgraded, ` +
+      `${diff.unchanged} unchanged packages.`,
     "",
   );
 
-  const EXCLUDED_TITLE = "Excluded dependency updates";
   const count = (length: number): string => `${length} ${length === 1 ? "package" : "packages"}`;
-  const nonEmpty = groups.map((entries, index) => ({ entries, title: titles[index]! })).filter(({ entries }) => entries.length > 0);
-  if (nonEmpty.length > 0 || excluded.length > 0) {
+  if (docSections.length > 0) {
     lines.push("## Summary", "");
-    for (const { entries, title } of nonEmpty) {
-      lines.push(`- [${title}](#${slug(title)}): ${count(entries.length)}`);
-    }
-    if (excluded.length > 0) {
-      lines.push(`- [${EXCLUDED_TITLE}](#${slug(EXCLUDED_TITLE)}): ${count(excluded.length)}`);
+    for (const { title, entries, items } of docSections) {
+      lines.push(`- [${title}](#${slug(title)}): ${count(entries?.length ?? items?.length ?? 0)}`);
     }
     lines.push("", "## Table of contents", "");
-    for (const { entries, title } of nonEmpty) {
+    for (const { title, entries } of docSections) {
       lines.push(`- [${title}](#${slug(title)})`);
-      for (const entry of entries) {
+      for (const entry of entries ?? []) {
         const heading = packageHeading(entry);
         lines.push(`  - [${heading}](#${slug(heading)})`);
       }
     }
-    if (excluded.length > 0) {
-      lines.push(`- [${EXCLUDED_TITLE}](#${slug(EXCLUDED_TITLE)})`);
-    }
     lines.push("");
   }
 
-  for (const { entries, title } of nonEmpty) {
+  for (const { title, entries, items } of docSections) {
     lines.push(`## ${title}`, "");
-    for (const entry of entries) {
+    for (const entry of entries ?? []) {
       lines.push(`### ${packageHeadingLinked(entry)}`, "");
       lines.push(...entry.content, "");
     }
-  }
-
-  if (excluded.length > 0) {
-    lines.push(`## ${EXCLUDED_TITLE}`, "");
-    for (const { name, linkedLabel } of excluded) {
-      lines.push(`- \`${name}\` (${linkedLabel})`);
+    if (items !== undefined) {
+      lines.push(...items, "");
     }
-    lines.push("");
   }
   return trimBlankEdges(lines).join("\n") + "\n";
 }

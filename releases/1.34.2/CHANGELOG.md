@@ -1,18 +1,18 @@
 # Backstage Release 1.34.2 changelog
 
-Changes between 1.34.1 and 1.34.2 — 2 changed and 0 added packages.
+Changes between 1.34.1 and 1.34.2 — 0 added, 0 removed, 2 upgraded, 175 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 2 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.6.1 → 0.6.2)](#backstagebackend-defaults-061--062)
   - [`@backstage/plugin-catalog-backend-module-gitlab` (0.6.0 → 0.6.1)](#backstageplugin-catalog-backend-module-gitlab-060--061)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.6.1 → [0.6.2](../../changelogs/@backstage/backend-defaults.md#062))
 

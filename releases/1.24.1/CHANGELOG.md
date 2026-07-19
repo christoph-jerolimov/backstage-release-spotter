@@ -1,22 +1,40 @@
 # Backstage Release 1.24.1 changelog
 
-Changes between 1.24.0 and 1.24.1 — 35 changed and 0 added packages.
+Changes between 1.24.0 and 1.24.1 — 0 added, 0 removed, 35 upgraded, 232 unchanged packages.
 
 ## Summary
 
+- [0.x patch version bumps](#0x-patch-version-bumps): 2 packages
 - [Minor version bumps](#minor-version-bumps): 2 packages
-- [Patch version bumps](#patch-version-bumps): 2 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 31 packages
 
 ## Table of contents
 
+- [0.x patch version bumps](#0x-patch-version-bumps)
+  - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.4.0 → 0.4.1)](#backstageplugin-catalog-backend-module-unprocessed-040--041)
+  - [`@backstage/plugin-permission-backend` (0.5.37 → 0.5.38)](#backstageplugin-permission-backend-0537--0538)
 - [Minor version bumps](#minor-version-bumps)
   - [`@backstage/plugin-catalog-backend` (1.18.0 → 1.19.0)](#backstageplugin-catalog-backend-1180--1190)
   - [`@backstage/plugin-catalog-node` (1.8.0 → 1.9.0)](#backstageplugin-catalog-node-180--190)
-- [Patch version bumps](#patch-version-bumps)
-  - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.4.0 → 0.4.1)](#backstageplugin-catalog-backend-module-unprocessed-040--041)
-  - [`@backstage/plugin-permission-backend` (0.5.37 → 0.5.38)](#backstageplugin-permission-backend-0537--0538)
 - [Excluded dependency updates](#excluded-dependency-updates)
+
+## 0.x patch version bumps
+
+### `@backstage/plugin-catalog-backend-module-unprocessed` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-catalog-backend-module-unprocessed.md#041))
+
+#### 0.4.1
+
+##### Patch Changes
+
+- [`9c7fb30`](https://github.com/backstage/backstage/commit/9c7fb30): Internal update that injects custom permissions into the catalog using its extension point
+
+### `@backstage/plugin-permission-backend` (0.5.37 → [0.5.38](../../changelogs/@backstage/plugin-permission-backend.md#0538))
+
+#### 0.5.38
+
+##### Patch Changes
+
+- [`9c7fb30`](https://github.com/backstage/backstage/commit/9c7fb30): Properly forward causes of errors from upstream backends in the `PermissionIntegrationClient`
 
 ## Minor version bumps
 
@@ -35,24 +53,6 @@ Changes between 1.24.0 and 1.24.1 — 35 changed and 0 added packages.
 ##### Minor Changes
 
 - [`9c7fb30`](https://github.com/backstage/backstage/commit/9c7fb30): Added the ability to inject custom permissions from modules, on `CatalogBuilder` and `CatalogPermissionExtensionPoint`
-
-## Patch version bumps
-
-### `@backstage/plugin-catalog-backend-module-unprocessed` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-catalog-backend-module-unprocessed.md#041))
-
-#### 0.4.1
-
-##### Patch Changes
-
-- [`9c7fb30`](https://github.com/backstage/backstage/commit/9c7fb30): Internal update that injects custom permissions into the catalog using its extension point
-
-### `@backstage/plugin-permission-backend` (0.5.37 → [0.5.38](../../changelogs/@backstage/plugin-permission-backend.md#0538))
-
-#### 0.5.38
-
-##### Patch Changes
-
-- [`9c7fb30`](https://github.com/backstage/backstage/commit/9c7fb30): Properly forward causes of errors from upstream backends in the `PermissionIntegrationClient`
 
 ## Excluded dependency updates
 

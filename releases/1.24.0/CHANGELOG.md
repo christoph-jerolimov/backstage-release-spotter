@@ -1,6 +1,6 @@
 # Backstage Release 1.24.0 changelog
 
-Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
+Changes between 1.23.4 and 1.24.0 — 4 added, 0 removed, 251 upgraded, 12 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 - [Major version bumps](#major-version-bumps): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 9 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 119 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
-- [Other patch version bumps](#other-patch-version-bumps): 132 packages
+- [Other patch version bumps](#other-patch-version-bumps): 13 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 72 packages
 
 ## Table of contents
@@ -60,19 +61,7 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-notifications-common` (0.0.1 → 0.0.2)](#backstageplugin-notifications-common-001--002)
   - [`@backstage/plugin-signals` (0.0.1 → 0.0.2)](#backstageplugin-signals-001--002)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config` (1.1.1 → 1.2.0)](#backstageconfig-111--120)
-  - [`@backstage/config-loader` (1.6.2 → 1.7.0)](#backstageconfig-loader-162--170)
-  - [`@backstage/plugin-catalog` (1.17.0 → 1.18.0)](#backstageplugin-catalog-1170--1180)
-  - [`@backstage/plugin-catalog-backend` (1.17.3 → 1.18.0)](#backstageplugin-catalog-backend-1173--1180)
-  - [`@backstage/plugin-catalog-node` (1.7.3 → 1.8.0)](#backstageplugin-catalog-node-173--180)
-  - [`@backstage/plugin-catalog-react` (1.10.0 → 1.11.0)](#backstageplugin-catalog-react-1100--1110)
-  - [`@backstage/plugin-scaffolder` (1.18.0 → 1.19.0)](#backstageplugin-scaffolder-1180--1190)
-  - [`@backstage/plugin-scaffolder-backend` (1.21.3 → 1.22.0)](#backstageplugin-scaffolder-backend-1213--1220)
-  - [`@backstage/plugin-techdocs-backend` (1.9.6 → 1.10.0)](#backstageplugin-techdocs-backend-196--1100)
-  - [`@backstage/plugin-techdocs-node` (1.11.5 → 1.12.0)](#backstageplugin-techdocs-node-1115--1120)
-  - [`@backstage/plugin-techdocs-react` (1.1.16 → 1.2.0)](#backstageplugin-techdocs-react-1116--120)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.21.3 → 0.21.4)](#backstagebackend-common-0213--0214)
   - [`@backstage/backend-defaults` (0.2.13 → 0.2.14)](#backstagebackend-defaults-0213--0214)
   - [`@backstage/backend-dynamic-feature-service` (0.2.3 → 0.2.4)](#backstagebackend-dynamic-feature-service-023--024)
@@ -80,15 +69,11 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
   - [`@backstage/backend-plugin-api` (0.6.13 → 0.6.14)](#backstagebackend-plugin-api-0613--0614)
   - [`@backstage/backend-tasks` (0.5.18 → 0.5.19)](#backstagebackend-tasks-0518--0519)
   - [`@backstage/backend-test-utils` (0.3.3 → 0.3.4)](#backstagebackend-test-utils-033--034)
-  - [`@backstage/catalog-client` (1.6.0 → 1.6.1)](#backstagecatalog-client-160--161)
   - [`@backstage/codemods` (0.1.47 → 0.1.48)](#backstagecodemods-0147--0148)
   - [`@backstage/core-components` (0.14.0 → 0.14.1)](#backstagecore-components-0140--0141)
   - [`@backstage/create-app` (0.5.11 → 0.5.12)](#backstagecreate-app-0511--0512)
-  - [`@backstage/errors` (1.2.3 → 1.2.4)](#backstageerrors-123--124)
   - [`@backstage/eslint-plugin` (0.1.5 → 0.1.6)](#backstageeslint-plugin-015--016)
   - [`@backstage/frontend-app-api` (0.6.0 → 0.6.1)](#backstagefrontend-app-api-060--061)
-  - [`@backstage/integration` (1.9.0 → 1.9.1)](#backstageintegration-190--191)
-  - [`@backstage/integration-react` (1.1.24 → 1.1.25)](#backstageintegration-react-1124--1125)
   - [`@backstage/plugin-adr` (0.6.13 → 0.6.14)](#backstageplugin-adr-0613--0614)
   - [`@backstage/plugin-adr-backend` (0.4.10 → 0.4.11)](#backstageplugin-adr-backend-0410--0411)
   - [`@backstage/plugin-adr-common` (0.2.20 → 0.2.21)](#backstageplugin-adr-common-0220--0221)
@@ -177,16 +162,10 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.30 → 0.4.31)](#backstageplugin-scaffolder-backend-module-rails-0430--0431)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.1.21 → 0.1.22)](#backstageplugin-scaffolder-backend-module-sentry-0121--0122)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.34 → 0.2.35)](#backstageplugin-scaffolder-backend-module-yeoman-0234--0235)
-  - [`@backstage/plugin-scaffolder-react` (1.8.0 → 1.8.1)](#backstageplugin-scaffolder-react-180--181)
-  - [`@backstage/plugin-search` (1.4.6 → 1.4.7)](#backstageplugin-search-146--147)
-  - [`@backstage/plugin-search-backend` (1.5.3 → 1.5.4)](#backstageplugin-search-backend-153--154)
   - [`@backstage/plugin-search-backend-module-catalog` (0.1.17 → 0.1.18)](#backstageplugin-search-backend-module-catalog-0117--0118)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.16 → 1.3.17)](#backstageplugin-search-backend-module-elasticsearch-1316--1317)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.17 → 0.1.18)](#backstageplugin-search-backend-module-explore-0117--0118)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.22 → 0.5.23)](#backstageplugin-search-backend-module-pg-0522--0523)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.1.17 → 0.1.18)](#backstageplugin-search-backend-module-techdocs-0117--0118)
-  - [`@backstage/plugin-search-backend-node` (1.2.17 → 1.2.18)](#backstageplugin-search-backend-node-1217--1218)
-  - [`@backstage/plugin-search-common` (1.2.10 → 1.2.11)](#backstageplugin-search-common-1210--1211)
   - [`@backstage/plugin-sentry` (0.5.15 → 0.5.16)](#backstageplugin-sentry-0515--0516)
   - [`@backstage/plugin-shortcuts` (0.3.19 → 0.3.20)](#backstageplugin-shortcuts-0319--0320)
   - [`@backstage/plugin-sonarqube` (0.7.12 → 0.7.13)](#backstageplugin-sonarqube-0712--0713)
@@ -196,14 +175,37 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
   - [`@backstage/plugin-tech-insights` (0.3.22 → 0.3.23)](#backstageplugin-tech-insights-0322--0323)
   - [`@backstage/plugin-tech-insights-backend` (0.5.27 → 0.5.28)](#backstageplugin-tech-insights-backend-0527--0528)
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.45 → 0.1.46)](#backstageplugin-tech-insights-backend-module-jsonfc-0145--0146)
-  - [`@backstage/plugin-techdocs` (1.10.0 → 1.10.1)](#backstageplugin-techdocs-1100--1101)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.27 → 1.0.28)](#backstageplugin-techdocs-addons-test-utils-1027--1028)
   - [`@backstage/plugin-todo-backend` (0.3.11 → 0.3.12)](#backstageplugin-todo-backend-0311--0312)
   - [`@backstage/plugin-user-settings` (0.8.1 → 0.8.2)](#backstageplugin-user-settings-081--082)
   - [`@backstage/plugin-vault` (0.1.25 → 0.1.26)](#backstageplugin-vault-0125--0126)
   - [`@backstage/plugin-vault-backend` (0.4.6 → 0.4.7)](#backstageplugin-vault-backend-046--047)
   - [`@backstage/plugin-xcmetrics` (0.2.48 → 0.2.49)](#backstageplugin-xcmetrics-0248--0249)
   - [`@backstage/theme` (0.5.1 → 0.5.2)](#backstagetheme-051--052)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config` (1.1.1 → 1.2.0)](#backstageconfig-111--120)
+  - [`@backstage/config-loader` (1.6.2 → 1.7.0)](#backstageconfig-loader-162--170)
+  - [`@backstage/plugin-catalog` (1.17.0 → 1.18.0)](#backstageplugin-catalog-1170--1180)
+  - [`@backstage/plugin-catalog-backend` (1.17.3 → 1.18.0)](#backstageplugin-catalog-backend-1173--1180)
+  - [`@backstage/plugin-catalog-node` (1.7.3 → 1.8.0)](#backstageplugin-catalog-node-173--180)
+  - [`@backstage/plugin-catalog-react` (1.10.0 → 1.11.0)](#backstageplugin-catalog-react-1100--1110)
+  - [`@backstage/plugin-scaffolder` (1.18.0 → 1.19.0)](#backstageplugin-scaffolder-1180--1190)
+  - [`@backstage/plugin-scaffolder-backend` (1.21.3 → 1.22.0)](#backstageplugin-scaffolder-backend-1213--1220)
+  - [`@backstage/plugin-techdocs-backend` (1.9.6 → 1.10.0)](#backstageplugin-techdocs-backend-196--1100)
+  - [`@backstage/plugin-techdocs-node` (1.11.5 → 1.12.0)](#backstageplugin-techdocs-node-1115--1120)
+  - [`@backstage/plugin-techdocs-react` (1.1.16 → 1.2.0)](#backstageplugin-techdocs-react-1116--120)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-client` (1.6.0 → 1.6.1)](#backstagecatalog-client-160--161)
+  - [`@backstage/errors` (1.2.3 → 1.2.4)](#backstageerrors-123--124)
+  - [`@backstage/integration` (1.9.0 → 1.9.1)](#backstageintegration-190--191)
+  - [`@backstage/integration-react` (1.1.24 → 1.1.25)](#backstageintegration-react-1124--1125)
+  - [`@backstage/plugin-scaffolder-react` (1.8.0 → 1.8.1)](#backstageplugin-scaffolder-react-180--181)
+  - [`@backstage/plugin-search` (1.4.6 → 1.4.7)](#backstageplugin-search-146--147)
+  - [`@backstage/plugin-search-backend` (1.5.3 → 1.5.4)](#backstageplugin-search-backend-153--154)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.16 → 1.3.17)](#backstageplugin-search-backend-module-elasticsearch-1316--1317)
+  - [`@backstage/plugin-search-backend-node` (1.2.17 → 1.2.18)](#backstageplugin-search-backend-node-1217--1218)
+  - [`@backstage/plugin-search-common` (1.2.10 → 1.2.11)](#backstageplugin-search-common-1210--1211)
+  - [`@backstage/plugin-techdocs` (1.10.0 → 1.10.1)](#backstageplugin-techdocs-1100--1101)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.27 → 1.0.28)](#backstageplugin-techdocs-addons-test-utils-1027--1028)
   - [`@techdocs/cli` (1.8.5 → 1.8.6)](#techdocscli-185--186)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -1423,156 +1425,7 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
   Updated dependency `@types/uuid` to `^9.0.0`.
 - [`72df7c6`](https://github.com/backstage/backstage/commit/72df7c6): Added ESLint rule `no-top-level-material-ui-4-imports` in the `signals` plugin to migrate the Material UI imports.
 
-## Other minor version bumps
-
-### `@backstage/config` (1.1.1 → [1.2.0](../../changelogs/@backstage/config.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`50cf9df`](https://github.com/backstage/backstage/commit/50cf9df): The `ConfigReader` now treats `null` values as present but explicitly undefined, meaning it will not fall back to the next level of configuration.
-
-### `@backstage/config-loader` (1.6.2 → [1.7.0](../../changelogs/@backstage/config-loader.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`db8358d`](https://github.com/backstage/backstage/commit/db8358d): Forward `null` values read from configuration files in configuration data, rather than treating them as an absence of config.
-
-### `@backstage/plugin-catalog` (1.17.0 → [1.18.0](../../changelogs/@backstage/plugin-catalog.md#1180))
-
-#### 1.18.0
-
-##### Minor Changes
-
-- [`72b8827`](https://github.com/backstage/backstage/commit/72b8827): Adds a title to the `PaginatedCatalogTable` for better visibility on what you're viewing.
-
-##### Patch Changes
-
-- [`50b6687`](https://github.com/backstage/backstage/commit/50b6687): Resolved an issue where the `PaginatedCatalogTable` was not propagating table options to its child table.
-- [`9332425`](https://github.com/backstage/backstage/commit/9332425): The entity page extension provided by the `/alpha` plugin now correctly renders the entity 404 page.
-- [`1c0b179`](https://github.com/backstage/backstage/commit/1c0b179): Added the `no-top-level-material-ui-4-imports` ESLint rule to aid with the migration to Material UI v5
-- [`2ac1630`](https://github.com/backstage/backstage/commit/2ac1630): Added support for passing in custom filters to `CatalogIndexPage`
-- [`298953b`](https://github.com/backstage/backstage/commit/298953b): Added support for providing an `initiallySelectedNamespaces` which accepts an array of Namespaces to have selected by default
-- [`6727665`](https://github.com/backstage/backstage/commit/6727665): Allow the `spec.target` field to be searchable in the catalog table for locations. Previously, only the `spec.targets` field was be searchable. This makes locations generated by providers such as the `GithubEntityProvider` searchable in the catalog table. [#23098](https://github.com/backstage/backstage/issues/23098)
-
-### `@backstage/plugin-catalog-backend` (1.17.3 → [1.18.0](../../changelogs/@backstage/plugin-catalog-backend.md#1180))
-
-#### 1.18.0
-
-##### Minor Changes
-
-- [`df12231`](https://github.com/backstage/backstage/commit/df12231): Allow setting EntityDataParser using CatalogModelExtensionPoint
-- [`15ba00f`](https://github.com/backstage/backstage/commit/15ba00f): Migrated to support new auth services. The `CatalogBuilder.create` method now accepts a `discovery` option, which is recommended to forward from the plugin environment, as it will otherwise fall back to use the `HostDiscovery` implementation.
-
-##### Patch Changes
-
-- [`2bd1410`](https://github.com/backstage/backstage/commit/2bd1410): Removed unused dependencies
-- [`999224f`](https://github.com/backstage/backstage/commit/999224f): Bump dependency `minimatch` to v9
-- [`6f830bb`](https://github.com/backstage/backstage/commit/6f830bb): Allow passing optional filter to `getEntitiesByRefs`
-- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
-  Updated dependency `@types/uuid` to `^9.0.0`.
-- [`b65788b`](https://github.com/backstage/backstage/commit/b65788b): Move @backstage/repo-tools to dev dependencies
-- [`280edeb`](https://github.com/backstage/backstage/commit/280edeb): Add index for original value in search table for faster entity facet response
-- [`dad018f`](https://github.com/backstage/backstage/commit/dad018f): Do not fail on stitching when the entity contains `null` values associated to deeply nested or long keys.
-
-### `@backstage/plugin-catalog-node` (1.7.3 → [1.8.0](../../changelogs/@backstage/plugin-catalog-node.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`df12231`](https://github.com/backstage/backstage/commit/df12231): Allow setting EntityDataParser using CatalogModelExtensionPoint
-
-### `@backstage/plugin-catalog-react` (1.10.0 → [1.11.0](../../changelogs/@backstage/plugin-catalog-react.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`72b8827`](https://github.com/backstage/backstage/commit/72b8827): Number of results is now directly added as the field `totalItems` on `useEntityList`.
-
-##### Patch Changes
-
-- [`930b5c1`](https://github.com/backstage/backstage/commit/930b5c1): Added 'root' and 'label' class keys for EntityAutocompletePicker, EntityOwnerPicker and EntityProcessingStatusPicker
-- [`b2a9926`](https://github.com/backstage/backstage/commit/b2a9926): Adds an argument for which filters should be applied when fetching/counting available values
-- [`a6e237f`](https://github.com/backstage/backstage/commit/a6e237f): Added `DefaultFilters` component
-- [`298953b`](https://github.com/backstage/backstage/commit/298953b): Added support for providing an `initiallySelectedNamespaces` which accepts an array of Namespaces to have selected by default
-
-### `@backstage/plugin-scaffolder` (1.18.0 → [1.19.0](../../changelogs/@backstage/plugin-scaffolder.md#1190))
-
-#### 1.19.0
-
-##### Minor Changes
-
-- [`a3b4d90`](https://github.com/backstage/backstage/commit/a3b4d90): Added a menu to the header of template page for direct access to editing the template
-
-##### Patch Changes
-
-- [`0cecb09`](https://github.com/backstage/backstage/commit/0cecb09): Updated dependency `@rjsf/utils` to `5.17.1`.
-  Updated dependency `@rjsf/core` to `5.17.1`.
-  Updated dependency `@rjsf/material-ui` to `5.17.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.17.1`.
-- [`a7e6fb3`](https://github.com/backstage/backstage/commit/a7e6fb3): Added the `no-top-level-material-ui-4-imports` ESLint rule to aid with the migration to Material UI v5
-
-### `@backstage/plugin-scaffolder-backend` (1.21.3 → [1.22.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1220))
-
-#### 1.22.0
-
-##### Minor Changes
-
-- [`e9663a9`](https://github.com/backstage/backstage/commit/e9663a9): Move away from using `ctx.logStream`
-- [`aa543c9`](https://github.com/backstage/backstage/commit/aa543c9): Migrate plugin to use the new auth services, add an optional service discovery to the router options and change the permissions type to be `PermissionsService`.
-- [`e9663a9`](https://github.com/backstage/backstage/commit/e9663a9): Enable the redaction of secrets using the redacting logger and the secrets from the `TaskSpec`
-- [`c6b132e`](https://github.com/backstage/backstage/commit/c6b132e): Introducing checkpoints for scaffolder task action idempotency
-
-##### Patch Changes
-
-- [`984abfa`](https://github.com/backstage/backstage/commit/984abfa): Fixing the lost of the initial state after a task recovery.
-- [`703ebc9`](https://github.com/backstage/backstage/commit/703ebc9): Fix support for unauthenticated requests to create scaffolder tasks
-- [`f44589d`](https://github.com/backstage/backstage/commit/f44589d): Introduced `createMockActionContext` to unify the way of creating scaffolder mock context.
-
-  It will help to maintain tests in a long run during structural changes of action context.
-
-- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
-  Updated dependency `@types/uuid` to `^9.0.0`.
-- [`bbd1fe1`](https://github.com/backstage/backstage/commit/bbd1fe1): Made "checkpoint" on scaffolder action context non-optional
-
-### `@backstage/plugin-techdocs-backend` (1.9.6 → [1.10.0](../../changelogs/@backstage/plugin-techdocs-backend.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`718b734`](https://github.com/backstage/backstage/commit/718b734): Create extension point `TechdocsGeneratorExtensionPoint` to allow adding a custom generator
-
-##### Patch Changes
-
-- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Migrate plugin to use the new auth services.
-
-### `@backstage/plugin-techdocs-node` (1.11.5 → [1.12.0](../../changelogs/@backstage/plugin-techdocs-node.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`718b734`](https://github.com/backstage/backstage/commit/718b734): Create extension point `TechdocsGeneratorExtensionPoint` to allow adding a custom generator
-
-##### Patch Changes
-
-- [`5b4f565`](https://github.com/backstage/backstage/commit/5b4f565): Fix handling of default plugins that have configuration
-
-### `@backstage/plugin-techdocs-react` (1.1.16 → [1.2.0](../../changelogs/@backstage/plugin-techdocs-react.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Create a new api method for issuing user cookie.
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.21.3 → [0.21.4](../../changelogs/@backstage/backend-common.md#0214))
 
@@ -1656,14 +1509,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 - [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
   Updated dependency `@types/uuid` to `^9.0.0`.
 
-### `@backstage/catalog-client` (1.6.0 → [1.6.1](../../changelogs/@backstage/catalog-client.md#161))
-
-#### 1.6.1
-
-##### Patch Changes
-
-- [`6f830bb`](https://github.com/backstage/backstage/commit/6f830bb): Allow passing optional filter to `getEntitiesByRefs`
-
 ### `@backstage/codemods` (0.1.47 → [0.1.48](../../changelogs/@backstage/codemods.md#0148))
 
 #### 0.1.48
@@ -1703,14 +1548,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 - [`1bd4596`](https://github.com/backstage/backstage/commit/1bd4596): Removed the `ts-node` dev dependency.
 - [`829a249`](https://github.com/backstage/backstage/commit/829a249): Migrated the backend of the create app template to use the new backend system. For information on how to migrate your existing backend, see the [migration guide](https://backstage.io/docs/backend-system/building-backends/migrating).
 
-### `@backstage/errors` (1.2.3 → [1.2.4](../../changelogs/@backstage/errors.md#124))
-
-#### 1.2.4
-
-##### Patch Changes
-
-- [`2636075`](https://github.com/backstage/backstage/commit/2636075): Fixed an issue that was causing ResponseError not to report the HTTP status from the provided response.
-
 ### `@backstage/eslint-plugin` (0.1.5 → [0.1.6](../../changelogs/@backstage/eslint-plugin.md#016))
 
 #### 0.1.6
@@ -1726,22 +1563,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 ##### Patch Changes
 
 - [`48d6628`](https://github.com/backstage/backstage/commit/48d6628): Add `loadingComponent` parameter to `createApp()`
-
-### `@backstage/integration` (1.9.0 → [1.9.1](../../changelogs/@backstage/integration.md#191))
-
-#### 1.9.1
-
-##### Patch Changes
-
-- [`0386fa7`](https://github.com/backstage/backstage/commit/0386fa7): Fixed an issue with resolution of SCM URLs against a base URL with a trailing slash.
-
-### `@backstage/integration-react` (1.1.24 → [1.1.25](../../changelogs/@backstage/integration-react.md#1125))
-
-#### 1.1.25
-
-##### Patch Changes
-
-- [`b38dc55`](https://github.com/backstage/backstage/commit/b38dc55): Updated `microsoftAuthApi` scopes for Azure DevOps to be fully qualified.
 
 ### `@backstage/plugin-adr` (0.6.13 → [0.6.14](../../changelogs/@backstage/plugin-adr.md#0614))
 
@@ -2662,38 +2483,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 
   It will help to maintain tests in a long run during structural changes of action context.
 
-### `@backstage/plugin-scaffolder-react` (1.8.0 → [1.8.1](../../changelogs/@backstage/plugin-scaffolder-react.md#181))
-
-#### 1.8.1
-
-##### Patch Changes
-
-- [`930b5c1`](https://github.com/backstage/backstage/commit/930b5c1): Added 'root' and 'label' class key to TemplateCategoryPicker
-- [`6d649d2`](https://github.com/backstage/backstage/commit/6d649d2): Updated dependency `flatted` to `3.3.1`.
-- [`0cecb09`](https://github.com/backstage/backstage/commit/0cecb09): Updated dependency `@rjsf/utils` to `5.17.1`.
-  Updated dependency `@rjsf/core` to `5.17.1`.
-  Updated dependency `@rjsf/material-ui` to `5.17.1`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.17.1`.
-
-### `@backstage/plugin-search` (1.4.6 → [1.4.7](../../changelogs/@backstage/plugin-search.md#147))
-
-#### 1.4.7
-
-##### Patch Changes
-
-- [`70ee3b7`](https://github.com/backstage/backstage/commit/70ee3b7): Remove the hardcoded 'black' color give to the search type accordion icon as it doesn't work with dark themes
-- [`f0464b0`](https://github.com/backstage/backstage/commit/f0464b0): Removes ADR from the default set of search filters
-- [`cd872b9`](https://github.com/backstage/backstage/commit/cd872b9): Added ESLint rule `no-top-level-material-ui-4-imports` in the `search` plugin to migrate the Material UI imports.
-
-### `@backstage/plugin-search-backend` (1.5.3 → [1.5.4](../../changelogs/@backstage/plugin-search-backend.md#154))
-
-#### 1.5.4
-
-##### Patch Changes
-
-- [`2bd1410`](https://github.com/backstage/backstage/commit/2bd1410): Removed unused dependencies
-- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Update the router to use the new `auth` services, it now accepts an optional discovery service option to get credentials for the permission service.
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.1.17 → [0.1.18](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#0118))
 
 #### 0.1.18
@@ -2701,17 +2490,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 ##### Patch Changes
 
 - [`bb368a5`](https://github.com/backstage/backstage/commit/bb368a5): Migrated to support new auth services.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.16 → [1.3.17](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#1317))
-
-#### 1.3.17
-
-##### Patch Changes
-
-- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Start importing `QueryTranslator`, `QueryRequestOptions` and `SearchEngine` from the `@backstage/plugin-search-backend-node`.
-- [`e1f73d0`](https://github.com/backstage/backstage/commit/e1f73d0): Added config.d.ts entry with secrets for the shared auth block
-- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
-  Updated dependency `@types/uuid` to `^9.0.0`.
 
 ### `@backstage/plugin-search-backend-module-explore` (0.1.17 → [0.1.18](../../changelogs/@backstage/plugin-search-backend-module-explore.md#0118))
 
@@ -2738,24 +2516,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 ##### Patch Changes
 
 - [`bb368a5`](https://github.com/backstage/backstage/commit/bb368a5): Migrated to support new auth services.
-
-### `@backstage/plugin-search-backend-node` (1.2.17 → [1.2.18](../../changelogs/@backstage/plugin-search-backend-node.md#1218))
-
-#### 1.2.18
-
-##### Patch Changes
-
-- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
-  Updated dependency `@types/uuid` to `^9.0.0`.
-- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Exports `QueryTranslator`, `QueryRequestOptions` and `SearchEngine` types. These new types were extracted from the `@backstage/plugin-search-common` package and the `token` property was deprecated in favor of the a new credentials one.
-
-### `@backstage/plugin-search-common` (1.2.10 → [1.2.11](../../changelogs/@backstage/plugin-search-common.md#1211))
-
-#### 1.2.11
-
-##### Patch Changes
-
-- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Deprecate `QueryTranslator`, `QueryRequestOptions` and `SearchEngine` in favor of the types exported from `@backstage/plugin-search-backend-node`.
 
 ### `@backstage/plugin-sentry` (0.5.15 → [0.5.16](../../changelogs/@backstage/plugin-sentry.md#0516))
 
@@ -2835,26 +2595,6 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 
 - [`6ce8c0b`](https://github.com/backstage/backstage/commit/6ce8c0b): Fixes an invalid line in the schema that was causing AJV to complain.
 
-### `@backstage/plugin-techdocs` (1.10.0 → [1.10.1](../../changelogs/@backstage/plugin-techdocs.md#1101))
-
-#### 1.10.1
-
-##### Patch Changes
-
-- [`7c2d022`](https://github.com/backstage/backstage/commit/7c2d022): Fixed bug in TechDocs sidebar render that prevented scrollbar from being displayed
-- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Implement a client cookie refresh mechanism.
-- [`62bcaf8`](https://github.com/backstage/backstage/commit/62bcaf8): Use the new generic refresh user cookie provider.
-- [`28f27f0`](https://github.com/backstage/backstage/commit/28f27f0): Added ESLint rule `no-top-level-material-ui-4-imports` to aid with the migration to Material UI v5.
-
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.27 → [1.0.28](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1028))
-
-#### 1.0.28
-
-##### Patch Changes
-
-- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Mock the new issue user cookie api method.
-- [`62bcaf8`](https://github.com/backstage/backstage/commit/62bcaf8): Use the new generic refresh user cookie provider.
-
 ### `@backstage/plugin-todo-backend` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-todo-backend.md#0312))
 
 #### 0.3.12
@@ -2904,6 +2644,270 @@ Changes between 1.23.4 and 1.24.0 — 251 changed and 4 added packages.
 ##### Patch Changes
 
 - [`6f4d2a0`](https://github.com/backstage/backstage/commit/6f4d2a0): Exported `defaultTypography` to make adjusting these values in a custom theme easier
+
+## Other minor version bumps
+
+### `@backstage/config` (1.1.1 → [1.2.0](../../changelogs/@backstage/config.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`50cf9df`](https://github.com/backstage/backstage/commit/50cf9df): The `ConfigReader` now treats `null` values as present but explicitly undefined, meaning it will not fall back to the next level of configuration.
+
+### `@backstage/config-loader` (1.6.2 → [1.7.0](../../changelogs/@backstage/config-loader.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`db8358d`](https://github.com/backstage/backstage/commit/db8358d): Forward `null` values read from configuration files in configuration data, rather than treating them as an absence of config.
+
+### `@backstage/plugin-catalog` (1.17.0 → [1.18.0](../../changelogs/@backstage/plugin-catalog.md#1180))
+
+#### 1.18.0
+
+##### Minor Changes
+
+- [`72b8827`](https://github.com/backstage/backstage/commit/72b8827): Adds a title to the `PaginatedCatalogTable` for better visibility on what you're viewing.
+
+##### Patch Changes
+
+- [`50b6687`](https://github.com/backstage/backstage/commit/50b6687): Resolved an issue where the `PaginatedCatalogTable` was not propagating table options to its child table.
+- [`9332425`](https://github.com/backstage/backstage/commit/9332425): The entity page extension provided by the `/alpha` plugin now correctly renders the entity 404 page.
+- [`1c0b179`](https://github.com/backstage/backstage/commit/1c0b179): Added the `no-top-level-material-ui-4-imports` ESLint rule to aid with the migration to Material UI v5
+- [`2ac1630`](https://github.com/backstage/backstage/commit/2ac1630): Added support for passing in custom filters to `CatalogIndexPage`
+- [`298953b`](https://github.com/backstage/backstage/commit/298953b): Added support for providing an `initiallySelectedNamespaces` which accepts an array of Namespaces to have selected by default
+- [`6727665`](https://github.com/backstage/backstage/commit/6727665): Allow the `spec.target` field to be searchable in the catalog table for locations. Previously, only the `spec.targets` field was be searchable. This makes locations generated by providers such as the `GithubEntityProvider` searchable in the catalog table. [#23098](https://github.com/backstage/backstage/issues/23098)
+
+### `@backstage/plugin-catalog-backend` (1.17.3 → [1.18.0](../../changelogs/@backstage/plugin-catalog-backend.md#1180))
+
+#### 1.18.0
+
+##### Minor Changes
+
+- [`df12231`](https://github.com/backstage/backstage/commit/df12231): Allow setting EntityDataParser using CatalogModelExtensionPoint
+- [`15ba00f`](https://github.com/backstage/backstage/commit/15ba00f): Migrated to support new auth services. The `CatalogBuilder.create` method now accepts a `discovery` option, which is recommended to forward from the plugin environment, as it will otherwise fall back to use the `HostDiscovery` implementation.
+
+##### Patch Changes
+
+- [`2bd1410`](https://github.com/backstage/backstage/commit/2bd1410): Removed unused dependencies
+- [`999224f`](https://github.com/backstage/backstage/commit/999224f): Bump dependency `minimatch` to v9
+- [`6f830bb`](https://github.com/backstage/backstage/commit/6f830bb): Allow passing optional filter to `getEntitiesByRefs`
+- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
+  Updated dependency `@types/uuid` to `^9.0.0`.
+- [`b65788b`](https://github.com/backstage/backstage/commit/b65788b): Move @backstage/repo-tools to dev dependencies
+- [`280edeb`](https://github.com/backstage/backstage/commit/280edeb): Add index for original value in search table for faster entity facet response
+- [`dad018f`](https://github.com/backstage/backstage/commit/dad018f): Do not fail on stitching when the entity contains `null` values associated to deeply nested or long keys.
+
+### `@backstage/plugin-catalog-node` (1.7.3 → [1.8.0](../../changelogs/@backstage/plugin-catalog-node.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`df12231`](https://github.com/backstage/backstage/commit/df12231): Allow setting EntityDataParser using CatalogModelExtensionPoint
+
+### `@backstage/plugin-catalog-react` (1.10.0 → [1.11.0](../../changelogs/@backstage/plugin-catalog-react.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`72b8827`](https://github.com/backstage/backstage/commit/72b8827): Number of results is now directly added as the field `totalItems` on `useEntityList`.
+
+##### Patch Changes
+
+- [`930b5c1`](https://github.com/backstage/backstage/commit/930b5c1): Added 'root' and 'label' class keys for EntityAutocompletePicker, EntityOwnerPicker and EntityProcessingStatusPicker
+- [`b2a9926`](https://github.com/backstage/backstage/commit/b2a9926): Adds an argument for which filters should be applied when fetching/counting available values
+- [`a6e237f`](https://github.com/backstage/backstage/commit/a6e237f): Added `DefaultFilters` component
+- [`298953b`](https://github.com/backstage/backstage/commit/298953b): Added support for providing an `initiallySelectedNamespaces` which accepts an array of Namespaces to have selected by default
+
+### `@backstage/plugin-scaffolder` (1.18.0 → [1.19.0](../../changelogs/@backstage/plugin-scaffolder.md#1190))
+
+#### 1.19.0
+
+##### Minor Changes
+
+- [`a3b4d90`](https://github.com/backstage/backstage/commit/a3b4d90): Added a menu to the header of template page for direct access to editing the template
+
+##### Patch Changes
+
+- [`0cecb09`](https://github.com/backstage/backstage/commit/0cecb09): Updated dependency `@rjsf/utils` to `5.17.1`.
+  Updated dependency `@rjsf/core` to `5.17.1`.
+  Updated dependency `@rjsf/material-ui` to `5.17.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.17.1`.
+- [`a7e6fb3`](https://github.com/backstage/backstage/commit/a7e6fb3): Added the `no-top-level-material-ui-4-imports` ESLint rule to aid with the migration to Material UI v5
+
+### `@backstage/plugin-scaffolder-backend` (1.21.3 → [1.22.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1220))
+
+#### 1.22.0
+
+##### Minor Changes
+
+- [`e9663a9`](https://github.com/backstage/backstage/commit/e9663a9): Move away from using `ctx.logStream`
+- [`aa543c9`](https://github.com/backstage/backstage/commit/aa543c9): Migrate plugin to use the new auth services, add an optional service discovery to the router options and change the permissions type to be `PermissionsService`.
+- [`e9663a9`](https://github.com/backstage/backstage/commit/e9663a9): Enable the redaction of secrets using the redacting logger and the secrets from the `TaskSpec`
+- [`c6b132e`](https://github.com/backstage/backstage/commit/c6b132e): Introducing checkpoints for scaffolder task action idempotency
+
+##### Patch Changes
+
+- [`984abfa`](https://github.com/backstage/backstage/commit/984abfa): Fixing the lost of the initial state after a task recovery.
+- [`703ebc9`](https://github.com/backstage/backstage/commit/703ebc9): Fix support for unauthenticated requests to create scaffolder tasks
+- [`f44589d`](https://github.com/backstage/backstage/commit/f44589d): Introduced `createMockActionContext` to unify the way of creating scaffolder mock context.
+
+  It will help to maintain tests in a long run during structural changes of action context.
+
+- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
+  Updated dependency `@types/uuid` to `^9.0.0`.
+- [`bbd1fe1`](https://github.com/backstage/backstage/commit/bbd1fe1): Made "checkpoint" on scaffolder action context non-optional
+
+### `@backstage/plugin-techdocs-backend` (1.9.6 → [1.10.0](../../changelogs/@backstage/plugin-techdocs-backend.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`718b734`](https://github.com/backstage/backstage/commit/718b734): Create extension point `TechdocsGeneratorExtensionPoint` to allow adding a custom generator
+
+##### Patch Changes
+
+- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Migrate plugin to use the new auth services.
+
+### `@backstage/plugin-techdocs-node` (1.11.5 → [1.12.0](../../changelogs/@backstage/plugin-techdocs-node.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`718b734`](https://github.com/backstage/backstage/commit/718b734): Create extension point `TechdocsGeneratorExtensionPoint` to allow adding a custom generator
+
+##### Patch Changes
+
+- [`5b4f565`](https://github.com/backstage/backstage/commit/5b4f565): Fix handling of default plugins that have configuration
+
+### `@backstage/plugin-techdocs-react` (1.1.16 → [1.2.0](../../changelogs/@backstage/plugin-techdocs-react.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Create a new api method for issuing user cookie.
+
+## Other patch version bumps
+
+### `@backstage/catalog-client` (1.6.0 → [1.6.1](../../changelogs/@backstage/catalog-client.md#161))
+
+#### 1.6.1
+
+##### Patch Changes
+
+- [`6f830bb`](https://github.com/backstage/backstage/commit/6f830bb): Allow passing optional filter to `getEntitiesByRefs`
+
+### `@backstage/errors` (1.2.3 → [1.2.4](../../changelogs/@backstage/errors.md#124))
+
+#### 1.2.4
+
+##### Patch Changes
+
+- [`2636075`](https://github.com/backstage/backstage/commit/2636075): Fixed an issue that was causing ResponseError not to report the HTTP status from the provided response.
+
+### `@backstage/integration` (1.9.0 → [1.9.1](../../changelogs/@backstage/integration.md#191))
+
+#### 1.9.1
+
+##### Patch Changes
+
+- [`0386fa7`](https://github.com/backstage/backstage/commit/0386fa7): Fixed an issue with resolution of SCM URLs against a base URL with a trailing slash.
+
+### `@backstage/integration-react` (1.1.24 → [1.1.25](../../changelogs/@backstage/integration-react.md#1125))
+
+#### 1.1.25
+
+##### Patch Changes
+
+- [`b38dc55`](https://github.com/backstage/backstage/commit/b38dc55): Updated `microsoftAuthApi` scopes for Azure DevOps to be fully qualified.
+
+### `@backstage/plugin-scaffolder-react` (1.8.0 → [1.8.1](../../changelogs/@backstage/plugin-scaffolder-react.md#181))
+
+#### 1.8.1
+
+##### Patch Changes
+
+- [`930b5c1`](https://github.com/backstage/backstage/commit/930b5c1): Added 'root' and 'label' class key to TemplateCategoryPicker
+- [`6d649d2`](https://github.com/backstage/backstage/commit/6d649d2): Updated dependency `flatted` to `3.3.1`.
+- [`0cecb09`](https://github.com/backstage/backstage/commit/0cecb09): Updated dependency `@rjsf/utils` to `5.17.1`.
+  Updated dependency `@rjsf/core` to `5.17.1`.
+  Updated dependency `@rjsf/material-ui` to `5.17.1`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.17.1`.
+
+### `@backstage/plugin-search` (1.4.6 → [1.4.7](../../changelogs/@backstage/plugin-search.md#147))
+
+#### 1.4.7
+
+##### Patch Changes
+
+- [`70ee3b7`](https://github.com/backstage/backstage/commit/70ee3b7): Remove the hardcoded 'black' color give to the search type accordion icon as it doesn't work with dark themes
+- [`f0464b0`](https://github.com/backstage/backstage/commit/f0464b0): Removes ADR from the default set of search filters
+- [`cd872b9`](https://github.com/backstage/backstage/commit/cd872b9): Added ESLint rule `no-top-level-material-ui-4-imports` in the `search` plugin to migrate the Material UI imports.
+
+### `@backstage/plugin-search-backend` (1.5.3 → [1.5.4](../../changelogs/@backstage/plugin-search-backend.md#154))
+
+#### 1.5.4
+
+##### Patch Changes
+
+- [`2bd1410`](https://github.com/backstage/backstage/commit/2bd1410): Removed unused dependencies
+- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Update the router to use the new `auth` services, it now accepts an optional discovery service option to get credentials for the permission service.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.16 → [1.3.17](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#1317))
+
+#### 1.3.17
+
+##### Patch Changes
+
+- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Start importing `QueryTranslator`, `QueryRequestOptions` and `SearchEngine` from the `@backstage/plugin-search-backend-node`.
+- [`e1f73d0`](https://github.com/backstage/backstage/commit/e1f73d0): Added config.d.ts entry with secrets for the shared auth block
+- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
+  Updated dependency `@types/uuid` to `^9.0.0`.
+
+### `@backstage/plugin-search-backend-node` (1.2.17 → [1.2.18](../../changelogs/@backstage/plugin-search-backend-node.md#1218))
+
+#### 1.2.18
+
+##### Patch Changes
+
+- [`0fb419b`](https://github.com/backstage/backstage/commit/0fb419b): Updated dependency `uuid` to `^9.0.0`.
+  Updated dependency `@types/uuid` to `^9.0.0`.
+- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Exports `QueryTranslator`, `QueryRequestOptions` and `SearchEngine` types. These new types were extracted from the `@backstage/plugin-search-common` package and the `token` property was deprecated in favor of the a new credentials one.
+
+### `@backstage/plugin-search-common` (1.2.10 → [1.2.11](../../changelogs/@backstage/plugin-search-common.md#1211))
+
+#### 1.2.11
+
+##### Patch Changes
+
+- [`744c0cb`](https://github.com/backstage/backstage/commit/744c0cb): Deprecate `QueryTranslator`, `QueryRequestOptions` and `SearchEngine` in favor of the types exported from `@backstage/plugin-search-backend-node`.
+
+### `@backstage/plugin-techdocs` (1.10.0 → [1.10.1](../../changelogs/@backstage/plugin-techdocs.md#1101))
+
+#### 1.10.1
+
+##### Patch Changes
+
+- [`7c2d022`](https://github.com/backstage/backstage/commit/7c2d022): Fixed bug in TechDocs sidebar render that prevented scrollbar from being displayed
+- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Implement a client cookie refresh mechanism.
+- [`62bcaf8`](https://github.com/backstage/backstage/commit/62bcaf8): Use the new generic refresh user cookie provider.
+- [`28f27f0`](https://github.com/backstage/backstage/commit/28f27f0): Added ESLint rule `no-top-level-material-ui-4-imports` to aid with the migration to Material UI v5.
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.27 → [1.0.28](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1028))
+
+#### 1.0.28
+
+##### Patch Changes
+
+- [`3f14e9f`](https://github.com/backstage/backstage/commit/3f14e9f): Mock the new issue user cookie api method.
+- [`62bcaf8`](https://github.com/backstage/backstage/commit/62bcaf8): Use the new generic refresh user cookie provider.
 
 ### `@techdocs/cli` (1.8.5 → [1.8.6](../../changelogs/@techdocs/cli.md#186))
 

@@ -1,6 +1,6 @@
 # Backstage Release 1.6.0 changelog
 
-Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
+Changes between 1.5.1 and 1.6.0 — 4 added, 0 removed, 153 upgraded, 6 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [Breaking changes](#breaking-changes): 2 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 5 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 105 packages
 - [Other minor version bumps](#other-minor-version-bumps): 11 packages
-- [Other patch version bumps](#other-patch-version-bumps): 124 packages
+- [Other patch version bumps](#other-patch-version-bumps): 19 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 9 packages
 
 ## Table of contents
@@ -31,37 +32,16 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-explore-react` (0.0.20 → 0.0.21)](#backstageplugin-explore-react-0020--0021)
   - [`@backstage/release-manifests` (0.0.5 → 0.0.6)](#backstagerelease-manifests-005--006)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/catalog-client` (1.0.4 → 1.1.0)](#backstagecatalog-client-104--110)
-  - [`@backstage/core-app-api` (1.0.5 → 1.1.0)](#backstagecore-app-api-105--110)
-  - [`@backstage/plugin-catalog-backend` (1.3.1 → 1.4.0)](#backstageplugin-catalog-backend-131--140)
-  - [`@backstage/plugin-catalog-node` (1.0.1 → 1.1.0)](#backstageplugin-catalog-node-101--110)
-  - [`@backstage/plugin-scaffolder` (1.5.0 → 1.6.0)](#backstageplugin-scaffolder-150--160)
-  - [`@backstage/plugin-scaffolder-backend` (1.5.1 → 1.6.0)](#backstageplugin-scaffolder-backend-151--160)
-  - [`@backstage/plugin-scaffolder-common` (1.1.2 → 1.2.0)](#backstageplugin-scaffolder-common-112--120)
-  - [`@backstage/plugin-search-react` (1.0.1 → 1.1.0)](#backstageplugin-search-react-101--110)
-  - [`@backstage/plugin-techdocs-backend` (1.2.1 → 1.3.0)](#backstageplugin-techdocs-backend-121--130)
-  - [`@backstage/plugin-techdocs-node` (1.3.0 → 1.4.0)](#backstageplugin-techdocs-node-130--140)
-  - [`@backstage/test-utils` (1.1.3 → 1.2.0)](#backstagetest-utils-113--120)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.0.5 → 1.0.6)](#backstageapp-defaults-105--106)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.2.0 → 0.2.1)](#backstagebackend-app-api-020--021)
   - [`@backstage/backend-common` (0.15.0 → 0.15.1)](#backstagebackend-common-0150--0151)
   - [`@backstage/backend-defaults` (0.1.0 → 0.1.1)](#backstagebackend-defaults-010--011)
   - [`@backstage/backend-plugin-api` (0.1.1 → 0.1.2)](#backstagebackend-plugin-api-011--012)
   - [`@backstage/backend-tasks` (0.3.4 → 0.3.5)](#backstagebackend-tasks-034--035)
   - [`@backstage/backend-test-utils` (0.1.27 → 0.1.28)](#backstagebackend-test-utils-0127--0128)
-  - [`@backstage/catalog-model` (1.1.0 → 1.1.1)](#backstagecatalog-model-110--111)
   - [`@backstage/cli-common` (0.1.9 → 0.1.10)](#backstagecli-common-019--0110)
-  - [`@backstage/config` (1.0.1 → 1.0.2)](#backstageconfig-101--102)
-  - [`@backstage/config-loader` (1.1.3 → 1.1.4)](#backstageconfig-loader-113--114)
   - [`@backstage/core-components` (0.11.0 → 0.11.1)](#backstagecore-components-0110--0111)
-  - [`@backstage/core-plugin-api` (1.0.5 → 1.0.6)](#backstagecore-plugin-api-105--106)
   - [`@backstage/create-app` (0.4.30 → 0.4.31)](#backstagecreate-app-0430--0431)
-  - [`@backstage/dev-utils` (1.0.5 → 1.0.6)](#backstagedev-utils-105--106)
-  - [`@backstage/errors` (1.1.0 → 1.1.1)](#backstageerrors-110--111)
-  - [`@backstage/integration` (1.3.0 → 1.3.1)](#backstageintegration-130--131)
-  - [`@backstage/integration-react` (1.1.3 → 1.1.4)](#backstageintegration-react-113--114)
   - [`@backstage/plugin-adr` (0.2.0 → 0.2.1)](#backstageplugin-adr-020--021)
   - [`@backstage/plugin-adr-backend` (0.2.0 → 0.2.1)](#backstageplugin-adr-backend-020--021)
   - [`@backstage/plugin-airbrake` (0.3.8 → 0.3.9)](#backstageplugin-airbrake-038--039)
@@ -80,7 +60,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
   - [`@backstage/plugin-bazaar-backend` (0.1.19 → 0.1.20)](#backstageplugin-bazaar-backend-0119--0120)
   - [`@backstage/plugin-bitbucket-cloud-common` (0.1.2 → 0.1.3)](#backstageplugin-bitbucket-cloud-common-012--013)
   - [`@backstage/plugin-bitrise` (0.1.35 → 0.1.36)](#backstageplugin-bitrise-0135--0136)
-  - [`@backstage/plugin-catalog` (1.5.0 → 1.5.1)](#backstageplugin-catalog-150--151)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.6 → 0.1.7)](#backstageplugin-catalog-backend-module-azure-016--017)
   - [`@backstage/plugin-catalog-backend-module-bitbucket` (0.2.2 → 0.2.3)](#backstageplugin-catalog-backend-module-bitbucket-022--023)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.2 → 0.1.3)](#backstageplugin-catalog-backend-module-bitbucket-cloud-012--013)
@@ -93,7 +72,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
   - [`@backstage/plugin-catalog-graph` (0.2.20 → 0.2.21)](#backstageplugin-catalog-graph-0220--0221)
   - [`@backstage/plugin-catalog-graphql` (0.3.12 → 0.3.13)](#backstageplugin-catalog-graphql-0312--0313)
   - [`@backstage/plugin-catalog-import` (0.8.11 → 0.8.12)](#backstageplugin-catalog-import-0811--0812)
-  - [`@backstage/plugin-catalog-react` (1.1.3 → 1.1.4)](#backstageplugin-catalog-react-113--114)
   - [`@backstage/plugin-cicd-statistics` (0.1.10 → 0.1.11)](#backstageplugin-cicd-statistics-0110--0111)
   - [`@backstage/plugin-cicd-statistics-module-gitlab` (0.1.4 → 0.1.5)](#backstageplugin-cicd-statistics-module-gitlab-014--015)
   - [`@backstage/plugin-circleci` (0.3.8 → 0.3.9)](#backstageplugin-circleci-038--039)
@@ -144,9 +122,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.10 → 0.2.11)](#backstageplugin-scaffolder-backend-module-cookiecutter-0210--0211)
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.3 → 0.4.4)](#backstageplugin-scaffolder-backend-module-rails-043--044)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.8 → 0.2.9)](#backstageplugin-scaffolder-backend-module-yeoman-028--029)
-  - [`@backstage/plugin-search` (1.0.1 → 1.0.2)](#backstageplugin-search-101--102)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.0.1 → 1.0.2)](#backstageplugin-search-backend-module-elasticsearch-101--102)
-  - [`@backstage/plugin-search-backend-node` (1.0.1 → 1.0.2)](#backstageplugin-search-backend-node-101--102)
   - [`@backstage/plugin-sentry` (0.4.1 → 0.4.2)](#backstageplugin-sentry-041--042)
   - [`@backstage/plugin-shortcuts` (0.3.0 → 0.3.1)](#backstageplugin-shortcuts-030--031)
   - [`@backstage/plugin-sonarqube` (0.4.0 → 0.4.1)](#backstageplugin-sonarqube-040--041)
@@ -157,16 +132,43 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
   - [`@backstage/plugin-tech-insights-backend` (0.5.1 → 0.5.2)](#backstageplugin-tech-insights-backend-051--052)
   - [`@backstage/plugin-tech-insights-node` (0.3.3 → 0.3.4)](#backstageplugin-tech-insights-node-033--034)
   - [`@backstage/plugin-tech-radar` (0.5.15 → 0.5.16)](#backstageplugin-tech-radar-0515--0516)
-  - [`@backstage/plugin-techdocs` (1.3.1 → 1.3.2)](#backstageplugin-techdocs-131--132)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.3 → 1.0.4)](#backstageplugin-techdocs-addons-test-utils-103--104)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.3 → 1.0.4)](#backstageplugin-techdocs-module-addons-contrib-103--104)
-  - [`@backstage/plugin-techdocs-react` (1.0.3 → 1.0.4)](#backstageplugin-techdocs-react-103--104)
   - [`@backstage/plugin-todo` (0.2.10 → 0.2.11)](#backstageplugin-todo-0210--0211)
   - [`@backstage/plugin-todo-backend` (0.1.32 → 0.1.33)](#backstageplugin-todo-backend-0132--0133)
   - [`@backstage/plugin-user-settings` (0.4.7 → 0.4.8)](#backstageplugin-user-settings-047--048)
   - [`@backstage/plugin-vault` (0.1.2 → 0.1.3)](#backstageplugin-vault-012--013)
   - [`@backstage/plugin-vault-backend` (0.2.1 → 0.2.2)](#backstageplugin-vault-backend-021--022)
   - [`@backstage/plugin-xcmetrics` (0.2.28 → 0.2.29)](#backstageplugin-xcmetrics-0228--0229)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/catalog-client` (1.0.4 → 1.1.0)](#backstagecatalog-client-104--110)
+  - [`@backstage/core-app-api` (1.0.5 → 1.1.0)](#backstagecore-app-api-105--110)
+  - [`@backstage/plugin-catalog-backend` (1.3.1 → 1.4.0)](#backstageplugin-catalog-backend-131--140)
+  - [`@backstage/plugin-catalog-node` (1.0.1 → 1.1.0)](#backstageplugin-catalog-node-101--110)
+  - [`@backstage/plugin-scaffolder` (1.5.0 → 1.6.0)](#backstageplugin-scaffolder-150--160)
+  - [`@backstage/plugin-scaffolder-backend` (1.5.1 → 1.6.0)](#backstageplugin-scaffolder-backend-151--160)
+  - [`@backstage/plugin-scaffolder-common` (1.1.2 → 1.2.0)](#backstageplugin-scaffolder-common-112--120)
+  - [`@backstage/plugin-search-react` (1.0.1 → 1.1.0)](#backstageplugin-search-react-101--110)
+  - [`@backstage/plugin-techdocs-backend` (1.2.1 → 1.3.0)](#backstageplugin-techdocs-backend-121--130)
+  - [`@backstage/plugin-techdocs-node` (1.3.0 → 1.4.0)](#backstageplugin-techdocs-node-130--140)
+  - [`@backstage/test-utils` (1.1.3 → 1.2.0)](#backstagetest-utils-113--120)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.0.5 → 1.0.6)](#backstageapp-defaults-105--106)
+  - [`@backstage/catalog-model` (1.1.0 → 1.1.1)](#backstagecatalog-model-110--111)
+  - [`@backstage/config` (1.0.1 → 1.0.2)](#backstageconfig-101--102)
+  - [`@backstage/config-loader` (1.1.3 → 1.1.4)](#backstageconfig-loader-113--114)
+  - [`@backstage/core-plugin-api` (1.0.5 → 1.0.6)](#backstagecore-plugin-api-105--106)
+  - [`@backstage/dev-utils` (1.0.5 → 1.0.6)](#backstagedev-utils-105--106)
+  - [`@backstage/errors` (1.1.0 → 1.1.1)](#backstageerrors-110--111)
+  - [`@backstage/integration` (1.3.0 → 1.3.1)](#backstageintegration-130--131)
+  - [`@backstage/integration-react` (1.1.3 → 1.1.4)](#backstageintegration-react-113--114)
+  - [`@backstage/plugin-catalog` (1.5.0 → 1.5.1)](#backstageplugin-catalog-150--151)
+  - [`@backstage/plugin-catalog-react` (1.1.3 → 1.1.4)](#backstageplugin-catalog-react-113--114)
+  - [`@backstage/plugin-search` (1.0.1 → 1.0.2)](#backstageplugin-search-101--102)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.0.1 → 1.0.2)](#backstageplugin-search-backend-module-elasticsearch-101--102)
+  - [`@backstage/plugin-search-backend-node` (1.0.1 → 1.0.2)](#backstageplugin-search-backend-node-101--102)
+  - [`@backstage/plugin-techdocs` (1.3.1 → 1.3.2)](#backstageplugin-techdocs-131--132)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.3 → 1.0.4)](#backstageplugin-techdocs-addons-test-utils-103--104)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.3 → 1.0.4)](#backstageplugin-techdocs-module-addons-contrib-103--104)
+  - [`@backstage/plugin-techdocs-react` (1.0.3 → 1.0.4)](#backstageplugin-techdocs-react-103--104)
   - [`@techdocs/cli` (1.2.0 → 1.2.1)](#techdocscli-120--121)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -539,590 +541,7 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
 - [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
 
-## Other minor version bumps
-
-### `@backstage/catalog-client` (1.0.4 → [1.1.0](../../changelogs/@backstage/catalog-client.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`65d1d4343f`](https://github.com/backstage/backstage/commit/65d1d4343f): Adding `validateEntity` method that calls `/validate-entity` endpoint.
-
-##### Patch Changes
-
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
-
-### `@backstage/core-app-api` (1.0.5 → [1.1.0](../../changelogs/@backstage/core-app-api.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`a448fea691`](https://github.com/backstage/backstage/commit/a448fea691): Updated the routing system to be compatible with React Router v6 stable.
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`f9ec4e46e3`](https://github.com/backstage/backstage/commit/f9ec4e46e3): When using React Router v6 stable, it is now possible for components within the `Route` element tree to have `path` props, although they will be ignored.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`744fea158b`](https://github.com/backstage/backstage/commit/744fea158b): Added `getSystemIcons()` function to the `AppContext` available through `useApp` that will pull a list of all the icons that have been registered in the App.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`8448b53dd6`](https://github.com/backstage/backstage/commit/8448b53dd6): Clarify that the `WebStorage` observable returns `JsonValue` items.
-- [`70299c99d5`](https://github.com/backstage/backstage/commit/70299c99d5): Updated `FlatRoutes` to be compatible with React Router v6 stable.
-- [`e9d40ebf54`](https://github.com/backstage/backstage/commit/e9d40ebf54): If you'd like to send analytics events to multiple implementations, you may now
-  do so using the `MultipleAnalyticsApi` implementation provided by this package.
-
-  ```tsx
-  import { MultipleAnalyticsApi } from '@backstage/core-app-api';
-  import {
-    analyticsApiRef,
-    configApiRef,
-    storageApiRef,
-    identityApiRef,
-  } from '@internal/backstage/core-plugin-api';
-  import { CustomAnalyticsApi } from '@internal/analytics';
-  import { VendorAnalyticsApi } from '@vendor/analytics';
-
-  createApiFactory({
-    api: analyticsApiRef,
-    deps: { configApi: configApiRef, identityApi: identityApiRef, storageApi: storageApiRef },
-    factory: ({ configApi, identityApi, storageApi }) =>
-      MultipleAnalyticsApi.fromApis([
-        VendorAnalyticsApi.fromConfig(configApi, { identityApi }),
-        CustomAnalyticsApi.fromConfig(configApi, { identityApi, storageApi }),
-      ]),
-  }),
-  ```
-
-### `@backstage/plugin-catalog-backend` (1.3.1 → [1.4.0](../../changelogs/@backstage/plugin-catalog-backend.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`dd395335bc`](https://github.com/backstage/backstage/commit/dd395335bc): Allow unknown typed location from being registered via the location service by configuration settings
-- [`651c9d6800`](https://github.com/backstage/backstage/commit/651c9d6800): The search index now does retain fields that have a very long value, but in the form of just a null. This makes it possible to at least filter for their existence.
-- [`6e63bc43f2`](https://github.com/backstage/backstage/commit/6e63bc43f2): Added the `refresh` function to the Connection of the entity providers.
-
-##### Patch Changes
-
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-- [`07dda0b746`](https://github.com/backstage/backstage/commit/07dda0b746): Add optional value to `hasAnnotation` permission rule
-- [`243533ecdc`](https://github.com/backstage/backstage/commit/243533ecdc): Added support to mysql on some raw queries
-- [`ce77e78c93`](https://github.com/backstage/backstage/commit/ce77e78c93): Fixes a bug to be able to utilize refresh keys after the entity is loaded from cache
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`679f7c5e95`](https://github.com/backstage/backstage/commit/679f7c5e95): Include entity ref into error message when catalog policies fail
-- [`06e2b077a1`](https://github.com/backstage/backstage/commit/06e2b077a1): Limit the length of error messages that get written to the database and logs - to prevent performance issues
-- [`62788b2ee8`](https://github.com/backstage/backstage/commit/62788b2ee8): The experimental `CatalogProcessingExtensionPoint` now accepts multiple providers and processors at once.
-
-### `@backstage/plugin-catalog-node` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-catalog-node.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`9743bc788c`](https://github.com/backstage/backstage/commit/9743bc788c): Added refresh function to the `EntityProviderConnection` to be able to schedule refreshes from entity providers.
-
-##### Patch Changes
-
-- [`7d7d947352`](https://github.com/backstage/backstage/commit/7d7d947352): Adds experimental `catalogServiceRef` for obtaining a `CatalogClient` in the new backend system.
-- [`409ed984e8`](https://github.com/backstage/backstage/commit/409ed984e8): Updated usage of experimental backend service APIs.
-- [`62788b2ee8`](https://github.com/backstage/backstage/commit/62788b2ee8): The experimental `CatalogProcessingExtensionPoint` now accepts multiple providers and processors at once.
-
-### `@backstage/plugin-scaffolder` (1.5.0 → [1.6.0](../../changelogs/@backstage/plugin-scaffolder.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`3424a8075d`](https://github.com/backstage/backstage/commit/3424a8075d): Added support for `async` validation for the `next` version of the plugin
-- [`ad036784e9`](https://github.com/backstage/backstage/commit/ad036784e9): Ability to modify the layout of the step form
-- [`192d856495`](https://github.com/backstage/backstage/commit/192d856495): Implementing review step for the scaffolder under `create/next`
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-- [`9ffb75616d`](https://github.com/backstage/backstage/commit/9ffb75616d): Fix bug with empty strings in `EntityPicker`
-- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
-- [`763fb81e82`](https://github.com/backstage/backstage/commit/763fb81e82): Internal refactor to use more type safe code when dealing with route parameters.
-- [`a66d44b72b`](https://github.com/backstage/backstage/commit/a66d44b72b): Fixing bug when the workspace would not be automatically saved when using `allowedOwners`
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`6522e459aa`](https://github.com/backstage/backstage/commit/6522e459aa): Support displaying and ordering by counts in `EntityTagPicker` field. Add the `showCounts` option to enable this. Also support configuring `helperText`.
-- [`f0510a20b5`](https://github.com/backstage/backstage/commit/f0510a20b5): Addition of a dismissible Error Banner in Scaffolder page
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`9097278df2`](https://github.com/backstage/backstage/commit/9097278df2): Updated dependency `json-schema-library` to `^7.0.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`de336de9cd`](https://github.com/backstage/backstage/commit/de336de9cd): fix uiSchema generation when using complex dependencies
-
-### `@backstage/plugin-scaffolder-backend` (1.5.1 → [1.6.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`ea2eee9e6a`](https://github.com/backstage/backstage/commit/ea2eee9e6a): Add the option for a homepage when using the `github:publish` action
-- [`8872cc735d`](https://github.com/backstage/backstage/commit/8872cc735d): Fixed a bug in plugin-scaffolder-backend where it ignores the skip migration database options.
-
-  To use this new implementation you need to create the instance of `DatabaseTaskStore` using the `PluginDatabaseManager` instead of `Knex`;
-
-  ```
-  import { DatabaseManager, getRootLogger, loadBackendConfig } from '@backstage/backend-common';
-  import { DatabaseTaskStore } from '@backstage/plugin-scaffolder-backend';
-
-  const config = await loadBackendConfig({ argv: process.argv, logger: getRootLogger() });
-  const databaseManager = DatabaseManager.fromConfig(config, { migrations: { skip: true } });
-  const databaseTaskStore = await DatabaseTaskStore.create(databaseManager);
-  ```
-
-- [`7db9613671`](https://github.com/backstage/backstage/commit/7db9613671): Added `projectId` for gitlab projects to be displayed in the `gitlab:publish` output
-- [`d1f7ba58e3`](https://github.com/backstage/backstage/commit/d1f7ba58e3): Added `repositoryId` output when create a repository in Azure
-- [`1ff817b3f0`](https://github.com/backstage/backstage/commit/1ff817b3f0): add entity metadata to the template info type
-
-##### Patch Changes
-
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-- [`de8ee4afe3`](https://github.com/backstage/backstage/commit/de8ee4afe3): Provide information about the user into scaffolder template action's context
-- [`096631e571`](https://github.com/backstage/backstage/commit/096631e571): Added support for handling broken symlinks within the scaffolder backend. This is intended for templates that may hold a symlink that is invalid at build time but valid within the destination repo.
-- [`0d8d650e32`](https://github.com/backstage/backstage/commit/0d8d650e32): Applied the fix from version 1.5.1 of this package, which is part of the v1.5.1 release of Backstage.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`2df9955f4a`](https://github.com/backstage/backstage/commit/2df9955f4a): Removed the depreacated `publish:file` action, use the template editor to test templates instead.
-- [`0ecc9a6784`](https://github.com/backstage/backstage/commit/0ecc9a6784): Properly set `ctx.isDryRun` when running actions in dry run mode. Also always log action inputs for debugging purposes when running in dry run mode.
-- [`6b9f6c0a4d`](https://github.com/backstage/backstage/commit/6b9f6c0a4d): Added alpha `scaffolderPlugin` to be used with experimental backend system.
-- [`83c037cd46`](https://github.com/backstage/backstage/commit/83c037cd46): Disable octokit throttling in publish:github:pull-request
-- [`2cbd533426`](https://github.com/backstage/backstage/commit/2cbd533426): Uptake the `IdentityApi` change to use `getIdentity` instead of `authenticate` for retrieving the logged in users identity.
-- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
-- [`50467bc15b`](https://github.com/backstage/backstage/commit/50467bc15b): The number of task workers used to execute templates now default to 3, rather than 1.
-
-### `@backstage/plugin-scaffolder-common` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder-common.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`1ff817b3f0`](https://github.com/backstage/backstage/commit/1ff817b3f0): add entity metadata to the template info type
-
-### `@backstage/plugin-search-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-search-react.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`97f2b8f3fd`](https://github.com/backstage/backstage/commit/97f2b8f3fd): The `<SearchResult/>` component now accepts a optional `query` prop to request results from the search api:
-
-  > Note: If a query prop is not defined, the results will by default be consumed from the context.
-
-  Example:
-
-  ```jsx
-  import React, { useState, useCallback } from 'react';
-
-  import { Grid, List, Paper } from '@material-ui/core';
-
-  import { Page, Header, Content, Lifecycle } from '@backstage/core-components';
-  import {
-    DefaultResultListItem,
-    SearchBarBase,
-    SearchResult,
-  } from '@backstage/plugin-search-react';
-
-  const SearchPage = () => {
-    const [query, setQuery] = useState({
-      term: '',
-      types: [],
-      filters: {},
-    });
-
-    const handleChange = useCallback(
-      (term: string) => {
-        setQuery(prevQuery => ({ ...prevQuery, term }));
-      },
-      [setQuery],
-    );
-
-    return (
-      <Page themeId="home">
-        <Header title="Search" subtitle={<Lifecycle alpha />} />
-        <Content>
-          <Grid container direction="row">
-            <Grid item xs={12}>
-              <Paper>
-                <SearchBarBase debounceTime={100} onChange={handleChange} />
-              </Paper>
-            </Grid>
-            <Grid item xs>
-              <SearchResult query={query}>
-                {({ results }) => (
-                  <List>
-                    {results.map(({ document }) => (
-                      <DefaultResultListItem
-                        key={document.location}
-                        result={document}
-                      />
-                    ))}
-                  </List>
-                )}
-              </SearchResult>
-            </Grid>
-          </Grid>
-        </Content>
-      </Page>
-    );
-  };
-  ```
-
-  Additionally, a search page can also be composed using these two new results layout components:
-
-  ```jsx
-  // Example rendering results as list
-  <SearchResult>
-    {({ results }) => (
-      <SearchResultListLayout
-        resultItems={results}
-        renderResultItem={({ type, document }) => {
-          switch (type) {
-            case 'custom-result-item':
-              return (
-                <CustomResultListItem
-                  key={document.location}
-                  result={document}
-                />
-              );
-            default:
-              return (
-                <DefaultResultListItem
-                  key={document.location}
-                  result={document}
-                />
-              );
-          }
-        }}
-      />
-    )}
-  </SearchResult>
-  ```
-
-  ```jsx
-  // Example rendering results as groups
-  <SearchResult>
-    {({ results }) => (
-      <>
-        <SearchResultGroupLayout
-          icon={<CustomIcon />}
-          title="Custom"
-          link="See all custom results"
-          resultItems={results.filter(
-            ({ type }) => type === 'custom-result-item',
-          )}
-          renderResultItem={({ document }) => (
-            <CustomResultListItem key={document.location} result={document} />
-          )}
-        />
-        <SearchResultGroupLayout
-          icon={<DefaultIcon />}
-          title="Default"
-          resultItems={results.filter(
-            ({ type }) => type !== 'custom-result-item',
-          )}
-          renderResultItem={({ document }) => (
-            <DefaultResultListItem key={document.location} result={document} />
-          )}
-        />
-      </>
-    )}
-  </SearchResult>
-  ```
-
-  A `SearchResultList` and `SearchResultGroup` components were also created for users who have search pages with multiple queries, both are specializations of `SearchResult` and also accept a `query` as a prop as well:
-
-  ```jsx
-  // Example using the <SearchResultList />
-  const SearchPage = () => {
-    const query = {
-      term: 'example',
-    };
-
-    return (
-      <SearchResultList
-        query={query}
-        renderResultItem={({ type, document, highlight, rank }) => {
-          switch (type) {
-            case 'custom':
-              return (
-                <CustomResultListItem
-                  key={document.location}
-                  icon={<CatalogIcon />}
-                  result={document}
-                  highlight={highlight}
-                  rank={rank}
-                />
-              );
-            default:
-              return (
-                <DefaultResultListItem
-                  key={document.location}
-                  result={document}
-                />
-              );
-          }
-        }}
-      />
-    );
-  };
-  ```
-
-  ```jsx
-  // Example using the <SearchResultGroup /> for creating a component that search and group software catalog results
-  import React, { useState, useCallback } from 'react';
-
-  import { MenuItem } from '@material-ui/core';
-
-  import { JsonValue } from '@backstage/types';
-  import { CatalogIcon } from '@backstage/core-components';
-  import { CatalogSearchResultListItem } from '@backstage/plugin-catalog';
-  import {
-    SearchResultGroup,
-    SearchResultGroupTextFilterField,
-    SearchResultGroupSelectFilterField,
-  } from @backstage/plugin-search-react;
-  import { SearchQuery } from '@backstage/plugin-search-common';
-
-  const CatalogResultsGroup = () => {
-    const [query, setQuery] = useState<Partial<SearchQuery>>({
-      types: ['software-catalog'],
-    });
-
-    const filterOptions = [
-      {
-        label: 'Lifecycle',
-        value: 'lifecycle',
-      },
-      {
-        label: 'Owner',
-        value: 'owner',
-      },
-    ];
-
-    const handleFilterAdd = useCallback(
-      (key: string) => () => {
-        setQuery(prevQuery => {
-          const { filters: prevFilters, ...rest } = prevQuery;
-          const newFilters = { ...prevFilters, [key]: undefined };
-          return { ...rest, filters: newFilters };
-        });
-      },
-      [],
-    );
-
-    const handleFilterChange = useCallback(
-      (key: string) => (value: JsonValue) => {
-        setQuery(prevQuery => {
-          const { filters: prevFilters, ...rest } = prevQuery;
-          const newFilters = { ...prevFilters, [key]: value };
-          return { ...rest, filters: newFilters };
-        });
-      },
-      [],
-    );
-
-    const handleFilterDelete = useCallback(
-      (key: string) => () => {
-        setQuery(prevQuery => {
-          const { filters: prevFilters, ...rest } = prevQuery;
-          const newFilters = { ...prevFilters };
-          delete newFilters[key];
-          return { ...rest, filters: newFilters };
-        });
-      },
-      [],
-    );
-
-    return (
-      <SearchResultGroup
-        query={query}
-        icon={<CatalogIcon />}
-        title="Software Catalog"
-        link="See all software catalog results"
-        filterOptions={filterOptions}
-        renderFilterOption={({ label, value }) => (
-          <MenuItem key={value} onClick={handleFilterAdd(value)}>
-            {label}
-          </MenuItem>
-        )}
-        renderFilterField={(key: string) => {
-          switch (key) {
-            case 'lifecycle':
-              return (
-                <SearchResultGroupSelectFilterField
-                  key={key}
-                  label="Lifecycle"
-                  value={query.filters?.lifecycle}
-                  onChange={handleFilterChange('lifecycle')}
-                  onDelete={handleFilterDelete('lifecycle')}
-                >
-                  <MenuItem value="production">Production</MenuItem>
-                  <MenuItem value="experimental">Experimental</MenuItem>
-                </SearchResultGroupSelectFilterField>
-              );
-            case 'owner':
-              return (
-                <SearchResultGroupTextFilterField
-                  key={key}
-                  label="Owner"
-                  value={query.filters?.owner}
-                  onChange={handleFilterChange('owner')}
-                  onDelete={handleFilterDelete('owner')}
-                />
-              );
-            default:
-              return null;
-          }
-        }
-        renderResultItem={({ document, highlight, rank }) => (
-          <CatalogSearchResultListItem
-            key={document.location}
-            result={document}
-            highlight={highlight}
-            rank={rank}
-          />
-        )}
-      />
-    );
-  };
-  ```
-
-- [`18f60427f2`](https://github.com/backstage/backstage/commit/18f60427f2): Provides search autocomplete functionality through a `SearchAutocomplete` component.
-  A `SearchAutocompleteDefaultOption` can also be used to render options with icons, primary texts, and secondary texts.
-  Example:
-
-  ```jsx
-  import React, { ChangeEvent, useState, useCallback } from 'react';
-  import useAsync from 'react-use/lib/useAsync';
-
-  import { Grid, Paper } from '@material-ui/core';
-
-  import { Page, Content } from '@backstage/core-components';
-  import { SearchAutocomplete, SearchAutocompleteDefaultOption} from '@backstage/plugin-search-react';
-
-  const OptionsIcon = () => <svg />
-
-  const SearchPage = () => {
-    const [inputValue, setInputValue] = useState('');
-
-    const options = useAsync(async () => {
-      // Gets and returns autocomplete options
-    }, [inputValue])
-
-    const useCallback((_event: ChangeEvent<{}>, newInputValue: string) => {
-      setInputValue(newInputValue);
-    }, [setInputValue])
-
-    return (
-      <Page themeId="home">
-        <Content>
-          <Grid container direction="row">
-            <Grid item xs={12}>
-              <Paper>
-                <SearchAutocomplete
-                  options={options}
-                  inputValue={inputValue}
-                  inputDebounceTime={100}
-                  onInputChange={handleInputChange}
-                  getOptionLabel={option => option.title}
-                  renderOption={option => (
-                    <SearchAutocompleteDefaultOption
-                      icon={<OptionIcon />}
-                      primaryText={option.title}
-                      secondaryText={option.text}
-                    />
-                  )}
-                />
-              </Paper>
-            </Grid>
-          </Grid>
-          {'/* Filters and results are omitted */'}
-        </Content>
-      </Page>
-    );
-  };
-  ```
-
-- [`ca8d5a6eae`](https://github.com/backstage/backstage/commit/ca8d5a6eae): We noticed a repeated check for the existence of a parent context before creating a child search context in more the one component such as Search Modal and Search Bar and to remove code duplication we extract the conditional to the context provider, now you can use it passing an `inheritParentContextIfAvailable` prop to the `SearchContextProvider`.
-
-  Note: This added property does not create a local context if there is a parent context and in this case, you cannot use it together with `initialState`, it will result in a type error because the parent context is already initialized.
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`d3737da337`](https://github.com/backstage/backstage/commit/d3737da337): Reset page cursor on search filter change
-
-### `@backstage/plugin-techdocs-backend` (1.2.1 → [1.3.0](../../changelogs/@backstage/plugin-techdocs-backend.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`aa524a5377`](https://github.com/backstage/backstage/commit/aa524a5377): Add `projectId` config option to GCP Cloud Storage techdocs publisher. This will allow users to override the project ID, instead of implicitly using the same one as found in a credentials bundle.
-
-##### Patch Changes
-
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-
-### `@backstage/plugin-techdocs-node` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-techdocs-node.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`aa524a5377`](https://github.com/backstage/backstage/commit/aa524a5377): Add `projectId` config option to GCP Cloud Storage techdocs publisher. This will allow users to override the project ID, instead of implicitly using the same one as found in a credentials bundle.
-
-##### Patch Changes
-
-- [`33ac0c0546`](https://github.com/backstage/backstage/commit/33ac0c0546): Fix Techdocs S3 and GCS publisher to include bucketRootPath in requests
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-
-### `@backstage/test-utils` (1.1.3 → [1.2.0](../../changelogs/@backstage/test-utils.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Elements rendered in a test app are no longer wrapped in a `Routes` and `Route` element, as this is not compatible with React Router v6 stable.
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`d9e39544be`](https://github.com/backstage/backstage/commit/d9e39544be): Add missing peer dependencies
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.0.5 → [1.0.6](../../changelogs/@backstage/app-defaults.md#106))
-
-#### 1.0.6
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`d9e39544be`](https://github.com/backstage/backstage/commit/d9e39544be): Add missing peer dependencies
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.2.0 → [0.2.1](../../changelogs/@backstage/backend-app-api.md#021))
 
@@ -1264,14 +683,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
 - [`de3347ca74`](https://github.com/backstage/backstage/commit/de3347ca74): Updated usages of `ServiceFactory`.
 
-### `@backstage/catalog-model` (1.1.0 → [1.1.1](../../changelogs/@backstage/catalog-model.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-
 ### `@backstage/cli-common` (0.1.9 → [0.1.10](../../changelogs/@backstage/cli-common.md#0110))
 
 #### 0.1.10
@@ -1279,26 +690,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 ##### Patch Changes
 
 - [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-
-### `@backstage/config` (1.0.1 → [1.0.2](../../changelogs/@backstage/config.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-
-### `@backstage/config-loader` (1.1.3 → [1.1.4](../../changelogs/@backstage/config-loader.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`5ecca7e44b`](https://github.com/backstage/backstage/commit/5ecca7e44b): No longer log when reloading remote config.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
 
 ### `@backstage/core-components` (0.11.0 → [0.11.1](../../changelogs/@backstage/core-components.md#0111))
 
@@ -1317,20 +708,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`13f23f6510`](https://github.com/backstage/backstage/commit/13f23f6510): Allow custom images in the empty state component
 - [`023d14c52b`](https://github.com/backstage/backstage/commit/023d14c52b): Fix overflow bug on MicDrop image for 404 page by moving the image and making it relative rather than absolute
 - [`c8bb0ff8ce`](https://github.com/backstage/backstage/commit/c8bb0ff8ce): Minor cleanup of the public API surface to reduce the number of warnings
-
-### `@backstage/core-plugin-api` (1.0.5 → [1.0.6](../../changelogs/@backstage/core-plugin-api.md#106))
-
-#### 1.0.6
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`744fea158b`](https://github.com/backstage/backstage/commit/744fea158b): Added `getSystemIcons()` function to the `AppContext` available through `useApp` that will pull a list of all the icons that have been registered in the App.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
 
 ### `@backstage/create-app` (0.4.30 → [0.4.31](../../changelogs/@backstage/create-app.md#0431))
 
@@ -1522,53 +899,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
     ...
   );
   ```
-
-### `@backstage/dev-utils` (1.0.5 → [1.0.6](../../changelogs/@backstage/dev-utils.md#106))
-
-#### 1.0.6
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`329ed2b9c7`](https://github.com/backstage/backstage/commit/329ed2b9c7): Fixed routing when using React Router v6 stable.
-- [`4c5e85ddf3`](https://github.com/backstage/backstage/commit/4c5e85ddf3): Removed the dependency and setup of `react-hot-loader`, since the `@backstage/cli` now uses `swc` with `React Refresh` instead.
-
-### `@backstage/errors` (1.1.0 → [1.1.1](../../changelogs/@backstage/errors.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-
-### `@backstage/integration` (1.3.0 → [1.3.1](../../changelogs/@backstage/integration.md#131))
-
-#### 1.3.1
-
-##### Patch Changes
-
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`42918e085c`](https://github.com/backstage/backstage/commit/42918e085c): Fixed bug in the `bitbucketServer` integration where token did not take precedence over supplied username and password which is described in the documentation.
-- [`f76f22c649`](https://github.com/backstage/backstage/commit/f76f22c649): Improved caching around github app tokens.
-  Tokens are now cached for 50 minutes, not 10.
-  Calls to get app installations are also included in this cache.
-  If you have more than one github app configured, consider adding `allowedInstallationOwners` to your apps configuration to gain the most benefit from these performance changes.
-
-### `@backstage/integration-react` (1.1.3 → [1.1.4](../../changelogs/@backstage/integration-react.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
 
 ### `@backstage/plugin-adr` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-adr.md#021))
 
@@ -1822,16 +1152,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
 - [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
 
-### `@backstage/plugin-catalog` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-catalog.md#151))
-
-#### 1.5.1
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`d669d89206`](https://github.com/backstage/backstage/commit/d669d89206): Minor API signatures cleanup
-
 ### `@backstage/plugin-catalog-backend-module-azure` (0.1.6 → [0.1.7](../../changelogs/@backstage/plugin-catalog-backend-module-azure.md#017))
 
 #### 0.1.7
@@ -1962,19 +1282,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
 - [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
 - [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-
-### `@backstage/plugin-catalog-react` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-catalog-react.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`f6033d1121`](https://github.com/backstage/backstage/commit/f6033d1121): humanizeEntityRef function can now be forced to include default namespace
-- [`c86741a052`](https://github.com/backstage/backstage/commit/c86741a052): Support showing counts in option labels of the `EntityTagPicker`. You can enable this by adding the `showCounts` property
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`a6d551fad9`](https://github.com/backstage/backstage/commit/a6d551fad9): Properly handle free-text entity filtering in the case of empty tag arrays
-- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
 
 ### `@backstage/plugin-cicd-statistics` (0.1.10 → [0.1.11](../../changelogs/@backstage/plugin-cicd-statistics.md#0111))
 
@@ -2585,37 +1892,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 
 - [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
 
-### `@backstage/plugin-search` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-search.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`18f60427f2`](https://github.com/backstage/backstage/commit/18f60427f2): Use the new `inheritParentContextIfAvailable` search context property in `SearchModal` instead of manually checking if a parent context exists, this conditional statement was previously duplicated in more than one component like in `SearchBar` as well and is now only done in ` SearchContextProvider`.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`1bea488bd4`](https://github.com/backstage/backstage/commit/1bea488bd4): Updated dependency `aws-os-connection` to `^0.2.0`.
-- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
-
-### `@backstage/plugin-search-backend-node` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-search-backend-node.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
-- [`a1124adf5e`](https://github.com/backstage/backstage/commit/a1124adf5e): Fixed bug in LunrSearchEngine where stopwords in title is causing in-doc search not working
-
 ### `@backstage/plugin-sentry` (0.4.1 → [0.4.2](../../changelogs/@backstage/plugin-sentry.md#042))
 
 #### 0.4.2
@@ -2734,60 +2010,6 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
 - [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
 
-### `@backstage/plugin-techdocs` (1.3.1 → [1.3.2](../../changelogs/@backstage/plugin-techdocs.md#132))
-
-#### 1.3.2
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
-- [`763fb81e82`](https://github.com/backstage/backstage/commit/763fb81e82): Internal refactor to use more type safe code when dealing with route parameters.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated the `TechDocsReaderPage` to be compatible with React Router v6 stable.
-- [`7a95c705fa`](https://github.com/backstage/backstage/commit/7a95c705fa): Fixed a bug where addons wouldn't render on sub pages when using React Route v6 stable.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-- [`ca8d5a6eae`](https://github.com/backstage/backstage/commit/ca8d5a6eae): Use the new `SearchAutocomplete` component in the `TechDocsSearch` component to maintain consistency across search experiences and avoid code duplication.
-- [`829f14a9b0`](https://github.com/backstage/backstage/commit/829f14a9b0): Always update the title and sub-title when the location changes on a `TechDocs` reader page.
-- [`e97d616f08`](https://github.com/backstage/backstage/commit/e97d616f08): Fixed a bug where scrolling for anchors where the id starts with number didn't work for the current page.
-- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
-
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.3 → [1.0.4](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.3 → [1.0.4](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
-- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
-- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
-- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
-- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
-- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
-
-### `@backstage/plugin-techdocs-react` (1.0.3 → [1.0.4](../../changelogs/@backstage/plugin-techdocs-react.md#104))
-
-#### 1.0.4
-
-##### Patch Changes
-
-- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
-
 ### `@backstage/plugin-todo` (0.2.10 → [0.2.11](../../changelogs/@backstage/plugin-todo.md#0211))
 
 #### 0.2.11
@@ -2868,6 +2090,788 @@ Changes between 1.5.1 and 1.6.0 — 153 changed and 4 added packages.
 - [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
 - [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
 - [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+
+## Other minor version bumps
+
+### `@backstage/catalog-client` (1.0.4 → [1.1.0](../../changelogs/@backstage/catalog-client.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`65d1d4343f`](https://github.com/backstage/backstage/commit/65d1d4343f): Adding `validateEntity` method that calls `/validate-entity` endpoint.
+
+##### Patch Changes
+
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
+
+### `@backstage/core-app-api` (1.0.5 → [1.1.0](../../changelogs/@backstage/core-app-api.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`a448fea691`](https://github.com/backstage/backstage/commit/a448fea691): Updated the routing system to be compatible with React Router v6 stable.
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`f9ec4e46e3`](https://github.com/backstage/backstage/commit/f9ec4e46e3): When using React Router v6 stable, it is now possible for components within the `Route` element tree to have `path` props, although they will be ignored.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`744fea158b`](https://github.com/backstage/backstage/commit/744fea158b): Added `getSystemIcons()` function to the `AppContext` available through `useApp` that will pull a list of all the icons that have been registered in the App.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`8448b53dd6`](https://github.com/backstage/backstage/commit/8448b53dd6): Clarify that the `WebStorage` observable returns `JsonValue` items.
+- [`70299c99d5`](https://github.com/backstage/backstage/commit/70299c99d5): Updated `FlatRoutes` to be compatible with React Router v6 stable.
+- [`e9d40ebf54`](https://github.com/backstage/backstage/commit/e9d40ebf54): If you'd like to send analytics events to multiple implementations, you may now
+  do so using the `MultipleAnalyticsApi` implementation provided by this package.
+
+  ```tsx
+  import { MultipleAnalyticsApi } from '@backstage/core-app-api';
+  import {
+    analyticsApiRef,
+    configApiRef,
+    storageApiRef,
+    identityApiRef,
+  } from '@internal/backstage/core-plugin-api';
+  import { CustomAnalyticsApi } from '@internal/analytics';
+  import { VendorAnalyticsApi } from '@vendor/analytics';
+
+  createApiFactory({
+    api: analyticsApiRef,
+    deps: { configApi: configApiRef, identityApi: identityApiRef, storageApi: storageApiRef },
+    factory: ({ configApi, identityApi, storageApi }) =>
+      MultipleAnalyticsApi.fromApis([
+        VendorAnalyticsApi.fromConfig(configApi, { identityApi }),
+        CustomAnalyticsApi.fromConfig(configApi, { identityApi, storageApi }),
+      ]),
+  }),
+  ```
+
+### `@backstage/plugin-catalog-backend` (1.3.1 → [1.4.0](../../changelogs/@backstage/plugin-catalog-backend.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`dd395335bc`](https://github.com/backstage/backstage/commit/dd395335bc): Allow unknown typed location from being registered via the location service by configuration settings
+- [`651c9d6800`](https://github.com/backstage/backstage/commit/651c9d6800): The search index now does retain fields that have a very long value, but in the form of just a null. This makes it possible to at least filter for their existence.
+- [`6e63bc43f2`](https://github.com/backstage/backstage/commit/6e63bc43f2): Added the `refresh` function to the Connection of the entity providers.
+
+##### Patch Changes
+
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+- [`07dda0b746`](https://github.com/backstage/backstage/commit/07dda0b746): Add optional value to `hasAnnotation` permission rule
+- [`243533ecdc`](https://github.com/backstage/backstage/commit/243533ecdc): Added support to mysql on some raw queries
+- [`ce77e78c93`](https://github.com/backstage/backstage/commit/ce77e78c93): Fixes a bug to be able to utilize refresh keys after the entity is loaded from cache
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`679f7c5e95`](https://github.com/backstage/backstage/commit/679f7c5e95): Include entity ref into error message when catalog policies fail
+- [`06e2b077a1`](https://github.com/backstage/backstage/commit/06e2b077a1): Limit the length of error messages that get written to the database and logs - to prevent performance issues
+- [`62788b2ee8`](https://github.com/backstage/backstage/commit/62788b2ee8): The experimental `CatalogProcessingExtensionPoint` now accepts multiple providers and processors at once.
+
+### `@backstage/plugin-catalog-node` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-catalog-node.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`9743bc788c`](https://github.com/backstage/backstage/commit/9743bc788c): Added refresh function to the `EntityProviderConnection` to be able to schedule refreshes from entity providers.
+
+##### Patch Changes
+
+- [`7d7d947352`](https://github.com/backstage/backstage/commit/7d7d947352): Adds experimental `catalogServiceRef` for obtaining a `CatalogClient` in the new backend system.
+- [`409ed984e8`](https://github.com/backstage/backstage/commit/409ed984e8): Updated usage of experimental backend service APIs.
+- [`62788b2ee8`](https://github.com/backstage/backstage/commit/62788b2ee8): The experimental `CatalogProcessingExtensionPoint` now accepts multiple providers and processors at once.
+
+### `@backstage/plugin-scaffolder` (1.5.0 → [1.6.0](../../changelogs/@backstage/plugin-scaffolder.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`3424a8075d`](https://github.com/backstage/backstage/commit/3424a8075d): Added support for `async` validation for the `next` version of the plugin
+- [`ad036784e9`](https://github.com/backstage/backstage/commit/ad036784e9): Ability to modify the layout of the step form
+- [`192d856495`](https://github.com/backstage/backstage/commit/192d856495): Implementing review step for the scaffolder under `create/next`
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+- [`9ffb75616d`](https://github.com/backstage/backstage/commit/9ffb75616d): Fix bug with empty strings in `EntityPicker`
+- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
+- [`763fb81e82`](https://github.com/backstage/backstage/commit/763fb81e82): Internal refactor to use more type safe code when dealing with route parameters.
+- [`a66d44b72b`](https://github.com/backstage/backstage/commit/a66d44b72b): Fixing bug when the workspace would not be automatically saved when using `allowedOwners`
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`6522e459aa`](https://github.com/backstage/backstage/commit/6522e459aa): Support displaying and ordering by counts in `EntityTagPicker` field. Add the `showCounts` option to enable this. Also support configuring `helperText`.
+- [`f0510a20b5`](https://github.com/backstage/backstage/commit/f0510a20b5): Addition of a dismissible Error Banner in Scaffolder page
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`9097278df2`](https://github.com/backstage/backstage/commit/9097278df2): Updated dependency `json-schema-library` to `^7.0.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`de336de9cd`](https://github.com/backstage/backstage/commit/de336de9cd): fix uiSchema generation when using complex dependencies
+
+### `@backstage/plugin-scaffolder-backend` (1.5.1 → [1.6.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`ea2eee9e6a`](https://github.com/backstage/backstage/commit/ea2eee9e6a): Add the option for a homepage when using the `github:publish` action
+- [`8872cc735d`](https://github.com/backstage/backstage/commit/8872cc735d): Fixed a bug in plugin-scaffolder-backend where it ignores the skip migration database options.
+
+  To use this new implementation you need to create the instance of `DatabaseTaskStore` using the `PluginDatabaseManager` instead of `Knex`;
+
+  ```
+  import { DatabaseManager, getRootLogger, loadBackendConfig } from '@backstage/backend-common';
+  import { DatabaseTaskStore } from '@backstage/plugin-scaffolder-backend';
+
+  const config = await loadBackendConfig({ argv: process.argv, logger: getRootLogger() });
+  const databaseManager = DatabaseManager.fromConfig(config, { migrations: { skip: true } });
+  const databaseTaskStore = await DatabaseTaskStore.create(databaseManager);
+  ```
+
+- [`7db9613671`](https://github.com/backstage/backstage/commit/7db9613671): Added `projectId` for gitlab projects to be displayed in the `gitlab:publish` output
+- [`d1f7ba58e3`](https://github.com/backstage/backstage/commit/d1f7ba58e3): Added `repositoryId` output when create a repository in Azure
+- [`1ff817b3f0`](https://github.com/backstage/backstage/commit/1ff817b3f0): add entity metadata to the template info type
+
+##### Patch Changes
+
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+- [`de8ee4afe3`](https://github.com/backstage/backstage/commit/de8ee4afe3): Provide information about the user into scaffolder template action's context
+- [`096631e571`](https://github.com/backstage/backstage/commit/096631e571): Added support for handling broken symlinks within the scaffolder backend. This is intended for templates that may hold a symlink that is invalid at build time but valid within the destination repo.
+- [`0d8d650e32`](https://github.com/backstage/backstage/commit/0d8d650e32): Applied the fix from version 1.5.1 of this package, which is part of the v1.5.1 release of Backstage.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`2df9955f4a`](https://github.com/backstage/backstage/commit/2df9955f4a): Removed the depreacated `publish:file` action, use the template editor to test templates instead.
+- [`0ecc9a6784`](https://github.com/backstage/backstage/commit/0ecc9a6784): Properly set `ctx.isDryRun` when running actions in dry run mode. Also always log action inputs for debugging purposes when running in dry run mode.
+- [`6b9f6c0a4d`](https://github.com/backstage/backstage/commit/6b9f6c0a4d): Added alpha `scaffolderPlugin` to be used with experimental backend system.
+- [`83c037cd46`](https://github.com/backstage/backstage/commit/83c037cd46): Disable octokit throttling in publish:github:pull-request
+- [`2cbd533426`](https://github.com/backstage/backstage/commit/2cbd533426): Uptake the `IdentityApi` change to use `getIdentity` instead of `authenticate` for retrieving the logged in users identity.
+- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
+- [`50467bc15b`](https://github.com/backstage/backstage/commit/50467bc15b): The number of task workers used to execute templates now default to 3, rather than 1.
+
+### `@backstage/plugin-scaffolder-common` (1.1.2 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder-common.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`1ff817b3f0`](https://github.com/backstage/backstage/commit/1ff817b3f0): add entity metadata to the template info type
+
+### `@backstage/plugin-search-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-search-react.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`97f2b8f3fd`](https://github.com/backstage/backstage/commit/97f2b8f3fd): The `<SearchResult/>` component now accepts a optional `query` prop to request results from the search api:
+
+  > Note: If a query prop is not defined, the results will by default be consumed from the context.
+
+  Example:
+
+  ```jsx
+  import React, { useState, useCallback } from 'react';
+
+  import { Grid, List, Paper } from '@material-ui/core';
+
+  import { Page, Header, Content, Lifecycle } from '@backstage/core-components';
+  import {
+    DefaultResultListItem,
+    SearchBarBase,
+    SearchResult,
+  } from '@backstage/plugin-search-react';
+
+  const SearchPage = () => {
+    const [query, setQuery] = useState({
+      term: '',
+      types: [],
+      filters: {},
+    });
+
+    const handleChange = useCallback(
+      (term: string) => {
+        setQuery(prevQuery => ({ ...prevQuery, term }));
+      },
+      [setQuery],
+    );
+
+    return (
+      <Page themeId="home">
+        <Header title="Search" subtitle={<Lifecycle alpha />} />
+        <Content>
+          <Grid container direction="row">
+            <Grid item xs={12}>
+              <Paper>
+                <SearchBarBase debounceTime={100} onChange={handleChange} />
+              </Paper>
+            </Grid>
+            <Grid item xs>
+              <SearchResult query={query}>
+                {({ results }) => (
+                  <List>
+                    {results.map(({ document }) => (
+                      <DefaultResultListItem
+                        key={document.location}
+                        result={document}
+                      />
+                    ))}
+                  </List>
+                )}
+              </SearchResult>
+            </Grid>
+          </Grid>
+        </Content>
+      </Page>
+    );
+  };
+  ```
+
+  Additionally, a search page can also be composed using these two new results layout components:
+
+  ```jsx
+  // Example rendering results as list
+  <SearchResult>
+    {({ results }) => (
+      <SearchResultListLayout
+        resultItems={results}
+        renderResultItem={({ type, document }) => {
+          switch (type) {
+            case 'custom-result-item':
+              return (
+                <CustomResultListItem
+                  key={document.location}
+                  result={document}
+                />
+              );
+            default:
+              return (
+                <DefaultResultListItem
+                  key={document.location}
+                  result={document}
+                />
+              );
+          }
+        }}
+      />
+    )}
+  </SearchResult>
+  ```
+
+  ```jsx
+  // Example rendering results as groups
+  <SearchResult>
+    {({ results }) => (
+      <>
+        <SearchResultGroupLayout
+          icon={<CustomIcon />}
+          title="Custom"
+          link="See all custom results"
+          resultItems={results.filter(
+            ({ type }) => type === 'custom-result-item',
+          )}
+          renderResultItem={({ document }) => (
+            <CustomResultListItem key={document.location} result={document} />
+          )}
+        />
+        <SearchResultGroupLayout
+          icon={<DefaultIcon />}
+          title="Default"
+          resultItems={results.filter(
+            ({ type }) => type !== 'custom-result-item',
+          )}
+          renderResultItem={({ document }) => (
+            <DefaultResultListItem key={document.location} result={document} />
+          )}
+        />
+      </>
+    )}
+  </SearchResult>
+  ```
+
+  A `SearchResultList` and `SearchResultGroup` components were also created for users who have search pages with multiple queries, both are specializations of `SearchResult` and also accept a `query` as a prop as well:
+
+  ```jsx
+  // Example using the <SearchResultList />
+  const SearchPage = () => {
+    const query = {
+      term: 'example',
+    };
+
+    return (
+      <SearchResultList
+        query={query}
+        renderResultItem={({ type, document, highlight, rank }) => {
+          switch (type) {
+            case 'custom':
+              return (
+                <CustomResultListItem
+                  key={document.location}
+                  icon={<CatalogIcon />}
+                  result={document}
+                  highlight={highlight}
+                  rank={rank}
+                />
+              );
+            default:
+              return (
+                <DefaultResultListItem
+                  key={document.location}
+                  result={document}
+                />
+              );
+          }
+        }}
+      />
+    );
+  };
+  ```
+
+  ```jsx
+  // Example using the <SearchResultGroup /> for creating a component that search and group software catalog results
+  import React, { useState, useCallback } from 'react';
+
+  import { MenuItem } from '@material-ui/core';
+
+  import { JsonValue } from '@backstage/types';
+  import { CatalogIcon } from '@backstage/core-components';
+  import { CatalogSearchResultListItem } from '@backstage/plugin-catalog';
+  import {
+    SearchResultGroup,
+    SearchResultGroupTextFilterField,
+    SearchResultGroupSelectFilterField,
+  } from @backstage/plugin-search-react;
+  import { SearchQuery } from '@backstage/plugin-search-common';
+
+  const CatalogResultsGroup = () => {
+    const [query, setQuery] = useState<Partial<SearchQuery>>({
+      types: ['software-catalog'],
+    });
+
+    const filterOptions = [
+      {
+        label: 'Lifecycle',
+        value: 'lifecycle',
+      },
+      {
+        label: 'Owner',
+        value: 'owner',
+      },
+    ];
+
+    const handleFilterAdd = useCallback(
+      (key: string) => () => {
+        setQuery(prevQuery => {
+          const { filters: prevFilters, ...rest } = prevQuery;
+          const newFilters = { ...prevFilters, [key]: undefined };
+          return { ...rest, filters: newFilters };
+        });
+      },
+      [],
+    );
+
+    const handleFilterChange = useCallback(
+      (key: string) => (value: JsonValue) => {
+        setQuery(prevQuery => {
+          const { filters: prevFilters, ...rest } = prevQuery;
+          const newFilters = { ...prevFilters, [key]: value };
+          return { ...rest, filters: newFilters };
+        });
+      },
+      [],
+    );
+
+    const handleFilterDelete = useCallback(
+      (key: string) => () => {
+        setQuery(prevQuery => {
+          const { filters: prevFilters, ...rest } = prevQuery;
+          const newFilters = { ...prevFilters };
+          delete newFilters[key];
+          return { ...rest, filters: newFilters };
+        });
+      },
+      [],
+    );
+
+    return (
+      <SearchResultGroup
+        query={query}
+        icon={<CatalogIcon />}
+        title="Software Catalog"
+        link="See all software catalog results"
+        filterOptions={filterOptions}
+        renderFilterOption={({ label, value }) => (
+          <MenuItem key={value} onClick={handleFilterAdd(value)}>
+            {label}
+          </MenuItem>
+        )}
+        renderFilterField={(key: string) => {
+          switch (key) {
+            case 'lifecycle':
+              return (
+                <SearchResultGroupSelectFilterField
+                  key={key}
+                  label="Lifecycle"
+                  value={query.filters?.lifecycle}
+                  onChange={handleFilterChange('lifecycle')}
+                  onDelete={handleFilterDelete('lifecycle')}
+                >
+                  <MenuItem value="production">Production</MenuItem>
+                  <MenuItem value="experimental">Experimental</MenuItem>
+                </SearchResultGroupSelectFilterField>
+              );
+            case 'owner':
+              return (
+                <SearchResultGroupTextFilterField
+                  key={key}
+                  label="Owner"
+                  value={query.filters?.owner}
+                  onChange={handleFilterChange('owner')}
+                  onDelete={handleFilterDelete('owner')}
+                />
+              );
+            default:
+              return null;
+          }
+        }
+        renderResultItem={({ document, highlight, rank }) => (
+          <CatalogSearchResultListItem
+            key={document.location}
+            result={document}
+            highlight={highlight}
+            rank={rank}
+          />
+        )}
+      />
+    );
+  };
+  ```
+
+- [`18f60427f2`](https://github.com/backstage/backstage/commit/18f60427f2): Provides search autocomplete functionality through a `SearchAutocomplete` component.
+  A `SearchAutocompleteDefaultOption` can also be used to render options with icons, primary texts, and secondary texts.
+  Example:
+
+  ```jsx
+  import React, { ChangeEvent, useState, useCallback } from 'react';
+  import useAsync from 'react-use/lib/useAsync';
+
+  import { Grid, Paper } from '@material-ui/core';
+
+  import { Page, Content } from '@backstage/core-components';
+  import { SearchAutocomplete, SearchAutocompleteDefaultOption} from '@backstage/plugin-search-react';
+
+  const OptionsIcon = () => <svg />
+
+  const SearchPage = () => {
+    const [inputValue, setInputValue] = useState('');
+
+    const options = useAsync(async () => {
+      // Gets and returns autocomplete options
+    }, [inputValue])
+
+    const useCallback((_event: ChangeEvent<{}>, newInputValue: string) => {
+      setInputValue(newInputValue);
+    }, [setInputValue])
+
+    return (
+      <Page themeId="home">
+        <Content>
+          <Grid container direction="row">
+            <Grid item xs={12}>
+              <Paper>
+                <SearchAutocomplete
+                  options={options}
+                  inputValue={inputValue}
+                  inputDebounceTime={100}
+                  onInputChange={handleInputChange}
+                  getOptionLabel={option => option.title}
+                  renderOption={option => (
+                    <SearchAutocompleteDefaultOption
+                      icon={<OptionIcon />}
+                      primaryText={option.title}
+                      secondaryText={option.text}
+                    />
+                  )}
+                />
+              </Paper>
+            </Grid>
+          </Grid>
+          {'/* Filters and results are omitted */'}
+        </Content>
+      </Page>
+    );
+  };
+  ```
+
+- [`ca8d5a6eae`](https://github.com/backstage/backstage/commit/ca8d5a6eae): We noticed a repeated check for the existence of a parent context before creating a child search context in more the one component such as Search Modal and Search Bar and to remove code duplication we extract the conditional to the context provider, now you can use it passing an `inheritParentContextIfAvailable` prop to the `SearchContextProvider`.
+
+  Note: This added property does not create a local context if there is a parent context and in this case, you cannot use it together with `initialState`, it will result in a type error because the parent context is already initialized.
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`d3737da337`](https://github.com/backstage/backstage/commit/d3737da337): Reset page cursor on search filter change
+
+### `@backstage/plugin-techdocs-backend` (1.2.1 → [1.3.0](../../changelogs/@backstage/plugin-techdocs-backend.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`aa524a5377`](https://github.com/backstage/backstage/commit/aa524a5377): Add `projectId` config option to GCP Cloud Storage techdocs publisher. This will allow users to override the project ID, instead of implicitly using the same one as found in a credentials bundle.
+
+##### Patch Changes
+
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+
+### `@backstage/plugin-techdocs-node` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-techdocs-node.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`aa524a5377`](https://github.com/backstage/backstage/commit/aa524a5377): Add `projectId` config option to GCP Cloud Storage techdocs publisher. This will allow users to override the project ID, instead of implicitly using the same one as found in a credentials bundle.
+
+##### Patch Changes
+
+- [`33ac0c0546`](https://github.com/backstage/backstage/commit/33ac0c0546): Fix Techdocs S3 and GCS publisher to include bucketRootPath in requests
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+
+### `@backstage/test-utils` (1.1.3 → [1.2.0](../../changelogs/@backstage/test-utils.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Elements rendered in a test app are no longer wrapped in a `Routes` and `Route` element, as this is not compatible with React Router v6 stable.
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`d9e39544be`](https://github.com/backstage/backstage/commit/d9e39544be): Add missing peer dependencies
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.0.5 → [1.0.6](../../changelogs/@backstage/app-defaults.md#106))
+
+#### 1.0.6
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`d9e39544be`](https://github.com/backstage/backstage/commit/d9e39544be): Add missing peer dependencies
+
+### `@backstage/catalog-model` (1.1.0 → [1.1.1](../../changelogs/@backstage/catalog-model.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+
+### `@backstage/config` (1.0.1 → [1.0.2](../../changelogs/@backstage/config.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+
+### `@backstage/config-loader` (1.1.3 → [1.1.4](../../changelogs/@backstage/config-loader.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`5ecca7e44b`](https://github.com/backstage/backstage/commit/5ecca7e44b): No longer log when reloading remote config.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+
+### `@backstage/core-plugin-api` (1.0.5 → [1.0.6](../../changelogs/@backstage/core-plugin-api.md#106))
+
+#### 1.0.6
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`744fea158b`](https://github.com/backstage/backstage/commit/744fea158b): Added `getSystemIcons()` function to the `AppContext` available through `useApp` that will pull a list of all the icons that have been registered in the App.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
+
+### `@backstage/dev-utils` (1.0.5 → [1.0.6](../../changelogs/@backstage/dev-utils.md#106))
+
+#### 1.0.6
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`329ed2b9c7`](https://github.com/backstage/backstage/commit/329ed2b9c7): Fixed routing when using React Router v6 stable.
+- [`4c5e85ddf3`](https://github.com/backstage/backstage/commit/4c5e85ddf3): Removed the dependency and setup of `react-hot-loader`, since the `@backstage/cli` now uses `swc` with `React Refresh` instead.
+
+### `@backstage/errors` (1.1.0 → [1.1.1](../../changelogs/@backstage/errors.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+
+### `@backstage/integration` (1.3.0 → [1.3.1](../../changelogs/@backstage/integration.md#131))
+
+#### 1.3.1
+
+##### Patch Changes
+
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`42918e085c`](https://github.com/backstage/backstage/commit/42918e085c): Fixed bug in the `bitbucketServer` integration where token did not take precedence over supplied username and password which is described in the documentation.
+- [`f76f22c649`](https://github.com/backstage/backstage/commit/f76f22c649): Improved caching around github app tokens.
+  Tokens are now cached for 50 minutes, not 10.
+  Calls to get app installations are also included in this cache.
+  If you have more than one github app configured, consider adding `allowedInstallationOwners` to your apps configuration to gain the most benefit from these performance changes.
+
+### `@backstage/integration-react` (1.1.3 → [1.1.4](../../changelogs/@backstage/integration-react.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+
+### `@backstage/plugin-catalog` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-catalog.md#151))
+
+#### 1.5.1
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`d669d89206`](https://github.com/backstage/backstage/commit/d669d89206): Minor API signatures cleanup
+
+### `@backstage/plugin-catalog-react` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-catalog-react.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`f6033d1121`](https://github.com/backstage/backstage/commit/f6033d1121): humanizeEntityRef function can now be forced to include default namespace
+- [`c86741a052`](https://github.com/backstage/backstage/commit/c86741a052): Support showing counts in option labels of the `EntityTagPicker`. You can enable this by adding the `showCounts` property
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`a6d551fad9`](https://github.com/backstage/backstage/commit/a6d551fad9): Properly handle free-text entity filtering in the case of empty tag arrays
+- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
+
+### `@backstage/plugin-search` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-search.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`18f60427f2`](https://github.com/backstage/backstage/commit/18f60427f2): Use the new `inheritParentContextIfAvailable` search context property in `SearchModal` instead of manually checking if a parent context exists, this conditional statement was previously duplicated in more than one component like in `SearchBar` as well and is now only done in ` SearchContextProvider`.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`1bea488bd4`](https://github.com/backstage/backstage/commit/1bea488bd4): Updated dependency `aws-os-connection` to `^0.2.0`.
+- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
+
+### `@backstage/plugin-search-backend-node` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-search-backend-node.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
+- [`a1124adf5e`](https://github.com/backstage/backstage/commit/a1124adf5e): Fixed bug in LunrSearchEngine where stopwords in title is causing in-doc search not working
+
+### `@backstage/plugin-techdocs` (1.3.1 → [1.3.2](../../changelogs/@backstage/plugin-techdocs.md#132))
+
+#### 1.3.2
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
+- [`763fb81e82`](https://github.com/backstage/backstage/commit/763fb81e82): Internal refactor to use more type safe code when dealing with route parameters.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated the `TechDocsReaderPage` to be compatible with React Router v6 stable.
+- [`7a95c705fa`](https://github.com/backstage/backstage/commit/7a95c705fa): Fixed a bug where addons wouldn't render on sub pages when using React Route v6 stable.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+- [`ca8d5a6eae`](https://github.com/backstage/backstage/commit/ca8d5a6eae): Use the new `SearchAutocomplete` component in the `TechDocsSearch` component to maintain consistency across search experiences and avoid code duplication.
+- [`829f14a9b0`](https://github.com/backstage/backstage/commit/829f14a9b0): Always update the title and sub-title when the location changes on a `TechDocs` reader page.
+- [`e97d616f08`](https://github.com/backstage/backstage/commit/e97d616f08): Fixed a bug where scrolling for anchors where the id starts with number didn't work for the current page.
+- [`ef9ab322de`](https://github.com/backstage/backstage/commit/ef9ab322de): Minor API signatures cleanup
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.3 → [1.0.4](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.3 → [1.0.4](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`eadf56bbbf`](https://github.com/backstage/backstage/commit/eadf56bbbf): Bump `git-url-parse` version to `^13.0.0`
+- [`3f739be9d9`](https://github.com/backstage/backstage/commit/3f739be9d9): Minor API signatures cleanup
+- [`7d47def9c4`](https://github.com/backstage/backstage/commit/7d47def9c4): Removed dependency on `@types/jest`.
+- [`667d917488`](https://github.com/backstage/backstage/commit/667d917488): Updated dependency `msw` to `^0.47.0`.
+- [`87ec2ba4d6`](https://github.com/backstage/backstage/commit/87ec2ba4d6): Updated dependency `msw` to `^0.46.0`.
+- [`bf5e9030eb`](https://github.com/backstage/backstage/commit/bf5e9030eb): Updated dependency `msw` to `^0.45.0`.
+
+### `@backstage/plugin-techdocs-react` (1.0.3 → [1.0.4](../../changelogs/@backstage/plugin-techdocs-react.md#104))
+
+#### 1.0.4
+
+##### Patch Changes
+
+- [`817f3196f6`](https://github.com/backstage/backstage/commit/817f3196f6): Updated React Router dependencies to be peer dependencies.
 
 ### `@techdocs/cli` (1.2.0 → [1.2.1](../../changelogs/@techdocs/cli.md#121))
 

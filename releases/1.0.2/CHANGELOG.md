@@ -1,6 +1,6 @@
 # Backstage Release 1.0.2 changelog
 
-Changes between 1.0.1 and 1.0.2 — 2 changed and 0 added packages.
+Changes between 1.0.1 and 1.0.2 — 0 added, 0 removed, 2 upgraded, 130 unchanged packages.
 
 ## Summary
 

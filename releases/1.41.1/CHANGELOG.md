@@ -1,17 +1,17 @@
 # Backstage Release 1.41.1 changelog
 
-Changes between 1.41.0 and 1.41.1 — 1 changed and 0 added packages.
+Changes between 1.41.0 and 1.41.1 — 0 added, 0 removed, 1 upgraded, 187 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/ui` (0.6.0 → 0.6.1)](#backstageui-060--061)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/ui` (0.6.0 → [0.6.1](../../changelogs/@backstage/ui.md#061))
 

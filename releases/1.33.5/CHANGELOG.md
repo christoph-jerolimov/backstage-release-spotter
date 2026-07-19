@@ -1,16 +1,16 @@
 # Backstage Release 1.33.5 changelog
 
-Changes between 1.33.4 and 1.33.5 — 19 changed and 0 added packages.
+Changes between 1.33.4 and 1.33.5 — 0 added, 0 removed, 19 upgraded, 158 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 19 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 18 packages
+- [Other patch version bumps](#other-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-dynamic-feature-service` (0.5.0 → 0.5.1)](#backstagebackend-dynamic-feature-service-050--051)
-  - [`@backstage/plugin-scaffolder-backend` (1.27.1 → 1.27.2)](#backstageplugin-scaffolder-backend-1271--1272)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.2.2 → 0.2.3)](#backstageplugin-scaffolder-backend-module-azure-022--023)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.3 → 0.3.4)](#backstageplugin-scaffolder-backend-module-bitbucket-033--034)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.2 → 0.2.3)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-022--023)
@@ -28,14 +28,12 @@ Changes between 1.33.4 and 1.33.5 — 19 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.3 → 0.4.4)](#backstageplugin-scaffolder-backend-module-yeoman-043--044)
   - [`@backstage/plugin-scaffolder-node` (0.6.0 → 0.6.1)](#backstageplugin-scaffolder-node-060--061)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.1.15 → 0.1.16)](#backstageplugin-scaffolder-node-test-utils-0115--0116)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-scaffolder-backend` (1.27.1 → 1.27.2)](#backstageplugin-scaffolder-backend-1271--1272)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-dynamic-feature-service` (0.5.0 → [0.5.1](../../changelogs/@backstage/backend-dynamic-feature-service.md#051))
-
-_No changelog entries found._
-
-### `@backstage/plugin-scaffolder-backend` (1.27.1 → [1.27.2](../../changelogs/@backstage/plugin-scaffolder-backend.md#1272))
 
 _No changelog entries found._
 
@@ -104,5 +102,11 @@ _No changelog entries found._
 _No changelog entries found._
 
 ### `@backstage/plugin-scaffolder-node-test-utils` (0.1.15 → [0.1.16](../../changelogs/@backstage/plugin-scaffolder-node-test-utils.md#0116))
+
+_No changelog entries found._
+
+## Other patch version bumps
+
+### `@backstage/plugin-scaffolder-backend` (1.27.1 → [1.27.2](../../changelogs/@backstage/plugin-scaffolder-backend.md#1272))
 
 _No changelog entries found._

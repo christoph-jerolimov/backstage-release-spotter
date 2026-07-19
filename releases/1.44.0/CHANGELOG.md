@@ -1,6 +1,6 @@
 # Backstage Release 1.44.0 changelog
 
-Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
+Changes between 1.43.4 and 1.44.0 — 1 added, 0 removed, 175 upgraded, 14 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 - [Breaking changes](#breaking-changes): 5 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 3 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 46 packages
 - [Other minor version bumps](#other-minor-version-bumps): 1 package
-- [Other patch version bumps](#other-patch-version-bumps): 56 packages
+- [Other patch version bumps](#other-patch-version-bumps): 10 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 108 packages
 
 ## Table of contents
@@ -29,22 +30,15 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-kubernetes-cluster` (0.0.29 → 0.0.30)](#backstageplugin-kubernetes-cluster-0029--0030)
   - [`@backstage/plugin-signals` (0.0.23 → 0.0.24)](#backstageplugin-signals-0023--0024)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@techdocs/cli` (1.9.8 → 1.10.0)](#techdocscli-198--1100)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/backend-app-api` (1.2.7 → 1.2.8)](#backstagebackend-app-api-127--128)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.34.3 → 0.34.4)](#backstagecli-0343--0344)
-  - [`@backstage/config` (1.3.4 → 1.3.5)](#backstageconfig-134--135)
-  - [`@backstage/config-loader` (1.10.4 → 1.10.5)](#backstageconfig-loader-1104--1105)
   - [`@backstage/core-components` (0.18.1 → 0.18.2)](#backstagecore-components-0181--0182)
   - [`@backstage/create-app` (0.7.4 → 0.7.5)](#backstagecreate-app-074--075)
   - [`@backstage/eslint-plugin` (0.1.11 → 0.1.12)](#backstageeslint-plugin-0111--0112)
   - [`@backstage/frontend-plugin-api` (0.12.0 → 0.12.1)](#backstagefrontend-plugin-api-0120--0121)
-  - [`@backstage/integration` (1.18.0 → 1.18.1)](#backstageintegration-1180--1181)
   - [`@backstage/plugin-app` (0.3.0 → 0.3.1)](#backstageplugin-app-030--031)
   - [`@backstage/plugin-app-visualizer` (0.1.23 → 0.1.24)](#backstageplugin-app-visualizer-0123--0124)
   - [`@backstage/plugin-bitbucket-cloud-common` (0.3.2 → 0.3.3)](#backstageplugin-bitbucket-cloud-common-032--033)
-  - [`@backstage/plugin-catalog-backend` (3.1.1 → 3.1.2)](#backstageplugin-catalog-backend-311--312)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.4.15 → 0.4.16)](#backstageplugin-catalog-backend-module-aws-0415--0416)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.3.9 → 0.3.10)](#backstageplugin-catalog-backend-module-azure-039--0310)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.5.3 → 0.5.4)](#backstageplugin-catalog-backend-module-bitbucket-cloud-053--054)
@@ -57,7 +51,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.8.0 → 0.8.1)](#backstageplugin-catalog-backend-module-msgraph-080--081)
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.2.14 → 0.2.15)](#backstageplugin-catalog-backend-module-puppetdb-0214--0215)
   - [`@backstage/plugin-catalog-graph` (0.5.1 → 0.5.2)](#backstageplugin-catalog-graph-051--052)
-  - [`@backstage/plugin-catalog-react` (1.21.1 → 1.21.2)](#backstageplugin-catalog-react-1211--1212)
   - [`@backstage/plugin-home` (0.8.12 → 0.8.13)](#backstageplugin-home-0812--0813)
   - [`@backstage/plugin-kubernetes` (0.12.11 → 0.12.12)](#backstageplugin-kubernetes-01211--01212)
   - [`@backstage/plugin-kubernetes-common` (0.9.6 → 0.9.7)](#backstageplugin-kubernetes-common-096--097)
@@ -66,7 +59,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
   - [`@backstage/plugin-notifications-backend` (0.5.10 → 0.5.11)](#backstageplugin-notifications-backend-0510--0511)
   - [`@backstage/plugin-notifications-backend-module-email` (0.3.13 → 0.3.14)](#backstageplugin-notifications-backend-module-email-0313--0314)
   - [`@backstage/plugin-org` (0.6.44 → 0.6.45)](#backstageplugin-org-0644--0645)
-  - [`@backstage/plugin-scaffolder` (1.34.1 → 1.34.2)](#backstageplugin-scaffolder-1341--1342)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.2.13 → 0.2.14)](#backstageplugin-scaffolder-backend-module-azure-0213--0214)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.14 → 0.3.15)](#backstageplugin-scaffolder-backend-module-bitbucket-0314--0315)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.13 → 0.2.14)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-0213--0214)
@@ -82,12 +74,22 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.13 → 0.5.14)](#backstageplugin-scaffolder-backend-module-rails-0513--0514)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.2.13 → 0.2.14)](#backstageplugin-scaffolder-backend-module-sentry-0213--0214)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.4.14 → 0.4.15)](#backstageplugin-scaffolder-backend-module-yeoman-0414--0415)
-  - [`@backstage/plugin-scaffolder-react` (1.19.1 → 1.19.2)](#backstageplugin-scaffolder-react-1191--1192)
-  - [`@backstage/plugin-search` (1.4.30 → 1.4.31)](#backstageplugin-search-1430--1431)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.48 → 0.5.49)](#backstageplugin-search-backend-module-pg-0548--0549)
-  - [`@backstage/plugin-search-react` (1.9.4 → 1.9.5)](#backstageplugin-search-react-194--195)
   - [`@backstage/plugin-user-settings` (0.8.26 → 0.8.27)](#backstageplugin-user-settings-0826--0827)
   - [`@backstage/repo-tools` (0.15.2 → 0.15.3)](#backstagerepo-tools-0152--0153)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@techdocs/cli` (1.9.8 → 1.10.0)](#techdocscli-198--1100)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-app-api` (1.2.7 → 1.2.8)](#backstagebackend-app-api-127--128)
+  - [`@backstage/config` (1.3.4 → 1.3.5)](#backstageconfig-134--135)
+  - [`@backstage/config-loader` (1.10.4 → 1.10.5)](#backstageconfig-loader-1104--1105)
+  - [`@backstage/integration` (1.18.0 → 1.18.1)](#backstageintegration-1180--1181)
+  - [`@backstage/plugin-catalog-backend` (3.1.1 → 3.1.2)](#backstageplugin-catalog-backend-311--312)
+  - [`@backstage/plugin-catalog-react` (1.21.1 → 1.21.2)](#backstageplugin-catalog-react-1211--1212)
+  - [`@backstage/plugin-scaffolder` (1.34.1 → 1.34.2)](#backstageplugin-scaffolder-1341--1342)
+  - [`@backstage/plugin-scaffolder-react` (1.19.1 → 1.19.2)](#backstageplugin-scaffolder-react-1191--1192)
+  - [`@backstage/plugin-search` (1.4.30 → 1.4.31)](#backstageplugin-search-1430--1431)
+  - [`@backstage/plugin-search-react` (1.9.4 → 1.9.5)](#backstageplugin-search-react-194--195)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -271,25 +273,7 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 
 - [`7b41d9d`](https://github.com/backstage/backstage/commit/7b41d9d): Remove `app-root-element:signals/signals-display` which was not doing anything useful
 
-## Other minor version bumps
-
-### `@techdocs/cli` (1.9.8 → [1.10.0](../../changelogs/@techdocs/cli.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`43afbe5`](https://github.com/backstage/backstage/commit/43afbe5): Techdocs CLI serve supports automatic refresh, relying on `mkdocs` `watch` feature.
-
-## Other patch version bumps
-
-### `@backstage/backend-app-api` (1.2.7 → [1.2.8](../../changelogs/@backstage/backend-app-api.md#128))
-
-#### 1.2.8
-
-##### Patch Changes
-
-- [`dd69cf6`](https://github.com/backstage/backstage/commit/dd69cf6): Moved up registration of unhandled rejections and errors listeners to be done as early as possible, avoiding flakiness in backend startups and instead always logging these failures rather than sometimes crashing the process.
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.34.3 → [0.34.4](../../changelogs/@backstage/cli.md#0344))
 
@@ -340,22 +324,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 
 - [`d14ef24`](https://github.com/backstage/backstage/commit/d14ef24): Added automatic detection and support for the Backstage Yarn plugin when generating new packages with `yarn new`. When the plugin is installed, new packages will automatically use `backstage:^` ranges for `@backstage/*` dependencies.
 
-### `@backstage/config` (1.3.4 → [1.3.5](../../changelogs/@backstage/config.md#135))
-
-#### 1.3.5
-
-##### Patch Changes
-
-- [`b45b094`](https://github.com/backstage/backstage/commit/b45b094): Allow colon to be used as config key.
-
-### `@backstage/config-loader` (1.10.4 → [1.10.5](../../changelogs/@backstage/config-loader.md#1105))
-
-#### 1.10.5
-
-##### Patch Changes
-
-- [`b45b094`](https://github.com/backstage/backstage/commit/b45b094): Allow colon to be used as config key.
-
 ### `@backstage/core-components` (0.18.1 → [0.18.2](../../changelogs/@backstage/core-components.md#0182))
 
 #### 0.18.2
@@ -399,15 +367,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 
 - [`8ed53eb`](https://github.com/backstage/backstage/commit/8ed53eb): Added `coreExtensionData.title`, especially useful for creating extensible layout with tabbed pages, but available for use for other cases too.
 
-### `@backstage/integration` (1.18.0 → [1.18.1](../../changelogs/@backstage/integration.md#1181))
-
-#### 1.18.1
-
-##### Patch Changes
-
-- [`d772b51`](https://github.com/backstage/backstage/commit/d772b51): remove host from azure blob storage integration type
-- [`84443f1`](https://github.com/backstage/backstage/commit/84443f1): Adds config definitions for Azure Blob Storage.
-
 ### `@backstage/plugin-app` (0.3.0 → [0.3.1](../../changelogs/@backstage/plugin-app.md#031))
 
 #### 0.3.1
@@ -431,43 +390,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 ##### Patch Changes
 
 - [`2aded73`](https://github.com/backstage/backstage/commit/2aded73): Allow for passing a `pagelen` parameter to configure the `pagelength` property of the `BitbucketCloudEntityProvider` `searchCode` pagination to resolve [bug](https://jira.atlassian.com/browse/BCLOUD-23644) pertaining to duplicate results being returned.
-
-### `@backstage/plugin-catalog-backend` (3.1.1 → [3.1.2](../../changelogs/@backstage/plugin-catalog-backend.md#312))
-
-#### 3.1.2
-
-##### Patch Changes
-
-- [`9890488`](https://github.com/backstage/backstage/commit/9890488): Internal refactor to remove remnants of the old backend system
-- [`6493c98`](https://github.com/backstage/backstage/commit/6493c98): Log before provider-orphaning eviction happens
-- [`2aaf01a`](https://github.com/backstage/backstage/commit/2aaf01a): Fix for duplicate search results in entity-facets API call
-- [`e489661`](https://github.com/backstage/backstage/commit/e489661): Moved catalog processor and provider disabling and priorities under own config objects.
-
-  This is due to issue with some existing providers, such as GitHub, using array syntax for the provider configuration.
-
-  The new config format is not backwards compatible, so users will need to update their config files. The new format
-  is as follows:
-
-  ```yaml
-  catalog:
-    providerOptions:
-      providerA:
-        disabled: false
-      providerB:
-        disabled: true
-    processorOptions:
-      processorA:
-        disabled: false
-        priority: 10
-      processorB:
-        disabled: true
-  ```
-
-- [`77516c5`](https://github.com/backstage/backstage/commit/77516c5): Added new `catalog:validate-entity` action to actions registry.
-
-  This action can be used to validate entities against the software catalog.
-  This is useful for validating `catalog-info.yaml` file changes locally using the
-  Backstage MCP server.
 
 ### `@backstage/plugin-catalog-backend-module-aws` (0.4.15 → [0.4.16](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0416))
 
@@ -570,15 +492,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 - [`431130c`](https://github.com/backstage/backstage/commit/431130c): Added `renderEdge` prop to `<DependencyGraph />` component in `@backstage/core-components` to allow custom rendering of graph edges.
 - [`6981ae6`](https://github.com/backstage/backstage/commit/6981ae6): Fixed DependencyGraph `svg` size not adapting to the container size
 
-### `@backstage/plugin-catalog-react` (1.21.1 → [1.21.2](../../changelogs/@backstage/plugin-catalog-react.md#1212))
-
-#### 1.21.2
-
-##### Patch Changes
-
-- [`2a3704d`](https://github.com/backstage/backstage/commit/2a3704d): Correct translation key from "type" to "owner" for owner column in entity table to ensure the right translation is loaded.
-- [`ace202e`](https://github.com/backstage/backstage/commit/ace202e): Update `material-ui-popup-state` to latest available version.
-
 ### `@backstage/plugin-home` (0.8.12 → [0.8.13](../../changelogs/@backstage/plugin-home.md#0813))
 
 #### 0.8.13
@@ -645,16 +558,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 ##### Patch Changes
 
 - [`8b7351f`](https://github.com/backstage/backstage/commit/8b7351f): Add `initialRelationAggregation` and `showAggregateMembersToggle` options to `EntityMembersListCard` as well to `EntityOwnershipCard`
-
-### `@backstage/plugin-scaffolder` (1.34.1 → [1.34.2](../../changelogs/@backstage/plugin-scaffolder.md#1342))
-
-#### 1.34.2
-
-##### Patch Changes
-
-- [`e0ffe84`](https://github.com/backstage/backstage/commit/e0ffe84): Add missing `templatingExtensions` option to RouterProps.contextMenu to allow global control across scaffolder pages
-- [`d9aed74`](https://github.com/backstage/backstage/commit/d9aed74): Forward `ui:disabled` in `OwnedEntityPicker` to allow disabling it
-- [`075e064`](https://github.com/backstage/backstage/commit/075e064): Added missing form fields for the new frontend system.
 
 ### `@backstage/plugin-scaffolder-backend-module-azure` (0.2.13 → [0.2.14](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#0214))
 
@@ -779,22 +682,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 
 - [`c8aa210`](https://github.com/backstage/backstage/commit/c8aa210): Updating import for the `scaffolderActionsExtensionPoint` to be the main export
 
-### `@backstage/plugin-scaffolder-react` (1.19.1 → [1.19.2](../../changelogs/@backstage/plugin-scaffolder-react.md#1192))
-
-#### 1.19.2
-
-##### Patch Changes
-
-- [`e61f89e`](https://github.com/backstage/backstage/commit/e61f89e): Don't change loading to false until we've actually got some log state
-
-### `@backstage/plugin-search` (1.4.30 → [1.4.31](../../changelogs/@backstage/plugin-search.md#1431))
-
-#### 1.4.31
-
-##### Patch Changes
-
-- [`67a3e1a`](https://github.com/backstage/backstage/commit/67a3e1a): Implemented AbortController request cancellation for overlapping search requests. This change ensures that when users type quickly, previous search requests are properly canceled before new ones start.
-
 ### `@backstage/plugin-search-backend-module-pg` (0.5.48 → [0.5.49](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0549))
 
 #### 0.5.49
@@ -803,14 +690,6 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 
 - [`a919ca3`](https://github.com/backstage/backstage/commit/a919ca3): Truncate long docs to fit PG index size limit
 - [`8d15a51`](https://github.com/backstage/backstage/commit/8d15a51): Added the < character to the query filter regexp
-
-### `@backstage/plugin-search-react` (1.9.4 → [1.9.5](../../changelogs/@backstage/plugin-search-react.md#195))
-
-#### 1.9.5
-
-##### Patch Changes
-
-- [`67a3e1a`](https://github.com/backstage/backstage/commit/67a3e1a): Implemented AbortController request cancellation for overlapping search requests. This change ensures that when users type quickly, previous search requests are properly canceled before new ones start.
 
 ### `@backstage/plugin-user-settings` (0.8.26 → [0.8.27](../../changelogs/@backstage/plugin-user-settings.md#0827))
 
@@ -827,6 +706,131 @@ Changes between 1.43.4 and 1.44.0 — 175 changed and 1 added packages.
 ##### Patch Changes
 
 - [`1359279`](https://github.com/backstage/backstage/commit/1359279): Fixed an issue with the OpenAPI generated client and server where import/export statements were duplicated.
+
+## Other minor version bumps
+
+### `@techdocs/cli` (1.9.8 → [1.10.0](../../changelogs/@techdocs/cli.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`43afbe5`](https://github.com/backstage/backstage/commit/43afbe5): Techdocs CLI serve supports automatic refresh, relying on `mkdocs` `watch` feature.
+
+## Other patch version bumps
+
+### `@backstage/backend-app-api` (1.2.7 → [1.2.8](../../changelogs/@backstage/backend-app-api.md#128))
+
+#### 1.2.8
+
+##### Patch Changes
+
+- [`dd69cf6`](https://github.com/backstage/backstage/commit/dd69cf6): Moved up registration of unhandled rejections and errors listeners to be done as early as possible, avoiding flakiness in backend startups and instead always logging these failures rather than sometimes crashing the process.
+
+### `@backstage/config` (1.3.4 → [1.3.5](../../changelogs/@backstage/config.md#135))
+
+#### 1.3.5
+
+##### Patch Changes
+
+- [`b45b094`](https://github.com/backstage/backstage/commit/b45b094): Allow colon to be used as config key.
+
+### `@backstage/config-loader` (1.10.4 → [1.10.5](../../changelogs/@backstage/config-loader.md#1105))
+
+#### 1.10.5
+
+##### Patch Changes
+
+- [`b45b094`](https://github.com/backstage/backstage/commit/b45b094): Allow colon to be used as config key.
+
+### `@backstage/integration` (1.18.0 → [1.18.1](../../changelogs/@backstage/integration.md#1181))
+
+#### 1.18.1
+
+##### Patch Changes
+
+- [`d772b51`](https://github.com/backstage/backstage/commit/d772b51): remove host from azure blob storage integration type
+- [`84443f1`](https://github.com/backstage/backstage/commit/84443f1): Adds config definitions for Azure Blob Storage.
+
+### `@backstage/plugin-catalog-backend` (3.1.1 → [3.1.2](../../changelogs/@backstage/plugin-catalog-backend.md#312))
+
+#### 3.1.2
+
+##### Patch Changes
+
+- [`9890488`](https://github.com/backstage/backstage/commit/9890488): Internal refactor to remove remnants of the old backend system
+- [`6493c98`](https://github.com/backstage/backstage/commit/6493c98): Log before provider-orphaning eviction happens
+- [`2aaf01a`](https://github.com/backstage/backstage/commit/2aaf01a): Fix for duplicate search results in entity-facets API call
+- [`e489661`](https://github.com/backstage/backstage/commit/e489661): Moved catalog processor and provider disabling and priorities under own config objects.
+
+  This is due to issue with some existing providers, such as GitHub, using array syntax for the provider configuration.
+
+  The new config format is not backwards compatible, so users will need to update their config files. The new format
+  is as follows:
+
+  ```yaml
+  catalog:
+    providerOptions:
+      providerA:
+        disabled: false
+      providerB:
+        disabled: true
+    processorOptions:
+      processorA:
+        disabled: false
+        priority: 10
+      processorB:
+        disabled: true
+  ```
+
+- [`77516c5`](https://github.com/backstage/backstage/commit/77516c5): Added new `catalog:validate-entity` action to actions registry.
+
+  This action can be used to validate entities against the software catalog.
+  This is useful for validating `catalog-info.yaml` file changes locally using the
+  Backstage MCP server.
+
+### `@backstage/plugin-catalog-react` (1.21.1 → [1.21.2](../../changelogs/@backstage/plugin-catalog-react.md#1212))
+
+#### 1.21.2
+
+##### Patch Changes
+
+- [`2a3704d`](https://github.com/backstage/backstage/commit/2a3704d): Correct translation key from "type" to "owner" for owner column in entity table to ensure the right translation is loaded.
+- [`ace202e`](https://github.com/backstage/backstage/commit/ace202e): Update `material-ui-popup-state` to latest available version.
+
+### `@backstage/plugin-scaffolder` (1.34.1 → [1.34.2](../../changelogs/@backstage/plugin-scaffolder.md#1342))
+
+#### 1.34.2
+
+##### Patch Changes
+
+- [`e0ffe84`](https://github.com/backstage/backstage/commit/e0ffe84): Add missing `templatingExtensions` option to RouterProps.contextMenu to allow global control across scaffolder pages
+- [`d9aed74`](https://github.com/backstage/backstage/commit/d9aed74): Forward `ui:disabled` in `OwnedEntityPicker` to allow disabling it
+- [`075e064`](https://github.com/backstage/backstage/commit/075e064): Added missing form fields for the new frontend system.
+
+### `@backstage/plugin-scaffolder-react` (1.19.1 → [1.19.2](../../changelogs/@backstage/plugin-scaffolder-react.md#1192))
+
+#### 1.19.2
+
+##### Patch Changes
+
+- [`e61f89e`](https://github.com/backstage/backstage/commit/e61f89e): Don't change loading to false until we've actually got some log state
+
+### `@backstage/plugin-search` (1.4.30 → [1.4.31](../../changelogs/@backstage/plugin-search.md#1431))
+
+#### 1.4.31
+
+##### Patch Changes
+
+- [`67a3e1a`](https://github.com/backstage/backstage/commit/67a3e1a): Implemented AbortController request cancellation for overlapping search requests. This change ensures that when users type quickly, previous search requests are properly canceled before new ones start.
+
+### `@backstage/plugin-search-react` (1.9.4 → [1.9.5](../../changelogs/@backstage/plugin-search-react.md#195))
+
+#### 1.9.5
+
+##### Patch Changes
+
+- [`67a3e1a`](https://github.com/backstage/backstage/commit/67a3e1a): Implemented AbortController request cancellation for overlapping search requests. This change ensures that when users type quickly, previous search requests are properly canceled before new ones start.
 
 ## Excluded dependency updates
 

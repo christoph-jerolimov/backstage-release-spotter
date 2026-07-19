@@ -1,6 +1,6 @@
 # Backstage Release 1.1.0 changelog
 
-Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
+Changes between 1.0.3 and 1.1.0 — 5 added, 0 removed, 124 upgraded, 8 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 - [Breaking changes](#breaking-changes): 13 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 4 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 66 packages
 - [Other minor version bumps](#other-minor-version-bumps): 9 packages
-- [Other patch version bumps](#other-patch-version-bumps): 76 packages
+- [Other patch version bumps](#other-patch-version-bumps): 10 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 21 packages
 
 ## Table of contents
@@ -41,27 +42,11 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
   - [`@backstage/plugin-tech-insights` (0.1.13 → 0.2.0)](#backstageplugin-tech-insights-0113--020)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-explore-react` (0.0.15 → 0.0.16)](#backstageplugin-explore-react-0015--0016)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config-loader` (1.0.0 → 1.1.0)](#backstageconfig-loader-100--110)
-  - [`@backstage/integration` (1.0.0 → 1.1.0)](#backstageintegration-100--110)
-  - [`@backstage/plugin-catalog` (1.0.0 → 1.1.0)](#backstageplugin-catalog-100--110)
-  - [`@backstage/plugin-scaffolder` (1.0.1 → 1.1.0)](#backstageplugin-scaffolder-101--110)
-  - [`@backstage/plugin-scaffolder-backend` (1.0.0 → 1.1.0)](#backstageplugin-scaffolder-backend-100--110)
-  - [`@backstage/plugin-techdocs` (1.0.1 → 1.1.0)](#backstageplugin-techdocs-101--110)
-  - [`@backstage/plugin-techdocs-backend` (1.0.0 → 1.1.0)](#backstageplugin-techdocs-backend-100--110)
-  - [`@backstage/plugin-techdocs-node` (1.0.0 → 1.1.0)](#backstageplugin-techdocs-node-100--110)
-  - [`@techdocs/cli` (1.0.0 → 1.1.0)](#techdocscli-100--110)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.0.0 → 1.0.1)](#backstageapp-defaults-100--101)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.13.1 → 0.13.2)](#backstagebackend-common-0131--0132)
   - [`@backstage/backend-test-utils` (0.1.22 → 0.1.23)](#backstagebackend-test-utils-0122--0123)
-  - [`@backstage/catalog-model` (1.0.0 → 1.0.1)](#backstagecatalog-model-100--101)
   - [`@backstage/codemods` (0.1.36 → 0.1.37)](#backstagecodemods-0136--0137)
-  - [`@backstage/core-app-api` (1.0.0 → 1.0.1)](#backstagecore-app-api-100--101)
   - [`@backstage/core-components` (0.9.2 → 0.9.3)](#backstagecore-components-092--093)
-  - [`@backstage/core-plugin-api` (1.0.0 → 1.0.1)](#backstagecore-plugin-api-100--101)
-  - [`@backstage/dev-utils` (1.0.0 → 1.0.1)](#backstagedev-utils-100--101)
-  - [`@backstage/integration-react` (1.0.0 → 1.0.1)](#backstageintegration-react-100--101)
   - [`@backstage/plugin-airbrake` (0.3.3 → 0.3.4)](#backstageplugin-airbrake-033--034)
   - [`@backstage/plugin-allure` (0.1.19 → 0.1.20)](#backstageplugin-allure-0119--0120)
   - [`@backstage/plugin-analytics-module-ga` (0.1.14 → 0.1.15)](#backstageplugin-analytics-module-ga-0114--0115)
@@ -77,10 +62,8 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
   - [`@backstage/plugin-catalog-backend-module-bitbucket` (0.1.1 → 0.1.2)](#backstageplugin-catalog-backend-module-bitbucket-011--012)
   - [`@backstage/plugin-catalog-backend-module-ldap` (0.4.1 → 0.4.2)](#backstageplugin-catalog-backend-module-ldap-041--042)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.3.0 → 0.3.1)](#backstageplugin-catalog-backend-module-msgraph-030--031)
-  - [`@backstage/plugin-catalog-common` (1.0.0 → 1.0.1)](#backstageplugin-catalog-common-100--101)
   - [`@backstage/plugin-catalog-graph` (0.2.15 → 0.2.16)](#backstageplugin-catalog-graph-0215--0216)
   - [`@backstage/plugin-catalog-import` (0.8.6 → 0.8.7)](#backstageplugin-catalog-import-086--087)
-  - [`@backstage/plugin-catalog-react` (1.0.0 → 1.0.1)](#backstageplugin-catalog-react-100--101)
   - [`@backstage/plugin-circleci` (0.3.3 → 0.3.4)](#backstageplugin-circleci-033--034)
   - [`@backstage/plugin-cloudbuild` (0.3.3 → 0.3.4)](#backstageplugin-cloudbuild-033--034)
   - [`@backstage/plugin-code-climate` (0.1.3 → 0.1.4)](#backstageplugin-code-climate-013--014)
@@ -126,6 +109,25 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
   - [`@backstage/plugin-todo-backend` (0.1.27 → 0.1.28)](#backstageplugin-todo-backend-0127--0128)
   - [`@backstage/plugin-user-settings` (0.4.2 → 0.4.3)](#backstageplugin-user-settings-042--043)
   - [`@backstage/plugin-xcmetrics` (0.2.23 → 0.2.24)](#backstageplugin-xcmetrics-0223--0224)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config-loader` (1.0.0 → 1.1.0)](#backstageconfig-loader-100--110)
+  - [`@backstage/integration` (1.0.0 → 1.1.0)](#backstageintegration-100--110)
+  - [`@backstage/plugin-catalog` (1.0.0 → 1.1.0)](#backstageplugin-catalog-100--110)
+  - [`@backstage/plugin-scaffolder` (1.0.1 → 1.1.0)](#backstageplugin-scaffolder-101--110)
+  - [`@backstage/plugin-scaffolder-backend` (1.0.0 → 1.1.0)](#backstageplugin-scaffolder-backend-100--110)
+  - [`@backstage/plugin-techdocs` (1.0.1 → 1.1.0)](#backstageplugin-techdocs-101--110)
+  - [`@backstage/plugin-techdocs-backend` (1.0.0 → 1.1.0)](#backstageplugin-techdocs-backend-100--110)
+  - [`@backstage/plugin-techdocs-node` (1.0.0 → 1.1.0)](#backstageplugin-techdocs-node-100--110)
+  - [`@techdocs/cli` (1.0.0 → 1.1.0)](#techdocscli-100--110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.0.0 → 1.0.1)](#backstageapp-defaults-100--101)
+  - [`@backstage/catalog-model` (1.0.0 → 1.0.1)](#backstagecatalog-model-100--101)
+  - [`@backstage/core-app-api` (1.0.0 → 1.0.1)](#backstagecore-app-api-100--101)
+  - [`@backstage/core-plugin-api` (1.0.0 → 1.0.1)](#backstagecore-plugin-api-100--101)
+  - [`@backstage/dev-utils` (1.0.0 → 1.0.1)](#backstagedev-utils-100--101)
+  - [`@backstage/integration-react` (1.0.0 → 1.0.1)](#backstageintegration-react-100--101)
+  - [`@backstage/plugin-catalog-common` (1.0.0 → 1.0.1)](#backstageplugin-catalog-common-100--101)
+  - [`@backstage/plugin-catalog-react` (1.0.0 → 1.0.1)](#backstageplugin-catalog-react-100--101)
   - [`@backstage/test-utils` (1.0.0 → 1.0.1)](#backstagetest-utils-100--101)
   - [`@backstage/version-bridge` (1.0.0 → 1.0.1)](#backstageversion-bridge-100--101)
 - [Excluded dependency updates](#excluded-dependency-updates)
@@ -1106,231 +1108,7 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 - [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
 - [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
 
-## Other minor version bumps
-
-### `@backstage/config-loader` (1.0.0 → [1.1.0](../../changelogs/@backstage/config-loader.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`19f6c6c32a`](https://github.com/backstage/backstage/commit/19f6c6c32a): Added `ignoreSchemaErrors` to `schema.process`.
-
-##### Patch Changes
-
-- [`e0a51384ac`](https://github.com/backstage/backstage/commit/e0a51384ac): build(deps): bump `ajv` from 7.0.3 to 8.10.0
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-- [`c47509e1a0`](https://github.com/backstage/backstage/commit/c47509e1a0): Implemented changes suggested by Deepsource.io including multiple double non-null assertion operators and unexpected awaits for non-promise values.
-
-### `@backstage/integration` (1.0.0 → [1.1.0](../../changelogs/@backstage/integration.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`b7436743cb`](https://github.com/backstage/backstage/commit/b7436743cb): Gerrit integration: Added an optional configuration to set the Gitiles base url.
-
-##### Patch Changes
-
-- [`1691c6c5c2`](https://github.com/backstage/backstage/commit/1691c6c5c2): Clarify that config locations that emit User and Group kinds now need to declare so in the `catalog.locations.[].rules`
-- [`3ef123bbf0`](https://github.com/backstage/backstage/commit/3ef123bbf0): Support external ID when assuming roles in S3 integration
-
-  In order to assume a role created by a 3rd party as external
-  ID is needed. This change adds an optional field to the s3
-  integration configuration and consumes that in the AwsS3UrlReader.
-
-- [`d26e1b0146`](https://github.com/backstage/backstage/commit/d26e1b0146): Exported `replaceGitLabUrlType` from package
-
-### `@backstage/plugin-catalog` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-catalog.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`bdc61b4002`](https://github.com/backstage/backstage/commit/bdc61b4002): Expose 'initalFilter' through initialKind prop on Catalog Page.
-
-##### Patch Changes
-
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`2a3cac4c60`](https://github.com/backstage/backstage/commit/2a3cac4c60): Corrected replacements for depreciated FilteredEntityLayout items
-- [`f6d2694092`](https://github.com/backstage/backstage/commit/f6d2694092): Added tableOptions property to CatalogTable and DefaultCatalogPage to support customization of the Catalog Table. Related issue #10453
-- [`5d5fdbe541`](https://github.com/backstage/backstage/commit/5d5fdbe541): Columns in CatalogTable now change depending on the entity kind, ensuring only relevant columns are displayed.
-
-### `@backstage/plugin-scaffolder` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`6331ec1ebc`](https://github.com/backstage/backstage/commit/6331ec1ebc): Added a context menu to the scaffolder page that provides links to the template editor and actions reference. These links and the presence of the context menu can be toggled through the `contextMenu` prop of the scaffolder page.
-- [`8fad3b6ef5`](https://github.com/backstage/backstage/commit/8fad3b6ef5): The Template Preview page has been renamed to Template Editor, and is not available at the `/edit` path instead. There is a redirect in place from `/preview`.
-
-##### Patch Changes
-
-- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`946af407db`](https://github.com/backstage/backstage/commit/946af407db): Changed input label for owner field in GitlabRepoPicker
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-- [`d34900af81`](https://github.com/backstage/backstage/commit/d34900af81): Added a new `NextScaffolderRouter` which will eventually replace the exiting router
-- [`9975ff9852`](https://github.com/backstage/backstage/commit/9975ff9852): Applied the fix from version 1.0.1 of this package, which is part of the v1.0.2 release of Backstage.
-- [`4431873583`](https://github.com/backstage/backstage/commit/4431873583): Update `usePermission` usage.
-
-### `@backstage/plugin-scaffolder-backend` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`2a7d52ca2c`](https://github.com/backstage/backstage/commit/2a7d52ca2c): Override default commit message and author details in GitLab action
-- [`f5f921dafb`](https://github.com/backstage/backstage/commit/f5f921dafb): Add new `draft` option to the `publish:github:pull-request` action.
-
-##### Patch Changes
-
-- [`64d9a031a8`](https://github.com/backstage/backstage/commit/64d9a031a8): build(deps): bump `isbinaryfile` from 4.0.8 to 5.0.0
-- [`2f3d3a1eae`](https://github.com/backstage/backstage/commit/2f3d3a1eae): build(deps): bump `@gitbeaker/core` from 34.6.0 to 35.6.0
-
-### `@backstage/plugin-techdocs` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-techdocs.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`ace749b785`](https://github.com/backstage/backstage/commit/ace749b785): TechDocs supports a new, experimental method of customization: addons!
-
-  To customize the standalone TechDocs reader page experience, update your `/packages/app/src/App.tsx` in the following way:
-
-  ```diff
-  import { TechDocsIndexPage, TechDocsReaderPage } from '@backstage/plugin-techdocs';
-  + import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
-  + import { SomeAddon } from '@backstage/plugin-some-plugin';
-
-  // ...
-
-      <Route path="/docs" element={<TechDocsIndexPage />} />
-      <Route
-        path="/docs/:namespace/:kind/:name/*"
-        element={<TechDocsReaderPage />}
-      >
-  +      <TechDocsAddons>
-  +        <SomeAddon />
-  +      </TechDocsAddons>
-      </Route>
-
-  // ...
-  ```
-
-  To customize the TechDocs reader experience on the Catalog entity page, update your `packages/app/src/components/catalog/EntityPage.tsx` in the following way:
-
-  ```diff
-  import { EntityTechdocsContent } from '@backstage/plugin-techdocs';
-  + import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
-  + import { SomeAddon } from '@backstage/plugin-some-plugin';
-
-  // ...
-
-    <EntityLayoutWrapper>
-      <EntityLayout.Route path="/" title="Overview">
-        {overviewContent}
-      </EntityLayout.Route>
-
-      <EntityLayout.Route path="/docs" title="Docs">
-  -      <EntityTechDocsContent />
-  +      <EntityTechdocsContent>
-  +        <TechDocsAddons>
-  +          <SomeAddon />
-  +        </TechDocsAddons>
-  +      </EntityTechdocsContent>
-      </EntityLayout.Route>
-    </EntityLayoutWrapper>
-
-  // ...
-  ```
-
-  If you do not wish to customize your TechDocs reader experience in this way at this time, no changes are necessary!
-
-##### Patch Changes
-
-- [`ab230a433f`](https://github.com/backstage/backstage/commit/ab230a433f): imports from `@backstage/plugin-search-react` instead of `@backstage/plugin-search`
-- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-- [`f0fb9153b7`](https://github.com/backstage/backstage/commit/f0fb9153b7): Fix broken query selectors on techdocs
-- [`9975ff9852`](https://github.com/backstage/backstage/commit/9975ff9852): Applied the fix from version 1.0.1 of this package, which is part of the v1.0.2 release of Backstage.
-- [`3ba256c389`](https://github.com/backstage/backstage/commit/3ba256c389): Fixed a bug preventing custom TechDocs reader page implementations from rendering without being double-wrapped in the `<TechDocsReaderPage />` component.
-- [`fe53fe97d7`](https://github.com/backstage/backstage/commit/fe53fe97d7): Fix permalink scrolling for anchors where the id starts with a number.
-- [`0152c0de22`](https://github.com/backstage/backstage/commit/0152c0de22): Some documentation layout tweaks:
-
-  - drawer toggle margins
-  - code block margins
-  - sidebar drawer width
-  - inner content width
-  - footer link width
-  - sidebar table of contents scroll
-
-- [`3ba256c389`](https://github.com/backstage/backstage/commit/3ba256c389): Fixed a bug that caused addons in the `Subheader` location to break the default TechDocs reader page layout.
-
-### `@backstage/plugin-techdocs-backend` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-backend.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`733187987b`](https://github.com/backstage/backstage/commit/733187987b): Removed an undocumented, broken behavior where `README.md` files would be copied to `index.md` if it did not exist, leading to broken links in the TechDocs UI.
-
-  **WARNING**: If you notice 404s in TechDocs after updating, check to make sure that all markdown files referenced in your `mkdocs.yml`s' `nav` sections exist. The following configuration may be used to temporarily revert to the broken behavior.
-
-  ```yaml
-  techdocs:
-    generator:
-      mkdocs:
-        legacyCopyReadmeMdToIndexMd: true
-  ```
-
-##### Patch Changes
-
-- [`ada4446733`](https://github.com/backstage/backstage/commit/ada4446733): Specify type of `visibilityPermission` property on collators and collator factories.
-- [`7762d54200`](https://github.com/backstage/backstage/commit/7762d54200): Fixed a bug affecting those with cache enabled that would result in empty content being cached if the first attempt to load a static asset from storage were made via a `HEAD` request, rather than a `GET` request.
-
-### `@backstage/plugin-techdocs-node` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-node.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`bcf1a2496c`](https://github.com/backstage/backstage/commit/bcf1a2496c): Removed an undocumented, broken behavior where `README.md` files would be copied to `index.md` if it did not exist, leading to broken links in the TechDocs UI.
-
-##### Patch Changes
-
-- [`9fa68705bf`](https://github.com/backstage/backstage/commit/9fa68705bf): The default container version used to generate TechDocs content is now `v1.0.2`.
-
-### `@techdocs/cli` (1.0.0 → [1.1.0](../../changelogs/@techdocs/cli.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`733187987b`](https://github.com/backstage/backstage/commit/733187987b): Removed an undocumented, broken behavior where `README.md` files would be copied to `index.md` if it did not exist, leading to broken links in the TechDocs UI.
-
-  **WARNING**: If you notice 404s in TechDocs after updating, check to make sure that all markdown files referenced in your `mkdocs.yml`s' `nav` sections exist. The following flag may be passed to the `generate` command to temporarily revert to the broken behavior.
-
-  ```sh
-  techdocs-cli generate --legacyCopyReadmeMdToIndexMd
-  ```
-
-##### Patch Changes
-
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-- [`eb470ea54c`](https://github.com/backstage/backstage/commit/eb470ea54c): Adds a new flag to override the entrypoint when using a custom docker image. It could be used to reuse existing images with different entrypoints.
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.0.0 → [1.0.1](../../changelogs/@backstage/app-defaults.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.13.1 → [0.13.2](../../changelogs/@backstage/backend-common.md#0132))
 
@@ -1359,24 +1137,6 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 
 - [`0654c87cf2`](https://github.com/backstage/backstage/commit/0654c87cf2): `TestDatabases.create` will no longer set up an `afterAll` test handler if no databases are supported.
 
-### `@backstage/catalog-model` (1.0.0 → [1.0.1](../../changelogs/@backstage/catalog-model.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`e0a51384ac`](https://github.com/backstage/backstage/commit/e0a51384ac): build(deps): bump `ajv` from 7.0.3 to 8.10.0
-- [`c12f8374d1`](https://github.com/backstage/backstage/commit/c12f8374d1): Added a connection between www-artist and artist-lookup components
-
-  <details>
-   <summary>Screenshots</summary>
-
-  ![www-artist component](https://user-images.githubusercontent.com/74687/161088772-bc1df84e-28c1-4b08-b914-109cd6d04521.jpg)
-
-  ![artist-lookup component](https://user-images.githubusercontent.com/74687/161088775-120c5610-f094-4cd1-bb2d-3ab9623a6c72.jpg)
-
-  </details>
-
 ### `@backstage/codemods` (0.1.36 → [0.1.37](../../changelogs/@backstage/codemods.md#0137))
 
 #### 0.1.37
@@ -1384,19 +1144,6 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 ##### Patch Changes
 
 - [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-
-### `@backstage/core-app-api` (1.0.0 → [1.0.1](../../changelogs/@backstage/core-app-api.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`3ff2bfb66e`](https://github.com/backstage/backstage/commit/3ff2bfb66e): Refactored the route collection logic to prepare for future changes and avoid duplicate element tree traversal for the analytics context.
-- [`a7bb762dab`](https://github.com/backstage/backstage/commit/a7bb762dab): fixed empty body issue for POST requests using FetchAPI with 'plugin://' prefix
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-- [`c47509e1a0`](https://github.com/backstage/backstage/commit/c47509e1a0): Implemented changes suggested by Deepsource.io including multiple double non-null assertion operators and unexpected awaits for non-promise values.
 
 ### `@backstage/core-components` (0.9.2 → [0.9.3](../../changelogs/@backstage/core-components.md#093))
 
@@ -1414,33 +1161,6 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 - [`d505e43ffc`](https://github.com/backstage/backstage/commit/d505e43ffc): Fix highlighting of active sidebar items.
 - [`72f3dfd05a`](https://github.com/backstage/backstage/commit/72f3dfd05a): Updated ProxiedSignInPageProps docs
 - [`7741e47eae`](https://github.com/backstage/backstage/commit/7741e47eae): `<Sidebar />` now accepts additional props `sidebarOptions` and `submenuOptions` to allow further customization
-
-### `@backstage/core-plugin-api` (1.0.0 → [1.0.1](../../changelogs/@backstage/core-plugin-api.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
-
-### `@backstage/dev-utils` (1.0.0 → [1.0.1](../../changelogs/@backstage/dev-utils.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-
-### `@backstage/integration-react` (1.0.0 → [1.0.1](../../changelogs/@backstage/integration-react.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
 
 ### `@backstage/plugin-airbrake` (0.3.3 → [0.3.4](../../changelogs/@backstage/plugin-airbrake.md#034))
 
@@ -1647,15 +1367,6 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 - [`1691c6c5c2`](https://github.com/backstage/backstage/commit/1691c6c5c2): Clarify that config locations that emit User and Group kinds now need to declare so in the `catalog.locations.[].rules`
 - [`85fc53df95`](https://github.com/backstage/backstage/commit/85fc53df95): Now plugin configuration accept a new optional parameter `groupSelect` which allow the client to fetch defined fields from the ms-graph api.
 
-### `@backstage/plugin-catalog-common` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-catalog-common.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`ada4446733`](https://github.com/backstage/backstage/commit/ada4446733): Use `createPermission` helper when creating permissions.
-- [`8c8bee47f4`](https://github.com/backstage/backstage/commit/8c8bee47f4): Add `@alpha` `CatalogEntityPermission` convenience type, available for import from `@backstage/plugin-catalog-common/alpha`.
-
 ### `@backstage/plugin-catalog-graph` (0.2.15 → [0.2.16](../../changelogs/@backstage/plugin-catalog-graph.md#0216))
 
 #### 0.2.16
@@ -1675,28 +1386,6 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 
 - [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
 - [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-
-### `@backstage/plugin-catalog-react` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-catalog-react.md#101))
-
-#### 1.0.1
-
-##### Patch Changes
-
-- [`0ffd88a90e`](https://github.com/backstage/backstage/commit/0ffd88a90e): Prevent permissions with types other than `ResourcePermission<'catalog-entity'>` from being used with the `useEntityPermission` hook.
-- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
-- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
-- [`4af82967f4`](https://github.com/backstage/backstage/commit/4af82967f4): Decouple tags picker from backend entities
-
-  `EntityTagPicker` fetches all the tags independently and it doesn't require all the entities to be available client side.
-
-- [`4be0d1e777`](https://github.com/backstage/backstage/commit/4be0d1e777): Changed catalog filter components to only pay attention to query parameters relevant to the component.
-- [`5d5fdbe541`](https://github.com/backstage/backstage/commit/5d5fdbe541): Columns in CatalogTable now change depending on the entity kind, ensuring only relevant columns are displayed.
-- [`863e7bcb7b`](https://github.com/backstage/backstage/commit/863e7bcb7b): Updated the "unregister location" behavior in `UnregisterEntityDialog`. Removed unnecessary entity deletion requests that were sent after successfully deleting a location.
-- [`37b04b5a5e`](https://github.com/backstage/backstage/commit/37b04b5a5e): Removed broken link from Labels section of entity inspector.
-- [`a496cee4d1`](https://github.com/backstage/backstage/commit/a496cee4d1): Add support for string refs to the `EntityRefLinks` component
-- [`d34900af81`](https://github.com/backstage/backstage/commit/d34900af81): Added a new `NextScaffolderRouter` which will eventually replace the exiting router
-- [`99063c39ae`](https://github.com/backstage/backstage/commit/99063c39ae): Minor API report cleanup
-- [`4431873583`](https://github.com/backstage/backstage/commit/4431873583): Update `usePermission` usage.
 
 ### `@backstage/plugin-circleci` (0.3.3 → [0.3.4](../../changelogs/@backstage/plugin-circleci.md#034))
 
@@ -2176,6 +1865,321 @@ Changes between 1.0.3 and 1.1.0 — 124 changed and 5 added packages.
 
 - [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
 - [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+
+## Other minor version bumps
+
+### `@backstage/config-loader` (1.0.0 → [1.1.0](../../changelogs/@backstage/config-loader.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`19f6c6c32a`](https://github.com/backstage/backstage/commit/19f6c6c32a): Added `ignoreSchemaErrors` to `schema.process`.
+
+##### Patch Changes
+
+- [`e0a51384ac`](https://github.com/backstage/backstage/commit/e0a51384ac): build(deps): bump `ajv` from 7.0.3 to 8.10.0
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+- [`c47509e1a0`](https://github.com/backstage/backstage/commit/c47509e1a0): Implemented changes suggested by Deepsource.io including multiple double non-null assertion operators and unexpected awaits for non-promise values.
+
+### `@backstage/integration` (1.0.0 → [1.1.0](../../changelogs/@backstage/integration.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`b7436743cb`](https://github.com/backstage/backstage/commit/b7436743cb): Gerrit integration: Added an optional configuration to set the Gitiles base url.
+
+##### Patch Changes
+
+- [`1691c6c5c2`](https://github.com/backstage/backstage/commit/1691c6c5c2): Clarify that config locations that emit User and Group kinds now need to declare so in the `catalog.locations.[].rules`
+- [`3ef123bbf0`](https://github.com/backstage/backstage/commit/3ef123bbf0): Support external ID when assuming roles in S3 integration
+
+  In order to assume a role created by a 3rd party as external
+  ID is needed. This change adds an optional field to the s3
+  integration configuration and consumes that in the AwsS3UrlReader.
+
+- [`d26e1b0146`](https://github.com/backstage/backstage/commit/d26e1b0146): Exported `replaceGitLabUrlType` from package
+
+### `@backstage/plugin-catalog` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-catalog.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`bdc61b4002`](https://github.com/backstage/backstage/commit/bdc61b4002): Expose 'initalFilter' through initialKind prop on Catalog Page.
+
+##### Patch Changes
+
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`2a3cac4c60`](https://github.com/backstage/backstage/commit/2a3cac4c60): Corrected replacements for depreciated FilteredEntityLayout items
+- [`f6d2694092`](https://github.com/backstage/backstage/commit/f6d2694092): Added tableOptions property to CatalogTable and DefaultCatalogPage to support customization of the Catalog Table. Related issue #10453
+- [`5d5fdbe541`](https://github.com/backstage/backstage/commit/5d5fdbe541): Columns in CatalogTable now change depending on the entity kind, ensuring only relevant columns are displayed.
+
+### `@backstage/plugin-scaffolder` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`6331ec1ebc`](https://github.com/backstage/backstage/commit/6331ec1ebc): Added a context menu to the scaffolder page that provides links to the template editor and actions reference. These links and the presence of the context menu can be toggled through the `contextMenu` prop of the scaffolder page.
+- [`8fad3b6ef5`](https://github.com/backstage/backstage/commit/8fad3b6ef5): The Template Preview page has been renamed to Template Editor, and is not available at the `/edit` path instead. There is a redirect in place from `/preview`.
+
+##### Patch Changes
+
+- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`946af407db`](https://github.com/backstage/backstage/commit/946af407db): Changed input label for owner field in GitlabRepoPicker
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+- [`d34900af81`](https://github.com/backstage/backstage/commit/d34900af81): Added a new `NextScaffolderRouter` which will eventually replace the exiting router
+- [`9975ff9852`](https://github.com/backstage/backstage/commit/9975ff9852): Applied the fix from version 1.0.1 of this package, which is part of the v1.0.2 release of Backstage.
+- [`4431873583`](https://github.com/backstage/backstage/commit/4431873583): Update `usePermission` usage.
+
+### `@backstage/plugin-scaffolder-backend` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`2a7d52ca2c`](https://github.com/backstage/backstage/commit/2a7d52ca2c): Override default commit message and author details in GitLab action
+- [`f5f921dafb`](https://github.com/backstage/backstage/commit/f5f921dafb): Add new `draft` option to the `publish:github:pull-request` action.
+
+##### Patch Changes
+
+- [`64d9a031a8`](https://github.com/backstage/backstage/commit/64d9a031a8): build(deps): bump `isbinaryfile` from 4.0.8 to 5.0.0
+- [`2f3d3a1eae`](https://github.com/backstage/backstage/commit/2f3d3a1eae): build(deps): bump `@gitbeaker/core` from 34.6.0 to 35.6.0
+
+### `@backstage/plugin-techdocs` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-techdocs.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`ace749b785`](https://github.com/backstage/backstage/commit/ace749b785): TechDocs supports a new, experimental method of customization: addons!
+
+  To customize the standalone TechDocs reader page experience, update your `/packages/app/src/App.tsx` in the following way:
+
+  ```diff
+  import { TechDocsIndexPage, TechDocsReaderPage } from '@backstage/plugin-techdocs';
+  + import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
+  + import { SomeAddon } from '@backstage/plugin-some-plugin';
+
+  // ...
+
+      <Route path="/docs" element={<TechDocsIndexPage />} />
+      <Route
+        path="/docs/:namespace/:kind/:name/*"
+        element={<TechDocsReaderPage />}
+      >
+  +      <TechDocsAddons>
+  +        <SomeAddon />
+  +      </TechDocsAddons>
+      </Route>
+
+  // ...
+  ```
+
+  To customize the TechDocs reader experience on the Catalog entity page, update your `packages/app/src/components/catalog/EntityPage.tsx` in the following way:
+
+  ```diff
+  import { EntityTechdocsContent } from '@backstage/plugin-techdocs';
+  + import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
+  + import { SomeAddon } from '@backstage/plugin-some-plugin';
+
+  // ...
+
+    <EntityLayoutWrapper>
+      <EntityLayout.Route path="/" title="Overview">
+        {overviewContent}
+      </EntityLayout.Route>
+
+      <EntityLayout.Route path="/docs" title="Docs">
+  -      <EntityTechDocsContent />
+  +      <EntityTechdocsContent>
+  +        <TechDocsAddons>
+  +          <SomeAddon />
+  +        </TechDocsAddons>
+  +      </EntityTechdocsContent>
+      </EntityLayout.Route>
+    </EntityLayoutWrapper>
+
+  // ...
+  ```
+
+  If you do not wish to customize your TechDocs reader experience in this way at this time, no changes are necessary!
+
+##### Patch Changes
+
+- [`ab230a433f`](https://github.com/backstage/backstage/commit/ab230a433f): imports from `@backstage/plugin-search-react` instead of `@backstage/plugin-search`
+- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+- [`f0fb9153b7`](https://github.com/backstage/backstage/commit/f0fb9153b7): Fix broken query selectors on techdocs
+- [`9975ff9852`](https://github.com/backstage/backstage/commit/9975ff9852): Applied the fix from version 1.0.1 of this package, which is part of the v1.0.2 release of Backstage.
+- [`3ba256c389`](https://github.com/backstage/backstage/commit/3ba256c389): Fixed a bug preventing custom TechDocs reader page implementations from rendering without being double-wrapped in the `<TechDocsReaderPage />` component.
+- [`fe53fe97d7`](https://github.com/backstage/backstage/commit/fe53fe97d7): Fix permalink scrolling for anchors where the id starts with a number.
+- [`0152c0de22`](https://github.com/backstage/backstage/commit/0152c0de22): Some documentation layout tweaks:
+
+  - drawer toggle margins
+  - code block margins
+  - sidebar drawer width
+  - inner content width
+  - footer link width
+  - sidebar table of contents scroll
+
+- [`3ba256c389`](https://github.com/backstage/backstage/commit/3ba256c389): Fixed a bug that caused addons in the `Subheader` location to break the default TechDocs reader page layout.
+
+### `@backstage/plugin-techdocs-backend` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-backend.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`733187987b`](https://github.com/backstage/backstage/commit/733187987b): Removed an undocumented, broken behavior where `README.md` files would be copied to `index.md` if it did not exist, leading to broken links in the TechDocs UI.
+
+  **WARNING**: If you notice 404s in TechDocs after updating, check to make sure that all markdown files referenced in your `mkdocs.yml`s' `nav` sections exist. The following configuration may be used to temporarily revert to the broken behavior.
+
+  ```yaml
+  techdocs:
+    generator:
+      mkdocs:
+        legacyCopyReadmeMdToIndexMd: true
+  ```
+
+##### Patch Changes
+
+- [`ada4446733`](https://github.com/backstage/backstage/commit/ada4446733): Specify type of `visibilityPermission` property on collators and collator factories.
+- [`7762d54200`](https://github.com/backstage/backstage/commit/7762d54200): Fixed a bug affecting those with cache enabled that would result in empty content being cached if the first attempt to load a static asset from storage were made via a `HEAD` request, rather than a `GET` request.
+
+### `@backstage/plugin-techdocs-node` (1.0.0 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-node.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`bcf1a2496c`](https://github.com/backstage/backstage/commit/bcf1a2496c): Removed an undocumented, broken behavior where `README.md` files would be copied to `index.md` if it did not exist, leading to broken links in the TechDocs UI.
+
+##### Patch Changes
+
+- [`9fa68705bf`](https://github.com/backstage/backstage/commit/9fa68705bf): The default container version used to generate TechDocs content is now `v1.0.2`.
+
+### `@techdocs/cli` (1.0.0 → [1.1.0](../../changelogs/@techdocs/cli.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`733187987b`](https://github.com/backstage/backstage/commit/733187987b): Removed an undocumented, broken behavior where `README.md` files would be copied to `index.md` if it did not exist, leading to broken links in the TechDocs UI.
+
+  **WARNING**: If you notice 404s in TechDocs after updating, check to make sure that all markdown files referenced in your `mkdocs.yml`s' `nav` sections exist. The following flag may be passed to the `generate` command to temporarily revert to the broken behavior.
+
+  ```sh
+  techdocs-cli generate --legacyCopyReadmeMdToIndexMd
+  ```
+
+##### Patch Changes
+
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+- [`eb470ea54c`](https://github.com/backstage/backstage/commit/eb470ea54c): Adds a new flag to override the entrypoint when using a custom docker image. It could be used to reuse existing images with different entrypoints.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.0.0 → [1.0.1](../../changelogs/@backstage/app-defaults.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+
+### `@backstage/catalog-model` (1.0.0 → [1.0.1](../../changelogs/@backstage/catalog-model.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`e0a51384ac`](https://github.com/backstage/backstage/commit/e0a51384ac): build(deps): bump `ajv` from 7.0.3 to 8.10.0
+- [`c12f8374d1`](https://github.com/backstage/backstage/commit/c12f8374d1): Added a connection between www-artist and artist-lookup components
+
+  <details>
+   <summary>Screenshots</summary>
+
+  ![www-artist component](https://user-images.githubusercontent.com/74687/161088772-bc1df84e-28c1-4b08-b914-109cd6d04521.jpg)
+
+  ![artist-lookup component](https://user-images.githubusercontent.com/74687/161088775-120c5610-f094-4cd1-bb2d-3ab9623a6c72.jpg)
+
+  </details>
+
+### `@backstage/core-app-api` (1.0.0 → [1.0.1](../../changelogs/@backstage/core-app-api.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`3ff2bfb66e`](https://github.com/backstage/backstage/commit/3ff2bfb66e): Refactored the route collection logic to prepare for future changes and avoid duplicate element tree traversal for the analytics context.
+- [`a7bb762dab`](https://github.com/backstage/backstage/commit/a7bb762dab): fixed empty body issue for POST requests using FetchAPI with 'plugin://' prefix
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+- [`c47509e1a0`](https://github.com/backstage/backstage/commit/c47509e1a0): Implemented changes suggested by Deepsource.io including multiple double non-null assertion operators and unexpected awaits for non-promise values.
+
+### `@backstage/core-plugin-api` (1.0.0 → [1.0.1](../../changelogs/@backstage/core-plugin-api.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+
+### `@backstage/dev-utils` (1.0.0 → [1.0.1](../../changelogs/@backstage/dev-utils.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+
+### `@backstage/integration-react` (1.0.0 → [1.0.1](../../changelogs/@backstage/integration-react.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`230ad0826f`](https://github.com/backstage/backstage/commit/230ad0826f): Bump to using `@types/node` v16
+
+### `@backstage/plugin-catalog-common` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-catalog-common.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`ada4446733`](https://github.com/backstage/backstage/commit/ada4446733): Use `createPermission` helper when creating permissions.
+- [`8c8bee47f4`](https://github.com/backstage/backstage/commit/8c8bee47f4): Add `@alpha` `CatalogEntityPermission` convenience type, available for import from `@backstage/plugin-catalog-common/alpha`.
+
+### `@backstage/plugin-catalog-react` (1.0.0 → [1.0.1](../../changelogs/@backstage/plugin-catalog-react.md#101))
+
+#### 1.0.1
+
+##### Patch Changes
+
+- [`0ffd88a90e`](https://github.com/backstage/backstage/commit/0ffd88a90e): Prevent permissions with types other than `ResourcePermission<'catalog-entity'>` from being used with the `useEntityPermission` hook.
+- [`7c7919777e`](https://github.com/backstage/backstage/commit/7c7919777e): build(deps-dev): bump `@testing-library/react-hooks` from 7.0.2 to 8.0.0
+- [`24254fd433`](https://github.com/backstage/backstage/commit/24254fd433): build(deps): bump `@testing-library/user-event` from 13.5.0 to 14.0.0
+- [`4af82967f4`](https://github.com/backstage/backstage/commit/4af82967f4): Decouple tags picker from backend entities
+
+  `EntityTagPicker` fetches all the tags independently and it doesn't require all the entities to be available client side.
+
+- [`4be0d1e777`](https://github.com/backstage/backstage/commit/4be0d1e777): Changed catalog filter components to only pay attention to query parameters relevant to the component.
+- [`5d5fdbe541`](https://github.com/backstage/backstage/commit/5d5fdbe541): Columns in CatalogTable now change depending on the entity kind, ensuring only relevant columns are displayed.
+- [`863e7bcb7b`](https://github.com/backstage/backstage/commit/863e7bcb7b): Updated the "unregister location" behavior in `UnregisterEntityDialog`. Removed unnecessary entity deletion requests that were sent after successfully deleting a location.
+- [`37b04b5a5e`](https://github.com/backstage/backstage/commit/37b04b5a5e): Removed broken link from Labels section of entity inspector.
+- [`a496cee4d1`](https://github.com/backstage/backstage/commit/a496cee4d1): Add support for string refs to the `EntityRefLinks` component
+- [`d34900af81`](https://github.com/backstage/backstage/commit/d34900af81): Added a new `NextScaffolderRouter` which will eventually replace the exiting router
+- [`99063c39ae`](https://github.com/backstage/backstage/commit/99063c39ae): Minor API report cleanup
+- [`4431873583`](https://github.com/backstage/backstage/commit/4431873583): Update `usePermission` usage.
 
 ### `@backstage/test-utils` (1.0.0 → [1.0.1](../../changelogs/@backstage/test-utils.md#101))
 

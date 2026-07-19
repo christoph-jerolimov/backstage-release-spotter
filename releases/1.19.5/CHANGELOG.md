@@ -1,6 +1,6 @@
 # Backstage Release 1.19.5 changelog
 
-Changes between 1.19.4 and 1.19.5 — 1 changed and 0 added packages.
+Changes between 1.19.4 and 1.19.5 — 0 added, 0 removed, 1 upgraded, 237 unchanged packages.
 
 ## Summary
 

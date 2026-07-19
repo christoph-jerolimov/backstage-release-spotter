@@ -1,6 +1,6 @@
 # Backstage Release 1.9.0 changelog
 
-Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
+Changes between 1.8.3 and 1.9.0 — 6 added, 0 removed, 171 upgraded, 5 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 - [Breaking changes](#breaking-changes): 8 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 7 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 104 packages
 - [Other minor version bumps](#other-minor-version-bumps): 13 packages
-- [Other patch version bumps](#other-patch-version-bumps): 121 packages
+- [Other patch version bumps](#other-patch-version-bumps): 17 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 21 packages
 
 ## Table of contents
@@ -40,33 +41,13 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
   - [`@backstage/plugin-user-settings` (0.5.1 → 0.6.0)](#backstageplugin-user-settings-051--060)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/release-manifests` (0.0.7 → 0.0.8)](#backstagerelease-manifests-007--008)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/core-app-api` (1.2.0 → 1.3.0)](#backstagecore-app-api-120--130)
-  - [`@backstage/core-plugin-api` (1.1.0 → 1.2.0)](#backstagecore-plugin-api-110--120)
-  - [`@backstage/plugin-catalog` (1.6.1 → 1.7.0)](#backstageplugin-catalog-161--170)
-  - [`@backstage/plugin-catalog-node` (1.2.1 → 1.3.0)](#backstageplugin-catalog-node-121--130)
-  - [`@backstage/plugin-scaffolder` (1.8.0 → 1.9.0)](#backstageplugin-scaffolder-180--190)
-  - [`@backstage/plugin-scaffolder-backend` (1.8.0 → 1.9.0)](#backstageplugin-scaffolder-backend-180--190)
-  - [`@backstage/plugin-search-backend` (1.1.1 → 1.2.0)](#backstageplugin-search-backend-111--120)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.0.4 → 1.1.0)](#backstageplugin-search-backend-module-elasticsearch-104--110)
-  - [`@backstage/plugin-search-backend-node` (1.0.4 → 1.1.0)](#backstageplugin-search-backend-node-104--110)
-  - [`@backstage/plugin-search-common` (1.1.1 → 1.2.0)](#backstageplugin-search-common-111--120)
-  - [`@backstage/plugin-search-react` (1.2.1 → 1.3.0)](#backstageplugin-search-react-121--130)
-  - [`@backstage/plugin-techdocs-backend` (1.4.1 → 1.5.0)](#backstageplugin-techdocs-backend-141--150)
-  - [`@backstage/plugin-techdocs-react` (1.0.6 → 1.1.0)](#backstageplugin-techdocs-react-106--110)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.0.8 → 1.0.9)](#backstageapp-defaults-108--109)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.2.3 → 0.2.4)](#backstagebackend-app-api-023--024)
   - [`@backstage/backend-defaults` (0.1.3 → 0.1.4)](#backstagebackend-defaults-013--014)
   - [`@backstage/backend-test-utils` (0.1.30 → 0.1.31)](#backstagebackend-test-utils-0130--0131)
   - [`@backstage/cli-common` (0.1.10 → 0.1.11)](#backstagecli-common-0110--0111)
-  - [`@backstage/config-loader` (1.1.6 → 1.1.7)](#backstageconfig-loader-116--117)
   - [`@backstage/core-components` (0.12.0 → 0.12.1)](#backstagecore-components-0120--0121)
   - [`@backstage/create-app` (0.4.34 → 0.4.35)](#backstagecreate-app-0434--0435)
-  - [`@backstage/dev-utils` (1.0.8 → 1.0.9)](#backstagedev-utils-108--109)
-  - [`@backstage/errors` (1.1.3 → 1.1.4)](#backstageerrors-113--114)
-  - [`@backstage/integration` (1.4.0 → 1.4.1)](#backstageintegration-140--141)
-  - [`@backstage/integration-react` (1.1.6 → 1.1.7)](#backstageintegration-react-116--117)
   - [`@backstage/plugin-adr` (0.2.3 → 0.2.4)](#backstageplugin-adr-023--024)
   - [`@backstage/plugin-adr-backend` (0.2.3 → 0.2.4)](#backstageplugin-adr-backend-023--024)
   - [`@backstage/plugin-airbrake` (0.3.11 → 0.3.12)](#backstageplugin-airbrake-0311--0312)
@@ -101,7 +82,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
   - [`@backstage/plugin-catalog-graph` (0.2.23 → 0.2.24)](#backstageplugin-catalog-graph-0223--0224)
   - [`@backstage/plugin-catalog-graphql` (0.3.15 → 0.3.16)](#backstageplugin-catalog-graphql-0315--0316)
   - [`@backstage/plugin-catalog-import` (0.9.1 → 0.9.2)](#backstageplugin-catalog-import-091--092)
-  - [`@backstage/plugin-catalog-react` (1.2.1 → 1.2.2)](#backstageplugin-catalog-react-121--122)
   - [`@backstage/plugin-circleci` (0.3.11 → 0.3.12)](#backstageplugin-circleci-0311--0312)
   - [`@backstage/plugin-cloudbuild` (0.3.11 → 0.3.12)](#backstageplugin-cloudbuild-0311--0312)
   - [`@backstage/plugin-code-climate` (0.1.11 → 0.1.12)](#backstageplugin-code-climate-0111--0112)
@@ -110,7 +90,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
   - [`@backstage/plugin-codescene` (0.1.6 → 0.1.7)](#backstageplugin-codescene-016--017)
   - [`@backstage/plugin-config-schema` (0.1.34 → 0.1.35)](#backstageplugin-config-schema-0134--0135)
   - [`@backstage/plugin-cost-insights` (0.12.0 → 0.12.1)](#backstageplugin-cost-insights-0120--0121)
-  - [`@backstage/plugin-dynatrace` (1.0.1 → 1.0.2)](#backstageplugin-dynatrace-101--102)
   - [`@backstage/plugin-events-backend-module-aws-sqs` (0.1.0 → 0.1.1)](#backstageplugin-events-backend-module-aws-sqs-010--011)
   - [`@backstage/plugin-events-backend-module-github` (0.1.0 → 0.1.1)](#backstageplugin-events-backend-module-github-010--011)
   - [`@backstage/plugin-events-backend-module-gitlab` (0.1.0 → 0.1.1)](#backstageplugin-events-backend-module-gitlab-010--011)
@@ -153,7 +132,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.13 → 0.2.14)](#backstageplugin-scaffolder-backend-module-cookiecutter-0213--0214)
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.6 → 0.4.7)](#backstageplugin-scaffolder-backend-module-rails-046--047)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.11 → 0.2.12)](#backstageplugin-scaffolder-backend-module-yeoman-0211--0212)
-  - [`@backstage/plugin-search` (1.0.4 → 1.0.5)](#backstageplugin-search-104--105)
   - [`@backstage/plugin-sentry` (0.4.4 → 0.4.5)](#backstageplugin-sentry-044--045)
   - [`@backstage/plugin-shortcuts` (0.3.3 → 0.3.4)](#backstageplugin-shortcuts-033--034)
   - [`@backstage/plugin-sonarqube-backend` (0.1.3 → 0.1.4)](#backstageplugin-sonarqube-backend-013--014)
@@ -162,16 +140,40 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
   - [`@backstage/plugin-stack-overflow-backend` (0.1.7 → 0.1.8)](#backstageplugin-stack-overflow-backend-017--018)
   - [`@backstage/plugin-tech-insights` (0.3.3 → 0.3.4)](#backstageplugin-tech-insights-033--034)
   - [`@backstage/plugin-tech-radar` (0.5.18 → 0.5.19)](#backstageplugin-tech-radar-0518--0519)
-  - [`@backstage/plugin-techdocs` (1.4.0 → 1.4.1)](#backstageplugin-techdocs-140--141)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.6 → 1.0.7)](#backstageplugin-techdocs-addons-test-utils-106--107)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.6 → 1.0.7)](#backstageplugin-techdocs-module-addons-contrib-106--107)
-  - [`@backstage/plugin-techdocs-node` (1.4.2 → 1.4.3)](#backstageplugin-techdocs-node-142--143)
   - [`@backstage/plugin-todo` (0.2.13 → 0.2.14)](#backstageplugin-todo-0213--0214)
   - [`@backstage/plugin-todo-backend` (0.1.35 → 0.1.36)](#backstageplugin-todo-backend-0135--0136)
   - [`@backstage/plugin-user-settings-backend` (0.1.2 → 0.1.3)](#backstageplugin-user-settings-backend-012--013)
   - [`@backstage/plugin-vault` (0.1.5 → 0.1.6)](#backstageplugin-vault-015--016)
   - [`@backstage/plugin-vault-backend` (0.2.4 → 0.2.5)](#backstageplugin-vault-backend-024--025)
   - [`@backstage/plugin-xcmetrics` (0.2.31 → 0.2.32)](#backstageplugin-xcmetrics-0231--0232)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/core-app-api` (1.2.0 → 1.3.0)](#backstagecore-app-api-120--130)
+  - [`@backstage/core-plugin-api` (1.1.0 → 1.2.0)](#backstagecore-plugin-api-110--120)
+  - [`@backstage/plugin-catalog` (1.6.1 → 1.7.0)](#backstageplugin-catalog-161--170)
+  - [`@backstage/plugin-catalog-node` (1.2.1 → 1.3.0)](#backstageplugin-catalog-node-121--130)
+  - [`@backstage/plugin-scaffolder` (1.8.0 → 1.9.0)](#backstageplugin-scaffolder-180--190)
+  - [`@backstage/plugin-scaffolder-backend` (1.8.0 → 1.9.0)](#backstageplugin-scaffolder-backend-180--190)
+  - [`@backstage/plugin-search-backend` (1.1.1 → 1.2.0)](#backstageplugin-search-backend-111--120)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.0.4 → 1.1.0)](#backstageplugin-search-backend-module-elasticsearch-104--110)
+  - [`@backstage/plugin-search-backend-node` (1.0.4 → 1.1.0)](#backstageplugin-search-backend-node-104--110)
+  - [`@backstage/plugin-search-common` (1.1.1 → 1.2.0)](#backstageplugin-search-common-111--120)
+  - [`@backstage/plugin-search-react` (1.2.1 → 1.3.0)](#backstageplugin-search-react-121--130)
+  - [`@backstage/plugin-techdocs-backend` (1.4.1 → 1.5.0)](#backstageplugin-techdocs-backend-141--150)
+  - [`@backstage/plugin-techdocs-react` (1.0.6 → 1.1.0)](#backstageplugin-techdocs-react-106--110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.0.8 → 1.0.9)](#backstageapp-defaults-108--109)
+  - [`@backstage/config-loader` (1.1.6 → 1.1.7)](#backstageconfig-loader-116--117)
+  - [`@backstage/dev-utils` (1.0.8 → 1.0.9)](#backstagedev-utils-108--109)
+  - [`@backstage/errors` (1.1.3 → 1.1.4)](#backstageerrors-113--114)
+  - [`@backstage/integration` (1.4.0 → 1.4.1)](#backstageintegration-140--141)
+  - [`@backstage/integration-react` (1.1.6 → 1.1.7)](#backstageintegration-react-116--117)
+  - [`@backstage/plugin-catalog-react` (1.2.1 → 1.2.2)](#backstageplugin-catalog-react-121--122)
+  - [`@backstage/plugin-dynatrace` (1.0.1 → 1.0.2)](#backstageplugin-dynatrace-101--102)
+  - [`@backstage/plugin-search` (1.0.4 → 1.0.5)](#backstageplugin-search-104--105)
+  - [`@backstage/plugin-techdocs` (1.4.0 → 1.4.1)](#backstageplugin-techdocs-140--141)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.6 → 1.0.7)](#backstageplugin-techdocs-addons-test-utils-106--107)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.6 → 1.0.7)](#backstageplugin-techdocs-module-addons-contrib-106--107)
+  - [`@backstage/plugin-techdocs-node` (1.4.2 → 1.4.3)](#backstageplugin-techdocs-node-142--143)
   - [`@backstage/test-utils` (1.2.2 → 1.2.3)](#backstagetest-utils-122--123)
   - [`@backstage/types` (1.0.1 → 1.0.2)](#backstagetypes-101--102)
   - [`@backstage/version-bridge` (1.0.2 → 1.0.3)](#backstageversion-bridge-102--103)
@@ -636,331 +638,7 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 
 - [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
 
-## Other minor version bumps
-
-### `@backstage/core-app-api` (1.2.0 → [1.3.0](../../changelogs/@backstage/core-app-api.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`e0d9c9559a`](https://github.com/backstage/backstage/commit/e0d9c9559a): Added a new `AppRouter` component and `app.createRoot()` method that replaces `app.getRouter()` and `app.getProvider()`, which are now deprecated. The new `AppRouter` component is a drop-in replacement for the old router component, while the new `app.createRoot()` method is used instead of the old provider component.
-
-  An old app setup might look like this:
-
-  ```tsx
-  const app = createApp(/* ... */);
-
-  const AppProvider = app.getProvider();
-  const AppRouter = app.getRouter();
-
-  const routes = ...;
-
-  const App = () => (
-    <AppProvider>
-      <AlertDisplay />
-      <OAuthRequestDialog />
-      <AppRouter>
-        <Root>{routes}</Root>
-      </AppRouter>
-    </AppProvider>
-  );
-
-  export default App;
-  ```
-
-  With these new APIs, the setup now looks like this:
-
-  ```tsx
-  import { AppRouter } from '@backstage/core-app-api';
-
-  const app = createApp(/* ... */);
-
-  const routes = ...;
-
-  export default app.createRoot(
-    <>
-      <AlertDisplay />
-      <OAuthRequestDialog />
-      <AppRouter>
-        <Root>{routes}</Root>
-      </AppRouter>
-    </>,
-  );
-  ```
-
-  Note that `app.createRoot()` accepts a React element, rather than a component.
-
-##### Patch Changes
-
-- [`d3fea4ae0a`](https://github.com/backstage/backstage/commit/d3fea4ae0a): Internal fixes to avoid implicit usage of globals
-- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
-- [`b4b5b02315`](https://github.com/backstage/backstage/commit/b4b5b02315): Tweak feature flag registration so that it happens immediately before the first rendering of the app, rather than just after.
-- [`6870b43dd1`](https://github.com/backstage/backstage/commit/6870b43dd1): Fix for the automatic rewriting of base URLs.
-- [`203271b746`](https://github.com/backstage/backstage/commit/203271b746): Prevent duplicate feature flag components from rendering in the settings when using <FeatureFlagged /> components
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-- [`8015ff1258`](https://github.com/backstage/backstage/commit/8015ff1258): Tweaked wording to use inclusive terminology
-- [`653d7912ac`](https://github.com/backstage/backstage/commit/653d7912ac): Made `WebStorage` notify its subscribers when `localStorage` values change in other tabs/windows
-- [`63310e3987`](https://github.com/backstage/backstage/commit/63310e3987): Apps will now rewrite the `app.baseUrl` configuration to match the current `location.origin`. The `backend.baseUrl` will also be rewritten in the same way when the `app.baseUrl` and `backend.baseUrl` have matching origins. This will reduce the need for separate frontend builds for different environments.
-
-### `@backstage/core-plugin-api` (1.1.0 → [1.2.0](../../changelogs/@backstage/core-plugin-api.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`9a1864976a`](https://github.com/backstage/backstage/commit/9a1864976a): Added a new `display` property to the `AlertMessage` which can accept the values `permanent` or `transient`.
-
-  Here's a rough example of how to trigger an alert using the new `display` property:
-
-  ```ts
-  import { alertApiRef, useApi } from '@backstage/core-plugin-api';
-
-  const ExampleTransient = () => {
-    const alertApi = useApi(alertApiRef);
-    alertApi.post({
-      message: 'Example of Transient Alert',
-      severity: 'success',
-      display: 'transient',
-    });
-  };
-  ```
-
-##### Patch Changes
-
-- [`d56127c712`](https://github.com/backstage/backstage/commit/d56127c712): useRouteRef - Limit re-resolving to location pathname changes only
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-
-### `@backstage/plugin-catalog` (1.6.1 → [1.7.0](../../changelogs/@backstage/plugin-catalog.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`6ffa47bb0a`](https://github.com/backstage/backstage/commit/6ffa47bb0a): Fixes in kind selectors (now `OwnershipCard` works again). `EntityKindPicker` now accepts an optional `allowedKinds` prop, just like `CatalogKindHeader`.
-- [`462c1d012e`](https://github.com/backstage/backstage/commit/462c1d012e): Removed `CatalogKindHeader` from `DefaultCatalogPage`. Deprecated `CatalogKindHeader` in favour of `EntityKindPicker`.
-
-##### Patch Changes
-
-- [`d3fea4ae0a`](https://github.com/backstage/backstage/commit/d3fea4ae0a): Internal fixes to avoid implicit usage of globals
-- [`ca04d97b09`](https://github.com/backstage/backstage/commit/ca04d97b09): Handle refresh entity error in `AboutCard`.
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`a19cffbeed`](https://github.com/backstage/backstage/commit/a19cffbeed): Update search links to only have header as linkable text
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-- [`387d1d5218`](https://github.com/backstage/backstage/commit/387d1d5218): Fixed Entity kind pluralisation in the `CatalogKindHeader` component.
-
-### `@backstage/plugin-catalog-node` (1.2.1 → [1.3.0](../../changelogs/@backstage/plugin-catalog-node.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`eacc8e2b55`](https://github.com/backstage/backstage/commit/eacc8e2b55): Make it possible for entity providers to supply only entity refs, instead of full entities, in `delta` mutation deletions.
-
-##### Patch Changes
-
-- [`884d749b14`](https://github.com/backstage/backstage/commit/884d749b14): Refactored to use `coreServices` from `@backstage/backend-plugin-api`.
-
-### `@backstage/plugin-scaffolder` (1.8.0 → [1.9.0](../../changelogs/@backstage/plugin-scaffolder.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`ddd1c3308d`](https://github.com/backstage/backstage/commit/ddd1c3308d): Implement Custom Field Explorer to view and play around with available installed custom field extensions
-- [`adb1b01e32`](https://github.com/backstage/backstage/commit/adb1b01e32): Adds the ability to supply a `transformErrors` function to the `Stepper` for `/next`
-- [`34a48cdc4f`](https://github.com/backstage/backstage/commit/34a48cdc4f): The `RepoUrlPicker` field extension now has an `allowedProjects` option for narrowing the selection of Bitbucket URLs.
-
-##### Patch Changes
-
-- [`d4d07cf55e`](https://github.com/backstage/backstage/commit/d4d07cf55e): Enabling the customization of the last step in the scaffolder template.
-
-  To override the content you have to do the next:
-
-  ```typescript jsx
-  <TemplatePage ReviewStepComponent={YourCustomComponent} />
-  ```
-
-- [`ef803022f1`](https://github.com/backstage/backstage/commit/ef803022f1): Initialize all `formData` in the `Stepper` in `/next`
-- [`9b1fadf6d8`](https://github.com/backstage/backstage/commit/9b1fadf6d8): Added `noHtml5Validate` prop to `FormProps` on `NextScaffolderPage`
-- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`9000952e87`](https://github.com/backstage/backstage/commit/9000952e87): Form data is now passed to validator functions in 'next' scaffolder, so it's now possible to perform validation for fields that depend on other field values. This is something that we discourage due to the coupling that it creates, but is sometimes still the most sensible solution.
-
-  ```typescript jsx
-  export const myCustomValidation = (
-    value: string,
-    validation: FieldValidation,
-    { apiHolder, formData }: { apiHolder: ApiHolder; formData: JsonObject },
-  ) => {
-    // validate
-  };
-  ```
-
-- [`5b10b2485a`](https://github.com/backstage/backstage/commit/5b10b2485a): Parse `formData` from `window.location.query` for `scaffolder/next`
-- [`57ad6553d0`](https://github.com/backstage/backstage/commit/57ad6553d0): Pass through `transformErrors` to `TemplateWizardPage`
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-- [`5fb6d5e92e`](https://github.com/backstage/backstage/commit/5fb6d5e92e): Updated dependency `@react-hookz/web` to `^19.0.0`.
-- [`146378c146`](https://github.com/backstage/backstage/commit/146378c146): Updated dependency `@react-hookz/web` to `^20.0.0`.
-- [`380f549b75`](https://github.com/backstage/backstage/commit/380f549b75): bump `@rjsf/*-v5` dependencies
-- [`a63e2df559`](https://github.com/backstage/backstage/commit/a63e2df559): fixed `headerOptions` not passed to `TemplatePage` component
-- [`9b606366bf`](https://github.com/backstage/backstage/commit/9b606366bf): Bump `json-schema-library` to version `^7.3.9` which does not pull in the `gson-pointer` library
-- [`db6310b6a0`](https://github.com/backstage/backstage/commit/db6310b6a0): Show input type array correctly on installed actions page.
-
-### `@backstage/plugin-scaffolder-backend` (1.8.0 → [1.9.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`a20a0ea698`](https://github.com/backstage/backstage/commit/a20a0ea698): Added `requiredConversationResolution` template option to `github:repo:create`, `github:repo:push` and `publish:github`
-- [`b32005e98a`](https://github.com/backstage/backstage/commit/b32005e98a): Deprecated the `taskWorkers` option in RouterOptions in favor of `concurrentTasksLimit` which sets the limit of concurrent tasks in a single TaskWorker
-
-  TaskWorker can now run multiple (defaults to 10) tasks concurrently using the `concurrentTasksLimit` option available in both `RouterOptions` and `CreateWorkerOptions`.
-
-  To use the option to create a TaskWorker:
-
-  ```diff
-  const worker = await TaskWorker.create({
-      taskBroker,
-      actionRegistry,
-      integrations,
-      logger,
-      workingDirectory,
-      additionalTemplateFilters,
-  +   concurrentTasksLimit: 10 // (1 to Infinity)
-  });
-  ```
-
-- [`fc51bd8aa0`](https://github.com/backstage/backstage/commit/fc51bd8aa0): Add support for disabling Github repository wiki, issues and projects
-- [`0053d07bee`](https://github.com/backstage/backstage/commit/0053d07bee): Update the `github:publish` action to allow passing wether to dismiss stale reviews on the protected default branch.
-
-##### Patch Changes
-
-- [`cb716004ef`](https://github.com/backstage/backstage/commit/cb716004ef): Internal refactor to improve tests
-- [`935b66a646`](https://github.com/backstage/backstage/commit/935b66a646): Change step output template examples to use square bracket syntax.
-- [`884d749b14`](https://github.com/backstage/backstage/commit/884d749b14): Refactored to use `coreServices` from `@backstage/backend-plugin-api`.
-- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
-- [`26404430bc`](https://github.com/backstage/backstage/commit/26404430bc): Use Json types from @backstage/types
-- [`b07ccffad0`](https://github.com/backstage/backstage/commit/b07ccffad0): Backend now returns 'ui:options' value from template metadata, it can be used by all your custom scaffolder components.
-- [`309f2daca4`](https://github.com/backstage/backstage/commit/309f2daca4): Updated dependency `esbuild` to `^0.16.0`.
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-
-### `@backstage/plugin-search-backend` (1.1.1 → [1.2.0](../../changelogs/@backstage/plugin-search-backend.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults is now provided alongside the query result
-
-##### Patch Changes
-
-- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.0.4 → [1.1.0](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults is now provided alongside the query result
-- [`dff9843718`](https://github.com/backstage/backstage/commit/dff9843718): The search engine now better handles the case when it receives 0 documents at index-time. Prior to this change, the indexer would replace any existing index with an empty index, effectively deleting it. Now instead, a warning is logged, and any existing index is left alone (preserving the index from the last successful indexing attempt).
-- [`d09485ea79`](https://github.com/backstage/backstage/commit/d09485ea79): Added support for self hosted OpenSearch via new provider
-
-##### Patch Changes
-
-- [`45eb4d23cf`](https://github.com/backstage/backstage/commit/45eb4d23cf): Fixed a bug that prevented indices from being cleaned up under some circumstances, which could have led to shard exhaustion.
-
-### `@backstage/plugin-search-backend-node` (1.0.4 → [1.1.0](../../changelogs/@backstage/plugin-search-backend-node.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults is now provided alongside the query result
-- [`dff9843718`](https://github.com/backstage/backstage/commit/dff9843718): The search engine now better handles the case when it receives 0 documents at index-time. Prior to this change, the indexer would replace any existing index with an empty index, effectively deleting it. Now instead, a warning is logged, and any existing index is left alone (preserving the index from the last successful indexing attempt).
-
-##### Patch Changes
-
-- [`a962ce0551`](https://github.com/backstage/backstage/commit/a962ce0551): Wait for indexer initialization before finalizing indexing.
-- [`de8a975911`](https://github.com/backstage/backstage/commit/de8a975911): Changed to use native `AbortController` and `AbortSignal` from Node.js, instead
-  of the one from `node-abort-controller`. This is possible now that the minimum
-  supported Node.js version of the project is 16.
-
-  Note that their interfaces are very slightly different, but typically not in a
-  way that matters to consumers. If you see any typescript errors as a direct
-  result from this, they are compatible with each other in the ways that we
-  interact with them, and should be possible to type-cast across without ill
-  effects.
-
-- [`683ced83f6`](https://github.com/backstage/backstage/commit/683ced83f6): Fixed a bug that could cause a `max listeners exceeded warning` to be logged when more than 10 collators were running simultaneously.
-- [`81b1e7b0fe`](https://github.com/backstage/backstage/commit/81b1e7b0fe): Updated indexer and decorator base classes to take advantage of features introduced in Node.js v16; be sure you are running a [supported version of Node.js](https://backstage.io/docs/releases/v1.8.0#node-16-and-18).
-- [`54c5836f7a`](https://github.com/backstage/backstage/commit/54c5836f7a): Use of `TestPipeline.withSubject()` is now deprecated. Instead, use the `fromCollator`, `fromDecorator`, or `fromIndexer` static methods to instantiate a test pipeline. You may also use the class' `withCollator`, `withDecorator`, and `withIndexer` instance methods to build test pipelines that consist of multiple test subjects.
-
-### `@backstage/plugin-search-common` (1.1.1 → [1.2.0](../../changelogs/@backstage/plugin-search-common.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults (total number of results for a given query) can now be provided by each search engine and consumed as part of the search results response
-
-### `@backstage/plugin-search-react` (1.2.1 → [1.3.0](../../changelogs/@backstage/plugin-search-react.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): The `value` of a search analytics event is now set as the total number of search results (when available)
-
-##### Patch Changes
-
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`a19cffbeed`](https://github.com/backstage/backstage/commit/a19cffbeed): Update search links to only have header as linkable text
-
-### `@backstage/plugin-techdocs-backend` (1.4.1 → [1.5.0](../../changelogs/@backstage/plugin-techdocs-backend.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`dfbdae092e`](https://github.com/backstage/backstage/commit/dfbdae092e): Added a new optional `accountId` to the configuration options of the AWS S3 publisher. Configuring this option will source credentials for the `accountId` in the `aws` app config section. See https://github.com/backstage/backstage/blob/master/packages/integration-aws-node/README.md for more details.
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-
-### `@backstage/plugin-techdocs-react` (1.0.6 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-react.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`786f1b1419`](https://github.com/backstage/backstage/commit/786f1b1419): Support older versions of react-router
-
-##### Patch Changes
-
-- [`cb716004ef`](https://github.com/backstage/backstage/commit/cb716004ef): Internal refactor to improve tests
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.0.8 → [1.0.9](../../changelogs/@backstage/app-defaults.md#109))
-
-#### 1.0.9
-
-##### Patch Changes
-
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.2.3 → [0.2.4](../../changelogs/@backstage/backend-app-api.md#024))
 
@@ -999,15 +677,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 ##### Patch Changes
 
 - [`8015ff1258`](https://github.com/backstage/backstage/commit/8015ff1258): Tweaked wording to use inclusive terminology
-
-### `@backstage/config-loader` (1.1.6 → [1.1.7](../../changelogs/@backstage/config-loader.md#117))
-
-#### 1.1.7
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`40e7e6e1a2`](https://github.com/backstage/backstage/commit/40e7e6e1a2): Updated dependency `typescript-json-schema` to `^0.55.0`.
 
 ### `@backstage/core-components` (0.12.0 → [0.12.1](../../changelogs/@backstage/core-components.md#0121))
 
@@ -1113,42 +782,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 - [`71e75c0b70`](https://github.com/backstage/backstage/commit/71e75c0b70): Removed the `react-router` dependency from the app package, using only `react-router-dom` instead.
 
   This change is just a bit of cleanup and is optional. If you want to apply it to your app, remove the `react-router` dependency from `packages/app/package.json`, and replace any imports from `react-router` with `react-router-dom` instead.
-
-### `@backstage/dev-utils` (1.0.8 → [1.0.9](../../changelogs/@backstage/dev-utils.md#109))
-
-#### 1.0.9
-
-##### Patch Changes
-
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-- [`8015ff1258`](https://github.com/backstage/backstage/commit/8015ff1258): Tweaked wording to use inclusive terminology
-
-### `@backstage/errors` (1.1.3 → [1.1.4](../../changelogs/@backstage/errors.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`ac6cc9f7bd`](https://github.com/backstage/backstage/commit/ac6cc9f7bd): Removed a circular import
-
-### `@backstage/integration` (1.4.0 → [1.4.1](../../changelogs/@backstage/integration.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`34b039ca9f`](https://github.com/backstage/backstage/commit/34b039ca9f): Added `integrations.github.apps.allowedInstallationOwners` to the configuration schema.
-
-### `@backstage/integration-react` (1.1.6 → [1.1.7](../../changelogs/@backstage/integration-react.md#117))
-
-#### 1.1.7
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
 
 ### `@backstage/plugin-adr` (0.2.3 → [0.2.4](../../changelogs/@backstage/plugin-adr.md#024))
 
@@ -1462,18 +1095,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 - [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
 - [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
 
-### `@backstage/plugin-catalog-react` (1.2.1 → [1.2.2](../../changelogs/@backstage/plugin-catalog-react.md#122))
-
-#### 1.2.2
-
-##### Patch Changes
-
-- [`2cb9998`](https://github.com/backstage/backstage/commit/2cb9998): Fixed bug in `EntityOwnerPicker` and `EntityLifecyclePicker` that filtered on unavailable tags for the selected kind.
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`6ffa47bb0a`](https://github.com/backstage/backstage/commit/6ffa47bb0a): Cleanup and small fixes for the kind selector
-- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
-- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
-
 ### `@backstage/plugin-circleci` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-circleci.md#0312))
 
 #### 0.3.12
@@ -1551,14 +1172,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 - [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
 - [`f97c7fd1f7`](https://github.com/backstage/backstage/commit/f97c7fd1f7): added an optional config entry `costInsights.engineerThreshold` to allow users to control the threshold value for the 'negligible' change in costs.
 - [`a5ecdb99f0`](https://github.com/backstage/backstage/commit/a5ecdb99f0): Making a possibility to hide a trending line in a cost insights plugin
-
-### `@backstage/plugin-dynatrace` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-dynatrace.md#102))
-
-#### 1.0.2
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
 
 ### `@backstage/plugin-events-backend-module-aws-sqs` (0.1.0 → [0.1.1](../../changelogs/@backstage/plugin-events-backend-module-aws-sqs.md#011))
 
@@ -1945,15 +1558,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 
 - [`935b66a646`](https://github.com/backstage/backstage/commit/935b66a646): Change step output template examples to use square bracket syntax.
 
-### `@backstage/plugin-search` (1.0.4 → [1.0.5](../../changelogs/@backstage/plugin-search.md#105))
-
-#### 1.0.5
-
-##### Patch Changes
-
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-
 ### `@backstage/plugin-sentry` (0.4.4 → [0.4.5](../../changelogs/@backstage/plugin-sentry.md#045))
 
 #### 0.4.5
@@ -2026,51 +1630,6 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 
 - [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
 
-### `@backstage/plugin-techdocs` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-techdocs.md#141))
-
-#### 1.4.1
-
-##### Patch Changes
-
-- [`d3fea4ae0a`](https://github.com/backstage/backstage/commit/d3fea4ae0a): Internal fixes to avoid implicit usage of globals
-- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
-- [`a19cffbeed`](https://github.com/backstage/backstage/commit/a19cffbeed): Update search links to only have header as linkable text
-- [`5d3058355d`](https://github.com/backstage/backstage/commit/5d3058355d): Add `react/forbid-elements` linter rule for button, suggest Material UI `Button`
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`786f1b1419`](https://github.com/backstage/backstage/commit/786f1b1419): Support older versions of react-router
-
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.6 → [1.0.7](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#107))
-
-#### 1.0.7
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.6 → [1.0.7](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#107))
-
-#### 1.0.7
-
-##### Patch Changes
-
-- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
-- [`5fb6d5e92e`](https://github.com/backstage/backstage/commit/5fb6d5e92e): Updated dependency `@react-hookz/web` to `^19.0.0`.
-- [`146378c146`](https://github.com/backstage/backstage/commit/146378c146): Updated dependency `@react-hookz/web` to `^20.0.0`.
-- [`8536e7c281`](https://github.com/backstage/backstage/commit/8536e7c281): Use `app.title` from `app-config.yaml` when creating new Documentation Feedback issue. `Backstage` is the default value.
-
-### `@backstage/plugin-techdocs-node` (1.4.2 → [1.4.3](../../changelogs/@backstage/plugin-techdocs-node.md#143))
-
-#### 1.4.3
-
-##### Patch Changes
-
-- [`0a61aab172`](https://github.com/backstage/backstage/commit/0a61aab172): Bump dependency @azure/identity to next minor
-- [`e40790d0c2`](https://github.com/backstage/backstage/commit/e40790d0c2): Add support for specifying an S3 bucket's account ID and retrieving the credentials from the `aws` app config section. This is now the preferred way to configure AWS credentials for Techdocs.
-- [`37931c33ce`](https://github.com/backstage/backstage/commit/37931c33ce): Upgrade to AWS SDK for Javascript v3
-
-  Techdocs support for AWS S3 now requires defining the AWS region to connect to.
-  If `techdocs.publisher.awsS3.region` is missing from the config, the AWS environment variable `AWS_REGION` will be used.
-
 ### `@backstage/plugin-todo` (0.2.13 → [0.2.14](../../changelogs/@backstage/plugin-todo.md#0214))
 
 #### 0.2.14
@@ -2122,6 +1681,451 @@ Changes between 1.8.3 and 1.9.0 — 171 changed and 6 added packages.
 ##### Patch Changes
 
 - [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+
+## Other minor version bumps
+
+### `@backstage/core-app-api` (1.2.0 → [1.3.0](../../changelogs/@backstage/core-app-api.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`e0d9c9559a`](https://github.com/backstage/backstage/commit/e0d9c9559a): Added a new `AppRouter` component and `app.createRoot()` method that replaces `app.getRouter()` and `app.getProvider()`, which are now deprecated. The new `AppRouter` component is a drop-in replacement for the old router component, while the new `app.createRoot()` method is used instead of the old provider component.
+
+  An old app setup might look like this:
+
+  ```tsx
+  const app = createApp(/* ... */);
+
+  const AppProvider = app.getProvider();
+  const AppRouter = app.getRouter();
+
+  const routes = ...;
+
+  const App = () => (
+    <AppProvider>
+      <AlertDisplay />
+      <OAuthRequestDialog />
+      <AppRouter>
+        <Root>{routes}</Root>
+      </AppRouter>
+    </AppProvider>
+  );
+
+  export default App;
+  ```
+
+  With these new APIs, the setup now looks like this:
+
+  ```tsx
+  import { AppRouter } from '@backstage/core-app-api';
+
+  const app = createApp(/* ... */);
+
+  const routes = ...;
+
+  export default app.createRoot(
+    <>
+      <AlertDisplay />
+      <OAuthRequestDialog />
+      <AppRouter>
+        <Root>{routes}</Root>
+      </AppRouter>
+    </>,
+  );
+  ```
+
+  Note that `app.createRoot()` accepts a React element, rather than a component.
+
+##### Patch Changes
+
+- [`d3fea4ae0a`](https://github.com/backstage/backstage/commit/d3fea4ae0a): Internal fixes to avoid implicit usage of globals
+- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
+- [`b4b5b02315`](https://github.com/backstage/backstage/commit/b4b5b02315): Tweak feature flag registration so that it happens immediately before the first rendering of the app, rather than just after.
+- [`6870b43dd1`](https://github.com/backstage/backstage/commit/6870b43dd1): Fix for the automatic rewriting of base URLs.
+- [`203271b746`](https://github.com/backstage/backstage/commit/203271b746): Prevent duplicate feature flag components from rendering in the settings when using <FeatureFlagged /> components
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+- [`8015ff1258`](https://github.com/backstage/backstage/commit/8015ff1258): Tweaked wording to use inclusive terminology
+- [`653d7912ac`](https://github.com/backstage/backstage/commit/653d7912ac): Made `WebStorage` notify its subscribers when `localStorage` values change in other tabs/windows
+- [`63310e3987`](https://github.com/backstage/backstage/commit/63310e3987): Apps will now rewrite the `app.baseUrl` configuration to match the current `location.origin`. The `backend.baseUrl` will also be rewritten in the same way when the `app.baseUrl` and `backend.baseUrl` have matching origins. This will reduce the need for separate frontend builds for different environments.
+
+### `@backstage/core-plugin-api` (1.1.0 → [1.2.0](../../changelogs/@backstage/core-plugin-api.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`9a1864976a`](https://github.com/backstage/backstage/commit/9a1864976a): Added a new `display` property to the `AlertMessage` which can accept the values `permanent` or `transient`.
+
+  Here's a rough example of how to trigger an alert using the new `display` property:
+
+  ```ts
+  import { alertApiRef, useApi } from '@backstage/core-plugin-api';
+
+  const ExampleTransient = () => {
+    const alertApi = useApi(alertApiRef);
+    alertApi.post({
+      message: 'Example of Transient Alert',
+      severity: 'success',
+      display: 'transient',
+    });
+  };
+  ```
+
+##### Patch Changes
+
+- [`d56127c712`](https://github.com/backstage/backstage/commit/d56127c712): useRouteRef - Limit re-resolving to location pathname changes only
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+
+### `@backstage/plugin-catalog` (1.6.1 → [1.7.0](../../changelogs/@backstage/plugin-catalog.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`6ffa47bb0a`](https://github.com/backstage/backstage/commit/6ffa47bb0a): Fixes in kind selectors (now `OwnershipCard` works again). `EntityKindPicker` now accepts an optional `allowedKinds` prop, just like `CatalogKindHeader`.
+- [`462c1d012e`](https://github.com/backstage/backstage/commit/462c1d012e): Removed `CatalogKindHeader` from `DefaultCatalogPage`. Deprecated `CatalogKindHeader` in favour of `EntityKindPicker`.
+
+##### Patch Changes
+
+- [`d3fea4ae0a`](https://github.com/backstage/backstage/commit/d3fea4ae0a): Internal fixes to avoid implicit usage of globals
+- [`ca04d97b09`](https://github.com/backstage/backstage/commit/ca04d97b09): Handle refresh entity error in `AboutCard`.
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`a19cffbeed`](https://github.com/backstage/backstage/commit/a19cffbeed): Update search links to only have header as linkable text
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+- [`387d1d5218`](https://github.com/backstage/backstage/commit/387d1d5218): Fixed Entity kind pluralisation in the `CatalogKindHeader` component.
+
+### `@backstage/plugin-catalog-node` (1.2.1 → [1.3.0](../../changelogs/@backstage/plugin-catalog-node.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`eacc8e2b55`](https://github.com/backstage/backstage/commit/eacc8e2b55): Make it possible for entity providers to supply only entity refs, instead of full entities, in `delta` mutation deletions.
+
+##### Patch Changes
+
+- [`884d749b14`](https://github.com/backstage/backstage/commit/884d749b14): Refactored to use `coreServices` from `@backstage/backend-plugin-api`.
+
+### `@backstage/plugin-scaffolder` (1.8.0 → [1.9.0](../../changelogs/@backstage/plugin-scaffolder.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`ddd1c3308d`](https://github.com/backstage/backstage/commit/ddd1c3308d): Implement Custom Field Explorer to view and play around with available installed custom field extensions
+- [`adb1b01e32`](https://github.com/backstage/backstage/commit/adb1b01e32): Adds the ability to supply a `transformErrors` function to the `Stepper` for `/next`
+- [`34a48cdc4f`](https://github.com/backstage/backstage/commit/34a48cdc4f): The `RepoUrlPicker` field extension now has an `allowedProjects` option for narrowing the selection of Bitbucket URLs.
+
+##### Patch Changes
+
+- [`d4d07cf55e`](https://github.com/backstage/backstage/commit/d4d07cf55e): Enabling the customization of the last step in the scaffolder template.
+
+  To override the content you have to do the next:
+
+  ```typescript jsx
+  <TemplatePage ReviewStepComponent={YourCustomComponent} />
+  ```
+
+- [`ef803022f1`](https://github.com/backstage/backstage/commit/ef803022f1): Initialize all `formData` in the `Stepper` in `/next`
+- [`9b1fadf6d8`](https://github.com/backstage/backstage/commit/9b1fadf6d8): Added `noHtml5Validate` prop to `FormProps` on `NextScaffolderPage`
+- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`9000952e87`](https://github.com/backstage/backstage/commit/9000952e87): Form data is now passed to validator functions in 'next' scaffolder, so it's now possible to perform validation for fields that depend on other field values. This is something that we discourage due to the coupling that it creates, but is sometimes still the most sensible solution.
+
+  ```typescript jsx
+  export const myCustomValidation = (
+    value: string,
+    validation: FieldValidation,
+    { apiHolder, formData }: { apiHolder: ApiHolder; formData: JsonObject },
+  ) => {
+    // validate
+  };
+  ```
+
+- [`5b10b2485a`](https://github.com/backstage/backstage/commit/5b10b2485a): Parse `formData` from `window.location.query` for `scaffolder/next`
+- [`57ad6553d0`](https://github.com/backstage/backstage/commit/57ad6553d0): Pass through `transformErrors` to `TemplateWizardPage`
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+- [`5fb6d5e92e`](https://github.com/backstage/backstage/commit/5fb6d5e92e): Updated dependency `@react-hookz/web` to `^19.0.0`.
+- [`146378c146`](https://github.com/backstage/backstage/commit/146378c146): Updated dependency `@react-hookz/web` to `^20.0.0`.
+- [`380f549b75`](https://github.com/backstage/backstage/commit/380f549b75): bump `@rjsf/*-v5` dependencies
+- [`a63e2df559`](https://github.com/backstage/backstage/commit/a63e2df559): fixed `headerOptions` not passed to `TemplatePage` component
+- [`9b606366bf`](https://github.com/backstage/backstage/commit/9b606366bf): Bump `json-schema-library` to version `^7.3.9` which does not pull in the `gson-pointer` library
+- [`db6310b6a0`](https://github.com/backstage/backstage/commit/db6310b6a0): Show input type array correctly on installed actions page.
+
+### `@backstage/plugin-scaffolder-backend` (1.8.0 → [1.9.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`a20a0ea698`](https://github.com/backstage/backstage/commit/a20a0ea698): Added `requiredConversationResolution` template option to `github:repo:create`, `github:repo:push` and `publish:github`
+- [`b32005e98a`](https://github.com/backstage/backstage/commit/b32005e98a): Deprecated the `taskWorkers` option in RouterOptions in favor of `concurrentTasksLimit` which sets the limit of concurrent tasks in a single TaskWorker
+
+  TaskWorker can now run multiple (defaults to 10) tasks concurrently using the `concurrentTasksLimit` option available in both `RouterOptions` and `CreateWorkerOptions`.
+
+  To use the option to create a TaskWorker:
+
+  ```diff
+  const worker = await TaskWorker.create({
+      taskBroker,
+      actionRegistry,
+      integrations,
+      logger,
+      workingDirectory,
+      additionalTemplateFilters,
+  +   concurrentTasksLimit: 10 // (1 to Infinity)
+  });
+  ```
+
+- [`fc51bd8aa0`](https://github.com/backstage/backstage/commit/fc51bd8aa0): Add support for disabling Github repository wiki, issues and projects
+- [`0053d07bee`](https://github.com/backstage/backstage/commit/0053d07bee): Update the `github:publish` action to allow passing wether to dismiss stale reviews on the protected default branch.
+
+##### Patch Changes
+
+- [`cb716004ef`](https://github.com/backstage/backstage/commit/cb716004ef): Internal refactor to improve tests
+- [`935b66a646`](https://github.com/backstage/backstage/commit/935b66a646): Change step output template examples to use square bracket syntax.
+- [`884d749b14`](https://github.com/backstage/backstage/commit/884d749b14): Refactored to use `coreServices` from `@backstage/backend-plugin-api`.
+- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
+- [`26404430bc`](https://github.com/backstage/backstage/commit/26404430bc): Use Json types from @backstage/types
+- [`b07ccffad0`](https://github.com/backstage/backstage/commit/b07ccffad0): Backend now returns 'ui:options' value from template metadata, it can be used by all your custom scaffolder components.
+- [`309f2daca4`](https://github.com/backstage/backstage/commit/309f2daca4): Updated dependency `esbuild` to `^0.16.0`.
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+
+### `@backstage/plugin-search-backend` (1.1.1 → [1.2.0](../../changelogs/@backstage/plugin-search-backend.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults is now provided alongside the query result
+
+##### Patch Changes
+
+- [`b05dcd5530`](https://github.com/backstage/backstage/commit/b05dcd5530): Move the `zod` dependency to a version that does not collide with other libraries
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.0.4 → [1.1.0](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults is now provided alongside the query result
+- [`dff9843718`](https://github.com/backstage/backstage/commit/dff9843718): The search engine now better handles the case when it receives 0 documents at index-time. Prior to this change, the indexer would replace any existing index with an empty index, effectively deleting it. Now instead, a warning is logged, and any existing index is left alone (preserving the index from the last successful indexing attempt).
+- [`d09485ea79`](https://github.com/backstage/backstage/commit/d09485ea79): Added support for self hosted OpenSearch via new provider
+
+##### Patch Changes
+
+- [`45eb4d23cf`](https://github.com/backstage/backstage/commit/45eb4d23cf): Fixed a bug that prevented indices from being cleaned up under some circumstances, which could have led to shard exhaustion.
+
+### `@backstage/plugin-search-backend-node` (1.0.4 → [1.1.0](../../changelogs/@backstage/plugin-search-backend-node.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults is now provided alongside the query result
+- [`dff9843718`](https://github.com/backstage/backstage/commit/dff9843718): The search engine now better handles the case when it receives 0 documents at index-time. Prior to this change, the indexer would replace any existing index with an empty index, effectively deleting it. Now instead, a warning is logged, and any existing index is left alone (preserving the index from the last successful indexing attempt).
+
+##### Patch Changes
+
+- [`a962ce0551`](https://github.com/backstage/backstage/commit/a962ce0551): Wait for indexer initialization before finalizing indexing.
+- [`de8a975911`](https://github.com/backstage/backstage/commit/de8a975911): Changed to use native `AbortController` and `AbortSignal` from Node.js, instead
+  of the one from `node-abort-controller`. This is possible now that the minimum
+  supported Node.js version of the project is 16.
+
+  Note that their interfaces are very slightly different, but typically not in a
+  way that matters to consumers. If you see any typescript errors as a direct
+  result from this, they are compatible with each other in the ways that we
+  interact with them, and should be possible to type-cast across without ill
+  effects.
+
+- [`683ced83f6`](https://github.com/backstage/backstage/commit/683ced83f6): Fixed a bug that could cause a `max listeners exceeded warning` to be logged when more than 10 collators were running simultaneously.
+- [`81b1e7b0fe`](https://github.com/backstage/backstage/commit/81b1e7b0fe): Updated indexer and decorator base classes to take advantage of features introduced in Node.js v16; be sure you are running a [supported version of Node.js](https://backstage.io/docs/releases/v1.8.0#node-16-and-18).
+- [`54c5836f7a`](https://github.com/backstage/backstage/commit/54c5836f7a): Use of `TestPipeline.withSubject()` is now deprecated. Instead, use the `fromCollator`, `fromDecorator`, or `fromIndexer` static methods to instantiate a test pipeline. You may also use the class' `withCollator`, `withDecorator`, and `withIndexer` instance methods to build test pipelines that consist of multiple test subjects.
+
+### `@backstage/plugin-search-common` (1.1.1 → [1.2.0](../../changelogs/@backstage/plugin-search-common.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): numberOfResults (total number of results for a given query) can now be provided by each search engine and consumed as part of the search results response
+
+### `@backstage/plugin-search-react` (1.2.1 → [1.3.0](../../changelogs/@backstage/plugin-search-react.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`29ebc43a0b`](https://github.com/backstage/backstage/commit/29ebc43a0b): The `value` of a search analytics event is now set as the total number of search results (when available)
+
+##### Patch Changes
+
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`a19cffbeed`](https://github.com/backstage/backstage/commit/a19cffbeed): Update search links to only have header as linkable text
+
+### `@backstage/plugin-techdocs-backend` (1.4.1 → [1.5.0](../../changelogs/@backstage/plugin-techdocs-backend.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`dfbdae092e`](https://github.com/backstage/backstage/commit/dfbdae092e): Added a new optional `accountId` to the configuration options of the AWS S3 publisher. Configuring this option will source credentials for the `accountId` in the `aws` app config section. See https://github.com/backstage/backstage/blob/master/packages/integration-aws-node/README.md for more details.
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+
+### `@backstage/plugin-techdocs-react` (1.0.6 → [1.1.0](../../changelogs/@backstage/plugin-techdocs-react.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`786f1b1419`](https://github.com/backstage/backstage/commit/786f1b1419): Support older versions of react-router
+
+##### Patch Changes
+
+- [`cb716004ef`](https://github.com/backstage/backstage/commit/cb716004ef): Internal refactor to improve tests
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.0.8 → [1.0.9](../../changelogs/@backstage/app-defaults.md#109))
+
+#### 1.0.9
+
+##### Patch Changes
+
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+
+### `@backstage/config-loader` (1.1.6 → [1.1.7](../../changelogs/@backstage/config-loader.md#117))
+
+#### 1.1.7
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`40e7e6e1a2`](https://github.com/backstage/backstage/commit/40e7e6e1a2): Updated dependency `typescript-json-schema` to `^0.55.0`.
+
+### `@backstage/dev-utils` (1.0.8 → [1.0.9](../../changelogs/@backstage/dev-utils.md#109))
+
+#### 1.0.9
+
+##### Patch Changes
+
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+- [`8015ff1258`](https://github.com/backstage/backstage/commit/8015ff1258): Tweaked wording to use inclusive terminology
+
+### `@backstage/errors` (1.1.3 → [1.1.4](../../changelogs/@backstage/errors.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`ac6cc9f7bd`](https://github.com/backstage/backstage/commit/ac6cc9f7bd): Removed a circular import
+
+### `@backstage/integration` (1.4.0 → [1.4.1](../../changelogs/@backstage/integration.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`34b039ca9f`](https://github.com/backstage/backstage/commit/34b039ca9f): Added `integrations.github.apps.allowedInstallationOwners` to the configuration schema.
+
+### `@backstage/integration-react` (1.1.6 → [1.1.7](../../changelogs/@backstage/integration-react.md#117))
+
+#### 1.1.7
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+
+### `@backstage/plugin-catalog-react` (1.2.1 → [1.2.2](../../changelogs/@backstage/plugin-catalog-react.md#122))
+
+#### 1.2.2
+
+##### Patch Changes
+
+- [`2cb9998`](https://github.com/backstage/backstage/commit/2cb9998): Fixed bug in `EntityOwnerPicker` and `EntityLifecyclePicker` that filtered on unavailable tags for the selected kind.
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`6ffa47bb0a`](https://github.com/backstage/backstage/commit/6ffa47bb0a): Cleanup and small fixes for the kind selector
+- [`19356df560`](https://github.com/backstage/backstage/commit/19356df560): Updated dependency `zen-observable` to `^0.9.0`.
+- [`c3fa90e184`](https://github.com/backstage/backstage/commit/c3fa90e184): Updated dependency `zen-observable` to `^0.10.0`.
+
+### `@backstage/plugin-dynatrace` (1.0.1 → [1.0.2](../../changelogs/@backstage/plugin-dynatrace.md#102))
+
+#### 1.0.2
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+
+### `@backstage/plugin-search` (1.0.4 → [1.0.5](../../changelogs/@backstage/plugin-search.md#105))
+
+#### 1.0.5
+
+##### Patch Changes
+
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+
+### `@backstage/plugin-techdocs` (1.4.0 → [1.4.1](../../changelogs/@backstage/plugin-techdocs.md#141))
+
+#### 1.4.1
+
+##### Patch Changes
+
+- [`d3fea4ae0a`](https://github.com/backstage/backstage/commit/d3fea4ae0a): Internal fixes to avoid implicit usage of globals
+- [`2e701b3796`](https://github.com/backstage/backstage/commit/2e701b3796): Internal refactor to use `react-router-dom` rather than `react-router`.
+- [`a19cffbeed`](https://github.com/backstage/backstage/commit/a19cffbeed): Update search links to only have header as linkable text
+- [`5d3058355d`](https://github.com/backstage/backstage/commit/5d3058355d): Add `react/forbid-elements` linter rule for button, suggest Material UI `Button`
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`786f1b1419`](https://github.com/backstage/backstage/commit/786f1b1419): Support older versions of react-router
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.6 → [1.0.7](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#107))
+
+#### 1.0.7
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.6 → [1.0.7](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#107))
+
+#### 1.0.7
+
+##### Patch Changes
+
+- [`3280711113`](https://github.com/backstage/backstage/commit/3280711113): Updated dependency `msw` to `^0.49.0`.
+- [`5fb6d5e92e`](https://github.com/backstage/backstage/commit/5fb6d5e92e): Updated dependency `@react-hookz/web` to `^19.0.0`.
+- [`146378c146`](https://github.com/backstage/backstage/commit/146378c146): Updated dependency `@react-hookz/web` to `^20.0.0`.
+- [`8536e7c281`](https://github.com/backstage/backstage/commit/8536e7c281): Use `app.title` from `app-config.yaml` when creating new Documentation Feedback issue. `Backstage` is the default value.
+
+### `@backstage/plugin-techdocs-node` (1.4.2 → [1.4.3](../../changelogs/@backstage/plugin-techdocs-node.md#143))
+
+#### 1.4.3
+
+##### Patch Changes
+
+- [`0a61aab172`](https://github.com/backstage/backstage/commit/0a61aab172): Bump dependency @azure/identity to next minor
+- [`e40790d0c2`](https://github.com/backstage/backstage/commit/e40790d0c2): Add support for specifying an S3 bucket's account ID and retrieving the credentials from the `aws` app config section. This is now the preferred way to configure AWS credentials for Techdocs.
+- [`37931c33ce`](https://github.com/backstage/backstage/commit/37931c33ce): Upgrade to AWS SDK for Javascript v3
+
+  Techdocs support for AWS S3 now requires defining the AWS region to connect to.
+  If `techdocs.publisher.awsS3.region` is missing from the config, the AWS environment variable `AWS_REGION` will be used.
 
 ### `@backstage/test-utils` (1.2.2 → [1.2.3](../../changelogs/@backstage/test-utils.md#123))
 

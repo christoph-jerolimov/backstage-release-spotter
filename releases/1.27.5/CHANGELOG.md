@@ -1,6 +1,6 @@
 # Backstage Release 1.27.5 changelog
 
-Changes between 1.27.4 and 1.27.5 — 1 changed and 0 added packages.
+Changes between 1.27.4 and 1.27.5 — 0 added, 0 removed, 1 upgraded, 169 unchanged packages.
 
 ## Summary
 

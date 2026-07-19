@@ -1,14 +1,15 @@
 # Backstage Release 1.35.0 changelog
 
-Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
+Changes between 1.34.2 and 1.35.0 — 1 added, 0 removed, 166 upgraded, 11 unchanged packages.
 
 ## Summary
 
 - [Newly added packages](#newly-added-packages): 1 package
 - [Breaking changes](#breaking-changes): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 30 packages
 - [Other minor version bumps](#other-minor-version-bumps): 2 packages
-- [Patch version bumps](#patch-version-bumps): 42 packages
+- [Other patch version bumps](#other-patch-version-bumps): 12 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 119 packages
 
 ## Table of contents
@@ -20,25 +21,17 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 - [0.x minor version bumps](#0x-minor-version-bumps)
   - [`@backstage/backend-defaults` (0.6.2 → 0.7.0)](#backstagebackend-defaults-062--070)
   - [`@backstage/plugin-signals-backend` (0.2.4 → 0.3.0)](#backstageplugin-signals-backend-024--030)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/plugin-catalog-backend` (1.29.0 → 1.30.0)](#backstageplugin-catalog-backend-1290--1300)
-  - [`@backstage/plugin-scaffolder-backend` (1.28.0 → 1.29.0)](#backstageplugin-scaffolder-backend-1280--1290)
-- [Patch version bumps](#patch-version-bumps)
-  - [`@backstage/backend-app-api` (1.1.0 → 1.1.1)](#backstagebackend-app-api-110--111)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-dynamic-feature-service` (0.5.2 → 0.5.3)](#backstagebackend-dynamic-feature-service-052--053)
   - [`@backstage/cli` (0.29.4 → 0.29.5)](#backstagecli-0294--0295)
-  - [`@backstage/config-loader` (1.9.4 → 1.9.5)](#backstageconfig-loader-194--195)
   - [`@backstage/core-components` (0.16.2 → 0.16.3)](#backstagecore-components-0162--0163)
-  - [`@backstage/core-plugin-api` (1.10.2 → 1.10.3)](#backstagecore-plugin-api-1102--1103)
   - [`@backstage/create-app` (0.5.23 → 0.5.24)](#backstagecreate-app-0523--0524)
   - [`@backstage/frontend-plugin-api` (0.9.3 → 0.9.4)](#backstagefrontend-plugin-api-093--094)
-  - [`@backstage/integration` (1.16.0 → 1.16.1)](#backstageintegration-1160--1161)
   - [`@backstage/plugin-api-docs` (0.12.2 → 0.12.3)](#backstageplugin-api-docs-0122--0123)
   - [`@backstage/plugin-app-backend` (0.4.3 → 0.4.4)](#backstageplugin-app-backend-043--044)
   - [`@backstage/plugin-auth-backend` (0.24.1 → 0.24.2)](#backstageplugin-auth-backend-0241--0242)
   - [`@backstage/plugin-auth-backend-module-cloudflare-access-provider` (0.3.3 → 0.3.4)](#backstageplugin-auth-backend-module-cloudflare-access-provider-033--034)
   - [`@backstage/plugin-auth-node` (0.5.5 → 0.5.6)](#backstageplugin-auth-node-055--056)
-  - [`@backstage/plugin-catalog` (1.26.0 → 1.26.1)](#backstageplugin-catalog-1260--1261)
   - [`@backstage/plugin-catalog-backend-module-backstage-openapi` (0.4.3 → 0.4.4)](#backstageplugin-catalog-backend-module-backstage-openapi-043--044)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-server` (0.3.0 → 0.3.1)](#backstageplugin-catalog-backend-module-bitbucket-server-030--031)
   - [`@backstage/plugin-catalog-backend-module-github` (0.7.8 → 0.7.9)](#backstageplugin-catalog-backend-module-github-078--079)
@@ -47,7 +40,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
   - [`@backstage/plugin-catalog-backend-module-incremental-ingestion` (0.6.1 → 0.6.2)](#backstageplugin-catalog-backend-module-incremental-ingestion-061--062)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.6.5 → 0.6.6)](#backstageplugin-catalog-backend-module-msgraph-065--066)
   - [`@backstage/plugin-catalog-backend-module-openapi` (0.2.5 → 0.2.6)](#backstageplugin-catalog-backend-module-openapi-025--026)
-  - [`@backstage/plugin-catalog-react` (1.15.0 → 1.15.1)](#backstageplugin-catalog-react-1150--1151)
   - [`@backstage/plugin-devtools-backend` (0.5.0 → 0.5.1)](#backstageplugin-devtools-backend-050--051)
   - [`@backstage/plugin-events-backend` (0.4.0 → 0.4.1)](#backstageplugin-events-backend-040--041)
   - [`@backstage/plugin-home` (0.8.3 → 0.8.4)](#backstageplugin-home-083--084)
@@ -57,10 +49,20 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
   - [`@backstage/plugin-permission-backend` (0.5.52 → 0.5.53)](#backstageplugin-permission-backend-0552--0553)
   - [`@backstage/plugin-permission-node` (0.8.6 → 0.8.7)](#backstageplugin-permission-node-086--087)
   - [`@backstage/plugin-proxy-backend` (0.5.9 → 0.5.10)](#backstageplugin-proxy-backend-059--0510)
-  - [`@backstage/plugin-scaffolder` (1.27.3 → 1.27.4)](#backstageplugin-scaffolder-1273--1274)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.5.4 → 0.5.5)](#backstageplugin-scaffolder-backend-module-github-054--055)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.7.0 → 0.7.1)](#backstageplugin-scaffolder-backend-module-gitlab-070--071)
   - [`@backstage/plugin-scaffolder-node` (0.6.2 → 0.6.3)](#backstageplugin-scaffolder-node-062--063)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/plugin-catalog-backend` (1.29.0 → 1.30.0)](#backstageplugin-catalog-backend-1290--1300)
+  - [`@backstage/plugin-scaffolder-backend` (1.28.0 → 1.29.0)](#backstageplugin-scaffolder-backend-1280--1290)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-app-api` (1.1.0 → 1.1.1)](#backstagebackend-app-api-110--111)
+  - [`@backstage/config-loader` (1.9.4 → 1.9.5)](#backstageconfig-loader-194--195)
+  - [`@backstage/core-plugin-api` (1.10.2 → 1.10.3)](#backstagecore-plugin-api-1102--1103)
+  - [`@backstage/integration` (1.16.0 → 1.16.1)](#backstageintegration-1160--1161)
+  - [`@backstage/plugin-catalog` (1.26.0 → 1.26.1)](#backstageplugin-catalog-1260--1261)
+  - [`@backstage/plugin-catalog-react` (1.15.0 → 1.15.1)](#backstageplugin-catalog-react-1150--1151)
+  - [`@backstage/plugin-scaffolder` (1.27.3 → 1.27.4)](#backstageplugin-scaffolder-1273--1274)
   - [`@backstage/plugin-scaffolder-react` (1.14.2 → 1.14.3)](#backstageplugin-scaffolder-react-1142--1143)
   - [`@backstage/plugin-techdocs` (1.12.0 → 1.12.1)](#backstageplugin-techdocs-1120--1121)
   - [`@backstage/plugin-techdocs-backend` (1.11.4 → 1.11.5)](#backstageplugin-techdocs-backend-1114--1115)
@@ -122,41 +124,7 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 
 - [`f59ea1d`](https://github.com/backstage/backstage/commit/f59ea1d): Removed support for the old backend system. If you were using the old `createRouter` export, please migrate to [the new backend system](https://backstage.io/docs/backend-system/).
 
-## Other minor version bumps
-
-### `@backstage/plugin-catalog-backend` (1.29.0 → [1.30.0](../../changelogs/@backstage/plugin-catalog-backend.md#1300))
-
-#### 1.30.0
-
-##### Patch Changes
-
-- [`d9d62ef`](https://github.com/backstage/backstage/commit/d9d62ef): Remove some internal usages of the backend-common package
-- [`8379bf4`](https://github.com/backstage/backstage/commit/8379bf4): Remove usages of `PluginDatabaseManager` and `PluginEndpointDiscovery` and replace with their equivalent service types
-- [`be0aae7`](https://github.com/backstage/backstage/commit/be0aae7): Improved concurrency of the `entities` endpoint when using the streamed query mode behind the `catalog.disableRelationsCompatibility` flag.
-- [`dd515e3`](https://github.com/backstage/backstage/commit/dd515e3): Internalize the deprecated collator types since they were removed from the collator itself during new-backend-system migration.
-- [`3d475a0`](https://github.com/backstage/backstage/commit/3d475a0): Updated condition in `resolveCodeOwner` to fix a bug where `normalizeCodeOwner` could potentially be called with an invalid argument causing an error in `CodeOwnersProcessor`
-
-### `@backstage/plugin-scaffolder-backend` (1.28.0 → [1.29.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1290))
-
-#### 1.29.0
-
-##### Minor Changes
-
-- [`5d9e5c8`](https://github.com/backstage/backstage/commit/5d9e5c8): Added the ability to use `${{ context.task.id }}` in nunjucks templating, as well as `ctx.task.id` in actions to get the current task ID.
-
-##### Patch Changes
-
-- [`8379bf4`](https://github.com/backstage/backstage/commit/8379bf4): Remove usages of `PluginDatabaseManager` and `PluginEndpointDiscovery` and replace with their equivalent service types
-
-## Patch version bumps
-
-### `@backstage/backend-app-api` (1.1.0 → [1.1.1](../../changelogs/@backstage/backend-app-api.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`02534c7`](https://github.com/backstage/backstage/commit/02534c7): Corrected spelling mistake in error message
+## 0.x patch version bumps
 
 ### `@backstage/backend-dynamic-feature-service` (0.5.2 → [0.5.3](../../changelogs/@backstage/backend-dynamic-feature-service.md#053))
 
@@ -175,14 +143,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 - [`e937ce0`](https://github.com/backstage/backstage/commit/e937ce0): Fixed incompatible `@typescript-eslint` versions with current `eslint@8.x.x`
 - [`8557e09`](https://github.com/backstage/backstage/commit/8557e09): Removed the `EXPERIMENTAL_VITE` flag for using Vite as a dev server. If you were using this feature, we recommend switching to Rspack via the `EXPERIMENTAL_RSPACK` flag.
 
-### `@backstage/config-loader` (1.9.4 → [1.9.5](../../changelogs/@backstage/config-loader.md#195))
-
-#### 1.9.5
-
-##### Patch Changes
-
-- [`8ecf8cb`](https://github.com/backstage/backstage/commit/8ecf8cb): Exclude `@backstage/backend-common` from schema collection if `@backstage/backend-defaults` is present
-
 ### `@backstage/core-components` (0.16.2 → [0.16.3](../../changelogs/@backstage/core-components.md#0163))
 
 #### 0.16.3
@@ -190,14 +150,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 ##### Patch Changes
 
 - [`4ec6f7b`](https://github.com/backstage/backstage/commit/4ec6f7b): Allow passing component for `ContentHeader` description
-
-### `@backstage/core-plugin-api` (1.10.2 → [1.10.3](../../changelogs/@backstage/core-plugin-api.md#1103))
-
-#### 1.10.3
-
-##### Patch Changes
-
-- [`b40eb41`](https://github.com/backstage/backstage/commit/b40eb41): Move `Expand` and `ExpandRecursive` to `@backstage/types`
 
 ### `@backstage/create-app` (0.5.23 → [0.5.24](../../changelogs/@backstage/create-app.md#0524))
 
@@ -216,22 +168,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 ##### Patch Changes
 
 - [`b40eb41`](https://github.com/backstage/backstage/commit/b40eb41): Move `Expand` and `ExpandRecursive` to `@backstage/types`
-
-### `@backstage/integration` (1.16.0 → [1.16.1](../../changelogs/@backstage/integration.md#1161))
-
-#### 1.16.1
-
-##### Patch Changes
-
-- [`d2b16db`](https://github.com/backstage/backstage/commit/d2b16db): A new Gerrit helper function (`buildGerritGitilesArchiveUrlFromLocation`) has been added. This
-  constructs a Gitiles URL to download an archive. It is similar to the existing
-  `buildGerritGitilesArchiveUrl` but also support content referenced by a full commit `SHA`.
-
-  **DEPRECATIONS**: The function `buildGerritGitilesArchiveUrl` is deprecated, use the
-  `buildGerritGitilesArchiveUrlFromLocation` function instead.
-
-  **DEPRECATIONS**: The function `parseGerritGitilesUrl` is deprecated, use the
-  `parseGitilesUrlRef` function instead.
 
 ### `@backstage/plugin-api-docs` (0.12.2 → [0.12.3](../../changelogs/@backstage/plugin-api-docs.md#0123))
 
@@ -274,14 +210,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 
 - [`d9d62ef`](https://github.com/backstage/backstage/commit/d9d62ef): Remove some internal usages of the backend-common package
 - [`8379bf4`](https://github.com/backstage/backstage/commit/8379bf4): Remove usages of `PluginDatabaseManager` and `PluginEndpointDiscovery` and replace with their equivalent service types
-
-### `@backstage/plugin-catalog` (1.26.0 → [1.26.1](../../changelogs/@backstage/plugin-catalog.md#1261))
-
-#### 1.26.1
-
-##### Patch Changes
-
-- [`208e53b`](https://github.com/backstage/backstage/commit/208e53b): Fixing spelling mistake in translation
 
 ### `@backstage/plugin-catalog-backend-module-backstage-openapi` (0.4.3 → [0.4.4](../../changelogs/@backstage/plugin-catalog-backend-module-backstage-openapi.md#044))
 
@@ -348,15 +276,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 ##### Patch Changes
 
 - [`57e794a`](https://github.com/backstage/backstage/commit/57e794a): Refactor to no longer use backend-common
-
-### `@backstage/plugin-catalog-react` (1.15.0 → [1.15.1](../../changelogs/@backstage/plugin-catalog-react.md#1151))
-
-#### 1.15.1
-
-##### Patch Changes
-
-- [`aaf6508`](https://github.com/backstage/backstage/commit/aaf6508): Creates new CatalogAutocomplete component in catalog-react that aligns with Select component UI for consistent a dropdown UI for all catalog filters.
-- [`cbfc0a4`](https://github.com/backstage/backstage/commit/cbfc0a4): Fixed an issue where the `<EntityListProvider />` in `offset` mode would unnecessarily re-fetch data when the filter didn't change, causing a flicker effect.
 
 ### `@backstage/plugin-devtools-backend` (0.5.0 → [0.5.1](../../changelogs/@backstage/plugin-devtools-backend.md#051))
 
@@ -437,19 +356,6 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 
 - [`11b001c`](https://github.com/backstage/backstage/commit/11b001c): Added `proxyEndpointsExtensionPoint` to allow addition of proxy configuration through an extension point in the new backend system.
 
-### `@backstage/plugin-scaffolder` (1.27.3 → [1.27.4](../../changelogs/@backstage/plugin-scaffolder.md#1274))
-
-#### 1.27.4
-
-##### Patch Changes
-
-- [`d8f9079`](https://github.com/backstage/backstage/commit/d8f9079): Updated dependency `@rjsf/utils` to `5.23.2`.
-  Updated dependency `@rjsf/core` to `5.23.2`.
-  Updated dependency `@rjsf/material-ui` to `5.23.2`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.23.2`.
-- [`4756287`](https://github.com/backstage/backstage/commit/4756287): Added support for `FormDecoratorBlueprint` to create form decorators in the Scaffolder plugin
-- [`3f09ef4`](https://github.com/backstage/backstage/commit/3f09ef4): Fix issue with `secrets` not being forwarded properly to the backend when creating a task
-
 ### `@backstage/plugin-scaffolder-backend-module-github` (0.5.4 → [0.5.5](../../changelogs/@backstage/plugin-scaffolder-backend-module-github.md#055))
 
 #### 0.5.5
@@ -476,6 +382,104 @@ Changes between 1.34.2 and 1.35.0 — 166 changed and 1 added packages.
 
 - [`5d9e5c8`](https://github.com/backstage/backstage/commit/5d9e5c8): Added the ability to use `${{ context.task.id }}` in nunjucks templating, as well as `ctx.task.id` in actions to get the current task ID.
 - [`7dd0013`](https://github.com/backstage/backstage/commit/7dd0013): Deprecate the `logStream` option in `executeShellCommand`, replacing it with a logger instance.
+
+## Other minor version bumps
+
+### `@backstage/plugin-catalog-backend` (1.29.0 → [1.30.0](../../changelogs/@backstage/plugin-catalog-backend.md#1300))
+
+#### 1.30.0
+
+##### Patch Changes
+
+- [`d9d62ef`](https://github.com/backstage/backstage/commit/d9d62ef): Remove some internal usages of the backend-common package
+- [`8379bf4`](https://github.com/backstage/backstage/commit/8379bf4): Remove usages of `PluginDatabaseManager` and `PluginEndpointDiscovery` and replace with their equivalent service types
+- [`be0aae7`](https://github.com/backstage/backstage/commit/be0aae7): Improved concurrency of the `entities` endpoint when using the streamed query mode behind the `catalog.disableRelationsCompatibility` flag.
+- [`dd515e3`](https://github.com/backstage/backstage/commit/dd515e3): Internalize the deprecated collator types since they were removed from the collator itself during new-backend-system migration.
+- [`3d475a0`](https://github.com/backstage/backstage/commit/3d475a0): Updated condition in `resolveCodeOwner` to fix a bug where `normalizeCodeOwner` could potentially be called with an invalid argument causing an error in `CodeOwnersProcessor`
+
+### `@backstage/plugin-scaffolder-backend` (1.28.0 → [1.29.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1290))
+
+#### 1.29.0
+
+##### Minor Changes
+
+- [`5d9e5c8`](https://github.com/backstage/backstage/commit/5d9e5c8): Added the ability to use `${{ context.task.id }}` in nunjucks templating, as well as `ctx.task.id` in actions to get the current task ID.
+
+##### Patch Changes
+
+- [`8379bf4`](https://github.com/backstage/backstage/commit/8379bf4): Remove usages of `PluginDatabaseManager` and `PluginEndpointDiscovery` and replace with their equivalent service types
+
+## Other patch version bumps
+
+### `@backstage/backend-app-api` (1.1.0 → [1.1.1](../../changelogs/@backstage/backend-app-api.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`02534c7`](https://github.com/backstage/backstage/commit/02534c7): Corrected spelling mistake in error message
+
+### `@backstage/config-loader` (1.9.4 → [1.9.5](../../changelogs/@backstage/config-loader.md#195))
+
+#### 1.9.5
+
+##### Patch Changes
+
+- [`8ecf8cb`](https://github.com/backstage/backstage/commit/8ecf8cb): Exclude `@backstage/backend-common` from schema collection if `@backstage/backend-defaults` is present
+
+### `@backstage/core-plugin-api` (1.10.2 → [1.10.3](../../changelogs/@backstage/core-plugin-api.md#1103))
+
+#### 1.10.3
+
+##### Patch Changes
+
+- [`b40eb41`](https://github.com/backstage/backstage/commit/b40eb41): Move `Expand` and `ExpandRecursive` to `@backstage/types`
+
+### `@backstage/integration` (1.16.0 → [1.16.1](../../changelogs/@backstage/integration.md#1161))
+
+#### 1.16.1
+
+##### Patch Changes
+
+- [`d2b16db`](https://github.com/backstage/backstage/commit/d2b16db): A new Gerrit helper function (`buildGerritGitilesArchiveUrlFromLocation`) has been added. This
+  constructs a Gitiles URL to download an archive. It is similar to the existing
+  `buildGerritGitilesArchiveUrl` but also support content referenced by a full commit `SHA`.
+
+  **DEPRECATIONS**: The function `buildGerritGitilesArchiveUrl` is deprecated, use the
+  `buildGerritGitilesArchiveUrlFromLocation` function instead.
+
+  **DEPRECATIONS**: The function `parseGerritGitilesUrl` is deprecated, use the
+  `parseGitilesUrlRef` function instead.
+
+### `@backstage/plugin-catalog` (1.26.0 → [1.26.1](../../changelogs/@backstage/plugin-catalog.md#1261))
+
+#### 1.26.1
+
+##### Patch Changes
+
+- [`208e53b`](https://github.com/backstage/backstage/commit/208e53b): Fixing spelling mistake in translation
+
+### `@backstage/plugin-catalog-react` (1.15.0 → [1.15.1](../../changelogs/@backstage/plugin-catalog-react.md#1151))
+
+#### 1.15.1
+
+##### Patch Changes
+
+- [`aaf6508`](https://github.com/backstage/backstage/commit/aaf6508): Creates new CatalogAutocomplete component in catalog-react that aligns with Select component UI for consistent a dropdown UI for all catalog filters.
+- [`cbfc0a4`](https://github.com/backstage/backstage/commit/cbfc0a4): Fixed an issue where the `<EntityListProvider />` in `offset` mode would unnecessarily re-fetch data when the filter didn't change, causing a flicker effect.
+
+### `@backstage/plugin-scaffolder` (1.27.3 → [1.27.4](../../changelogs/@backstage/plugin-scaffolder.md#1274))
+
+#### 1.27.4
+
+##### Patch Changes
+
+- [`d8f9079`](https://github.com/backstage/backstage/commit/d8f9079): Updated dependency `@rjsf/utils` to `5.23.2`.
+  Updated dependency `@rjsf/core` to `5.23.2`.
+  Updated dependency `@rjsf/material-ui` to `5.23.2`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.23.2`.
+- [`4756287`](https://github.com/backstage/backstage/commit/4756287): Added support for `FormDecoratorBlueprint` to create form decorators in the Scaffolder plugin
+- [`3f09ef4`](https://github.com/backstage/backstage/commit/3f09ef4): Fix issue with `secrets` not being forwarded properly to the backend when creating a task
 
 ### `@backstage/plugin-scaffolder-react` (1.14.2 → [1.14.3](../../changelogs/@backstage/plugin-scaffolder-react.md#1143))
 

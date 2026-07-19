@@ -1,6 +1,6 @@
 # Backstage Release 1.15.0 changelog
 
-Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
+Changes between 1.14.2 and 1.15.0 — 5 added, 0 removed, 199 upgraded, 14 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 - [Major version bumps](#major-version-bumps): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 5 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 56 packages
 - [Other minor version bumps](#other-minor-version-bumps): 9 packages
-- [Other patch version bumps](#other-patch-version-bumps): 70 packages
+- [Other patch version bumps](#other-patch-version-bumps): 14 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 108 packages
 
 ## Table of contents
@@ -37,28 +38,13 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
   - [`@backstage/theme` (0.3.0 → 0.4.0)](#backstagetheme-030--040)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-explore-backend` (0.0.7 → 0.0.8)](#backstageplugin-explore-backend-007--008)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/app-defaults` (1.3.1 → 1.4.0)](#backstageapp-defaults-131--140)
-  - [`@backstage/catalog-model` (1.3.0 → 1.4.0)](#backstagecatalog-model-130--140)
-  - [`@backstage/errors` (1.1.5 → 1.2.0)](#backstageerrors-115--120)
-  - [`@backstage/plugin-catalog-backend` (1.9.1 → 1.10.0)](#backstageplugin-catalog-backend-191--1100)
-  - [`@backstage/plugin-catalog-react` (1.6.0 → 1.7.0)](#backstageplugin-catalog-react-160--170)
-  - [`@backstage/plugin-scaffolder` (1.13.1 → 1.14.0)](#backstageplugin-scaffolder-1131--1140)
-  - [`@backstage/plugin-scaffolder-react` (1.4.0 → 1.5.0)](#backstageplugin-scaffolder-react-140--150)
-  - [`@backstage/test-utils` (1.3.1 → 1.4.0)](#backstagetest-utils-131--140)
-  - [`@backstage/types` (1.0.2 → 1.1.0)](#backstagetypes-102--110)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.4.3 → 0.4.4)](#backstagebackend-app-api-043--044)
   - [`@backstage/backend-plugin-api` (0.5.2 → 0.5.3)](#backstagebackend-plugin-api-052--053)
   - [`@backstage/backend-test-utils` (0.1.37 → 0.1.38)](#backstagebackend-test-utils-0137--0138)
-  - [`@backstage/catalog-client` (1.4.1 → 1.4.2)](#backstagecatalog-client-141--142)
   - [`@backstage/cli` (0.22.7 → 0.22.8)](#backstagecli-0227--0228)
-  - [`@backstage/config-loader` (1.3.0 → 1.3.1)](#backstageconfig-loader-130--131)
-  - [`@backstage/core-app-api` (1.8.0 → 1.8.1)](#backstagecore-app-api-180--181)
   - [`@backstage/core-components` (0.13.1 → 0.13.2)](#backstagecore-components-0131--0132)
-  - [`@backstage/core-plugin-api` (1.5.1 → 1.5.2)](#backstagecore-plugin-api-151--152)
   - [`@backstage/create-app` (0.5.1 → 0.5.2)](#backstagecreate-app-051--052)
-  - [`@backstage/dev-utils` (1.0.15 → 1.0.16)](#backstagedev-utils-1015--1016)
   - [`@backstage/integration-aws-node` (0.1.3 → 0.1.4)](#backstageintegration-aws-node-013--014)
   - [`@backstage/plugin-adr` (0.6.1 → 0.6.2)](#backstageplugin-adr-061--062)
   - [`@backstage/plugin-adr-backend` (0.3.3 → 0.3.4)](#backstageplugin-adr-backend-033--034)
@@ -69,7 +55,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
   - [`@backstage/plugin-azure-sites-backend` (0.1.7 → 0.1.8)](#backstageplugin-azure-sites-backend-017--018)
   - [`@backstage/plugin-badges-backend` (0.2.0 → 0.2.1)](#backstageplugin-badges-backend-020--021)
   - [`@backstage/plugin-bitrise` (0.1.45 → 0.1.46)](#backstageplugin-bitrise-0145--0146)
-  - [`@backstage/plugin-catalog` (1.11.1 → 1.11.2)](#backstageplugin-catalog-1111--1112)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.2.0 → 0.2.1)](#backstageplugin-catalog-backend-module-aws-020--021)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.16 → 0.1.17)](#backstageplugin-catalog-backend-module-azure-0116--0117)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-cloud` (0.1.12 → 0.1.13)](#backstageplugin-catalog-backend-module-bitbucket-cloud-0112--0113)
@@ -103,20 +88,37 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
   - [`@backstage/plugin-proxy-backend` (0.2.39 → 0.2.40)](#backstageplugin-proxy-backend-0239--0240)
   - [`@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.1.2 → 0.1.3)](#backstageplugin-scaffolder-backend-module-confluence-to-markdown-012--013)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.2.0 → 0.2.1)](#backstageplugin-scaffolder-backend-module-gitlab-020--021)
-  - [`@backstage/plugin-search` (1.3.1 → 1.3.2)](#backstageplugin-search-131--132)
-  - [`@backstage/plugin-search-backend` (1.3.1 → 1.3.2)](#backstageplugin-search-backend-131--132)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.1 → 0.1.2)](#backstageplugin-search-backend-module-explore-011--012)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.6 → 0.5.7)](#backstageplugin-search-backend-module-pg-056--057)
-  - [`@backstage/plugin-search-react` (1.6.1 → 1.6.2)](#backstageplugin-search-react-161--162)
   - [`@backstage/plugin-shortcuts` (0.3.10 → 0.3.11)](#backstageplugin-shortcuts-0310--0311)
   - [`@backstage/plugin-stack-overflow` (0.1.16 → 0.1.17)](#backstageplugin-stack-overflow-0116--0117)
   - [`@backstage/plugin-tech-insights` (0.3.10 → 0.3.11)](#backstageplugin-tech-insights-0310--0311)
+  - [`@backstage/plugin-user-settings` (0.7.3 → 0.7.4)](#backstageplugin-user-settings-073--074)
+  - [`@backstage/repo-tools` (0.3.0 → 0.3.1)](#backstagerepo-tools-030--031)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/app-defaults` (1.3.1 → 1.4.0)](#backstageapp-defaults-131--140)
+  - [`@backstage/catalog-model` (1.3.0 → 1.4.0)](#backstagecatalog-model-130--140)
+  - [`@backstage/errors` (1.1.5 → 1.2.0)](#backstageerrors-115--120)
+  - [`@backstage/plugin-catalog-backend` (1.9.1 → 1.10.0)](#backstageplugin-catalog-backend-191--1100)
+  - [`@backstage/plugin-catalog-react` (1.6.0 → 1.7.0)](#backstageplugin-catalog-react-160--170)
+  - [`@backstage/plugin-scaffolder` (1.13.1 → 1.14.0)](#backstageplugin-scaffolder-1131--1140)
+  - [`@backstage/plugin-scaffolder-react` (1.4.0 → 1.5.0)](#backstageplugin-scaffolder-react-140--150)
+  - [`@backstage/test-utils` (1.3.1 → 1.4.0)](#backstagetest-utils-131--140)
+  - [`@backstage/types` (1.0.2 → 1.1.0)](#backstagetypes-102--110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-client` (1.4.1 → 1.4.2)](#backstagecatalog-client-141--142)
+  - [`@backstage/config-loader` (1.3.0 → 1.3.1)](#backstageconfig-loader-130--131)
+  - [`@backstage/core-app-api` (1.8.0 → 1.8.1)](#backstagecore-app-api-180--181)
+  - [`@backstage/core-plugin-api` (1.5.1 → 1.5.2)](#backstagecore-plugin-api-151--152)
+  - [`@backstage/dev-utils` (1.0.15 → 1.0.16)](#backstagedev-utils-1015--1016)
+  - [`@backstage/plugin-catalog` (1.11.1 → 1.11.2)](#backstageplugin-catalog-1111--1112)
+  - [`@backstage/plugin-search` (1.3.1 → 1.3.2)](#backstageplugin-search-131--132)
+  - [`@backstage/plugin-search-backend` (1.3.1 → 1.3.2)](#backstageplugin-search-backend-131--132)
+  - [`@backstage/plugin-search-react` (1.6.1 → 1.6.2)](#backstageplugin-search-react-161--162)
   - [`@backstage/plugin-techdocs` (1.6.3 → 1.6.4)](#backstageplugin-techdocs-163--164)
   - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.14 → 1.0.15)](#backstageplugin-techdocs-addons-test-utils-1014--1015)
   - [`@backstage/plugin-techdocs-node` (1.7.1 → 1.7.2)](#backstageplugin-techdocs-node-171--172)
   - [`@backstage/plugin-techdocs-react` (1.1.6 → 1.1.7)](#backstageplugin-techdocs-react-116--117)
-  - [`@backstage/plugin-user-settings` (0.7.3 → 0.7.4)](#backstageplugin-user-settings-073--074)
-  - [`@backstage/repo-tools` (0.3.0 → 0.3.1)](#backstagerepo-tools-030--031)
   - [`@techdocs/cli` (1.4.2 → 1.4.3)](#techdocscli-142--143)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -419,136 +421,7 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
   + StaticExploreToolProvider.fromConfig(env.config)
   ```
 
-## Other minor version bumps
-
-### `@backstage/app-defaults` (1.3.1 → [1.4.0](../../changelogs/@backstage/app-defaults.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`1fd38bc4141a`](https://github.com/backstage/backstage/commit/1fd38bc4141a): **Material UI v5 Support:** Adding platform-wide support for Material UI v5 allowing a transition phase for migrating central plugins & components over. We still support v4 instances & plugins by adding a
-
-  To allow the future support of plugins & components using Material UI v5 you want to upgrade your `AppTheme`'s to using the `UnifiedThemeProvider`
-
-  ```diff
-       Provider: ({ children }) => (
-  -    <ThemeProvider theme={lightTheme}>
-  -      <CssBaseline>{children}</CssBaseline>
-  -    </ThemeProvider>
-  +    <UnifiedThemeProvider theme={builtinThemes.light} children={children} />
-       ),
-  ```
-
-### `@backstage/catalog-model` (1.3.0 → [1.4.0](../../changelogs/@backstage/catalog-model.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`33eae4b39a95`](https://github.com/backstage/backstage/commit/33eae4b39a95): Deprecate target field and make targetRef required in common.schema.json
-
-##### Patch Changes
-
-- [`af748a148d52`](https://github.com/backstage/backstage/commit/af748a148d52): Add OpenAPI Specification (OAS) v3.1.0 examples.
-- [`1df5fc954798`](https://github.com/backstage/backstage/commit/1df5fc954798): Remove requirement for 'target' property of EntityRelation
-
-### `@backstage/errors` (1.1.5 → [1.2.0](../../changelogs/@backstage/errors.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`c4e8fefd9f13`](https://github.com/backstage/backstage/commit/c4e8fefd9f13): Added `ServiceUnavailableError`
-
-### `@backstage/plugin-catalog-backend` (1.9.1 → [1.10.0](../../changelogs/@backstage/plugin-catalog-backend.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`44c7ad6b8e11`](https://github.com/backstage/backstage/commit/44c7ad6b8e11): Adds an optional `EventBroker` that is used for sending an event when there are conflicts, with details of the conflict so that it can be handled elsewhere.
-
-##### Patch Changes
-
-- [`77e04a2d55be`](https://github.com/backstage/backstage/commit/77e04a2d55be): Replace getBearerToken with library function of same
-- [`ee411e7c2623`](https://github.com/backstage/backstage/commit/ee411e7c2623): Update OpenAPI specs to be in line with linting standards.
-- [`b8374d5d93b6`](https://github.com/backstage/backstage/commit/b8374d5d93b6): Add a base plate for performance testing of the catalog
-
-### `@backstage/plugin-catalog-react` (1.6.0 → [1.7.0](../../changelogs/@backstage/plugin-catalog-react.md#170))
-
-#### 1.7.0
-
-##### Minor Changes
-
-- [`cb4c15989b6b`](https://github.com/backstage/backstage/commit/cb4c15989b6b): The `EntityOwnerPicker` component has undergone improvements to enhance its performance.
-  The previous implementation inferred users and groups displayed by the `EntityOwnerPicker` component based on the entities available in the `EntityListContext`. The updated version no longer relies on the `EntityListContext` for inference, allowing for better decoupling and improved performance.
-
-  The component now loads entities asynchronously, resulting in improved performance and responsiveness. A new `mode` prop has been introduced which provides two different behaviours:
-
-  - `<EntityOwnerPicker mode="owners-only" />`: loads the owners data asynchronously using the facets endpoint. The data is kept in memory and rendered asynchronously as the user scrolls. This is the default mode and is supposed to be retro-compatible with the previous implementation.
-
-  - `<EntityOwnerPicker mode="all" />` loads all users and groups present in the catalog asynchronously. The data is loaded in batches as the user scrolls. This is more efficient than `owners-only`, but has the drawback of displaying users and groups who aren't owner of any entity.
-
-##### Patch Changes
-
-- [`d68692aee97e`](https://github.com/backstage/backstage/commit/d68692aee97e): Make `useRelatedEntities` use `getEntitiesByRefs` under the hood
-- [`429319d080cd`](https://github.com/backstage/backstage/commit/429319d080cd): `EntityAutocompletePicker` add `initialSelectedOptions` prop
-- [`429319d080cd`](https://github.com/backstage/backstage/commit/429319d080cd): `EntityLifecycleFilter` loads data using the facets endpoint
-
-### `@backstage/plugin-scaffolder` (1.13.1 → [1.14.0](../../changelogs/@backstage/plugin-scaffolder.md#1140))
-
-#### 1.14.0
-
-##### Minor Changes
-
-- [`464125e9b1ba`](https://github.com/backstage/backstage/commit/464125e9b1ba): Added `MyGroupsPicker` field extension that will display a dropdown of groups a user is part of.
-
-##### Patch Changes
-
-- [`cda753a797b5`](https://github.com/backstage/backstage/commit/cda753a797b5): Forward `Authorization` header for `EventSource` when credentials are available.
-- [`2ff94da135a4`](https://github.com/backstage/backstage/commit/2ff94da135a4): bump `rjsf` dependencies to 5.7.3
-- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
-
-### `@backstage/plugin-scaffolder-react` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-scaffolder-react.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`6b571405f806`](https://github.com/backstage/backstage/commit/6b571405f806): `scaffolder/next`: Provide some default template components to `rjsf` to allow for standardization and markdown descriptions
-- [`4505dc3b4598`](https://github.com/backstage/backstage/commit/4505dc3b4598): `scaffolder/next`: Don't render `TemplateGroups` when there's no results in with search query
-- [`a452bda74d7a`](https://github.com/backstage/backstage/commit/a452bda74d7a): Fixed typescript casting bug for useTemplateParameterSchema hook
-- [`6b571405f806`](https://github.com/backstage/backstage/commit/6b571405f806): `scaffolder/next`: provide a `ScaffolderField` component which is meant to replace some of the `FormControl` components from Material UI, making it easier to write `FieldExtensions`.
-
-##### Patch Changes
-
-- [`84a5c7724c7e`](https://github.com/backstage/backstage/commit/84a5c7724c7e): fixed refresh problem when backstage backend disconnects without any feedback to user. Now we send a generic message and try to reconnect after 15 seconds
-- [`cf34311cdbe1`](https://github.com/backstage/backstage/commit/cf34311cdbe1): Extract `ui:*` fields from conditional `then` and `else` schema branches.
-- [`2ff94da135a4`](https://github.com/backstage/backstage/commit/2ff94da135a4): bump `rjsf` dependencies to 5.7.3
-- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
-
-### `@backstage/test-utils` (1.3.1 → [1.4.0](../../changelogs/@backstage/test-utils.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`1fd38bc4141a`](https://github.com/backstage/backstage/commit/1fd38bc4141a): Test App Wrapper is now using `UnifiedThemeProvider` for supporting Material UI v5 next to Material UI v4 in tests.
-
-##### Patch Changes
-
-- [`55853a367174`](https://github.com/backstage/backstage/commit/55853a367174): Add a `fetchApiRef` implementation by default
-
-### `@backstage/types` (1.0.2 → [1.1.0](../../changelogs/@backstage/types.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`a5c5491ff50c`](https://github.com/backstage/backstage/commit/a5c5491ff50c): Added a `durationToMilliseconds` function to help with the conversion to a single duration number
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.4.3 → [0.4.4](../../changelogs/@backstage/backend-app-api.md#044))
 
@@ -578,14 +451,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 
 - [`68a21956ef52`](https://github.com/backstage/backstage/commit/68a21956ef52): Remove reference to deprecated import
 
-### `@backstage/catalog-client` (1.4.1 → [1.4.2](../../changelogs/@backstage/catalog-client.md#142))
-
-#### 1.4.2
-
-##### Patch Changes
-
-- [`cc936b529676`](https://github.com/backstage/backstage/commit/cc936b529676): Updated API docs
-
 ### `@backstage/cli` (0.22.7 → [0.22.8](../../changelogs/@backstage/cli.md#0228))
 
 #### 0.22.8
@@ -599,25 +464,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 - [`6816352500a7`](https://github.com/backstage/backstage/commit/6816352500a7): Add discovery feature to the onboard cli command.
 - [`20b7da6f1311`](https://github.com/backstage/backstage/commit/20b7da6f1311): Enforcing Material UI v5 specific linting to minimize bundle size.
 
-### `@backstage/config-loader` (1.3.0 → [1.3.1](../../changelogs/@backstage/config-loader.md#131))
-
-#### 1.3.1
-
-##### Patch Changes
-
-- [`f25427f665f7`](https://github.com/backstage/backstage/commit/f25427f665f7): Fix a bug where config items with `/` in the key were incorrectly handled.
-- [`a5c5491ff50c`](https://github.com/backstage/backstage/commit/a5c5491ff50c): Use `durationToMilliseconds` from `@backstage/types` instead of our own
-
-### `@backstage/core-app-api` (1.8.0 → [1.8.1](../../changelogs/@backstage/core-app-api.md#181))
-
-#### 1.8.1
-
-##### Patch Changes
-
-- [`12adfbc8fe2d`](https://github.com/backstage/backstage/commit/12adfbc8fe2d): Fixed a bug that prevented accurate plugin and route data from being applied to `navigate` analytics events when users visited pages constructed with `<EntityLayout>`, `<TabbedLayout>`, and similar components that are used to gather one or more routable extensions under a given path.
-- [`ac677bc30ae0`](https://github.com/backstage/backstage/commit/ac677bc30ae0): Expose discovery.endpoints configuration to use FrontendHostDiscovery
-- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
-
 ### `@backstage/core-components` (0.13.1 → [0.13.2](../../changelogs/@backstage/core-components.md#0132))
 
 #### 0.13.2
@@ -630,15 +476,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 - [`83bdc3a555c1`](https://github.com/backstage/backstage/commit/83bdc3a555c1): Replaced usages of `theme.palette.theme.hint` with `theme.palette.text.secondary` as it has been removed in Material UI v5
 - [`b4cc4b1415e9`](https://github.com/backstage/backstage/commit/b4cc4b1415e9): SupportButton auto focus first item when opened.
 - [`e33beb1f2a8e`](https://github.com/backstage/backstage/commit/e33beb1f2a8e): Make the documentation pages printable (also handy for exporting to PDF)
-
-### `@backstage/core-plugin-api` (1.5.1 → [1.5.2](../../changelogs/@backstage/core-plugin-api.md#152))
-
-#### 1.5.2
-
-##### Patch Changes
-
-- [`12adfbc8fe2d`](https://github.com/backstage/backstage/commit/12adfbc8fe2d): Fixed a bug that prevented accurate plugin and route data from being applied to `navigate` analytics events when users visited pages constructed with `<EntityLayout>`, `<TabbedLayout>`, and similar components that are used to gather one or more routable extensions under a given path.
-- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
 
 ### `@backstage/create-app` (0.5.1 → [0.5.2](../../changelogs/@backstage/create-app.md#052))
 
@@ -661,14 +498,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
   ```
 
 - [`68a21956ef52`](https://github.com/backstage/backstage/commit/68a21956ef52): Remove reference to deprecated import
-
-### `@backstage/dev-utils` (1.0.15 → [1.0.16](../../changelogs/@backstage/dev-utils.md#1016))
-
-#### 1.0.16
-
-##### Patch Changes
-
-- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
 
 ### `@backstage/integration-aws-node` (0.1.3 → [0.1.4](../../changelogs/@backstage/integration-aws-node.md#014))
 
@@ -752,19 +581,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 ##### Patch Changes
 
 - [`ed290e273086`](https://github.com/backstage/backstage/commit/ed290e273086): Remove `cross-fetch` dependency as it's not used
-
-### `@backstage/plugin-catalog` (1.11.1 → [1.11.2](../../changelogs/@backstage/plugin-catalog.md#1112))
-
-#### 1.11.2
-
-##### Patch Changes
-
-- [`08f177b91084`](https://github.com/backstage/backstage/commit/08f177b91084): Add link from Template entity to the scaffolder launch page for the template in the AboutCard.
-- [`2e036369d83b`](https://github.com/backstage/backstage/commit/2e036369d83b): Updated `alertApi` usages with severity of `info` or `success` to use `display: transient`
-- [`530b6f364c8c`](https://github.com/backstage/backstage/commit/530b6f364c8c): Adding in type and kind entity details to catalog table title for user clarity
-- [`886055301abe`](https://github.com/backstage/backstage/commit/886055301abe): `CatalogIndexPage` now accepts an optional `ownerPickerMode` for toggling the behavior of the `EntityOwnerPicker`,
-  exposing a new mode `<CatalogIndexPage ownerPickerMode="all" />` particularly suitable for larger catalogs. In this new mode, `EntityOwnerPicker` will display all the users and groups present in the catalog.
-- [`47b01e4c5315`](https://github.com/backstage/backstage/commit/47b01e4c5315): Keyboard navigation to open EntityContextMenu now focus visible the first element.
 
 ### `@backstage/plugin-catalog-backend-module-aws` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#021))
 
@@ -1053,23 +869,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 - [`30e6edd7f6a5`](https://github.com/backstage/backstage/commit/30e6edd7f6a5): Add support for dry run for `gitlab:group:ensureExists` action.
 - [`f5a66052f04f`](https://github.com/backstage/backstage/commit/f5a66052f04f): Tweak README
 
-### `@backstage/plugin-search` (1.3.1 → [1.3.2](../../changelogs/@backstage/plugin-search.md#132))
-
-#### 1.3.2
-
-##### Patch Changes
-
-- [`e8c55c063b88`](https://github.com/backstage/backstage/commit/e8c55c063b88): Fixes `SearchModal` and `HomePageSearchBar` components to use search bar reference value when "enter" is pressed, avoiding waiting for query state debounce.
-- [`2f660eb573cc`](https://github.com/backstage/backstage/commit/2f660eb573cc): Fix SearchBar styles & update StoryBook stories for custom styles for `notchedOutline` class.
-
-### `@backstage/plugin-search-backend` (1.3.1 → [1.3.2](../../changelogs/@backstage/plugin-search-backend.md#132))
-
-#### 1.3.2
-
-##### Patch Changes
-
-- [`ee411e7c2623`](https://github.com/backstage/backstage/commit/ee411e7c2623): Update OpenAPI specs to be in line with linting standards.
-
 ### `@backstage/plugin-search-backend-module-explore` (0.1.1 → [0.1.2](../../changelogs/@backstage/plugin-search-backend-module-explore.md#012))
 
 #### 0.1.2
@@ -1097,15 +896,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 
 - [`3c09e8d3cb0c`](https://github.com/backstage/backstage/commit/3c09e8d3cb0c): Updated Postgres search query filter in DatabaseDocumentStore to support field value search in array.
 
-### `@backstage/plugin-search-react` (1.6.1 → [1.6.2](../../changelogs/@backstage/plugin-search-react.md#162))
-
-#### 1.6.2
-
-##### Patch Changes
-
-- [`0134c1aa4f36`](https://github.com/backstage/backstage/commit/0134c1aa4f36): Fix accessibility issue in `SearchCheckbox` component, making it possible to use the field via keyboard.
-- [`2f660eb573cc`](https://github.com/backstage/backstage/commit/2f660eb573cc): Fix SearchBar styles & update StoryBook stories for custom styles for `notchedOutline` class.
-
 ### `@backstage/plugin-shortcuts` (0.3.10 → [0.3.11](../../changelogs/@backstage/plugin-shortcuts.md#0311))
 
 #### 0.3.11
@@ -1129,6 +919,237 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 ##### Patch Changes
 
 - [`c03307ded3e6`](https://github.com/backstage/backstage/commit/c03307ded3e6): The check description is now rendered with markdown.
+
+### `@backstage/plugin-user-settings` (0.7.3 → [0.7.4](../../changelogs/@backstage/plugin-user-settings.md#074))
+
+#### 0.7.4
+
+##### Patch Changes
+
+- [`7a8441b9a323`](https://github.com/backstage/backstage/commit/7a8441b9a323): Reflect the updated sign on status for a provider after signing out.
+- [`5362a7c58eaa`](https://github.com/backstage/backstage/commit/5362a7c58eaa): Improved the user experience of the feature flags list. It now sorts the enabled flags to the top of the list to increase the visibilities of the toggled flags.
+
+### `@backstage/repo-tools` (0.3.0 → [0.3.1](../../changelogs/@backstage/repo-tools.md#031))
+
+#### 0.3.1
+
+##### Patch Changes
+
+- [`ee411e7c2623`](https://github.com/backstage/backstage/commit/ee411e7c2623): Adding a new command `schema openapi lint` to lint your OpenAPI specs and ensure consistent style across Backstage plugins.
+
+## Other minor version bumps
+
+### `@backstage/app-defaults` (1.3.1 → [1.4.0](../../changelogs/@backstage/app-defaults.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`1fd38bc4141a`](https://github.com/backstage/backstage/commit/1fd38bc4141a): **Material UI v5 Support:** Adding platform-wide support for Material UI v5 allowing a transition phase for migrating central plugins & components over. We still support v4 instances & plugins by adding a
+
+  To allow the future support of plugins & components using Material UI v5 you want to upgrade your `AppTheme`'s to using the `UnifiedThemeProvider`
+
+  ```diff
+       Provider: ({ children }) => (
+  -    <ThemeProvider theme={lightTheme}>
+  -      <CssBaseline>{children}</CssBaseline>
+  -    </ThemeProvider>
+  +    <UnifiedThemeProvider theme={builtinThemes.light} children={children} />
+       ),
+  ```
+
+### `@backstage/catalog-model` (1.3.0 → [1.4.0](../../changelogs/@backstage/catalog-model.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`33eae4b39a95`](https://github.com/backstage/backstage/commit/33eae4b39a95): Deprecate target field and make targetRef required in common.schema.json
+
+##### Patch Changes
+
+- [`af748a148d52`](https://github.com/backstage/backstage/commit/af748a148d52): Add OpenAPI Specification (OAS) v3.1.0 examples.
+- [`1df5fc954798`](https://github.com/backstage/backstage/commit/1df5fc954798): Remove requirement for 'target' property of EntityRelation
+
+### `@backstage/errors` (1.1.5 → [1.2.0](../../changelogs/@backstage/errors.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`c4e8fefd9f13`](https://github.com/backstage/backstage/commit/c4e8fefd9f13): Added `ServiceUnavailableError`
+
+### `@backstage/plugin-catalog-backend` (1.9.1 → [1.10.0](../../changelogs/@backstage/plugin-catalog-backend.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`44c7ad6b8e11`](https://github.com/backstage/backstage/commit/44c7ad6b8e11): Adds an optional `EventBroker` that is used for sending an event when there are conflicts, with details of the conflict so that it can be handled elsewhere.
+
+##### Patch Changes
+
+- [`77e04a2d55be`](https://github.com/backstage/backstage/commit/77e04a2d55be): Replace getBearerToken with library function of same
+- [`ee411e7c2623`](https://github.com/backstage/backstage/commit/ee411e7c2623): Update OpenAPI specs to be in line with linting standards.
+- [`b8374d5d93b6`](https://github.com/backstage/backstage/commit/b8374d5d93b6): Add a base plate for performance testing of the catalog
+
+### `@backstage/plugin-catalog-react` (1.6.0 → [1.7.0](../../changelogs/@backstage/plugin-catalog-react.md#170))
+
+#### 1.7.0
+
+##### Minor Changes
+
+- [`cb4c15989b6b`](https://github.com/backstage/backstage/commit/cb4c15989b6b): The `EntityOwnerPicker` component has undergone improvements to enhance its performance.
+  The previous implementation inferred users and groups displayed by the `EntityOwnerPicker` component based on the entities available in the `EntityListContext`. The updated version no longer relies on the `EntityListContext` for inference, allowing for better decoupling and improved performance.
+
+  The component now loads entities asynchronously, resulting in improved performance and responsiveness. A new `mode` prop has been introduced which provides two different behaviours:
+
+  - `<EntityOwnerPicker mode="owners-only" />`: loads the owners data asynchronously using the facets endpoint. The data is kept in memory and rendered asynchronously as the user scrolls. This is the default mode and is supposed to be retro-compatible with the previous implementation.
+
+  - `<EntityOwnerPicker mode="all" />` loads all users and groups present in the catalog asynchronously. The data is loaded in batches as the user scrolls. This is more efficient than `owners-only`, but has the drawback of displaying users and groups who aren't owner of any entity.
+
+##### Patch Changes
+
+- [`d68692aee97e`](https://github.com/backstage/backstage/commit/d68692aee97e): Make `useRelatedEntities` use `getEntitiesByRefs` under the hood
+- [`429319d080cd`](https://github.com/backstage/backstage/commit/429319d080cd): `EntityAutocompletePicker` add `initialSelectedOptions` prop
+- [`429319d080cd`](https://github.com/backstage/backstage/commit/429319d080cd): `EntityLifecycleFilter` loads data using the facets endpoint
+
+### `@backstage/plugin-scaffolder` (1.13.1 → [1.14.0](../../changelogs/@backstage/plugin-scaffolder.md#1140))
+
+#### 1.14.0
+
+##### Minor Changes
+
+- [`464125e9b1ba`](https://github.com/backstage/backstage/commit/464125e9b1ba): Added `MyGroupsPicker` field extension that will display a dropdown of groups a user is part of.
+
+##### Patch Changes
+
+- [`cda753a797b5`](https://github.com/backstage/backstage/commit/cda753a797b5): Forward `Authorization` header for `EventSource` when credentials are available.
+- [`2ff94da135a4`](https://github.com/backstage/backstage/commit/2ff94da135a4): bump `rjsf` dependencies to 5.7.3
+- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
+
+### `@backstage/plugin-scaffolder-react` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-scaffolder-react.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`6b571405f806`](https://github.com/backstage/backstage/commit/6b571405f806): `scaffolder/next`: Provide some default template components to `rjsf` to allow for standardization and markdown descriptions
+- [`4505dc3b4598`](https://github.com/backstage/backstage/commit/4505dc3b4598): `scaffolder/next`: Don't render `TemplateGroups` when there's no results in with search query
+- [`a452bda74d7a`](https://github.com/backstage/backstage/commit/a452bda74d7a): Fixed typescript casting bug for useTemplateParameterSchema hook
+- [`6b571405f806`](https://github.com/backstage/backstage/commit/6b571405f806): `scaffolder/next`: provide a `ScaffolderField` component which is meant to replace some of the `FormControl` components from Material UI, making it easier to write `FieldExtensions`.
+
+##### Patch Changes
+
+- [`84a5c7724c7e`](https://github.com/backstage/backstage/commit/84a5c7724c7e): fixed refresh problem when backstage backend disconnects without any feedback to user. Now we send a generic message and try to reconnect after 15 seconds
+- [`cf34311cdbe1`](https://github.com/backstage/backstage/commit/cf34311cdbe1): Extract `ui:*` fields from conditional `then` and `else` schema branches.
+- [`2ff94da135a4`](https://github.com/backstage/backstage/commit/2ff94da135a4): bump `rjsf` dependencies to 5.7.3
+- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
+
+### `@backstage/test-utils` (1.3.1 → [1.4.0](../../changelogs/@backstage/test-utils.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`1fd38bc4141a`](https://github.com/backstage/backstage/commit/1fd38bc4141a): Test App Wrapper is now using `UnifiedThemeProvider` for supporting Material UI v5 next to Material UI v4 in tests.
+
+##### Patch Changes
+
+- [`55853a367174`](https://github.com/backstage/backstage/commit/55853a367174): Add a `fetchApiRef` implementation by default
+
+### `@backstage/types` (1.0.2 → [1.1.0](../../changelogs/@backstage/types.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`a5c5491ff50c`](https://github.com/backstage/backstage/commit/a5c5491ff50c): Added a `durationToMilliseconds` function to help with the conversion to a single duration number
+
+## Other patch version bumps
+
+### `@backstage/catalog-client` (1.4.1 → [1.4.2](../../changelogs/@backstage/catalog-client.md#142))
+
+#### 1.4.2
+
+##### Patch Changes
+
+- [`cc936b529676`](https://github.com/backstage/backstage/commit/cc936b529676): Updated API docs
+
+### `@backstage/config-loader` (1.3.0 → [1.3.1](../../changelogs/@backstage/config-loader.md#131))
+
+#### 1.3.1
+
+##### Patch Changes
+
+- [`f25427f665f7`](https://github.com/backstage/backstage/commit/f25427f665f7): Fix a bug where config items with `/` in the key were incorrectly handled.
+- [`a5c5491ff50c`](https://github.com/backstage/backstage/commit/a5c5491ff50c): Use `durationToMilliseconds` from `@backstage/types` instead of our own
+
+### `@backstage/core-app-api` (1.8.0 → [1.8.1](../../changelogs/@backstage/core-app-api.md#181))
+
+#### 1.8.1
+
+##### Patch Changes
+
+- [`12adfbc8fe2d`](https://github.com/backstage/backstage/commit/12adfbc8fe2d): Fixed a bug that prevented accurate plugin and route data from being applied to `navigate` analytics events when users visited pages constructed with `<EntityLayout>`, `<TabbedLayout>`, and similar components that are used to gather one or more routable extensions under a given path.
+- [`ac677bc30ae0`](https://github.com/backstage/backstage/commit/ac677bc30ae0): Expose discovery.endpoints configuration to use FrontendHostDiscovery
+- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
+
+### `@backstage/core-plugin-api` (1.5.1 → [1.5.2](../../changelogs/@backstage/core-plugin-api.md#152))
+
+#### 1.5.2
+
+##### Patch Changes
+
+- [`12adfbc8fe2d`](https://github.com/backstage/backstage/commit/12adfbc8fe2d): Fixed a bug that prevented accurate plugin and route data from being applied to `navigate` analytics events when users visited pages constructed with `<EntityLayout>`, `<TabbedLayout>`, and similar components that are used to gather one or more routable extensions under a given path.
+- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
+
+### `@backstage/dev-utils` (1.0.15 → [1.0.16](../../changelogs/@backstage/dev-utils.md#1016))
+
+#### 1.0.16
+
+##### Patch Changes
+
+- [`74b216ee4e50`](https://github.com/backstage/backstage/commit/74b216ee4e50): Add `PropsWithChildren` to usages of `ComponentType`, in preparation for React 18 where the children are no longer implicit.
+
+### `@backstage/plugin-catalog` (1.11.1 → [1.11.2](../../changelogs/@backstage/plugin-catalog.md#1112))
+
+#### 1.11.2
+
+##### Patch Changes
+
+- [`08f177b91084`](https://github.com/backstage/backstage/commit/08f177b91084): Add link from Template entity to the scaffolder launch page for the template in the AboutCard.
+- [`2e036369d83b`](https://github.com/backstage/backstage/commit/2e036369d83b): Updated `alertApi` usages with severity of `info` or `success` to use `display: transient`
+- [`530b6f364c8c`](https://github.com/backstage/backstage/commit/530b6f364c8c): Adding in type and kind entity details to catalog table title for user clarity
+- [`886055301abe`](https://github.com/backstage/backstage/commit/886055301abe): `CatalogIndexPage` now accepts an optional `ownerPickerMode` for toggling the behavior of the `EntityOwnerPicker`,
+  exposing a new mode `<CatalogIndexPage ownerPickerMode="all" />` particularly suitable for larger catalogs. In this new mode, `EntityOwnerPicker` will display all the users and groups present in the catalog.
+- [`47b01e4c5315`](https://github.com/backstage/backstage/commit/47b01e4c5315): Keyboard navigation to open EntityContextMenu now focus visible the first element.
+
+### `@backstage/plugin-search` (1.3.1 → [1.3.2](../../changelogs/@backstage/plugin-search.md#132))
+
+#### 1.3.2
+
+##### Patch Changes
+
+- [`e8c55c063b88`](https://github.com/backstage/backstage/commit/e8c55c063b88): Fixes `SearchModal` and `HomePageSearchBar` components to use search bar reference value when "enter" is pressed, avoiding waiting for query state debounce.
+- [`2f660eb573cc`](https://github.com/backstage/backstage/commit/2f660eb573cc): Fix SearchBar styles & update StoryBook stories for custom styles for `notchedOutline` class.
+
+### `@backstage/plugin-search-backend` (1.3.1 → [1.3.2](../../changelogs/@backstage/plugin-search-backend.md#132))
+
+#### 1.3.2
+
+##### Patch Changes
+
+- [`ee411e7c2623`](https://github.com/backstage/backstage/commit/ee411e7c2623): Update OpenAPI specs to be in line with linting standards.
+
+### `@backstage/plugin-search-react` (1.6.1 → [1.6.2](../../changelogs/@backstage/plugin-search-react.md#162))
+
+#### 1.6.2
+
+##### Patch Changes
+
+- [`0134c1aa4f36`](https://github.com/backstage/backstage/commit/0134c1aa4f36): Fix accessibility issue in `SearchCheckbox` component, making it possible to use the field via keyboard.
+- [`2f660eb573cc`](https://github.com/backstage/backstage/commit/2f660eb573cc): Fix SearchBar styles & update StoryBook stories for custom styles for `notchedOutline` class.
 
 ### `@backstage/plugin-techdocs` (1.6.3 → [1.6.4](../../changelogs/@backstage/plugin-techdocs.md#164))
 
@@ -1165,23 +1186,6 @@ Changes between 1.14.2 and 1.15.0 — 199 changed and 5 added packages.
 ##### Patch Changes
 
 - [`3d11596a72b5`](https://github.com/backstage/backstage/commit/3d11596a72b5): Update plugin installation docs to be more consistent across documentations
-
-### `@backstage/plugin-user-settings` (0.7.3 → [0.7.4](../../changelogs/@backstage/plugin-user-settings.md#074))
-
-#### 0.7.4
-
-##### Patch Changes
-
-- [`7a8441b9a323`](https://github.com/backstage/backstage/commit/7a8441b9a323): Reflect the updated sign on status for a provider after signing out.
-- [`5362a7c58eaa`](https://github.com/backstage/backstage/commit/5362a7c58eaa): Improved the user experience of the feature flags list. It now sorts the enabled flags to the top of the list to increase the visibilities of the toggled flags.
-
-### `@backstage/repo-tools` (0.3.0 → [0.3.1](../../changelogs/@backstage/repo-tools.md#031))
-
-#### 0.3.1
-
-##### Patch Changes
-
-- [`ee411e7c2623`](https://github.com/backstage/backstage/commit/ee411e7c2623): Adding a new command `schema openapi lint` to lint your OpenAPI specs and ensure consistent style across Backstage plugins.
 
 ### `@techdocs/cli` (1.4.2 → [1.4.3](../../changelogs/@techdocs/cli.md#143))
 

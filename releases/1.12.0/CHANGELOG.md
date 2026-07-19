@@ -1,6 +1,6 @@
 # Backstage Release 1.12.0 changelog
 
-Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
+Changes between 1.11.1 and 1.12.0 — 3 added, 0 removed, 188 upgraded, 10 unchanged packages.
 
 ## Summary
 
@@ -9,8 +9,9 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [Major version bumps](#major-version-bumps): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 4 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 123 packages
 - [Other minor version bumps](#other-minor-version-bumps): 12 packages
-- [Other patch version bumps](#other-patch-version-bumps): 139 packages
+- [Other patch version bumps](#other-patch-version-bumps): 16 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 27 packages
 
 ## Table of contents
@@ -33,38 +34,18 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
   - [`@backstage/plugin-explore-backend` (0.0.4 → 0.0.5)](#backstageplugin-explore-backend-004--005)
   - [`@backstage/plugin-explore-react` (0.0.26 → 0.0.27)](#backstageplugin-explore-react-0026--0027)
   - [`@backstage/release-manifests` (0.0.8 → 0.0.9)](#backstagerelease-manifests-008--009)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/catalog-client` (1.3.1 → 1.4.0)](#backstagecatalog-client-131--140)
-  - [`@backstage/core-plugin-api` (1.4.0 → 1.5.0)](#backstagecore-plugin-api-140--150)
-  - [`@backstage/plugin-catalog` (1.8.0 → 1.9.0)](#backstageplugin-catalog-180--190)
-  - [`@backstage/plugin-catalog-backend` (1.7.2 → 1.8.0)](#backstageplugin-catalog-backend-172--180)
-  - [`@backstage/plugin-catalog-react` (1.3.0 → 1.4.0)](#backstageplugin-catalog-react-130--140)
-  - [`@backstage/plugin-scaffolder` (1.11.0 → 1.12.0)](#backstageplugin-scaffolder-1110--1120)
-  - [`@backstage/plugin-scaffolder-backend` (1.11.0 → 1.12.0)](#backstageplugin-scaffolder-backend-1110--1120)
-  - [`@backstage/plugin-scaffolder-react` (1.1.0 → 1.2.0)](#backstageplugin-scaffolder-react-110--120)
-  - [`@backstage/plugin-techdocs` (1.5.0 → 1.6.0)](#backstageplugin-techdocs-150--160)
-  - [`@backstage/plugin-techdocs-backend` (1.5.3 → 1.6.0)](#backstageplugin-techdocs-backend-153--160)
-  - [`@backstage/plugin-techdocs-node` (1.5.0 → 1.6.0)](#backstageplugin-techdocs-node-150--160)
-  - [`@techdocs/cli` (1.3.2 → 1.4.0)](#techdocscli-132--140)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.4.0 → 0.4.1)](#backstagebackend-app-api-040--041)
   - [`@backstage/backend-common` (0.18.2 → 0.18.3)](#backstagebackend-common-0182--0183)
   - [`@backstage/backend-defaults` (0.1.7 → 0.1.8)](#backstagebackend-defaults-017--018)
   - [`@backstage/backend-dev-utils` (0.1.0 → 0.1.1)](#backstagebackend-dev-utils-010--011)
   - [`@backstage/backend-test-utils` (0.1.34 → 0.1.35)](#backstagebackend-test-utils-0134--0135)
-  - [`@backstage/catalog-model` (1.2.0 → 1.2.1)](#backstagecatalog-model-120--121)
   - [`@backstage/cli` (0.22.3 → 0.22.4)](#backstagecli-0223--0224)
   - [`@backstage/cli-common` (0.1.11 → 0.1.12)](#backstagecli-common-0111--0112)
   - [`@backstage/codemods` (0.1.43 → 0.1.44)](#backstagecodemods-0143--0144)
-  - [`@backstage/config` (1.0.6 → 1.0.7)](#backstageconfig-106--107)
-  - [`@backstage/config-loader` (1.1.8 → 1.1.9)](#backstageconfig-loader-118--119)
   - [`@backstage/core-components` (0.12.4 → 0.12.5)](#backstagecore-components-0124--0125)
   - [`@backstage/create-app` (0.4.37 → 0.4.38)](#backstagecreate-app-0437--0438)
-  - [`@backstage/dev-utils` (1.0.12 → 1.0.13)](#backstagedev-utils-1012--1013)
-  - [`@backstage/errors` (1.1.4 → 1.1.5)](#backstageerrors-114--115)
   - [`@backstage/eslint-plugin` (0.1.1 → 0.1.2)](#backstageeslint-plugin-011--012)
-  - [`@backstage/integration` (1.4.2 → 1.4.3)](#backstageintegration-142--143)
-  - [`@backstage/integration-react` (1.1.10 → 1.1.11)](#backstageintegration-react-1110--1111)
   - [`@backstage/plugin-adr` (0.4.0 → 0.4.1)](#backstageplugin-adr-040--041)
   - [`@backstage/plugin-adr-backend` (0.3.0 → 0.3.1)](#backstageplugin-adr-backend-030--031)
   - [`@backstage/plugin-airbrake` (0.3.15 → 0.3.16)](#backstageplugin-airbrake-0315--0316)
@@ -94,10 +75,8 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
   - [`@backstage/plugin-catalog-backend-module-gitlab` (0.1.13 → 0.1.14)](#backstageplugin-catalog-backend-module-gitlab-0113--0114)
   - [`@backstage/plugin-catalog-backend-module-ldap` (0.5.9 → 0.5.10)](#backstageplugin-catalog-backend-module-ldap-059--0510)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.5.1 → 0.5.2)](#backstageplugin-catalog-backend-module-msgraph-051--052)
-  - [`@backstage/plugin-catalog-common` (1.0.11 → 1.0.12)](#backstageplugin-catalog-common-1011--1012)
   - [`@backstage/plugin-catalog-graphql` (0.3.18 → 0.3.19)](#backstageplugin-catalog-graphql-0318--0319)
   - [`@backstage/plugin-catalog-import` (0.9.5 → 0.9.6)](#backstageplugin-catalog-import-095--096)
-  - [`@backstage/plugin-catalog-node` (1.3.3 → 1.3.4)](#backstageplugin-catalog-node-133--134)
   - [`@backstage/plugin-circleci` (0.3.15 → 0.3.16)](#backstageplugin-circleci-0315--0316)
   - [`@backstage/plugin-cloudbuild` (0.3.15 → 0.3.16)](#backstageplugin-cloudbuild-0315--0316)
   - [`@backstage/plugin-code-climate` (0.1.15 → 0.1.16)](#backstageplugin-code-climate-0115--0116)
@@ -159,9 +138,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
   - [`@backstage/plugin-rollbar` (0.4.15 → 0.4.16)](#backstageplugin-rollbar-0415--0416)
   - [`@backstage/plugin-rollbar-backend` (0.1.39 → 0.1.40)](#backstageplugin-rollbar-backend-0139--0140)
   - [`@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.2.17 → 0.2.18)](#backstageplugin-scaffolder-backend-module-cookiecutter-0217--0218)
-  - [`@backstage/plugin-search` (1.1.0 → 1.1.1)](#backstageplugin-search-110--111)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.1.3 → 1.1.4)](#backstageplugin-search-backend-module-elasticsearch-113--114)
-  - [`@backstage/plugin-search-react` (1.5.0 → 1.5.1)](#backstageplugin-search-react-150--151)
   - [`@backstage/plugin-sentry` (0.5.0 → 0.5.1)](#backstageplugin-sentry-050--051)
   - [`@backstage/plugin-shortcuts` (0.3.7 → 0.3.8)](#backstageplugin-shortcuts-037--038)
   - [`@backstage/plugin-sonarqube` (0.6.4 → 0.6.5)](#backstageplugin-sonarqube-064--065)
@@ -174,9 +150,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
   - [`@backstage/plugin-tech-insights-backend` (0.5.8 → 0.5.9)](#backstageplugin-tech-insights-backend-058--059)
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.26 → 0.1.27)](#backstageplugin-tech-insights-backend-module-jsonfc-0126--0127)
   - [`@backstage/plugin-tech-radar` (0.6.1 → 0.6.2)](#backstageplugin-tech-radar-061--062)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.10 → 1.0.11)](#backstageplugin-techdocs-addons-test-utils-1010--1011)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.10 → 1.0.11)](#backstageplugin-techdocs-module-addons-contrib-1010--1011)
-  - [`@backstage/plugin-techdocs-react` (1.1.3 → 1.1.4)](#backstageplugin-techdocs-react-113--114)
   - [`@backstage/plugin-todo` (0.2.17 → 0.2.18)](#backstageplugin-todo-0217--0218)
   - [`@backstage/plugin-todo-backend` (0.1.39 → 0.1.40)](#backstageplugin-todo-backend-0139--0140)
   - [`@backstage/plugin-user-settings` (0.7.0 → 0.7.1)](#backstageplugin-user-settings-070--071)
@@ -184,8 +157,37 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
   - [`@backstage/plugin-vault-backend` (0.2.9 → 0.2.10)](#backstageplugin-vault-backend-029--0210)
   - [`@backstage/plugin-xcmetrics` (0.2.35 → 0.2.36)](#backstageplugin-xcmetrics-0235--0236)
   - [`@backstage/repo-tools` (0.1.2 → 0.1.3)](#backstagerepo-tools-012--013)
-  - [`@backstage/test-utils` (1.2.5 → 1.2.6)](#backstagetest-utils-125--126)
   - [`@backstage/theme` (0.2.17 → 0.2.18)](#backstagetheme-0217--0218)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/catalog-client` (1.3.1 → 1.4.0)](#backstagecatalog-client-131--140)
+  - [`@backstage/core-plugin-api` (1.4.0 → 1.5.0)](#backstagecore-plugin-api-140--150)
+  - [`@backstage/plugin-catalog` (1.8.0 → 1.9.0)](#backstageplugin-catalog-180--190)
+  - [`@backstage/plugin-catalog-backend` (1.7.2 → 1.8.0)](#backstageplugin-catalog-backend-172--180)
+  - [`@backstage/plugin-catalog-react` (1.3.0 → 1.4.0)](#backstageplugin-catalog-react-130--140)
+  - [`@backstage/plugin-scaffolder` (1.11.0 → 1.12.0)](#backstageplugin-scaffolder-1110--1120)
+  - [`@backstage/plugin-scaffolder-backend` (1.11.0 → 1.12.0)](#backstageplugin-scaffolder-backend-1110--1120)
+  - [`@backstage/plugin-scaffolder-react` (1.1.0 → 1.2.0)](#backstageplugin-scaffolder-react-110--120)
+  - [`@backstage/plugin-techdocs` (1.5.0 → 1.6.0)](#backstageplugin-techdocs-150--160)
+  - [`@backstage/plugin-techdocs-backend` (1.5.3 → 1.6.0)](#backstageplugin-techdocs-backend-153--160)
+  - [`@backstage/plugin-techdocs-node` (1.5.0 → 1.6.0)](#backstageplugin-techdocs-node-150--160)
+  - [`@techdocs/cli` (1.3.2 → 1.4.0)](#techdocscli-132--140)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-model` (1.2.0 → 1.2.1)](#backstagecatalog-model-120--121)
+  - [`@backstage/config` (1.0.6 → 1.0.7)](#backstageconfig-106--107)
+  - [`@backstage/config-loader` (1.1.8 → 1.1.9)](#backstageconfig-loader-118--119)
+  - [`@backstage/dev-utils` (1.0.12 → 1.0.13)](#backstagedev-utils-1012--1013)
+  - [`@backstage/errors` (1.1.4 → 1.1.5)](#backstageerrors-114--115)
+  - [`@backstage/integration` (1.4.2 → 1.4.3)](#backstageintegration-142--143)
+  - [`@backstage/integration-react` (1.1.10 → 1.1.11)](#backstageintegration-react-1110--1111)
+  - [`@backstage/plugin-catalog-common` (1.0.11 → 1.0.12)](#backstageplugin-catalog-common-1011--1012)
+  - [`@backstage/plugin-catalog-node` (1.3.3 → 1.3.4)](#backstageplugin-catalog-node-133--134)
+  - [`@backstage/plugin-search` (1.1.0 → 1.1.1)](#backstageplugin-search-110--111)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.1.3 → 1.1.4)](#backstageplugin-search-backend-module-elasticsearch-113--114)
+  - [`@backstage/plugin-search-react` (1.5.0 → 1.5.1)](#backstageplugin-search-react-150--151)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.10 → 1.0.11)](#backstageplugin-techdocs-addons-test-utils-1010--1011)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.10 → 1.0.11)](#backstageplugin-techdocs-module-addons-contrib-1010--1011)
+  - [`@backstage/plugin-techdocs-react` (1.1.3 → 1.1.4)](#backstageplugin-techdocs-react-113--114)
+  - [`@backstage/test-utils` (1.2.5 → 1.2.6)](#backstagetest-utils-125--126)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
 ## Newly added packages
@@ -367,243 +369,7 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
 
-## Other minor version bumps
-
-### `@backstage/catalog-client` (1.3.1 → [1.4.0](../../changelogs/@backstage/catalog-client.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`8c030b1826c`](https://github.com/backstage/backstage/commit/8c030b1826c): Add `queryEntities` method to `CatalogApi`.
-
-##### Patch Changes
-
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`c630360631f`](https://github.com/backstage/backstage/commit/c630360631f): Ensure that `getEntitiesByRefs` returns `undefined` instead of `null` for missing items
-
-### `@backstage/core-plugin-api` (1.4.0 → [1.5.0](../../changelogs/@backstage/core-plugin-api.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`ab750ddc4f2`](https://github.com/backstage/backstage/commit/ab750ddc4f2): The GitLab auth provider can now be used to get OpenID tokens.
-
-##### Patch Changes
-
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-
-### `@backstage/plugin-catalog` (1.8.0 → [1.9.0](../../changelogs/@backstage/plugin-catalog.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`23cc40039c0`](https://github.com/backstage/backstage/commit/23cc40039c0): Allow `EntitySwitch` to render all cases that match the condition.
-
-  This change introduces a new parameter for the `EntitySwitch` component
-  `renderMultipleMatches`. In case the parameter value is `all`, the `EntitySwitch`
-  will render all `EntitySwitch.Case` that contain `if` parameter, and it
-  evaluates to true. In case none of the cases match, the default case will be
-  rendered, if any.
-
-  This means for example in the CI/CD page you can now do the following:
-
-  ```tsx
-  <EntitySwitch renderMultipleMatches="all">
-    <EntitySwitch.Case if={isJenkinsAvailable}>Jenkins</EntitySwitch.Case>
-    <EntitySwitch.Case if={isCodebuildAvailable}>CodeBuild</EntitySwitch.Case>
-    <EntitySwitch.Case>No CI/CD</EntitySwitch.Case>
-  </EntitySwitch>
-  ```
-
-  This allows the component to have multiple CI/CD systems and all of those are
-  rendered on the same page.
-
-- [`3f75b7607ca`](https://github.com/backstage/backstage/commit/3f75b7607ca): Add ability to pass icon as function to have ability to customize it by search item
-- [`c9a9f3c834f`](https://github.com/backstage/backstage/commit/c9a9f3c834f): Add a `columns` prop to certain components that use the `EntityTable` for easier extensibility.
-
-##### Patch Changes
-
-- [`3fa41696820`](https://github.com/backstage/backstage/commit/3fa41696820): Make the "Copied!" message disappear automatically after some time
-- [`7e8930ae1c6`](https://github.com/backstage/backstage/commit/7e8930ae1c6): Fix icon alignment in `CatalogSearchResultListItem`
-- [`dbbde6ed353`](https://github.com/backstage/backstage/commit/dbbde6ed353): fix entity switch rendering when there is no default case
-- [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-
-### `@backstage/plugin-catalog-backend` (1.7.2 → [1.8.0](../../changelogs/@backstage/plugin-catalog-backend.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`7f4ea3d3602`](https://github.com/backstage/backstage/commit/7f4ea3d3602): Add /entities/by-query endpoint returning paginated entities.
-
-  The endpoint supports cursor base pagination and server side sorting of the entities
-
-##### Patch Changes
-
-- [`e675f902980`](https://github.com/backstage/backstage/commit/e675f902980): Add deprecations for symbols that were moved to `@backstage/plugin-catalog-node` a long time ago:
-
-  - `CatalogProcessor`
-  - `CatalogProcessorCache`
-  - `CatalogProcessorEmit`
-  - `CatalogProcessorEntityResult`
-  - `CatalogProcessorErrorResult`
-  - `CatalogProcessorLocationResult`
-  - `CatalogProcessorParser`
-  - `CatalogProcessorRefreshKeysResult`
-  - `CatalogProcessorRelationResult`
-  - `CatalogProcessorResult`
-  - `DeferredEntity`
-  - `EntityProvider`
-  - `EntityProviderConnection`
-  - `EntityProviderMutation`
-  - `EntityRelationSpec`
-  - `processingResult`
-
-  Also moved over and deprecated the following symbols:
-
-  - `locationSpecToLocationEntity`
-  - `locationSpecToMetadataName`
-
-- [`ac8929f2f31`](https://github.com/backstage/backstage/commit/ac8929f2f31): Fix export of `defaultCatalogCollatorEntityTransformer`.
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`f093ce83d58`](https://github.com/backstage/backstage/commit/f093ce83d58): Fix a bug where the batch fetch by ref endpoint did not work in conjunction with filtering (e.g. if authorization was enabled).
-
-### `@backstage/plugin-catalog-react` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-catalog-react.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`0a5b73b2926`](https://github.com/backstage/backstage/commit/0a5b73b2926): Add possibility to re-use EntityPicker for filters with multiple select.
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`24916d23494`](https://github.com/backstage/backstage/commit/24916d23494): Do not close `Autocomplete` powered multiple-selection filters when checking boxes
-
-### `@backstage/plugin-scaffolder` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-scaffolder.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`0d61fcca9c3`](https://github.com/backstage/backstage/commit/0d61fcca9c3): Update `EntityPicker` to use the fully qualified entity ref instead of the humanized version.
-- [`8f4d13f21cf`](https://github.com/backstage/backstage/commit/8f4d13f21cf): Move `useTaskStream`, `TaskBorder`, `TaskLogStream` and `TaskSteps` into `scaffolder-react`.
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`3c96e77b513`](https://github.com/backstage/backstage/commit/3c96e77b513): Make scaffolder adhere to page themes by using page `fontColor` consistently. If your theme overwrites template list or card headers, review those styles.
-- [`be3cddaab5f`](https://github.com/backstage/backstage/commit/be3cddaab5f): Getting credentials in the RepoUrlPicker now also works for targets without owner (e.g. Bitbucket Server).
-- [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
-- [`eb877bad736`](https://github.com/backstage/backstage/commit/eb877bad736): Create an "Other Templates" group when groups are given to scaffolder/next.
-- [`c10384a9235`](https://github.com/backstage/backstage/commit/c10384a9235): Switch to using `LinkButton` instead of the deprecated `Button`
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`0aae4596296`](https://github.com/backstage/backstage/commit/0aae4596296): Fix the scaffolder validator for arrays when the item is a field in the object
-
-### `@backstage/plugin-scaffolder-backend` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1120))
-
-#### 1.12.0
-
-##### Minor Changes
-
-- [`7d724d8ef56`](https://github.com/backstage/backstage/commit/7d724d8ef56): Added the ability to be able to define an actions `input` and `output` schema using `zod` instead of hand writing types and `jsonschema`
-
-##### Patch Changes
-
-- [`860de10fa67`](https://github.com/backstage/backstage/commit/860de10fa67): Make identity valid if subject of token is a backstage server-2-server auth token
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`c6c78b4acbe`](https://github.com/backstage/backstage/commit/c6c78b4acbe): throw error from catalog:fetch scaffolder action when entity is null and optional is false
-- [`9968f455921`](https://github.com/backstage/backstage/commit/9968f455921): catalog write action should allow any shape of object
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`7af12854970`](https://github.com/backstage/backstage/commit/7af12854970): Extended scaffolder action `catalog:fetch` to fetch multiple catalog entities by entity references.
-
-### `@backstage/plugin-scaffolder-react` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder-react.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`8f4d13f21cf`](https://github.com/backstage/backstage/commit/8f4d13f21cf): Move `useTaskStream`, `TaskBorder`, `TaskLogStream` and `TaskSteps` into `scaffolder-react`.
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`3c96e77b513`](https://github.com/backstage/backstage/commit/3c96e77b513): Make scaffolder adhere to page themes by using page `fontColor` consistently. If your theme overwrites template list or card headers, review those styles.
-- [`c8d78b9ae9d`](https://github.com/backstage/backstage/commit/c8d78b9ae9d): fix bug with `hasErrors` returning false when dealing with empty objects
-- [`9b8c374ace5`](https://github.com/backstage/backstage/commit/9b8c374ace5): Remove timer for skipped steps in Scaffolder Next's TaskSteps
-- [`44941fc97eb`](https://github.com/backstage/backstage/commit/44941fc97eb): scaffolder/next: Move the `uiSchema` to its own property in the validation `context` to align with component development and access of `ui:options`
-- [`d9893263ba9`](https://github.com/backstage/backstage/commit/d9893263ba9): scaffolder/next: Fix for steps without properties
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`cc418d652a7`](https://github.com/backstage/backstage/commit/cc418d652a7): scaffolder/next: Added the ability to get the fields definition in the schema in the validation function
-- [`d4100d0ec42`](https://github.com/backstage/backstage/commit/d4100d0ec42): Fix alignment bug for owners on `TemplateCard`
-
-### `@backstage/plugin-techdocs` (1.5.0 → [1.6.0](../../changelogs/@backstage/plugin-techdocs.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`3f75b7607ca`](https://github.com/backstage/backstage/commit/3f75b7607ca): Add ability to pass icon as function to have ability to customize it by search item
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`54a1e133b56`](https://github.com/backstage/backstage/commit/54a1e133b56): Fix bug that caused next and previous links not to work with certain versions of mkdocs-material
-- [`f320c299c67`](https://github.com/backstage/backstage/commit/f320c299c67): The HTML tag attributes in the documentation content inserted to shadow DOM is preserved to improve accessibility
-- [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
-- [`c10384a9235`](https://github.com/backstage/backstage/commit/c10384a9235): Switch to using `LinkButton` instead of the deprecated `Button`
-- [`8adfda60ae1`](https://github.com/backstage/backstage/commit/8adfda60ae1): Updated dependency `jss` to `~10.10.0`.
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`238cf657c09`](https://github.com/backstage/backstage/commit/238cf657c09): Copy to clipboard now works in a not secure context.
-
-### `@backstage/plugin-techdocs-backend` (1.5.3 → [1.6.0](../../changelogs/@backstage/plugin-techdocs-backend.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`92b495328bd`](https://github.com/backstage/backstage/commit/92b495328bd): Introduced alpha export of the `techdocsPlugin` using the new backend system.
-
-##### Patch Changes
-
-- [`40298b02778`](https://github.com/backstage/backstage/commit/40298b02778): Techdocs backend explains a bit more about what might have caused the docs not being found when building techdocs.
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-
-### `@backstage/plugin-techdocs-node` (1.5.0 → [1.6.0](../../changelogs/@backstage/plugin-techdocs-node.md#160))
-
-#### 1.6.0
-
-##### Minor Changes
-
-- [`ea2bbef1b16`](https://github.com/backstage/backstage/commit/ea2bbef1b16): Added support for an HTTPS proxy for techdocs AWS S3 requests
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`bf493710f50`](https://github.com/backstage/backstage/commit/bf493710f50): Update to a newer version of `@trendyol-js/openstack-swift-sdk`
-- [`bfe350ef4ce`](https://github.com/backstage/backstage/commit/bfe350ef4ce): Fixed bug that prevented deletion of stale files when non-empty directories where tried to be deleted as well.
-
-### `@techdocs/cli` (1.3.2 → [1.4.0](../../changelogs/@techdocs/cli.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`8e465ce52e2`](https://github.com/backstage/backstage/commit/8e465ce52e2): Running `@techdocs/cli generate` with the `--verbose` flag will now print the mkdocs output.
-- [`ea2bbef1b16`](https://github.com/backstage/backstage/commit/ea2bbef1b16): Added support for an HTTPS proxy for techdocs AWS S3 requests
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.4.0 → [0.4.1](../../changelogs/@backstage/backend-app-api.md#041))
 
@@ -671,14 +437,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
 - [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
 
-### `@backstage/catalog-model` (1.2.0 → [1.2.1](../../changelogs/@backstage/catalog-model.md#121))
-
-#### 1.2.1
-
-##### Patch Changes
-
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-
 ### `@backstage/cli` (0.22.3 → [0.22.4](../../changelogs/@backstage/cli.md#0224))
 
 #### 0.22.4
@@ -713,23 +471,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 
 - [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
 
-### `@backstage/config` (1.0.6 → [1.0.7](../../changelogs/@backstage/config.md#107))
-
-#### 1.0.7
-
-##### Patch Changes
-
-- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
-
-### `@backstage/config-loader` (1.1.8 → [1.1.9](../../changelogs/@backstage/config-loader.md#119))
-
-#### 1.1.9
-
-##### Patch Changes
-
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
-
 ### `@backstage/core-components` (0.12.4 → [0.12.5](../../changelogs/@backstage/core-components.md#0125))
 
 #### 0.12.5
@@ -757,22 +498,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
 - [`6ace2dd2c58`](https://github.com/backstage/backstage/commit/6ace2dd2c58): Added to the template `packages/app/.eslintignore` file to packages to ignore the contents of `packages/app/public`.
 
-### `@backstage/dev-utils` (1.0.12 → [1.0.13](../../changelogs/@backstage/dev-utils.md#1013))
-
-#### 1.0.13
-
-##### Patch Changes
-
-- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
-
-### `@backstage/errors` (1.1.4 → [1.1.5](../../changelogs/@backstage/errors.md#115))
-
-#### 1.1.5
-
-##### Patch Changes
-
-- [`3bf83a2aabf`](https://github.com/backstage/backstage/commit/3bf83a2aabf): Added `NotImplementedError`, which can be used when the server does not recognize the request method and is incapable of supporting it for any resource.
-
 ### `@backstage/eslint-plugin` (0.1.1 → [0.1.2](../../changelogs/@backstage/eslint-plugin.md#012))
 
 #### 0.1.2
@@ -780,22 +505,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 ##### Patch Changes
 
 - [`a061c466d66`](https://github.com/backstage/backstage/commit/a061c466d66): Fixing a bug that we should check internal dependencies too
-
-### `@backstage/integration` (1.4.2 → [1.4.3](../../changelogs/@backstage/integration.md#143))
-
-#### 1.4.3
-
-##### Patch Changes
-
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-
-### `@backstage/integration-react` (1.1.10 → [1.1.11](../../changelogs/@backstage/integration-react.md#1111))
-
-#### 1.1.11
-
-##### Patch Changes
-
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
 
 ### `@backstage/plugin-adr` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-adr.md#041))
 
@@ -1077,14 +786,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
 - [`2c234a89325`](https://github.com/backstage/backstage/commit/2c234a89325): properly support custom graph api URL
 
-### `@backstage/plugin-catalog-common` (1.0.11 → [1.0.12](../../changelogs/@backstage/plugin-catalog-common.md#1012))
-
-#### 1.0.12
-
-##### Patch Changes
-
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-
 ### `@backstage/plugin-catalog-graphql` (0.3.18 → [0.3.19](../../changelogs/@backstage/plugin-catalog-graphql.md#0319))
 
 #### 0.3.19
@@ -1104,15 +805,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 ##### Patch Changes
 
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-
-### `@backstage/plugin-catalog-node` (1.3.3 → [1.3.4](../../changelogs/@backstage/plugin-catalog-node.md#134))
-
-#### 1.3.4
-
-##### Patch Changes
-
-- [`e675f902980`](https://github.com/backstage/backstage/commit/e675f902980): Added `locationSpecToMetadataName` and `locationSpecToLocationEntity` as their new home, moved over from the backend package where they now are marked as deprecated.
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
 
 ### `@backstage/plugin-circleci` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-circleci.md#0316))
 
@@ -1652,32 +1344,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [`62414770ead`](https://github.com/backstage/backstage/commit/62414770ead): allow container runner to be undefined in cookiecutter plugin
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
 
-### `@backstage/plugin-search` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-search.md#111))
-
-#### 1.1.1
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-
-### `@backstage/plugin-search-react` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-search-react.md#151))
-
-#### 1.5.1
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`553f3c95011`](https://github.com/backstage/backstage/commit/553f3c95011): Correctly disable next button in `SearchPagination` on last page
-
 ### `@backstage/plugin-sentry` (0.5.0 → [0.5.1](../../changelogs/@backstage/plugin-sentry.md#051))
 
 #### 0.5.1
@@ -1789,34 +1455,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
 
-### `@backstage/plugin-techdocs-addons-test-utils` (1.0.10 → [1.0.11](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1011))
-
-#### 1.0.11
-
-##### Patch Changes
-
-- [`2b00d8a225c`](https://github.com/backstage/backstage/commit/2b00d8a225c): Fix bug/problem with test helper
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-
-### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.10 → [1.0.11](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#1011))
-
-#### 1.0.11
-
-##### Patch Changes
-
-- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`37cf85fb85c`](https://github.com/backstage/backstage/commit/37cf85fb85c): Fixed bug in IssueLink component where the URL was not generated properly when the repository was located inside a Gitlab subgroup
-
-### `@backstage/plugin-techdocs-react` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-techdocs-react.md#114))
-
-#### 1.1.4
-
-##### Patch Changes
-
-- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
-- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
-- [`8adfda60ae1`](https://github.com/backstage/backstage/commit/8adfda60ae1): Updated dependency `jss` to `~10.10.0`.
-
 ### `@backstage/plugin-todo` (0.2.17 → [0.2.18](../../changelogs/@backstage/plugin-todo.md#0218))
 
 #### 0.2.18
@@ -1876,6 +1514,380 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 - [`32a4a05838c`](https://github.com/backstage/backstage/commit/32a4a05838c): Tweaked type dependency check to trim wildcard type imports.
 - [`6ba8faf22ac`](https://github.com/backstage/backstage/commit/6ba8faf22ac): The API report generation process is now able to detect and generate reports for additional entry points declared in the package `"exports"` field.
 
+### `@backstage/theme` (0.2.17 → [0.2.18](../../changelogs/@backstage/theme.md#0218))
+
+#### 0.2.18
+
+##### Patch Changes
+
+- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
+
+## Other minor version bumps
+
+### `@backstage/catalog-client` (1.3.1 → [1.4.0](../../changelogs/@backstage/catalog-client.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`8c030b1826c`](https://github.com/backstage/backstage/commit/8c030b1826c): Add `queryEntities` method to `CatalogApi`.
+
+##### Patch Changes
+
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`c630360631f`](https://github.com/backstage/backstage/commit/c630360631f): Ensure that `getEntitiesByRefs` returns `undefined` instead of `null` for missing items
+
+### `@backstage/core-plugin-api` (1.4.0 → [1.5.0](../../changelogs/@backstage/core-plugin-api.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`ab750ddc4f2`](https://github.com/backstage/backstage/commit/ab750ddc4f2): The GitLab auth provider can now be used to get OpenID tokens.
+
+##### Patch Changes
+
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+
+### `@backstage/plugin-catalog` (1.8.0 → [1.9.0](../../changelogs/@backstage/plugin-catalog.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`23cc40039c0`](https://github.com/backstage/backstage/commit/23cc40039c0): Allow `EntitySwitch` to render all cases that match the condition.
+
+  This change introduces a new parameter for the `EntitySwitch` component
+  `renderMultipleMatches`. In case the parameter value is `all`, the `EntitySwitch`
+  will render all `EntitySwitch.Case` that contain `if` parameter, and it
+  evaluates to true. In case none of the cases match, the default case will be
+  rendered, if any.
+
+  This means for example in the CI/CD page you can now do the following:
+
+  ```tsx
+  <EntitySwitch renderMultipleMatches="all">
+    <EntitySwitch.Case if={isJenkinsAvailable}>Jenkins</EntitySwitch.Case>
+    <EntitySwitch.Case if={isCodebuildAvailable}>CodeBuild</EntitySwitch.Case>
+    <EntitySwitch.Case>No CI/CD</EntitySwitch.Case>
+  </EntitySwitch>
+  ```
+
+  This allows the component to have multiple CI/CD systems and all of those are
+  rendered on the same page.
+
+- [`3f75b7607ca`](https://github.com/backstage/backstage/commit/3f75b7607ca): Add ability to pass icon as function to have ability to customize it by search item
+- [`c9a9f3c834f`](https://github.com/backstage/backstage/commit/c9a9f3c834f): Add a `columns` prop to certain components that use the `EntityTable` for easier extensibility.
+
+##### Patch Changes
+
+- [`3fa41696820`](https://github.com/backstage/backstage/commit/3fa41696820): Make the "Copied!" message disappear automatically after some time
+- [`7e8930ae1c6`](https://github.com/backstage/backstage/commit/7e8930ae1c6): Fix icon alignment in `CatalogSearchResultListItem`
+- [`dbbde6ed353`](https://github.com/backstage/backstage/commit/dbbde6ed353): fix entity switch rendering when there is no default case
+- [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+
+### `@backstage/plugin-catalog-backend` (1.7.2 → [1.8.0](../../changelogs/@backstage/plugin-catalog-backend.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`7f4ea3d3602`](https://github.com/backstage/backstage/commit/7f4ea3d3602): Add /entities/by-query endpoint returning paginated entities.
+
+  The endpoint supports cursor base pagination and server side sorting of the entities
+
+##### Patch Changes
+
+- [`e675f902980`](https://github.com/backstage/backstage/commit/e675f902980): Add deprecations for symbols that were moved to `@backstage/plugin-catalog-node` a long time ago:
+
+  - `CatalogProcessor`
+  - `CatalogProcessorCache`
+  - `CatalogProcessorEmit`
+  - `CatalogProcessorEntityResult`
+  - `CatalogProcessorErrorResult`
+  - `CatalogProcessorLocationResult`
+  - `CatalogProcessorParser`
+  - `CatalogProcessorRefreshKeysResult`
+  - `CatalogProcessorRelationResult`
+  - `CatalogProcessorResult`
+  - `DeferredEntity`
+  - `EntityProvider`
+  - `EntityProviderConnection`
+  - `EntityProviderMutation`
+  - `EntityRelationSpec`
+  - `processingResult`
+
+  Also moved over and deprecated the following symbols:
+
+  - `locationSpecToLocationEntity`
+  - `locationSpecToMetadataName`
+
+- [`ac8929f2f31`](https://github.com/backstage/backstage/commit/ac8929f2f31): Fix export of `defaultCatalogCollatorEntityTransformer`.
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`f093ce83d58`](https://github.com/backstage/backstage/commit/f093ce83d58): Fix a bug where the batch fetch by ref endpoint did not work in conjunction with filtering (e.g. if authorization was enabled).
+
+### `@backstage/plugin-catalog-react` (1.3.0 → [1.4.0](../../changelogs/@backstage/plugin-catalog-react.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`0a5b73b2926`](https://github.com/backstage/backstage/commit/0a5b73b2926): Add possibility to re-use EntityPicker for filters with multiple select.
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`24916d23494`](https://github.com/backstage/backstage/commit/24916d23494): Do not close `Autocomplete` powered multiple-selection filters when checking boxes
+
+### `@backstage/plugin-scaffolder` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-scaffolder.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`0d61fcca9c3`](https://github.com/backstage/backstage/commit/0d61fcca9c3): Update `EntityPicker` to use the fully qualified entity ref instead of the humanized version.
+- [`8f4d13f21cf`](https://github.com/backstage/backstage/commit/8f4d13f21cf): Move `useTaskStream`, `TaskBorder`, `TaskLogStream` and `TaskSteps` into `scaffolder-react`.
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`3c96e77b513`](https://github.com/backstage/backstage/commit/3c96e77b513): Make scaffolder adhere to page themes by using page `fontColor` consistently. If your theme overwrites template list or card headers, review those styles.
+- [`be3cddaab5f`](https://github.com/backstage/backstage/commit/be3cddaab5f): Getting credentials in the RepoUrlPicker now also works for targets without owner (e.g. Bitbucket Server).
+- [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
+- [`eb877bad736`](https://github.com/backstage/backstage/commit/eb877bad736): Create an "Other Templates" group when groups are given to scaffolder/next.
+- [`c10384a9235`](https://github.com/backstage/backstage/commit/c10384a9235): Switch to using `LinkButton` instead of the deprecated `Button`
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`0aae4596296`](https://github.com/backstage/backstage/commit/0aae4596296): Fix the scaffolder validator for arrays when the item is a field in the object
+
+### `@backstage/plugin-scaffolder-backend` (1.11.0 → [1.12.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1120))
+
+#### 1.12.0
+
+##### Minor Changes
+
+- [`7d724d8ef56`](https://github.com/backstage/backstage/commit/7d724d8ef56): Added the ability to be able to define an actions `input` and `output` schema using `zod` instead of hand writing types and `jsonschema`
+
+##### Patch Changes
+
+- [`860de10fa67`](https://github.com/backstage/backstage/commit/860de10fa67): Make identity valid if subject of token is a backstage server-2-server auth token
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`c6c78b4acbe`](https://github.com/backstage/backstage/commit/c6c78b4acbe): throw error from catalog:fetch scaffolder action when entity is null and optional is false
+- [`9968f455921`](https://github.com/backstage/backstage/commit/9968f455921): catalog write action should allow any shape of object
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`7af12854970`](https://github.com/backstage/backstage/commit/7af12854970): Extended scaffolder action `catalog:fetch` to fetch multiple catalog entities by entity references.
+
+### `@backstage/plugin-scaffolder-react` (1.1.0 → [1.2.0](../../changelogs/@backstage/plugin-scaffolder-react.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`8f4d13f21cf`](https://github.com/backstage/backstage/commit/8f4d13f21cf): Move `useTaskStream`, `TaskBorder`, `TaskLogStream` and `TaskSteps` into `scaffolder-react`.
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`3c96e77b513`](https://github.com/backstage/backstage/commit/3c96e77b513): Make scaffolder adhere to page themes by using page `fontColor` consistently. If your theme overwrites template list or card headers, review those styles.
+- [`c8d78b9ae9d`](https://github.com/backstage/backstage/commit/c8d78b9ae9d): fix bug with `hasErrors` returning false when dealing with empty objects
+- [`9b8c374ace5`](https://github.com/backstage/backstage/commit/9b8c374ace5): Remove timer for skipped steps in Scaffolder Next's TaskSteps
+- [`44941fc97eb`](https://github.com/backstage/backstage/commit/44941fc97eb): scaffolder/next: Move the `uiSchema` to its own property in the validation `context` to align with component development and access of `ui:options`
+- [`d9893263ba9`](https://github.com/backstage/backstage/commit/d9893263ba9): scaffolder/next: Fix for steps without properties
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`cc418d652a7`](https://github.com/backstage/backstage/commit/cc418d652a7): scaffolder/next: Added the ability to get the fields definition in the schema in the validation function
+- [`d4100d0ec42`](https://github.com/backstage/backstage/commit/d4100d0ec42): Fix alignment bug for owners on `TemplateCard`
+
+### `@backstage/plugin-techdocs` (1.5.0 → [1.6.0](../../changelogs/@backstage/plugin-techdocs.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`3f75b7607ca`](https://github.com/backstage/backstage/commit/3f75b7607ca): Add ability to pass icon as function to have ability to customize it by search item
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`54a1e133b56`](https://github.com/backstage/backstage/commit/54a1e133b56): Fix bug that caused next and previous links not to work with certain versions of mkdocs-material
+- [`f320c299c67`](https://github.com/backstage/backstage/commit/f320c299c67): The HTML tag attributes in the documentation content inserted to shadow DOM is preserved to improve accessibility
+- [`cb8ec97cdeb`](https://github.com/backstage/backstage/commit/cb8ec97cdeb): Change black & white colors to be theme aware
+- [`c10384a9235`](https://github.com/backstage/backstage/commit/c10384a9235): Switch to using `LinkButton` instead of the deprecated `Button`
+- [`8adfda60ae1`](https://github.com/backstage/backstage/commit/8adfda60ae1): Updated dependency `jss` to `~10.10.0`.
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`238cf657c09`](https://github.com/backstage/backstage/commit/238cf657c09): Copy to clipboard now works in a not secure context.
+
+### `@backstage/plugin-techdocs-backend` (1.5.3 → [1.6.0](../../changelogs/@backstage/plugin-techdocs-backend.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`92b495328bd`](https://github.com/backstage/backstage/commit/92b495328bd): Introduced alpha export of the `techdocsPlugin` using the new backend system.
+
+##### Patch Changes
+
+- [`40298b02778`](https://github.com/backstage/backstage/commit/40298b02778): Techdocs backend explains a bit more about what might have caused the docs not being found when building techdocs.
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+
+### `@backstage/plugin-techdocs-node` (1.5.0 → [1.6.0](../../changelogs/@backstage/plugin-techdocs-node.md#160))
+
+#### 1.6.0
+
+##### Minor Changes
+
+- [`ea2bbef1b16`](https://github.com/backstage/backstage/commit/ea2bbef1b16): Added support for an HTTPS proxy for techdocs AWS S3 requests
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`bf493710f50`](https://github.com/backstage/backstage/commit/bf493710f50): Update to a newer version of `@trendyol-js/openstack-swift-sdk`
+- [`bfe350ef4ce`](https://github.com/backstage/backstage/commit/bfe350ef4ce): Fixed bug that prevented deletion of stale files when non-empty directories where tried to be deleted as well.
+
+### `@techdocs/cli` (1.3.2 → [1.4.0](../../changelogs/@techdocs/cli.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`8e465ce52e2`](https://github.com/backstage/backstage/commit/8e465ce52e2): Running `@techdocs/cli generate` with the `--verbose` flag will now print the mkdocs output.
+- [`ea2bbef1b16`](https://github.com/backstage/backstage/commit/ea2bbef1b16): Added support for an HTTPS proxy for techdocs AWS S3 requests
+
+## Other patch version bumps
+
+### `@backstage/catalog-model` (1.2.0 → [1.2.1](../../changelogs/@backstage/catalog-model.md#121))
+
+#### 1.2.1
+
+##### Patch Changes
+
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+
+### `@backstage/config` (1.0.6 → [1.0.7](../../changelogs/@backstage/config.md#107))
+
+#### 1.0.7
+
+##### Patch Changes
+
+- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
+
+### `@backstage/config-loader` (1.1.8 → [1.1.9](../../changelogs/@backstage/config-loader.md#119))
+
+#### 1.1.9
+
+##### Patch Changes
+
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
+
+### `@backstage/dev-utils` (1.0.12 → [1.0.13](../../changelogs/@backstage/dev-utils.md#1013))
+
+#### 1.0.13
+
+##### Patch Changes
+
+- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
+
+### `@backstage/errors` (1.1.4 → [1.1.5](../../changelogs/@backstage/errors.md#115))
+
+#### 1.1.5
+
+##### Patch Changes
+
+- [`3bf83a2aabf`](https://github.com/backstage/backstage/commit/3bf83a2aabf): Added `NotImplementedError`, which can be used when the server does not recognize the request method and is incapable of supporting it for any resource.
+
+### `@backstage/integration` (1.4.2 → [1.4.3](../../changelogs/@backstage/integration.md#143))
+
+#### 1.4.3
+
+##### Patch Changes
+
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+
+### `@backstage/integration-react` (1.1.10 → [1.1.11](../../changelogs/@backstage/integration-react.md#1111))
+
+#### 1.1.11
+
+##### Patch Changes
+
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+
+### `@backstage/plugin-catalog-common` (1.0.11 → [1.0.12](../../changelogs/@backstage/plugin-catalog-common.md#1012))
+
+#### 1.0.12
+
+##### Patch Changes
+
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+
+### `@backstage/plugin-catalog-node` (1.3.3 → [1.3.4](../../changelogs/@backstage/plugin-catalog-node.md#134))
+
+#### 1.3.4
+
+##### Patch Changes
+
+- [`e675f902980`](https://github.com/backstage/backstage/commit/e675f902980): Added `locationSpecToMetadataName` and `locationSpecToLocationEntity` as their new home, moved over from the backend package where they now are marked as deprecated.
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+
+### `@backstage/plugin-search` (1.1.0 → [1.1.1](../../changelogs/@backstage/plugin-search.md#111))
+
+#### 1.1.1
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+
+### `@backstage/plugin-search-react` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-search-react.md#151))
+
+#### 1.5.1
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`553f3c95011`](https://github.com/backstage/backstage/commit/553f3c95011): Correctly disable next button in `SearchPagination` on last page
+
+### `@backstage/plugin-techdocs-addons-test-utils` (1.0.10 → [1.0.11](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1011))
+
+#### 1.0.11
+
+##### Patch Changes
+
+- [`2b00d8a225c`](https://github.com/backstage/backstage/commit/2b00d8a225c): Fix bug/problem with test helper
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+
+### `@backstage/plugin-techdocs-module-addons-contrib` (1.0.10 → [1.0.11](../../changelogs/@backstage/plugin-techdocs-module-addons-contrib.md#1011))
+
+#### 1.0.11
+
+##### Patch Changes
+
+- [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
+- [`37cf85fb85c`](https://github.com/backstage/backstage/commit/37cf85fb85c): Fixed bug in IssueLink component where the URL was not generated properly when the repository was located inside a Gitlab subgroup
+
+### `@backstage/plugin-techdocs-react` (1.1.3 → [1.1.4](../../changelogs/@backstage/plugin-techdocs-react.md#114))
+
+#### 1.1.4
+
+##### Patch Changes
+
+- [`65454876fb2`](https://github.com/backstage/backstage/commit/65454876fb2): Minor API report tweaks
+- [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
+- [`8adfda60ae1`](https://github.com/backstage/backstage/commit/8adfda60ae1): Updated dependency `jss` to `~10.10.0`.
+
 ### `@backstage/test-utils` (1.2.5 → [1.2.6](../../changelogs/@backstage/test-utils.md#126))
 
 #### 1.2.6
@@ -1884,14 +1896,6 @@ Changes between 1.11.1 and 1.12.0 — 188 changed and 3 added packages.
 
 - [`928a12a9b3e`](https://github.com/backstage/backstage/commit/928a12a9b3e): Internal refactor of `/alpha` exports.
 - [`52b0022dab7`](https://github.com/backstage/backstage/commit/52b0022dab7): Updated dependency `msw` to `^1.0.0`.
-- [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
-
-### `@backstage/theme` (0.2.17 → [0.2.18](../../changelogs/@backstage/theme.md#0218))
-
-#### 0.2.18
-
-##### Patch Changes
-
 - [`482dae5de1c`](https://github.com/backstage/backstage/commit/482dae5de1c): Updated link to docs.
 
 ## Excluded dependency updates

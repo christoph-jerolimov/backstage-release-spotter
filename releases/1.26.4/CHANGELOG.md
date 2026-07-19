@@ -1,22 +1,24 @@
 # Backstage Release 1.26.4 changelog
 
-Changes between 1.26.3 and 1.26.4 — 6 changed and 0 added packages.
+Changes between 1.26.3 and 1.26.4 — 0 added, 0 removed, 6 upgraded, 264 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 6 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 5 packages
+- [Other patch version bumps](#other-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.7.0 → 0.7.1)](#backstagebackend-app-api-070--071)
   - [`@backstage/core-components` (0.14.4 → 0.14.5)](#backstagecore-components-0144--0145)
   - [`@backstage/plugin-auth-react` (0.1.0 → 0.1.1)](#backstageplugin-auth-react-010--011)
   - [`@backstage/plugin-search-backend-module-catalog` (0.1.22 → 0.1.23)](#backstageplugin-search-backend-module-catalog-0122--0123)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.22 → 0.1.23)](#backstageplugin-search-backend-module-explore-0122--0123)
+- [Other patch version bumps](#other-patch-version-bumps)
   - [`@techdocs/cli` (1.8.9 → 1.8.10)](#techdocscli-189--1810)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.7.0 → [0.7.1](../../changelogs/@backstage/backend-app-api.md#071))
 
@@ -37,6 +39,8 @@ _No changelog entries found._
 ### `@backstage/plugin-search-backend-module-explore` (0.1.22 → [0.1.23](../../changelogs/@backstage/plugin-search-backend-module-explore.md#0123))
 
 _No changelog entries found._
+
+## Other patch version bumps
 
 ### `@techdocs/cli` (1.8.9 → [1.8.10](../../changelogs/@techdocs/cli.md#1810))
 

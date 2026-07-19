@@ -1,17 +1,17 @@
 # Backstage Release 1.43.1 changelog
 
-Changes between 1.43.0 and 1.43.1 — 1 changed and 0 added packages.
+Changes between 1.43.0 and 1.43.1 — 0 added, 0 removed, 1 upgraded, 188 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.34.2 → 0.34.3)](#backstagecli-0342--0343)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.34.2 → [0.34.3](../../changelogs/@backstage/cli.md#0343))
 

@@ -1,6 +1,6 @@
 # Backstage Release 1.28.4 changelog
 
-Changes between 1.28.3 and 1.28.4 — 1 changed and 0 added packages.
+Changes between 1.28.3 and 1.28.4 — 0 added, 0 removed, 1 upgraded, 171 unchanged packages.
 
 ## Summary
 

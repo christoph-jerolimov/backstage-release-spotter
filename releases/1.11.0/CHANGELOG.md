@@ -1,6 +1,6 @@
 # Backstage Release 1.11.0 changelog
 
-Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
+Changes between 1.10.1 and 1.11.0 — 14 added, 0 removed, 167 upgraded, 17 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 - [Breaking changes](#breaking-changes): 11 packages
 - [Major version bumps](#major-version-bumps): 1 package
 - [0.x minor version bumps](#0x-minor-version-bumps): 9 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 61 packages
 - [Other minor version bumps](#other-minor-version-bumps): 12 packages
-- [Patch version bumps](#patch-version-bumps): 68 packages
+- [Other patch version bumps](#other-patch-version-bumps): 7 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 66 packages
 
 ## Table of contents
@@ -53,20 +54,7 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
   - [`@backstage/plugin-explore` (0.3.45 → 0.4.0)](#backstageplugin-explore-0345--040)
   - [`@backstage/plugin-sentry` (0.4.7 → 0.5.0)](#backstageplugin-sentry-047--050)
   - [`@backstage/plugin-user-settings` (0.6.2 → 0.7.0)](#backstageplugin-user-settings-062--070)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/app-defaults` (1.1.0 → 1.2.0)](#backstageapp-defaults-110--120)
-  - [`@backstage/catalog-model` (1.1.5 → 1.2.0)](#backstagecatalog-model-115--120)
-  - [`@backstage/core-app-api` (1.4.0 → 1.5.0)](#backstagecore-app-api-140--150)
-  - [`@backstage/core-plugin-api` (1.3.0 → 1.4.0)](#backstagecore-plugin-api-130--140)
-  - [`@backstage/plugin-catalog` (1.7.2 → 1.8.0)](#backstageplugin-catalog-172--180)
-  - [`@backstage/plugin-catalog-react` (1.2.4 → 1.3.0)](#backstageplugin-catalog-react-124--130)
-  - [`@backstage/plugin-scaffolder` (1.10.1 → 1.11.0)](#backstageplugin-scaffolder-1101--1110)
-  - [`@backstage/plugin-scaffolder-react` (1.0.1 → 1.1.0)](#backstageplugin-scaffolder-react-101--110)
-  - [`@backstage/plugin-search` (1.0.7 → 1.1.0)](#backstageplugin-search-107--110)
-  - [`@backstage/plugin-search-react` (1.4.0 → 1.5.0)](#backstageplugin-search-react-140--150)
-  - [`@backstage/plugin-techdocs` (1.4.3 → 1.5.0)](#backstageplugin-techdocs-143--150)
-  - [`@backstage/plugin-techdocs-node` (1.4.5 → 1.5.0)](#backstageplugin-techdocs-node-145--150)
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.1.6 → 0.1.7)](#backstagebackend-defaults-016--017)
   - [`@backstage/backend-test-utils` (0.1.33 → 0.1.34)](#backstagebackend-test-utils-0133--0134)
   - [`@backstage/cli` (0.22.1 → 0.22.2)](#backstagecli-0221--0222)
@@ -85,7 +73,6 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
   - [`@backstage/plugin-azure-sites-backend` (0.1.3 → 0.1.4)](#backstageplugin-azure-sites-backend-013--014)
   - [`@backstage/plugin-bazaar-backend` (0.2.4 → 0.2.5)](#backstageplugin-bazaar-backend-024--025)
   - [`@backstage/plugin-bitrise` (0.1.41 → 0.1.42)](#backstageplugin-bitrise-0141--0142)
-  - [`@backstage/plugin-catalog-backend` (1.7.1 → 1.7.2)](#backstageplugin-catalog-backend-171--172)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.1.14 → 0.1.15)](#backstageplugin-catalog-backend-module-aws-0114--0115)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.12 → 0.1.13)](#backstageplugin-catalog-backend-module-azure-0112--0113)
   - [`@backstage/plugin-catalog-backend-module-bitbucket` (0.2.8 → 0.2.9)](#backstageplugin-catalog-backend-module-bitbucket-028--029)
@@ -118,22 +105,37 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.9 → 0.4.10)](#backstageplugin-scaffolder-backend-module-rails-049--0410)
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.1.1 → 0.1.2)](#backstageplugin-scaffolder-backend-module-sentry-011--012)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.14 → 0.2.15)](#backstageplugin-scaffolder-backend-module-yeoman-0214--0215)
-  - [`@backstage/plugin-search-backend` (1.2.2 → 1.2.3)](#backstageplugin-search-backend-122--123)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.1.2 → 1.1.3)](#backstageplugin-search-backend-module-elasticsearch-112--113)
   - [`@backstage/plugin-shortcuts` (0.3.6 → 0.3.7)](#backstageplugin-shortcuts-036--037)
   - [`@backstage/plugin-sonarqube` (0.6.2 → 0.6.3)](#backstageplugin-sonarqube-062--063)
   - [`@backstage/plugin-splunk-on-call` (0.4.3 → 0.4.4)](#backstageplugin-splunk-on-call-043--044)
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.25 → 0.1.26)](#backstageplugin-tech-insights-backend-module-jsonfc-0125--0126)
   - [`@backstage/plugin-tech-radar` (0.6.0 → 0.6.1)](#backstageplugin-tech-radar-060--061)
-  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.9 → 1.0.10)](#backstageplugin-techdocs-addons-test-utils-109--1010)
-  - [`@backstage/plugin-techdocs-backend` (1.5.2 → 1.5.3)](#backstageplugin-techdocs-backend-152--153)
-  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.9 → 1.0.10)](#backstageplugin-techdocs-module-addons-contrib-109--1010)
   - [`@backstage/plugin-user-settings-backend` (0.1.5 → 0.1.6)](#backstageplugin-user-settings-backend-015--016)
   - [`@backstage/plugin-vault` (0.1.8 → 0.1.9)](#backstageplugin-vault-018--019)
   - [`@backstage/plugin-vault-backend` (0.2.7 → 0.2.8)](#backstageplugin-vault-backend-027--028)
   - [`@backstage/plugin-xcmetrics` (0.2.34 → 0.2.35)](#backstageplugin-xcmetrics-0234--0235)
   - [`@backstage/repo-tools` (0.1.1 → 0.1.2)](#backstagerepo-tools-011--012)
   - [`@backstage/theme` (0.2.16 → 0.2.17)](#backstagetheme-0216--0217)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/app-defaults` (1.1.0 → 1.2.0)](#backstageapp-defaults-110--120)
+  - [`@backstage/catalog-model` (1.1.5 → 1.2.0)](#backstagecatalog-model-115--120)
+  - [`@backstage/core-app-api` (1.4.0 → 1.5.0)](#backstagecore-app-api-140--150)
+  - [`@backstage/core-plugin-api` (1.3.0 → 1.4.0)](#backstagecore-plugin-api-130--140)
+  - [`@backstage/plugin-catalog` (1.7.2 → 1.8.0)](#backstageplugin-catalog-172--180)
+  - [`@backstage/plugin-catalog-react` (1.2.4 → 1.3.0)](#backstageplugin-catalog-react-124--130)
+  - [`@backstage/plugin-scaffolder` (1.10.1 → 1.11.0)](#backstageplugin-scaffolder-1101--1110)
+  - [`@backstage/plugin-scaffolder-react` (1.0.1 → 1.1.0)](#backstageplugin-scaffolder-react-101--110)
+  - [`@backstage/plugin-search` (1.0.7 → 1.1.0)](#backstageplugin-search-107--110)
+  - [`@backstage/plugin-search-react` (1.4.0 → 1.5.0)](#backstageplugin-search-react-140--150)
+  - [`@backstage/plugin-techdocs` (1.4.3 → 1.5.0)](#backstageplugin-techdocs-143--150)
+  - [`@backstage/plugin-techdocs-node` (1.4.5 → 1.5.0)](#backstageplugin-techdocs-node-145--150)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-catalog-backend` (1.7.1 → 1.7.2)](#backstageplugin-catalog-backend-171--172)
+  - [`@backstage/plugin-search-backend` (1.2.2 → 1.2.3)](#backstageplugin-search-backend-122--123)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.1.2 → 1.1.3)](#backstageplugin-search-backend-module-elasticsearch-112--113)
+  - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.9 → 1.0.10)](#backstageplugin-techdocs-addons-test-utils-109--1010)
+  - [`@backstage/plugin-techdocs-backend` (1.5.2 → 1.5.3)](#backstageplugin-techdocs-backend-152--153)
+  - [`@backstage/plugin-techdocs-module-addons-contrib` (1.0.9 → 1.0.10)](#backstageplugin-techdocs-module-addons-contrib-109--1010)
   - [`@techdocs/cli` (1.3.1 → 1.3.2)](#techdocscli-131--132)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -611,216 +613,7 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 
 - [`c4940b6322`](https://github.com/backstage/backstage/commit/c4940b6322): Added a message to advise a page reload when toggling feature flags
 
-## Other minor version bumps
-
-### `@backstage/app-defaults` (1.1.0 → [1.2.0](../../changelogs/@backstage/app-defaults.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`db10b6ef65`](https://github.com/backstage/backstage/commit/db10b6ef65): Added a Bitbucket Server Auth Provider and added its API to the app defaults
-
-### `@backstage/catalog-model` (1.1.5 → [1.2.0](../../changelogs/@backstage/catalog-model.md#120))
-
-#### 1.2.0
-
-##### Minor Changes
-
-- [`d51668882d`](https://github.com/backstage/backstage/commit/d51668882d): Adds the tRPC API type to the catalog.
-
-##### Patch Changes
-
-- [`aece6c57d2`](https://github.com/backstage/backstage/commit/aece6c57d2): Add additional validation for location references.
-- [`2518ef5b8a`](https://github.com/backstage/backstage/commit/2518ef5b8a): Add deprecation tag to kubernetes constants in catalog, constants are now defined in plugin-kubernetes-common
-
-### `@backstage/core-app-api` (1.4.0 → [1.5.0](../../changelogs/@backstage/core-app-api.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`db10b6ef65`](https://github.com/backstage/backstage/commit/db10b6ef65): Added a Bitbucket Server Auth Provider and added its API to the app defaults
-
-##### Patch Changes
-
-- [`dff4d8ddb1`](https://github.com/backstage/backstage/commit/dff4d8ddb1): Fixed an issue where an explicit port the frontend base URL could break the app.
-
-### `@backstage/core-plugin-api` (1.3.0 → [1.4.0](../../changelogs/@backstage/core-plugin-api.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`db10b6ef65`](https://github.com/backstage/backstage/commit/db10b6ef65): Added a Bitbucket Server Auth Provider and added its API to the app defaults
-
-### `@backstage/plugin-catalog` (1.7.2 → [1.8.0](../../changelogs/@backstage/plugin-catalog.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`0c1fc3986c`](https://github.com/backstage/backstage/commit/0c1fc3986c): Added Markdown support in the `AboutCard` description section
-- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): The `CatalogSearchResultListItem` component is now a search result extension. This means that when rendered as a child of components that render search extensions, the `result`, `rank`, and `highlight` properties are optional. See the [documentation](https://backstage.io/docs/features/search/how-to-guides#how-to-render-search-results-using-extensions) for more details.
-
-##### Patch Changes
-
-- [`d7f55f6bd2`](https://github.com/backstage/backstage/commit/d7f55f6bd2): The list of entities takes into account the title when its different from the name to sort the entities.
-- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): `ListItem` wrapper component moved to `SearchResultListItemExtension` for all `*SearchResultListItems` that are exported as extensions. This is to make sure the list only contains list elements.
-
-  Note: If you have implemented a custom result list item, we recommend you to remove the list item wrapper to avoid nested `<li>` elements.
-
-- [`7d46ca2f68`](https://github.com/backstage/backstage/commit/7d46ca2f68): Make catalog search result list a bit more customizable
-
-### `@backstage/plugin-catalog-react` (1.2.4 → [1.3.0](../../changelogs/@backstage/plugin-catalog-react.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`929e1afe1b`](https://github.com/backstage/backstage/commit/929e1afe1b): Add `initialFilter` prop to EntityLifecyclePicker. This allows you to set an initial lifecycle for the catalog.
-- [`fab93c2fe8`](https://github.com/backstage/backstage/commit/fab93c2fe8): Aligned buttons on "Unregister entity" dialog to keep them on the same line
-
-### `@backstage/plugin-scaffolder` (1.10.1 → [1.11.0](../../changelogs/@backstage/plugin-scaffolder.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`d6bb12a2e7`](https://github.com/backstage/backstage/commit/d6bb12a2e7): - **Deprecation** - Deprecated the following exports, please import them directly from `@backstage/plugin-scaffolder-react` instead
-
-  ```
-  createScaffolderLayout
-  ScaffolderLayouts
-  LayoutOptions
-  LayoutTemplate
-  ```
-
-- [`a521379688`](https://github.com/backstage/backstage/commit/a521379688): Migrating the `TemplateEditorPage` to work with the new components from `@backstage/plugin-scaffolder-react`
-- [`074f7e81b5`](https://github.com/backstage/backstage/commit/074f7e81b5): Added a missing validator check for items in an array
-- [`8c2966536b`](https://github.com/backstage/backstage/commit/8c2966536b): Embed scaffolder workflow in other components
-
-##### Patch Changes
-
-- [`04f717a8e1`](https://github.com/backstage/backstage/commit/04f717a8e1): `scaffolder/next`: bump `react-jsonschema-form` libraries to `v5-stable`
-- [`b46f385eff`](https://github.com/backstage/backstage/commit/b46f385eff): scaffolder/next: Implementing a simple `OngoingTask` page
-- [`cbab8ac107`](https://github.com/backstage/backstage/commit/cbab8ac107): lock versions of `@rjsf/*-beta` packages
-- [`346d6b6630`](https://github.com/backstage/backstage/commit/346d6b6630): Upgrade `@rjsf` version 5 dependencies to `beta.18`
-- [`ccbf91051b`](https://github.com/backstage/backstage/commit/ccbf91051b): bump `@rjsf` `v5` dependencies to 5.1.0
-- [`d2ddde2108`](https://github.com/backstage/backstage/commit/d2ddde2108): Add `ScaffolderLayouts` to `NextScaffolderPage`
-- [`0f0da2f256`](https://github.com/backstage/backstage/commit/0f0da2f256): Prefer schema ordering of template properties during review content generation.
-- [`38992bdbaf`](https://github.com/backstage/backstage/commit/38992bdbaf): Fixed bug in review step refactor that caused schema-based display settings for individual property values to be discarded.
-
-### `@backstage/plugin-scaffolder-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder-react.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`a07750745b`](https://github.com/backstage/backstage/commit/a07750745b): Added `DescriptionField` field override to the `next/scaffolder`
-- [`a521379688`](https://github.com/backstage/backstage/commit/a521379688): Migrating the `TemplateEditorPage` to work with the new components from `@backstage/plugin-scaffolder-react`
-- [`8c2966536b`](https://github.com/backstage/backstage/commit/8c2966536b): Embed scaffolder workflow in other components
-- [`5555e17313`](https://github.com/backstage/backstage/commit/5555e17313): refactor `createAsyncValidators` to be recursive to ensure validators are called in nested schemas.
-
-##### Patch Changes
-
-- [`04f717a8e1`](https://github.com/backstage/backstage/commit/04f717a8e1): `scaffolder/next`: bump `react-jsonschema-form` libraries to `v5-stable`
-- [`b46f385eff`](https://github.com/backstage/backstage/commit/b46f385eff): scaffolder/next: Implementing a simple `OngoingTask` page
-- [`cbab8ac107`](https://github.com/backstage/backstage/commit/cbab8ac107): lock versions of `@rjsf/*-beta` packages
-- [`346d6b6630`](https://github.com/backstage/backstage/commit/346d6b6630): Upgrade `@rjsf` version 5 dependencies to `beta.18`
-- [`ccbf91051b`](https://github.com/backstage/backstage/commit/ccbf91051b): bump `@rjsf` `v5` dependencies to 5.1.0
-- [`d2ddde2108`](https://github.com/backstage/backstage/commit/d2ddde2108): Add `ScaffolderLayouts` to `NextScaffolderPage`
-
-### `@backstage/plugin-search` (1.0.7 → [1.1.0](../../changelogs/@backstage/plugin-search.md#110))
-
-#### 1.1.0
-
-##### Minor Changes
-
-- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): Update `SearchModal` component to use `SearchResult` extensions.
-
-##### Patch Changes
-
-- [`26fb21aa8b`](https://github.com/backstage/backstage/commit/26fb21aa8b): Implement a `showCounts` option to display result counts per type in `SearchType.Accordion`
-- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): Updated colors for each tab used on search modal, to improve color contrast. Aria label added to tabs wrapper component. `disableRipple` property on the `Tab` component removed to improve keyboard navigation indicator.
-
-### `@backstage/plugin-search-react` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-search-react.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): - Create the search results extensions, for more details see the documentation [here](https://backstage.io/docs/features/search/how-to-guides#how-to-render-search-results-using-extensions);
-  - Update the `SearchResult`, `SearchResultList` and `SearchResultGroup` components to use extensions and default their props to optionally accept a query, when the query is not passed, the component tries to get it from the search context.
-
-##### Patch Changes
-
-- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): `ListItem` wrapper component moved to `SearchResultListItemExtension` for all `*SearchResultListItems` that are exported as extensions. This is to make sure the list only contains list elements.
-
-  Note: If you have implemented a custom result list item, we recommend you to remove the list item wrapper to avoid nested `<li>` elements.
-
-### `@backstage/plugin-techdocs` (1.4.3 → [1.5.0](../../changelogs/@backstage/plugin-techdocs.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`20840b36b4`](https://github.com/backstage/backstage/commit/20840b36b4): Update DocsTable and EntityListDocsTable to accept overrides for Material Table options.
-- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): The `TechDocsSearchResultListItem` component is now a search result extension. This means that when rendered as a child of components that render search extensions, the `result`, `rank`, and `highlight` properties are optional. See the [documentation](https://backstage.io/docs/features/search/how-to-guides#how-to-render-search-results-using-extensions) for more details.
-
-##### Patch Changes
-
-- [`c8e09cc383`](https://github.com/backstage/backstage/commit/c8e09cc383): Fixed bug in Techdocs reader where a techdocs page with a hash in the URL did not always jump to the document anchor.
-- [`cad5607411`](https://github.com/backstage/backstage/commit/cad5607411): Improve view: remove footer overlay on large screen
-- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): `ListItem` wrapper component moved to `SearchResultListItemExtension` for all `*SearchResultListItems` that are exported as extensions. This is to make sure the list only contains list elements.
-
-  Note: If you have implemented a custom result list item, we recommend you to remove the list item wrapper to avoid nested `<li>` elements.
-
-- [`4660b63947`](https://github.com/backstage/backstage/commit/4660b63947): Create a TechDocs `<LightBox/>` addon that allows users to open images in a light-box on documentation pages, they can navigate between images if there are several on one page.
-
-  Here's an example on how to use it in a Backstage app:
-
-  ```diff
-  import {
-    DefaultTechDocsHome,
-    TechDocsIndexPage,
-    TechDocsReaderPage,
-  } from '@backstage/plugin-techdocs';
-  import { TechDocsAddons } from '@backstage/plugin-techdocs-react/alpha';
-  +import { LightBox } from '@backstage/plugin-techdocs-module-addons-contrib';
-
-  const AppRoutes = () => {
-    <FlatRoutes>
-      // other plugin routes
-      <Route path="/docs" element={<TechDocsIndexPage />}>
-        <DefaultTechDocsHome />
-      </Route>
-      <Route
-        path="/docs/:namespace/:kind/:name/*"
-        element={<TechDocsReaderPage />}
-      >
-        <TechDocsAddons>
-  +       <LightBox />
-        </TechDocsAddons>
-      </Route>
-    </FlatRoutes>;
-  };
-  ```
-
-### `@backstage/plugin-techdocs-node` (1.4.5 → [1.5.0](../../changelogs/@backstage/plugin-techdocs-node.md#150))
-
-#### 1.5.0
-
-##### Minor Changes
-
-- [`dd1e37649f`](https://github.com/backstage/backstage/commit/dd1e37649f): Deprecated getMkDocsYml in favor of getMkdocsYml (lowercase 'd')
-
-##### Patch Changes
-
-- [`87ab76e55c`](https://github.com/backstage/backstage/commit/87ab76e55c): Fixed bug caused by recent migration to AWS SDK V3 for techdocs-node. Instead of s3ForcePathStyle, forcePathStyle should be passed.
-- [`339d9a5b5c`](https://github.com/backstage/backstage/commit/339d9a5b5c): Added support for using a default `mkdocs.yml` configuration file when none is provided
-
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-defaults` (0.1.6 → [0.1.7](../../changelogs/@backstage/backend-defaults.md#017))
 
@@ -998,22 +791,6 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 ##### Patch Changes
 
 - [`85b04f659a`](https://github.com/backstage/backstage/commit/85b04f659a): Internal refactor to not use deprecated `substr`
-
-### `@backstage/plugin-catalog-backend` (1.7.1 → [1.7.2](../../changelogs/@backstage/plugin-catalog-backend.md#172))
-
-#### 1.7.2
-
-##### Patch Changes
-
-- [`071354eb7d`](https://github.com/backstage/backstage/commit/071354eb7d): Add additional validation as security precations for output entities.
-- [`b977c2e69f`](https://github.com/backstage/backstage/commit/b977c2e69f): Minor improvements to the descriptions provided with permission rules schemas
-- [`2380506364`](https://github.com/backstage/backstage/commit/2380506364): The process of adding or modifying fields in the software-catalog search index has been simplified. For more details, see [how to customize fields in the Software Catalog index](https://backstage.io/docs/features/search/how-to-guides#how-to-customize-fields-in-the-software-catalog-index).
-- [`9573651919`](https://github.com/backstage/backstage/commit/9573651919): The previous migration that adds the `search.original_value` column may leave some of the entities not updated. Add a migration script to trigger a reprocessing of the entities.
-- [`9f71a2fd20`](https://github.com/backstage/backstage/commit/9f71a2fd20): Location rule target patterns now also match hidden files, i.e. path components with a leading dot.
-- [`e716946103`](https://github.com/backstage/backstage/commit/e716946103): Updated usage of the lifecycle service.
-- [`1aec041c34`](https://github.com/backstage/backstage/commit/1aec041c34): Fixed an issue where entities sometimes were not properly deleted during a full mutation.
-- [`0ff03319be`](https://github.com/backstage/backstage/commit/0ff03319be): Updated usage of `createBackendPlugin`.
-- [`fc73f6aae5`](https://github.com/backstage/backstage/commit/fc73f6aae5): Switched the order of reprocessing statements retroactively in migrations. This only improves the experience for those who at a later time perform a large upgrade of an old Backstage installation.
 
 ### `@backstage/plugin-catalog-backend-module-aws` (0.1.14 → [0.1.15](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0115))
 
@@ -1319,22 +1096,6 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 
 - [`d72866f0cc`](https://github.com/backstage/backstage/commit/d72866f0cc): Internal refactor to use the new `@backstage/plugin-scaffolder-node` package for some functionality
 
-### `@backstage/plugin-search-backend` (1.2.2 → [1.2.3](../../changelogs/@backstage/plugin-search-backend.md#123))
-
-#### 1.2.3
-
-##### Patch Changes
-
-- [`1b30c9a0f7`](https://github.com/backstage/backstage/commit/1b30c9a0f7): Change the router's response to include the error message instead of its object type in case it fails during a search query because the messages have more info.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.1.2 → [1.1.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#113))
-
-#### 1.1.3
-
-##### Patch Changes
-
-- [`896566906b`](https://github.com/backstage/backstage/commit/896566906b): Export `decodeElasticSearchPageCursor` utility function
-
 ### `@backstage/plugin-shortcuts` (0.3.6 → [0.3.7](../../changelogs/@backstage/plugin-shortcuts.md#037))
 
 #### 0.3.7
@@ -1391,6 +1152,298 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
 
 - [`18024a231c`](https://github.com/backstage/backstage/commit/18024a231c): Allow to set additional links to the entry description.
 
+### `@backstage/plugin-user-settings-backend` (0.1.5 → [0.1.6](../../changelogs/@backstage/plugin-user-settings-backend.md#016))
+
+#### 0.1.6
+
+##### Patch Changes
+
+- [`0ff03319be`](https://github.com/backstage/backstage/commit/0ff03319be): Updated usage of `createBackendPlugin`.
+- [`4a6f38a535`](https://github.com/backstage/backstage/commit/4a6f38a535): Added a Backend System plugin feature
+
+### `@backstage/plugin-vault` (0.1.8 → [0.1.9](../../changelogs/@backstage/plugin-vault.md#019))
+
+#### 0.1.9
+
+##### Patch Changes
+
+- [`fd7a77b9c4`](https://github.com/backstage/backstage/commit/fd7a77b9c4): Surface additional context and details to the Backstage UI when the Vault plugin encounters non-successful HTTP responses from the Vault API.
+
+### `@backstage/plugin-vault-backend` (0.2.7 → [0.2.8](../../changelogs/@backstage/plugin-vault-backend.md#028))
+
+#### 0.2.8
+
+##### Patch Changes
+
+- [`5b7cd5580d`](https://github.com/backstage/backstage/commit/5b7cd5580d): Moving the backend-test-utils to devDependencies.
+
+### `@backstage/plugin-xcmetrics` (0.2.34 → [0.2.35](../../changelogs/@backstage/plugin-xcmetrics.md#0235))
+
+#### 0.2.35
+
+##### Patch Changes
+
+- [`c51efce2a0`](https://github.com/backstage/backstage/commit/c51efce2a0): Update docs to always use `yarn add --cwd` for app & backend
+
+### `@backstage/repo-tools` (0.1.1 → [0.1.2](../../changelogs/@backstage/repo-tools.md#012))
+
+#### 0.1.2
+
+##### Patch Changes
+
+- [`ff63acf30a`](https://github.com/backstage/backstage/commit/ff63acf30a): Packages without a declared `backstage.role` are now ignored.
+
+### `@backstage/theme` (0.2.16 → [0.2.17](../../changelogs/@backstage/theme.md#0217))
+
+#### 0.2.17
+
+##### Patch Changes
+
+- [`b7705e176c`](https://github.com/backstage/backstage/commit/b7705e176c): Use same table header color as @backstage/core-components Table to meet accessibility color contrast requirements. This change affects material-ui tables.
+
+## Other minor version bumps
+
+### `@backstage/app-defaults` (1.1.0 → [1.2.0](../../changelogs/@backstage/app-defaults.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`db10b6ef65`](https://github.com/backstage/backstage/commit/db10b6ef65): Added a Bitbucket Server Auth Provider and added its API to the app defaults
+
+### `@backstage/catalog-model` (1.1.5 → [1.2.0](../../changelogs/@backstage/catalog-model.md#120))
+
+#### 1.2.0
+
+##### Minor Changes
+
+- [`d51668882d`](https://github.com/backstage/backstage/commit/d51668882d): Adds the tRPC API type to the catalog.
+
+##### Patch Changes
+
+- [`aece6c57d2`](https://github.com/backstage/backstage/commit/aece6c57d2): Add additional validation for location references.
+- [`2518ef5b8a`](https://github.com/backstage/backstage/commit/2518ef5b8a): Add deprecation tag to kubernetes constants in catalog, constants are now defined in plugin-kubernetes-common
+
+### `@backstage/core-app-api` (1.4.0 → [1.5.0](../../changelogs/@backstage/core-app-api.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`db10b6ef65`](https://github.com/backstage/backstage/commit/db10b6ef65): Added a Bitbucket Server Auth Provider and added its API to the app defaults
+
+##### Patch Changes
+
+- [`dff4d8ddb1`](https://github.com/backstage/backstage/commit/dff4d8ddb1): Fixed an issue where an explicit port the frontend base URL could break the app.
+
+### `@backstage/core-plugin-api` (1.3.0 → [1.4.0](../../changelogs/@backstage/core-plugin-api.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`db10b6ef65`](https://github.com/backstage/backstage/commit/db10b6ef65): Added a Bitbucket Server Auth Provider and added its API to the app defaults
+
+### `@backstage/plugin-catalog` (1.7.2 → [1.8.0](../../changelogs/@backstage/plugin-catalog.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`0c1fc3986c`](https://github.com/backstage/backstage/commit/0c1fc3986c): Added Markdown support in the `AboutCard` description section
+- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): The `CatalogSearchResultListItem` component is now a search result extension. This means that when rendered as a child of components that render search extensions, the `result`, `rank`, and `highlight` properties are optional. See the [documentation](https://backstage.io/docs/features/search/how-to-guides#how-to-render-search-results-using-extensions) for more details.
+
+##### Patch Changes
+
+- [`d7f55f6bd2`](https://github.com/backstage/backstage/commit/d7f55f6bd2): The list of entities takes into account the title when its different from the name to sort the entities.
+- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): `ListItem` wrapper component moved to `SearchResultListItemExtension` for all `*SearchResultListItems` that are exported as extensions. This is to make sure the list only contains list elements.
+
+  Note: If you have implemented a custom result list item, we recommend you to remove the list item wrapper to avoid nested `<li>` elements.
+
+- [`7d46ca2f68`](https://github.com/backstage/backstage/commit/7d46ca2f68): Make catalog search result list a bit more customizable
+
+### `@backstage/plugin-catalog-react` (1.2.4 → [1.3.0](../../changelogs/@backstage/plugin-catalog-react.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`929e1afe1b`](https://github.com/backstage/backstage/commit/929e1afe1b): Add `initialFilter` prop to EntityLifecyclePicker. This allows you to set an initial lifecycle for the catalog.
+- [`fab93c2fe8`](https://github.com/backstage/backstage/commit/fab93c2fe8): Aligned buttons on "Unregister entity" dialog to keep them on the same line
+
+### `@backstage/plugin-scaffolder` (1.10.1 → [1.11.0](../../changelogs/@backstage/plugin-scaffolder.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`d6bb12a2e7`](https://github.com/backstage/backstage/commit/d6bb12a2e7): - **Deprecation** - Deprecated the following exports, please import them directly from `@backstage/plugin-scaffolder-react` instead
+
+  ```
+  createScaffolderLayout
+  ScaffolderLayouts
+  LayoutOptions
+  LayoutTemplate
+  ```
+
+- [`a521379688`](https://github.com/backstage/backstage/commit/a521379688): Migrating the `TemplateEditorPage` to work with the new components from `@backstage/plugin-scaffolder-react`
+- [`074f7e81b5`](https://github.com/backstage/backstage/commit/074f7e81b5): Added a missing validator check for items in an array
+- [`8c2966536b`](https://github.com/backstage/backstage/commit/8c2966536b): Embed scaffolder workflow in other components
+
+##### Patch Changes
+
+- [`04f717a8e1`](https://github.com/backstage/backstage/commit/04f717a8e1): `scaffolder/next`: bump `react-jsonschema-form` libraries to `v5-stable`
+- [`b46f385eff`](https://github.com/backstage/backstage/commit/b46f385eff): scaffolder/next: Implementing a simple `OngoingTask` page
+- [`cbab8ac107`](https://github.com/backstage/backstage/commit/cbab8ac107): lock versions of `@rjsf/*-beta` packages
+- [`346d6b6630`](https://github.com/backstage/backstage/commit/346d6b6630): Upgrade `@rjsf` version 5 dependencies to `beta.18`
+- [`ccbf91051b`](https://github.com/backstage/backstage/commit/ccbf91051b): bump `@rjsf` `v5` dependencies to 5.1.0
+- [`d2ddde2108`](https://github.com/backstage/backstage/commit/d2ddde2108): Add `ScaffolderLayouts` to `NextScaffolderPage`
+- [`0f0da2f256`](https://github.com/backstage/backstage/commit/0f0da2f256): Prefer schema ordering of template properties during review content generation.
+- [`38992bdbaf`](https://github.com/backstage/backstage/commit/38992bdbaf): Fixed bug in review step refactor that caused schema-based display settings for individual property values to be discarded.
+
+### `@backstage/plugin-scaffolder-react` (1.0.1 → [1.1.0](../../changelogs/@backstage/plugin-scaffolder-react.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`a07750745b`](https://github.com/backstage/backstage/commit/a07750745b): Added `DescriptionField` field override to the `next/scaffolder`
+- [`a521379688`](https://github.com/backstage/backstage/commit/a521379688): Migrating the `TemplateEditorPage` to work with the new components from `@backstage/plugin-scaffolder-react`
+- [`8c2966536b`](https://github.com/backstage/backstage/commit/8c2966536b): Embed scaffolder workflow in other components
+- [`5555e17313`](https://github.com/backstage/backstage/commit/5555e17313): refactor `createAsyncValidators` to be recursive to ensure validators are called in nested schemas.
+
+##### Patch Changes
+
+- [`04f717a8e1`](https://github.com/backstage/backstage/commit/04f717a8e1): `scaffolder/next`: bump `react-jsonschema-form` libraries to `v5-stable`
+- [`b46f385eff`](https://github.com/backstage/backstage/commit/b46f385eff): scaffolder/next: Implementing a simple `OngoingTask` page
+- [`cbab8ac107`](https://github.com/backstage/backstage/commit/cbab8ac107): lock versions of `@rjsf/*-beta` packages
+- [`346d6b6630`](https://github.com/backstage/backstage/commit/346d6b6630): Upgrade `@rjsf` version 5 dependencies to `beta.18`
+- [`ccbf91051b`](https://github.com/backstage/backstage/commit/ccbf91051b): bump `@rjsf` `v5` dependencies to 5.1.0
+- [`d2ddde2108`](https://github.com/backstage/backstage/commit/d2ddde2108): Add `ScaffolderLayouts` to `NextScaffolderPage`
+
+### `@backstage/plugin-search` (1.0.7 → [1.1.0](../../changelogs/@backstage/plugin-search.md#110))
+
+#### 1.1.0
+
+##### Minor Changes
+
+- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): Update `SearchModal` component to use `SearchResult` extensions.
+
+##### Patch Changes
+
+- [`26fb21aa8b`](https://github.com/backstage/backstage/commit/26fb21aa8b): Implement a `showCounts` option to display result counts per type in `SearchType.Accordion`
+- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): Updated colors for each tab used on search modal, to improve color contrast. Aria label added to tabs wrapper component. `disableRipple` property on the `Tab` component removed to improve keyboard navigation indicator.
+
+### `@backstage/plugin-search-react` (1.4.0 → [1.5.0](../../changelogs/@backstage/plugin-search-react.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): - Create the search results extensions, for more details see the documentation [here](https://backstage.io/docs/features/search/how-to-guides#how-to-render-search-results-using-extensions);
+  - Update the `SearchResult`, `SearchResultList` and `SearchResultGroup` components to use extensions and default their props to optionally accept a query, when the query is not passed, the component tries to get it from the search context.
+
+##### Patch Changes
+
+- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): `ListItem` wrapper component moved to `SearchResultListItemExtension` for all `*SearchResultListItems` that are exported as extensions. This is to make sure the list only contains list elements.
+
+  Note: If you have implemented a custom result list item, we recommend you to remove the list item wrapper to avoid nested `<li>` elements.
+
+### `@backstage/plugin-techdocs` (1.4.3 → [1.5.0](../../changelogs/@backstage/plugin-techdocs.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`20840b36b4`](https://github.com/backstage/backstage/commit/20840b36b4): Update DocsTable and EntityListDocsTable to accept overrides for Material Table options.
+- [`0eaa579f89`](https://github.com/backstage/backstage/commit/0eaa579f89): The `TechDocsSearchResultListItem` component is now a search result extension. This means that when rendered as a child of components that render search extensions, the `result`, `rank`, and `highlight` properties are optional. See the [documentation](https://backstage.io/docs/features/search/how-to-guides#how-to-render-search-results-using-extensions) for more details.
+
+##### Patch Changes
+
+- [`c8e09cc383`](https://github.com/backstage/backstage/commit/c8e09cc383): Fixed bug in Techdocs reader where a techdocs page with a hash in the URL did not always jump to the document anchor.
+- [`cad5607411`](https://github.com/backstage/backstage/commit/cad5607411): Improve view: remove footer overlay on large screen
+- [`66e2aab4c4`](https://github.com/backstage/backstage/commit/66e2aab4c4): `ListItem` wrapper component moved to `SearchResultListItemExtension` for all `*SearchResultListItems` that are exported as extensions. This is to make sure the list only contains list elements.
+
+  Note: If you have implemented a custom result list item, we recommend you to remove the list item wrapper to avoid nested `<li>` elements.
+
+- [`4660b63947`](https://github.com/backstage/backstage/commit/4660b63947): Create a TechDocs `<LightBox/>` addon that allows users to open images in a light-box on documentation pages, they can navigate between images if there are several on one page.
+
+  Here's an example on how to use it in a Backstage app:
+
+  ```diff
+  import {
+    DefaultTechDocsHome,
+    TechDocsIndexPage,
+    TechDocsReaderPage,
+  } from '@backstage/plugin-techdocs';
+  import { TechDocsAddons } from '@backstage/plugin-techdocs-react/alpha';
+  +import { LightBox } from '@backstage/plugin-techdocs-module-addons-contrib';
+
+  const AppRoutes = () => {
+    <FlatRoutes>
+      // other plugin routes
+      <Route path="/docs" element={<TechDocsIndexPage />}>
+        <DefaultTechDocsHome />
+      </Route>
+      <Route
+        path="/docs/:namespace/:kind/:name/*"
+        element={<TechDocsReaderPage />}
+      >
+        <TechDocsAddons>
+  +       <LightBox />
+        </TechDocsAddons>
+      </Route>
+    </FlatRoutes>;
+  };
+  ```
+
+### `@backstage/plugin-techdocs-node` (1.4.5 → [1.5.0](../../changelogs/@backstage/plugin-techdocs-node.md#150))
+
+#### 1.5.0
+
+##### Minor Changes
+
+- [`dd1e37649f`](https://github.com/backstage/backstage/commit/dd1e37649f): Deprecated getMkDocsYml in favor of getMkdocsYml (lowercase 'd')
+
+##### Patch Changes
+
+- [`87ab76e55c`](https://github.com/backstage/backstage/commit/87ab76e55c): Fixed bug caused by recent migration to AWS SDK V3 for techdocs-node. Instead of s3ForcePathStyle, forcePathStyle should be passed.
+- [`339d9a5b5c`](https://github.com/backstage/backstage/commit/339d9a5b5c): Added support for using a default `mkdocs.yml` configuration file when none is provided
+
+## Other patch version bumps
+
+### `@backstage/plugin-catalog-backend` (1.7.1 → [1.7.2](../../changelogs/@backstage/plugin-catalog-backend.md#172))
+
+#### 1.7.2
+
+##### Patch Changes
+
+- [`071354eb7d`](https://github.com/backstage/backstage/commit/071354eb7d): Add additional validation as security precations for output entities.
+- [`b977c2e69f`](https://github.com/backstage/backstage/commit/b977c2e69f): Minor improvements to the descriptions provided with permission rules schemas
+- [`2380506364`](https://github.com/backstage/backstage/commit/2380506364): The process of adding or modifying fields in the software-catalog search index has been simplified. For more details, see [how to customize fields in the Software Catalog index](https://backstage.io/docs/features/search/how-to-guides#how-to-customize-fields-in-the-software-catalog-index).
+- [`9573651919`](https://github.com/backstage/backstage/commit/9573651919): The previous migration that adds the `search.original_value` column may leave some of the entities not updated. Add a migration script to trigger a reprocessing of the entities.
+- [`9f71a2fd20`](https://github.com/backstage/backstage/commit/9f71a2fd20): Location rule target patterns now also match hidden files, i.e. path components with a leading dot.
+- [`e716946103`](https://github.com/backstage/backstage/commit/e716946103): Updated usage of the lifecycle service.
+- [`1aec041c34`](https://github.com/backstage/backstage/commit/1aec041c34): Fixed an issue where entities sometimes were not properly deleted during a full mutation.
+- [`0ff03319be`](https://github.com/backstage/backstage/commit/0ff03319be): Updated usage of `createBackendPlugin`.
+- [`fc73f6aae5`](https://github.com/backstage/backstage/commit/fc73f6aae5): Switched the order of reprocessing statements retroactively in migrations. This only improves the experience for those who at a later time perform a large upgrade of an old Backstage installation.
+
+### `@backstage/plugin-search-backend` (1.2.2 → [1.2.3](../../changelogs/@backstage/plugin-search-backend.md#123))
+
+#### 1.2.3
+
+##### Patch Changes
+
+- [`1b30c9a0f7`](https://github.com/backstage/backstage/commit/1b30c9a0f7): Change the router's response to include the error message instead of its object type in case it fails during a search query because the messages have more info.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.1.2 → [1.1.3](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#113))
+
+#### 1.1.3
+
+##### Patch Changes
+
+- [`896566906b`](https://github.com/backstage/backstage/commit/896566906b): Export `decodeElasticSearchPageCursor` utility function
+
 ### `@backstage/plugin-techdocs-addons-test-utils` (1.0.9 → [1.0.10](../../changelogs/@backstage/plugin-techdocs-addons-test-utils.md#1010))
 
 #### 1.0.10
@@ -1445,55 +1498,6 @@ Changes between 1.10.1 and 1.11.0 — 167 changed and 14 added packages.
     </FlatRoutes>;
   };
   ```
-
-### `@backstage/plugin-user-settings-backend` (0.1.5 → [0.1.6](../../changelogs/@backstage/plugin-user-settings-backend.md#016))
-
-#### 0.1.6
-
-##### Patch Changes
-
-- [`0ff03319be`](https://github.com/backstage/backstage/commit/0ff03319be): Updated usage of `createBackendPlugin`.
-- [`4a6f38a535`](https://github.com/backstage/backstage/commit/4a6f38a535): Added a Backend System plugin feature
-
-### `@backstage/plugin-vault` (0.1.8 → [0.1.9](../../changelogs/@backstage/plugin-vault.md#019))
-
-#### 0.1.9
-
-##### Patch Changes
-
-- [`fd7a77b9c4`](https://github.com/backstage/backstage/commit/fd7a77b9c4): Surface additional context and details to the Backstage UI when the Vault plugin encounters non-successful HTTP responses from the Vault API.
-
-### `@backstage/plugin-vault-backend` (0.2.7 → [0.2.8](../../changelogs/@backstage/plugin-vault-backend.md#028))
-
-#### 0.2.8
-
-##### Patch Changes
-
-- [`5b7cd5580d`](https://github.com/backstage/backstage/commit/5b7cd5580d): Moving the backend-test-utils to devDependencies.
-
-### `@backstage/plugin-xcmetrics` (0.2.34 → [0.2.35](../../changelogs/@backstage/plugin-xcmetrics.md#0235))
-
-#### 0.2.35
-
-##### Patch Changes
-
-- [`c51efce2a0`](https://github.com/backstage/backstage/commit/c51efce2a0): Update docs to always use `yarn add --cwd` for app & backend
-
-### `@backstage/repo-tools` (0.1.1 → [0.1.2](../../changelogs/@backstage/repo-tools.md#012))
-
-#### 0.1.2
-
-##### Patch Changes
-
-- [`ff63acf30a`](https://github.com/backstage/backstage/commit/ff63acf30a): Packages without a declared `backstage.role` are now ignored.
-
-### `@backstage/theme` (0.2.16 → [0.2.17](../../changelogs/@backstage/theme.md#0217))
-
-#### 0.2.17
-
-##### Patch Changes
-
-- [`b7705e176c`](https://github.com/backstage/backstage/commit/b7705e176c): Use same table header color as @backstage/core-components Table to meet accessibility color contrast requirements. This change affects material-ui tables.
 
 ### `@techdocs/cli` (1.3.1 → [1.3.2](../../changelogs/@techdocs/cli.md#132))
 

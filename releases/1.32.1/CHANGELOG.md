@@ -1,6 +1,6 @@
 # Backstage Release 1.32.1 changelog
 
-Changes between 1.32.0 and 1.32.1 — 1 changed and 0 added packages.
+Changes between 1.32.0 and 1.32.1 — 0 added, 0 removed, 1 upgraded, 176 unchanged packages.
 
 ## Summary
 

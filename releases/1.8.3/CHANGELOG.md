@@ -1,17 +1,17 @@
 # Backstage Release 1.8.3 changelog
 
-Changes between 1.8.2 and 1.8.3 — 1 changed and 0 added packages.
+Changes between 1.8.2 and 1.8.3 — 0 added, 0 removed, 1 upgraded, 175 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-org` (0.6.0 → 0.6.1)](#backstageplugin-org-060--061)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-org` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-org.md#061))
 

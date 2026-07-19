@@ -1,17 +1,17 @@
 # Backstage Release 1.12.1 changelog
 
-Changes between 1.12.0 and 1.12.1 — 1 changed and 0 added packages.
+Changes between 1.12.0 and 1.12.1 — 0 added, 0 removed, 1 upgraded, 200 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli` (0.22.4 → 0.22.5)](#backstagecli-0224--0225)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/cli` (0.22.4 → [0.22.5](../../changelogs/@backstage/cli.md#0225))
 

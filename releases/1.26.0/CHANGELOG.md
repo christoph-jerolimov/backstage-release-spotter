@@ -1,6 +1,6 @@
 # Backstage Release 1.26.0 changelog
 
-Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
+Changes between 1.25.2 and 1.26.0 — 3 added, 0 removed, 240 upgraded, 27 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [Breaking changes](#breaking-changes): 5 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 8 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 6 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 140 packages
 - [Other minor version bumps](#other-minor-version-bumps): 4 packages
-- [Other patch version bumps](#other-patch-version-bumps): 164 packages
+- [Other patch version bumps](#other-patch-version-bumps): 24 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 53 packages
 
 ## Table of contents
@@ -40,32 +41,21 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-notifications-common` (0.0.2 → 0.0.3)](#backstageplugin-notifications-common-002--003)
   - [`@backstage/plugin-signals` (0.0.4 → 0.0.5)](#backstageplugin-signals-004--005)
   - [`@backstage/plugin-signals-react` (0.0.2 → 0.0.3)](#backstageplugin-signals-react-002--003)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config-loader` (1.7.0 → 1.8.0)](#backstageconfig-loader-170--180)
-  - [`@backstage/integration` (1.9.1 → 1.10.0)](#backstageintegration-191--1100)
-  - [`@backstage/plugin-catalog` (1.18.2 → 1.19.0)](#backstageplugin-catalog-1182--1190)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.19 → 1.4.0)](#backstageplugin-search-backend-module-elasticsearch-1319--140)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.5.3 → 1.5.4)](#backstageapp-defaults-153--154)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.21.6 → 0.21.7)](#backstagebackend-common-0216--0217)
   - [`@backstage/backend-dynamic-feature-service` (0.2.8 → 0.2.9)](#backstagebackend-dynamic-feature-service-028--029)
   - [`@backstage/backend-plugin-api` (0.6.16 → 0.6.17)](#backstagebackend-plugin-api-0616--0617)
   - [`@backstage/backend-tasks` (0.5.21 → 0.5.22)](#backstagebackend-tasks-0521--0522)
   - [`@backstage/backend-test-utils` (0.3.6 → 0.3.7)](#backstagebackend-test-utils-036--037)
-  - [`@backstage/catalog-client` (1.6.3 → 1.6.4)](#backstagecatalog-client-163--164)
   - [`@backstage/cli` (0.26.2 → 0.26.3)](#backstagecli-0262--0263)
   - [`@backstage/cli-node` (0.2.4 → 0.2.5)](#backstagecli-node-024--025)
-  - [`@backstage/core-app-api` (1.12.3 → 1.12.4)](#backstagecore-app-api-1123--1124)
   - [`@backstage/core-compat-api` (0.2.3 → 0.2.4)](#backstagecore-compat-api-023--024)
   - [`@backstage/core-components` (0.14.3 → 0.14.4)](#backstagecore-components-0143--0144)
-  - [`@backstage/core-plugin-api` (1.9.1 → 1.9.2)](#backstagecore-plugin-api-191--192)
   - [`@backstage/create-app` (0.5.13 → 0.5.14)](#backstagecreate-app-0513--0514)
-  - [`@backstage/dev-utils` (1.0.30 → 1.0.31)](#backstagedev-utils-1030--1031)
   - [`@backstage/eslint-plugin` (0.1.6 → 0.1.7)](#backstageeslint-plugin-016--017)
   - [`@backstage/frontend-app-api` (0.6.3 → 0.6.4)](#backstagefrontend-app-api-063--064)
   - [`@backstage/frontend-plugin-api` (0.6.3 → 0.6.4)](#backstagefrontend-plugin-api-063--064)
   - [`@backstage/frontend-test-utils` (0.1.5 → 0.1.6)](#backstagefrontend-test-utils-015--016)
-  - [`@backstage/integration-react` (1.1.25 → 1.1.26)](#backstageintegration-react-1125--1126)
   - [`@backstage/plugin-adr` (0.6.16 → 0.6.17)](#backstageplugin-adr-0616--0617)
   - [`@backstage/plugin-adr-backend` (0.4.13 → 0.4.14)](#backstageplugin-adr-backend-0413--0414)
   - [`@backstage/plugin-airbrake` (0.3.33 → 0.3.34)](#backstageplugin-airbrake-0333--0334)
@@ -91,7 +81,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-badges` (0.2.57 → 0.2.58)](#backstageplugin-badges-0257--0258)
   - [`@backstage/plugin-bazaar-backend` (0.3.14 → 0.3.15)](#backstageplugin-bazaar-backend-0314--0315)
   - [`@backstage/plugin-bitrise` (0.1.60 → 0.1.61)](#backstageplugin-bitrise-0160--0161)
-  - [`@backstage/plugin-catalog-backend` (1.21.0 → 1.21.1)](#backstageplugin-catalog-backend-1210--1211)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.3.11 → 0.3.12)](#backstageplugin-catalog-backend-module-aws-0311--0312)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.36 → 0.1.37)](#backstageplugin-catalog-backend-module-azure-0136--0137)
   - [`@backstage/plugin-catalog-backend-module-bitbucket-server` (0.1.30 → 0.1.31)](#backstageplugin-catalog-backend-module-bitbucket-server-0130--0131)
@@ -104,7 +93,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.1.22 → 0.1.23)](#backstageplugin-catalog-backend-module-puppetdb-0122--0123)
   - [`@backstage/plugin-catalog-graph` (0.4.3 → 0.4.4)](#backstageplugin-catalog-graph-043--044)
   - [`@backstage/plugin-catalog-import` (0.10.9 → 0.10.10)](#backstageplugin-catalog-import-0109--01010)
-  - [`@backstage/plugin-catalog-react` (1.11.2 → 1.11.3)](#backstageplugin-catalog-react-1112--1113)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.2 → 0.2.3)](#backstageplugin-catalog-unprocessed-entities-022--023)
   - [`@backstage/plugin-cicd-statistics` (0.1.35 → 0.1.36)](#backstageplugin-cicd-statistics-0135--0136)
   - [`@backstage/plugin-cloudbuild` (0.5.0 → 0.5.1)](#backstageplugin-cloudbuild-050--051)
@@ -115,7 +103,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-config-schema` (0.1.53 → 0.1.54)](#backstageplugin-config-schema-0153--0154)
   - [`@backstage/plugin-cost-insights` (0.12.22 → 0.12.23)](#backstageplugin-cost-insights-01222--01223)
   - [`@backstage/plugin-devtools-backend` (0.3.2 → 0.3.3)](#backstageplugin-devtools-backend-032--033)
-  - [`@backstage/plugin-dynatrace` (10.0.2 → 10.0.3)](#backstageplugin-dynatrace-1002--1003)
   - [`@backstage/plugin-entity-feedback` (0.2.16 → 0.2.17)](#backstageplugin-entity-feedback-0216--0217)
   - [`@backstage/plugin-entity-feedback-backend` (0.2.13 → 0.2.14)](#backstageplugin-entity-feedback-backend-0213--0214)
   - [`@backstage/plugin-entity-validation` (0.1.18 → 0.1.19)](#backstageplugin-entity-validation-0118--0119)
@@ -165,8 +152,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-proxy-backend` (0.4.14 → 0.4.15)](#backstageplugin-proxy-backend-0414--0415)
   - [`@backstage/plugin-puppetdb` (0.1.16 → 0.1.17)](#backstageplugin-puppetdb-0116--0117)
   - [`@backstage/plugin-rollbar` (0.4.33 → 0.4.34)](#backstageplugin-rollbar-0433--0434)
-  - [`@backstage/plugin-scaffolder` (1.19.2 → 1.19.3)](#backstageplugin-scaffolder-1192--1193)
-  - [`@backstage/plugin-scaffolder-backend` (1.22.3 → 1.22.4)](#backstageplugin-scaffolder-backend-1223--1224)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.1.8 → 0.1.9)](#backstageplugin-scaffolder-backend-module-azure-018--019)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.2.6 → 0.2.7)](#backstageplugin-scaffolder-backend-module-bitbucket-026--027)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.1.6 → 0.1.7)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-016--017)
@@ -175,15 +160,10 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-gitea` (0.1.6 → 0.1.7)](#backstageplugin-scaffolder-backend-module-gitea-016--017)
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.2.6 → 0.2.7)](#backstageplugin-scaffolder-backend-module-github-026--027)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.3.2 → 0.3.3)](#backstageplugin-scaffolder-backend-module-gitlab-032--033)
-  - [`@backstage/plugin-scaffolder-react` (1.8.3 → 1.8.4)](#backstageplugin-scaffolder-react-183--184)
-  - [`@backstage/plugin-search` (1.4.9 → 1.4.10)](#backstageplugin-search-149--1410)
-  - [`@backstage/plugin-search-backend` (1.5.6 → 1.5.7)](#backstageplugin-search-backend-156--157)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.20 → 0.1.21)](#backstageplugin-search-backend-module-explore-0120--0121)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.25 → 0.5.26)](#backstageplugin-search-backend-module-pg-0525--0526)
   - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.1.9 → 0.1.10)](#backstageplugin-search-backend-module-stack-overflow-collator-019--0110)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.1.21 → 0.1.22)](#backstageplugin-search-backend-module-techdocs-0121--0122)
-  - [`@backstage/plugin-search-backend-node` (1.2.20 → 1.2.21)](#backstageplugin-search-backend-node-1220--1221)
-  - [`@backstage/plugin-search-react` (1.7.9 → 1.7.10)](#backstageplugin-search-react-179--1710)
   - [`@backstage/plugin-sentry` (0.5.18 → 0.5.19)](#backstageplugin-sentry-0518--0519)
   - [`@backstage/plugin-shortcuts` (0.3.22 → 0.3.23)](#backstageplugin-shortcuts-0322--0323)
   - [`@backstage/plugin-signals-backend` (0.1.2 → 0.1.3)](#backstageplugin-signals-backend-012--013)
@@ -196,19 +176,41 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
   - [`@backstage/plugin-tech-insights-backend` (0.5.30 → 0.5.31)](#backstageplugin-tech-insights-backend-0530--0531)
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.48 → 0.1.49)](#backstageplugin-tech-insights-backend-module-jsonfc-0148--0149)
   - [`@backstage/plugin-tech-radar` (0.7.2 → 0.7.3)](#backstageplugin-tech-radar-072--073)
+  - [`@backstage/plugin-todo` (0.2.37 → 0.2.38)](#backstageplugin-todo-0237--0238)
+  - [`@backstage/plugin-todo-backend` (0.3.15 → 0.3.16)](#backstageplugin-todo-backend-0315--0316)
+  - [`@backstage/plugin-user-settings` (0.8.4 → 0.8.5)](#backstageplugin-user-settings-084--085)
+  - [`@backstage/plugin-vault` (0.1.28 → 0.1.29)](#backstageplugin-vault-0128--0129)
+  - [`@backstage/plugin-xcmetrics` (0.2.51 → 0.2.52)](#backstageplugin-xcmetrics-0251--0252)
+  - [`@backstage/theme` (0.5.2 → 0.5.3)](#backstagetheme-052--053)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config-loader` (1.7.0 → 1.8.0)](#backstageconfig-loader-170--180)
+  - [`@backstage/integration` (1.9.1 → 1.10.0)](#backstageintegration-191--1100)
+  - [`@backstage/plugin-catalog` (1.18.2 → 1.19.0)](#backstageplugin-catalog-1182--1190)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.19 → 1.4.0)](#backstageplugin-search-backend-module-elasticsearch-1319--140)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.5.3 → 1.5.4)](#backstageapp-defaults-153--154)
+  - [`@backstage/catalog-client` (1.6.3 → 1.6.4)](#backstagecatalog-client-163--164)
+  - [`@backstage/core-app-api` (1.12.3 → 1.12.4)](#backstagecore-app-api-1123--1124)
+  - [`@backstage/core-plugin-api` (1.9.1 → 1.9.2)](#backstagecore-plugin-api-191--192)
+  - [`@backstage/dev-utils` (1.0.30 → 1.0.31)](#backstagedev-utils-1030--1031)
+  - [`@backstage/integration-react` (1.1.25 → 1.1.26)](#backstageintegration-react-1125--1126)
+  - [`@backstage/plugin-catalog-backend` (1.21.0 → 1.21.1)](#backstageplugin-catalog-backend-1210--1211)
+  - [`@backstage/plugin-catalog-react` (1.11.2 → 1.11.3)](#backstageplugin-catalog-react-1112--1113)
+  - [`@backstage/plugin-dynatrace` (10.0.2 → 10.0.3)](#backstageplugin-dynatrace-1002--1003)
+  - [`@backstage/plugin-scaffolder` (1.19.2 → 1.19.3)](#backstageplugin-scaffolder-1192--1193)
+  - [`@backstage/plugin-scaffolder-backend` (1.22.3 → 1.22.4)](#backstageplugin-scaffolder-backend-1223--1224)
+  - [`@backstage/plugin-scaffolder-react` (1.8.3 → 1.8.4)](#backstageplugin-scaffolder-react-183--184)
+  - [`@backstage/plugin-search` (1.4.9 → 1.4.10)](#backstageplugin-search-149--1410)
+  - [`@backstage/plugin-search-backend` (1.5.6 → 1.5.7)](#backstageplugin-search-backend-156--157)
+  - [`@backstage/plugin-search-backend-node` (1.2.20 → 1.2.21)](#backstageplugin-search-backend-node-1220--1221)
+  - [`@backstage/plugin-search-react` (1.7.9 → 1.7.10)](#backstageplugin-search-react-179--1710)
   - [`@backstage/plugin-techdocs` (1.10.3 → 1.10.4)](#backstageplugin-techdocs-1103--1104)
   - [`@backstage/plugin-techdocs-addons-test-utils` (1.0.30 → 1.0.31)](#backstageplugin-techdocs-addons-test-utils-1030--1031)
   - [`@backstage/plugin-techdocs-backend` (1.10.3 → 1.10.4)](#backstageplugin-techdocs-backend-1103--1104)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.8 → 1.1.9)](#backstageplugin-techdocs-module-addons-contrib-118--119)
   - [`@backstage/plugin-techdocs-node` (1.12.2 → 1.12.3)](#backstageplugin-techdocs-node-1122--1123)
   - [`@backstage/plugin-techdocs-react` (1.2.2 → 1.2.3)](#backstageplugin-techdocs-react-122--123)
-  - [`@backstage/plugin-todo` (0.2.37 → 0.2.38)](#backstageplugin-todo-0237--0238)
-  - [`@backstage/plugin-todo-backend` (0.3.15 → 0.3.16)](#backstageplugin-todo-backend-0315--0316)
-  - [`@backstage/plugin-user-settings` (0.8.4 → 0.8.5)](#backstageplugin-user-settings-084--085)
-  - [`@backstage/plugin-vault` (0.1.28 → 0.1.29)](#backstageplugin-vault-0128--0129)
-  - [`@backstage/plugin-xcmetrics` (0.2.51 → 0.2.52)](#backstageplugin-xcmetrics-0251--0252)
   - [`@backstage/test-utils` (1.5.3 → 1.5.4)](#backstagetest-utils-153--154)
-  - [`@backstage/theme` (0.5.2 → 0.5.3)](#backstagetheme-052--053)
   - [`@backstage/version-bridge` (1.0.7 → 1.0.8)](#backstageversion-bridge-107--108)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -509,67 +511,7 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
 - [`f06458c`](https://github.com/backstage/backstage/commit/f06458c): fixed typo in docs
 
-## Other minor version bumps
-
-### `@backstage/config-loader` (1.7.0 → [1.8.0](../../changelogs/@backstage/config-loader.md#180))
-
-#### 1.8.0
-
-##### Minor Changes
-
-- [`2ce31b3`](https://github.com/backstage/backstage/commit/2ce31b3): The default environment variable substitution function will now trim whitespace characters from the substituted value. This alleviates bugs where whitespace characters are mistakenly included in environment variables.
-
-  If you depend on the old behavior, you can override the default substitution function with your own, for example:
-
-  ```ts
-  ConfigSources.default({
-    substitutionFunc: async name => process.env[name],
-  });
-  ```
-
-- [`99bab65`](https://github.com/backstage/backstage/commit/99bab65): Support parameter substitution for environment variables
-
-### `@backstage/integration` (1.9.1 → [1.10.0](../../changelogs/@backstage/integration.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`7b11422`](https://github.com/backstage/backstage/commit/7b11422): Add AWS CodeCommit URL Reader/Integration
-
-### `@backstage/plugin-catalog` (1.18.2 → [1.19.0](../../changelogs/@backstage/plugin-catalog.md#1190))
-
-#### 1.19.0
-
-##### Minor Changes
-
-- [`18c7f12`](https://github.com/backstage/backstage/commit/18c7f12): Add `isApiType()` to EntitySwitch routing functions.
-
-##### Patch Changes
-
-- [`bcb2674`](https://github.com/backstage/backstage/commit/bcb2674): Added a "create something similar" button to the `<AboutCard>` that is visible and links to the scaffolder template corresponding to the entity's `backstage.io/source-template` annotation, if present.
-- [`4ef0dcf`](https://github.com/backstage/backstage/commit/4ef0dcf): Fixed a bug that prevented the default `entityPresentationApi` from being set in apps using the new frontend system.
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-- [`7495b36`](https://github.com/backstage/backstage/commit/7495b36): Fixed sorting of columns created with `CatalogTable.columns.createLabelColumn`.
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.19 → [1.4.0](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#140))
-
-#### 1.4.0
-
-##### Minor Changes
-
-- [`4d754e3`](https://github.com/backstage/backstage/commit/4d754e3): When using the New Backend System, the Elasticsearch provider will only be added if the `search.elasticsearch` config section exists.
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.5.3 → [1.5.4](../../changelogs/@backstage/app-defaults.md#154))
-
-#### 1.5.4
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.21.6 → [0.21.7](../../changelogs/@backstage/backend-common.md#0217))
 
@@ -619,14 +561,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`3256f14`](https://github.com/backstage/backstage/commit/3256f14): `startTestBackend` will now add placeholder plugins when a modules are provided without their parent plugin.
 - [`007e7ea`](https://github.com/backstage/backstage/commit/007e7ea): Added mock of the new `listPublicServiceKeys` method for `AuthService`.
 
-### `@backstage/catalog-client` (1.6.3 → [1.6.4](../../changelogs/@backstage/catalog-client.md#164))
-
-#### 1.6.4
-
-##### Patch Changes
-
-- [`dad7505`](https://github.com/backstage/backstage/commit/dad7505): Fix the `CatalogClient::getEntities` method to only sort the resulting entities in case no `order`-parameter is provided.
-
 ### `@backstage/cli` (0.26.2 → [0.26.3](../../changelogs/@backstage/cli.md#0263))
 
 #### 0.26.3
@@ -651,16 +585,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 
 - [`ed9260f`](https://github.com/backstage/backstage/commit/ed9260f): Added `versions:migrate` command to help move packages to the new `@backstage-community` namespace
 
-### `@backstage/core-app-api` (1.12.3 → [1.12.4](../../changelogs/@backstage/core-app-api.md#1124))
-
-#### 1.12.4
-
-##### Patch Changes
-
-- [`c884b9a`](https://github.com/backstage/backstage/commit/c884b9a): The app is now aware of if it is being served from the `app-backend` with a separate public and protected bundles. When in protected mode the app will now continuously refresh the session cookie, as well as clear the cookie if the user signs out.
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
 ### `@backstage/core-compat-api` (0.2.3 → [0.2.4](../../changelogs/@backstage/core-compat-api.md#024))
 
 #### 0.2.4
@@ -681,15 +605,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 - [`f546e38`](https://github.com/backstage/backstage/commit/f546e38): Added Link component in `TabUI` providing functionality like copy link or open in new tab.
 
-### `@backstage/core-plugin-api` (1.9.1 → [1.9.2](../../changelogs/@backstage/core-plugin-api.md#192))
-
-#### 1.9.2
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
 ### `@backstage/create-app` (0.5.13 → [0.5.14](../../changelogs/@backstage/create-app.md#0514))
 
 #### 0.5.14
@@ -699,17 +614,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`366cf07`](https://github.com/backstage/backstage/commit/366cf07): Bumped create-app version.
 - [`036b9b3`](https://github.com/backstage/backstage/commit/036b9b3): Bumped create-app version.
 - [`2e1218c`](https://github.com/backstage/backstage/commit/2e1218c): Fix docs reference
-
-### `@backstage/dev-utils` (1.0.30 → [1.0.31](../../changelogs/@backstage/dev-utils.md#1031))
-
-#### 1.0.31
-
-##### Patch Changes
-
-- [`9a41a7b`](https://github.com/backstage/backstage/commit/9a41a7b): Allow defining custom sidebar item for page and login for the development app
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-- [`995f66b`](https://github.com/backstage/backstage/commit/995f66b): add @backstage/no-top-level-material-ui-4-imports lint rule
 
 ### `@backstage/eslint-plugin` (0.1.6 → [0.1.7](../../changelogs/@backstage/eslint-plugin.md#017))
 
@@ -748,14 +652,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 ##### Patch Changes
 
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-
-### `@backstage/integration-react` (1.1.25 → [1.1.26](../../changelogs/@backstage/integration-react.md#1126))
-
-#### 1.1.26
-
-##### Patch Changes
-
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
 ### `@backstage/plugin-adr` (0.6.16 → [0.6.17](../../changelogs/@backstage/plugin-adr.md#0617))
 
@@ -989,48 +885,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
 - [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
-### `@backstage/plugin-catalog-backend` (1.21.0 → [1.21.1](../../changelogs/@backstage/plugin-catalog-backend.md#1211))
-
-#### 1.21.1
-
-##### Patch Changes
-
-- [`cfdc5e7`](https://github.com/backstage/backstage/commit/cfdc5e7): Fixes an issue where `/analyze-location` would incorrectly throw a 500 error on an invalid url.
-- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
-- [`c52f7ac`](https://github.com/backstage/backstage/commit/c52f7ac): Make entity collection errors a little quieter in the logs.
-
-  Instead of logging a warning line when an entity has an error
-  during processing, it will now instead emit an event on the event
-  broker.
-
-  This only removes a single log line, however it is possible to
-  add the log line back if it is required by subscribing to the
-  `CATALOG_ERRORS_TOPIC` as shown below.
-
-  ```typescript
-  env.eventBroker.subscribe({
-    supportsEventTopics(): string[] {
-      return [CATALOG_ERRORS_TOPIC];
-    },
-
-    async onEvent(
-      params: EventParams<{
-        entity: string;
-        location?: string;
-        errors: Array<Error>;
-      }>,
-    ): Promise<void> {
-      const { entity, location, errors } = params.eventPayload;
-      for (const error of errors) {
-        env.logger.warn(error.message, {
-          entity,
-          location,
-        });
-      }
-    },
-  });
-  ```
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.3.11 → [0.3.12](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0312))
 
 #### 0.3.12
@@ -1130,17 +984,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
 - [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
-### `@backstage/plugin-catalog-react` (1.11.2 → [1.11.3](../../changelogs/@backstage/plugin-catalog-react.md#1113))
-
-#### 1.11.3
-
-##### Patch Changes
-
-- [`47dec6f`](https://github.com/backstage/backstage/commit/47dec6f): Added the `no-top-level-material-ui-4-imports` ESLint rule to aid with the migration to Material UI v5
-- [`b863830`](https://github.com/backstage/backstage/commit/b863830): Change behavior in EntityAutoCompletePicker to only hide filter if there are no available options. Previously the filter was hidden if there were <= 1 available options.
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.2 → [0.2.3](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#023))
 
 #### 0.2.3
@@ -1229,15 +1072,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 ##### Patch Changes
 
 - [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
-
-### `@backstage/plugin-dynatrace` (10.0.2 → [10.0.3](../../changelogs/@backstage/plugin-dynatrace.md#1003))
-
-#### 10.0.3
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
 ### `@backstage/plugin-entity-feedback` (0.2.16 → [0.2.17](../../changelogs/@backstage/plugin-entity-feedback.md#0217))
 
@@ -1672,27 +1506,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
 - [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
-### `@backstage/plugin-scaffolder` (1.19.2 → [1.19.3](../../changelogs/@backstage/plugin-scaffolder.md#1193))
-
-#### 1.19.3
-
-##### Patch Changes
-
-- [`4f1f6ca`](https://github.com/backstage/backstage/commit/4f1f6ca): Use default value for `MyGroupsPicker` if provided
-- [`605c971`](https://github.com/backstage/backstage/commit/605c971): Allow the task list search to work on the Scaffolder template title.
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`87d2eb8`](https://github.com/backstage/backstage/commit/87d2eb8): Updated dependency `json-schema-library` to `^9.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-- [`419e948`](https://github.com/backstage/backstage/commit/419e948): Don't show login prompt if token is set in the state
-
-### `@backstage/plugin-scaffolder-backend` (1.22.3 → [1.22.4](../../changelogs/@backstage/plugin-scaffolder-backend.md#1224))
-
-#### 1.22.4
-
-##### Patch Changes
-
-- [`f34a9b1`](https://github.com/backstage/backstage/commit/f34a9b1): The `catalog:write` action now automatically adds a `backstage.io/template-source` annotation, indicating which Scaffolder template was used to create the entity.
-
 ### `@backstage/plugin-scaffolder-backend-module-azure` (0.1.8 → [0.1.9](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#019))
 
 #### 0.1.9
@@ -1762,38 +1575,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`33f958a`](https://github.com/backstage/backstage/commit/33f958a): Improve examples to ensure consistency across all publish actions
 - [`d112225`](https://github.com/backstage/backstage/commit/d112225): Add examples for `gitlab:projectDeployToken:create` scaffolder action & improve related tests
 
-### `@backstage/plugin-scaffolder-react` (1.8.3 → [1.8.4](../../changelogs/@backstage/plugin-scaffolder-react.md#184))
-
-#### 1.8.4
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`87d2eb8`](https://github.com/backstage/backstage/commit/87d2eb8): Updated dependency `json-schema-library` to `^9.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-- [`0e692cf`](https://github.com/backstage/backstage/commit/0e692cf): Added ESLint rule `no-top-level-material-ui-4-imports` to migrate the Material UI imports.
-- [`df99f62`](https://github.com/backstage/backstage/commit/df99f62): The `value` sent on the `create` analytics event (fired when a Scaffolder template is executed) is now set to the number of minutes saved by executing the template. This value is derived from the `backstage.io/time-saved` annotation on the template entity, if available.
-
-  Note: the `create` event is now captured in the `<Workflow>` component. If you are directly making use of the alpha-exported `<Stepper>` component, an analytics `create` event will no longer be captured on your behalf.
-
-### `@backstage/plugin-search` (1.4.9 → [1.4.10](../../changelogs/@backstage/plugin-search.md#1410))
-
-#### 1.4.10
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
-### `@backstage/plugin-search-backend` (1.5.6 → [1.5.7](../../changelogs/@backstage/plugin-search-backend.md#157))
-
-#### 1.5.7
-
-##### Patch Changes
-
-- [`2bd291e`](https://github.com/backstage/backstage/commit/2bd291e): Allow reserved characters in requests.
-- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
-
 ### `@backstage/plugin-search-backend-module-explore` (0.1.20 → [0.1.21](../../changelogs/@backstage/plugin-search-backend-module-explore.md#0121))
 
 #### 0.1.21
@@ -1827,24 +1608,6 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 ##### Patch Changes
 
 - [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
-
-### `@backstage/plugin-search-backend-node` (1.2.20 → [1.2.21](../../changelogs/@backstage/plugin-search-backend-node.md#1221))
-
-#### 1.2.21
-
-##### Patch Changes
-
-- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
-
-### `@backstage/plugin-search-react` (1.7.9 → [1.7.10](../../changelogs/@backstage/plugin-search-react.md#1710))
-
-#### 1.7.10
-
-##### Patch Changes
-
-- [`8d50bd3`](https://github.com/backstage/backstage/commit/8d50bd3): add mui imports eslint rule
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
 ### `@backstage/plugin-sentry` (0.5.18 → [0.5.19](../../changelogs/@backstage/plugin-sentry.md#0519))
 
@@ -1951,6 +1714,300 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
 - [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
 
+### `@backstage/plugin-todo` (0.2.37 → [0.2.38](../../changelogs/@backstage/plugin-todo.md#0238))
+
+#### 0.2.38
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-todo-backend` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-todo-backend.md#0316))
+
+#### 0.3.16
+
+##### Patch Changes
+
+- [`2bd291e`](https://github.com/backstage/backstage/commit/2bd291e): Allow reserved characters in requests.
+- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
+
+### `@backstage/plugin-user-settings` (0.8.4 → [0.8.5](../../changelogs/@backstage/plugin-user-settings.md#085))
+
+#### 0.8.5
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-vault` (0.1.28 → [0.1.29](../../changelogs/@backstage/plugin-vault.md#0129))
+
+#### 0.1.29
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-xcmetrics` (0.2.51 → [0.2.52](../../changelogs/@backstage/plugin-xcmetrics.md#0252))
+
+#### 0.2.52
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/theme` (0.5.2 → [0.5.3](../../changelogs/@backstage/theme.md#053))
+
+#### 0.5.3
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+
+## Other minor version bumps
+
+### `@backstage/config-loader` (1.7.0 → [1.8.0](../../changelogs/@backstage/config-loader.md#180))
+
+#### 1.8.0
+
+##### Minor Changes
+
+- [`2ce31b3`](https://github.com/backstage/backstage/commit/2ce31b3): The default environment variable substitution function will now trim whitespace characters from the substituted value. This alleviates bugs where whitespace characters are mistakenly included in environment variables.
+
+  If you depend on the old behavior, you can override the default substitution function with your own, for example:
+
+  ```ts
+  ConfigSources.default({
+    substitutionFunc: async name => process.env[name],
+  });
+  ```
+
+- [`99bab65`](https://github.com/backstage/backstage/commit/99bab65): Support parameter substitution for environment variables
+
+### `@backstage/integration` (1.9.1 → [1.10.0](../../changelogs/@backstage/integration.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`7b11422`](https://github.com/backstage/backstage/commit/7b11422): Add AWS CodeCommit URL Reader/Integration
+
+### `@backstage/plugin-catalog` (1.18.2 → [1.19.0](../../changelogs/@backstage/plugin-catalog.md#1190))
+
+#### 1.19.0
+
+##### Minor Changes
+
+- [`18c7f12`](https://github.com/backstage/backstage/commit/18c7f12): Add `isApiType()` to EntitySwitch routing functions.
+
+##### Patch Changes
+
+- [`bcb2674`](https://github.com/backstage/backstage/commit/bcb2674): Added a "create something similar" button to the `<AboutCard>` that is visible and links to the scaffolder template corresponding to the entity's `backstage.io/source-template` annotation, if present.
+- [`4ef0dcf`](https://github.com/backstage/backstage/commit/4ef0dcf): Fixed a bug that prevented the default `entityPresentationApi` from being set in apps using the new frontend system.
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+- [`7495b36`](https://github.com/backstage/backstage/commit/7495b36): Fixed sorting of columns created with `CatalogTable.columns.createLabelColumn`.
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.19 → [1.4.0](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#140))
+
+#### 1.4.0
+
+##### Minor Changes
+
+- [`4d754e3`](https://github.com/backstage/backstage/commit/4d754e3): When using the New Backend System, the Elasticsearch provider will only be added if the `search.elasticsearch` config section exists.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.5.3 → [1.5.4](../../changelogs/@backstage/app-defaults.md#154))
+
+#### 1.5.4
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+
+### `@backstage/catalog-client` (1.6.3 → [1.6.4](../../changelogs/@backstage/catalog-client.md#164))
+
+#### 1.6.4
+
+##### Patch Changes
+
+- [`dad7505`](https://github.com/backstage/backstage/commit/dad7505): Fix the `CatalogClient::getEntities` method to only sort the resulting entities in case no `order`-parameter is provided.
+
+### `@backstage/core-app-api` (1.12.3 → [1.12.4](../../changelogs/@backstage/core-app-api.md#1124))
+
+#### 1.12.4
+
+##### Patch Changes
+
+- [`c884b9a`](https://github.com/backstage/backstage/commit/c884b9a): The app is now aware of if it is being served from the `app-backend` with a separate public and protected bundles. When in protected mode the app will now continuously refresh the session cookie, as well as clear the cookie if the user signs out.
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/core-plugin-api` (1.9.1 → [1.9.2](../../changelogs/@backstage/core-plugin-api.md#192))
+
+#### 1.9.2
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/dev-utils` (1.0.30 → [1.0.31](../../changelogs/@backstage/dev-utils.md#1031))
+
+#### 1.0.31
+
+##### Patch Changes
+
+- [`9a41a7b`](https://github.com/backstage/backstage/commit/9a41a7b): Allow defining custom sidebar item for page and login for the development app
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+- [`995f66b`](https://github.com/backstage/backstage/commit/995f66b): add @backstage/no-top-level-material-ui-4-imports lint rule
+
+### `@backstage/integration-react` (1.1.25 → [1.1.26](../../changelogs/@backstage/integration-react.md#1126))
+
+#### 1.1.26
+
+##### Patch Changes
+
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-catalog-backend` (1.21.0 → [1.21.1](../../changelogs/@backstage/plugin-catalog-backend.md#1211))
+
+#### 1.21.1
+
+##### Patch Changes
+
+- [`cfdc5e7`](https://github.com/backstage/backstage/commit/cfdc5e7): Fixes an issue where `/analyze-location` would incorrectly throw a 500 error on an invalid url.
+- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
+- [`c52f7ac`](https://github.com/backstage/backstage/commit/c52f7ac): Make entity collection errors a little quieter in the logs.
+
+  Instead of logging a warning line when an entity has an error
+  during processing, it will now instead emit an event on the event
+  broker.
+
+  This only removes a single log line, however it is possible to
+  add the log line back if it is required by subscribing to the
+  `CATALOG_ERRORS_TOPIC` as shown below.
+
+  ```typescript
+  env.eventBroker.subscribe({
+    supportsEventTopics(): string[] {
+      return [CATALOG_ERRORS_TOPIC];
+    },
+
+    async onEvent(
+      params: EventParams<{
+        entity: string;
+        location?: string;
+        errors: Array<Error>;
+      }>,
+    ): Promise<void> {
+      const { entity, location, errors } = params.eventPayload;
+      for (const error of errors) {
+        env.logger.warn(error.message, {
+          entity,
+          location,
+        });
+      }
+    },
+  });
+  ```
+
+### `@backstage/plugin-catalog-react` (1.11.2 → [1.11.3](../../changelogs/@backstage/plugin-catalog-react.md#1113))
+
+#### 1.11.3
+
+##### Patch Changes
+
+- [`47dec6f`](https://github.com/backstage/backstage/commit/47dec6f): Added the `no-top-level-material-ui-4-imports` ESLint rule to aid with the migration to Material UI v5
+- [`b863830`](https://github.com/backstage/backstage/commit/b863830): Change behavior in EntityAutoCompletePicker to only hide filter if there are no available options. Previously the filter was hidden if there were <= 1 available options.
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-dynatrace` (10.0.2 → [10.0.3](../../changelogs/@backstage/plugin-dynatrace.md#1003))
+
+#### 10.0.3
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-scaffolder` (1.19.2 → [1.19.3](../../changelogs/@backstage/plugin-scaffolder.md#1193))
+
+#### 1.19.3
+
+##### Patch Changes
+
+- [`4f1f6ca`](https://github.com/backstage/backstage/commit/4f1f6ca): Use default value for `MyGroupsPicker` if provided
+- [`605c971`](https://github.com/backstage/backstage/commit/605c971): Allow the task list search to work on the Scaffolder template title.
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`87d2eb8`](https://github.com/backstage/backstage/commit/87d2eb8): Updated dependency `json-schema-library` to `^9.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+- [`419e948`](https://github.com/backstage/backstage/commit/419e948): Don't show login prompt if token is set in the state
+
+### `@backstage/plugin-scaffolder-backend` (1.22.3 → [1.22.4](../../changelogs/@backstage/plugin-scaffolder-backend.md#1224))
+
+#### 1.22.4
+
+##### Patch Changes
+
+- [`f34a9b1`](https://github.com/backstage/backstage/commit/f34a9b1): The `catalog:write` action now automatically adds a `backstage.io/template-source` annotation, indicating which Scaffolder template was used to create the entity.
+
+### `@backstage/plugin-scaffolder-react` (1.8.3 → [1.8.4](../../changelogs/@backstage/plugin-scaffolder-react.md#184))
+
+#### 1.8.4
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`87d2eb8`](https://github.com/backstage/backstage/commit/87d2eb8): Updated dependency `json-schema-library` to `^9.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+- [`0e692cf`](https://github.com/backstage/backstage/commit/0e692cf): Added ESLint rule `no-top-level-material-ui-4-imports` to migrate the Material UI imports.
+- [`df99f62`](https://github.com/backstage/backstage/commit/df99f62): The `value` sent on the `create` analytics event (fired when a Scaffolder template is executed) is now set to the number of minutes saved by executing the template. This value is derived from the `backstage.io/time-saved` annotation on the template entity, if available.
+
+  Note: the `create` event is now captured in the `<Workflow>` component. If you are directly making use of the alpha-exported `<Stepper>` component, an analytics `create` event will no longer be captured on your behalf.
+
+### `@backstage/plugin-search` (1.4.9 → [1.4.10](../../changelogs/@backstage/plugin-search.md#1410))
+
+#### 1.4.10
+
+##### Patch Changes
+
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
+### `@backstage/plugin-search-backend` (1.5.6 → [1.5.7](../../changelogs/@backstage/plugin-search-backend.md#157))
+
+#### 1.5.7
+
+##### Patch Changes
+
+- [`2bd291e`](https://github.com/backstage/backstage/commit/2bd291e): Allow reserved characters in requests.
+- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
+
+### `@backstage/plugin-search-backend-node` (1.2.20 → [1.2.21](../../changelogs/@backstage/plugin-search-backend-node.md#1221))
+
+#### 1.2.21
+
+##### Patch Changes
+
+- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
+
+### `@backstage/plugin-search-react` (1.7.9 → [1.7.10](../../changelogs/@backstage/plugin-search-react.md#1710))
+
+#### 1.7.10
+
+##### Patch Changes
+
+- [`8d50bd3`](https://github.com/backstage/backstage/commit/8d50bd3): add mui imports eslint rule
+- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
+- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
+
 ### `@backstage/plugin-techdocs` (1.10.3 → [1.10.4](../../changelogs/@backstage/plugin-techdocs.md#1104))
 
 #### 1.10.4
@@ -2004,62 +2061,9 @@ Changes between 1.25.2 and 1.26.0 — 240 changed and 3 added packages.
 - [`b450af3`](https://github.com/backstage/backstage/commit/b450af3): Added ESLint rule `no-top-level-material-ui-4-imports` in the Techdocs-react plugin to migrate the Material UI imports.
 - [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
 
-### `@backstage/plugin-todo` (0.2.37 → [0.2.38](../../changelogs/@backstage/plugin-todo.md#0238))
-
-#### 0.2.38
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
-### `@backstage/plugin-todo-backend` (0.3.15 → [0.3.16](../../changelogs/@backstage/plugin-todo-backend.md#0316))
-
-#### 0.3.16
-
-##### Patch Changes
-
-- [`2bd291e`](https://github.com/backstage/backstage/commit/2bd291e): Allow reserved characters in requests.
-- [`d5a1fe1`](https://github.com/backstage/backstage/commit/d5a1fe1): Replaced winston logger with `LoggerService`
-
-### `@backstage/plugin-user-settings` (0.8.4 → [0.8.5](../../changelogs/@backstage/plugin-user-settings.md#085))
-
-#### 0.8.5
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
-### `@backstage/plugin-vault` (0.1.28 → [0.1.29](../../changelogs/@backstage/plugin-vault.md#0129))
-
-#### 0.1.29
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
-### `@backstage/plugin-xcmetrics` (0.2.51 → [0.2.52](../../changelogs/@backstage/plugin-xcmetrics.md#0252))
-
-#### 0.2.52
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-- [`cb1e3b0`](https://github.com/backstage/backstage/commit/cb1e3b0): Updated dependency `@testing-library/dom` to `^10.0.0`.
-
 ### `@backstage/test-utils` (1.5.3 → [1.5.4](../../changelogs/@backstage/test-utils.md#154))
 
 #### 1.5.4
-
-##### Patch Changes
-
-- [`abfbcfc`](https://github.com/backstage/backstage/commit/abfbcfc): Updated dependency `@testing-library/react` to `^15.0.0`.
-
-### `@backstage/theme` (0.5.2 → [0.5.3](../../changelogs/@backstage/theme.md#053))
-
-#### 0.5.3
 
 ##### Patch Changes
 

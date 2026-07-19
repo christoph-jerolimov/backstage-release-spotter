@@ -1,18 +1,18 @@
 # Backstage Release 1.47.4 changelog
 
-Changes between 1.47.3 and 1.47.4 — 2 changed and 0 added packages.
+Changes between 1.47.3 and 1.47.4 — 0 added, 0 removed, 2 upgraded, 190 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 2 packages
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/plugin-app-visualizer` (0.1.27 → 0.1.28)](#backstageplugin-app-visualizer-0127--0128)
   - [`@backstage/ui` (0.11.2 → 0.11.3)](#backstageui-0112--0113)
 
-## Patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/plugin-app-visualizer` (0.1.27 → [0.1.28](../../changelogs/@backstage/plugin-app-visualizer.md#0128))
 

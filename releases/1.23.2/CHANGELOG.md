@@ -1,11 +1,12 @@
 # Backstage Release 1.23.2 changelog
 
-Changes between 1.23.1 and 1.23.2 — 117 changed and 0 added packages.
+Changes between 1.23.1 and 1.23.2 — 0 added, 0 removed, 117 upgraded, 146 unchanged packages.
 
 ## Summary
 
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 6 packages
-- [Other patch version bumps](#other-patch-version-bumps): 111 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 102 packages
+- [Other patch version bumps](#other-patch-version-bumps): 9 packages
 
 ## Table of contents
 
@@ -16,7 +17,7 @@ Changes between 1.23.1 and 1.23.2 — 117 changed and 0 added packages.
   - [`@backstage/plugin-notifications-node` (0.0.1 → 0.0.2)](#backstageplugin-notifications-node-001--002)
   - [`@backstage/plugin-signals-backend` (0.0.1 → 0.0.2)](#backstageplugin-signals-backend-001--002)
   - [`@backstage/plugin-signals-node` (0.0.1 → 0.0.2)](#backstageplugin-signals-node-001--002)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.5.11 → 0.5.12)](#backstagebackend-app-api-0511--0512)
   - [`@backstage/backend-common` (0.21.0 → 0.21.1)](#backstagebackend-common-0210--0211)
   - [`@backstage/backend-defaults` (0.2.10 → 0.2.11)](#backstagebackend-defaults-0210--0211)
@@ -47,7 +48,6 @@ Changes between 1.23.1 and 1.23.2 — 117 changed and 0 added packages.
   - [`@backstage/plugin-azure-sites-backend` (0.2.0 → 0.2.1)](#backstageplugin-azure-sites-backend-020--021)
   - [`@backstage/plugin-badges-backend` (0.3.7 → 0.3.8)](#backstageplugin-badges-backend-037--038)
   - [`@backstage/plugin-bazaar-backend` (0.3.8 → 0.3.9)](#backstageplugin-bazaar-backend-038--039)
-  - [`@backstage/plugin-catalog-backend` (1.17.0 → 1.17.1)](#backstageplugin-catalog-backend-1170--1171)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.3.4 → 0.3.5)](#backstageplugin-catalog-backend-module-aws-034--035)
   - [`@backstage/plugin-catalog-backend-module-azure` (0.1.29 → 0.1.30)](#backstageplugin-catalog-backend-module-azure-0129--0130)
   - [`@backstage/plugin-catalog-backend-module-backstage-openapi` (0.1.3 → 0.1.4)](#backstageplugin-catalog-backend-module-backstage-openapi-013--014)
@@ -65,7 +65,6 @@ Changes between 1.23.1 and 1.23.2 — 117 changed and 0 added packages.
   - [`@backstage/plugin-catalog-backend-module-puppetdb` (0.1.15 → 0.1.16)](#backstageplugin-catalog-backend-module-puppetdb-0115--0116)
   - [`@backstage/plugin-catalog-backend-module-scaffolder-entity-model` (0.1.7 → 0.1.8)](#backstageplugin-catalog-backend-module-scaffolder-entity-model-017--018)
   - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.3.7 → 0.3.8)](#backstageplugin-catalog-backend-module-unprocessed-037--038)
-  - [`@backstage/plugin-catalog-node` (1.7.0 → 1.7.1)](#backstageplugin-catalog-node-170--171)
   - [`@backstage/plugin-code-coverage-backend` (0.2.24 → 0.2.25)](#backstageplugin-code-coverage-backend-0224--0225)
   - [`@backstage/plugin-devtools-backend` (0.2.7 → 0.2.8)](#backstageplugin-devtools-backend-027--028)
   - [`@backstage/plugin-entity-feedback-backend` (0.2.7 → 0.2.8)](#backstageplugin-entity-feedback-backend-027--028)
@@ -92,7 +91,6 @@ Changes between 1.23.1 and 1.23.2 — 117 changed and 0 added packages.
   - [`@backstage/plugin-playlist-backend` (0.3.14 → 0.3.15)](#backstageplugin-playlist-backend-0314--0315)
   - [`@backstage/plugin-proxy-backend` (0.4.8 → 0.4.9)](#backstageplugin-proxy-backend-048--049)
   - [`@backstage/plugin-rollbar-backend` (0.1.55 → 0.1.56)](#backstageplugin-rollbar-backend-0155--0156)
-  - [`@backstage/plugin-scaffolder-backend` (1.21.0 → 1.21.1)](#backstageplugin-scaffolder-backend-1210--1211)
   - [`@backstage/plugin-scaffolder-backend-module-azure` (0.1.2 → 0.1.3)](#backstageplugin-scaffolder-backend-module-azure-012--013)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket` (0.2.0 → 0.2.1)](#backstageplugin-scaffolder-backend-module-bitbucket-020--021)
   - [`@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.1.0 → 0.1.1)](#backstageplugin-scaffolder-backend-module-bitbucket-cloud-010--011)
@@ -107,26 +105,30 @@ Changes between 1.23.1 and 1.23.2 — 117 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-sentry` (0.1.18 → 0.1.19)](#backstageplugin-scaffolder-backend-module-sentry-0118--0119)
   - [`@backstage/plugin-scaffolder-backend-module-yeoman` (0.2.31 → 0.2.32)](#backstageplugin-scaffolder-backend-module-yeoman-0231--0232)
   - [`@backstage/plugin-scaffolder-node` (0.3.0 → 0.3.1)](#backstageplugin-scaffolder-node-030--031)
-  - [`@backstage/plugin-search-backend` (1.5.0 → 1.5.1)](#backstageplugin-search-backend-150--151)
   - [`@backstage/plugin-search-backend-module-catalog` (0.1.14 → 0.1.15)](#backstageplugin-search-backend-module-catalog-0114--0115)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.13 → 1.3.14)](#backstageplugin-search-backend-module-elasticsearch-1313--1314)
   - [`@backstage/plugin-search-backend-module-explore` (0.1.14 → 0.1.15)](#backstageplugin-search-backend-module-explore-0114--0115)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.19 → 0.5.20)](#backstageplugin-search-backend-module-pg-0519--0520)
   - [`@backstage/plugin-search-backend-module-stack-overflow-collator` (0.1.3 → 0.1.4)](#backstageplugin-search-backend-module-stack-overflow-collator-013--014)
   - [`@backstage/plugin-search-backend-module-techdocs` (0.1.14 → 0.1.15)](#backstageplugin-search-backend-module-techdocs-0114--0115)
-  - [`@backstage/plugin-search-backend-node` (1.2.14 → 1.2.15)](#backstageplugin-search-backend-node-1214--1215)
   - [`@backstage/plugin-sonarqube-backend` (0.2.12 → 0.2.13)](#backstageplugin-sonarqube-backend-0212--0213)
   - [`@backstage/plugin-stack-overflow-backend` (0.2.14 → 0.2.15)](#backstageplugin-stack-overflow-backend-0214--0215)
   - [`@backstage/plugin-tech-insights-backend` (0.5.24 → 0.5.25)](#backstageplugin-tech-insights-backend-0524--0525)
   - [`@backstage/plugin-tech-insights-backend-module-jsonfc` (0.1.42 → 0.1.43)](#backstageplugin-tech-insights-backend-module-jsonfc-0142--0143)
   - [`@backstage/plugin-tech-insights-node` (0.4.16 → 0.4.17)](#backstageplugin-tech-insights-node-0416--0417)
-  - [`@backstage/plugin-techdocs-backend` (1.9.3 → 1.9.4)](#backstageplugin-techdocs-backend-193--194)
-  - [`@backstage/plugin-techdocs-node` (1.11.2 → 1.11.3)](#backstageplugin-techdocs-node-1112--1113)
   - [`@backstage/plugin-todo-backend` (0.3.8 → 0.3.9)](#backstageplugin-todo-backend-038--039)
   - [`@backstage/plugin-user-settings-backend` (0.2.9 → 0.2.10)](#backstageplugin-user-settings-backend-029--0210)
   - [`@backstage/plugin-vault-backend` (0.4.3 → 0.4.4)](#backstageplugin-vault-backend-043--044)
   - [`@backstage/plugin-vault-node` (0.1.3 → 0.1.4)](#backstageplugin-vault-node-013--014)
   - [`@backstage/repo-tools` (0.6.0 → 0.6.1)](#backstagerepo-tools-060--061)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-catalog-backend` (1.17.0 → 1.17.1)](#backstageplugin-catalog-backend-1170--1171)
+  - [`@backstage/plugin-catalog-node` (1.7.0 → 1.7.1)](#backstageplugin-catalog-node-170--171)
+  - [`@backstage/plugin-scaffolder-backend` (1.21.0 → 1.21.1)](#backstageplugin-scaffolder-backend-1210--1211)
+  - [`@backstage/plugin-search-backend` (1.5.0 → 1.5.1)](#backstageplugin-search-backend-150--151)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.3.13 → 1.3.14)](#backstageplugin-search-backend-module-elasticsearch-1313--1314)
+  - [`@backstage/plugin-search-backend-node` (1.2.14 → 1.2.15)](#backstageplugin-search-backend-node-1214--1215)
+  - [`@backstage/plugin-techdocs-backend` (1.9.3 → 1.9.4)](#backstageplugin-techdocs-backend-193--194)
+  - [`@backstage/plugin-techdocs-node` (1.11.2 → 1.11.3)](#backstageplugin-techdocs-node-1112--1113)
   - [`@techdocs/cli` (1.8.2 → 1.8.3)](#techdocscli-182--183)
 
 ## 0.0.x patch version bumps
@@ -155,7 +157,7 @@ _No changelog entries found._
 
 _No changelog entries found._
 
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.5.11 → [0.5.12](../../changelogs/@backstage/backend-app-api.md#0512))
 
@@ -277,10 +279,6 @@ _No changelog entries found._
 
 _No changelog entries found._
 
-### `@backstage/plugin-catalog-backend` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-catalog-backend.md#1171))
-
-_No changelog entries found._
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.3.4 → [0.3.5](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#035))
 
 _No changelog entries found._
@@ -346,10 +344,6 @@ _No changelog entries found._
 _No changelog entries found._
 
 ### `@backstage/plugin-catalog-backend-module-unprocessed` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-catalog-backend-module-unprocessed.md#038))
-
-_No changelog entries found._
-
-### `@backstage/plugin-catalog-node` (1.7.0 → [1.7.1](../../changelogs/@backstage/plugin-catalog-node.md#171))
 
 _No changelog entries found._
 
@@ -457,10 +451,6 @@ _No changelog entries found._
 
 _No changelog entries found._
 
-### `@backstage/plugin-scaffolder-backend` (1.21.0 → [1.21.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#1211))
-
-_No changelog entries found._
-
 ### `@backstage/plugin-scaffolder-backend-module-azure` (0.1.2 → [0.1.3](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#013))
 
 _No changelog entries found._
@@ -517,15 +507,7 @@ _No changelog entries found._
 
 _No changelog entries found._
 
-### `@backstage/plugin-search-backend` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-search-backend.md#151))
-
-_No changelog entries found._
-
 ### `@backstage/plugin-search-backend-module-catalog` (0.1.14 → [0.1.15](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#0115))
-
-_No changelog entries found._
-
-### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.13 → [1.3.14](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#1314))
 
 _No changelog entries found._
 
@@ -542,10 +524,6 @@ _No changelog entries found._
 _No changelog entries found._
 
 ### `@backstage/plugin-search-backend-module-techdocs` (0.1.14 → [0.1.15](../../changelogs/@backstage/plugin-search-backend-module-techdocs.md#0115))
-
-_No changelog entries found._
-
-### `@backstage/plugin-search-backend-node` (1.2.14 → [1.2.15](../../changelogs/@backstage/plugin-search-backend-node.md#1215))
 
 _No changelog entries found._
 
@@ -569,14 +547,6 @@ _No changelog entries found._
 
 _No changelog entries found._
 
-### `@backstage/plugin-techdocs-backend` (1.9.3 → [1.9.4](../../changelogs/@backstage/plugin-techdocs-backend.md#194))
-
-_No changelog entries found._
-
-### `@backstage/plugin-techdocs-node` (1.11.2 → [1.11.3](../../changelogs/@backstage/plugin-techdocs-node.md#1113))
-
-_No changelog entries found._
-
 ### `@backstage/plugin-todo-backend` (0.3.8 → [0.3.9](../../changelogs/@backstage/plugin-todo-backend.md#039))
 
 _No changelog entries found._
@@ -594,6 +564,40 @@ _No changelog entries found._
 _No changelog entries found._
 
 ### `@backstage/repo-tools` (0.6.0 → [0.6.1](../../changelogs/@backstage/repo-tools.md#061))
+
+_No changelog entries found._
+
+## Other patch version bumps
+
+### `@backstage/plugin-catalog-backend` (1.17.0 → [1.17.1](../../changelogs/@backstage/plugin-catalog-backend.md#1171))
+
+_No changelog entries found._
+
+### `@backstage/plugin-catalog-node` (1.7.0 → [1.7.1](../../changelogs/@backstage/plugin-catalog-node.md#171))
+
+_No changelog entries found._
+
+### `@backstage/plugin-scaffolder-backend` (1.21.0 → [1.21.1](../../changelogs/@backstage/plugin-scaffolder-backend.md#1211))
+
+_No changelog entries found._
+
+### `@backstage/plugin-search-backend` (1.5.0 → [1.5.1](../../changelogs/@backstage/plugin-search-backend.md#151))
+
+_No changelog entries found._
+
+### `@backstage/plugin-search-backend-module-elasticsearch` (1.3.13 → [1.3.14](../../changelogs/@backstage/plugin-search-backend-module-elasticsearch.md#1314))
+
+_No changelog entries found._
+
+### `@backstage/plugin-search-backend-node` (1.2.14 → [1.2.15](../../changelogs/@backstage/plugin-search-backend-node.md#1215))
+
+_No changelog entries found._
+
+### `@backstage/plugin-techdocs-backend` (1.9.3 → [1.9.4](../../changelogs/@backstage/plugin-techdocs-backend.md#194))
+
+_No changelog entries found._
+
+### `@backstage/plugin-techdocs-node` (1.11.2 → [1.11.3](../../changelogs/@backstage/plugin-techdocs-node.md#1113))
 
 _No changelog entries found._
 

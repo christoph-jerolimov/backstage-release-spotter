@@ -1,6 +1,6 @@
 # Backstage Release 1.29.0 changelog
 
-Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
+Changes between 1.28.4 and 1.29.0 — 2 added, 0 removed, 153 upgraded, 19 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
 - [Breaking changes](#breaking-changes): 6 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 1 package
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 37 packages
 - [Other minor version bumps](#other-minor-version-bumps): 6 packages
-- [Other patch version bumps](#other-patch-version-bumps): 47 packages
+- [Other patch version bumps](#other-patch-version-bumps): 10 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 92 packages
 
 ## Table of contents
@@ -28,14 +29,7 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.3.2 → 0.4.0)](#backstageplugin-scaffolder-backend-module-github-032--040)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-notifications-common` (0.0.4 → 0.0.5)](#backstageplugin-notifications-common-004--005)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/core-app-api` (1.13.0 → 1.14.0)](#backstagecore-app-api-1130--1140)
-  - [`@backstage/integration` (1.12.0 → 1.13.0)](#backstageintegration-1120--1130)
-  - [`@backstage/plugin-catalog-backend` (1.23.2 → 1.24.0)](#backstageplugin-catalog-backend-1232--1240)
-  - [`@backstage/plugin-scaffolder` (1.22.0 → 1.23.0)](#backstageplugin-scaffolder-1220--1230)
-  - [`@backstage/plugin-scaffolder-backend` (1.22.11 → 1.23.0)](#backstageplugin-scaffolder-backend-12211--1230)
-  - [`@backstage/plugin-scaffolder-react` (1.9.0 → 1.10.0)](#backstageplugin-scaffolder-react-190--1100)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-common` (0.23.2 → 0.23.3)](#backstagebackend-common-0232--0233)
   - [`@backstage/backend-dynamic-feature-service` (0.2.14 → 0.2.15)](#backstagebackend-dynamic-feature-service-0214--0215)
   - [`@backstage/backend-tasks` (0.5.26 → 0.5.27)](#backstagebackend-tasks-0526--0527)
@@ -49,12 +43,10 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
   - [`@backstage/plugin-auth-backend-module-atlassian-provider` (0.2.2 → 0.2.3)](#backstageplugin-auth-backend-module-atlassian-provider-022--023)
   - [`@backstage/plugin-auth-node` (0.4.16 → 0.4.17)](#backstageplugin-auth-node-0416--0417)
   - [`@backstage/plugin-bitbucket-cloud-common` (0.2.20 → 0.2.21)](#backstageplugin-bitbucket-cloud-common-0220--0221)
-  - [`@backstage/plugin-catalog` (1.21.0 → 1.21.1)](#backstageplugin-catalog-1210--1211)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.3.16 → 0.3.17)](#backstageplugin-catalog-backend-module-aws-0316--0317)
   - [`@backstage/plugin-catalog-backend-module-github` (0.6.4 → 0.6.5)](#backstageplugin-catalog-backend-module-github-064--065)
   - [`@backstage/plugin-catalog-backend-module-gitlab` (0.3.20 → 0.3.21)](#backstageplugin-catalog-backend-module-gitlab-0320--0321)
   - [`@backstage/plugin-catalog-backend-module-msgraph` (0.5.29 → 0.5.30)](#backstageplugin-catalog-backend-module-msgraph-0529--0530)
-  - [`@backstage/plugin-catalog-react` (1.12.1 → 1.12.2)](#backstageplugin-catalog-react-1121--1122)
   - [`@backstage/plugin-events-node` (0.3.7 → 0.3.8)](#backstageplugin-events-node-037--038)
   - [`@backstage/plugin-home` (0.7.6 → 0.7.7)](#backstageplugin-home-076--077)
   - [`@backstage/plugin-home-react` (0.1.14 → 0.1.15)](#backstageplugin-home-react-0114--0115)
@@ -75,6 +67,16 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.4.38 → 0.4.39)](#backstageplugin-scaffolder-backend-module-rails-0438--0439)
   - [`@backstage/plugin-scaffolder-node` (0.4.7 → 0.4.8)](#backstageplugin-scaffolder-node-047--048)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.1.8 → 0.1.9)](#backstageplugin-scaffolder-node-test-utils-018--019)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/core-app-api` (1.13.0 → 1.14.0)](#backstagecore-app-api-1130--1140)
+  - [`@backstage/integration` (1.12.0 → 1.13.0)](#backstageintegration-1120--1130)
+  - [`@backstage/plugin-catalog-backend` (1.23.2 → 1.24.0)](#backstageplugin-catalog-backend-1232--1240)
+  - [`@backstage/plugin-scaffolder` (1.22.0 → 1.23.0)](#backstageplugin-scaffolder-1220--1230)
+  - [`@backstage/plugin-scaffolder-backend` (1.22.11 → 1.23.0)](#backstageplugin-scaffolder-backend-12211--1230)
+  - [`@backstage/plugin-scaffolder-react` (1.9.0 → 1.10.0)](#backstageplugin-scaffolder-react-190--1100)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-catalog` (1.21.0 → 1.21.1)](#backstageplugin-catalog-1210--1211)
+  - [`@backstage/plugin-catalog-react` (1.12.1 → 1.12.2)](#backstageplugin-catalog-react-1121--1122)
   - [`@backstage/plugin-search` (1.4.13 → 1.4.14)](#backstageplugin-search-1413--1414)
   - [`@backstage/plugin-search-backend` (1.5.13 → 1.5.14)](#backstageplugin-search-backend-1513--1514)
   - [`@backstage/plugin-techdocs` (1.10.6 → 1.10.7)](#backstageplugin-techdocs-1106--1107)
@@ -310,99 +312,7 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
 
 - [`4e4ef2b`](https://github.com/backstage/backstage/commit/4e4ef2b): Move notification processor filter parsing to common package
 
-## Other minor version bumps
-
-### `@backstage/core-app-api` (1.13.0 → [1.14.0](../../changelogs/@backstage/core-app-api.md#1140))
-
-#### 1.14.0
-
-##### Minor Changes
-
-- [`d3c39fc`](https://github.com/backstage/backstage/commit/d3c39fc): Allow for the disabling of external routes through config, which was rendered impossible after the introduction of default targets.
-
-  ```yaml
-  app:
-    routes:
-      bindings:
-        # This has the effect of removing the button for registering new
-        # catalog entities in the scaffolder template list view
-        scaffolder.registerComponent: false
-  ```
-
-##### Patch Changes
-
-- [`db2e2d5`](https://github.com/backstage/backstage/commit/db2e2d5): Updated config schema to support app.routes.bindings
-
-### `@backstage/integration` (1.12.0 → [1.13.0](../../changelogs/@backstage/integration.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `token` for `bitbucketCloud` integration
-
-### `@backstage/plugin-catalog-backend` (1.23.2 → [1.24.0](../../changelogs/@backstage/plugin-catalog-backend.md#1240))
-
-#### 1.24.0
-
-##### Minor Changes
-
-- [`b9ed1bb`](https://github.com/backstage/backstage/commit/b9ed1bb): bumped better-sqlite3 from ^9.0.0 to ^11.0.0
-
-### `@backstage/plugin-scaffolder` (1.22.0 → [1.23.0](../../changelogs/@backstage/plugin-scaffolder.md#1230))
-
-#### 1.23.0
-
-##### Minor Changes
-
-- [`52b6db0`](https://github.com/backstage/backstage/commit/52b6db0): Use virtualization with `EntityPicker` as done earlier with `MultiEntityPicker` to fix performance issues with large data sets. `VirtualizedListbox` extracted into reusable component.
-- [`3583ce5`](https://github.com/backstage/backstage/commit/3583ce5): Use virtualization with `MultiEntityPicker`. Fixes performance issues with large data sets.
-- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `bitbucketCloud` autocomplete in `RepoUrlPicker`
-
-##### Patch Changes
-
-- [`4d7e11f`](https://github.com/backstage/backstage/commit/4d7e11f): enable resizing of the task log stream viewer
-- [`661b354`](https://github.com/backstage/backstage/commit/661b354): Fixed a bug where the `RepoUrlPicker` would still require the `owner` field for `azure`
-- [`cc81579`](https://github.com/backstage/backstage/commit/cc81579): Updated dependency `@rjsf/utils` to `5.18.5`.
-  Updated dependency `@rjsf/core` to `5.18.5`.
-  Updated dependency `@rjsf/material-ui` to `5.18.5`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.18.5`.
-- [`89c44b3`](https://github.com/backstage/backstage/commit/89c44b3): Support `catalogFilter` array on `OwnedEntityPicker`
-
-### `@backstage/plugin-scaffolder-backend` (1.22.11 → [1.23.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1230))
-
-#### 1.23.0
-
-##### Minor Changes
-
-- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `autocomplete` extension point to provide additional `autocomplete` handlers
-- [`0b52438`](https://github.com/backstage/backstage/commit/0b52438): Serialization of the scaffolder workspace into GCP bucket
-
-##### Patch Changes
-
-- [`b9451dd`](https://github.com/backstage/backstage/commit/b9451dd): Updated `catalog:write` scaffolder action to show correct file path location in log message
-- [`ff1bb4c`](https://github.com/backstage/backstage/commit/ff1bb4c): Added a documentation how to use checkpoints
-- [`da90cce`](https://github.com/backstage/backstage/commit/da90cce): Updated dependency `esbuild` to `^0.21.0`.
-- [`62d1fe3`](https://github.com/backstage/backstage/commit/62d1fe3): Fix user entity not being fetched for scaffolder dry runner
-
-### `@backstage/plugin-scaffolder-react` (1.9.0 → [1.10.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1100))
-
-#### 1.10.0
-
-##### Minor Changes
-
-- [`354e68c`](https://github.com/backstage/backstage/commit/354e68c): Improve validation error display text in scaffolder
-- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `bitbucketCloud` autocomplete in `RepoUrlPicker`
-
-##### Patch Changes
-
-- [`cc81579`](https://github.com/backstage/backstage/commit/cc81579): Updated dependency `@rjsf/utils` to `5.18.5`.
-  Updated dependency `@rjsf/core` to `5.18.5`.
-  Updated dependency `@rjsf/material-ui` to `5.18.5`.
-  Updated dependency `@rjsf/validator-ajv8` to `5.18.5`.
-- [`4d7e11f`](https://github.com/backstage/backstage/commit/4d7e11f): disables rendering of output box if no output is returned
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-common` (0.23.2 → [0.23.3](../../changelogs/@backstage/backend-common.md#0233))
 
@@ -543,15 +453,6 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
 
 - [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `autocomplete` handler to provide autocomplete options for `RepoUrlPicker`
 
-### `@backstage/plugin-catalog` (1.21.0 → [1.21.1](../../changelogs/@backstage/plugin-catalog.md#1211))
-
-#### 1.21.1
-
-##### Patch Changes
-
-- [`06c0956`](https://github.com/backstage/backstage/commit/06c0956): Support i18n for catalog and catalog-react plugins
-- [`d133eaa`](https://github.com/backstage/backstage/commit/d133eaa): Added small notes to AboutCard to discourage customizability PRs
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.3.16 → [0.3.17](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0317))
 
 #### 0.3.17
@@ -608,15 +509,6 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
 ##### Patch Changes
 
 - [`f7bdcea`](https://github.com/backstage/backstage/commit/f7bdcea): Adds a dynamic provider for the plugin-catalog-backend-module-msgraph. Configuration is now runtime configurable through the ProviderConfigTransformer.
-
-### `@backstage/plugin-catalog-react` (1.12.1 → [1.12.2](../../changelogs/@backstage/plugin-catalog-react.md#1122))
-
-#### 1.12.2
-
-##### Patch Changes
-
-- [`06c0956`](https://github.com/backstage/backstage/commit/06c0956): Support i18n for catalog and catalog-react plugins
-- [`2030962`](https://github.com/backstage/backstage/commit/2030962): Make EntityOwnerPicker display metadata.title or spec.profile.displayName for mode=only-owners instead of metadata.name
 
 ### `@backstage/plugin-events-node` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-events-node.md#038))
 
@@ -796,6 +688,118 @@ Changes between 1.28.4 and 1.29.0 — 153 changed and 2 added packages.
 ##### Patch Changes
 
 - [`54429b5`](https://github.com/backstage/backstage/commit/54429b5): Filename and imports correction for mockActionContext.ts
+
+## Other minor version bumps
+
+### `@backstage/core-app-api` (1.13.0 → [1.14.0](../../changelogs/@backstage/core-app-api.md#1140))
+
+#### 1.14.0
+
+##### Minor Changes
+
+- [`d3c39fc`](https://github.com/backstage/backstage/commit/d3c39fc): Allow for the disabling of external routes through config, which was rendered impossible after the introduction of default targets.
+
+  ```yaml
+  app:
+    routes:
+      bindings:
+        # This has the effect of removing the button for registering new
+        # catalog entities in the scaffolder template list view
+        scaffolder.registerComponent: false
+  ```
+
+##### Patch Changes
+
+- [`db2e2d5`](https://github.com/backstage/backstage/commit/db2e2d5): Updated config schema to support app.routes.bindings
+
+### `@backstage/integration` (1.12.0 → [1.13.0](../../changelogs/@backstage/integration.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `token` for `bitbucketCloud` integration
+
+### `@backstage/plugin-catalog-backend` (1.23.2 → [1.24.0](../../changelogs/@backstage/plugin-catalog-backend.md#1240))
+
+#### 1.24.0
+
+##### Minor Changes
+
+- [`b9ed1bb`](https://github.com/backstage/backstage/commit/b9ed1bb): bumped better-sqlite3 from ^9.0.0 to ^11.0.0
+
+### `@backstage/plugin-scaffolder` (1.22.0 → [1.23.0](../../changelogs/@backstage/plugin-scaffolder.md#1230))
+
+#### 1.23.0
+
+##### Minor Changes
+
+- [`52b6db0`](https://github.com/backstage/backstage/commit/52b6db0): Use virtualization with `EntityPicker` as done earlier with `MultiEntityPicker` to fix performance issues with large data sets. `VirtualizedListbox` extracted into reusable component.
+- [`3583ce5`](https://github.com/backstage/backstage/commit/3583ce5): Use virtualization with `MultiEntityPicker`. Fixes performance issues with large data sets.
+- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `bitbucketCloud` autocomplete in `RepoUrlPicker`
+
+##### Patch Changes
+
+- [`4d7e11f`](https://github.com/backstage/backstage/commit/4d7e11f): enable resizing of the task log stream viewer
+- [`661b354`](https://github.com/backstage/backstage/commit/661b354): Fixed a bug where the `RepoUrlPicker` would still require the `owner` field for `azure`
+- [`cc81579`](https://github.com/backstage/backstage/commit/cc81579): Updated dependency `@rjsf/utils` to `5.18.5`.
+  Updated dependency `@rjsf/core` to `5.18.5`.
+  Updated dependency `@rjsf/material-ui` to `5.18.5`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.18.5`.
+- [`89c44b3`](https://github.com/backstage/backstage/commit/89c44b3): Support `catalogFilter` array on `OwnedEntityPicker`
+
+### `@backstage/plugin-scaffolder-backend` (1.22.11 → [1.23.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1230))
+
+#### 1.23.0
+
+##### Minor Changes
+
+- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `autocomplete` extension point to provide additional `autocomplete` handlers
+- [`0b52438`](https://github.com/backstage/backstage/commit/0b52438): Serialization of the scaffolder workspace into GCP bucket
+
+##### Patch Changes
+
+- [`b9451dd`](https://github.com/backstage/backstage/commit/b9451dd): Updated `catalog:write` scaffolder action to show correct file path location in log message
+- [`ff1bb4c`](https://github.com/backstage/backstage/commit/ff1bb4c): Added a documentation how to use checkpoints
+- [`da90cce`](https://github.com/backstage/backstage/commit/da90cce): Updated dependency `esbuild` to `^0.21.0`.
+- [`62d1fe3`](https://github.com/backstage/backstage/commit/62d1fe3): Fix user entity not being fetched for scaffolder dry runner
+
+### `@backstage/plugin-scaffolder-react` (1.9.0 → [1.10.0](../../changelogs/@backstage/plugin-scaffolder-react.md#1100))
+
+#### 1.10.0
+
+##### Minor Changes
+
+- [`354e68c`](https://github.com/backstage/backstage/commit/354e68c): Improve validation error display text in scaffolder
+- [`b5deed0`](https://github.com/backstage/backstage/commit/b5deed0): Add support for `bitbucketCloud` autocomplete in `RepoUrlPicker`
+
+##### Patch Changes
+
+- [`cc81579`](https://github.com/backstage/backstage/commit/cc81579): Updated dependency `@rjsf/utils` to `5.18.5`.
+  Updated dependency `@rjsf/core` to `5.18.5`.
+  Updated dependency `@rjsf/material-ui` to `5.18.5`.
+  Updated dependency `@rjsf/validator-ajv8` to `5.18.5`.
+- [`4d7e11f`](https://github.com/backstage/backstage/commit/4d7e11f): disables rendering of output box if no output is returned
+
+## Other patch version bumps
+
+### `@backstage/plugin-catalog` (1.21.0 → [1.21.1](../../changelogs/@backstage/plugin-catalog.md#1211))
+
+#### 1.21.1
+
+##### Patch Changes
+
+- [`06c0956`](https://github.com/backstage/backstage/commit/06c0956): Support i18n for catalog and catalog-react plugins
+- [`d133eaa`](https://github.com/backstage/backstage/commit/d133eaa): Added small notes to AboutCard to discourage customizability PRs
+
+### `@backstage/plugin-catalog-react` (1.12.1 → [1.12.2](../../changelogs/@backstage/plugin-catalog-react.md#1122))
+
+#### 1.12.2
+
+##### Patch Changes
+
+- [`06c0956`](https://github.com/backstage/backstage/commit/06c0956): Support i18n for catalog and catalog-react plugins
+- [`2030962`](https://github.com/backstage/backstage/commit/2030962): Make EntityOwnerPicker display metadata.title or spec.profile.displayName for mode=only-owners instead of metadata.name
 
 ### `@backstage/plugin-search` (1.4.13 → [1.4.14](../../changelogs/@backstage/plugin-search.md#1414))
 

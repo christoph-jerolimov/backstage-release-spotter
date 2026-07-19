@@ -1,13 +1,14 @@
 # Backstage Release 1.25.0 changelog
 
-Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
+Changes between 1.24.2 and 1.25.0 — 0 added, 0 removed, 225 upgraded, 42 unchanged packages.
 
 ## Summary
 
 - [0.x minor version bumps](#0x-minor-version-bumps): 2 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 82 packages
 - [Other minor version bumps](#other-minor-version-bumps): 2 packages
-- [Other patch version bumps](#other-patch-version-bumps): 97 packages
+- [Other patch version bumps](#other-patch-version-bumps): 15 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 123 packages
 
 ## Table of contents
@@ -17,18 +18,12 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
   - [`@backstage/plugin-github-issues` (0.3.0 → 0.4.0)](#backstageplugin-github-issues-030--040)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-kubernetes-cluster` (0.0.8 → 0.0.9)](#backstageplugin-kubernetes-cluster-008--009)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/plugin-catalog-backend` (1.20.0 → 1.21.0)](#backstageplugin-catalog-backend-1200--1210)
-  - [`@backstage/plugin-catalog-node` (1.10.0 → 1.11.0)](#backstageplugin-catalog-node-1100--1110)
-- [Other patch version bumps](#other-patch-version-bumps)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-app-api` (0.6.1 → 0.6.2)](#backstagebackend-app-api-061--062)
   - [`@backstage/backend-common` (0.21.5 → 0.21.6)](#backstagebackend-common-0215--0216)
-  - [`@backstage/catalog-client` (1.6.2 → 1.6.3)](#backstagecatalog-client-162--163)
   - [`@backstage/cli` (0.26.1 → 0.26.2)](#backstagecli-0261--0262)
-  - [`@backstage/core-app-api` (1.12.2 → 1.12.3)](#backstagecore-app-api-1122--1123)
   - [`@backstage/core-components` (0.14.2 → 0.14.3)](#backstagecore-components-0142--0143)
   - [`@backstage/create-app` (0.5.12 → 0.5.13)](#backstagecreate-app-0512--0513)
-  - [`@backstage/dev-utils` (1.0.29 → 1.0.30)](#backstagedev-utils-1029--1030)
   - [`@backstage/integration-aws-node` (0.1.11 → 0.1.12)](#backstageintegration-aws-node-0111--0112)
   - [`@backstage/plugin-adr` (0.6.15 → 0.6.16)](#backstageplugin-adr-0615--0616)
   - [`@backstage/plugin-airbrake` (0.3.32 → 0.3.33)](#backstageplugin-airbrake-0332--0333)
@@ -42,12 +37,10 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
   - [`@backstage/plugin-badges` (0.2.56 → 0.2.57)](#backstageplugin-badges-0256--0257)
   - [`@backstage/plugin-bazaar` (0.2.24 → 0.2.25)](#backstageplugin-bazaar-0224--0225)
   - [`@backstage/plugin-bitrise` (0.1.59 → 0.1.60)](#backstageplugin-bitrise-0159--0160)
-  - [`@backstage/plugin-catalog` (1.18.1 → 1.18.2)](#backstageplugin-catalog-1181--1182)
   - [`@backstage/plugin-catalog-backend-module-aws` (0.3.10 → 0.3.11)](#backstageplugin-catalog-backend-module-aws-0310--0311)
   - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.4.2 → 0.4.3)](#backstageplugin-catalog-backend-module-unprocessed-042--043)
   - [`@backstage/plugin-catalog-graph` (0.4.2 → 0.4.3)](#backstageplugin-catalog-graph-042--043)
   - [`@backstage/plugin-catalog-import` (0.10.8 → 0.10.9)](#backstageplugin-catalog-import-0108--0109)
-  - [`@backstage/plugin-catalog-react` (1.11.1 → 1.11.2)](#backstageplugin-catalog-react-1111--1112)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.1 → 0.2.2)](#backstageplugin-catalog-unprocessed-entities-021--022)
   - [`@backstage/plugin-cicd-statistics` (0.1.34 → 0.1.35)](#backstageplugin-cicd-statistics-0134--0135)
   - [`@backstage/plugin-circleci` (0.3.32 → 0.3.33)](#backstageplugin-circleci-0332--0333)
@@ -57,7 +50,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
   - [`@backstage/plugin-config-schema` (0.1.52 → 0.1.53)](#backstageplugin-config-schema-0152--0153)
   - [`@backstage/plugin-cost-insights` (0.12.21 → 0.12.22)](#backstageplugin-cost-insights-01221--01222)
   - [`@backstage/plugin-devtools` (0.1.11 → 0.1.12)](#backstageplugin-devtools-0111--0112)
-  - [`@backstage/plugin-dynatrace` (10.0.1 → 10.0.2)](#backstageplugin-dynatrace-1001--1002)
   - [`@backstage/plugin-entity-feedback` (0.2.15 → 0.2.16)](#backstageplugin-entity-feedback-0215--0216)
   - [`@backstage/plugin-entity-validation` (0.1.17 → 0.1.18)](#backstageplugin-entity-validation-0117--0118)
   - [`@backstage/plugin-events-backend-module-aws-sqs` (0.3.1 → 0.3.2)](#backstageplugin-events-backend-module-aws-sqs-031--032)
@@ -98,11 +90,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
   - [`@backstage/plugin-proxy-backend` (0.4.13 → 0.4.14)](#backstageplugin-proxy-backend-0413--0414)
   - [`@backstage/plugin-puppetdb` (0.1.15 → 0.1.16)](#backstageplugin-puppetdb-0115--0116)
   - [`@backstage/plugin-rollbar` (0.4.32 → 0.4.33)](#backstageplugin-rollbar-0432--0433)
-  - [`@backstage/plugin-scaffolder` (1.19.1 → 1.19.2)](#backstageplugin-scaffolder-1191--1192)
-  - [`@backstage/plugin-scaffolder-backend` (1.22.2 → 1.22.3)](#backstageplugin-scaffolder-backend-1222--1223)
-  - [`@backstage/plugin-scaffolder-react` (1.8.2 → 1.8.3)](#backstageplugin-scaffolder-react-182--183)
-  - [`@backstage/plugin-search` (1.4.8 → 1.4.9)](#backstageplugin-search-148--149)
-  - [`@backstage/plugin-search-react` (1.7.8 → 1.7.9)](#backstageplugin-search-react-178--179)
   - [`@backstage/plugin-sentry` (0.5.17 → 0.5.18)](#backstageplugin-sentry-0517--0518)
   - [`@backstage/plugin-shortcuts` (0.3.21 → 0.3.22)](#backstageplugin-shortcuts-0321--0322)
   - [`@backstage/plugin-sonarqube` (0.7.14 → 0.7.15)](#backstageplugin-sonarqube-0714--0715)
@@ -111,12 +98,27 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
   - [`@backstage/plugin-stackstorm` (0.1.13 → 0.1.14)](#backstageplugin-stackstorm-0113--0114)
   - [`@backstage/plugin-tech-insights` (0.3.24 → 0.3.25)](#backstageplugin-tech-insights-0324--0325)
   - [`@backstage/plugin-tech-radar` (0.7.1 → 0.7.2)](#backstageplugin-tech-radar-071--072)
-  - [`@backstage/plugin-techdocs` (1.10.2 → 1.10.3)](#backstageplugin-techdocs-1102--1103)
-  - [`@backstage/plugin-techdocs-node` (1.12.1 → 1.12.2)](#backstageplugin-techdocs-node-1121--1122)
-  - [`@backstage/plugin-techdocs-react` (1.2.1 → 1.2.2)](#backstageplugin-techdocs-react-121--122)
   - [`@backstage/plugin-user-settings` (0.8.3 → 0.8.4)](#backstageplugin-user-settings-083--084)
   - [`@backstage/plugin-vault` (0.1.27 → 0.1.28)](#backstageplugin-vault-0127--0128)
   - [`@backstage/plugin-xcmetrics` (0.2.50 → 0.2.51)](#backstageplugin-xcmetrics-0250--0251)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/plugin-catalog-backend` (1.20.0 → 1.21.0)](#backstageplugin-catalog-backend-1200--1210)
+  - [`@backstage/plugin-catalog-node` (1.10.0 → 1.11.0)](#backstageplugin-catalog-node-1100--1110)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/catalog-client` (1.6.2 → 1.6.3)](#backstagecatalog-client-162--163)
+  - [`@backstage/core-app-api` (1.12.2 → 1.12.3)](#backstagecore-app-api-1122--1123)
+  - [`@backstage/dev-utils` (1.0.29 → 1.0.30)](#backstagedev-utils-1029--1030)
+  - [`@backstage/plugin-catalog` (1.18.1 → 1.18.2)](#backstageplugin-catalog-1181--1182)
+  - [`@backstage/plugin-catalog-react` (1.11.1 → 1.11.2)](#backstageplugin-catalog-react-1111--1112)
+  - [`@backstage/plugin-dynatrace` (10.0.1 → 10.0.2)](#backstageplugin-dynatrace-1001--1002)
+  - [`@backstage/plugin-scaffolder` (1.19.1 → 1.19.2)](#backstageplugin-scaffolder-1191--1192)
+  - [`@backstage/plugin-scaffolder-backend` (1.22.2 → 1.22.3)](#backstageplugin-scaffolder-backend-1222--1223)
+  - [`@backstage/plugin-scaffolder-react` (1.8.2 → 1.8.3)](#backstageplugin-scaffolder-react-182--183)
+  - [`@backstage/plugin-search` (1.4.8 → 1.4.9)](#backstageplugin-search-148--149)
+  - [`@backstage/plugin-search-react` (1.7.8 → 1.7.9)](#backstageplugin-search-react-178--179)
+  - [`@backstage/plugin-techdocs` (1.10.2 → 1.10.3)](#backstageplugin-techdocs-1102--1103)
+  - [`@backstage/plugin-techdocs-node` (1.12.1 → 1.12.2)](#backstageplugin-techdocs-node-1121--1122)
+  - [`@backstage/plugin-techdocs-react` (1.2.1 → 1.2.2)](#backstageplugin-techdocs-react-121--122)
   - [`@techdocs/cli` (1.8.7 → 1.8.8)](#techdocscli-187--188)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -157,25 +159,7 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 - [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
 - [`1c1140e`](https://github.com/backstage/backstage/commit/1c1140e): Added ESLint rule `no-top-level-material-ui-4-imports` in the `kubernetes-cluster` plugin to migrate the Material UI imports.
 
-## Other minor version bumps
-
-### `@backstage/plugin-catalog-backend` (1.20.0 → [1.21.0](../../changelogs/@backstage/plugin-catalog-backend.md#1210))
-
-#### 1.21.0
-
-##### Minor Changes
-
-- [`f3e2e86`](https://github.com/backstage/backstage/commit/f3e2e86): Added the ability to inject custom permissions from modules, on `CatalogBuilder` and `CatalogPermissionExtensionPoint`
-
-### `@backstage/plugin-catalog-node` (1.10.0 → [1.11.0](../../changelogs/@backstage/plugin-catalog-node.md#1110))
-
-#### 1.11.0
-
-##### Minor Changes
-
-- [`f3e2e86`](https://github.com/backstage/backstage/commit/f3e2e86): Added the ability to inject custom permissions from modules, on `CatalogBuilder` and `CatalogPermissionExtensionPoint`
-
-## Other patch version bumps
+## 0.x patch version bumps
 
 ### `@backstage/backend-app-api` (0.6.1 → [0.6.2](../../changelogs/@backstage/backend-app-api.md#062))
 
@@ -193,14 +177,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 
 - [`81a995f`](https://github.com/backstage/backstage/commit/81a995f): Updated dependency `aws-sdk-client-mock` to `^4.0.0`.
 
-### `@backstage/catalog-client` (1.6.2 → [1.6.3](../../changelogs/@backstage/catalog-client.md#163))
-
-#### 1.6.3
-
-##### Patch Changes
-
-- [`7e8a7c8`](https://github.com/backstage/backstage/commit/7e8a7c8): Added missing commas to the example of `queryEntities`
-
 ### `@backstage/cli` (0.26.1 → [0.26.2](../../changelogs/@backstage/cli.md#0262))
 
 #### 0.26.2
@@ -213,14 +189,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 
   ** POTENTIAL BREAKAGE **
   If your tests fail, please change to use path import from `react-use/esm/`. It is also recommended to migrate from `react-user/lib` imports to `react-use/esm`
-
-### `@backstage/core-app-api` (1.12.2 → [1.12.3](../../changelogs/@backstage/core-app-api.md#1123))
-
-#### 1.12.3
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
 
 ### `@backstage/core-components` (0.14.2 → [0.14.3](../../changelogs/@backstage/core-components.md#0143))
 
@@ -237,14 +205,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 ##### Patch Changes
 
 - Bumped create-app version.
-
-### `@backstage/dev-utils` (1.0.29 → [1.0.30](../../changelogs/@backstage/dev-utils.md#1030))
-
-#### 1.0.30
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
 
 ### `@backstage/integration-aws-node` (0.1.11 → [0.1.12](../../changelogs/@backstage/integration-aws-node.md#0112))
 
@@ -351,15 +311,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 
 - [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
 
-### `@backstage/plugin-catalog` (1.18.1 → [1.18.2](../../changelogs/@backstage/plugin-catalog.md#1182))
-
-#### 1.18.2
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-- [`bbbd510`](https://github.com/backstage/backstage/commit/bbbd510): `CatalogIndexPage` now uses `EntitySearchBar` for text-based filtering of entities, saving the search text in the query parameters and debouncing the server requests.
-
 ### `@backstage/plugin-catalog-backend-module-aws` (0.3.10 → [0.3.11](../../changelogs/@backstage/plugin-catalog-backend-module-aws.md#0311))
 
 #### 0.3.11
@@ -392,15 +343,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 ##### Patch Changes
 
 - [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
-### `@backstage/plugin-catalog-react` (1.11.1 → [1.11.2](../../changelogs/@backstage/plugin-catalog-react.md#1112))
-
-#### 1.11.2
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-- [`b5cbbb6`](https://github.com/backstage/backstage/commit/b5cbbb6): `EntitySearchBar` and `EntityTextFilter` have been updated accordingly to persist the status as query params, following the same pattern as the other server side
 
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.1 → [0.2.2](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#022))
 
@@ -469,14 +411,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 ### `@backstage/plugin-devtools` (0.1.11 → [0.1.12](../../changelogs/@backstage/plugin-devtools.md#0112))
 
 #### 0.1.12
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
-### `@backstage/plugin-dynatrace` (10.0.1 → [10.0.2](../../changelogs/@backstage/plugin-dynatrace.md#1002))
-
-#### 10.0.2
 
 ##### Patch Changes
 
@@ -818,46 +752,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 
 - [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
 
-### `@backstage/plugin-scaffolder` (1.19.1 → [1.19.2](../../changelogs/@backstage/plugin-scaffolder.md#1192))
-
-#### 1.19.2
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
-### `@backstage/plugin-scaffolder-backend` (1.22.2 → [1.22.3](../../changelogs/@backstage/plugin-scaffolder-backend.md#1223))
-
-#### 1.22.3
-
-##### Patch Changes
-
-- [`c74c2de`](https://github.com/backstage/backstage/commit/c74c2de): Fixed an issue causing actions to fail when retrieving auth credentials
-
-### `@backstage/plugin-scaffolder-react` (1.8.2 → [1.8.3](../../changelogs/@backstage/plugin-scaffolder-react.md#183))
-
-#### 1.8.3
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
-### `@backstage/plugin-search` (1.4.8 → [1.4.9](../../changelogs/@backstage/plugin-search.md#149))
-
-#### 1.4.9
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
-### `@backstage/plugin-search-react` (1.7.8 → [1.7.9](../../changelogs/@backstage/plugin-search-react.md#179))
-
-#### 1.7.9
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
 ### `@backstage/plugin-sentry` (0.5.17 → [0.5.18](../../changelogs/@backstage/plugin-sentry.md#0518))
 
 #### 0.5.18
@@ -923,30 +817,6 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 - [`89b093f`](https://github.com/backstage/backstage/commit/89b093f): Added ESLint rule `no-top-level-material-ui-4-imports` in the `tech-radar` plugin to migrate the Material UI imports.
 - [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
 
-### `@backstage/plugin-techdocs` (1.10.2 → [1.10.3](../../changelogs/@backstage/plugin-techdocs.md#1103))
-
-#### 1.10.3
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
-### `@backstage/plugin-techdocs-node` (1.12.1 → [1.12.2](../../changelogs/@backstage/plugin-techdocs-node.md#1122))
-
-#### 1.12.2
-
-##### Patch Changes
-
-- [`81a995f`](https://github.com/backstage/backstage/commit/81a995f): Updated dependency `aws-sdk-client-mock` to `^4.0.0`.
-
-### `@backstage/plugin-techdocs-react` (1.2.1 → [1.2.2](../../changelogs/@backstage/plugin-techdocs-react.md#122))
-
-#### 1.2.2
-
-##### Patch Changes
-
-- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
-
 ### `@backstage/plugin-user-settings` (0.8.3 → [0.8.4](../../changelogs/@backstage/plugin-user-settings.md#084))
 
 #### 0.8.4
@@ -966,6 +836,140 @@ Changes between 1.24.2 and 1.25.0 — 225 changed and 0 added packages.
 ### `@backstage/plugin-xcmetrics` (0.2.50 → [0.2.51](../../changelogs/@backstage/plugin-xcmetrics.md#0251))
 
 #### 0.2.51
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+## Other minor version bumps
+
+### `@backstage/plugin-catalog-backend` (1.20.0 → [1.21.0](../../changelogs/@backstage/plugin-catalog-backend.md#1210))
+
+#### 1.21.0
+
+##### Minor Changes
+
+- [`f3e2e86`](https://github.com/backstage/backstage/commit/f3e2e86): Added the ability to inject custom permissions from modules, on `CatalogBuilder` and `CatalogPermissionExtensionPoint`
+
+### `@backstage/plugin-catalog-node` (1.10.0 → [1.11.0](../../changelogs/@backstage/plugin-catalog-node.md#1110))
+
+#### 1.11.0
+
+##### Minor Changes
+
+- [`f3e2e86`](https://github.com/backstage/backstage/commit/f3e2e86): Added the ability to inject custom permissions from modules, on `CatalogBuilder` and `CatalogPermissionExtensionPoint`
+
+## Other patch version bumps
+
+### `@backstage/catalog-client` (1.6.2 → [1.6.3](../../changelogs/@backstage/catalog-client.md#163))
+
+#### 1.6.3
+
+##### Patch Changes
+
+- [`7e8a7c8`](https://github.com/backstage/backstage/commit/7e8a7c8): Added missing commas to the example of `queryEntities`
+
+### `@backstage/core-app-api` (1.12.2 → [1.12.3](../../changelogs/@backstage/core-app-api.md#1123))
+
+#### 1.12.3
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/dev-utils` (1.0.29 → [1.0.30](../../changelogs/@backstage/dev-utils.md#1030))
+
+#### 1.0.30
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-catalog` (1.18.1 → [1.18.2](../../changelogs/@backstage/plugin-catalog.md#1182))
+
+#### 1.18.2
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+- [`bbbd510`](https://github.com/backstage/backstage/commit/bbbd510): `CatalogIndexPage` now uses `EntitySearchBar` for text-based filtering of entities, saving the search text in the query parameters and debouncing the server requests.
+
+### `@backstage/plugin-catalog-react` (1.11.1 → [1.11.2](../../changelogs/@backstage/plugin-catalog-react.md#1112))
+
+#### 1.11.2
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+- [`b5cbbb6`](https://github.com/backstage/backstage/commit/b5cbbb6): `EntitySearchBar` and `EntityTextFilter` have been updated accordingly to persist the status as query params, following the same pattern as the other server side
+
+### `@backstage/plugin-dynatrace` (10.0.1 → [10.0.2](../../changelogs/@backstage/plugin-dynatrace.md#1002))
+
+#### 10.0.2
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-scaffolder` (1.19.1 → [1.19.2](../../changelogs/@backstage/plugin-scaffolder.md#1192))
+
+#### 1.19.2
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-scaffolder-backend` (1.22.2 → [1.22.3](../../changelogs/@backstage/plugin-scaffolder-backend.md#1223))
+
+#### 1.22.3
+
+##### Patch Changes
+
+- [`c74c2de`](https://github.com/backstage/backstage/commit/c74c2de): Fixed an issue causing actions to fail when retrieving auth credentials
+
+### `@backstage/plugin-scaffolder-react` (1.8.2 → [1.8.3](../../changelogs/@backstage/plugin-scaffolder-react.md#183))
+
+#### 1.8.3
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-search` (1.4.8 → [1.4.9](../../changelogs/@backstage/plugin-search.md#149))
+
+#### 1.4.9
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-search-react` (1.7.8 → [1.7.9](../../changelogs/@backstage/plugin-search-react.md#179))
+
+#### 1.7.9
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-techdocs` (1.10.2 → [1.10.3](../../changelogs/@backstage/plugin-techdocs.md#1103))
+
+#### 1.10.3
+
+##### Patch Changes
+
+- [`e8f026a`](https://github.com/backstage/backstage/commit/e8f026a): Use ESM exports of react-use library
+
+### `@backstage/plugin-techdocs-node` (1.12.1 → [1.12.2](../../changelogs/@backstage/plugin-techdocs-node.md#1122))
+
+#### 1.12.2
+
+##### Patch Changes
+
+- [`81a995f`](https://github.com/backstage/backstage/commit/81a995f): Updated dependency `aws-sdk-client-mock` to `^4.0.0`.
+
+### `@backstage/plugin-techdocs-react` (1.2.1 → [1.2.2](../../changelogs/@backstage/plugin-techdocs-react.md#122))
+
+#### 1.2.2
 
 ##### Patch Changes
 

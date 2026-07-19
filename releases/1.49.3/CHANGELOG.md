@@ -1,23 +1,27 @@
 # Backstage Release 1.49.3 changelog
 
-Changes between 1.49.2 and 1.49.3 — 2 changed and 0 added packages.
+Changes between 1.49.2 and 1.49.3 — 0 added, 0 removed, 2 upgraded, 205 unchanged packages.
 
 ## Summary
 
-- [Patch version bumps](#patch-version-bumps): 2 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 1 package
+- [Other patch version bumps](#other-patch-version-bumps): 1 package
 
 ## Table of contents
 
-- [Patch version bumps](#patch-version-bumps)
-  - [`@backstage/plugin-catalog-react` (2.1.0 → 2.1.1)](#backstageplugin-catalog-react-210--211)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/ui` (0.13.1 → 0.13.2)](#backstageui-0131--0132)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/plugin-catalog-react` (2.1.0 → 2.1.1)](#backstageplugin-catalog-react-210--211)
 
-## Patch version bumps
+## 0.x patch version bumps
 
-### `@backstage/plugin-catalog-react` (2.1.0 → [2.1.1](../../changelogs/@backstage/plugin-catalog-react.md#211))
+### `@backstage/ui` (0.13.1 → [0.13.2](../../changelogs/@backstage/ui.md#0132))
 
 _No changelog entries found._
 
-### `@backstage/ui` (0.13.1 → [0.13.2](../../changelogs/@backstage/ui.md#0132))
+## Other patch version bumps
+
+### `@backstage/plugin-catalog-react` (2.1.0 → [2.1.1](../../changelogs/@backstage/plugin-catalog-react.md#211))
 
 _No changelog entries found._

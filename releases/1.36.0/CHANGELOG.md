@@ -1,6 +1,6 @@
 # Backstage Release 1.36.0 changelog
 
-Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
+Changes between 1.35.1 and 1.36.0 — 1 added, 0 removed, 155 upgraded, 23 unchanged packages.
 
 ## Summary
 
@@ -8,8 +8,9 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 - [Breaking changes](#breaking-changes): 6 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 22 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 3 packages
+- [0.x patch version bumps](#0x-patch-version-bumps): 48 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
-- [Other patch version bumps](#other-patch-version-bumps): 66 packages
+- [Other patch version bumps](#other-patch-version-bumps): 18 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 50 packages
 
 ## Table of contents
@@ -50,30 +51,15 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
   - [`@backstage/plugin-kubernetes-cluster` (0.0.21 → 0.0.22)](#backstageplugin-kubernetes-cluster-0021--0022)
   - [`@backstage/plugin-signals` (0.0.15 → 0.0.16)](#backstageplugin-signals-0015--0016)
   - [`@backstage/plugin-signals-react` (0.0.9 → 0.0.10)](#backstageplugin-signals-react-009--0010)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/backend-test-utils` (1.2.1 → 1.3.0)](#backstagebackend-test-utils-121--130)
-  - [`@backstage/plugin-catalog` (1.26.1 → 1.27.0)](#backstageplugin-catalog-1261--1270)
-  - [`@backstage/plugin-catalog-backend` (1.30.0 → 1.31.0)](#backstageplugin-catalog-backend-1300--1310)
-  - [`@backstage/plugin-catalog-node` (1.15.1 → 1.16.0)](#backstageplugin-catalog-node-1151--1160)
-  - [`@backstage/plugin-scaffolder` (1.27.5 → 1.28.0)](#backstageplugin-scaffolder-1275--1280)
-  - [`@backstage/plugin-scaffolder-backend` (1.29.0 → 1.30.0)](#backstageplugin-scaffolder-backend-1290--1300)
-  - [`@backstage/plugin-techdocs-node` (1.12.16 → 1.13.0)](#backstageplugin-techdocs-node-11216--1130)
-  - [`@techdocs/cli` (1.8.25 → 1.9.0)](#techdocscli-1825--190)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/app-defaults` (1.5.16 → 1.5.17)](#backstageapp-defaults-1516--1517)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/cli-node` (0.2.12 → 0.2.13)](#backstagecli-node-0212--0213)
-  - [`@backstage/config-loader` (1.9.5 → 1.9.6)](#backstageconfig-loader-195--196)
-  - [`@backstage/core-app-api` (1.15.4 → 1.15.5)](#backstagecore-app-api-1154--1155)
   - [`@backstage/core-compat-api` (0.3.5 → 0.3.6)](#backstagecore-compat-api-035--036)
   - [`@backstage/core-components` (0.16.3 → 0.16.4)](#backstagecore-components-0163--0164)
-  - [`@backstage/core-plugin-api` (1.10.3 → 1.10.4)](#backstagecore-plugin-api-1103--1104)
   - [`@backstage/create-app` (0.5.24 → 0.5.25)](#backstagecreate-app-0524--0525)
-  - [`@backstage/dev-utils` (1.1.6 → 1.1.7)](#backstagedev-utils-116--117)
   - [`@backstage/frontend-app-api` (0.10.4 → 0.10.5)](#backstagefrontend-app-api-0104--0105)
   - [`@backstage/frontend-defaults` (0.1.5 → 0.1.6)](#backstagefrontend-defaults-015--016)
   - [`@backstage/frontend-plugin-api` (0.9.4 → 0.9.5)](#backstagefrontend-plugin-api-094--095)
   - [`@backstage/frontend-test-utils` (0.2.5 → 0.2.6)](#backstagefrontend-test-utils-025--026)
-  - [`@backstage/integration-react` (1.2.3 → 1.2.4)](#backstageintegration-react-123--124)
   - [`@backstage/plugin-api-docs` (0.12.3 → 0.12.4)](#backstageplugin-api-docs-0123--0124)
   - [`@backstage/plugin-api-docs-module-protoc-gen-doc` (0.1.8 → 0.1.9)](#backstageplugin-api-docs-module-protoc-gen-doc-018--019)
   - [`@backstage/plugin-app` (0.1.5 → 0.1.6)](#backstageplugin-app-015--016)
@@ -92,7 +78,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
   - [`@backstage/plugin-catalog-backend-module-unprocessed` (0.5.4 → 0.5.5)](#backstageplugin-catalog-backend-module-unprocessed-054--055)
   - [`@backstage/plugin-catalog-graph` (0.4.15 → 0.4.16)](#backstageplugin-catalog-graph-0415--0416)
   - [`@backstage/plugin-catalog-import` (0.12.9 → 0.12.10)](#backstageplugin-catalog-import-0129--01210)
-  - [`@backstage/plugin-catalog-react` (1.15.1 → 1.15.2)](#backstageplugin-catalog-react-1151--1152)
   - [`@backstage/plugin-catalog-unprocessed-entities` (0.2.13 → 0.2.14)](#backstageplugin-catalog-unprocessed-entities-0213--0214)
   - [`@backstage/plugin-config-schema` (0.1.64 → 0.1.65)](#backstageplugin-config-schema-0164--0165)
   - [`@backstage/plugin-devtools` (0.1.23 → 0.1.24)](#backstageplugin-devtools-0123--0124)
@@ -111,10 +96,29 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
   - [`@backstage/plugin-permission-node` (0.8.7 → 0.8.8)](#backstageplugin-permission-node-087--088)
   - [`@backstage/plugin-permission-react` (0.4.30 → 0.4.31)](#backstageplugin-permission-react-0430--0431)
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.1.18 → 0.1.19)](#backstageplugin-scaffolder-node-test-utils-0118--0119)
-  - [`@backstage/plugin-scaffolder-react` (1.14.4 → 1.14.5)](#backstageplugin-scaffolder-react-1144--1145)
-  - [`@backstage/plugin-search` (1.4.22 → 1.4.23)](#backstageplugin-search-1422--1423)
   - [`@backstage/plugin-search-backend-module-catalog` (0.3.0 → 0.3.1)](#backstageplugin-search-backend-module-catalog-030--031)
   - [`@backstage/plugin-search-backend-module-pg` (0.5.40 → 0.5.41)](#backstageplugin-search-backend-module-pg-0540--0541)
+  - [`@backstage/plugin-user-settings` (0.8.18 → 0.8.19)](#backstageplugin-user-settings-0818--0819)
+  - [`@backstage/theme` (0.6.3 → 0.6.4)](#backstagetheme-063--064)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/backend-test-utils` (1.2.1 → 1.3.0)](#backstagebackend-test-utils-121--130)
+  - [`@backstage/plugin-catalog` (1.26.1 → 1.27.0)](#backstageplugin-catalog-1261--1270)
+  - [`@backstage/plugin-catalog-backend` (1.30.0 → 1.31.0)](#backstageplugin-catalog-backend-1300--1310)
+  - [`@backstage/plugin-catalog-node` (1.15.1 → 1.16.0)](#backstageplugin-catalog-node-1151--1160)
+  - [`@backstage/plugin-scaffolder` (1.27.5 → 1.28.0)](#backstageplugin-scaffolder-1275--1280)
+  - [`@backstage/plugin-scaffolder-backend` (1.29.0 → 1.30.0)](#backstageplugin-scaffolder-backend-1290--1300)
+  - [`@backstage/plugin-techdocs-node` (1.12.16 → 1.13.0)](#backstageplugin-techdocs-node-11216--1130)
+  - [`@techdocs/cli` (1.8.25 → 1.9.0)](#techdocscli-1825--190)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/app-defaults` (1.5.16 → 1.5.17)](#backstageapp-defaults-1516--1517)
+  - [`@backstage/config-loader` (1.9.5 → 1.9.6)](#backstageconfig-loader-195--196)
+  - [`@backstage/core-app-api` (1.15.4 → 1.15.5)](#backstagecore-app-api-1154--1155)
+  - [`@backstage/core-plugin-api` (1.10.3 → 1.10.4)](#backstagecore-plugin-api-1103--1104)
+  - [`@backstage/dev-utils` (1.1.6 → 1.1.7)](#backstagedev-utils-116--117)
+  - [`@backstage/integration-react` (1.2.3 → 1.2.4)](#backstageintegration-react-123--124)
+  - [`@backstage/plugin-catalog-react` (1.15.1 → 1.15.2)](#backstageplugin-catalog-react-1151--1152)
+  - [`@backstage/plugin-scaffolder-react` (1.14.4 → 1.14.5)](#backstageplugin-scaffolder-react-1144--1145)
+  - [`@backstage/plugin-search` (1.4.22 → 1.4.23)](#backstageplugin-search-1422--1423)
   - [`@backstage/plugin-search-backend-node` (1.3.7 → 1.3.8)](#backstageplugin-search-backend-node-137--138)
   - [`@backstage/plugin-search-react` (1.8.5 → 1.8.6)](#backstageplugin-search-react-185--186)
   - [`@backstage/plugin-techdocs` (1.12.2 → 1.12.3)](#backstageplugin-techdocs-1122--1123)
@@ -122,9 +126,7 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
   - [`@backstage/plugin-techdocs-backend` (1.11.5 → 1.11.6)](#backstageplugin-techdocs-backend-1115--1116)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.20 → 1.1.21)](#backstageplugin-techdocs-module-addons-contrib-1120--1121)
   - [`@backstage/plugin-techdocs-react` (1.2.13 → 1.2.14)](#backstageplugin-techdocs-react-1213--1214)
-  - [`@backstage/plugin-user-settings` (0.8.18 → 0.8.19)](#backstageplugin-user-settings-0818--0819)
   - [`@backstage/test-utils` (1.7.4 → 1.7.5)](#backstagetest-utils-174--175)
-  - [`@backstage/theme` (0.6.3 → 0.6.4)](#backstagetheme-063--064)
   - [`@backstage/version-bridge` (1.0.10 → 1.0.11)](#backstageversion-bridge-1010--1011)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -566,148 +568,7 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 
 - [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
-## Other minor version bumps
-
-### `@backstage/backend-test-utils` (1.2.1 → [1.3.0](../../changelogs/@backstage/backend-test-utils.md#130))
-
-#### 1.3.0
-
-##### Minor Changes
-
-- [`dd05a97`](https://github.com/backstage/backstage/commit/dd05a97): Added mocks for the new `PermissionsRegistryService`.
-- [`a4aa244`](https://github.com/backstage/backstage/commit/a4aa244): This change introduces mocks for the `auditor` service.
-
-##### Patch Changes
-
-- [`f866b86`](https://github.com/backstage/backstage/commit/f866b86): Internal refactor to use explicit `require` for lazy-loading dependency.
-- [`fb051f2`](https://github.com/backstage/backstage/commit/fb051f2): Sync feature installation compatibility logic with `@backstage/backend-app-api`.
-- [`72cddf2`](https://github.com/backstage/backstage/commit/72cddf2): Added the new `getPermissionRuleset` method to `mockServices.permissionsRegistry`.
-
-### `@backstage/plugin-catalog` (1.26.1 → [1.27.0](../../changelogs/@backstage/plugin-catalog.md#1270))
-
-#### 1.27.0
-
-##### Minor Changes
-
-- [`b07756e`](https://github.com/backstage/backstage/commit/b07756e): The Entity Page now retains the visibility of the Inspect Dialog after a reload. This allows sharing the URL with the dialog open.
-
-##### Patch Changes
-
-- [`7a15cff`](https://github.com/backstage/backstage/commit/7a15cff): Revert client side paginated catalog table to using built in Material Table toolbar component
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
-### `@backstage/plugin-catalog-backend` (1.30.0 → [1.31.0](../../changelogs/@backstage/plugin-catalog-backend.md#1310))
-
-#### 1.31.0
-
-##### Minor Changes
-
-- [`9b9737c`](https://github.com/backstage/backstage/commit/9b9737c): Added support for emitting entities with an explicit location key during processing.
-- [`8805f93`](https://github.com/backstage/backstage/commit/8805f93): The catalog backend now supports the new `PermissionsRegistryService`, which can be used to add custom permission rules.
-- [`5aebc13`](https://github.com/backstage/backstage/commit/5aebc13): The `UrlReaderProccessor` accepts a new config flag `catalog.useUrlReadersSearch` to always call the `search` method of `UrlReaders`.
-
-  This flag currently defaults to `false`, but adopters are encouraged to enable it as this behavior will be the default in a future release.
-
-  Previous behavior was to call the `search` method only if the parsed Git URL's filename contained a wildcard and use `readUrl` otherwise. `UrlReaderService` must implement this logic in the `search` method instead.
-
-  This allows each `UrlReaderService` implementation to check whether it's a search URL (that contains a wildcard pattern) or not using logic that is specific to each provider.
-
-- [`a4aa244`](https://github.com/backstage/backstage/commit/a4aa244): This change integrates the `auditor` service into the Catalog plugin.
-
-##### Patch Changes
-
-- [`c9139e1`](https://github.com/backstage/backstage/commit/c9139e1): Ignore benign database conflict errors during stitching, now logged with debug level instead.
-- [`f178b12`](https://github.com/backstage/backstage/commit/f178b12): Cleanup `refresh_state_references` for entity processors and providers that are no longer in control of a `refresh_state` row for entity
-- [`cd372e4`](https://github.com/backstage/backstage/commit/cd372e4): Improved performance when applying conditional decisions to entities within the permission framework.
-- [`4ae6884`](https://github.com/backstage/backstage/commit/4ae6884): Fixed an bug in the entity processing caching that would prevent entities that were emitted during processing to be restored after being overridden.
-- [`ef73f97`](https://github.com/backstage/backstage/commit/ef73f97): Updated permission integration to use new permission resource ref.
-
-### `@backstage/plugin-catalog-node` (1.15.1 → [1.16.0](../../changelogs/@backstage/plugin-catalog-node.md#1160))
-
-#### 1.16.0
-
-##### Minor Changes
-
-- [`b4183ad`](https://github.com/backstage/backstage/commit/b4183ad): Added new `catalogEntityPermissionResourceRef` export via the `/alpha` sub-path.
-- [`9b9737c`](https://github.com/backstage/backstage/commit/9b9737c): Added the `locationKey` option to `processingResult.entity(...)`.
-
-##### Patch Changes
-
-- [`4a941e7`](https://github.com/backstage/backstage/commit/4a941e7): Deprecated the alpha `catalogPermissionExtensionPoint` and related types, since the same functionality is now available via the new `PermissionsRegistryService`.
-
-### `@backstage/plugin-scaffolder` (1.27.5 → [1.28.0](../../changelogs/@backstage/plugin-scaffolder.md#1280))
-
-#### 1.28.0
-
-##### Minor Changes
-
-- [`17088d2`](https://github.com/backstage/backstage/commit/17088d2): Updating the `TaskLogStream` to take up all space in a running task, and also show the last line of the log by default
-- [`5d469c9`](https://github.com/backstage/backstage/commit/5d469c9): Added support for autocompletion of GitHub branches in scaffolder
-- [`8e67e4a`](https://github.com/backstage/backstage/commit/8e67e4a): Added support for autocompletion to GithubRepoPicker component
-
-##### Patch Changes
-
-- [`82300ea`](https://github.com/backstage/backstage/commit/82300ea): Added support for experimental form decorators when dry-running templates in the template editor.
-- [`eb3d91a`](https://github.com/backstage/backstage/commit/eb3d91a): Use the custom error page if provided for displaying errors instead of the default error page
-- [`3107f1f`](https://github.com/backstage/backstage/commit/3107f1f): Fixed a bug in the BitbucketRepoBranchPicker component that crashed the scaffolder
-- [`fe44946`](https://github.com/backstage/backstage/commit/fe44946): Fixed bug of passing wrong value to `onChange` handler when using `GitLab` autocomplete
-- [`3edf7e7`](https://github.com/backstage/backstage/commit/3edf7e7): Add schema output return type to the `makeFieldSchema` function return
-- [`1e935f0`](https://github.com/backstage/backstage/commit/1e935f0): Added conditional rendering of `oneOf` output schemas on the Installed Actions page for scaffolder actions
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-- [`65d7020`](https://github.com/backstage/backstage/commit/65d7020): Use template title for ongoing task page header
-
-### `@backstage/plugin-scaffolder-backend` (1.29.0 → [1.30.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1300))
-
-#### 1.30.0
-
-##### Minor Changes
-
-- [`dc8dd4b`](https://github.com/backstage/backstage/commit/dc8dd4b): Added new `createTemplateFilter`, `createTemplateGlobalFunction`, `createTemplateGlobalValue` for template extensions.
-- [`a4aa244`](https://github.com/backstage/backstage/commit/a4aa244): This change integrates the `auditor` service into the Scaffolder plugin.
-- [`3d6ef79`](https://github.com/backstage/backstage/commit/3d6ef79): Support file globbing in fs:delete
-- [`91f3313`](https://github.com/backstage/backstage/commit/91f3313): Added experimental flag for scaffolder to wait for running tasks to complete on shutdown
-
-  Enabling the `EXPERIMENTAL_gracefulShutdown` flag in the scaffolder config will make the
-  scaffolder block the shutdown process until all running tasks have completed. This is useful
-  when there is a need to ensure that all tasks have completed before the scaffolder is shut down.
-
-  Please note, that the `TaskWorker` `stop` method is now asynchronous and awaited for the
-  tasks to complete when the experimental flag is enabled.
-
-##### Patch Changes
-
-- [`37ab712`](https://github.com/backstage/backstage/commit/37ab712): Fixed an issue where invalid expressions or non-object values in `step.each` caused an error.
-- [`1e935f0`](https://github.com/backstage/backstage/commit/1e935f0): Added conditional rendering of `oneOf` output schemas on the Installed Actions page for scaffolder actions
-
-### `@backstage/plugin-techdocs-node` (1.12.16 → [1.13.0](../../changelogs/@backstage/plugin-techdocs-node.md#1130))
-
-#### 1.13.0
-
-##### Minor Changes
-
-- [`8de3d2d`](https://github.com/backstage/backstage/commit/8de3d2d): Allow configurable optional retries for publisher AWS S3 operations.
-
-### `@techdocs/cli` (1.8.25 → [1.9.0](../../changelogs/@techdocs/cli.md#190))
-
-#### 1.9.0
-
-##### Minor Changes
-
-- [`8de3d2d`](https://github.com/backstage/backstage/commit/8de3d2d): Allow configurable optional retries for publisher AWS S3 operations.
-
-##### Patch Changes
-
-- [`69f84ac`](https://github.com/backstage/backstage/commit/69f84ac): Internal update to work with dynamic imports.
-
-## Other patch version bumps
-
-### `@backstage/app-defaults` (1.5.16 → [1.5.17](../../changelogs/@backstage/app-defaults.md#1517))
-
-#### 1.5.17
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+## 0.x patch version bumps
 
 ### `@backstage/cli-node` (0.2.12 → [0.2.13](../../changelogs/@backstage/cli-node.md#0213))
 
@@ -717,22 +578,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 
 - [`cb76663`](https://github.com/backstage/backstage/commit/cb76663): Added `type` field to `BackstagePackageJson` type.
 - [`f54eed0`](https://github.com/backstage/backstage/commit/f54eed0): Fixed an issue where default feature type information wasn't being added to package.json/exports before publishing if exports didn't exist beforehand
-
-### `@backstage/config-loader` (1.9.5 → [1.9.6](../../changelogs/@backstage/config-loader.md#196))
-
-#### 1.9.6
-
-##### Patch Changes
-
-- [`f866b86`](https://github.com/backstage/backstage/commit/f866b86): Internal refactor to use explicit `require` for lazy-loading dependency.
-
-### `@backstage/core-app-api` (1.15.4 → [1.15.5](../../changelogs/@backstage/core-app-api.md#1155))
-
-#### 1.15.5
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
 ### `@backstage/core-compat-api` (0.3.5 → [0.3.6](../../changelogs/@backstage/core-compat-api.md#036))
 
@@ -753,14 +598,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 - [`17088d2`](https://github.com/backstage/backstage/commit/17088d2): Updating the `TaskLogStream` to take up all space in a running task, and also show the last line of the log by default
 - [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
-### `@backstage/core-plugin-api` (1.10.3 → [1.10.4](../../changelogs/@backstage/core-plugin-api.md#1104))
-
-#### 1.10.4
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
 ### `@backstage/create-app` (0.5.24 → [0.5.25](../../changelogs/@backstage/create-app.md#0525))
 
 #### 0.5.25
@@ -774,14 +611,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 
   This parameter makes `UrlReaderProcessor` always use the search method.
   New adopters are encouraged to enable it as this behavior will be the default in a future release.
-
-### `@backstage/dev-utils` (1.1.6 → [1.1.7](../../changelogs/@backstage/dev-utils.md#117))
-
-#### 1.1.7
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
 ### `@backstage/frontend-app-api` (0.10.4 → [0.10.5](../../changelogs/@backstage/frontend-app-api.md#0105))
 
@@ -815,14 +644,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 ### `@backstage/frontend-test-utils` (0.2.5 → [0.2.6](../../changelogs/@backstage/frontend-test-utils.md#026))
 
 #### 0.2.6
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
-### `@backstage/integration-react` (1.2.3 → [1.2.4](../../changelogs/@backstage/integration-react.md#124))
-
-#### 1.2.4
 
 ##### Patch Changes
 
@@ -972,15 +793,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 
 ##### Patch Changes
 
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
-### `@backstage/plugin-catalog-react` (1.15.1 → [1.15.2](../../changelogs/@backstage/plugin-catalog-react.md#1152))
-
-#### 1.15.2
-
-##### Patch Changes
-
-- [`b07756e`](https://github.com/backstage/backstage/commit/b07756e): The Entity Page now retains the visibility of the Inspect Dialog after a reload. This allows sharing the URL with the dialog open.
 - [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
 ### `@backstage/plugin-catalog-unprocessed-entities` (0.2.13 → [0.2.14](../../changelogs/@backstage/plugin-catalog-unprocessed-entities.md#0214))
@@ -1151,6 +963,231 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 - [`7ec0a5a`](https://github.com/backstage/backstage/commit/7ec0a5a): Changing the default behaviour of the checkpoint in createMockActionContext. It will reduce the code boilerplate in the tests where checkpoint is used.
 - [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
+### `@backstage/plugin-search-backend-module-catalog` (0.3.0 → [0.3.1](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#031))
+
+#### 0.3.1
+
+##### Patch Changes
+
+- [`8699b79`](https://github.com/backstage/backstage/commit/8699b79): Removed unused dependencies
+- [`eee8d76`](https://github.com/backstage/backstage/commit/eee8d76): Modified the logic for generating the location URL by encoding the entity property values with `encodeURIComponent`. This enhancement improves the safety and reliability of the URL.
+
+### `@backstage/plugin-search-backend-module-pg` (0.5.40 → [0.5.41](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0541))
+
+#### 0.5.41
+
+##### Patch Changes
+
+- [`8699b79`](https://github.com/backstage/backstage/commit/8699b79): Removed unused dependencies
+
+### `@backstage/plugin-user-settings` (0.8.18 → [0.8.19](../../changelogs/@backstage/plugin-user-settings.md#0819))
+
+#### 0.8.19
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/theme` (0.6.3 → [0.6.4](../../changelogs/@backstage/theme.md#064))
+
+#### 0.6.4
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+## Other minor version bumps
+
+### `@backstage/backend-test-utils` (1.2.1 → [1.3.0](../../changelogs/@backstage/backend-test-utils.md#130))
+
+#### 1.3.0
+
+##### Minor Changes
+
+- [`dd05a97`](https://github.com/backstage/backstage/commit/dd05a97): Added mocks for the new `PermissionsRegistryService`.
+- [`a4aa244`](https://github.com/backstage/backstage/commit/a4aa244): This change introduces mocks for the `auditor` service.
+
+##### Patch Changes
+
+- [`f866b86`](https://github.com/backstage/backstage/commit/f866b86): Internal refactor to use explicit `require` for lazy-loading dependency.
+- [`fb051f2`](https://github.com/backstage/backstage/commit/fb051f2): Sync feature installation compatibility logic with `@backstage/backend-app-api`.
+- [`72cddf2`](https://github.com/backstage/backstage/commit/72cddf2): Added the new `getPermissionRuleset` method to `mockServices.permissionsRegistry`.
+
+### `@backstage/plugin-catalog` (1.26.1 → [1.27.0](../../changelogs/@backstage/plugin-catalog.md#1270))
+
+#### 1.27.0
+
+##### Minor Changes
+
+- [`b07756e`](https://github.com/backstage/backstage/commit/b07756e): The Entity Page now retains the visibility of the Inspect Dialog after a reload. This allows sharing the URL with the dialog open.
+
+##### Patch Changes
+
+- [`7a15cff`](https://github.com/backstage/backstage/commit/7a15cff): Revert client side paginated catalog table to using built in Material Table toolbar component
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/plugin-catalog-backend` (1.30.0 → [1.31.0](../../changelogs/@backstage/plugin-catalog-backend.md#1310))
+
+#### 1.31.0
+
+##### Minor Changes
+
+- [`9b9737c`](https://github.com/backstage/backstage/commit/9b9737c): Added support for emitting entities with an explicit location key during processing.
+- [`8805f93`](https://github.com/backstage/backstage/commit/8805f93): The catalog backend now supports the new `PermissionsRegistryService`, which can be used to add custom permission rules.
+- [`5aebc13`](https://github.com/backstage/backstage/commit/5aebc13): The `UrlReaderProccessor` accepts a new config flag `catalog.useUrlReadersSearch` to always call the `search` method of `UrlReaders`.
+
+  This flag currently defaults to `false`, but adopters are encouraged to enable it as this behavior will be the default in a future release.
+
+  Previous behavior was to call the `search` method only if the parsed Git URL's filename contained a wildcard and use `readUrl` otherwise. `UrlReaderService` must implement this logic in the `search` method instead.
+
+  This allows each `UrlReaderService` implementation to check whether it's a search URL (that contains a wildcard pattern) or not using logic that is specific to each provider.
+
+- [`a4aa244`](https://github.com/backstage/backstage/commit/a4aa244): This change integrates the `auditor` service into the Catalog plugin.
+
+##### Patch Changes
+
+- [`c9139e1`](https://github.com/backstage/backstage/commit/c9139e1): Ignore benign database conflict errors during stitching, now logged with debug level instead.
+- [`f178b12`](https://github.com/backstage/backstage/commit/f178b12): Cleanup `refresh_state_references` for entity processors and providers that are no longer in control of a `refresh_state` row for entity
+- [`cd372e4`](https://github.com/backstage/backstage/commit/cd372e4): Improved performance when applying conditional decisions to entities within the permission framework.
+- [`4ae6884`](https://github.com/backstage/backstage/commit/4ae6884): Fixed an bug in the entity processing caching that would prevent entities that were emitted during processing to be restored after being overridden.
+- [`ef73f97`](https://github.com/backstage/backstage/commit/ef73f97): Updated permission integration to use new permission resource ref.
+
+### `@backstage/plugin-catalog-node` (1.15.1 → [1.16.0](../../changelogs/@backstage/plugin-catalog-node.md#1160))
+
+#### 1.16.0
+
+##### Minor Changes
+
+- [`b4183ad`](https://github.com/backstage/backstage/commit/b4183ad): Added new `catalogEntityPermissionResourceRef` export via the `/alpha` sub-path.
+- [`9b9737c`](https://github.com/backstage/backstage/commit/9b9737c): Added the `locationKey` option to `processingResult.entity(...)`.
+
+##### Patch Changes
+
+- [`4a941e7`](https://github.com/backstage/backstage/commit/4a941e7): Deprecated the alpha `catalogPermissionExtensionPoint` and related types, since the same functionality is now available via the new `PermissionsRegistryService`.
+
+### `@backstage/plugin-scaffolder` (1.27.5 → [1.28.0](../../changelogs/@backstage/plugin-scaffolder.md#1280))
+
+#### 1.28.0
+
+##### Minor Changes
+
+- [`17088d2`](https://github.com/backstage/backstage/commit/17088d2): Updating the `TaskLogStream` to take up all space in a running task, and also show the last line of the log by default
+- [`5d469c9`](https://github.com/backstage/backstage/commit/5d469c9): Added support for autocompletion of GitHub branches in scaffolder
+- [`8e67e4a`](https://github.com/backstage/backstage/commit/8e67e4a): Added support for autocompletion to GithubRepoPicker component
+
+##### Patch Changes
+
+- [`82300ea`](https://github.com/backstage/backstage/commit/82300ea): Added support for experimental form decorators when dry-running templates in the template editor.
+- [`eb3d91a`](https://github.com/backstage/backstage/commit/eb3d91a): Use the custom error page if provided for displaying errors instead of the default error page
+- [`3107f1f`](https://github.com/backstage/backstage/commit/3107f1f): Fixed a bug in the BitbucketRepoBranchPicker component that crashed the scaffolder
+- [`fe44946`](https://github.com/backstage/backstage/commit/fe44946): Fixed bug of passing wrong value to `onChange` handler when using `GitLab` autocomplete
+- [`3edf7e7`](https://github.com/backstage/backstage/commit/3edf7e7): Add schema output return type to the `makeFieldSchema` function return
+- [`1e935f0`](https://github.com/backstage/backstage/commit/1e935f0): Added conditional rendering of `oneOf` output schemas on the Installed Actions page for scaffolder actions
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+- [`65d7020`](https://github.com/backstage/backstage/commit/65d7020): Use template title for ongoing task page header
+
+### `@backstage/plugin-scaffolder-backend` (1.29.0 → [1.30.0](../../changelogs/@backstage/plugin-scaffolder-backend.md#1300))
+
+#### 1.30.0
+
+##### Minor Changes
+
+- [`dc8dd4b`](https://github.com/backstage/backstage/commit/dc8dd4b): Added new `createTemplateFilter`, `createTemplateGlobalFunction`, `createTemplateGlobalValue` for template extensions.
+- [`a4aa244`](https://github.com/backstage/backstage/commit/a4aa244): This change integrates the `auditor` service into the Scaffolder plugin.
+- [`3d6ef79`](https://github.com/backstage/backstage/commit/3d6ef79): Support file globbing in fs:delete
+- [`91f3313`](https://github.com/backstage/backstage/commit/91f3313): Added experimental flag for scaffolder to wait for running tasks to complete on shutdown
+
+  Enabling the `EXPERIMENTAL_gracefulShutdown` flag in the scaffolder config will make the
+  scaffolder block the shutdown process until all running tasks have completed. This is useful
+  when there is a need to ensure that all tasks have completed before the scaffolder is shut down.
+
+  Please note, that the `TaskWorker` `stop` method is now asynchronous and awaited for the
+  tasks to complete when the experimental flag is enabled.
+
+##### Patch Changes
+
+- [`37ab712`](https://github.com/backstage/backstage/commit/37ab712): Fixed an issue where invalid expressions or non-object values in `step.each` caused an error.
+- [`1e935f0`](https://github.com/backstage/backstage/commit/1e935f0): Added conditional rendering of `oneOf` output schemas on the Installed Actions page for scaffolder actions
+
+### `@backstage/plugin-techdocs-node` (1.12.16 → [1.13.0](../../changelogs/@backstage/plugin-techdocs-node.md#1130))
+
+#### 1.13.0
+
+##### Minor Changes
+
+- [`8de3d2d`](https://github.com/backstage/backstage/commit/8de3d2d): Allow configurable optional retries for publisher AWS S3 operations.
+
+### `@techdocs/cli` (1.8.25 → [1.9.0](../../changelogs/@techdocs/cli.md#190))
+
+#### 1.9.0
+
+##### Minor Changes
+
+- [`8de3d2d`](https://github.com/backstage/backstage/commit/8de3d2d): Allow configurable optional retries for publisher AWS S3 operations.
+
+##### Patch Changes
+
+- [`69f84ac`](https://github.com/backstage/backstage/commit/69f84ac): Internal update to work with dynamic imports.
+
+## Other patch version bumps
+
+### `@backstage/app-defaults` (1.5.16 → [1.5.17](../../changelogs/@backstage/app-defaults.md#1517))
+
+#### 1.5.17
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/config-loader` (1.9.5 → [1.9.6](../../changelogs/@backstage/config-loader.md#196))
+
+#### 1.9.6
+
+##### Patch Changes
+
+- [`f866b86`](https://github.com/backstage/backstage/commit/f866b86): Internal refactor to use explicit `require` for lazy-loading dependency.
+
+### `@backstage/core-app-api` (1.15.4 → [1.15.5](../../changelogs/@backstage/core-app-api.md#1155))
+
+#### 1.15.5
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/core-plugin-api` (1.10.3 → [1.10.4](../../changelogs/@backstage/core-plugin-api.md#1104))
+
+#### 1.10.4
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/dev-utils` (1.1.6 → [1.1.7](../../changelogs/@backstage/dev-utils.md#117))
+
+#### 1.1.7
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/integration-react` (1.2.3 → [1.2.4](../../changelogs/@backstage/integration-react.md#124))
+
+#### 1.2.4
+
+##### Patch Changes
+
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
+### `@backstage/plugin-catalog-react` (1.15.1 → [1.15.2](../../changelogs/@backstage/plugin-catalog-react.md#1152))
+
+#### 1.15.2
+
+##### Patch Changes
+
+- [`b07756e`](https://github.com/backstage/backstage/commit/b07756e): The Entity Page now retains the visibility of the Inspect Dialog after a reload. This allows sharing the URL with the dialog open.
+- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
+
 ### `@backstage/plugin-scaffolder-react` (1.14.4 → [1.14.5](../../changelogs/@backstage/plugin-scaffolder-react.md#1145))
 
 #### 1.14.5
@@ -1172,23 +1209,6 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 
 - [`63e1012`](https://github.com/backstage/backstage/commit/63e1012): Added new extension points to extend search filters `SearchFilterBlueprint` and `SearchFilterResultTypeBlueprint`
 - [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
-### `@backstage/plugin-search-backend-module-catalog` (0.3.0 → [0.3.1](../../changelogs/@backstage/plugin-search-backend-module-catalog.md#031))
-
-#### 0.3.1
-
-##### Patch Changes
-
-- [`8699b79`](https://github.com/backstage/backstage/commit/8699b79): Removed unused dependencies
-- [`eee8d76`](https://github.com/backstage/backstage/commit/eee8d76): Modified the logic for generating the location URL by encoding the entity property values with `encodeURIComponent`. This enhancement improves the safety and reliability of the URL.
-
-### `@backstage/plugin-search-backend-module-pg` (0.5.40 → [0.5.41](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0541))
-
-#### 0.5.41
-
-##### Patch Changes
-
-- [`8699b79`](https://github.com/backstage/backstage/commit/8699b79): Removed unused dependencies
 
 ### `@backstage/plugin-search-backend-node` (1.3.7 → [1.3.8](../../changelogs/@backstage/plugin-search-backend-node.md#138))
 
@@ -1361,25 +1381,9 @@ Changes between 1.35.1 and 1.36.0 — 155 changed and 1 added packages.
 
 - [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
 
-### `@backstage/plugin-user-settings` (0.8.18 → [0.8.19](../../changelogs/@backstage/plugin-user-settings.md#0819))
-
-#### 0.8.19
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
 ### `@backstage/test-utils` (1.7.4 → [1.7.5](../../changelogs/@backstage/test-utils.md#175))
 
 #### 1.7.5
-
-##### Patch Changes
-
-- [`58ec9e7`](https://github.com/backstage/backstage/commit/58ec9e7): Removed older versions of React packages as a preparatory step for upgrading to React 19. This commit does not introduce any functional changes, but removes dependencies on previous React versions, allowing for a cleaner upgrade path in subsequent commits.
-
-### `@backstage/theme` (0.6.3 → [0.6.4](../../changelogs/@backstage/theme.md#064))
-
-#### 0.6.4
 
 ##### Patch Changes
 

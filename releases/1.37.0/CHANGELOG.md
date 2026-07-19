@@ -1,14 +1,15 @@
 # Backstage Release 1.37.0 changelog
 
-Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
+Changes between 1.36.1 and 1.37.0 — 0 added, 0 removed, 155 upgraded, 24 unchanged packages.
 
 ## Summary
 
 - [Breaking changes](#breaking-changes): 17 packages
 - [0.x minor version bumps](#0x-minor-version-bumps): 6 packages
 - [0.0.x patch version bumps](#00x-patch-version-bumps): 1 package
+- [0.x patch version bumps](#0x-patch-version-bumps): 31 packages
 - [Other minor version bumps](#other-minor-version-bumps): 8 packages
-- [Other patch version bumps](#other-patch-version-bumps): 44 packages
+- [Other patch version bumps](#other-patch-version-bumps): 13 packages
 - [Excluded dependency updates](#excluded-dependency-updates): 79 packages
 
 ## Table of contents
@@ -40,21 +41,8 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-node-test-utils` (0.1.19 → 0.2.0)](#backstageplugin-scaffolder-node-test-utils-0119--020)
 - [0.0.x patch version bumps](#00x-patch-version-bumps)
   - [`@backstage/plugin-signals` (0.0.16 → 0.0.17)](#backstageplugin-signals-0016--0017)
-- [Other minor version bumps](#other-minor-version-bumps)
-  - [`@backstage/config-loader` (1.9.6 → 1.10.0)](#backstageconfig-loader-196--1100)
-  - [`@backstage/core-app-api` (1.15.5 → 1.16.0)](#backstagecore-app-api-1155--1160)
-  - [`@backstage/plugin-catalog` (1.27.0 → 1.28.0)](#backstageplugin-catalog-1270--1280)
-  - [`@backstage/plugin-catalog-backend` (1.31.0 → 1.32.0)](#backstageplugin-catalog-backend-1310--1320)
-  - [`@backstage/plugin-catalog-react` (1.15.2 → 1.16.0)](#backstageplugin-catalog-react-1152--1160)
-  - [`@backstage/plugin-scaffolder` (1.28.0 → 1.29.0)](#backstageplugin-scaffolder-1280--1290)
-  - [`@backstage/plugin-scaffolder-backend` (1.30.0 → 1.31.0)](#backstageplugin-scaffolder-backend-1300--1310)
-  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.6.5 → 1.7.0)](#backstageplugin-search-backend-module-elasticsearch-165--170)
-- [Other patch version bumps](#other-patch-version-bumps)
-  - [`@backstage/backend-app-api` (1.2.0 → 1.2.1)](#backstagebackend-app-api-120--121)
+- [0.x patch version bumps](#0x-patch-version-bumps)
   - [`@backstage/backend-defaults` (0.8.1 → 0.8.2)](#backstagebackend-defaults-081--082)
-  - [`@backstage/backend-test-utils` (1.3.0 → 1.3.1)](#backstagebackend-test-utils-130--131)
-  - [`@backstage/core-plugin-api` (1.10.4 → 1.10.5)](#backstagecore-plugin-api-1104--1105)
-  - [`@backstage/integration` (1.16.1 → 1.16.2)](#backstageintegration-1161--1162)
   - [`@backstage/plugin-api-docs` (0.12.4 → 0.12.5)](#backstageplugin-api-docs-0124--0125)
   - [`@backstage/plugin-app` (0.1.6 → 0.1.7)](#backstageplugin-app-016--017)
   - [`@backstage/plugin-auth-backend` (0.24.3 → 0.24.4)](#backstageplugin-auth-backend-0243--0244)
@@ -83,16 +71,30 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
   - [`@backstage/plugin-scaffolder-backend-module-github` (0.6.0 → 0.6.1)](#backstageplugin-scaffolder-backend-module-github-060--061)
   - [`@backstage/plugin-scaffolder-backend-module-gitlab` (0.8.0 → 0.8.1)](#backstageplugin-scaffolder-backend-module-gitlab-080--081)
   - [`@backstage/plugin-scaffolder-backend-module-rails` (0.5.6 → 0.5.7)](#backstageplugin-scaffolder-backend-module-rails-056--057)
+  - [`@backstage/plugin-search-backend-module-pg` (0.5.41 → 0.5.42)](#backstageplugin-search-backend-module-pg-0541--0542)
+  - [`@backstage/repo-tools` (0.13.0 → 0.13.1)](#backstagerepo-tools-0130--0131)
+- [Other minor version bumps](#other-minor-version-bumps)
+  - [`@backstage/config-loader` (1.9.6 → 1.10.0)](#backstageconfig-loader-196--1100)
+  - [`@backstage/core-app-api` (1.15.5 → 1.16.0)](#backstagecore-app-api-1155--1160)
+  - [`@backstage/plugin-catalog` (1.27.0 → 1.28.0)](#backstageplugin-catalog-1270--1280)
+  - [`@backstage/plugin-catalog-backend` (1.31.0 → 1.32.0)](#backstageplugin-catalog-backend-1310--1320)
+  - [`@backstage/plugin-catalog-react` (1.15.2 → 1.16.0)](#backstageplugin-catalog-react-1152--1160)
+  - [`@backstage/plugin-scaffolder` (1.28.0 → 1.29.0)](#backstageplugin-scaffolder-1280--1290)
+  - [`@backstage/plugin-scaffolder-backend` (1.30.0 → 1.31.0)](#backstageplugin-scaffolder-backend-1300--1310)
+  - [`@backstage/plugin-search-backend-module-elasticsearch` (1.6.5 → 1.7.0)](#backstageplugin-search-backend-module-elasticsearch-165--170)
+- [Other patch version bumps](#other-patch-version-bumps)
+  - [`@backstage/backend-app-api` (1.2.0 → 1.2.1)](#backstagebackend-app-api-120--121)
+  - [`@backstage/backend-test-utils` (1.3.0 → 1.3.1)](#backstagebackend-test-utils-130--131)
+  - [`@backstage/core-plugin-api` (1.10.4 → 1.10.5)](#backstagecore-plugin-api-1104--1105)
+  - [`@backstage/integration` (1.16.1 → 1.16.2)](#backstageintegration-1161--1162)
   - [`@backstage/plugin-scaffolder-common` (1.5.9 → 1.5.10)](#backstageplugin-scaffolder-common-159--1510)
   - [`@backstage/plugin-scaffolder-react` (1.14.5 → 1.14.6)](#backstageplugin-scaffolder-react-1145--1146)
   - [`@backstage/plugin-search` (1.4.23 → 1.4.24)](#backstageplugin-search-1423--1424)
-  - [`@backstage/plugin-search-backend-module-pg` (0.5.41 → 0.5.42)](#backstageplugin-search-backend-module-pg-0541--0542)
   - [`@backstage/plugin-search-react` (1.8.6 → 1.8.7)](#backstageplugin-search-react-186--187)
   - [`@backstage/plugin-techdocs` (1.12.3 → 1.12.4)](#backstageplugin-techdocs-1123--1124)
   - [`@backstage/plugin-techdocs-module-addons-contrib` (1.1.21 → 1.1.22)](#backstageplugin-techdocs-module-addons-contrib-1121--1122)
   - [`@backstage/plugin-techdocs-node` (1.13.0 → 1.13.1)](#backstageplugin-techdocs-node-1130--1131)
   - [`@backstage/plugin-techdocs-react` (1.2.14 → 1.2.15)](#backstageplugin-techdocs-react-1214--1215)
-  - [`@backstage/repo-tools` (0.13.0 → 0.13.1)](#backstagerepo-tools-0130--0131)
   - [`@backstage/test-utils` (1.7.5 → 1.7.6)](#backstagetest-utils-175--176)
 - [Excluded dependency updates](#excluded-dependency-updates)
 
@@ -572,6 +574,311 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
 
 - [`ac3e8c0`](https://github.com/backstage/backstage/commit/ac3e8c0): Fixed multiple signal connection attempts when there are multiple subscriptions at the same time
 
+## 0.x patch version bumps
+
+### `@backstage/backend-defaults` (0.8.1 → [0.8.2](../../changelogs/@backstage/backend-defaults.md#082))
+
+#### 0.8.2
+
+##### Patch Changes
+
+- [`e293b66`](https://github.com/backstage/backstage/commit/e293b66): The default auditor service implementation will now log low severity events with `debug` level instead of `info`.
+- [`f422984`](https://github.com/backstage/backstage/commit/f422984): Remove unused dependencies
+- [`ecb9bab`](https://github.com/backstage/backstage/commit/ecb9bab): Explicitly stringify extra logger fields with `JSON.stringify` to prevent `[object Object]` errors.
+- [`12f8e01`](https://github.com/backstage/backstage/commit/12f8e01): The `discovery.endpoints` configuration no longer requires both `internal` and `external` target when using the object form, instead falling back to the default.
+- [`89db8b8`](https://github.com/backstage/backstage/commit/89db8b8): `GerritUrlReader` is now able to `search` files matching a given pattern URL (using `minimatch` glob patterns).
+
+  This allows the Gerrit Discovery to find all Backstage manifests inside a repository using the `**/catalog-info.yaml` pattern.
+
+### `@backstage/plugin-api-docs` (0.12.4 → [0.12.5](../../changelogs/@backstage/plugin-api-docs.md#0125))
+
+#### 0.12.5
+
+##### Patch Changes
+
+- [`74871cc`](https://github.com/backstage/backstage/commit/74871cc): Use consistent Typography in Entity HasApisCard
+
+### `@backstage/plugin-app` (0.1.6 → [0.1.7](../../changelogs/@backstage/plugin-app.md#017))
+
+#### 0.1.7
+
+##### Patch Changes
+
+- [`583fc54`](https://github.com/backstage/backstage/commit/583fc54): Fixed extra app elements not being rendered as part of apps without a sign-in page.
+- [`0aa9d82`](https://github.com/backstage/backstage/commit/0aa9d82): Added implementation of the new `DialogApi`.
+
+### `@backstage/plugin-auth-backend` (0.24.3 → [0.24.4](../../changelogs/@backstage/plugin-auth-backend.md#0244))
+
+#### 0.24.4
+
+##### Patch Changes
+
+- [`7956beb`](https://github.com/backstage/backstage/commit/7956beb): Marked the remaining exports related to `createRouter` and the old backend system as deprecated.
+
+  For more information about migrating to the new backend system, see the [migration guide](https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin).
+
+  Support for the old backend system will be removed in the next release of this plugin.
+
+- [`b6702ea`](https://github.com/backstage/backstage/commit/b6702ea): Deprecated `getDefaultOwnershipEntityRefs` in favor of the new `.resolveOwnershipEntityRefs(...)` method in the `AuthResolverContext`.
+
+  The following code in a custom sign-in resolver:
+
+  ```ts
+  import { getDefaultOwnershipEntityRefs } from '@backstage/plugin-auth-backend';
+
+  // ...
+
+  const ent = getDefaultOwnershipEntityRefs(entity);
+  ```
+
+  Can be replaced with the following:
+
+  ```ts
+  const { ownershipEntityRefs: ent } = await ctx.resolveOwnershipEntityRefs(
+    entity,
+  );
+  ```
+
+### `@backstage/plugin-auth-backend-module-microsoft-provider` (0.3.0 → [0.3.1](../../changelogs/@backstage/plugin-auth-backend-module-microsoft-provider.md#031))
+
+#### 0.3.1
+
+##### Patch Changes
+
+- [`fa15e80`](https://github.com/backstage/backstage/commit/fa15e80): Update `auth.microsoft.signIn.resolvers` config def to include the `userIdMatchingUserEntityAnnotation` resolver.
+
+### `@backstage/plugin-auth-backend-module-oauth2-provider` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-auth-backend-module-oauth2-provider.md#041))
+
+#### 0.4.1
+
+##### Patch Changes
+
+- [`ce15e30`](https://github.com/backstage/backstage/commit/ce15e30): Fixed repository url in `README.md`
+
+### `@backstage/plugin-auth-backend-module-oidc-provider` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-auth-backend-module-oidc-provider.md#041))
+
+#### 0.4.1
+
+##### Patch Changes
+
+- [`ce15e30`](https://github.com/backstage/backstage/commit/ce15e30): Fixed repository url in `README.md`
+
+### `@backstage/plugin-auth-backend-module-okta-provider` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-auth-backend-module-okta-provider.md#021))
+
+#### 0.2.1
+
+##### Patch Changes
+
+- [`ce15e30`](https://github.com/backstage/backstage/commit/ce15e30): Fixed repository url in `README.md`
+
+### `@backstage/plugin-auth-node` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-auth-node.md#061))
+
+#### 0.6.1
+
+##### Patch Changes
+
+- [`b6702ea`](https://github.com/backstage/backstage/commit/b6702ea): Added `AuthResolverContext.resolveOwnershipEntityRefs` as a way of accessing the default ownership resolution logic in sign-in resolvers, replacing `getDefaultOwnershipEntityRefs` from `@backstage/plugin-auth-backend`.
+
+### `@backstage/plugin-catalog-backend-module-ldap` (0.11.2 → [0.11.3](../../changelogs/@backstage/plugin-catalog-backend-module-ldap.md#0113))
+
+#### 0.11.3
+
+##### Patch Changes
+
+- [`e43f41b`](https://github.com/backstage/backstage/commit/e43f41b): Fix `config.d.ts` for `ldapOrg` being incorrect. The documentation says a single
+  object or an array are accepted, but the definition only allows an object.
+
+### `@backstage/plugin-catalog-backend-module-msgraph` (0.6.7 → [0.6.8](../../changelogs/@backstage/plugin-catalog-backend-module-msgraph.md#068))
+
+#### 0.6.8
+
+##### Patch Changes
+
+- [`612d1fd`](https://github.com/backstage/backstage/commit/612d1fd): Update `catalog.providers.microsoftGraphOrg.target` config def to be optional as this has a default value.
+
+### `@backstage/plugin-events-node` (0.4.8 → [0.4.9](../../changelogs/@backstage/plugin-events-node.md#049))
+
+#### 0.4.9
+
+##### Patch Changes
+
+- [`b95aa77`](https://github.com/backstage/backstage/commit/b95aa77): add `addHttpPostBodyParser` to events extension to allow body parse customization. This feature will enhance flexibility in handling HTTP POST requests in event-related operations.
+
+### `@backstage/plugin-home` (0.8.5 → [0.8.6](../../changelogs/@backstage/plugin-home.md#086))
+
+#### 0.8.6
+
+##### Patch Changes
+
+- [`2d11521`](https://github.com/backstage/backstage/commit/2d11521): The starred entities component uses the entity title or display name if it exists
+
+### `@backstage/plugin-home-react` (0.1.23 → [0.1.24](../../changelogs/@backstage/plugin-home-react.md#0124))
+
+#### 0.1.24
+
+##### Patch Changes
+
+- [`c5a82fc`](https://github.com/backstage/backstage/commit/c5a82fc): Don't render header divider on homepage cards if no title was specified.
+
+### `@backstage/plugin-kubernetes` (0.12.4 → [0.12.5](../../changelogs/@backstage/plugin-kubernetes.md#0125))
+
+#### 0.12.5
+
+##### Patch Changes
+
+- [`d517d13`](https://github.com/backstage/backstage/commit/d517d13): refactor: use `KUBERNETES_ANNOTATION` and `KUBERNETES_LABEL_SELECTOR_QUERY_ANNOTATION` annotations from `kubernetes-common`
+- [`ba9649a`](https://github.com/backstage/backstage/commit/ba9649a): Set deployment as the default group of Kubernetes entity content. It is just an example and shouldn't cause any visual difference since entity page tabs with just one entity content appear as normal tabs.
+
+### `@backstage/plugin-kubernetes-backend` (0.19.3 → [0.19.4](../../changelogs/@backstage/plugin-kubernetes-backend.md#0194))
+
+#### 0.19.4
+
+##### Patch Changes
+
+- [`d517d13`](https://github.com/backstage/backstage/commit/d517d13): refactor: use `KUBERNETES_ANNOTATION` and `KUBERNETES_LABEL_SELECTOR_QUERY_ANNOTATION` annotations from `kubernetes-common`
+
+### `@backstage/plugin-kubernetes-common` (0.9.3 → [0.9.4](../../changelogs/@backstage/plugin-kubernetes-common.md#094))
+
+#### 0.9.4
+
+##### Patch Changes
+
+- [`d517d13`](https://github.com/backstage/backstage/commit/d517d13): Export `backstage.io/kubernetes-id` and `backstage.io/kubernetes-label-selector` annotations as constants
+
+### `@backstage/plugin-notifications-backend` (0.5.3 → [0.5.4](../../changelogs/@backstage/plugin-notifications-backend.md#054))
+
+#### 0.5.4
+
+##### Patch Changes
+
+- [`20e8d12`](https://github.com/backstage/backstage/commit/20e8d12): Fix null topics being returned from notification API
+- [`425a61d`](https://github.com/backstage/backstage/commit/425a61d): Improved notifications router tests
+- [`d4c22b7`](https://github.com/backstage/backstage/commit/d4c22b7): Make sure to post process broadcast notifications even without signals support
+
+### `@backstage/plugin-scaffolder-backend-module-azure` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#027))
+
+#### 0.2.7
+
+##### Patch Changes
+
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+
+### `@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket.md#038))
+
+#### 0.3.8
+
+##### Patch Changes
+
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+
+### `@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-cloud.md#027))
+
+#### 0.2.7
+
+##### Patch Changes
+
+- [`c56a279`](https://github.com/backstage/backstage/commit/c56a279): Added `bitbucketCloud:branchRestriction:create` to allow users to create bitbucket cloud branch restrictions in templates
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+- [`e279c30`](https://github.com/backstage/backstage/commit/e279c30): Fixing spelling mistake in `jsonschema`
+
+### `@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-server.md#027))
+
+#### 0.2.7
+
+##### Patch Changes
+
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+
+### `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.3.6 → [0.3.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-confluence-to-markdown.md#037))
+
+#### 0.3.7
+
+##### Patch Changes
+
+- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
+
+### `@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-cookiecutter.md#038))
+
+#### 0.3.8
+
+##### Patch Changes
+
+- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
+
+### `@backstage/plugin-scaffolder-backend-module-gerrit` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-gerrit.md#027))
+
+#### 0.2.7
+
+##### Patch Changes
+
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+
+### `@backstage/plugin-scaffolder-backend-module-gitea` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-gitea.md#027))
+
+#### 0.2.7
+
+##### Patch Changes
+
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+
+### `@backstage/plugin-scaffolder-backend-module-github` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-github.md#061))
+
+#### 0.6.1
+
+##### Patch Changes
+
+- [`11bc3e6`](https://github.com/backstage/backstage/commit/11bc3e6): Made "github:pages:enable" action idempotent
+- [`3f45e0f`](https://github.com/backstage/backstage/commit/3f45e0f): Made "github:environment:create" action idempotent
+- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
+- [`8c38687`](https://github.com/backstage/backstage/commit/8c38687): Made "github:issues:label" action idempotent
+- [`89948b2`](https://github.com/backstage/backstage/commit/89948b2): Made "github:repo:push" action idempotent
+- [`9391f58`](https://github.com/backstage/backstage/commit/9391f58): Pass `undefined` to some parameters for `createOrUpdateEnvironment` as these values are not always supported in different plans of GitHub
+- [`8182a59`](https://github.com/backstage/backstage/commit/8182a59): Made "github:webhook" action idempotent
+- [`8f9c54c`](https://github.com/backstage/backstage/commit/8f9c54c): Made "github:repo:create" action idempotent
+- [`0ae0c77`](https://github.com/backstage/backstage/commit/0ae0c77): Made "publish:github:pull-request" action idempotent
+
+### `@backstage/plugin-scaffolder-backend-module-gitlab` (0.8.0 → [0.8.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-gitlab.md#081))
+
+#### 0.8.1
+
+##### Patch Changes
+
+- [`0df33ea`](https://github.com/backstage/backstage/commit/0df33ea): fix: Creating a repository in a user namespace would always lead to an error
+- [`984b283`](https://github.com/backstage/backstage/commit/984b283): Made "gitlab:pipeline:trigger" action idempotent
+- [`225c733`](https://github.com/backstage/backstage/commit/225c733): Made gitlab:repo:push action idempotent.
+- [`a08cb20`](https://github.com/backstage/backstage/commit/a08cb20): Remove usages of `@backstage/backend-common`
+- [`ac58f84`](https://github.com/backstage/backstage/commit/ac58f84): Made gitlab:issue:edit action idempotent.
+- [`f6b51a8`](https://github.com/backstage/backstage/commit/f6b51a8): Made "gitlab:projectDeployToken:create" action idempotent
+- [`a75e18f`](https://github.com/backstage/backstage/commit/a75e18f): Change the if statement in the catch block to match what the new version of Gitbeaker will return
+- [`36af946`](https://github.com/backstage/backstage/commit/36af946): Made "gitlab:projectVariable:create" action idempotent
+- [`1cea434`](https://github.com/backstage/backstage/commit/1cea434): Made "gitlab:projectAccessToken:create" action idempotent
+- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
+- [`83ae330`](https://github.com/backstage/backstage/commit/83ae330): Made "gitlab:group:migrate" action idempotent
+
+### `@backstage/plugin-scaffolder-backend-module-rails` (0.5.6 → [0.5.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-rails.md#057))
+
+#### 0.5.7
+
+##### Patch Changes
+
+- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
+
+### `@backstage/plugin-search-backend-module-pg` (0.5.41 → [0.5.42](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0542))
+
+#### 0.5.42
+
+##### Patch Changes
+
+- [`8155b04`](https://github.com/backstage/backstage/commit/8155b04): Enable normalization in postgres query to change the behavior of the search.
+
+### `@backstage/repo-tools` (0.13.0 → [0.13.1](../../changelogs/@backstage/repo-tools.md#0131))
+
+#### 0.13.1
+
+##### Patch Changes
+
+- [`c7a58b2`](https://github.com/backstage/backstage/commit/c7a58b2): Fix issue where generate-patch incorrectly encodes the locator not aligning with result of yarn patch
+
 ## Other minor version bumps
 
 ### `@backstage/config-loader` (1.9.6 → [1.10.0](../../changelogs/@backstage/config-loader.md#1100))
@@ -969,20 +1276,6 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
 
 - [`f422984`](https://github.com/backstage/backstage/commit/f422984): Remove unused dependencies
 
-### `@backstage/backend-defaults` (0.8.1 → [0.8.2](../../changelogs/@backstage/backend-defaults.md#082))
-
-#### 0.8.2
-
-##### Patch Changes
-
-- [`e293b66`](https://github.com/backstage/backstage/commit/e293b66): The default auditor service implementation will now log low severity events with `debug` level instead of `info`.
-- [`f422984`](https://github.com/backstage/backstage/commit/f422984): Remove unused dependencies
-- [`ecb9bab`](https://github.com/backstage/backstage/commit/ecb9bab): Explicitly stringify extra logger fields with `JSON.stringify` to prevent `[object Object]` errors.
-- [`12f8e01`](https://github.com/backstage/backstage/commit/12f8e01): The `discovery.endpoints` configuration no longer requires both `internal` and `external` target when using the object form, instead falling back to the default.
-- [`89db8b8`](https://github.com/backstage/backstage/commit/89db8b8): `GerritUrlReader` is now able to `search` files matching a given pattern URL (using `minimatch` glob patterns).
-
-  This allows the Gerrit Discovery to find all Backstage manifests inside a repository using the `**/catalog-info.yaml` pattern.
-
 ### `@backstage/backend-test-utils` (1.3.0 → [1.3.1](../../changelogs/@backstage/backend-test-utils.md#131))
 
 #### 1.3.1
@@ -1008,279 +1301,6 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
 
 - [`89db8b8`](https://github.com/backstage/backstage/commit/89db8b8): Gerrit integration now exports `getGitilesAuthenticationUrl`. This enables its usage by the `GerritUrlReader`.
 - [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-
-### `@backstage/plugin-api-docs` (0.12.4 → [0.12.5](../../changelogs/@backstage/plugin-api-docs.md#0125))
-
-#### 0.12.5
-
-##### Patch Changes
-
-- [`74871cc`](https://github.com/backstage/backstage/commit/74871cc): Use consistent Typography in Entity HasApisCard
-
-### `@backstage/plugin-app` (0.1.6 → [0.1.7](../../changelogs/@backstage/plugin-app.md#017))
-
-#### 0.1.7
-
-##### Patch Changes
-
-- [`583fc54`](https://github.com/backstage/backstage/commit/583fc54): Fixed extra app elements not being rendered as part of apps without a sign-in page.
-- [`0aa9d82`](https://github.com/backstage/backstage/commit/0aa9d82): Added implementation of the new `DialogApi`.
-
-### `@backstage/plugin-auth-backend` (0.24.3 → [0.24.4](../../changelogs/@backstage/plugin-auth-backend.md#0244))
-
-#### 0.24.4
-
-##### Patch Changes
-
-- [`7956beb`](https://github.com/backstage/backstage/commit/7956beb): Marked the remaining exports related to `createRouter` and the old backend system as deprecated.
-
-  For more information about migrating to the new backend system, see the [migration guide](https://backstage.io/docs/backend-system/building-backends/migrating#the-auth-plugin).
-
-  Support for the old backend system will be removed in the next release of this plugin.
-
-- [`b6702ea`](https://github.com/backstage/backstage/commit/b6702ea): Deprecated `getDefaultOwnershipEntityRefs` in favor of the new `.resolveOwnershipEntityRefs(...)` method in the `AuthResolverContext`.
-
-  The following code in a custom sign-in resolver:
-
-  ```ts
-  import { getDefaultOwnershipEntityRefs } from '@backstage/plugin-auth-backend';
-
-  // ...
-
-  const ent = getDefaultOwnershipEntityRefs(entity);
-  ```
-
-  Can be replaced with the following:
-
-  ```ts
-  const { ownershipEntityRefs: ent } = await ctx.resolveOwnershipEntityRefs(
-    entity,
-  );
-  ```
-
-### `@backstage/plugin-auth-backend-module-microsoft-provider` (0.3.0 → [0.3.1](../../changelogs/@backstage/plugin-auth-backend-module-microsoft-provider.md#031))
-
-#### 0.3.1
-
-##### Patch Changes
-
-- [`fa15e80`](https://github.com/backstage/backstage/commit/fa15e80): Update `auth.microsoft.signIn.resolvers` config def to include the `userIdMatchingUserEntityAnnotation` resolver.
-
-### `@backstage/plugin-auth-backend-module-oauth2-provider` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-auth-backend-module-oauth2-provider.md#041))
-
-#### 0.4.1
-
-##### Patch Changes
-
-- [`ce15e30`](https://github.com/backstage/backstage/commit/ce15e30): Fixed repository url in `README.md`
-
-### `@backstage/plugin-auth-backend-module-oidc-provider` (0.4.0 → [0.4.1](../../changelogs/@backstage/plugin-auth-backend-module-oidc-provider.md#041))
-
-#### 0.4.1
-
-##### Patch Changes
-
-- [`ce15e30`](https://github.com/backstage/backstage/commit/ce15e30): Fixed repository url in `README.md`
-
-### `@backstage/plugin-auth-backend-module-okta-provider` (0.2.0 → [0.2.1](../../changelogs/@backstage/plugin-auth-backend-module-okta-provider.md#021))
-
-#### 0.2.1
-
-##### Patch Changes
-
-- [`ce15e30`](https://github.com/backstage/backstage/commit/ce15e30): Fixed repository url in `README.md`
-
-### `@backstage/plugin-auth-node` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-auth-node.md#061))
-
-#### 0.6.1
-
-##### Patch Changes
-
-- [`b6702ea`](https://github.com/backstage/backstage/commit/b6702ea): Added `AuthResolverContext.resolveOwnershipEntityRefs` as a way of accessing the default ownership resolution logic in sign-in resolvers, replacing `getDefaultOwnershipEntityRefs` from `@backstage/plugin-auth-backend`.
-
-### `@backstage/plugin-catalog-backend-module-ldap` (0.11.2 → [0.11.3](../../changelogs/@backstage/plugin-catalog-backend-module-ldap.md#0113))
-
-#### 0.11.3
-
-##### Patch Changes
-
-- [`e43f41b`](https://github.com/backstage/backstage/commit/e43f41b): Fix `config.d.ts` for `ldapOrg` being incorrect. The documentation says a single
-  object or an array are accepted, but the definition only allows an object.
-
-### `@backstage/plugin-catalog-backend-module-msgraph` (0.6.7 → [0.6.8](../../changelogs/@backstage/plugin-catalog-backend-module-msgraph.md#068))
-
-#### 0.6.8
-
-##### Patch Changes
-
-- [`612d1fd`](https://github.com/backstage/backstage/commit/612d1fd): Update `catalog.providers.microsoftGraphOrg.target` config def to be optional as this has a default value.
-
-### `@backstage/plugin-events-node` (0.4.8 → [0.4.9](../../changelogs/@backstage/plugin-events-node.md#049))
-
-#### 0.4.9
-
-##### Patch Changes
-
-- [`b95aa77`](https://github.com/backstage/backstage/commit/b95aa77): add `addHttpPostBodyParser` to events extension to allow body parse customization. This feature will enhance flexibility in handling HTTP POST requests in event-related operations.
-
-### `@backstage/plugin-home` (0.8.5 → [0.8.6](../../changelogs/@backstage/plugin-home.md#086))
-
-#### 0.8.6
-
-##### Patch Changes
-
-- [`2d11521`](https://github.com/backstage/backstage/commit/2d11521): The starred entities component uses the entity title or display name if it exists
-
-### `@backstage/plugin-home-react` (0.1.23 → [0.1.24](../../changelogs/@backstage/plugin-home-react.md#0124))
-
-#### 0.1.24
-
-##### Patch Changes
-
-- [`c5a82fc`](https://github.com/backstage/backstage/commit/c5a82fc): Don't render header divider on homepage cards if no title was specified.
-
-### `@backstage/plugin-kubernetes` (0.12.4 → [0.12.5](../../changelogs/@backstage/plugin-kubernetes.md#0125))
-
-#### 0.12.5
-
-##### Patch Changes
-
-- [`d517d13`](https://github.com/backstage/backstage/commit/d517d13): refactor: use `KUBERNETES_ANNOTATION` and `KUBERNETES_LABEL_SELECTOR_QUERY_ANNOTATION` annotations from `kubernetes-common`
-- [`ba9649a`](https://github.com/backstage/backstage/commit/ba9649a): Set deployment as the default group of Kubernetes entity content. It is just an example and shouldn't cause any visual difference since entity page tabs with just one entity content appear as normal tabs.
-
-### `@backstage/plugin-kubernetes-backend` (0.19.3 → [0.19.4](../../changelogs/@backstage/plugin-kubernetes-backend.md#0194))
-
-#### 0.19.4
-
-##### Patch Changes
-
-- [`d517d13`](https://github.com/backstage/backstage/commit/d517d13): refactor: use `KUBERNETES_ANNOTATION` and `KUBERNETES_LABEL_SELECTOR_QUERY_ANNOTATION` annotations from `kubernetes-common`
-
-### `@backstage/plugin-kubernetes-common` (0.9.3 → [0.9.4](../../changelogs/@backstage/plugin-kubernetes-common.md#094))
-
-#### 0.9.4
-
-##### Patch Changes
-
-- [`d517d13`](https://github.com/backstage/backstage/commit/d517d13): Export `backstage.io/kubernetes-id` and `backstage.io/kubernetes-label-selector` annotations as constants
-
-### `@backstage/plugin-notifications-backend` (0.5.3 → [0.5.4](../../changelogs/@backstage/plugin-notifications-backend.md#054))
-
-#### 0.5.4
-
-##### Patch Changes
-
-- [`20e8d12`](https://github.com/backstage/backstage/commit/20e8d12): Fix null topics being returned from notification API
-- [`425a61d`](https://github.com/backstage/backstage/commit/425a61d): Improved notifications router tests
-- [`d4c22b7`](https://github.com/backstage/backstage/commit/d4c22b7): Make sure to post process broadcast notifications even without signals support
-
-### `@backstage/plugin-scaffolder-backend-module-azure` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-azure.md#027))
-
-#### 0.2.7
-
-##### Patch Changes
-
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-
-### `@backstage/plugin-scaffolder-backend-module-bitbucket` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket.md#038))
-
-#### 0.3.8
-
-##### Patch Changes
-
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-
-### `@backstage/plugin-scaffolder-backend-module-bitbucket-cloud` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-cloud.md#027))
-
-#### 0.2.7
-
-##### Patch Changes
-
-- [`c56a279`](https://github.com/backstage/backstage/commit/c56a279): Added `bitbucketCloud:branchRestriction:create` to allow users to create bitbucket cloud branch restrictions in templates
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-- [`e279c30`](https://github.com/backstage/backstage/commit/e279c30): Fixing spelling mistake in `jsonschema`
-
-### `@backstage/plugin-scaffolder-backend-module-bitbucket-server` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-bitbucket-server.md#027))
-
-#### 0.2.7
-
-##### Patch Changes
-
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-
-### `@backstage/plugin-scaffolder-backend-module-confluence-to-markdown` (0.3.6 → [0.3.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-confluence-to-markdown.md#037))
-
-#### 0.3.7
-
-##### Patch Changes
-
-- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
-
-### `@backstage/plugin-scaffolder-backend-module-cookiecutter` (0.3.7 → [0.3.8](../../changelogs/@backstage/plugin-scaffolder-backend-module-cookiecutter.md#038))
-
-#### 0.3.8
-
-##### Patch Changes
-
-- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
-
-### `@backstage/plugin-scaffolder-backend-module-gerrit` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-gerrit.md#027))
-
-#### 0.2.7
-
-##### Patch Changes
-
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-
-### `@backstage/plugin-scaffolder-backend-module-gitea` (0.2.6 → [0.2.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-gitea.md#027))
-
-#### 0.2.7
-
-##### Patch Changes
-
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-
-### `@backstage/plugin-scaffolder-backend-module-github` (0.6.0 → [0.6.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-github.md#061))
-
-#### 0.6.1
-
-##### Patch Changes
-
-- [`11bc3e6`](https://github.com/backstage/backstage/commit/11bc3e6): Made "github:pages:enable" action idempotent
-- [`3f45e0f`](https://github.com/backstage/backstage/commit/3f45e0f): Made "github:environment:create" action idempotent
-- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
-- [`8c38687`](https://github.com/backstage/backstage/commit/8c38687): Made "github:issues:label" action idempotent
-- [`89948b2`](https://github.com/backstage/backstage/commit/89948b2): Made "github:repo:push" action idempotent
-- [`9391f58`](https://github.com/backstage/backstage/commit/9391f58): Pass `undefined` to some parameters for `createOrUpdateEnvironment` as these values are not always supported in different plans of GitHub
-- [`8182a59`](https://github.com/backstage/backstage/commit/8182a59): Made "github:webhook" action idempotent
-- [`8f9c54c`](https://github.com/backstage/backstage/commit/8f9c54c): Made "github:repo:create" action idempotent
-- [`0ae0c77`](https://github.com/backstage/backstage/commit/0ae0c77): Made "publish:github:pull-request" action idempotent
-
-### `@backstage/plugin-scaffolder-backend-module-gitlab` (0.8.0 → [0.8.1](../../changelogs/@backstage/plugin-scaffolder-backend-module-gitlab.md#081))
-
-#### 0.8.1
-
-##### Patch Changes
-
-- [`0df33ea`](https://github.com/backstage/backstage/commit/0df33ea): fix: Creating a repository in a user namespace would always lead to an error
-- [`984b283`](https://github.com/backstage/backstage/commit/984b283): Made "gitlab:pipeline:trigger" action idempotent
-- [`225c733`](https://github.com/backstage/backstage/commit/225c733): Made gitlab:repo:push action idempotent.
-- [`a08cb20`](https://github.com/backstage/backstage/commit/a08cb20): Remove usages of `@backstage/backend-common`
-- [`ac58f84`](https://github.com/backstage/backstage/commit/ac58f84): Made gitlab:issue:edit action idempotent.
-- [`f6b51a8`](https://github.com/backstage/backstage/commit/f6b51a8): Made "gitlab:projectDeployToken:create" action idempotent
-- [`a75e18f`](https://github.com/backstage/backstage/commit/a75e18f): Change the if statement in the catch block to match what the new version of Gitbeaker will return
-- [`36af946`](https://github.com/backstage/backstage/commit/36af946): Made "gitlab:projectVariable:create" action idempotent
-- [`1cea434`](https://github.com/backstage/backstage/commit/1cea434): Made "gitlab:projectAccessToken:create" action idempotent
-- [`4f8b5b6`](https://github.com/backstage/backstage/commit/4f8b5b6): Allow signing git commits using configured private PGP key in scaffolder
-- [`83ae330`](https://github.com/backstage/backstage/commit/83ae330): Made "gitlab:group:migrate" action idempotent
-
-### `@backstage/plugin-scaffolder-backend-module-rails` (0.5.6 → [0.5.7](../../changelogs/@backstage/plugin-scaffolder-backend-module-rails.md#057))
-
-#### 0.5.7
-
-##### Patch Changes
-
-- [`09cf038`](https://github.com/backstage/backstage/commit/09cf038): Got rid of most `@backstage/backend-common` usages
 
 ### `@backstage/plugin-scaffolder-common` (1.5.9 → [1.5.10](../../changelogs/@backstage/plugin-scaffolder-common.md#1510))
 
@@ -1310,14 +1330,6 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
 ##### Patch Changes
 
 - [`49684fe`](https://github.com/backstage/backstage/commit/49684fe): Expand the default kind filter to include all kinds from the System Model.
-
-### `@backstage/plugin-search-backend-module-pg` (0.5.41 → [0.5.42](../../changelogs/@backstage/plugin-search-backend-module-pg.md#0542))
-
-#### 0.5.42
-
-##### Patch Changes
-
-- [`8155b04`](https://github.com/backstage/backstage/commit/8155b04): Enable normalization in postgres query to change the behavior of the search.
 
 ### `@backstage/plugin-search-react` (1.8.6 → [1.8.7](../../changelogs/@backstage/plugin-search-react.md#187))
 
@@ -1362,14 +1374,6 @@ Changes between 1.36.1 and 1.37.0 — 155 changed and 0 added packages.
 ##### Patch Changes
 
 - [`b5a8208`](https://github.com/backstage/backstage/commit/b5a8208): Added `TechDocsAddonsBlueprint` extension to allow adding of techdocs addons.
-
-### `@backstage/repo-tools` (0.13.0 → [0.13.1](../../changelogs/@backstage/repo-tools.md#0131))
-
-#### 0.13.1
-
-##### Patch Changes
-
-- [`c7a58b2`](https://github.com/backstage/backstage/commit/c7a58b2): Fix issue where generate-patch incorrectly encodes the locator not aligning with result of yarn patch
 
 ### `@backstage/test-utils` (1.7.5 → [1.7.6](../../changelogs/@backstage/test-utils.md#176))
 
