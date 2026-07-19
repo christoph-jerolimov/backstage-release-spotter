@@ -13,6 +13,7 @@
     "changelogs": "tsx scripts/generate-changelogs.ts",
     "metadata": "tsx scripts/fetch-metadata.ts",
     "generate": "npm run copy && npm run readmes && npm run resolutions && npm run tables && npm run changes && npm run changelogs",
+    "update": "npm run copy && npm run metadata && npm run readmes && npm run resolutions && npm run tables && npm run changes && npm run changelogs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

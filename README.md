@@ -2,7 +2,7 @@
 
 Automatically maintained mirror and analysis of the official Backstage package changelogs and metadata from [backstage/backstage](https://github.com/backstage/backstage) and of the release manifests from [backstage/versions](https://github.com/backstage/versions).
 
-Two GitHub workflows ([update-metadata](.github/workflows/update-metadata.yml) and [update-versions](.github/workflows/update-versions.yml)) run daily (and on demand via *Run workflow*), clone the upstream repositories, regenerate everything below, and commit changes to `main`.
+A [GitHub workflow](.github/workflows/update.yml) runs daily at 06:17 UTC (and on demand via *Run workflow*), clones both upstream repositories, regenerates everything below, and commits changes to `main` in a single commit.
 
 ## Package versions
 
@@ -38,7 +38,7 @@ Each `releases/<version>/` folder contains:
 
 ## Changelogs
 
-The [`changelogs/`](changelogs) folder holds a `CHANGELOG.md` copy for **every package that ever appeared in a release manifest**, stored as `changelogs/<scope>/<name>.md` (e.g. `changelogs/@backstage/plugin-scaffolder.md`). A second [GitHub workflow](.github/workflows/update-metadata.yml) refreshes them daily (and on demand):
+The [`changelogs/`](changelogs) folder holds a `CHANGELOG.md` copy for **every package that ever appeared in a release manifest**, stored as `changelogs/<scope>/<name>.md` (e.g. `changelogs/@backstage/plugin-scaffolder.md`). They are refreshed on every workflow run:
 
 - Packages still present on `backstage/backstage` `main` (in `packages/*` and `plugins/*`) are copied from there on every run.
 - Packages that were removed from `main` (e.g. plugins moved to community repos) are fetched once from the release tag of the newest release that still listed them; existing files are never re-fetched.

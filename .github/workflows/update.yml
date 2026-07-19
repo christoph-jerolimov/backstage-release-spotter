@@ -1,15 +1,15 @@
-name: Update Backstage metadata
+name: Update Backstage data
 
 on:
   workflow_dispatch:
   schedule:
-    # Daily, 30 minutes before the update-versions workflow (UTC, best-effort timing).
+    # Daily at 06:17 UTC (08:17 CEST) — odd minute avoids the top-of-the-hour stampede.
     - cron: "17 6 * * *"
 
 permissions:
   contents: write
 
-# Shared with update-versions.yml — both workflows push to main and must not race.
+# A manual run must never race a scheduled run's push.
 concurrency:
   group: update-data
   cancel-in-progress: false
@@ -31,6 +31,9 @@ jobs:
 
       - run: npm run typecheck
 
+      - name: Clone backstage/versions
+        run: git clone --depth 1 https://github.com/backstage/versions.git "$RUNNER_TEMP/backstage-versions"
+
       # Blob-less sparse clone: the monorepo is huge, but only packages/ and
       # plugins/ are needed; later tag fetches inherit the blob filter, so a
       # tag costs trees only and git show lazily pulls individual files.
@@ -39,9 +42,10 @@ jobs:
           git clone --depth 1 --filter=blob:none --sparse https://github.com/backstage/backstage.git "$RUNNER_TEMP/backstage"
           git -C "$RUNNER_TEMP/backstage" sparse-checkout set packages plugins
 
-      - name: Fetch metadata
-        run: npm run metadata
+      - name: Generate release data
+        run: npm run update
         env:
+          UPSTREAM_DIR: ${{ runner.temp }}/backstage-versions
           BACKSTAGE_DIR: ${{ runner.temp }}/backstage
 
       - name: Commit and push changes
@@ -52,6 +56,6 @@ jobs:
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: update Backstage metadata"
+            git commit -m "chore: update Backstage data"
             git push origin HEAD:main
           fi
