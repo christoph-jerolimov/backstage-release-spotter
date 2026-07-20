@@ -1,4 +1,4 @@
-# Package descriptions — deprecated
+# Backstage packages — deprecated
 
 **112 packages** removed from the `main` branch — *Last included in* names the last release that included them.
 

@@ -1,4 +1,4 @@
-# Package descriptions — all
+# Backstage packages — all
 
 **323 packages** overall — **211 active** on the `main` branch, **112 removed**. *Last included in* is only set for removed packages.
 

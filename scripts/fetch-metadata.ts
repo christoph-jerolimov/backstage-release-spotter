@@ -90,6 +90,7 @@ console.log(`Copied ${fromMain} changelogs from the main branch`);
 
 // Community plugins live in per-workspace monorepos: workspaces/<ws>/{plugins,packages}/<pkg>.
 let fromCommunity = 0;
+const communityMetadata = new Map<string, PackageMeta>();
 const workspacesDir = path.join(communityDir, "workspaces");
 for (const workspace of fs.existsSync(workspacesDir) ? fs.readdirSync(workspacesDir).sort() : []) {
   for (const group of ["plugins", "packages"]) {
@@ -98,9 +99,11 @@ for (const workspace of fs.existsSync(workspacesDir) ? fs.readdirSync(workspaces
     for (const entry of fs.readdirSync(groupDir).sort()) {
       const packageJson = path.join(groupDir, entry, "package.json");
       const changelog = path.join(groupDir, entry, "CHANGELOG.md");
-      if (!fs.existsSync(packageJson) || !fs.existsSync(changelog)) continue;
+      if (!fs.existsSync(packageJson)) continue;
       const pkg = JSON.parse(fs.readFileSync(packageJson, "utf8")) as PackageJson;
       if (pkg.name === undefined || pkg.private === true) continue;
+      communityMetadata.set(pkg.name, toMeta(pkg));
+      if (!fs.existsSync(changelog)) continue;
       writeChangelog(pkg.name, fs.readFileSync(changelog, "utf8"));
       fromCommunity += 1;
     }
@@ -285,26 +288,37 @@ function writeDescriptionTable(
 }
 
 writeDescriptionTable(
-  "package-descriptions",
-  "Package descriptions",
+  "backstage-packages",
+  "Backstage packages",
   `**${activeCount} packages** active on the \`main\` branch.`,
   tableRows.filter(([name]) => mainPackages.has(name!)),
   false,
 );
 writeDescriptionTable(
-  "package-descriptions-deprecated",
-  "Package descriptions — deprecated",
+  "backstage-packages-deprecated",
+  "Backstage packages — deprecated",
   `**${removedCount} packages** removed from the \`main\` branch — *Last included in* names the last release that included them.`,
   tableRows.filter(([name]) => !mainPackages.has(name!)),
   true,
 );
 writeDescriptionTable(
-  "package-descriptions-all",
-  "Package descriptions — all",
+  "backstage-packages-all",
+  "Backstage packages — all",
   `**${lastRelease.size} packages** overall — **${activeCount} active** on the \`main\` branch, **${removedCount} removed**. ` +
     "*Last included in* is only set for removed packages.",
   tableRows,
   true,
+);
+const communityRows = [...communityMetadata.keys()].sort(byCodepoint).map((name) => {
+  const meta = communityMetadata.get(name)!;
+  return [name, meta.role, oneLine(meta.description)];
+});
+writeDescriptionTable(
+  "backstage-community-packages",
+  "Backstage community packages",
+  `**${communityRows.length} packages** from the \`backstage/community-plugins\` workspaces.`,
+  communityRows,
+  false,
 );
 
 // Every package that ever appeared in a release manifest must have a changelog.

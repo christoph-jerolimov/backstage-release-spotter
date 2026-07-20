@@ -1,4 +1,4 @@
-# Package descriptions
+# Backstage packages
 
 **211 packages** active on the `main` branch.
 

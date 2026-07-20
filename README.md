@@ -45,12 +45,20 @@ The [`changelogs/`](changelogs) folder holds a `CHANGELOG.md` copy for **every p
 - Packages that were removed from `main` (e.g. plugins moved to community repos) are fetched once from the release tag of the newest release that still listed them; existing files are never re-fetched.
 - The job fails if any package listed in any release manifest ends up without a changelog.
 
-## Package descriptions
+## Backstage packages
 
 The same workflow also reads each package's `package.json` and generates tables of every package that ever appeared in a release manifest with its Backstage role, description, and — for deprecated packages (no longer on `main`) — the last release that included it.
 
-| Package descriptions | Markdown | CSV |
+| Backstage packages | Markdown | CSV |
 | --- | --- | --- |
-| Active packages | [package-descriptions.md](tables/package-descriptions.md) | [package-descriptions.csv](tables/package-descriptions.csv) |
-| Deprecated packages | [package-descriptions-deprecated.md](tables/package-descriptions-deprecated.md) | [package-descriptions-deprecated.csv](tables/package-descriptions-deprecated.csv) |
-| All packages | [package-descriptions-all.md](tables/package-descriptions-all.md) | [package-descriptions-all.csv](tables/package-descriptions-all.csv) |
+| Active packages | [backstage-packages.md](tables/backstage-packages.md) | [backstage-packages.csv](tables/backstage-packages.csv) |
+| Deprecated packages | [backstage-packages-deprecated.md](tables/backstage-packages-deprecated.md) | [backstage-packages-deprecated.csv](tables/backstage-packages-deprecated.csv) |
+| All packages | [backstage-packages-all.md](tables/backstage-packages-all.md) | [backstage-packages-all.csv](tables/backstage-packages-all.csv) |
+
+## Backstage community packages
+
+The published packages of all `backstage/community-plugins` workspaces with their Backstage role and description.
+
+| Backstage community packages | Markdown | CSV |
+| --- | --- | --- |
+| All packages | [backstage-community-packages.md](tables/backstage-community-packages.md) | [backstage-community-packages.csv](tables/backstage-community-packages.csv) |
